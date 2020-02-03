@@ -1,0 +1,219 @@
+// Поле + label
+.form-item
+	margin-bottom 20px
+	
+
+// Placeholder text
+placeholder($color)
+	&:-moz-placeholder
+		color: $color;  // Firefox 4-18
+	&::-moz-placeholder
+		color: $color;  // Firefox 19+
+	&:-ms-input-placeholder
+		color: $color;  // Internet Explorer 10+
+	&::-webkit-input-placeholder
+		color: $color;  // Safari and Chrome
+placeholder(#b9b9b9)
+
+label
+	display table-cell
+	font-size 0.85rem
+	font-weight: 700;
+
+select
+.select
+textarea
+input[type="text"]
+input[type="password"]
+input[type="datetime"]
+input[type="datetime-local"]
+input[type="date"]
+input[type="month"]
+input[type="time"]
+input[type="week"]
+input[type="number"]
+input[type="email"]
+input[type="url"]
+input[type="search"]
+input[type="tel"]
+input[type="color"]
+.uneditable-input
+	display inline-block
+	color #555555
+	padding 5px 10px
+	// height 45px вместо padding-top/bottom. Нужно для IE
+	font-size $font-size-base
+	border-radius 1px
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-top: 1px solid #bfbfbf;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	transition: border linear .2s, box-shadow linear .2s;
+	&:focus
+		border-color: #4d90fe;
+		
+	
+		
+		
+		
+// Чекбоксы и радиобаттоны
+input
+	&[type="radio"]
+	&[type="checkbox"]
+		margin 3px 3px 3px 4px
+.form-item
+	// Располагаем lable рядом с чекбоксом/радиокнопкой и задаём отступы между строками
+	&--inline
+		&:not(:last-child)
+			margin-bottom 5px
+		label
+			display inline
+			font-size $font-size-base
+
+
+
+
+
+
+
+
+
+// Ошибки и валидация
+
+.ajax_form .error
+	border-color $color_red !important
+	color $color_red !important
+	
+
+.jGrowl
+	font-size $font-size-base !important
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =================================
+// normalize.css
+// =================================
+
+
+input
+	// 1. Show the overflow in Edge.
+	overflow: visible
+	// 2. Remove the inheritance of text transform in Firefox.
+	text-transform: none
+
+
+[type="checkbox"],
+[type="radio"]
+	box-sizing: border-box
+	// 1. Add the correct box sizing in IE 10-.
+	padding: 0
+
+
+
+
+// Correct the cursor style of increment and decrement buttons in Chrome.
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button
+	height: auto
+
+
+
+[type="search"]
+	// 1. Correct the odd appearance in Chrome and Safari.
+	-webkit-appearance: textfield
+	// 2. Correct the outline style in Safari.
+	outline-offset: -1 * 2px
+
+
+// Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration
+	-webkit-appearance: none
+
+
+::-webkit-file-upload-button
+	// 1. Correct the inability to style clickable types in iOS and Safari.
+	-webkit-appearance: button
+	// 2. Change font properties to `inherit` in Safari.
+	font: inherit
+
+
+	
+
+html [type="button"],
+[type="reset"],
+[type="submit"]
+	-webkit-appearance: button
+
+// Remove the inner border and padding in Firefox.
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner
+	border-style: none
+	padding: 0
+
+
+// Restore the focus styles unset by the previous rule.
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring
+	outline: 1px dotted ButtonText
+	
+
+
+
+
+// 1. Change the font styles in all browsers (opinionated).
+button,
+input,
+optgroup,
+select,
+textarea
+	font-family: sans-serif
+	font-size: 100%
+	line-height: 1.15
+	margin: 0
+	
+
+// Remove the default vertical scrollbar in IE.
+textarea
+	overflow: auto
+	
+
+// Change the border, margin, and padding in all browsers (opinionated).
+fieldset
+	border: 1px solid #c0c0c0
+	margin: 0 2px
+	padding: 0.35em 0.625em 0.75em
+
+
+// 1. Correct the text wrapping in Edge and IE.
+// 2. Correct the color inheritance from `fieldset` elements in IE.
+// 3. Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers.
+legend
+	box-sizing: border-box
+	// 1
+	color: inherit
+	// 2
+	display: table
+	// 1
+	max-width: 100%
+	// 1
+	padding: 0
+	// 3
+	white-space: normal
+	

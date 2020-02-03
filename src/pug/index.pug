@@ -1,0 +1,22 @@
+//-Шаблон страницы
+extends _templates/general
+
+block prepend title
+	- var pageTitle = "Василий Дудин"
+	| #{pageTitle +". "}
+
+
+block head__meta
+
+block head__scripts
+
+block page-title
+	//- | #{pageTitle}
+	| #{pageTitle}
+
+block content
+	section.section
+		h2 Обо мне
+
+	section.section
+		h2 Проекты

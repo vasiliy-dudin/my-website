@@ -1,0 +1,46 @@
+ul
+	list-style-type: square
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+list-unstyled()
+	padding-left: 0
+	list-style: none
+.list-unstyled
+	list-unstyled()
+
+// Inline turns list items into inline-block
+.list-inline
+	list-unstyled()
+
+.list-inline-item
+	display: inline-block
+	&:not(:last-child)
+		margin-right: $list-inline-padding
+
+
+/*.rounded-list
+	padding-left: 1.6rem;
+	counter-reset: li;
+	list-style: none;
+	li
+		position: relative;
+		display: block;
+		&:before
+			$bg = rgba(27, 151, 240, 0.5);
+			$color = #fff;
+			content: counter(li);
+			counter-increment: li;
+			position: absolute;
+			top: .1em;
+			left: -1.6rem;
+			height: 1.2rem;
+			width: 1.2rem;
+			line-height: 1.2rem;
+			//border: 1px solid @color;
+			text-align: center;
+			//font-weight: bold;
+			//border: 1px solid @text2__color;
+			border-radius: 50%;
+			//font-size: 0.8rem;
+			background: $bg
+			color: $color*/

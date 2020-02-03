@@ -1,0 +1,109 @@
+$header__bg = $brand-1
+$mob-navbar-bg = alpha(darken($brand-1, 30%), 60%) // цвет шапки на мобильных версиях
+
+$header__color = $color_blue-gray--4
+
+.header
+	//background-image linear-gradient(135deg, $brand-1 0%, #090b2a 100%)
+	//background-image linear-gradient(135deg, #5e5e5e 10%, $brand-1 250%)
+	background $header__bg
+	box-shadow 0 2px 5px rgba(0, 0, 0, 0.25)
+	
+	//Адаптивное
+	+media-down(md)
+		>.container
+		>.container
+			width: 100% // Пока не понял, зачем
+			padding: 0
+	
+
+// Строка с навигацией и названием сайта
+.navbar
+	@extend .d-flex
+	/*position relative // Пока не понял, зачем
+	justify-content space-between
+	align-items center*/
+	
+	// Адаптивное
+	flex-direction column
+	+media(md)
+		height 50px
+		flex-direction: row
+		justify-content: space-between
+		align-items: center // выравнивает navbar-header по вертикали
+	
+
+			
+
+		
+		
+
+// sitename + slogan
+
+.navbar-header-wrp
+	@extend .d-flex
+	// Адаптивное
+	width 100%
+	height 70px
+	background $mob-navbar-bg
+	+media(md)
+		height unset
+		width auto
+		margin-right: 10px
+		background transparent
+	
+.navbar-header
+	@extend .d-flex
+	line-height 0
+		
+	// Адаптивное
+	margin: auto 15px
+	align-items: flex-start
+	//color lighten(desaturate($mob-navbar-bg, 50%), 70%) !important
+	+media(md)
+		align-items: center
+		margin: 0
+	
+	
+$navbar-header__color = #fff // lighten(desaturate($brand-2, 20%), 60%)
+	
+
+	
+/* .navbar-header
+	display block
+	line-height 1
+	text-align center
+	margin auto
+	align-self center
+	// Адаптивное
+	+media(md)
+		padding 15px
+	+media(lg)
+		padding 20px
+	+media(xl)
+		padding 30px 40px*/
+
+.sitename
+	padding: 0.5rem 1rem
+	color $navbar-header__color
+	background $color_blue-gray--2
+	line-height 1
+	//font-size 1.1rem
+	font-weight bold
+	span
+		display block
+	
+.slogan
+	display flex
+	flex-direction column
+	line-height 1.2
+	font-size 0.7rem
+	color $header__color
+	+media(md)
+		margin-left 10px
+	
+	
+
+
+
+@import 'basic/layout__header__nav.styl'

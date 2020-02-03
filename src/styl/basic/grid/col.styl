@@ -1,0 +1,126 @@
+[class*="col--"]
+	flex: 0 0 100%
+	max-width: 100%
+	padding-left: ($grid-gutter-width-base/2)
+	padding-right: ($grid-gutter-width-base/2)
+
+.col
+	+bem-variant(no-gutters)
+		padding: 0
+
+
+// Перечисляет .col--{$name}-{$number}
+/*
+$make-column-commons
+	flex: none
+for $name, $width in $breakpoints
+	for $number in 1..$columns
+		.col--{$name}-{$number}
+			@extend $make-column-commons
+*/
+
+
+// Перечисление всех колоночных классов
+/*
+$col-styles
+	flex: 0 0 100%
+	max-width: 100%
+	padding-left: ($grid-gutter-width-base/2)
+	padding-right: ($grid-gutter-width-base/2)
+for $name in $breakpoints
+	for $number in (1..$columns)
+		.col--{$name}-{$number}
+			@extend $col-styles*/
+
+
+
+//================================ Mixins
+
+
+make-default()
+	&
+		flex-grow 1
+		flex-basis 0
+
+// Function to create the offset
+make-offset($columns)
+	&-offset-0
+		margin-left: 0
+	for $number in 1..$columns
+		&-offset-{$number}
+			margin-left: (100 / $columns * $number) %
+
+
+.flex-none
+	flex none
+	
+// Function to make a single column
+make-column($columns)
+	for $number in 1..$columns
+		&{'-'}{$number}
+			width: (100 / $columns * $number) %
+			@extend .flex-none
+			
+// Function to create a full column
+make-grid-column($breakpoint, $columns)
+	.col--{$breakpoint}
+		make-default()
+		make-column($columns)
+		make-offset($columns)
+	make-helpers($breakpoint)
+	
+// Function to initialize the grid
+init-grid($breakpoints, $columns)
+	for $breakpoint, $width in $breakpoints
+		if $width == 0
+			make-grid-column($breakpoint, $columns)
+		else
+			@media (min-width: $width)
+				make-grid-column($breakpoint, $columns)
+
+init-grid($breakpoints, $columns)
+
+
+// Helper for the grid align top
+make-row-helpers($breakpoint)
+	.row--{$breakpoint}-top
+		align-items: flex-start
+	.row--{$breakpoint}-center
+		align-items: center
+	.row--{$breakpoint}-bottom
+		align-items: flex-end
+
+// Helper for the sorting the first item
+make-col-helpers($breakpoint)
+	.col--{$breakpoint}-align-top
+		align-self: flex-start
+	.col--{$breakpoint}-align-center
+		align-self: center
+	.col--{$breakpoint}-align-bottom
+		align-self: flex-end
+	
+	.col--{$breakpoint}-first
+		order: -1
+	.col--{$breakpoint}-reset
+		order: 0
+	.col--{$breakpoint}-last
+		order: 1
+	.row--{$breakpoint}-reverse
+		flex-direction: row-reverse
+	.col--{$breakpoint}-flex
+		display: flex
+
+// Helper for aligning the text
+make-text-helpers($breakpoint)
+	.text--{$breakpoint}-right
+		text-align: right
+	.text--{$breakpoint}-left
+		text-align: left
+	.text--{$breakpoint}-center
+		text-align: center
+
+// Helper wrapper
+make-helpers($breakpoint)
+	make-row-helpers($breakpoint)
+	make-col-helpers($breakpoint)
+	make-text-helpers($breakpoint)

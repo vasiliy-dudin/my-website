@@ -1,0 +1,36 @@
+//-Шаблон страницы
+extends _templates/general
+
+block prepend title
+	- var pageTitle = "Термины"
+	| #{pageTitle +" → "}
+
+
+
+block head__meta
+
+block head__scripts
+
+block page-title
+	| #{pageTitle}
+
+
+block content
+	section.striped-section
+		.container
+			h2 Проектирование
+			p В дизайне настолько большие проблемы с терминологией, что даже некоторые опытные дизайнеры не могут договориться о том, что такое дизайн. В результате исполнители и заказчики будто говорят на разных языках, а в вакансиях требуют невозможного.
+			p Здесь постараемся максимально точно, аргументированно объяснить значение популярных в отрасли терминов и то, что под ними подразумевают.
+	section.striped-section
+		.container
+			h2 Спеицализации, компетенции и зоны ответственности
+			p О том, что эти специальности не означают контретные обязанности. В зависимости от компании, рабочих процессов или проекта, компетенции этих специалистов могут отличаться.
+
+			h3 Этапы
+			ul.list
+				li.list-item: a.list-item__lnk(href="/articles/1.html") Этап 1
+				li.list-item: a.list-item__lnk(href="/articles/1.html") Этап 2
+			h3 Термины
+			ul.list
+				li.list-item: a.list-item__lnk(href="/articles/1.html") Термин 1
+				li.list-item: a.list-item__lnk(href="/articles/1.html") Термин 2

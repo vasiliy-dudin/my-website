@@ -1,0 +1,106 @@
+// Цвета дат
+
+$color_gray-light-date = lighten($color_gray-light, 25%)
+
+
+
+/*.striped-section
+	padding 40px 0
+	&:nth-of-type(odd)
+		background $striped-section__bg
+	!*&:nth-of-type(1) // отступ перед первой секцией
+		margin-top 40px*!
+	&:first-of-type // первая серкция
+		padding-top 0
+	&__title
+		margin-top: 0*/
+
+.striped-section
+	position relative
+	padding 40px 0
+	.striped-section //h2 или h3
+		margin-top 0
+
+	ol
+	ul
+		margin-bottom 0
+	p:last-of-type
+		margin-bottom 0
+	// Первая
+	&:first-of-type
+		padding-top 0
+	// Чётная
+	&:nth-of-type(even)
+		background $section-color
+	&--2:nth-of-type(even)
+		background transparent
+		/*border solid alpha(#fff, 30%)
+		border-width: 15px 0*/
+		&:before
+		&:after
+			content: ''
+			width: 110%
+			height: 15px
+			left: -2px
+			position: absolute
+			background alpha(#fff, 35%)
+		&:before
+			top -7px
+			transform: rotate(-1.5deg)
+		&:after
+			bottom: -7px
+			transform: rotate(1.5deg)
+
+
+
+// Заливка изображения при наведении
+/*
+.img-hover
+	position relative
+	&:before
+		content ''
+		display block
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		transition all .2s ease
+	&:hover:before
+		background alpha($brand-2--3, 0.38)
+		//box-shadow 0 5px 15px rgba(0,0,0,.2)*/
+
+
+// Текст или ссылки с иконками
+
+.text-icon
+	display inline-block
+	padding-left 23px
+	background-size 16px
+	background-repeat no-repeat
+	line-height 2
+	// Адаптивное для всех иконок
+	background-position 0 3px
+	+media(lg)
+		background-position 0 6px
+
+	
+
+
+
+// Заголовки блока
+.block-title_h1
+	font-size 1.11rem
+	font-weight bold
+	
+
+
+.contact-btn
+	&__sub-title
+		margin-top 6px
+		font-size 0.8rem
+		//color alpha(#fff, 40%)
+		opacity 0.6
+	header &
+		font-size 0.9rem
+		

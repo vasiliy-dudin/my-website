@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+.idea/
+.vscode/tasks.json
+/node_modules/
+/dist/
+/test/
+package-lock.json

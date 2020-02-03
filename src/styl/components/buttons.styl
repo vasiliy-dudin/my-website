@@ -1,0 +1,201 @@
+// M I X I N S
+// =============================================================
+
+// Button Variant
+// -------------------------
+
+// background-color + color
+//
+button-variant__color-bg($color, $bg-color)
+	color $color
+	background-color $bg-color
+// hover
+button-variant__color-bg--hover($color, $bg-color)
+	&:hover
+		color $color
+		background-color $bg-color
+// active
+button-variant__color-bg--active($color, $bg-color)
+	&:active
+	&.active
+		color: $color;
+		background $bg-color none;
+
+		
+		
+// BORDER
+// border-width
+button-variant__border-width($width)
+	border-width $width
+
+//border-color
+button-variant__border-color($color)
+	border-color $color
+
+//border-color_hove
+button-variant__border-color_hover($color)
+	&:hover
+		border-color $color
+
+//border-color--active
+button-variant__border-color--active($color)
+	&:focus
+	&:active
+	&.active
+		border-color $color
+
+//border-color--disabled
+button-variant__border-color--disabled($color)
+	&.disabled
+	&[disabled]
+	fieldset[disabled] &
+		border-color $color
+		
+		
+		
+		
+// Button sizes
+// -------------------------
+button-size($padding, $font-size, $border-radius)
+	padding $padding
+	font-size $font-size
+	border-radius $border-radius
+
+
+// =============================================================
+	
+
+
+
+
+
+
+
+
+
+// Общие свойства для всех кнопок
+// --------------------------------------------------
+$btn1
+	display inline-block
+	button-size($padding:8px 20px, $font-size:1rem, $border-radius:5px)
+	margin-bottom 0 // For input.btn
+	font-weight normal
+	line-height 1
+	text-align center
+	vertical-align: middle
+	cursor pointer
+	background-image none // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	white-space nowrap
+	user-select none
+	text-decoration none
+	outline 0
+	border-style solid // отменяет стандартный стиль для <button>
+	transition: all 0.15s
+	&.disabled
+	&[disabled]
+	fieldset[disabled] &
+		cursor not-allowed
+		pointer-events none // Future-proof disabling of clicks
+		opacity 0.65
+		box-shadow none
+	
+
+
+
+
+
+.btn
+input[type="button"]
+input[type="submit"]
+input[type="reset"]
+	@extend $btn1
+	$bg = hsl(hue($brand-1), 24, 49)
+	$bg-hue = hue($bg)
+	//button-variant__color-bg($color: $body-color, $bg-color: $brand-2) // color + bg
+	//button-variant__color-bg--hover($color: $color-l, $bg-color: alpha($color-l, 0.1)) // hover
+	//button-variant__color-bg--active($color: $color-l, $bg-color: $color-l) // active
+	position relative
+	color lighten(desaturate($bg, 30%), 70%)
+	background $bg
+	border solid darken($bg, 10)
+	border-width 0 0 4px 0
+	
+	&:hover
+		background darken($bg, 4)
+		border-bottom-color darken($bg, 13)
+	&:focus
+		top 1px
+		box-shadow: inset 0 4px 5px 0 darken($bg, 19)
+		background darken($bg, 13)
+		border-bottom-color darken($bg, 13)
+
+
+
+		
+
+
+.btn--2
+	@extend $btn1
+	$bg = hsl(hue($brand-2), 20%, 93%)
+	$bg-hue = hue($bg)
+	position relative
+	//color $nav-item__color
+	background $bg
+	border solid darken($bg, 10)
+	border-width 0 0 4px 0
+	
+	&:hover
+		background darken($bg, 4)
+		border-bottom-color darken($bg, 13)
+	&:focus
+		top 1px
+		box-shadow: inset 0 4px 5px 0 darken($bg, 19)
+		background darken($bg, 13)
+		border-bottom-color darken($bg, 13)
+
+/*.btn--2
+	@extend $btn1
+	$color-l=$nav-item__color
+	color $color-l
+	background none
+	&:hover
+		background-color $nav-item__bg--active //hsl(hue($color-l), 20%, 93%)
+	// Border
+	border 1px solid $color-l*/
+
+
+	
+	
+	
+// делает div/span ссылкой
+.btn-link
+	@extend a
+	cursor pointer
+	
+
+
+
+
+
+
+
+
+
+// Show the overflow in IE.
+// 1. Show the overflow in Edge.
+//
+// Remove the inheritance of text transform in Edge, Firefox, and IE.
+// 2. Remove the inheritance of text transform in Firefox.
+button
+	// 1
+	overflow: visible
+	// 2
+	text-transform: none
+	
+
+
+//
+// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+button
+	-webkit-appearance: button
+	

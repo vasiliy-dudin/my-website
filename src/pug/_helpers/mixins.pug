@@ -1,0 +1,26 @@
+//- Repeat. Повторяет вложенный в миксин код
+	Пример использования:
+	+repeat(3)
+		.col--sm-4 Колонка
+
+
+mixin repeat(limit)
+	- for (var i = 1; i <= limit; i++)
+		block
+
+
+//- Breadcrumbs
+	ul.breadcrumb
+		+breadcrumbs({'Main page':'Front', 'News':'news'}, 'News detail')
+mixin breadcrumbs(items, last)
+	each url, item in items
+		li.breadcrumb-item
+			//- if breadcrumb is single
+			if (items.length === 1)
+				span= url
+			else
+				a(href=url).breadcrumb-item__lnk= item
+
+	if last
+		li.breadcrumb-item.active= last
+	else

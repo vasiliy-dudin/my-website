@@ -1,0 +1,194 @@
+// ====================
+// Colors
+// ====================
+
+@import "variables__color-sets.styl"
+
+$brand-1 = $color_blue-gray--10
+$brand-2 = #c05c6b
+$brand-3 = $color_blue-gray--6
+$section-color = #f2f0f4
+
+//$brand-2 = #FFC107 // Amber 500
+//$brand-2--2 = #ffecb3 // Amber 100
+//$brand-2--3 = #fff9c2 // светлее (Например, оверлей при наведении на превью работы. Жёлтый немного другой, но хорошо сочетается);
+
+
+
+
+// Type
+$link-color = #0064d6 //#005cbf //#1E88E5; //#3949AB; #6DA3BD;
+$link-color--hover = desaturate(lighten($link-color, 30%), 50%) // darken(saturate($link-color, 100%), 50%) //darken(#d83d3a, 20%)
+$link-color--active = alpha(darken($link-color--hover, 50%))
+
+
+
+
+
+// Reassign color vars to semantic color scheme
+$brand-primary = $color_blue
+$brand-success = $color_green
+$brand-info = $color_teal
+$brand-warning = $color_orange
+$brand-danger = $color_red
+$brand-inverse = $color_gray-dark
+
+
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-color = $color_blue-gray--2
+$inverse-bg = $color_gray-dark
+$inverse-color = $color_gray-lighter
+
+
+$selection = #E1BEE7;
+
+
+
+// ====================
+// Type
+// ====================
+
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif = 'Roboto',sans-serif
+$font-family-serif = Georgia, "Times New Roman", Times, serif
+$font-family-monospace = Consolas, "Liberation Mono", "Courier New", monospace
+$font-family-base = $font-family-sans-serif
+$font-size-root = 16px
+$font-size-base = 1rem
+$font-size-lg = 1.25rem
+$font-size-sm = 0.875rem
+$font-size-xs = 0.75rem
+$font-weight-normal = normal
+$font-weight-bold = bold
+$font-weight-base = $font-weight-normal
+$line-height-base = 1.7
+
+// Headings
+$font-size-h1 = 2.35rem // 2.5rem
+$font-size-h2 = 1.35rem // 2rem
+$font-size-h3 = 1.1rem // 1.75rem
+$font-size-h4 = 1rem // 1.5rem
+$font-size-h5 = 0.9rem // 1.25rem
+$font-size-h6 = 0.8rem // 1rem
+
+
+
+//Reboot
+$dt-font-weight = $font-weight-bold
+
+
+//no
+$hr-border-color = rgba($color_black, 0.1)
+$abbr-border-color = $color_gray-light
+
+
+
+
+
+
+
+/*
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints = {xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px}
+_assert-ascending($grid-breakpoints, "$grid-breakpoints")
+_assert-starts-at-zero($grid-breakpoints)
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths = {sm: 540px, md: 720px, lg: 960px, xl: 1140px}
+_assert-ascending($container-max-widths, "$container-max-widths")
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-columns = 12
+$grid-gutter-width-base = 30px
+$grid-gutter-widths = {xs: $grid-gutter-width-base, sm: $grid-gutter-width-base, md: $grid-gutter-width-base, lg: $grid-gutter-width-base, xl: $grid-gutter-width-base}
+
+*/
+
+
+
+
+
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+$zindex-dropdown-backdrop = 990
+$zindex-navbar = 1000
+$zindex-dropdown = 1000
+$zindex-fixed = 1030
+$zindex-sticky = 1030
+$zindex-modal-backdrop = 1040
+$zindex-modal = 1050
+$zindex-popover = 1060
+$zindex-tooltip = 1070
+
+
+
+
+
+// Image thumbnails
+$thumbnail-padding = 0.25rem
+$thumbnail-bg = $body-bg
+$thumbnail-border-width = 1px
+$thumbnail-border-color = #ddd
+$thumbnail-border-radius = 3px
+$thumbnail-box-shadow = 0 1px 2px rgba($color_black, 0.075)
+$thumbnail-transition = all 0.2s ease-in-out
+
+
+// Figures
+$figure-caption-font-size = 90%
+$figure-caption-color = $color_gray-light
+
+
+
+
+
+
+
+// ====================
+// Grid
+// ====================
+
+// Grid breakpoints
+$breakpoints = {
+  'xs': 0,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px
+  //'xxl': 1400px
+}
+
+$breakpoints-and-widths = {
+	"576px": 540px,
+	"768px": 720px,
+	"992px": 960px,
+	"1200px": 1170px,
+	//"1500px": 1370px
+	}
+
+
+// Number of columns
+$columns = 12
+
+$grid-gutter-width-base = 2rem
+$grid-gutter-widths = {
+	"xs": $grid-gutter-width-base,
+	"sm": $grid-gutter-width-base,
+	"md": $grid-gutter-width-base,
+	"lg": $grid-gutter-width-base,
+	"xl": $grid-gutter-width-base
+	//"xxl": $grid-gutter-width-base
+}

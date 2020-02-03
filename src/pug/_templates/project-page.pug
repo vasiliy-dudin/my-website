@@ -1,0 +1,33 @@
+include ../_helpers/variables
+include ../_helpers/mixins
+
+doctype
+html(lang="ru")
+	head
+		include ../_includes/_head.pug
+	body.body-front
+		include ../_includes/_header.pug
+		main.main
+			.container
+				nav(aria-label="Хлебные крошки")
+					ol.breadcrumbs
+						li
+							a(href="/projects/").breadcrumbs__item.--link Проекты
+						li
+							a.breadcrumbs__item.--current(href="#" aria-current="page")
+								block page-title
+				article
+					.article-aside
+						h1
+							block page-title
+						.article-header__group
+							block group
+						.article-header__date
+							block date
+						.article-header__tags
+							block tags
+						.article-header__names
+							block names
+					block content
+
+		include ../_includes/_footer.pug

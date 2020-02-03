@@ -1,0 +1,25 @@
+$breadcrumb-link-color = $body-color
+$breadcrumb-active-color = alpha($breadcrumb-link-color, 20%)
+
+
+.breadcrumbs // ol
+	display: flex
+	margin: 0 0 0.5rem
+	padding: 0
+	font-size 0.9rem
+	line-height: 1.3
+	list-style: none
+	&__item // li
+		&:not(:last-child):after
+			content '→'
+			margin 0 0.4rem
+	&__link
+		display: inline-block
+		color $breadcrumb-link-color !important
+		border-color $breadcrumb-active-color !important
+		border-width: 1px !important
+		&.--current
+			border: 0
+			color: $breadcrumb-active-color !important
+			background none !important
+		

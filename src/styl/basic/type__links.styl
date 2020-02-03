@@ -1,0 +1,54 @@
+// Тонкое подчёркивание
+
+
+$thin-underline-opacity = 20%
+
+thin-underline--default($border-color=$link-color, $opacity=$thin-underline-opacity, $width=2px)
+	border-bottom $width solid alpha($border-color, $opacity)
+
+thin-underline--hover($border-color--hover=$link-color--hover, $opacity=$thin-underline-opacity)
+	border-color alpha($border-color--hover, $opacity)
+	
+	
+thin-underline--active($border-color--hover=$link-color--active, $opacity=$thin-underline-opacity)
+	border-color alpha($border-color--hover, $opacity)
+	
+	
+	
+
+
+a
+	text-decoration: none
+	outline: 0
+	//transition color 0.2s ease
+	// Все ссылки в тексте
+	
+	
+		
+main a
+.window a
+	thin-underline--default()
+	color $link-color
+	
+	&:not(.btn):hover
+		color $link-color--hover
+		background tint($link-color, 90%)
+	
+/*.pseudo-link
+	border-bottom-style dashed
+	cursor pointer
+	line-height 1.3
+	display inline-block*/
+
+
+// And undo these styles for placeholder links/named anchors (without href)
+// which have not been made explicitly keyboard-focusable (without tabindex).
+// It would be more straightforward to just use a[href] in previous block, but that
+// causes specificity issues in many other styles that are too complex to fix.
+// See https://github.com/twbs/bootstrap/issues/19402
+/*
+a:not([href]):not([tabindex])
+	color: inherit
+	text-decoration: none
+	&:focus
+		outline: 0*/

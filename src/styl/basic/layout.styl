@@ -1,0 +1,33 @@
+
+
+
+body
+	font-family: $font-family-base
+	font-size: $font-size-base
+	font-weight: $font-weight-base
+	line-height: $line-height-base
+	// Go easy on the eyes and use something other than `#000` for text
+	color: $body-color
+	// By default, `<body>` has no `background-color` so we set one as a best practice.
+	height: 100vh
+	
+	
+.main
+	padding-top 60px
+
+
+
+//-Прибитый подвал
+body
+	min-height: 100%
+	display: grid
+	grid-template-rows: auto 1fr auto
+	
+/*
+body
+	display flex
+	height 100vh //min-height 100vh // не работает в IE
+	flex-direction column
+.main
+	flex 1 0 auto
+*/

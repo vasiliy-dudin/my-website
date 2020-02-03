@@ -1,0 +1,35 @@
+//-Шаблон страницы
+extends ../_templates/general
+
+block prepend title
+	- var pageTitle = "Термин 1"
+	| #{pageTitle + " → "}
+
+
+block page-title
+	| #{pageTitle}
+
+block content
+	h2 Список проектов
+
+
+	//- var projectList = {"Этапы": "/", "Термины":"/terms.html", "Методологии":"/methodologies.html"}
+
+	//- Цикл, который выводит пункты меню.
+	//- Если значение переменной "menu_link_selected" совпадает с названием страницы, то присвоить класс "active"
+		each val, key in projectList
+			if menu_link_active === key
+				li.menu__item
+					a(href=val, class="menu__lnk active menu__lnk--" + key.toLowerCase())
+						span.menu__lnk__inr= key
+			else
+				li.menu__item
+					a(href=val, class="menu__lnk menu__lnk--" + key.toLowerCase())
+						span.menu__lnk__inr= key
+	div
+
+		each val in projectList
+			div= val.id
+			div= val.name
+			div= val.date
+			div= val.desc
