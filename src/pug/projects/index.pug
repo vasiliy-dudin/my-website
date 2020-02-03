@@ -2,7 +2,7 @@
 extends ../_templates/general
 
 block prepend title
-	- var pageTitle = "Термин 1"
+	- var pageTitle = "Проекты"
 	| #{pageTitle + " → "}
 
 
@@ -10,9 +10,6 @@ block page-title
 	| #{pageTitle}
 
 block content
-	h2 Список проектов
-
-
 	//- var projectList = {"Этапы": "/", "Термины":"/terms.html", "Методологии":"/methodologies.html"}
 
 	//- Цикл, который выводит пункты меню.
@@ -26,10 +23,23 @@ block content
 				li.menu__item
 					a(href=val, class="menu__lnk menu__lnk--" + key.toLowerCase())
 						span.menu__lnk__inr= key
-	div
 
+	mixin projectCard($id)
 		each val in projectList
-			div= val.id
-			div= val.name
-			div= val.date
-			div= val.desc
+			if val.id === $id
+				div(class="work-card --type-" + val.type, class={"--not-filled-in-yet": val.published === 'false'}, class="col--xs-6")
+					a.work-card__link(href='/projects/' + $id + '/')
+						.work-card__thumbnail
+							img(src='/projects/'+ $id + '/preview.png', alt='')
+						.work-card__caption-wrapper
+							.work-card__caption
+								.work-card__title= val.name
+								.work-card__desc= val.desc
+								span.work-card__date= val.date
+								if val.published === 'false'
+									.work-card__not-available-message В процессе наполнения
+
+
+	.row.work-list
+		+projectCard("1")
+		+projectCard("2")
