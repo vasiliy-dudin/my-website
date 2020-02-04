@@ -4,13 +4,15 @@ include ../_helpers/mixins
 doctype
 html(lang="ru")
 	head
-		include ../_includes/_head.pug
+		include _includes/_head.pug
 	body.body-front
-		include ../_includes/_header.pug
+		include _includes/_header.pug
 		main.main
 			.container
-				h1
-					block page-title
+				if !$isFront
+					+breadcrumbs({'Главная': '/'})
+					h1
+						block page-title
 				block content
 
-		include ../_includes/_footer.pug
+		include _includes/_footer.pug

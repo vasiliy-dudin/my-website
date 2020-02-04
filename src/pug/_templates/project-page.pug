@@ -4,18 +4,12 @@ include ../_helpers/mixins
 doctype
 html(lang="ru")
 	head
-		include ../_includes/_head.pug
+		include _includes/_head.pug
 	body.body-front
-		include ../_includes/_header.pug
+		include _includes/_header.pug
 		main.main
 			.container
-				nav(aria-label="Хлебные крошки")
-					ol.breadcrumbs
-						li
-							a(href="/projects/").breadcrumbs__item.--link Проекты
-						li
-							a.breadcrumbs__item.--current(href="#" aria-current="page")
-								block page-title
+				+breadcrumbs({'Главная': '/', 'Проекты': '/projects/'})
 				article
 					.article-aside
 						h1
@@ -30,4 +24,4 @@ html(lang="ru")
 							block names
 					block content
 
-		include ../_includes/_footer.pug
+		include _includes/_footer.pug

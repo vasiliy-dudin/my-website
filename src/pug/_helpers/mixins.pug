@@ -2,8 +2,6 @@
 	Пример использования:
 	+repeat(3)
 		.col--sm-4 Колонка
-
-
 mixin repeat(limit)
 	- for (var i = 1; i <= limit; i++)
 		block
@@ -11,16 +9,17 @@ mixin repeat(limit)
 
 //- Breadcrumbs
 	ul.breadcrumb
-		+breadcrumbs({'Main page':'Front', 'News':'news'}, 'News detail')
-mixin breadcrumbs(items, last)
-	each url, item in items
-		li.breadcrumb-item
-			//- if breadcrumb is single
-			if (items.length === 1)
-				span= url
-			else
-				a(href=url).breadcrumb-item__lnk= item
+		+breadcrumbs({'Main page':'/', 'News':'/news'})
+mixin breadcrumbs(items)
+	nav(aria-label="Хлебные крошки")
+		ol.breadcrumbs
+			each url, item in items
+				li.breadcrumbs__item
+					//- if breadcrumb is single
+					if (items.length === 1)
+						span= url
+					else
+						a(href=url).breadcrumbs__link= item
 
-	if last
-		li.breadcrumb-item.active= last
-	else
+			li.breadcrumbs__item
+				a(href="#" aria-current="page").breadcrumbs__link.--current= pageTitle
