@@ -24,22 +24,41 @@ block content
 					a(href=val, class="menu__lnk menu__lnk--" + key.toLowerCase())
 						span.menu__lnk__inr= key
 
-	mixin projectCard($projectID, $width)
+	mixin projectCard($projectPriority, $width)
 		each val in projectList
-			if val.id === $projectID
-				div(class="project-card --type-"+val.type, class={"--not-filled-in-yet": val.published === 'false'}, class="col--xs-"+$width)
-					a.project-card__link(href='/projects/' + $projectID + '/')
+			if val.priority === $projectPriority
+				div(class="project-card", class={"--not-filled-in-yet": val.type === "unpublished"}, class="col--xs-"+$width)
+
+					//- Подставляется после case
+					mixin _projectList-content
 						.project-card__thumbnail
-							img(src='/projects/'+ $projectID + '/preview.png', alt='')
+							//- todo img(src='/projects/'+ $projectID + '/preview.png', alt='')
+							img(src='/projects/1/preview.png', alt='')
 						.project-card__caption-wrapper
-							.project-card__caption
+							.project-card__caption(class={"--external": val.type === "external"})
 								.project-card__title= val.name
 								.project-card__desc= val.desc
 								span.project-card__date= val.date
-								if val.published === 'false'
+								if val.published === false
 									.project-card__not-available-message В процессе наполнения
 
 
+					case val.type
+						when "internal"
+							a.project-card__link(href='/projects/' + val.id + '/')
+								+_projectList-content
+						when "external"
+							a.project-card__link(href=val.targetURL, target='_blank', rel="nofollow noopener noreferrer")
+								+_projectList-content
+						when "unpublished"
+							+_projectList-content
+
+
+
 	.row.project-list
-		+projectCard($projectID="1", $width="6")
-		+projectCard($projectID="2", $width="4")
+		+projectCard($projectPriority="1", $width="6")
+	h2 Собственное бюро и фриланс
+	.row.project-list
+		+projectCard($projectPriority="2", $width="6")
+	.row.project-list
+		+projectCard($projectPriority="3", $width="4")

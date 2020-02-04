@@ -2,22 +2,202 @@
   "projectList" : [
 	{
 	  "id": "1",
-	  "name": "Название проекта 1",
-	  "date": "2019",
-	  "desc": "One morning, when Gregor Samsa woke from troubled dreams.",
-	  "type": "1",
-	  "published": "true"
-
+	  "name": "SEMrush",
+	  "desc": "SaaS для маркетологов",
+	  "date": "2018-2020",
+	  "priority": "1",
+	  "type": "internal"
 	},
 	{
 	  "id": "2",
-	  "name": "Название проекта 2",
+	  "name": "pitera11y_meetup",
+	  "desc": "Организатор митапа о веб-доступности",
+	  "date": "С 2019",
+	  "priority": "1",
+	  "type": "internal"
+	},
+	{
+	  "id": "3",
+	  "name": "Accessible Components",
+	  "desc": "Веб-коппоненты для разработчиков",
 	  "date": "2019",
-	  "desc": "Drops of rain could be heard hitting the pane, which made him feel quite sad. \"How about if I sleep a little bit longer and fo.",
-	  "type": "3",
-	  "published": "false",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/63/"
+	  "priority": "1",
+	  "type": "internal"
+	},
+	{
+	  "id": "4",
+	  "name": "Binomo",
+	  "desc": "Приложение трейдинговой платформы",
+	  "date": "2018",
+	  "priority": "1",
+	  "type": "internal"
+	},
+	{
+	  "id": "63",
+	  "name": "P2P каршеринг",
+	  "desc": "Сервис аренды и сдачи автомобилей в аренду",
+	  "date": "11 дек 2017",
+	  "priority": "2",
+	  "type": "external",
+	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/63"
+	},
+	{
+	  "id": "60",
+	  "name": "Book24",
+	  "desc": "Приложение и мобильная версия магазина",
+	  "date": "19 дек 2017",
+	  "priority": "2",
+	  "type": "external",
+	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/60"
+	},
+	{
+	  "id": "12",
+	  "name": "Serp.farm SiteManager",
+	  "desc": "SaaS для управления WordPress сайтами",
+	  "date": "2 фев 2017",
+	  "priority": "2",
+	  "type": "external",
+	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/12"
+	},
+	{
+	  "id": "13",
+	  "name": "Serp.farm Generator",
+	  "desc": "WP плагин для генерации контента",
+	  "date": "15 фев 2017",
+	  "priority": "2",
+	  "type": "external",
+	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/13"
+	},
+	{
+	  "id": "20",
+	  "name": "E-pepper",
+	  "desc": "СМИ о e-commerce",
+	  "date": "15 янв 2016",
+	  "priority": "2",
+	  "type": "external",
+	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/20"
+	},
+	{
+	  "id": "21",
+	  "name": "Республика игр",
+	  "desc": "Магазин компьютерных игр, приставок и аксессуаров",
+	  "date": "18 авг 2015",
+	  "priority": "2",
+	  "type": "external",
+	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/21"
+	},
 
+
+
+
+
+	{
+	  "id": "53",
+	  "name": "Keep it Current",
+	  "desc": "Плагин для регулярных операций в WordPress",
+	  "date": "4 мая 2017",
+	  "priority": "3",
+	  "type": "external",
+	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/53"
+	},
+	{
+	  "id": "57",
+	  "name": "ftbland",
+	  "desc": "CRM",
+	  "date": "15 фев 2017",
+	  "priority": "3",
+	  "type": "external",
+	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/57"
+	},
+	{
+	  "id": "56",
+	  "name": "ЕГРЗ",
+	  "desc": "Гос. портал",
+	  "date": "15 июн 2017",
+	  "priority": "3",
+	  "type": "unpublished"
+	},
+	{
+	  "id": "22",
+	  "name": "Микрокредитная организация Ilma",
+	  "desc": "CRM",
+	  "date": "6 окт 2016",
+	  "priority": "3",
+	  "type": "unpublished"
+	},
+	{
+	  "id": "23",
+	  "name": "Модные вместе",
+	  "desc": "Магазин тканей",
+	  "date": "27 апр 2015",
+	  "priority": "3",
+	  "type": "external",
+	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/23"
+	},
+	{
+	  "id": "24",
+	  "name": "Стоматология Headway",
+	  "desc": "Корпоративный сайт",
+	  "date": "6 окт 2016",
+	  "priority": "3",
+	  "type": "unpublished"
+	},
+	{
+	  "id": "25",
+	  "name": "Mirandi Club",
+	  "desc": "Винный магазин",
+	  "date": "13 апр 2016",
+	  "priority": "3",
+	  "type": "unpublished"
+	},
+	{
+	  "id": "26",
+	  "name": "Парадный Петербург",
+	  "desc": "Калькулятор стоимости",
+	  "date": "06 окт 2016",
+	  "priority": "3",
+	  "type": "unpublished"
+	},
+	{
+	  "id": "34",
+	  "name": "ВКонтакте",
+	  "desc": "Конкурс редизайна",
+	  "date": "02 авг 2014",
+	  "priority": "3",
+	  "type": "external",
+	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/34"
+	},
+	{
+	  "id": "28",
+	  "name": "Невские шкафы",
+	  "desc": "Магазин шкафов",
+	  "date": "22 янв 2016",
+	  "priority": "3",
+	  "type": "unpublished"
+	},
+	{
+	  "id": "30",
+	  "name": "Торговый центр Украина",
+	  "desc": "Сайт ТЦ",
+	  "date": "24 фев 2015",
+	  "priority": "3",
+	  "type": "unpublished"
+	},
+	{
+	  "id": "31",
+	  "name": "Hookah Store",
+	  "desc": "Магазин кальянов и табака",
+	  "date": "29 авг 2014",
+	  "priority": "3",
+	  "type": "unpublished"
+	},
+	{
+	  "id": "32",
+	  "name": "Парусный спорт и ЗОЖ",
+	  "desc": "Портал",
+	  "date": "6 авг 2014",
+	  "priority": "3",
+	  "type": "unpublished"
 	}
   ]
 }
