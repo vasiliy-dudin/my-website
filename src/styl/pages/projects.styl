@@ -1,0 +1,116 @@
+//.portfolio
+
+
+.project-card
+	position: relative
+	margin-bottom: $grid-gutter-width-base
+	&__link
+		position: relative
+		display: block
+		border: 0 !important
+		text-decoration: none
+		box-shadow: 0 5px 15px alpha(#000, 20%)
+		
+		
+	// Изображение
+	img
+		display: block
+		@extend .img-fluid
+		
+		
+	//caption
+	$caption-bg = $brand-1
+	&__caption
+		&-wrapper // обёртка
+			@extend .d-flex
+			position: absolute
+			bottom: 0
+			flex-direction: column
+			align-items: baseline
+		display: inline-block
+		line-height: 1.2
+		//background: alpha(@brand-8, 80%) //rgba(255, 238, 108, 0.85)
+		background: $caption-bg
+		padding: 6px 10px
+	&__title
+		font-size: 1.2rem
+		//color: desaturate(lighten($caption-bg, 60%), 50%)
+		color: lighten(desaturate($caption-bg, 50%), 80%)
+		display: inline
+
+	&__desc
+	&__date
+	&__type
+		font-size: 0.9rem
+		display: block
+
+	&__desc
+		margin-top: 6px
+		color: lighten(desaturate($caption-bg, 50%), 50%)
+
+	&__date
+		color: lighten(desaturate($caption-bg, 40%), 25%)
+	&__type
+		color: hsl(hue($brand-1), saturation($brand-1), 15%)
+
+		
+	// ПЕРЕПИСАТЬ?	
+	+media-breakpoint-down(500px)
+		width: 100%
+	+media-down(md)
+		font-size: 0.9rem
+
+
+
+
+
+// thumbnail + caption states
+.project-card
+	&__link
+		& ^[0]__thumbnail:before
+			content: ''
+			width: 100%
+			height: 100%
+			position: absolute
+			display: block
+			top: 0
+			left: 0
+			transition: all .1s ease
+		
+		
+		$img-overlay = lighten(saturate($brand-2, 40%), 80%)
+		// On link hover
+		&:hover
+			& ^[0]__thumbnail:before
+				background: alpha($img-overlay, 24%);
+				
+		// On link active
+		&:active
+		&:focus
+			& ^[0]__thumbnail:before
+				background: alpha($img-overlay, 70%);
+	
+	/*
+	Работа в процессе наполнения
+	*/
+	/.not-filled-in-yet
+		opacity: .35
+		filter: saturate(0)
+		.work__title
+			border-color: transparent
+	
+	&__not-available-message
+		line-height: 1
+		font-size: .9rem
+		color: #000000
+	
+	
+	
+	
+	
+/*
+Вторичные работы (старые и не очень интересные)
+*/
+
+.project-list--secondary
+	margin-top 100px

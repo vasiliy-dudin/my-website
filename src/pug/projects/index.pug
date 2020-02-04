@@ -24,22 +24,22 @@ block content
 					a(href=val, class="menu__lnk menu__lnk--" + key.toLowerCase())
 						span.menu__lnk__inr= key
 
-	mixin projectCard($id)
+	mixin projectCard($projectID, $width)
 		each val in projectList
-			if val.id === $id
-				div(class="work-card --type-" + val.type, class={"--not-filled-in-yet": val.published === 'false'}, class="col--xs-6")
-					a.work-card__link(href='/projects/' + $id + '/')
-						.work-card__thumbnail
-							img(src='/projects/'+ $id + '/preview.png', alt='')
-						.work-card__caption-wrapper
-							.work-card__caption
-								.work-card__title= val.name
-								.work-card__desc= val.desc
-								span.work-card__date= val.date
+			if val.id === $projectID
+				div(class="project-card --type-"+val.type, class={"--not-filled-in-yet": val.published === 'false'}, class="col--xs-"+$width)
+					a.project-card__link(href='/projects/' + $projectID + '/')
+						.project-card__thumbnail
+							img(src='/projects/'+ $projectID + '/preview.png', alt='')
+						.project-card__caption-wrapper
+							.project-card__caption
+								.project-card__title= val.name
+								.project-card__desc= val.desc
+								span.project-card__date= val.date
 								if val.published === 'false'
-									.work-card__not-available-message В процессе наполнения
+									.project-card__not-available-message В процессе наполнения
 
 
-	.row.work-list
-		+projectCard("1")
-		+projectCard("2")
+	.row.project-list
+		+projectCard($projectID="1", $width="6")
+		+projectCard($projectID="2", $width="4")
