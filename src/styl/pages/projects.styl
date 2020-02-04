@@ -29,9 +29,14 @@
 			align-items: baseline
 		display: inline-block
 		line-height: 1.2
-		//background: alpha(@brand-8, 80%) //rgba(255, 238, 108, 0.85)
-		background: $caption-bg
 		padding: 6px 10px
+		background-color: $caption-bg
+		&.--external
+			padding-right: 40px
+			background-image: url("../imgs/icons/external-link.svg")
+			background-repeat: no-repeat
+			background-position: top 8px right 8px
+			background-size 16px
 	&__title
 		font-size: 1.2rem
 		//color: desaturate(lighten($caption-bg, 60%), 50%)
@@ -93,7 +98,7 @@
 	/*
 	Работа в процессе наполнения
 	*/
-	/.not-filled-in-yet
+	/.--not-filled-in-yet
 		opacity: .35
 		filter: saturate(0)
 		.work__title
