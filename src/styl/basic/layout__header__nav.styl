@@ -2,7 +2,7 @@
 	height: 100%
 
 .menu // ul
-	$bg--active = darken($header__bg, 10%)
+	$bg--active = lighten($header__bg, 10%)
 	
 	height: 100%
 	margin 0
@@ -15,7 +15,7 @@
 		transition background 0.15s
 		color $header__color !important
 		font-size 0.9rem
-		line-height: 1.2
+		line-height: 1.5
 		&.--active
 			background-color $bg--active !important
 		&:hover
