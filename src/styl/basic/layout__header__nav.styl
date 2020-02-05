@@ -2,8 +2,9 @@
 	height: 100%
 
 .menu // ul
-	$bg--active = lighten($header__bg, 10%)
-	
+	$bg--active = lighten($header__bg, $thin-underline-opacity)
+
+	display: flex
 	height: 100%
 	margin 0
 	padding 0
@@ -11,6 +12,7 @@
 	
 	
 	&__lnk
+		display: flex
 		height: 100%
 		transition background 0.15s
 		color $header__color !important
@@ -18,8 +20,10 @@
 		line-height: 1.5
 		&.--active
 			background-color $bg--active !important
+			& ^[1]__inr
+				border-color alpha($header__color, $thin-underline-opacity+20)
 		&:hover
-			background-color lighten($bg--active, 4)
+			background-color darken($bg--active, 20)
 		&__inr
 			display: inline-block
 			border-bottom: 2px solid alpha($header__color, $thin-underline-opacity)
@@ -29,7 +33,6 @@
 		flex 1 0 100%
 		text-align right
 		+media(md)
-			display: flex
 			align-items center
 			padding 0 2vw
 			flex 0 0 auto
@@ -52,10 +55,11 @@
 	
 	// Адаптивное
 	flex-wrap wrap
-	//justify-content: center
+	margin-top 1.5rem
 	+media(md)
 		flex-direction row
 		flex-wrap nowrap
+		margin-top: 0
 	//justify-content flex-start
 	//align-items center
 	
@@ -88,28 +92,3 @@
 
 // Мобильное меню
 
-// Гамбургер (.expand-lnk)
-.hamburger
-	position absolute
-	height: 35px
-	width: 35px
-	z-index 999
-	background: svg-load('../imgs/icons/hamurger.svg') no-repeat 50% 50%
-	background-size: 20px
-	top: 18px
-	right: 15px
-	border-radius: 3px
-	&.in
-		background-color darken($mob-navbar-bg, 20%)
-	
-	+media(md)
-		display: none
-
-// Разворачивается/сворачивается
-.expand-block
-	//display: none
-	//flex-grow 1
-	display: none
-	overflow: hidden
-	+media(md)
-		display: flex !important

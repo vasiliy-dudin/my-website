@@ -8,14 +8,6 @@ $header__color = #fff
 	//background-image linear-gradient(135deg, #5e5e5e 10%, $brand-1 250%)
 	background $header__bg
 	box-shadow 0 2px 5px rgba(0, 0, 0, 0.25)
-	
-	//Адаптивное
-	+media-down(md)
-		>.container
-		>.container
-			width: 100% // Пока не понял, зачем
-			padding: 0
-	
 
 // Строка с навигацией и названием сайта
 .navbar
@@ -26,11 +18,13 @@ $header__color = #fff
 	
 	// Адаптивное
 	flex-direction column
+	align-items: center // выравнивает navbar-header по вертикали
+	padding 1rem 0
 	+media(md)
-		height 50px
+		height 90px
 		flex-direction: row
 		justify-content: space-between
-		align-items: center // выравнивает navbar-header по вертикали
+		padding 0 ($grid-gutter-width-base / 2)
 	
 
 			
@@ -38,31 +32,24 @@ $header__color = #fff
 		
 		
 
-// sitename + slogan
-
-.navbar-header-wrp
-	@extend .d-flex
-	// Адаптивное
-	width 100%
-	height 70px
-	background $mob-navbar-bg
-	+media(md)
-		height unset
-		width auto
-		margin-right: 10px
-		background transparent
-	
 .navbar-header
 	@extend .d-flex
+	align-items center
+.logo
+	height 100%
+	margin-right: 0.5rem
+	// Адаптивное
+	width: 30px
+	+media(md)
+		width: 45px
+
+// sitename + slogan
+.sitename-slogan
+	@extend .d-flex
+	flex-direction: column
 	line-height 0
 		
-	// Адаптивное
-	margin: auto 15px
-	align-items: flex-start
-	//color lighten(desaturate($mob-navbar-bg, 50%), 70%) !important
-	+media(md)
-		align-items: center
-		margin: 0
+
 	
 
 /* .navbar-header
@@ -82,7 +69,7 @@ $header__color = #fff
 .sitename
 	color $header__color
 	line-height 1
-	//font-size 1.1rem
+	font-size 1.2rem
 	font-weight bold
 	span
 		display block
@@ -91,10 +78,8 @@ $header__color = #fff
 	display flex
 	flex-direction column
 	line-height 1.2
-	font-size 0.7rem
+	font-size 0.9rem
 	color $header__color
-	+media(md)
-		margin-left 10px
 	
 	
 

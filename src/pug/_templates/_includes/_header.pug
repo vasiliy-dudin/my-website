@@ -5,13 +5,14 @@ include ../../_helpers/mixins.pug
 
 header.header
 	.container.navbar
-		.navbar-header-wrp
-			a.navbar-header(href="/")
+		a.navbar-header(href="/")
+			.logo
+				img(src="/imgs/logo.svg" alt="")
+			.sitename-slogan
 				.sitename=siteName
 				.slogan=slogan
 		nav.nav
-			button.hamburger.expand-lnk
-			ul.menu.nav-wrp.expand-block
+			ul.menu
 				//- Цикл, который выводит пункты меню.
 				//- Если значение переменной "$menu_activeLink" совпадает с id, то присвоить класс "active"
 				each i in $menu
