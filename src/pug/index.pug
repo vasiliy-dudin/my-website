@@ -2,7 +2,7 @@
 extends _templates/general
 
 block prepend title
-	- var pageTitle = "Василий Дудин"
+	- var pageTitle = "Обо мне"
 	| #{pageTitle +". "}
 
 
@@ -15,8 +15,6 @@ block page-title
 	| #{pageTitle}
 
 block vars
-	//- Указыаем, что страница главная. Используется, например, для скрытия хлебных крошек.
-	- var $isFront = true
 
 	//- Активный пунт меню
 	- var $menu_activeLink = "1"
@@ -27,8 +25,5 @@ block vars
 
 
 block content
-	section.section
-		h2 Обо мне
-
-	section.section
-		h2 Проекты
+	section.front-section
+		h2 Навыки
