@@ -13,7 +13,8 @@ header.header
 			button.hamburger.expand-lnk
 			ul.menu.nav-wrp.expand-block
 				//- Цикл, который выводит пункты меню.
-				each val, key in {"Обо мне": "/", "Проекты":"/projects/", "Контакты":"/contacts/"}
+				//- Если значение переменной "$menu_activeLink" совпадает с id, то присвоить класс "active"
+				each i in $menu
 					li.menu__item
-						a(href=val, class="menu__lnk menu__lnk--" + key.toLowerCase())
-							span.menu__lnk__inr= key
+						a(href=i.path, class="menu__lnk", class={"--active": $menu_activeLink === i.id})
+							span.menu__lnk__inr= i.name

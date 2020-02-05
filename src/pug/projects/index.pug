@@ -9,20 +9,12 @@ block prepend title
 block page-title
 	| #{pageTitle}
 
-block content
-	//- var projectList = {"Этапы": "/", "Термины":"/terms.html", "Методологии":"/methodologies.html"}
 
-	//- Цикл, который выводит пункты меню.
-	//- Если значение переменной "menu_link_selected" совпадает с названием страницы, то присвоить класс "active"
-		each val, key in projectList
-			if menu_link_active === key
-				li.menu__item
-					a(href=val, class="menu__lnk active menu__lnk--" + key.toLowerCase())
-						span.menu__lnk__inr= key
-			else
-				li.menu__item
-					a(href=val, class="menu__lnk menu__lnk--" + key.toLowerCase())
-						span.menu__lnk__inr= key
+block vars
+	//- Активный пунт меню
+	- var $menu_activeLink = "2"
+
+block content
 
 	mixin projectCard($projectPriority, $width)
 		each val in projectList
