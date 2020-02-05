@@ -1,0 +1,23 @@
+.contact-item
+	&:not(:last-child)
+		margin-bottom: 4px
+
+
+.contact-lnk
+	display: inline-flex
+	align-items center
+	border 0
+	&__icon
+		//display: inline-block
+		width: 15px
+		height: 20px
+		margin-right 0.5rem
+	&__icon path
+		fill $link-color
+		^[0]:hover &
+			fill $link-color--hover
+
+	&__text
+		thin-underline--default()
+		^[0]:hover &
+			thin-underline--hover()
