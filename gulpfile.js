@@ -31,7 +31,8 @@ var gulp = require('gulp'),
 	postcss_inline_svg = require('postcss-inline-svg'),
 	replace = require('gulp-replace'),
 	purify = require('gulp-purifycss'),	// Убирает неиспользуемые стили
-	svgSprite = require('gulp-svg-sprite');
+	svgSprite = require('gulp-svg-sprite'),
+	flatten = require('gulp-flatten');
 
 
 
@@ -196,42 +197,65 @@ gulp.task('Build--Test', gulp.parallel('__compileStylus', '__mergeJS', '__compil
 		.pipe(gulp.dest('test/favicons'));
 
 	// Images
-	gulp.src('src/imgs/**/*')
+	gulp.src([
+		'src/imgs/**/*.{png,gif,jpg,svg}',
+		'!src/imgs/**/_*' // Исключаем картинки, которые встраиваются на страницу
+		])
 		.pipe(gulp.dest('test/imgs'));
+
+	// pug images, чтобы картинки из папки src/pug были рядом с html, а не в папке test/pug
+	gulp.src([
+		'src/pug/**/*.{png,gif,jpg,svg}',
+		'!src/pug/**/_*' // Исключаем картинки, которые встраиваются на страницу
+		])
+		.pipe(flatten({ subPath: [0] }))
+		.pipe(gulp.dest('test'));
 
 	cb();
 	})
 );
 
 // → "dist"
-gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.parallel('__compileStylus', '__mergeJS'), function(cb) {
+gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.parallel('__compileStylus', '__mergeJS', '__compilePug'), function(cb) {
 	// Шрифты
 	gulp.src('src/fonts/**/*')
 		.pipe(gulp.dest('dist/fonts'));
 
+
+	var $imageminSettings = [
+		imagemin.gifsicle({interlaced: true}),
+		imagemin.jpegtran({progressive: true}),
+		imagemin.optipng({optimizationLevel: 7}),
+		imagemin.svgo({plugins: [{removeViewBox: true}]})
+	];
+
 	// Favicons
 	gulp.src('src/favicons/**/*')
-		.pipe(cache(imagemin([
-			imagemin.gifsicle({interlaced: true}),
-			imagemin.jpegtran({progressive: true}),
-			imagemin.optipng({optimizationLevel: 7}),
-			imagemin.svgo({plugins: [{removeViewBox: true}]})
-		])))
+		.pipe(cache(imagemin($imageminSettings)))
 		.pipe(gulp.dest('dist/favicons'));
 
 	// Images (с оптимизацией)
-	gulp.src('src/imgs/**/*') // Выбираем папку с исходными изображениями
-		.pipe(cache(imagemin([
-			imagemin.gifsicle({interlaced: true}),
-			imagemin.jpegtran({progressive: true}),
-			imagemin.optipng({optimizationLevel: 7}),
-			imagemin.svgo({plugins: [{removeViewBox: true}]})
-		])))
+	gulp.src([
+		'src/imgs/**/*.{png,gif,jpg,svg}',
+		'!src/imgs/**/_*' // Исключаем картинки, которые встраиваются на страницу
+		])
+		.pipe(cache(imagemin($imageminSettings)))
 		.pipe(gulp.dest('dist/imgs'));
 
-	/*// Copy html
-	gulp.src('test/!**!/!*.html')
-		.pipe(gulp.dest("dist"));*/
+	// pug images, чтобы картинки из папки src/pug были рядом с html, а не в папке test/pug
+	gulp.src([
+		'src/pug/**/*.{png,gif,jpg,svg}',
+		'!src/pug/**/_*' // Исключаем картинки, которые встраиваются на страницу
+	])
+		.pipe(cache(imagemin($imageminSettings)))
+		.pipe(flatten({ subPath: [0] }))
+		.pipe(gulp.dest('dist'));
+
+	// Copy html
+	gulp.src('test/**/*.html')
+		.pipe(gulp.dest("dist"));
+
+
 
 
 	// CSS
