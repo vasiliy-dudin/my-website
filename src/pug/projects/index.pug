@@ -19,7 +19,7 @@ block content
 	mixin projectCard($projectPriority, $width)
 		each val in projectList
 			if val.priority === $projectPriority
-				div(class="project-card", class={"--not-filled-in-yet": val.type === "unpublished"}, class="col--xs-"+$width)
+				div(class="project-card", class={"--not-filled-in-yet": val.type === "unpublished"}, class=$width)
 
 					//- Подставляется после case
 					mixin _projectList-content
@@ -48,9 +48,9 @@ block content
 
 
 	.row.project-list
-		+projectCard($projectPriority="1", $width="6")
+		+projectCard($projectPriority="1", $width="col--xs-6")
 	h2 Собственное бюро и фриланс
 	.row.project-list
-		+projectCard($projectPriority="2", $width="6")
+		+projectCard($projectPriority="2", $width="col--xs-6")
 	.row.project-list
-		+projectCard($projectPriority="3", $width="4")
+		+projectCard($projectPriority="3", $width="col--xs-6 col--md-4")
