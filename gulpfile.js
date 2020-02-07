@@ -262,7 +262,9 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 		.pipe(minifyInline())
 		.pipe(gulp.dest("dist"));
 
-
+	// Copy robots.txt
+	gulp.src('src/robots.txt')
+		.pipe(gulp.dest("dist"));
 
 
 	// CSS
