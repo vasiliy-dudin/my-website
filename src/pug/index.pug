@@ -15,7 +15,6 @@ block page-title
 	| #{pageTitle}
 
 block vars
-
 	//- Активный пунт меню
 	- var $menu_activeLink = "1"
 
@@ -25,5 +24,83 @@ block vars
 
 
 block content
-	section.front-section
+	section.section.section--front.section--hero
+		//- h2 Первый блок без заголовка
+		.row
+			.col--sm-3
+				img(src="/imgs/i.jpg" alt="").img-fluid.i
+			.col--sm-9.features
+				.row
+					mixin feature
+						.col--sm-6.features__item
+							.features__text
+								block
+
+					+feature
+						| Люблю проектировать сервисы, улучшать жизнь людей и работать в продуктовых компаниях.
+
+					+feature
+						| Проектирую
+						<script>
+							include ../js/_YearsCalc.js
+						</script>
+
+					+feature
+						| Организую митап по веб-доступности.
+
+					+feature
+						| Работаю над собой и много читаю.
+
+
+
+	section.section.section--front
 		h2 Навыки
+		ul
+			li Проектирование
+				ul
+					li Прототипирование в Axure RP (нет ничего лучше для сложных взаимодействий), Figma
+					li Моделирование процессов: User Flow, UML Activity Diagram, BPMN
+					li Информационная архитектура
+					li Написание интерфейсных текстов, умею писать «вы» с маленькой буквы
+			li Веб-аналитика: BigQuery, SQL, Google Analytics
+			li UX аналитика
+				ul
+					li Разработка требований к ПО
+					li Метод персон
+					li Customer Journey Map
+					li Метод персон
+			li Исследования
+				ul
+					li Юзабилити-тестирование (лабораторные и коридорные)
+					li Интервью
+					li Анкетирование
+					li Карточная сортировка
+					li Анализ фидбэка пользователей
+					li A/B-тестирование
+			li Софт-скиллы
+				ul
+					li Дипломатичность
+					li Развитое критическое мышление
+					li Самостоятельность
+					li Высокая организованность и работоспособность, я адепт GTD и всяких продуктивных практик.
+					li Высокий уровень эмпатии
+	section.section.section--front
+		h2 Навыки в смежных областях
+		p В прошлом человек-оркестр. Создавал сайты, исполняя роли руководителя проектов, проектировщика, графического дизайнера, верстальщика и разработчика одновременно.
+		ul
+			li Вёрстка, HTML, CSS, LESS, Stylus, Pug [9/10];
+			li jQuery [6/10];
+			li SQL []
+			li Git [8/10];
+			li SEO [7/10];
+			li визуальный дизайн [7/10];
+			li JavaScript, PHP, С++  [4/10];
+			li разработка под CMS/CMF MODX и Drupal [7/10];
+			li Администрирование Linux и Windows [7/10];
+			li Adobe Photoshop (визуальный дизайн, фотомонтаж, обработка изображений, анимация) [7/10];
+			li Adobe Illustrator [6/10];
+			li Microsoft Excel/Word/Access/PowerPoint [9/10];
+			li английский язык [intermediate];
+	section.section.section--front
+		h2 Интересы и увлечения
+		p Наука, архитектура, промышленный и городской дизайн, дизайн интерьеров, психология, современные технологии, компьютерная техника.	DIY, велопрогулки, цифровая и аналоговая фотография, интеллектуальное кино, бег.

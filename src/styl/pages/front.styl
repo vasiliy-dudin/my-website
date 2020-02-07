@@ -1,7 +1,35 @@
-.front-intro
+.section
+	padding 2rem
+	background #fff
+	&:not(:last-child)
+		margin-bottom: 2rem
+	h2
+		margin-top: 0
+	&--hero
+		padding 1rem
+
+.i
 	margin-bottom 2rem
-
-
-.stages .col
-	background: #cdcfde
-	//border 1px solid $brand-2
+	+media(md)
+		margin-bottom 0
+.features
+	margin: auto
+	&__item
+		display: flex
+		&:nth-child(-n+3)
+			margin-bottom: 1rem
+		+media(sm)
+			&:nth-child(-n+3)
+				margin-bottom: 0
+			&:nth-child(-n+2)
+				margin-bottom: 1rem
+		&:before
+			content ''
+			background url(/imgs/feature-icon.svg) no-repeat 50% 50% // todo улучшить иконку?
+			background-size contain
+			flex: 0 0 auto
+			height: 28px
+			width: @height
+			border: 1px solid
+			border-radius: 50%
+			margin-right: 0.5rem
