@@ -1,26 +1,14 @@
 //-Шаблон страницы
 extends ../_templates/general
 
-block prepend title
-	- var pageTitle = "Контакты"
-	| #{pageTitle +". "}
-
-
 block head__meta
 
 block head__scripts
 
-block page-title
-	//- | #{pageTitle}
-	| #{pageTitle}
-
 block vars
 	//- Активный пунт меню
 	- var $menu_activeLink = "3"
-
-
-
-
+	- var $h1 = "Контакты"
 
 
 block content

@@ -5,14 +5,13 @@ doctype
 html(lang="ru")
 	head
 		include _includes/_head.pug
-	body.body-front
+	body
 		include _includes/_header.pug
 		main.main
 			.container
 				if $menu_activeLink != "1"
 					+breadcrumbs({'Главная': '/'})
-				h1
-					block page-title
+				h1= $h1
 				block content
 
 		include _includes/_footer.pug

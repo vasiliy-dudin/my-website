@@ -2,27 +2,22 @@ include ../_helpers/variables
 include ../_helpers/mixins
 //- Активный пунт меню
 - var $menu_activeLink = "2"
+
 doctype
 html(lang="ru")
 	head
 		include _includes/_head.pug
-	body.body-front
+	body
 		include _includes/_header.pug
 		main.main
 			.container
 				+breadcrumbs({'Главная': '/', 'Проекты': '/projects/'})
 				article
-					.article-aside
-						h1
-							block page-title
-						.article-header__group
-							block group
-						.article-header__date
-							block date
-						.article-header__tags
-							block tags
-						.article-header__names
-							block names
+					header.project-header
+						h1= $h1
+						p= $desc
+						p= $date
+
 					block content
 
 		include _includes/_footer.pug

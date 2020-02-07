@@ -1,21 +1,15 @@
 //-Шаблон страницы
 extends ../_templates/general
 
-block prepend title
-	- var pageTitle = "Проекты"
-	| #{pageTitle + " → "}
-
-
-block page-title
-	| #{pageTitle}
-
 
 block vars
 	//- Активный пунт меню
 	- var $menu_activeLink = "2"
+	- var $h1 = "Проекты"
+
+
 
 block content
-
 	mixin projectCard($projectPriority, $width)
 		each val in projectList
 			if val.priority === $projectPriority

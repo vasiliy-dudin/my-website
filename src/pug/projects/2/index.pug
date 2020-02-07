@@ -1,31 +1,14 @@
 //-Шаблон страницы
 extends ../../_templates/project-page
 
-block prepend title
-	- var pageTitle = "Термин 2"
-	| #{pageTitle + " → "}
-
-
 block head__meta
 
 block head__scripts
 
-block page-title
-	| #{pageTitle}
+block vars
+	// ID проекта. По нему вытаскиваем нужные поля.
+	- var $projectID = "2"
 
-
-
-block group
-	| Название группы
-
-block date
-	| 7 окт. 2019
-
-block tags
-	| тег1, тег2
-
-block names
-	| имя 1, имя 2
 
 block content
 	p Его многочисленные, убого тонкие по сравнению с остальным телом ножки беспомощно копошились у него перед глазами. «Что со мной случилось? » – подумал он. Это не было сном. Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в своих четырех хорошо знакомых стенах.
