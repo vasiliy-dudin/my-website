@@ -32,7 +32,9 @@ var gulp = require('gulp'),
 	replace = require('gulp-replace'),
 	purify = require('gulp-purifycss'),	// Убирает неиспользуемые стили
 	svgSprite = require('gulp-svg-sprite'),
-	flatten = require('gulp-flatten');
+	flatten = require('gulp-flatten'),
+	htmlmin = require('gulp-htmlmin'),
+	minifyInline = require('gulp-minify-inline');
 
 
 
@@ -253,6 +255,11 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 
 	// Copy html
 	gulp.src('test/**/*.html')
+		.pipe(htmlmin({
+			collapseWhitespace: true,
+			removeComments: true,
+		}))
+		.pipe(minifyInline())
 		.pipe(gulp.dest("dist"));
 
 

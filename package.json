@@ -1,6 +1,6 @@
 {
-  "name": "Lore",
-  "version": "1.0.0",
+  "name": "My--html",
+  "version": "2020",
   "description": "",
   "main": "gulpfile.js",
   "directories": {
@@ -24,7 +24,9 @@
     "gulp-data": "^1.3.1",
     "gulp-flatten": "^0.4.0",
     "gulp-html-beautify": "^1.0.1",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^5.0.3",
+    "gulp-minify-inline": "^1.1.0",
     "gulp-modify-css-urls": "^2.0.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
