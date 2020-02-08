@@ -2,3 +2,48 @@
 	padding: 1rem
 	margin-bottom: 4rem
 	background: #fff;
+	position: relative
+	justify-content: space-between
+	flex-wrap: wrap
+	align-items: center
+
+
+// Следующий/предыдущий проект
+.neighbors // todo Мобильная версия
+	@extend .d-flex
+	position: absolute
+	top: 1rem
+	right: @top
+	flex-wrap: wrap
+	width 75px
+	//margin-top: 15px
+	//padding-top: 15px
+	//border-top: 1px solid darken($brand__bg2, 6%)
+	&__prev,
+	&__next
+		align-self: center
+		display: flex
+		width calc(50% - 2px)
+		height: 32px
+		line-height: 1
+		font-size: 20px
+		border: 0 !important //1px solid desaturate(lighten($links_color, 30%), 40%)
+		//color: $body-color
+		border-radius: 4px
+		background: alpha($link-color, 20%)
+		&:hover
+			background: alpha($link-color, 30%)
+			color: inherit
+		&:active
+			background: alpha($link-color, 50%)
+	&__next
+		margin-left: auto;
+
+	&__prev:before
+	&__next:before
+		margin auto
+	&__next:before
+		content '→'
+	&__prev:before
+		content '←'
+
