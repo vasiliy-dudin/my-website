@@ -23,11 +23,12 @@ html(lang="ru")
 						//- Ссылки на соседние проекты
 						.neighbors
 							each val in projectList
-								case val.id
-									when (parseInt($projectID) + 1).toString()
-										a(href="/projects/"+ val.id + "/", title=val.name, aria-level="Следующая работа: "+val.name).neighbors__next
-									when (parseInt($projectID) - 1).toString()
-										a(href="/projects/"+ val.id + "/", title=val.name, aria-level="Предыдущая работа: "+val.name).neighbors__prev
+								if val.type === "internal"
+									case val.id
+										when (parseInt($projectID) + 1).toString()
+											a(href="/projects/"+ val.id + "/", title=val.name, aria-level="Следующая работа: "+val.name).neighbors__next
+										when (parseInt($projectID) - 1).toString()
+											a(href="/projects/"+ val.id + "/", title=val.name, aria-level="Предыдущая работа: "+val.name).neighbors__prev
 
 
 					block content
