@@ -40,27 +40,19 @@
 			filter saturate(0)
 	&__title
 		font-size: 1.2rem
-		//color: desaturate(lighten($caption-bg, 60%), 50%)
-		color: lighten(desaturate($caption-bg, 50%), 80%)
+		color: #fff
 		display: inline
-
 	&__desc
-	&__date
-	&__type
 		font-size: 0.9rem
-		display: block
-
 	&__desc
-		margin-top: 6px
-		color: lighten(desaturate($caption-bg, 50%), 50%)
-
 	&__date
-		color: lighten(desaturate($caption-bg, 40%), 25%)
-	&__type
-		color: hsl(hue($brand-1), saturation($brand-1), 15%)
+		color: lighten(desaturate($caption-bg, 35%), 79%)
+	&__date
+		margin-top: 0.5rem
+		font-size 0.8rem
 
 		
-	// ПЕРЕПИСАТЬ?	
+	// todo ПЕРЕПИСАТЬ?
 	+media-breakpoint-down(500px)
 		width: 100%
 	+media-down(md)
