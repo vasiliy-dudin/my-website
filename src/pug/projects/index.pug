@@ -24,7 +24,7 @@ block content
 							.project-card__caption(class={"--external": val.type === "external"})
 								.project-card__title= val.name
 								.project-card__desc= val.desc
-								span.project-card__date= val.date
+								.project-card__date= val.date
 								if val.published === false
 									.project-card__not-available-message В процессе наполнения
 
