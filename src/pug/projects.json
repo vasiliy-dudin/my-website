@@ -33,6 +33,14 @@
 	  "type": "internal"
 	},
 	{
+	  "id": "5",
+	  "name": "UX Knowledge Base",
+	  "desc": "База знаний дизайна цифровых продуктов",
+	  "date": "С 2018",
+	  "priority": "1",
+	  "type": "unpublished"
+	},
+	{
 	  "id": "63",
 	  "name": "P2P каршеринг",
 	  "desc": "Сервис аренды и сдачи автомобилей в аренду",
