@@ -25,8 +25,8 @@ block content
 								.project-card__title= val.name
 								.project-card__desc= val.desc
 								.project-card__date= val.date
-								if val.published === false
-									.project-card__not-available-message В процессе наполнения
+								if val.type === "unpublished"
+									.project-card__not-available-message в процессе наполнения
 
 
 					case val.type
@@ -44,6 +44,7 @@ block content
 	.row.project-list
 		+projectCard($projectPriority="1", $width="col--xs-6")
 	h2 Собственное бюро и фриланс
+	p Часто привлекал других проектировщиков, технического писателя, копирайтера, визуальных дизайнеров и SEO-специалиста.
 	.row.project-list
 		+projectCard($projectPriority="2", $width="col--xs-6")
 	.row.project-list
