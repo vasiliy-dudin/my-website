@@ -1,17 +1,21 @@
 .section
 	padding 2rem
 	background #fff
-	&:not(:last-child)
-		margin-bottom: 2rem
+
 	h2
 		margin-top: 0
-	&--hero
-		padding 1rem
+		margin-bottom: 1.5rem
 
-.i
-	margin-bottom 2rem
-	+media(md)
-		margin-bottom 0
+//
+.hero-section
+	padding 1rem
+	margin-bottom: 2rem
+	&__photo
+		margin-bottom 2rem
+		+media(md)
+			margin-bottom 0
+
+
 .features
 	margin: auto
 	&__item
@@ -25,11 +29,30 @@
 				margin-bottom: 1rem
 		&:before
 			content ''
-			background url(/imgs/feature-icon.svg) no-repeat 50% 50% // todo улучшить иконку?
+			background url(/imgs/feature-icon.svg) no-repeat 0 50% // todo улучшить иконку?
 			background-size contain
 			flex: 0 0 auto
 			height: 28px
 			width: @height
-			border: 1px solid
-			border-radius: 50%
 			margin-right: 0.5rem
+
+
+// Блоки с информацией обо мне
+$about-me-section-gap = 10px;
+
+.about-me-grid
+	display: grid
+	grid-template-columns: repeat(auto-fit, minmax(410px, 1fr))
+	grid-gap: $about-me-section-gap
+
+.about-me-section
+	&__name
+		display: flex
+		&:before
+			content: '';
+			background: url(/imgs/feature-icon.svg) no-repeat 0 50% // TODO Заменить иконки
+			background-size: contain;
+			width: 23px;
+			margin-right: 0.5rem;
+	&:not(:last-child)
+		margin-bottom: $about-me-section-gap
