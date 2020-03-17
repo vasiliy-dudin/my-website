@@ -2,6 +2,11 @@
 
 
 .project-card
+	$caption-bg = lighten($link-color, 96%)
+
+
+
+
 	position: relative
 	margin-bottom: $grid-gutter-width-base
 	&__link
@@ -9,50 +14,47 @@
 		display: block
 		border: 0 !important
 		text-decoration: none
+
+	// // Изображение
+	&__thumbnail
+		position: relative
 		box-shadow: 0 5px 15px alpha(#000, 20%)
-		
-		
-	// Изображение
 	img
 		display: block
 		@extend .img-fluid
 		
 		
-	//caption
-	$caption-bg = $brand-1
+	// Caption
+
 	&__caption
-		&-wrapper // обёртка
-			@extend .d-flex
-			position: absolute
-			bottom: 0
-			flex-direction: column
-			align-items: baseline
-		display: inline-block
 		line-height: 1.2
-		padding: 6px 10px
-		background-color: $caption-bg
+		margin-top 12px
+		//padding: 6px 10px
+		//background-color: $caption-bg
 		&.--external
-			padding-left: 40px
+			padding-left: 30px
 			background-image: url("../imgs/external-link.svg")
 			background-repeat: no-repeat
-			background-position: 8px 8px
-			background-size 16px
-			filter saturate(0)
+			background-position-y: 3px
+			background-size 20px
+			//filter saturate(0)
 	&__title
+		display: inline-block
+		margin-bottom: 5px
 		font-size: 1.2rem
-		color: #fff
-		display: inline
+		color: $link-color
+		thin-underline--default()
 	&__desc
 		font-size: 0.9rem
 	&__desc
 	&__date
 	&__not-available-message
-		color: lighten(desaturate($caption-bg, 35%), 79%)
+		color: $body-color
 	&__date
 		margin-top: 0.5rem
 		font-size 0.8rem
 
-		
+
 	// todo ПЕРЕПИСАТЬ?
 	+media-breakpoint-down(500px)
 		width: 100%
@@ -61,11 +63,29 @@
 
 
 
+	// Работа в процессе наполнения
+
+	/.--not-filled-in-yet
+		opacity: .35
+		filter: saturate(0)
+		.work__title
+			border-color: transparent
+	&__not-available-message
+		display: inline-block
+		margin-top: 0.5rem;
+		padding 4px 6px
+		line-height: 1
+		font-size: .9rem
+		border: 1px solid lighten($body-color, 40%)
 
 
-// thumbnail + caption states
-.project-card
+
+	// hover, active, focus
+	$img-overlay = $caption-bg //lighten(saturate($brand-2, 40%), 80%)
+
 	&__link
+		&:hover
+			background unset !important
 		& ^[0]__thumbnail:before
 			content: ''
 			width: 100%
@@ -75,35 +95,19 @@
 			top: 0
 			left: 0
 			transition: all .1s ease
-		
-		
-		$img-overlay = lighten(saturate($brand-2, 40%), 80%)
-		// On link hover
+
 		&:hover
-			& ^[0]__thumbnail:before
-				background: alpha($img-overlay, 24%);
-				
-		// On link active
-		&:active
 		&:focus
 			& ^[0]__thumbnail:before
-				background: alpha($img-overlay, 70%);
-	
-	/*
-	Работа в процессе наполнения
-	*/
-	/.--not-filled-in-yet
-		opacity: .35
-		filter: saturate(0)
-		.work__title
-			border-color: transparent
-	
-	&__not-available-message
-		display: inline-block
-		line-height: 1
-		font-size: .9rem
-		padding 0 4px
-		border: 1px solid
+				background: alpha($img-overlay, 50%);
+			& ^[0]__title
+				color $link-color--hover
+				background $link-color--hover-bg
+
+		&:active ^[0]__thumbnail:before
+			background: alpha($img-overlay, 70%);
+
+
 
 
 /*

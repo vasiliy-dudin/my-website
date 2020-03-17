@@ -20,13 +20,13 @@ block content
 						.project-card__thumbnail
 							//- todo img(src='/projects/'+ $projectID + '/preview.png', alt='')
 							img(src='/projects/1/preview.png', alt='')
-						.project-card__caption-wrapper
-							.project-card__caption(class={"--external": val.type === "external"})
-								.project-card__title= val.name
-								.project-card__desc= val.desc
-								.project-card__date= val.date
-								if val.type === "unpublished"
-									.project-card__not-available-message в процессе наполнения
+
+						.project-card__caption(class={"--external": val.type === "external"})
+							.project-card__title= val.name
+							.project-card__desc= val.desc
+							.project-card__date= val.date
+							if val.type === "unpublished"
+								.project-card__not-available-message в процессе наполнения
 
 
 					case val.type
