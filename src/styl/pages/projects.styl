@@ -9,7 +9,6 @@
 	+media(md)
 		&.--3
 			grid-template-columns: 1fr 1fr 1fr;
-
 	&.--1
 		margin-bottom: 4rem
 	&.--2
@@ -17,10 +16,6 @@
 
 .project-card
 	$caption-bg = lighten($link-color, 96%)
-
-
-
-
 	position: relative
 	&__link
 		position: relative
@@ -28,7 +23,7 @@
 		border: 0 !important
 		text-decoration: none
 
-	// // Изображение
+	// Изображение
 	&__thumbnail
 		position: relative
 		box-shadow: 0 5px 15px alpha(#000, 20%)
@@ -115,7 +110,7 @@
 				background: alpha($img-overlay, 50%);
 			& ^[0]__title
 				color $link-color--hover
-				background $link-color--hover-bg
+				background #fff
 
 		&:active ^[0]__thumbnail:before
 			background: alpha($img-overlay, 70%);
