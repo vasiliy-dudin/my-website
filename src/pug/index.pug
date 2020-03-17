@@ -20,30 +20,28 @@ block vars
 block content
 	section.section.hero-section
 		//- h2 Первый блок без заголовка
-		.row
-			.col--sm-3
-				img(src="/imgs/i.jpg" alt="").img-fluid.hero-section__photo
-			.col--sm-9.features
-				.row
-					mixin feature
-						.col--sm-6.features__item
-							.features__text
-								block
+		.col
+			img(src="/imgs/i.jpg" alt="").img-fluid.hero-section__photo
+		.col.features
+			mixin feature
+				.col.features__item
+					.features__text
+						block
 
-					+feature
-						| Люблю проектировать сервисы, улучшать жизнь людей и работать в продуктовых компаниях.
+			+feature
+				| Люблю проектировать сервисы, улучшать жизнь людей и работать в продуктовых компаниях.
 
-					+feature
-						| Проектирую
-						<script>
-							include ../js/_YearsCalc.js
-						</script>
+			+feature
+				| Проектирую
+				<script>
+					include ../js/_YearsCalc.js
+				</script>
 
-					+feature
-						| Организую митап по веб-доступности.
+			+feature
+				| Организую митап по веб-доступности.
 
-					+feature
-						| Работаю над собой и много читаю.
+			+feature
+				| Работаю над собой и много читаю.
 
 
 	.about-me-grid

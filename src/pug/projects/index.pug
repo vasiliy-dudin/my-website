@@ -10,10 +10,10 @@ block vars
 
 
 block content
-	mixin projectCard($projectPriority, $width)
+	mixin projectCard($projectPriority)
 		each val in projectList
 			if val.priority === $projectPriority
-				div(class="project-card", class={"--not-filled-in-yet": val.type === "unpublished"}, class=$width)
+				div(class="project-card", class={"--not-filled-in-yet": val.type === "unpublished"})
 
 					//- Подставляется после case
 					mixin _projectList-content
@@ -41,11 +41,11 @@ block content
 
 
 
-	.row.project-list
-		+projectCard($projectPriority="1", $width="col--xs-6")
+	.project-list(class="--1")
+		+projectCard($projectPriority="1")
 	h2 Собственное бюро и фриланс
 	p Часто привлекал других проектировщиков, технического писателя, копирайтера, визуальных дизайнеров и SEO-специалиста.
-	.row.project-list
-		+projectCard($projectPriority="2", $width="col--xs-6")
-	.row.project-list
+	.project-list(class="--2")
+		+projectCard($projectPriority="2", $width="col.--6")
+	.project-list(class="--3")
 		+projectCard($projectPriority="3", $width="col--xs-6 col--md-4")

@@ -1,6 +1,20 @@
 //.portfolio
 
 
+.project-list
+	display: grid;
+	grid-gap: $grid-gutter-width-base
+	+media(sm)
+		grid-template-columns: 1fr 1fr;
+	+media(md)
+		&.--3
+			grid-template-columns: 1fr 1fr 1fr;
+
+	&.--1
+		margin-bottom: 4rem
+	&.--2
+		margin-bottom: $grid-gutter-width-base
+
 .project-card
 	$caption-bg = lighten($link-color, 96%)
 
@@ -8,7 +22,6 @@
 
 
 	position: relative
-	margin-bottom: $grid-gutter-width-base
 	&__link
 		position: relative
 		display: block
