@@ -90,8 +90,7 @@ gulp.task('__compileStylus_dist', function () {
 		postcss_inline_svg,
 		autoprefixer({
 			cascade: false
-		}),
-		mergeRules
+		})
 		/*combineCssMedia({
 			sort: true
 		})*/
@@ -101,6 +100,7 @@ gulp.task('__compileStylus_dist', function () {
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(CompileStylus({'include css': true}))
 		.pipe(gulp_postcss($postcss_plugins))
+		.pipe(cssnano()) // Сжимаем
 		.pipe(gulp.dest('dist/css'))
 		.pipe(browserSync.reload({stream: true}));
 });
@@ -282,8 +282,8 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 			append: '?cache-buster'*!/
 		}))*/
 		// Меняет пути к файлам в css
-		.pipe(replace('\"/fonts', '\"/assets/dist/fonts'))
-		.pipe(replace('\'/fonts', '\'/assets/dist/fonts'))
+		/*.pipe(replace('\"/fonts', '\"/assets/dist/fonts'))
+		.pipe(replace('\'/fonts', '\'/assets/dist/fonts'))*/
 		.pipe(cssnano()) // Сжимаем
 		.pipe(gulp.dest('dist/css')); // Сохраняем в папку
 
