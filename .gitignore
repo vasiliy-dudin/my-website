@@ -1,8 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 
 .idea/
-.vscode/tasks.json
+.vscode/
 /node_modules/
 /dist/
 /test/
 package-lock.json
+.push.settings.jsonc
