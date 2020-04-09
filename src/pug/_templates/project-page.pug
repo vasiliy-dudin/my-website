@@ -26,9 +26,9 @@ html(lang="ru")
 								if val.type === "internal"
 									case val.id
 										when (parseInt($projectID) + 1).toString()
-											a(href="/projects/"+ val.id + "/", title=val.name, aria-level="Следующая работа: "+val.name).neighbors__next
+											a(href="/projects/"+ val.id + "/", title=val.name, aria-level="Следующая работа: "+val.name).neighbors__next.btn
 										when (parseInt($projectID) - 1).toString()
-											a(href="/projects/"+ val.id + "/", title=val.name, aria-level="Предыдущая работа: "+val.name).neighbors__prev
+											a(href="/projects/"+ val.id + "/", title=val.name, aria-level="Предыдущая работа: "+val.name).neighbors__prev.btn
 
 
 					block content

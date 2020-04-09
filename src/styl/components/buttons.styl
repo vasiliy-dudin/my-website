@@ -75,7 +75,7 @@ button-size($padding, $font-size, $border-radius)
 
 // Общие свойства для всех кнопок
 // --------------------------------------------------
-$btn1
+$btn-common
 	display inline-block
 	button-size($padding:8px 20px, $font-size:1rem, $border-radius:5px)
 	margin-bottom 0 // For input.btn
@@ -90,7 +90,6 @@ $btn1
 	text-decoration none
 	outline 0
 	border-style solid // отменяет стандартный стиль для <button>
-	transition: all 0.15s
 	&.disabled
 	&[disabled]
 	fieldset[disabled] &
@@ -108,34 +107,34 @@ $btn1
 input[type="button"]
 input[type="submit"]
 input[type="reset"]
-	@extend $btn1
-	$bg = hsl(hue($brand-1), 24, 49)
-	$bg-hue = hue($bg)
+	@extend $btn-common
+	$bg = #fff
+	$border-color = #000
+	//$bg-hue = hue($bg)
 	//button-variant__color-bg($color: $body-color, $bg-color: $brand-2) // color + bg
 	//button-variant__color-bg--hover($color: $color-l, $bg-color: alpha($color-l, 0.1)) // hover
 	//button-variant__color-bg--active($color: $color-l, $bg-color: $color-l) // active
 	position relative
-	color lighten(desaturate($bg, 30%), 70%)
+	color $border-color
 	background $bg
-	border solid darken($bg, 10)
-	border-width 0 0 4px 0
-	
+	border 1px solid
+	box-shadow: 0 3px 0 lighten($border-color, 35%)
+
 	&:hover
-		background darken($bg, 4)
-		border-bottom-color darken($bg, 13)
+		background darken($bg, 15%)
+		//border-color lighten($border-color, 40%)
 	&:focus
 		top 1px
-		box-shadow: inset 0 4px 5px 0 darken($bg, 19)
-		background darken($bg, 13)
-		border-bottom-color darken($bg, 13)
+		background darken($bg, 40%)
+		box-shadow: 0 4px 0 transparent, inset 0 4px 5px 0 lighten($border-color, 40%)
 
 
 
-		
 
 
+/*
 .btn--2
-	@extend $btn1
+	@extend $btn-common
 	$bg = hsl(hue($brand-2), 20%, 93%)
 	$bg-hue = hue($bg)
 	position relative
@@ -143,7 +142,7 @@ input[type="reset"]
 	background $bg
 	border solid darken($bg, 10)
 	border-width 0 0 4px 0
-	
+
 	&:hover
 		background darken($bg, 4)
 		border-bottom-color darken($bg, 13)
@@ -151,21 +150,9 @@ input[type="reset"]
 		top 1px
 		box-shadow: inset 0 4px 5px 0 darken($bg, 19)
 		background darken($bg, 13)
-		border-bottom-color darken($bg, 13)
-
-/*.btn--2
-	@extend $btn1
-	$color-l=$nav-item__color
-	color $color-l
-	background none
-	&:hover
-		background-color $nav-item__bg--active //hsl(hue($color-l), 20%, 93%)
-	// Border
-	border 1px solid $color-l*/
+		border-bottom-color darken($bg, 13)*/
 
 
-	
-	
 	
 // делает div/span ссылкой
 .btn-link
