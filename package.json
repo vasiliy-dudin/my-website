@@ -1,7 +1,7 @@
 {
-  "name": "My--html",
-  "version": "2020",
-  "description": "",
+  "name": "My--v2020",
+  "version": "",
+  "description": "Based on pug",
   "main": "gulpfile.js",
   "directories": {
     "test": "test"
