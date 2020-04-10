@@ -31,10 +31,10 @@ block content
 
 					case val.type
 						when "internal"
-							a.project-card__link(href='/projects/' + val.id + '/')
+							a.project-card__link(href='/projects/' + val.id + '/', data-ga-label=val.id, data-ga-action="internal")
 								+_projectList-content
 						when "external"
-							a.project-card__link(href=val.targetURL, target='_blank', rel="nofollow noopener noreferrer")
+							a.project-card__link(href=val.targetURL, target='_blank', data-ga-label=val.id, rel="nofollow noopener noreferrer", data-ga-action="external")
 								+_projectList-content
 						when "unpublished"
 							+_projectList-content
