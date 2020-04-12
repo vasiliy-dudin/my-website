@@ -116,16 +116,16 @@ input[type="reset"]
 	//button-variant__color-bg--active($color: $color-l, $bg-color: $color-l) // active
 	position relative
 	color $border-color
-	background $bg
+	background-color $bg
 	border 1px solid
 	box-shadow: 0 3px 0 lighten($border-color, 35%)
 
 	&:hover
-		background darken($bg, 15%)
+		background-color darken($bg, 15%)
 		//border-color lighten($border-color, 40%)
 	&:focus
 		top 1px
-		background darken($bg, 40%)
+		background-color transparent
 		box-shadow: 0 4px 0 transparent, inset 0 4px 5px 0 lighten($border-color, 40%)
 
 

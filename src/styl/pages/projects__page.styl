@@ -25,7 +25,6 @@
 	&__prev,
 	&__next
 		align-self: center
-		display: flex
 		width calc(50% - 2px)
 		height: 32px
 		padding: 0
@@ -34,11 +33,15 @@
 		margin-left: auto;
 	&__prev:before
 	&__next:before
+		content ''
+		display: block
+		width: 100%
+		height: 100%
 		margin auto
-	&__next:before
-		content '→'
+		background url('/imgs/neighbor-arrow.svg') 50% 50% no-repeat
+		background-size: 18px
 	&__prev:before
-		content '←'
+		transform scaleX(-1)
 
 
 
