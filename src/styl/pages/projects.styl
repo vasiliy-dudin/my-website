@@ -7,12 +7,17 @@
 	+media(sm)
 		grid-template-columns: 1fr 1fr;
 	+media(md)
+		&.--2
 		&.--3
 			grid-template-columns: 1fr 1fr 1fr;
 	&.--1
 		margin-bottom: 4rem
 	&.--2
 		margin-bottom: $grid-gutter-width-base
+	// Серим превью
+	&.--2
+	&.--3
+		filter: grayscale(1)
 
 .project-card
 	$caption-bg = lighten($link-color, 96%)
@@ -45,7 +50,6 @@
 			background-repeat: no-repeat
 			background-position-y: 3px
 			background-size 20px
-			//filter saturate(0)
 	&__title
 		display: inline-block
 		margin-bottom: 5px
@@ -113,13 +117,3 @@
 
 		&:active ^[0]__thumbnail:before
 			background: alpha($img-overlay, 70%);
-
-
-
-
-/*
-Вторичные работы (старые и не очень интересные)
-*/
-
-.project-list--secondary
-	margin-top 100px

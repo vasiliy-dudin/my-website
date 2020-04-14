@@ -3,7 +3,7 @@
 	{
 	  "id": "1",
 	  "name": "SEMrush",
-	  "desc": "SaaS для маркетологов",
+	  "desc": "SaaS для маркетологов с 6 млн. пользователей",
 	  "date": "2018-2020",
 	  "priority": "1",
 	  "type": "internal"
@@ -104,7 +104,7 @@
 	  "name": "Keep it Current",
 	  "desc": "Плагин для регулярных операций в WordPress",
 	  "date": "4 мая 2017",
-	  "priority": "3",
+	  "priority": "",
 	  "type": "external",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/53"
 	},
@@ -138,7 +138,7 @@
 	  "name": "Модные вместе",
 	  "desc": "Магазин тканей",
 	  "date": "27 апр 2015",
-	  "priority": "3",
+	  "priority": "",
 	  "type": "external",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/23"
 	},
@@ -147,7 +147,7 @@
 	  "name": "Стоматология Headway",
 	  "desc": "Корпоративный сайт",
 	  "date": "6 окт 2016",
-	  "priority": "3",
+	  "priority": "",
 	  "type": "unpublished"
 	},
 	{
@@ -155,7 +155,7 @@
 	  "name": "Mirandi Club",
 	  "desc": "Винный магазин",
 	  "date": "13 апр 2016",
-	  "priority": "3",
+	  "priority": "",
 	  "type": "unpublished"
 	},
 	{
@@ -163,7 +163,7 @@
 	  "name": "Парадный Петербург",
 	  "desc": "Калькулятор стоимости",
 	  "date": "06 окт 2016",
-	  "priority": "3",
+	  "priority": "",
 	  "type": "unpublished"
 	},
 	{
@@ -180,7 +180,7 @@
 	  "name": "Невские шкафы",
 	  "desc": "Магазин шкафов",
 	  "date": "22 янв 2016",
-	  "priority": "3",
+	  "priority": "",
 	  "type": "unpublished"
 	},
 	{
@@ -196,7 +196,7 @@
 	  "name": "Hookah Store",
 	  "desc": "Магазин кальянов и табака",
 	  "date": "29 авг 2014",
-	  "priority": "3",
+	  "priority": "",
 	  "type": "unpublished"
 	},
 	{
@@ -204,7 +204,7 @@
 	  "name": "Парусный спорт и ЗОЖ",
 	  "desc": "Портал",
 	  "date": "6 авг 2014",
-	  "priority": "3",
+	  "priority": "",
 	  "type": "unpublished"
 	}
   ]
