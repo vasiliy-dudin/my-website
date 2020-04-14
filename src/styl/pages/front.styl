@@ -46,13 +46,14 @@ $about-me-section-gap = 10px;
 	grid-gap: $about-me-section-gap
 
 .about-me-section
-	&__name
+	&__name-aligner
 		display: flex
-		&:before
-			content: '';
-			background: url(/imgs/feature-icon.svg) no-repeat 0 50% // TODO Заменить иконки
-			background-size: contain;
-			width: 23px;
-			margin-right: 0.5rem;
+		align-items center
+		margin-bottom: 1.5rem
+	&__img
+		height 70px
+		margin-right: 0.5rem
+	&__name
+		margin-bottom: 0 !important
 	&:not(:last-child)
 		margin-bottom: $about-me-section-gap

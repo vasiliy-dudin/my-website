@@ -21,7 +21,7 @@ block content
 	section.section.hero-section
 		//- h2 Первый блок без заголовка
 		.col
-			img(src="/imgs/i.jpg" alt="").img-fluid.hero-section__photo
+			img(src="/index/i.jpg" alt="").img-fluid.hero-section__photo
 		.col.features
 			mixin feature
 				.col.features__item
@@ -44,10 +44,17 @@ block content
 				| Работаю над собой и много читаю.
 
 
+
+	mixin about-me-section($title, $modificator)
+		section.section.about-me-section(class='--' + $modificator)
+			.about-me-section__name-aligner
+				img(src="/index/" + $modificator + ".svg").about-me-section__img
+				h2.about-me-section__name=$title
+			block
+
 	.about-me-grid
 		.col
-			section.section.about-me-section
-				h2.about-me-section__name Навыки
+			+about-me-section('Хард-скиллы', 'hard-skills')
 				ul
 					li Проектирование
 						ul
@@ -70,16 +77,15 @@ block content
 							li Карточная сортировка
 							li Анализ фидбэка пользователей
 							li A/B-тестирование
-					li Софт-скиллы
-						ul
-							li Дипломатичность
-							li Развитое критическое мышление
-							li Самостоятельность
-							li Высокая организованность и работоспособность, я адепт GTD и всяких продуктивных практик.
-							li Высокий уровень эмпатии
+			+about-me-section('Софт-скиллы', 'soft-skills')
+				ul
+					li Дипломатичность
+					li Развитое критическое мышление
+					li Самостоятельность
+					li Высокая организованность и работоспособность, я адепт GTD и всяких продуктивных практик.
+					li Высокий уровень эмпатии
 		.col
-			section.section.about-me-section
-				h2.about-me-section__name Навыки в смежных областях
+			+about-me-section('Навыки в смежных областях', 'other-skills')
 				p В прошлом человек-оркестр. Создавал сайты, исполняя роли руководителя проектов, проектировщика, графического дизайнера, верстальщика и разработчика одновременно.
 				ul
 					li Вёрстка, HTML, CSS, LESS, Stylus, Pug [9/10];
@@ -95,6 +101,5 @@ block content
 					li Adobe Illustrator [6/10];
 					li Microsoft Excel/Word/Access/PowerPoint [9/10];
 					li английский язык [intermediate];
-			section.section.about-me-section
-				h2.about-me-section__name Интересы и увлечения
+			+about-me-section('Интересы и увлечения', 'interests')
 				p Наука, архитектура, промышленный и городской дизайн, дизайн интерьеров, психология, современные технологии, компьютерная техника.	DIY, велопрогулки, цифровая и аналоговая фотография, интеллектуальное кино, бег.
