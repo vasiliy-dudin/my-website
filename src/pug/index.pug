@@ -20,11 +20,11 @@ block vars
 block content
 	section.section.hero-section
 		//- h2 Первый блок без заголовка
-		.col
-			img(src="/index/i.jpg" alt="").img-fluid.hero-section__photo
-		.col.features
+		.photo
+			img(src="/index/i.jpg" alt="").photo__img.img-fluid
+		.features
 			mixin feature
-				.col.features__item
+				.features__item
 					.features__text
 						block
 

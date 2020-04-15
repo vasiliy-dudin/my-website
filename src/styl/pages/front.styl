@@ -6,25 +6,34 @@
 		margin-top: 0
 		margin-bottom: 1.5rem
 
-//
+
+
+////// Первая секция обо мне
 .hero-section
 	padding 1rem
 	margin-bottom: 2rem
 	display: grid;
-	grid-template-columns: minmax(250px, 3fr) 10fr;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 2rem;
-	&__photo
-		margin-bottom 2rem
+	+media(sm)
+		grid-template-columns: minmax(50px, 3fr) 10fr;
+
+.photo // 1 колонка
+	max-width: 30%
+	margin: 0 auto
+	+media(sm)
+		max-width: unset
+	&__img
 		border-radius: 50%
 		+media(md)
 			margin-bottom 0
 
-
-.features
+.features // 2 колонка
 	margin: auto
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-gap: 1rem;
+	+media(sm)
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	&__item
 		display: flex
 		&:before
@@ -32,11 +41,12 @@
 			background url(/index/feature-icon.svg) no-repeat 0 50% // todo улучшить иконку?
 			background-size contain
 			flex: 0 0 auto
-			height: 40px
+			height: 40px // todo уменьшить иконки на мобильниках
 			width: @height
 			position: relative
 			top: -6px
 			margin-right: 0.5rem
+
 
 
 // Блоки с информацией обо мне
