@@ -3,8 +3,7 @@
 // =====================
 
 .project-header
-	position sticky
-	top 0
+	position relative
 	padding: 1rem
 	margin-bottom: 4rem
 	body-bg(fixed)
@@ -12,6 +11,9 @@
 	flex-wrap: wrap
 	align-items: center
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2)
+	+media(sm)
+		position: sticky
+		top 0
 
 
 // Следующий/предыдущий проект
