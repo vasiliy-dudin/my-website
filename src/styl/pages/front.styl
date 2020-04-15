@@ -54,8 +54,9 @@ $about-me-section-gap = 10px;
 
 .about-me-grid
 	display: grid
-	grid-template-columns: repeat(auto-fit, minmax(410px, 1fr))
 	grid-gap: $about-me-section-gap
+	+media(sm)
+		grid-template-columns: repeat(auto-fit, minmax(410px, 1fr))
 
 .about-me-section
 	&__name-aligner
