@@ -18,8 +18,9 @@ block content
 					//- Подставляется после case
 					mixin _projectList-content
 						.project-card__thumbnail
-							//- todo img(src='/projects/'+ $projectID + '/preview.png', alt='')
-							img(src='/projects/1/preview.png', alt='')
+							picture
+								source(type="image/webp", srcset='/projects/previews/'+ val.id + '.webp')
+								img(src='/projects/previews/'+ val.id + '.jpg', alt='')
 
 						.project-card__caption(class={"--external": val.type === "external"})
 							.project-card__title= val.name

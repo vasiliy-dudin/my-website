@@ -5,6 +5,11 @@ include ../_helpers/mixins
 mixin section()
 	.section-project
 		block
+mixin img-project($src, $size, $alt="")
+	picture
+		- var $src_webp = $src.replace(/(jpg|png)$/g, "webp");
+		source(type="image/webp", srcset=$src_webp)
+		img.project-img(src=$src, alt=$alt, class="project-img--"+$size)
 
 //- Активный пунт меню
 - var $menu_activeLink = "2"

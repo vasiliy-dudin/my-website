@@ -34,7 +34,8 @@ var gulp = require('gulp'),
 	svgSprite = require('gulp-svg-sprite'),
 	flatten = require('gulp-flatten'),
 	htmlmin = require('gulp-htmlmin'),
-	minifyInline = require('gulp-minify-inline');
+	minifyInline = require('gulp-minify-inline'),
+	webp = require('gulp-webp');
 
 
 
@@ -205,6 +206,13 @@ gulp.task('Build--Test', gulp.parallel('__compileStylus', '__mergeJS', '__compil
 		])
 		.pipe(gulp.dest('test/imgs'));
 
+	// Images to webp
+	gulp.src([
+		'src/pug/projects/**/*.{png,jpg}'
+	])
+		.pipe(webp())
+		.pipe(gulp.dest('test/projects'));
+
 	// pug images, чтобы картинки из папки src/pug были рядом с html, а не в папке test/pug
 	gulp.src([
 		'src/pug/**/*.{png,gif,jpg,svg}',
@@ -252,6 +260,13 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 		.pipe(cache(imagemin($imageminSettings)))
 		.pipe(flatten({ subPath: [0] }))
 		.pipe(gulp.dest('dist'));
+
+	// Images to webp
+	gulp.src([
+		'src/pug/projects/**/*.{png,jpg}'
+	])
+		.pipe(webp())
+		.pipe(gulp.dest('dist/projects'));
 
 	// Copy html
 	gulp.src('test/**/*.html')
