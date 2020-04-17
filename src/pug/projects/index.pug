@@ -12,7 +12,7 @@ block vars
 block content
 	mixin projectCard($projectPriority)
 		each val in projectList
-			if val.priority === $projectPriority
+			if val.priority === $projectPriority & val.type !== "hidden"
 				div(class="project-card", class={"--not-filled-in-yet": val.type === "unpublished"})
 
 					//- Подставляется после case
