@@ -11,7 +11,7 @@
 	{
 	  "id": "2",
 	  "name": "pitera11y_meetup",
-	  "desc": "Организатор митапа о веб-доступности",
+	  "desc": "Митап о веб-доступности",
 	  "date": "С 2019",
 	  "priority": "1",
 	  "type": "internal"
@@ -30,7 +30,7 @@
 	  "desc": "Приложение трейдинговой платформы",
 	  "date": "2018",
 	  "priority": "1",
-	  "type": "internal"
+	  "type": "hidden"
 	},
 	{
 	  "id": "5",
@@ -104,8 +104,8 @@
 	  "name": "Keep it Current",
 	  "desc": "Плагин для регулярных операций в WordPress",
 	  "date": "4 мая 2017",
-	  "priority": "",
-	  "type": "external",
+	  "priority": "3",
+	  "type": "hidden",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/53"
 	},
 	{
@@ -138,8 +138,8 @@
 	  "name": "Модные вместе",
 	  "desc": "Магазин тканей",
 	  "date": "27 апр 2015",
-	  "priority": "",
-	  "type": "external",
+	  "priority": "3",
+	  "type": "hidden",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/23"
 	},
 	{
@@ -147,24 +147,24 @@
 	  "name": "Стоматология Headway",
 	  "desc": "Корпоративный сайт",
 	  "date": "6 окт 2016",
-	  "priority": "",
-	  "type": "unpublished"
+	  "priority": "3",
+	  "type": "hidden"
 	},
 	{
 	  "id": "25",
 	  "name": "Mirandi Club",
 	  "desc": "Винный магазин",
 	  "date": "13 апр 2016",
-	  "priority": "",
-	  "type": "unpublished"
+	  "priority": "3",
+	  "type": "hidden"
 	},
 	{
 	  "id": "26",
 	  "name": "Парадный Петербург",
 	  "desc": "Калькулятор стоимости",
 	  "date": "06 окт 2016",
-	  "priority": "",
-	  "type": "unpublished"
+	  "priority": "3",
+	  "type": "hidden"
 	},
 	{
 	  "id": "34",
@@ -180,8 +180,8 @@
 	  "name": "Невские шкафы",
 	  "desc": "Магазин шкафов",
 	  "date": "22 янв 2016",
-	  "priority": "",
-	  "type": "unpublished"
+	  "priority": "3",
+	  "type": "hidden"
 	},
 	{
 	  "id": "30",
@@ -196,16 +196,16 @@
 	  "name": "Hookah Store",
 	  "desc": "Магазин кальянов и табака",
 	  "date": "29 авг 2014",
-	  "priority": "",
-	  "type": "unpublished"
+	  "priority": "3",
+	  "type": "hidden"
 	},
 	{
 	  "id": "32",
 	  "name": "Парусный спорт и ЗОЖ",
 	  "desc": "Портал",
 	  "date": "6 авг 2014",
-	  "priority": "",
-	  "type": "unpublished"
+	  "priority": "3",
+	  "type": "hidden"
 	}
   ]
 }
