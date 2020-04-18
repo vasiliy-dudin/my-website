@@ -208,10 +208,10 @@ gulp.task('Build--Test', gulp.parallel('__compileStylus', '__mergeJS', '__compil
 
 	// Images to webp
 	gulp.src([
-		'src/pug/projects/**/*.{png,jpg}'
+		'src/pug/**/*.{png,jpg}'
 	])
 		.pipe(webp())
-		.pipe(gulp.dest('test/projects'));
+		.pipe(gulp.dest('test/'));
 
 	// pug images, чтобы картинки из папки src/pug были рядом с html, а не в папке test/pug
 	gulp.src([
