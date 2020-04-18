@@ -263,10 +263,10 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 
 	// Images to webp
 	gulp.src([
-		'src/pug/projects/**/*.{png,jpg}'
+		'src/pug/**/*.{png,jpg}'
 	])
 		.pipe(webp())
-		.pipe(gulp.dest('dist/projects'));
+		.pipe(gulp.dest('dist/'));
 
 	// Copy html
 	gulp.src('test/**/*.html')
