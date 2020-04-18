@@ -1,15 +1,31 @@
 include ../_helpers/variables
 include ../_helpers/mixins
 
+
+//////////////-
+//- Миксины
+//////////////-
+
 //- Секция для группировки описания работы
 mixin section()
 	.section-project
 		block
+
+//- Изображение
 mixin img-project($src, $size, $alt="")
 	picture
 		- var $src_webp = $src.replace(/(jpg|png)$/g, "webp");
 		source(type="image/webp", srcset=$src_webp)
 		img.project-img(src=$src, alt=$alt, class="project-img--"+$size)
+
+//- Ссылка на прототип
+mixin prototype-link($url, $text="Интерактивный прототип")
+	p
+		a(href=$url, target='_blank', rel="nofollow noopener noreferrer").link=$text
+
+
+
+
 
 //- Активный пунт меню
 - var $menu_activeLink = "2"
