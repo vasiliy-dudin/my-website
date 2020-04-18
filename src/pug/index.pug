@@ -21,7 +21,9 @@ block content
 	section.section.hero-section
 		//- h2 Первый блок без заголовка
 		.photo
-			img(src="/index/i.jpg" alt="").photo__img.img-fluid
+			picture
+				source(type="image/webp", srcset='/index/i.webp')
+				img(src="/index/i.jpg" alt="").photo__img.img-fluid
 		.features
 			mixin feature
 				.features__item
