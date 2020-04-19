@@ -7,8 +7,13 @@ include ../_helpers/mixins
 //////////////-
 
 //- Секция для группировки описания работы
-mixin section()
-	.section-project
+mixin section($heading)
+	section.project-section
+		if $heading
+			h2.project-h2=$heading
+		block
+mixin section_inner()
+	.project-section__inner
 		block
 
 //- Изображение
