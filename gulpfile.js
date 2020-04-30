@@ -35,7 +35,8 @@ var gulp = require('gulp'),
 	flatten = require('gulp-flatten'),
 	htmlmin = require('gulp-htmlmin'),
 	minifyInline = require('gulp-minify-inline'),
-	webp = require('gulp-webp');
+	webp = require('gulp-webp'),
+	sitemap = require('gulp-sitemap');
 
 
 
@@ -155,8 +156,21 @@ gulp.task('__mergeJS', function() {
 
 
 
+// ========================================================================
+// sitemap.xml generation
+// ========================================================================
 
-
+gulp.task('__sitemap', function () {
+	return gulp.src('dist/**/*.html', {
+		read: true
+	})
+		.pipe(sitemap({
+			siteUrl: 'https://dev.vasiliy-dudin.com',
+			changefreq: 'monthly',
+			spacing: '\t'
+		}))
+		.pipe(gulp.dest('./dist'));
+});
 
 
 
