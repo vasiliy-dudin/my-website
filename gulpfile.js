@@ -156,21 +156,7 @@ gulp.task('__mergeJS', function() {
 
 
 
-// ========================================================================
-// sitemap.xml generation
-// ========================================================================
 
-gulp.task('__sitemap', function () {
-	return gulp.src('dist/**/*.html', {
-		read: true
-	})
-		.pipe(sitemap({
-			siteUrl: 'https://dev.vasiliy-dudin.com',
-			changefreq: 'monthly',
-			spacing: '\t'
-		}))
-		.pipe(gulp.dest('./dist'));
-});
 
 
 
@@ -290,6 +276,17 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 		}))
 		.pipe(minifyInline())
 		.pipe(gulp.dest("dist"));
+
+	// sitemap.xml generation
+	gulp.src('test/**/*.html', {
+		read: true
+	})
+		.pipe(sitemap({
+			siteUrl: 'https://dev.vasiliy-dudin.com',
+			changefreq: 'daily',
+			spacing: '\t'
+		}))
+		.pipe(gulp.dest('./dist'));
 
 	// Copy robots.txt
 	gulp.src('src/robots.txt')
