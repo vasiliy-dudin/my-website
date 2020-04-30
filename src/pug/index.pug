@@ -50,7 +50,7 @@ block content
 	mixin about-me-section($title, $modificator)
 		section.section.about-me-section(class='--' + $modificator)
 			.about-me-section__name-aligner
-				img(src="/index/" + $modificator + ".svg").about-me-section__img
+				img(src="/index/" + $modificator + ".svg", alt="").about-me-section__img
 				h2.about-me-section__name=$title
 			block
 
