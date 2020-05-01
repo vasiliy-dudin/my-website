@@ -23,6 +23,11 @@ mixin img-project($src, $size, $alt="")
 		source(type="image/webp", srcset=$src_webp)
 		img.project-img(src=$src, alt=$alt, class="project-img--"+$size)
 
+//- Видео
+mixin video-project()
+	.project-video
+		block
+
 //- Ссылка на прототип
 mixin prototype-link($url, $text="Интерактивный прототип")
 	p
