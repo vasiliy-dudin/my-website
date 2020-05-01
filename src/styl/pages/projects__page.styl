@@ -2,30 +2,41 @@
 // Шапка проекта
 // =====================
 
+$project-header__padding = 1rem
+$neighbors-width = 75px
+
 .project-header
 	position relative
-	padding: 1rem
+	padding: $project-header__padding
 	margin-bottom: 4rem
 	body-bg(fixed)
 	justify-content: space-between
 	flex-wrap: wrap
 	align-items: center
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4)
-	h1
-		margin-bottom: 0
 	+media(sm)
 		position: sticky
 		top 0
+		padding-right "calc(%s + %s + 1rem)" % ($padding $neighbors-width) // 1rem - дополнительный отступ
+		z-index: 500
+	h1
+		margin-bottom: 0
 
 
 // Следующий/предыдущий проект
+
 .neighbors // todo Мобильная версия
 	@extend .d-flex
 	position: absolute
 	top: 1rem
 	right: @top
 	flex-wrap: wrap
-	width 75px
+	width $neighbors-width
+	+media(md)
+		position: absolute
+		top: 1rem
+		right: @top
+
 	&__prev,
 	&__next
 		align-self: center
