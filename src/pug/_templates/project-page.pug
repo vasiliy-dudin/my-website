@@ -18,10 +18,11 @@ mixin section_inner()
 
 //- Изображение
 mixin img-project($src, $size, $alt="")
-	picture
-		- var $src_webp = $src.replace(/(jpg|png)$/g, "webp");
-		source(type="image/webp", srcset=$src_webp)
-		img.project-img(src=$src, alt=$alt, class="project-img--"+$size)
+	.project-img
+		picture
+			- var $src_webp = $src.replace(/(jpg|png)$/g, "webp");
+			source(type="image/webp", srcset=$src_webp)
+			img.project-img__src(src=$src, alt=$alt, class="project-img__src--"+$size)
 
 //- Видео
 mixin video-project()
