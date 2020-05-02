@@ -19,8 +19,8 @@ block content
 					mixin _projectList-content
 						.project-card__thumbnail
 							picture
-								source(type="image/webp", srcset='/projects/previews/'+ val.id + '.webp')
-								img(src='/projects/previews/'+ val.id + '.jpg', alt='')
+								source(type="image/webp", srcset='/projects/previews/'+ val.id + '.webp 1x, /projects/previews/'+ val.id + '@2x.webp 2x')
+								img(src='/projects/previews/'+ val.id + '.jpg' srcset='/projects/previews/'+ val.id + '.jpg 1x, /projects/previews/'+ val.id + '@2x.jpg 2x', alt='')
 
 						.project-card__caption(class={"--external": val.type === "external"})
 							.project-card__title= val.name
