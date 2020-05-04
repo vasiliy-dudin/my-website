@@ -66,16 +66,22 @@ $neighbors-width = 75px
 
 // Секция для группировки описания работы
 .project-section
-	&:not(:last-child)
-		margin-bottom 4rem
+	h2
+		margin: 0
+		@extend $g__section
+		padding-bottom 0.8rem // перезаписывает @extend
+		font-weight: bold
+		border-radius $section__radius $section__radius 0 0  // перезаписывает @extend
 	&__inner
 		margin-top 0.5rem
-		padding: 30px 20px
-		background: #fff
+		@extend $g__section
+		border-radius 0 0 $section__radius // перезаписывает @extend
 		&:first-of-type
 			margin-top 0
 	h2~&__inner:first-of-type // первый __inner после h2
 		padding-top: 0
+	&:not(:last-child)
+		margin-bottom 4rem
 
 
 // =====================
@@ -84,11 +90,6 @@ $neighbors-width = 75px
 
 
 .project-section
-	h2
-		margin: 0
-		padding 30px 20px 0.8rem
-		background: #fff
-		font-weight: bold
 	ul:last-child
 		margin-bottom: 0
 
