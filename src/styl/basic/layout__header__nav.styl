@@ -1,5 +1,8 @@
 .nav // nav
 	height: 100%
+	width: 100%
+	+media(md)
+		width: unset
 
 .menu // ul
 	$bg--active = lighten($header__bg, $thin-underline-opacity)
@@ -9,14 +12,17 @@
 	margin 0
 	padding 0
 	list-style: none
-	
-	
+
+	&__item
+		flex-grow: 1
+		+media(md)
+			flex-grow: 0
+
 	&__lnk
 		display: flex
 		height: 100%
 		transition background 0.15s
 		color $header__color !important
-		font-size 0.9rem
 		line-height: 1.5
 		&.--active
 			background-color $bg--active !important
@@ -25,11 +31,11 @@
 		&:hover
 			background-color darken($bg--active, 20)
 		&__inr
-			display: inline-block
+			margin: auto
 			border-bottom: 2px solid alpha($header__color, $thin-underline-opacity)
 		
 		// Адаптивное
-		padding 10px 20px
+		padding 10px 0
 		flex 1 0 100%
 		text-align right
 		+media(md)
