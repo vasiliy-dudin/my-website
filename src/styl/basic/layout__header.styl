@@ -34,7 +34,7 @@ $header__color = #fff
 
 .navbar-header
 	@extend $d-flex
-	align-items center
+	align-items stretch
 .logo
 	height 100%
 	margin-right: 0.5rem
@@ -43,39 +43,16 @@ $header__color = #fff
 .sitename-slogan
 	@extend $d-flex
 	flex-direction: column
-	line-height 0
-		
-
-	
-
-/* .navbar-header
-	display block
-	line-height 1
-	text-align center
-	margin auto
-	align-self center
-	// Адаптивное
-	+media(md)
-		padding 15px
-	+media(lg)
-		padding 20px
-	+media(xl)
-		padding 30px 40px*/
+	justify-content: space-around
+	color $header__color
 
 .sitename
-	color $header__color
 	line-height 1
 	font-size 1.2rem
 	font-weight bold
-	span
-		display block
 	
 .slogan
-	display flex
-	flex-direction column
-	line-height 1.2
-	font-size 0.9rem
-	color $header__color
+	line-height 1
 	
 	
 
