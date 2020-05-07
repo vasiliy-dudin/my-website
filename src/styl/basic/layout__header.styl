@@ -4,17 +4,12 @@ $mob-navbar-bg = $header__bg // цвет шапки на мобильных ве
 $header__color = #fff
 
 .header
-	//background-image linear-gradient(135deg, $brand-1 0%, #090b2a 100%)
-	//background-image linear-gradient(135deg, #5e5e5e 10%, $brand-1 250%)
 	background $header__bg
 	box-shadow 0 2px 5px rgba(0, 0, 0, 0.25)
 
 // Строка с навигацией и названием сайта
 .navbar
 	@extend $d-flex
-	/*position relative // Пока не понял, зачем
-	justify-content space-between
-	align-items center*/
 	
 	// Адаптивное
 	flex-direction column

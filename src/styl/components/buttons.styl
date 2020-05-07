@@ -110,10 +110,6 @@ input[type="reset"]
 	@extend $btn-common
 	$bg = #fff
 	$border-color = #000
-	//$bg-hue = hue($bg)
-	//button-variant__color-bg($color: $body-color, $bg-color: $brand-2) // color + bg
-	//button-variant__color-bg--hover($color: $color-l, $bg-color: alpha($color-l, 0.1)) // hover
-	//button-variant__color-bg--active($color: $color-l, $bg-color: $color-l) // active
 	position relative
 	color $border-color
 	background-color $bg
@@ -122,7 +118,6 @@ input[type="reset"]
 
 	&:hover
 		background-color darken($bg, 15%)
-		//border-color lighten($border-color, 40%)
 	&:focus
 		top 1px
 		background-color transparent
