@@ -36,7 +36,8 @@ var gulp = require('gulp'),
 	htmlmin = require('gulp-htmlmin'),
 	minifyInline = require('gulp-minify-inline'),
 	webp = require('gulp-webp'),
-	sitemap = require('gulp-sitemap');
+	sitemap = require('gulp-sitemap'),
+	removeCode = require('gulp-remove-code');
 
 
 
@@ -107,8 +108,8 @@ gulp.task('__compileStylus_dist', function () {
 		.pipe(browserSync.reload({stream: true}));
 });
 
-// Pug
-gulp.task('__compilePug', function () {
+// Pug Test
+gulp.task('__compilePug_Test', function () {
 	return gulp.src([
 		'src/pug/**/*.pug',
 		'!src/pug/_helpers/**/*',
@@ -124,13 +125,35 @@ gulp.task('__compilePug', function () {
 			return require('./src/pug/projects.json');
 		}))
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-		.pipe(pug())   // Разметка НЕ в одну строку
+		.pipe(pug())
 		//.pipe(pug({pretty: true}))   // Разметка НЕ в одну строку
 		.pipe(htmlbeautify({
 			"indent_with_tabs": true
 		}))
+		.pipe(removeCode({ production: true }))
 		.pipe(gulp.dest("test"))
 		.pipe(browserSync.reload({stream: true}));
+});
+
+// Pug Dist
+gulp.task('__compilePug_Dist', function () {
+	return gulp.src([
+		'src/pug/**/*.pug',
+		'!src/pug/_helpers/**/*',
+		'!src/pug/_includes/**/*',
+		'!src/pug/_templates/**/*',
+		'!src/pug/**/*.inc.pug',
+		'!src/pug/**/*.tpl.pug',
+		'!src/pug/**/*--inc.pug',
+		'!src/pug/**/*--tpl.pug',
+		'!src/pug/**/_*.pug'
+		])
+		.pipe(data(function (file) {
+			return require('./src/pug/projects.json');
+		}))
+		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+		.pipe(pug({pretty: true}))   // Разметка НЕ в одну строку
+		.pipe(gulp.dest("test"));
 });
 
 
@@ -190,7 +213,7 @@ gulp.task('__delTest', function() {
 // ========================================================================
 
 // →  "test"
-gulp.task('Build--Test', gulp.parallel('__compileStylus', '__mergeJS', '__compilePug', function(cb) {
+gulp.task('Build--Test', gulp.parallel('__compileStylus', '__mergeJS', '__compilePug_Test', function(cb) {
 	// Шрифты
 	gulp.src('src/fonts/**/*')
 		.pipe(gulp.dest('test/fonts'));
@@ -226,7 +249,7 @@ gulp.task('Build--Test', gulp.parallel('__compileStylus', '__mergeJS', '__compil
 );
 
 // → "dist"
-gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.parallel('__compileStylus', '__mergeJS', '__compilePug'), function(cb) {
+gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.parallel('__compileStylus', '__mergeJS', '__compilePug_Dist'), function(cb) {
 	// Шрифты
 	gulp.src('src/fonts/**/*')
 		.pipe(gulp.dest('dist/fonts'));
@@ -274,7 +297,6 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 			collapseWhitespace: true,
 			removeComments: true,
 		}))
-		.pipe(minifyInline())
 		.pipe(gulp.dest("dist"));
 
 	// sitemap.xml generation
@@ -282,7 +304,7 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 		read: true
 	})
 		.pipe(sitemap({
-			siteUrl: 'https://dev.vasiliy-dudin.com',
+			siteUrl: 'https://vasiliy-dudin.com',
 			changefreq: 'daily',
 			spacing: '\t'
 		}))
@@ -332,7 +354,7 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 // Следит за папкой "test"
 gulp.task('Watch--Test', gulp.series('Build--Test', function(cb) {
 		gulp.watch('src/styl/**/*.styl',  gulp.series('__compileStylus'));
-		gulp.watch(['src/**/*.pug','!src/helpers/**/*'],  gulp.series('__compilePug'));
+		gulp.watch(['src/**/*.pug','!src/helpers/**/*'],  gulp.series('__compilePug_Test'));
 
 		cb();
 	})
@@ -349,7 +371,7 @@ gulp.task('LiveReload', gulp.series('Build--Test', function(cb) {
 			notify: false // Отключаем уведомления
 		});
 		gulp.watch('src/styl/**/*.styl',  gulp.series('__compileStylus'));
-		gulp.watch('src/**/*.pug',  gulp.series('__compilePug'));
+		gulp.watch('src/**/*.pug',  gulp.series('__compilePug_Test'));
 		//gulp.watch('src/js/**/*.js',  gulp.series('__mergeJS')); // Следит за изменениями в js
 
 		cb();
