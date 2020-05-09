@@ -21,14 +21,13 @@ block content
 							picture
 								source(type="image/webp", srcset='/projects/previews/'+ val.id + '.webp 1x, /projects/previews/'+ val.id + '@2x.webp 2x')
 								img(src='/projects/previews/'+ val.id + '.jpg' srcset='/projects/previews/'+ val.id + '.jpg 1x, /projects/previews/'+ val.id + '@2x.jpg 2x', alt='')
+							if val.type === "unpublished"
+								.project-card__not-available-message Не опубликован
 
 						.project-card__caption(class={"--external": val.type === "external"})
 							.project-card__title= val.name
 							.project-card__desc= val.desc
 							.project-card__date= val.date
-							if val.type === "unpublished"
-								.project-card__not-available-message Не опубликован
-
 
 					case val.type
 						when "internal"
@@ -44,8 +43,7 @@ block content
 
 	.project-list(class="--1")
 		+projectCard($projectPriority="1")
-	h2 Собственное бюро и фриланс
-	p Часто привлекал других проектировщиков, технического писателя, копирайтера, визуальных дизайнеров и SEO-специалиста.
+	h2 Фриланс и собственное бюро
 	.project-list(class="--2")
 		+projectCard($projectPriority="2")
 	.project-list(class="--3")
