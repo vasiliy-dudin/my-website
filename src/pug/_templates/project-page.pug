@@ -17,12 +17,17 @@ mixin section_inner()
 		block
 
 //- Изображение
-mixin img-project($src, $size, $alt="")
+mixin img-project($filename, $extension, $size, $alt="")
 	.project-img
 		picture
-			- var $src_webp = $src.replace(/(jpg|png)$/g, "webp");
-			source(type="image/webp", srcset=$src_webp)
-			img.project-img__src(src=$src, alt=$alt, class="project-img__src--"+$size)
+			source(
+				type="image/webp",
+				srcset=$filename+".webp" + " 1x," + $filename+"@2x.webp 2x")
+			img.project-img__src(
+				src=$filename+"."+$extension,
+				srcset=$filename+"."+$extension + " 1x, " + $filename+"@2x."+$extension + " 2x",
+				alt=$alt,
+				class="project-img__src--"+$size)
 
 //- Видео
 mixin video-project()
