@@ -67,9 +67,9 @@ html(lang="ru")
 								if val.type === "internal"
 									case val.id
 										when (parseInt($projectID) + 1).toString()
-											a(href="/projects/"+ val.id + "/", title=val.name, data-ga-label="Prev", aria-lebel="Следующий проект: "+val.name).neighbors__next.btn
+											a(href="/projects/"+ val.id + "/", title=val.name, data-ga-label="Prev", aria-label="Следующий проект: "+val.name).neighbors__next.btn
 										when (parseInt($projectID) - 1).toString()
-											a(href="/projects/"+ val.id + "/", title=val.name, data-ga-label="Next", aria-lebel="Предыдущий проект: "+val.name).neighbors__prev.btn
+											a(href="/projects/"+ val.id + "/", title=val.name, data-ga-label="Next", aria-label="Предыдущий проект: "+val.name).neighbors__prev.btn
 
 
 					block content
