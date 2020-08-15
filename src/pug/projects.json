@@ -35,10 +35,11 @@
 	{
 	  "id": "5",
 	  "name": "UX Knowledge Base",
-	  "desc": "База знаний дизайна цифровых продуктов",
+	  "desc": "База знаний о дизайне цифровых продуктов и сервисов",
 	  "date": "С 2018",
 	  "priority": "1",
-	  "type": "unpublished"
+	  "type": "external",
+	  "targetURL": "https://ux-kb.ru"
 	},
 	{
 	  "id": "63",
