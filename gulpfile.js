@@ -380,28 +380,10 @@ exports.Build = series(
 
 function LiveReload(cb) {
 	browserSync.init({
-		server: {
-			baseDir: 'test'
-
-		},
+		server: './test',
 		port: 3087,
 		notify: false,
-		open: false,
-		serveStatic: ['assets/test'],
-		rewriteRules: [
-			{
-				match: new RegExp("assets/css/bundle.css"),
-				fn: function() {
-					return "css/bundle.css"
-				}
-			},
-			{
-				match: new RegExp("assets/js/bundle.js"),
-				fn: function() {
-					return "js/bundle.js"
-				}
-			}
-		],
+		open: false
 	});
 
 	gulp.watch('src/styl/**/*.styl',  gulp.series('__compileStylus'));
@@ -411,7 +393,7 @@ function LiveReload(cb) {
 	cb();
 }
 exports.browserSync = series(
-	parallel(__compileStylus, __mergeJS, BuildTest),
+	parallel(__compileStylus, __mergeJS, BuildTest, __compilePug_Test),
 	LiveReload
 );
 exports.default = LiveReload;
