@@ -1,43 +1,45 @@
 // ========================================================================
 // Подключение модулей
 // ========================================================================
-var gulp = require('gulp'),
-	CompileStylus = require('gulp-stylus'),
-	pug           = require('gulp-pug'),
-	fs            = require("fs-extra"),
-	data          = require('gulp-data'),
-	pugBeautify   = require('gulp-pug-beautify'),
-	browserSync   = require('browser-sync'),
-	concat        = require('gulp-concat'), //  для конкатенации файлов
-	uglify        = require('gulp-uglify-es').default, // для сжатия JS, поддерживает ES6
-	cssnano       = require('gulp-cssnano'), // для минификации CSS
-	rename        = require('gulp-rename'), // для переименования файлов
-	del           = require('del'), // для удаления файлов и папок
-	cache         = require('gulp-cache'), // Библиотека кеширования
-	autoprefixer  = require('autoprefixer'), // для автоматического добавления префиксов
-	imagemin      = require('gulp-imagemin'), // для работы с изображениями
-	pngquant      = require('imagemin-pngquant'), // для сжатия png
-	imageminJpegtran = require('imagemin-jpegtran'), // для сжатия jpg
-	imageminGifsicle = require('imagemin-gifsicle'), // для сжатия gif
-	imageminSvgo = require('imagemin-svgo'), // для сжатия svg
-	gulp_postcss = require('gulp-postcss'),
-	datauri = require('postcss-data-uri'),
-	mergeRules = require('postcss-merge-rules'), // Объединяет селекторы с одинаковыми свойствами
-	combineCssMedia = require('css-mqpacker'), // Объединяет @media, помещает их в конец css. Работает через postcss. Не очень хорошо, что базовые свойства макета находятся в конце файла.
-	htmlbeautify = require('gulp-html-beautify'),
-	plumber = require('gulp-plumber'),
-	notify = require("gulp-notify"),
-	modifyCssUrls = require('gulp-modify-css-urls'), // Меняет пути к файлам в css
-	postcss_inline_svg = require('postcss-inline-svg'),
-	replace = require('gulp-replace'),
-	purify = require('gulp-purifycss'),	// Убирает неиспользуемые стили
-	svgSprite = require('gulp-svg-sprite'),
-	flatten = require('gulp-flatten'),
-	htmlmin = require('gulp-htmlmin'),
-	minifyInline = require('gulp-minify-inline'),
-	webp = require('gulp-webp'),
-	sitemap = require('gulp-sitemap'),
-	removeCode = require('gulp-remove-code');
+const gulp = require('gulp');
+const CompileStylus = require('gulp-stylus');
+const pug           = require('gulp-pug');
+const fs            = require("fs-extra");
+const data          = require('gulp-data');
+const pugBeautify   = require('gulp-pug-beautify');
+const browserSync   = require('browser-sync');
+const concat        = require('gulp-concat'); //  для конкатенации файлов
+const uglify        = require('gulp-uglify-es').default; // для сжатия JS, поддерживает ES6
+const cssnano       = require('gulp-cssnano'); // для минификации CSS
+const rename        = require('gulp-rename'); // для переименования файлов
+const del           = require('del'); // для удаления файлов и папок
+const cache         = require('gulp-cache'); // Библиотека кеширования
+const autoprefixer  = require('autoprefixer'); // для автоматического добавления префиксов
+const imagemin      = require('gulp-imagemin'); // для работы с изображениями
+const pngquant      = require('imagemin-pngquant'); // для сжатия png
+const imageminJpegtran = require('imagemin-jpegtran'); // для сжатия jpg
+const imageminGifsicle = require('imagemin-gifsicle'); // для сжатия gif
+const imageminSvgo = require('imagemin-svgo'); // для сжатия svg
+const gulp_postcss = require('gulp-postcss');
+const datauri = require('postcss-data-uri');
+const mergeRules = require('postcss-merge-rules'); // Объединяет селекторы с одинаковыми свойствами
+const combineCssMedia = require('css-mqpacker'); // Объединяет @media, помещает их в конец css. Работает через postcss. Не очень хорошо, что базовые свойства макета находятся в конце файла.
+const htmlbeautify = require('gulp-html-beautify');
+const plumber = require('gulp-plumber');
+const notify = require("gulp-notify");
+const modifyCssUrls = require('gulp-modify-css-urls'); // Меняет пути к файлам в css
+const postcss_inline_svg = require('postcss-inline-svg');
+const replace = require('gulp-replace');
+const purify = require('gulp-purifycss');	// Убирает неиспользуемые стили
+const svgSprite = require('gulp-svg-sprite');
+const flatten = require('gulp-flatten');
+const htmlmin = require('gulp-htmlmin');
+const minifyInline = require('gulp-minify-inline');
+const webp = require('gulp-webp');
+const sitemap = require('gulp-sitemap');
+const removeCode = require('gulp-remove-code');
+
+const { series, parallel } = require('gulp');
 
 
 
@@ -68,7 +70,7 @@ var gulp = require('gulp'),
 // Компиляция
 // ========================================================================
 // Stylus, в папку test
-gulp.task('__compileStylus', function () {
+function __compileStylus() {
 	var $postcss_plugins = [
 		postcss_inline_svg,
 		autoprefixer({
@@ -85,19 +87,21 @@ gulp.task('__compileStylus', function () {
 		.pipe(gulp_postcss($postcss_plugins))
 		.pipe(gulp.dest('test/css'))
 		.pipe(browserSync.reload({stream: true}));
-});
+}
+exports.__compileStylus = __compileStylus;
 
 // Stylus, в папку dist
-gulp.task('__compileStylus_dist', function () {
-	var $postcss_plugins = [
-		postcss_inline_svg,
-		autoprefixer({
-			cascade: false
-		})
-		/*combineCssMedia({
-			sort: true
-		})*/
-	];
+function __compileStylus_dist() {
+	{
+		var $postcss_plugins = [
+			postcss_inline_svg,
+			autoprefixer({
+				cascade: false
+			})
+			/*combineCssMedia({
+				sort: true
+			})*/
+		];
 
 	return gulp.src('src/styl/bundle.styl')
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
@@ -106,55 +110,63 @@ gulp.task('__compileStylus_dist', function () {
 		.pipe(cssnano()) // Сжимаем
 		.pipe(gulp.dest('dist/css'))
 		.pipe(browserSync.reload({stream: true}));
-});
+	}
+}
+exports.__compileStylus_dist = __compileStylus_dist;
 
 // Pug Test
-gulp.task('__compilePug_Test', function () {
-	return gulp.src([
-		'src/pug/**/*.pug',
-		'!src/pug/_helpers/**/*',
-		'!src/pug/_includes/**/*',
-		'!src/pug/_templates/**/*',
-		'!src/pug/**/*.inc.pug',
-		'!src/pug/**/*.tpl.pug',
-		'!src/pug/**/*--inc.pug',
-		'!src/pug/**/*--tpl.pug',
-		'!src/pug/**/_*.pug'
+function __compilePug_Test() {
+	{
+		return gulp.src([
+			'src/pug/**/*.pug',
+			'!src/pug/_helpers/**/*',
+			'!src/pug/_includes/**/*',
+			'!src/pug/_templates/**/*',
+			'!src/pug/**/*.inc.pug',
+			'!src/pug/**/*.tpl.pug',
+			'!src/pug/**/*--inc.pug',
+			'!src/pug/**/*--tpl.pug',
+			'!src/pug/**/_*.pug'
 		])
-		.pipe(data(function (file) {
-			return require('./src/pug/projects.json');
-		}))
-		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-		.pipe(pug())
-		//.pipe(pug({pretty: true}))   // Разметка НЕ в одну строку
-		.pipe(htmlbeautify({
-			"indent_with_tabs": true
-		}))
-		.pipe(removeCode({ production: true }))
-		.pipe(gulp.dest("test"))
-		.pipe(browserSync.reload({stream: true}));
-});
+			.pipe(data(function (file) {
+				return require('./src/pug/projects.json');
+			}))
+			.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+			.pipe(pug())
+			//.pipe(pug({pretty: true}))   // Разметка НЕ в одну строку
+			.pipe(htmlbeautify({
+				"indent_with_tabs": true
+			}))
+			.pipe(removeCode({production: true}))
+			.pipe(gulp.dest("test"))
+			.pipe(browserSync.reload({stream: true}));
+	}
+}
+exports.__compilePug_Test = __compilePug_Test;
 
 // Pug Dist
-gulp.task('__compilePug_Dist', function () {
-	return gulp.src([
-		'src/pug/**/*.pug',
-		'!src/pug/_helpers/**/*',
-		'!src/pug/_includes/**/*',
-		'!src/pug/_templates/**/*',
-		'!src/pug/**/*.inc.pug',
-		'!src/pug/**/*.tpl.pug',
-		'!src/pug/**/*--inc.pug',
-		'!src/pug/**/*--tpl.pug',
-		'!src/pug/**/_*.pug'
+function __compilePug_Dist() {
+	{
+		return gulp.src([
+			'src/pug/**/*.pug',
+			'!src/pug/_helpers/**/*',
+			'!src/pug/_includes/**/*',
+			'!src/pug/_templates/**/*',
+			'!src/pug/**/*.inc.pug',
+			'!src/pug/**/*.tpl.pug',
+			'!src/pug/**/*--inc.pug',
+			'!src/pug/**/*--tpl.pug',
+			'!src/pug/**/_*.pug'
 		])
-		.pipe(data(function (file) {
-			return require('./src/pug/projects.json');
-		}))
-		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-		.pipe(pug({pretty: true}))   // Разметка НЕ в одну строку
-		.pipe(gulp.dest("test"));
-});
+			.pipe(data(function (file) {
+				return require('./src/pug/projects.json');
+			}))
+			.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+			.pipe(pug({pretty: true}))   // Разметка НЕ в одну строку
+			.pipe(gulp.dest("test"));
+	}
+}
+exports.__compilePug_Dist = __compilePug_Dist;
 
 
 
@@ -165,13 +177,17 @@ gulp.task('__compilePug_Dist', function () {
 // Объединение файлов
 // ========================================================================
 // JS
-gulp.task('__mergeJS', function() {
-	return gulp.src(require('./src/js/js-list.json')) // Список подключаемых файлов. Если подключаем один файл, то убрать скобки и запятые
-		.pipe(plumber())
-		.pipe(concat('bundle.js')) // Собираем их в кучу в новом файле
-		.pipe(gulp.dest('test/js')) // Сохраняем в папку
-		.pipe(browserSync.reload({stream: true}));
-});
+function __mergeJS() {
+	{
+		return gulp.src(require('./src/js/js-list.json')) // Список подключаемых файлов. Если подключаем один файл, то убрать скобки и запятые
+			.pipe(plumber())
+			.pipe(concat('bundle.js')) // Собираем их в кучу в новом файле
+			.pipe(gulp.dest('test/js')) // Сохраняем в папку
+			.pipe(browserSync.reload({stream: true}));
+	}
+
+}
+exports.__mergeJS = __mergeJS;
 
 
 
@@ -192,13 +208,13 @@ gulp.task('__mergeJS', function() {
 // Удаление папок
 // ========================================================================
 // dist
-gulp.task('__delDist', function() {
-	return del('dist');
-});
+function __delDist() {
+	return del('assets/dist');
+}
 // test
-gulp.task('__delTest', function() {
-	return del('test');
-});
+function __delTest() {
+	return del('assets/test');
+}
 
 
 
@@ -213,7 +229,7 @@ gulp.task('__delTest', function() {
 // ========================================================================
 
 // →  "test"
-gulp.task('Build--Test', gulp.parallel('__compileStylus', '__mergeJS', '__compilePug_Test', function(cb) {
+function BuildTest(cb) {
 	// Шрифты
 	gulp.src('src/fonts/**/*')
 		.pipe(gulp.dest('test/fonts'));
@@ -245,11 +261,14 @@ gulp.task('Build--Test', gulp.parallel('__compileStylus', '__mergeJS', '__compil
 		.pipe(gulp.dest('test'));
 
 	cb();
-	})
+}
+exports.BuildTest = series(
+	parallel(__compileStylus, __compilePug_Test, __mergeJS),
+	BuildTest
 );
 
 // → "dist"
-gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.parallel('__compileStylus', '__mergeJS', '__compilePug_Dist'), function(cb) {
+function Build(cb) {
 	// Шрифты
 	gulp.src('src/fonts/**/*')
 		.pipe(gulp.dest('dist/fonts'));
@@ -257,7 +276,7 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 
 	var $imageminSettings = [
 		imagemin.gifsicle({interlaced: true}),
-		imagemin.jpegtran({progressive: true}),
+		imagemin.mozjpeg({progressive: true}),
 		imagemin.optipng({optimizationLevel: 7}),
 		imagemin.svgo({plugins: [{removeViewBox: true}]})
 	];
@@ -342,45 +361,57 @@ gulp.task('Build', gulp.series(gulp.parallel('__delTest', '__delDist'), gulp.par
 		.pipe(gulp.dest('dist/js'));
 
 	cb();
-}));
+}
 
-
-
-
-
-// ========================================================================
-// Watch (следит за изменниями файлов и компилирует в папку test)
-// ========================================================================
-// Следит за папкой "test"
-gulp.task('Watch--Test', gulp.series('Build--Test', function(cb) {
-		gulp.watch('src/styl/**/*.styl',  gulp.series('__compileStylus'));
-		gulp.watch(['src/**/*.pug','!src/helpers/**/*'],  gulp.series('__compilePug_Test'));
-
-		cb();
-	})
+exports.Build = series(
+	parallel(__delTest, __delDist),
+	parallel(__compileStylus, __mergeJS, __compilePug_Dist),
+	Build
 );
 
-// Следит за папкой "test" и открывает в браузере
-gulp.task('LiveReload', gulp.series('Build--Test', function(cb) {
-		browserSync({ // Выполняем browserSync
-			server: { // Определяем параметры сервера
-				baseDir: 'test' // Директория для сервера
 
+
+
+
+
+// ========================================================================
+// browserSync
+// ========================================================================
+
+function LiveReload(cb) {
+	browserSync.init({
+		server: {
+			baseDir: 'test'
+
+		},
+		port: 3087,
+		notify: false,
+		open: false,
+		serveStatic: ['assets/test'],
+		rewriteRules: [
+			{
+				match: new RegExp("assets/css/bundle.css"),
+				fn: function() {
+					return "css/bundle.css"
+				}
 			},
-			port: 3087,
-			notify: false // Отключаем уведомления
-		});
-		gulp.watch('src/styl/**/*.styl',  gulp.series('__compileStylus'));
-		gulp.watch('src/**/*.pug',  gulp.series('__compilePug_Test'));
-		//gulp.watch('src/js/**/*.js',  gulp.series('__mergeJS')); // Следит за изменениями в js
+			{
+				match: new RegExp("assets/js/bundle.js"),
+				fn: function() {
+					return "js/bundle.js"
+				}
+			}
+		],
+	});
 
-		cb();
-	})
+	gulp.watch('src/styl/**/*.styl',  gulp.series('__compileStylus'));
+	gulp.watch('src/js/**/*.js',  gulp.series('__mergeJS'));
+	gulp.watch('src/**/*.pug',  gulp.series('__compilePug_Test'));
+
+	cb();
+}
+exports.browserSync = series(
+	parallel(__compileStylus, __mergeJS, BuildTest),
+	LiveReload
 );
-
-
-
-
-
-// Задача по-умолчанию
-gulp.task('default', gulp.series('LiveReload'));
+exports.default = LiveReload;
