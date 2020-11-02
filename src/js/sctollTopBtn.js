@@ -2,7 +2,7 @@
 
 (function scrolltotop() {
 	const $BTN = document.querySelector('.scroll-to-top'); // Кнопка
-	var $currentScroll; // Текущие координаты
+	let $currentScroll; // Текущие координаты
 
 	window.addEventListener('scroll', function() {
 		$currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
