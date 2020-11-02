@@ -21,7 +21,6 @@
 			filter: grayscale(1)
 
 .project-card
-	$caption-bg = lighten($link-color, 96%)
 	position: relative
 	&__link
 		position: relative
@@ -89,7 +88,7 @@
 
 
 	// hover, active, focus
-	$img-overlay = $caption-bg
+	$img-overlay = alpha(#fff, 10%)
 
 	&__link
 		&:hover
@@ -107,9 +106,9 @@
 		&:hover
 		&:focus
 			& ^[0]__thumbnail:before
-				background: alpha($img-overlay, 50%);
+				background: $img-overlay
 			& ^[0]__title
 				color $link-color--hover
 
 		&:active ^[0]__thumbnail:before
-			background: alpha($img-overlay, 70%);
+			background: alpha($img-overlay, 50%);
