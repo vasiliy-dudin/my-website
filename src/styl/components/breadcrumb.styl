@@ -1,5 +1,5 @@
-$breadcrumb-link-color = $body-color
-$breadcrumb-active-color = alpha($breadcrumb-link-color, 50%)
+$breadcrumb-link-color = $color_blue-gray--6
+$breadcrumb-active-color = $color_blue-gray--6
 
 .breadcrumbs // ol
 	display: flex
@@ -16,7 +16,7 @@ $breadcrumb-active-color = alpha($breadcrumb-link-color, 50%)
 		// Разделители
 		&:not(:last-child):after
 			content: ""
-			margin: 0 .4rem
+			margin: 0 12px
 			background: url(/imgs/breadcrumbs-arrow.svg) 50% 50% no-repeat
 			width: 7px
 			height: 12px
@@ -26,9 +26,8 @@ $breadcrumb-active-color = alpha($breadcrumb-link-color, 50%)
 	&__link
 		display: inline-block
 		color $breadcrumb-link-color !important
-		border-color $breadcrumb-active-color !important
 		border-width: 1px !important
-		thin-underline--default()
+		thin-underline--default($border-color=$breadcrumb-link-color)
 		&.--current
 			border: 0
 			color: $breadcrumb-active-color !important
