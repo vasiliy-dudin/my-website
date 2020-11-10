@@ -17,7 +17,7 @@ block content
 
 					//- Подставляется после case
 					mixin _projectList-content
-						.project-card__thumbnail
+						.project-card__thumbnail(class={"--external": val.type === "external"})
 							picture
 								source(type="image/webp", srcset='/projects/previews/'+ val.id + '.webp 1x, /projects/previews/'+ val.id + '@2x.webp 2x')
 								img(src='/projects/previews/'+ val.id + '.jpg' srcset='/projects/previews/'+ val.id + '.jpg 1x, /projects/previews/'+ val.id + '@2x.jpg 2x', alt='')
