@@ -5,8 +5,6 @@
 		width: unset
 
 .menu // ul
-	$bg--active = lighten($header__bg, $thin-underline-opacity)
-
 	display: flex
 	height: 100%
 	margin 0
@@ -25,11 +23,11 @@
 		color $header__color !important
 		line-height: 1.5
 		&.--active
-			background-color $bg--active !important
+			background-color darken($header__bg, 10) !important
 			& ^[1]__inr
 				border-color alpha($header__color, $thin-underline-opacity+20)
 		&:hover
-			background-color darken($bg--active, 20)
+			background-color darken($header__bg, 5)
 		&__inr
 			margin: auto
 			border-bottom: 2px solid alpha($header__color, $thin-underline-opacity)
