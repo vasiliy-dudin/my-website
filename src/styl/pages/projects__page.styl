@@ -70,17 +70,26 @@ $neighbors-width = 75px
 		margin: 0
 		@extend $g__section
 		padding-bottom 0.8rem // перезаписывает @extend
-		border-radius $section__radius $section__radius 0 0  // перезаписывает @extend
 	&__inner
 		margin-top 0.5rem
 		@extend $g__section
-		border-radius 0 0 $section__radius // перезаписывает @extend
 		&:first-of-type
 			margin-top 0
 	h2~&__inner:first-of-type // первый __inner после h2
 		padding-top: 0
 	&:not(:last-child)
-		margin-bottom 4rem
+		margin-bottom 2rem
+
+
+.project-cols
+	display: grid
+	gap 32px
+	grid-template-columns: 3fr 5fr
+
+	h3:first-child
+		margin-top: 0
+//.project-col
+
 
 
 // =====================
