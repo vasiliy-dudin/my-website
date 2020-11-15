@@ -12,8 +12,20 @@ mixin section($heading)
 		if $heading
 			h2.project-h2=$heading
 		block
-mixin section_inner()
+mixin section_inner
 	.project-section__inner
+		if $heading
+			h3.project-h3=$heading
+		block
+//- Описание проекта в 2 колонки
+mixin project-cols
+	.project-cols
+		block
+mixin project-col-1
+	.project-col(class="--1")
+		block
+mixin project-col-2
+	.project-col(class="--2")
 		block
 
 //- Изображение
@@ -27,8 +39,12 @@ mixin img-project($filename, $extension, $size, $alt="")
 				src=$filename+"."+$extension,
 				srcset=$filename+"."+$extension + " 1x, " + $filename+"@2x."+$extension + " 2x",
 				alt=$alt,
-				class="project-img__src--"+$size)
-
+				class=(
+					$size
+					? '--'+$size
+					: ''
+				)
+			)
 //- Видео
 mixin video-project()
 	.project-video

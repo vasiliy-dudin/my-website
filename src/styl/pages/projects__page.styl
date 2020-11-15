@@ -8,7 +8,7 @@ $neighbors-width = 75px
 .project-header
 	position relative
 	padding: $project-header__padding
-	margin-bottom: 4rem
+	margin-bottom: 3rem
 	body-bg(fixed)
 	justify-content: space-between
 	flex-wrap: wrap
@@ -68,8 +68,10 @@ $neighbors-width = 75px
 .project-section
 	h2
 		margin: 0
-		@extend $g__section
 		padding-bottom 0.8rem // перезаписывает @extend
+		+media(md)
+			padding-top: 150px;
+			margin-top: - @padding-top;
 	&__inner
 		margin-top 0.5rem
 		@extend $g__section
@@ -82,9 +84,10 @@ $neighbors-width = 75px
 
 
 .project-cols
-	display: grid
-	gap 32px
-	grid-template-columns: 3fr 5fr
+	+media(lg)
+		display: grid
+		gap 32px
+		grid-template-columns: 3fr 5fr
 
 	h3:first-child
 		margin-top: 0
@@ -116,12 +119,13 @@ $neighbors-width = 75px
 		margin-bottom: 1rem
 	&__src
 		height auto
-		width 100%
-		&--xl
-			max-width 100%
-		&--md
+		max-width 100%
+		&.--md
 			max-width 800px
-		&--s
+			width 100%
+		&.--s
 			max-width 600px
-		&--xs
-			max-width 600px
+			width 100%
+		&.--xs
+			max-width 400px
+			width 100%
