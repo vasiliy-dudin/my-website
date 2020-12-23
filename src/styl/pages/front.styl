@@ -1,7 +1,10 @@
+$home-section-gap = 10px
+
+
 ////// Первая секция обо мне
 .hero-section
 	@extend $g__section
-	margin-bottom: 2rem
+	margin-bottom: $home-section-gap
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 1.5rem;
@@ -41,11 +44,10 @@
 
 
 // Блоки с информацией обо мне
-$about-me-section-gap = 10px;
 
 .about-me-grid
 	display: grid
-	grid-gap: $about-me-section-gap
+	grid-gap: $home-section-gap
 	+media(sm)
 		grid-template-columns: repeat(auto-fit, minmax(410px, 1fr))
 
@@ -61,4 +63,43 @@ $about-me-section-gap = 10px;
 	&__name
 		margin: 0
 	&:not(:last-child)
-		margin-bottom: $about-me-section-gap
+		margin-bottom: $home-section-gap
+
+
+// Шкала
+.scales
+	display: inline-flex
+	flex-direction: column
+	align-items flex-end
+
+.scale
+	display: flex
+	align-items center
+	&:not(:last-child)
+		margin-bottom 8px
+	&__name
+		margin-right: 8px
+		text-align right
+		line-height 1.2
+	&__segments
+		display:flex
+	&__segment
+		width: 12px
+		height: @width
+		border: 1px solid #7ECB92 // TODO В переменную
+		border-radius 50%
+		+media(sm)
+			width: 16px
+			height: @width
+		&:not(:last-child)
+			margin-right 4px
+		&.--painted
+			background: #7ECB92 // TODO В переменную
+
+
+.services-section
+	@extend $g__section, .about-me-grid
+	margin-bottom: 2rem
+	gap 1.5rem
+	h2
+		margin-top: 0

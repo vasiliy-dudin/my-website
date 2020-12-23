@@ -44,6 +44,23 @@ block content
 				| Много читаю, хочу учить и развиваться.
 
 
+	section.section.services-section
+			.col
+				h2 Чем могу помочь
+				ul
+					li Проектирование (дизайн) сайтов, веб-сервисов, мобильных и десктопных приложений;
+					li пользовательские исследования и аналитика;
+					li написание интерфейсных текстов;
+					li написание гайдов;
+					li проектирование дизайн-систем и UI-китов;
+					li UX-стратегия.
+			.col
+				h2 Мои роли
+				ul
+					li UX-дизайнер;
+					li UX/UI-дизайнер;
+					li продуктовый дизайнер;
+					li дизайнер взаимодействия.
 
 	mixin about-me-section($title, $modificator)
 		section.section.about-me-section(class='--' + $modificator)
@@ -55,6 +72,17 @@ block content
 	.about-me-grid
 		.col
 			+about-me-section('Хард-скиллы', 'hard-skills')
+				mixin scale($name, $value)
+						.scale
+							.scale__name= $name
+							.scale__segments
+								- for(var $i = 1; $i <= 10; $i++)
+									.scale__segment(class={"--painted": $i <= $value})
+				.scales
+					+scale('UX-дизайн', 9)
+					+scale('UI-дизайн', 7)
+					+scale('Граф. дизайн', 3)
+					+scale('UX-аналитика', 6)
 
 				h3 Проектирование
 				ul
