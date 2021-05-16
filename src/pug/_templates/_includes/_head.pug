@@ -2,11 +2,12 @@
 block vars
 
 //- Вытаскивает параметры проекты из массива (срабатывает только на странице проекта)
-each val in projectList
-	if val.id === $projectID
-		- $h1 = val.name
-		- $desc = val.desc
-		- $date = val.date
+each project in projectList
+	if project.id === $projectID
+		- $h1 = project.name
+		- $desc = project.desc
+		- $date = project.date
+		- $project = project
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="utf-8"/>

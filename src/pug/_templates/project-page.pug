@@ -3,6 +3,15 @@ include ../_helpers/mixins
 
 
 //////////////-
+//- Переменные
+//////////////-
+
+//- Активный пунт меню
+- var $menu_activeLink = "2"
+
+
+
+//////////////-
 //- Миксины
 //////////////-
 
@@ -59,8 +68,6 @@ mixin prototype-link($url, $text="Интерактивный прототип")
 
 
 
-//- Активный пунт меню
-- var $menu_activeLink = "2"
 
 doctype
 html(lang="ru")
@@ -76,16 +83,20 @@ html(lang="ru")
 						h1= $h1
 						if $date
 							.project-header__date= $date
+						if $project.tags
+							.tags
+								each tag in $project.tags
+									.tags__item= tag
 
 						//- Ссылки на соседние проекты
 						.neighbors
-							each val in projectList
-								if val.type === "internal"
-									case val.id
+							each project in projectList
+								if project.type === "internal"
+									case project.id
 										when (parseInt($projectID) + 1).toString()
-											a(href="/projects/"+ val.id + "/", title=val.name, data-ga-label="Prev", aria-label="Следующий проект: "+val.name).neighbors__next.btn
+											a(href="/projects/"+ project.id + "/", title=project.name, data-ga-label="Prev", aria-label="Следующий проект: "+project.name).neighbors__next.btn
 										when (parseInt($projectID) - 1).toString()
-											a(href="/projects/"+ val.id + "/", title=val.name, data-ga-label="Next", aria-label="Предыдущий проект: "+val.name).neighbors__prev.btn
+											a(href="/projects/"+ project.id + "/", title=project.name, data-ga-label="Next", aria-label="Предыдущий проект: "+project.name).neighbors__prev.btn
 
 
 					block content

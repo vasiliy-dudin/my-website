@@ -21,7 +21,6 @@
 			filter: grayscale(1)
 
 .project-card
-	position: relative
 	&__link
 		position: relative
 		display: block
@@ -52,42 +51,42 @@
 	// Caption
 
 	&__caption
+		display grid
+		gap 4px
 		line-height: 1.4
 		margin-top 10px
 	&__title
-		display: inline
-		font-size: 1.1rem
-		line-height 1.5
+		font-size: $font-size-lg
 		color: $link-color
-		thin-underline--default()
+		// Не опубликован
+		&.--unpublished
+			display flex
+			align-items center
+			flex-wrap wrap
+			gap 6px
+		&-innr
+			thin-underline--default()
+			// Не опубликован
+			&.--unpublished
+				border: 0
+
 	&__desc
-		margin-top: 5px
 		color: $body-color
 	&__date
-		color: $color_gray--5
+		font-size: $font-size-xs
+		color: $body-color
 
-
-
-	// Работа в процессе наполнения
-
-	/.--not-filled-in-yet
-		opacity: .35
+	// Не опубликован
+	&.--unpublished
 		filter: saturate(0)
-		.work__title
-			border-color: transparent
-	&__not-available-message
+	&__unpublished-badge
 		display: inline-block
-		position: absolute
-		bottom: 8px
-		left: 8px
-		padding 2px 6px
+		padding 2px 4px
+		font-size $font-size-xs
+		border-radius 2px
 		border: 1px solid
-		font-size: .9rem
 		line-height: 1
 		color: $body-color
-		background #fff
-		border-radius: 3px
-
 
 
 
