@@ -129,3 +129,12 @@ $neighbors-width = 75px
 		&.--xs
 			max-width 400px
 			width 100%
+
+
+// Разделение на колонки
+.article-project
+	.row
+		display grid
+		gap 32px
+		+media(sm)
+			grid-template-columns: repeat(auto-fit, minmax(330px, 1fr))

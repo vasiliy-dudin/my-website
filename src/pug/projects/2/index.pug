@@ -14,9 +14,12 @@ block content
 	+section
 		+section_inner
 			h2 О проекте
-			p Один из организаторов первого в России митапа о доступности.
-			p Митап ориентирован на фронтенд-разработчиков, UI- и UX-дизайнеров, QA-инженеров, копирайтеров, UX-писателей, менеджеров и руководителей проектов.
-			p Доступность, accessibility или коротко a11y — это набор методов и технологий создания интерфейсов для людей с особыми потребностями. Но следование этим правилам помогает сделать интерфейсы удобнее и доступнее для всех.
-			+img-project($filename='semrush-photo', $extension='jpg', $size='md', $alt='')
-			+video-project()
-				<iframe title="Видео со второго митапа" width="560" height="315" src="https://www.youtube-nocookie.com/embed/7w4RGiwWHzc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			.row
+				.col
+					p Один из организаторов первого в России митапа о доступности.
+					p Митап ориентирован на фронтенд-разработчиков, UI- и UX-дизайнеров, QA-инженеров, копирайтеров, UX-писателей, менеджеров и руководителей проектов.
+					p Доступность, accessibility или коротко a11y — это набор методов и технологий создания интерфейсов для людей с особыми потребностями. Но следование этим правилам помогает сделать интерфейсы удобнее и доступнее для всех.
+					+prototype-link($url="https://www.youtube.com/watch?v=LIi-fRukS1Y&list=PLTdS5E3zupkGg0FoMoWB5FD2tlBrSWUQB&index=7", $text="Плейлист митапа на YouTube")
+					+prototype-link($url="https://github.com/pitercss/a11y_docs", $text="Описание на GitGub")
+				.col
+					+img-project($filename='a11y-1', $extension='png', $size='', $alt='')
