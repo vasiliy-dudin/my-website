@@ -52,7 +52,7 @@
 	  "desc": "Сервис аренды и сдачи автомобилей в аренду",
 	  "date": "11 дек 2017",
 	  "priority": "2",
-	  "type": "external",
+	  "type": "hidden",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/63"
 	},
 	{
@@ -61,7 +61,7 @@
 	  "desc": "Приложение и мобильная версия магазина",
 	  "date": "19 дек 2017",
 	  "priority": "2",
-	  "type": "external",
+	  "type": "hidden",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/60"
 	},
 	{
@@ -70,7 +70,7 @@
 	  "desc": "SaaS для управления WordPress сайтами",
 	  "date": "2 фев 2017",
 	  "priority": "2",
-	  "type": "external",
+	  "type": "hidden",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/12"
 	},
 	{
@@ -79,7 +79,7 @@
 	  "desc": "WP плагин для генерации контента",
 	  "date": "15 фев 2017",
 	  "priority": "2",
-	  "type": "external",
+	  "type": "hidden",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/13"
 	},
 	{
@@ -88,7 +88,7 @@
 	  "desc": "СМИ о e-commerce",
 	  "date": "15 янв 2016",
 	  "priority": "2",
-	  "type": "external",
+	  "type": "hidden",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/20"
 	},
 	{
@@ -97,7 +97,7 @@
 	  "desc": "Магазин компьютерных игр, приставок и аксессуаров",
 	  "date": "18 авг 2015",
 	  "priority": "2",
-	  "type": "external",
+	  "type": "hidden",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/21"
 	},
 
@@ -120,7 +120,7 @@
 	  "desc": "CRM",
 	  "date": "15 фев 2017",
 	  "priority": "3",
-	  "type": "external",
+	  "type": "hidden",
 	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/57"
 	},
 	{
@@ -129,7 +129,7 @@
 	  "desc": "Гос. портал",
 	  "date": "15 июн 2017",
 	  "priority": "3",
-	  "type": "unpublished"
+	  "type": "hidden"
 	},
 	{
 	  "id": "22",
@@ -137,7 +137,7 @@
 	  "desc": "CRM",
 	  "date": "6 окт 2016",
 	  "priority": "3",
-	  "type": "unpublished"
+	  "type": "hidden"
 	},
 	{
 	  "id": "23",
@@ -195,7 +195,7 @@
 	  "desc": "Сайт ТЦ",
 	  "date": "24 фев 2015",
 	  "priority": "3",
-	  "type": "unpublished"
+	  "type": "hidden"
 	},
 	{
 	  "id": "31",
