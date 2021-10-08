@@ -13,19 +13,10 @@ block vars
 
 block content
 	section.section.section--contacts
-			.contact-item
-				a(href="mailto:me@vasiliy-dudin.com" target="_blank" rel="nofollow noopener noreferrer" data-ga-label="Email").contact-lnk.link
-					i.contact-lnk__icon
-						include icons/_email.svg
-					.contact-lnk__text me@vasiliy-dudin.com
-			//- .contact-item
-				a(href="skype:vasiliy.dudin?chat" rel="nofollow noopener noreferrer" data-ga-label="Skype").contact-lnk.link
-					i.contact-lnk__icon
-						include icons/_skype.svg
-					.contact-lnk__text Чат с vasiliy.dudin
-
-			.contact-item
-				a(href="tg://resolve?domain=VasiliyDudin" rel="nofollow noopener noreferrer" data-ga-label="Telegram").contact-lnk.link
-					i.contact-lnk__icon
-						include icons/_telegram.svg
-					.contact-lnk__text VasiliyDudin
+	ul.contacts
+			li.contacts__item: span Email: me@vasiliy-dudin.com
+			li.contacts__item: a(href="tg://resolve?domain=VasiliyDudin" rel="nofollow noopener noreferrer" data-ga-label="Telegram").link Telegram
+			li.contacts__item: a(href="https://twitter.com/vasiliy_dudin" target="_blank" rel="nofollow noopener noreferrer" data-ga-label="Twitter").link Twitter
+			li.contacts__item: a(href="https://www.instagram.com/vasiliy.dudin" target="_blank" rel="nofollow noopener noreferrer" data-ga-label="Instagram").link Instagram
+			li.contacts__item: a(href="https://www.facebook.com/dudin.vasiliy" target="_blank" rel="nofollow noopener noreferrer" data-ga-label="Facebook").link Facebook
+			li.contacts__item: a(href="https://open.spotify.com/user/31gigmeq5kizturdujierypd4xte?si=f708ae235d494af4" target="_blank" rel="nofollow noopener noreferrer" data-ga-label="Spotify").link Spotify

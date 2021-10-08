@@ -3,20 +3,10 @@
 		margin-bottom: 4px
 
 
-.contact-lnk
-	display: inline-flex
-	align-items center
-	border 0
-	&__icon
-		width: 15px
-		height: 20px
-		margin-right 0.5rem
-	&__icon path
-		fill $link-color
-		^[0]:hover &
-			fill $link-color--hover
-
-	&__text
-		thin-underline--default()
-		^[0]:hover &
-			thin-underline--hover()
+.contacts
+	padding: 0
+	display: flex
+	flex-direction column
+	gap: 8px
+	&__item
+		display: block
