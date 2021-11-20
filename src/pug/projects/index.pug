@@ -25,14 +25,15 @@ block content
 						.project-card__caption(class={"--external": project.type === "external"})
 							span.project-card__title(class={"--unpublished": project.type === "unpublished"})
 								span.project-card__title-innr(class={"--unpublished": project.type === "unpublished"})= project.name
-								if project.type === "unpublished"
+								//- if project.type === "unpublished"
 									.project-card__unpublished-badge Не опубликован
 							.project-card__desc= project.desc
+							.project-card__date= project.date
 							if project.tags
 								.project-card__tags.tags
 									each tag in project.tags
 										.tags__item= tag
-							.project-card__date= project.date
+
 					case project.type
 						when "internal"
 							a.project-card__link(href='/projects/' + project.id + '/', data-ga-label=project.id, data-ga-action="internal")

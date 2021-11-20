@@ -31,6 +31,8 @@
 	&__thumbnail
 		position: relative
 		box-shadow: 0 5px 15px alpha(#000, 20%)
+		border-radius: 8px
+		overflow: hidden
 		&.--external:after
 			content: ''
 			width: 20px
@@ -71,22 +73,18 @@
 				border: 0
 
 	&__desc
-		color: $body-color
 	&__date
-		font-size: $font-size-xs
 		color: $body-color
 
 	// Не опубликован
-	&.--unpublished
-		filter: saturate(0)
-	&__unpublished-badge
+	/*&__unpublished-badge
 		display: inline-block
 		padding 2px 4px
 		font-size $font-size-xs
 		border-radius 2px
 		border: 1px solid
 		line-height: 1
-		color: $body-color
+		color: $body-color*/
 
 
 
