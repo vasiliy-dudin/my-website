@@ -20,47 +20,47 @@ block vars
 block content
 	section.hero-section
 		//- h2 Первый блок без заголовка
-		.photo
+		.hero-section__photo
 			picture
 				source(type="image/webp", srcset='/index/i.webp 1x, /index/i@2x.webp 2x')
-				img(src="/index/i.jpg", srcset="/index/i.jpg 1x, /index/i@2x.jpg 2x", alt="").photo__img.img-fluid
-		.features
-			mixin feature
-				.features__item
-					.features__text
-						block
+				img(src="/index/i.jpg", srcset="/index/i.jpg 1x, /index/i@2x.jpg 2x", alt="").hero-section__photo__img.img-fluid
+		.hero-section__text-col
+			.hero-section__features
+				mixin feature
+					.hero-section__features__item
+						.hero-section__features__text
+							block
 
 
-			+feature
-				| Попробовал много разных методов и артефактов, развлекаюсь этим с 2011 года.
+				+feature
+					| Попробовал много разных методов и артефактов, развлекаюсь этим с 2011 года.
 
-			+feature
-				| Нравится проектировать сложные сервисы и работать в продуктовых компаниях.
+				+feature
+					| Нравится проектировать сложные сервисы и работать в продуктовых компаниях.
 
-			+feature
-				| Популяризирую accessibility и люблю улучшать жизнь людей.
+				+feature
+					| Популяризирую accessibility и люблю улучшать жизнь людей.
 
-			+feature
-				| Много читаю, хочу учить и развиваться.
+				+feature
+					| Много читаю, хочу учить и развиваться.
 
-
-	section.section.services-section
-			.col
-				h2 Чем помогаю
-				ul
-					li Проектирование сайтов, веб-сервисов, мобильных и десктопных приложений;
-					li пользовательские исследования и аналитика;
-					li написание интерфейсных текстов;
-					li написание гайдов;
-					li проектирование дизайн-систем и UI-китов;
-					li UX-стратегия.
-			.col
-				h2 Мои роли
-				ul
-					li UX-дизайнер;
-					li UX/UI-дизайнер;
-					li продуктовый дизайнер;
-					li дизайнер взаимодействия.
+			.hero-section__services
+				.col
+					h2 Чем помогаю
+					ul
+						li Проектирование сайтов, веб-сервисов, мобильных и десктопных приложений;
+						li пользовательские исследования и аналитика;
+						li написание интерфейсных текстов;
+						li написание гайдов;
+						li проектирование дизайн-систем и UI-китов;
+						li UX-стратегия.
+				.col
+					h2 Мои роли
+					ul
+						li UX-дизайнер;
+						li UX/UI-дизайнер;
+						li продуктовый дизайнер;
+						li дизайнер взаимодействия.
 
 	mixin about-me-section($title, $modificator)
 		section.section.about-me-section(class='--' + $modificator)

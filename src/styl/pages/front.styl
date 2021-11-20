@@ -14,34 +14,43 @@ $home-section-gap = 10px
 		margin-top: 0
 		margin-bottom: 1.5rem
 
-.photo // 1 колонка
-	max-width: 30%
-	margin: 0 auto
-	+media(sm)
-		max-width: unset
-	&__img
-		border-radius: 50%
-		+media(md)
-			margin-bottom 0
+	&__photo // 1 колонка
+		max-width: 30%
+		margin: 0 auto
+		+media(sm)
+			max-width: unset
+		&__img
+			mask-image: url("/imgs/photo-mask.svg")
+			mask-size cover
+			+media(md)
+				margin-bottom 0
 
-.features // 2 колонка
-	margin: auto 0
-	display: grid;
-	grid-gap: 1.5rem;
-	+media(sm)
-		grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-	&__item
-		display: flex
-		&:before
-			content ''
-			background url(/index/feature-icon.svg) no-repeat 0 50%
-			background-size contain
-			flex: 0 0 auto
-			height: 30px
-			width: @height
-			margin-right: 0.5rem
+	&__features
+	&__services
+		margin: auto 0
+		display: grid
+		grid-gap: 1.5rem
+		+media(sm)
+			grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
 
+	&__features__item
+			display: flex
+			&:before
+				content ''
+				background url(/index/feature-icon.svg) no-repeat 0 50%
+				background-size contain
+				flex: 0 0 auto
+				height: 30px
+				width: @height
+				margin-right: 0.5rem
 
+	&__services
+		margin-top: 2rem
+		padding-top: 2rem
+		border-top: 1px solid $color_blue-gray--9
+		gap 1.5rem
+		h2
+			margin-top: 0
 
 // Блоки с информацией обо мне
 
@@ -65,7 +74,7 @@ $home-section-gap = 10px
 	&:not(:last-child)
 		margin-bottom: $home-section-gap
 
-
+// TODO Переместить в более удобное место и объединить
 // Шкала
 .scales
 	display: inline-flex
@@ -95,11 +104,3 @@ $home-section-gap = 10px
 			margin-right 4px
 		&.--painted
 			background: #7ECB92 // TODO В переменную
-
-
-.services-section
-	@extend $g__section, .about-me-grid
-	margin-bottom: 2rem
-	gap 1.5rem
-	h2
-		margin-top: 0
