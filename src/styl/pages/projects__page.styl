@@ -7,16 +7,17 @@ $neighbors-width = 75px
 
 .project-header
 	position relative
+	display: flex
+	flex-direction: column
+	gap: 8px
 	padding: $project-header__padding
 	margin-bottom: 3rem
 	body-bg(fixed)
 	justify-content: space-between
 	flex-wrap: wrap
-	align-items: center
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2)
+	border-radius: $section__radius
 	+media(sm)
-		position: sticky
-		top 0
 		padding-right "calc(%s + %s + 1rem)" % ($project-header__padding $neighbors-width) // 1rem - дополнительный отступ
 		z-index: 500
 	h1
