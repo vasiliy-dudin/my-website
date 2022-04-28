@@ -2,7 +2,7 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #000;
+        fill: #fff;
       }
 
       .cls-1, .cls-2, .cls-3 {
@@ -10,11 +10,11 @@
       }
 
       .cls-2, .cls-3, .cls-5 {
-        fill: #000;
+        fill: #fff;
       }
 
       .cls-2 {
-        fill-opacity: 0.5;
+        fill-opacity: 0.7;
       }
 
       .cls-4 {

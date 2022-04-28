@@ -1,217 +1,136 @@
 {
-  "projectList" : [
-	{
-	  "id": "1",
-	  "name": "SEMrush",
-	  "desc": "SaaS для интернет-маркетологов",
-	  "date": "2018-2020",
-	  "priority": "1",
-	  "type": "unpublished",
-	  "tags": ["UX-дизайн", "Продуктовая аналитика", "Исследования"]
-	},
-	{
-	  "id": "2",
-	  "name": "Pitera11y Meetup",
-	  "desc": "Митап о веб-доступности",
-	  "date": "С 2019",
-	  "priority": "1",
-	  "type": "internal",
-	  "tags": ["Организация и переговоры", "Графический дизайн"]
-	},
-	{
-	  "id": "3",
-	  "name": "Accessible Components",
-	  "desc": "Веб-коппоненты для разработчиков",
-	  "date": "2019",
-	  "priority": "1",
-	  "type": "internal",
-	  "tags": ["UX-дизайн", "UI-дизайн"]
-	},
-	{
-	  "id": "5",
-	  "name": "UX Knowledge Base",
-	  "desc": "База знаний о дизайне цифровых продуктов и сервисов",
-	  "date": "С 2018",
-	  "priority": "1",
-	  "type": "external",
-	  "targetURL": "https://ux-kb.ru",
-	  "tags": ["UX-дизайн", "UI-дизайн", "Разработка", "Статьи и контент"]
-	},
-	{
-	  "id": "4",
-	  "name": "Binomo",
-	  "desc": "Платформа для трейдинга (Android и iOS)",
-	  "date": "2018",
-	  "priority": "1",
-	  "type": "unpublished",
-	  "tags": ["UX-дизайн", "UI-дизайн", "Юзабилити-тесты"]
-	},
-	{
-	  "id": "63",
-	  "name": "P2P каршеринг",
-	  "desc": "Сервис аренды и сдачи автомобилей в аренду",
-	  "date": "11 дек 2017",
-	  "priority": "2",
-	  "type": "hidden",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/63"
-	},
-	{
-	  "id": "60",
-	  "name": "Book24",
-	  "desc": "Приложение и мобильная версия магазина",
-	  "date": "19 дек 2017",
-	  "priority": "2",
-	  "type": "hidden",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/60"
-	},
-	{
-	  "id": "12",
-	  "name": "Serp.farm SiteManager",
-	  "desc": "SaaS для управления WordPress сайтами",
-	  "date": "2 фев 2017",
-	  "priority": "2",
-	  "type": "hidden",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/12"
-	},
-	{
-	  "id": "13",
-	  "name": "Serp.farm Generator",
-	  "desc": "WP плагин для генерации контента",
-	  "date": "15 фев 2017",
-	  "priority": "2",
-	  "type": "hidden",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/13"
-	},
-	{
-	  "id": "20",
-	  "name": "E-pepper",
-	  "desc": "СМИ о e-commerce",
-	  "date": "15 янв 2016",
-	  "priority": "2",
-	  "type": "hidden",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/20"
-	},
-	{
-	  "id": "21",
-	  "name": "Республика игр",
-	  "desc": "Магазин компьютерных игр, приставок и аксессуаров",
-	  "date": "18 авг 2015",
-	  "priority": "2",
-	  "type": "hidden",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/21"
-	},
+	"projectList" : [
+		{
+			"id": "practicum",
+			"name": "Yandex Practicum",
+			"desc": "EdTech, School Math Product",
+			"date": "2021-2022",
+			"priority": "1",
+			"type": "internal",
+			"tags": ["UX Design", "UI Design"]
+		},
+		{
+			"id": "semrush",
+			"name": "SEMrush",
+			"desc": "SaaS for Internet Marketers",
+			"date": "2018-2020",
+			"priority": "1",
+			"type": "internal",
+			"tags": ["UX Design", "Product analytics", "Research"]
+		},
+		{
+			"id": "pitera11y",
+			"name": "Pitera11y Meetup",
+			"desc": "Web accessibility meetup",
+			"date": "From 2019",
+			"priority": "1",
+			"type": "internal",
+			"tags": ["Organizing", "Graphic Design"]
+		},
+		{
+			"id": "accessible-components",
+			"name": "Accessible Components",
+			"desc": "Components for developers",
+			"date": "2019",
+			"priority": "1",
+			"type": "internal",
+			"tags": ["UX Design", "UI Design"]
+		},
+		{
+			"id": "ux-kb",
+			"name": "UX Knowledge Base",
+			"desc": "Knowledge base about designing digital products and services",
+			"date": "From 2018",
+			"priority": "1",
+			"type": "external",
+			"targetURL": "https://ux-kb.ru",
+			"tags": ["UX Design", "UI Design", "Development", "Content"]
+		},
+		{
+			"id": "binomo",
+			"name": "Binomo",
+			"desc": "Trading platform (Android and iOS)",
+			"date": "2018",
+			"priority": "1",
+			"type": "unpublished",
+			"tags": ["UX Design", "UI Design", "Usability tests"]
+		},
+		{
+			"id": "carsharing",
+			"name": "P2P каршеринг",
+			"desc": "Сервис аренды и сдачи автомобилей в аренду",
+			"date": "11 дек 2017",
+			"priority": "2",
+			"type": "hidden",
+			"targetURL": "https://local.vasiliy-dudin.com/portfolio/63"
+		},
+		{
+			"id": "60",
+			"name": "Book24",
+			"desc": "Приложение и мобильная версия магазина",
+			"date": "19 дек 2017",
+			"priority": "2",
+			"type": "hidden",
+			"targetURL": "https://local.vasiliy-dudin.com/portfolio/60"
+		},
+		{
+			"id": "12",
+			"name": "Serp.farm SiteManager",
+			"desc": "SaaS для управления WordPress сайтами",
+			"date": "2 фев 2017",
+			"priority": "2",
+			"type": "hidden",
+			"targetURL": "https://local.vasiliy-dudin.com/portfolio/12"
+		},
+		{
+			"id": "serpfarm-gen",
+			"name": "Serp.farm Generator",
+			"desc": "WP плагин для генерации контента",
+			"date": "15 фев 2017",
+			"priority": "2",
+			"type": "hidden",
+			"targetURL": "https://local.vasiliy-dudin.com/portfolio/13"
+		},
+		{
+			"id": "epepper",
+			"name": "E-pepper",
+			"desc": "СМИ о e-commerce",
+			"date": "15 янв 2016",
+			"priority": "2",
+			"type": "hidden",
+			"targetURL": "https://local.vasiliy-dudin.com/portfolio/20"
+		},
+		{
+			"id": "game-republic",
+			"name": "Республика игр",
+			"desc": "Магазин компьютерных игр, приставок и аксессуаров",
+			"date": "18 авг 2015",
+			"priority": "2",
+			"type": "hidden",
+			"targetURL": "https://local.vasiliy-dudin.com/portfolio/21"
+		},
 
 
 
 
 
-	{
-	  "id": "53",
-	  "name": "Keep it Current",
-	  "desc": "Плагин для регулярных операций в WordPress",
-	  "date": "4 мая 2017",
-	  "priority": "3",
-	  "type": "hidden",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/53"
-	},
-	{
-	  "id": "57",
-	  "name": "ftbland",
-	  "desc": "CRM",
-	  "date": "15 фев 2017",
-	  "priority": "3",
-	  "type": "hidden",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/57"
-	},
-	{
-	  "id": "56",
-	  "name": "ЕГРЗ",
-	  "desc": "Гос. портал",
-	  "date": "15 июн 2017",
-	  "priority": "3",
-	  "type": "hidden"
-	},
-	{
-	  "id": "22",
-	  "name": "Микрокредитная организация Ilma",
-	  "desc": "CRM",
-	  "date": "6 окт 2016",
-	  "priority": "3",
-	  "type": "hidden"
-	},
-	{
-	  "id": "23",
-	  "name": "Модные вместе",
-	  "desc": "Магазин тканей",
-	  "date": "27 апр 2015",
-	  "priority": "3",
-	  "type": "hidden",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/23"
-	},
-	{
-	  "id": "24",
-	  "name": "Стоматология Headway",
-	  "desc": "Корпоративный сайт",
-	  "date": "6 окт 2016",
-	  "priority": "3",
-	  "type": "hidden"
-	},
-	{
-	  "id": "25",
-	  "name": "Mirandi Club",
-	  "desc": "Винный магазин",
-	  "date": "13 апр 2016",
-	  "priority": "3",
-	  "type": "hidden"
-	},
-	{
-	  "id": "26",
-	  "name": "Парадный Петербург",
-	  "desc": "Калькулятор стоимости",
-	  "date": "06 окт 2016",
-	  "priority": "3",
-	  "type": "hidden"
-	},
-	{
-	  "id": "34",
-	  "name": "ВКонтакте",
-	  "desc": "Конкурс редизайна",
-	  "date": "02 авг 2014",
-	  "priority": "3",
-	  "type": "hidden",
-	  "targetURL": "https://local.vasiliy-dudin.com/portfolio/34"
-	},
-	{
-	  "id": "28",
-	  "name": "Невские шкафы",
-	  "desc": "Магазин шкафов",
-	  "date": "22 янв 2016",
-	  "priority": "3",
-	  "type": "hidden"
-	},
-	{
-	  "id": "30",
-	  "name": "Торговый центр Украина",
-	  "desc": "Сайт ТЦ",
-	  "date": "24 фев 2015",
-	  "priority": "3",
-	  "type": "hidden"
-	},
-	{
-	  "id": "31",
-	  "name": "Hookah Store",
-	  "desc": "Магазин кальянов и табака",
-	  "date": "29 авг 2014",
-	  "priority": "3",
-	  "type": "hidden"
-	},
-	{
-	  "id": "32",
-	  "name": "Парусный спорт и ЗОЖ",
-	  "desc": "Портал",
-	  "date": "6 авг 2014",
-	  "priority": "3",
-	  "type": "hidden"
-	}
-  ]
+		{
+			"id": "keep-it-current",
+			"name": "Keep it Current",
+			"desc": "Плагин для регулярных операций в WordPress",
+			"date": "4 мая 2017",
+			"priority": "3",
+			"type": "hidden",
+			"targetURL": "https://local.vasiliy-dudin.com/portfolio/53"
+		},
+		{
+			"id": "ftbland",
+			"name": "ftbland",
+			"desc": "CRM",
+			"date": "15 фев 2017",
+			"priority": "3",
+			"type": "hidden",
+			"targetURL": "https://local.vasiliy-dudin.com/portfolio/57"
+		}
+	]
 }

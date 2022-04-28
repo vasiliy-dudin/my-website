@@ -11,7 +11,7 @@ mixin repeat(limit)
 	ul.breadcrumb
 		+breadcrumbs({'Main page':'/', 'News':'/news'})
 mixin breadcrumbs(items)
-	nav(aria-label="Хлебные крошки")
+	nav(aria-label="Breadcrumbs")
 		ol.breadcrumbs
 			each url, item in items
 				li.breadcrumbs__item
