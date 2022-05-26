@@ -2,7 +2,6 @@
 // Шапка проекта
 // =====================
 
-$project-header__padding = 1rem
 $neighbors-width = 75px
 
 .project-header
@@ -10,15 +9,14 @@ $neighbors-width = 75px
 	display: flex
 	flex-direction: column
 	gap: 8px
-	padding: $project-header__padding
 	margin-bottom: 3rem
-	body-bg(fixed)
+	@extend $g__section
+	border: 3px solid $color_black
 	justify-content: space-between
 	flex-wrap: wrap
-	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2)
 	border-radius: $section__radius
-	+media(sm)
-		padding-right "calc(%s + %s + 1rem)" % ($project-header__padding $neighbors-width) // 1rem - дополнительный отступ
+	+media(md)
+		padding-right "calc(%s + %s + 1rem)" % ($section__padding-desktop $neighbors-width) // 1rem - дополнительный отступ справа для кнопок
 		z-index: 500
 	h1
 		margin-bottom: 0
