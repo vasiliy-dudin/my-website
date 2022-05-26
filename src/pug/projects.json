@@ -6,7 +6,7 @@
 			"desc": "EdTech, Школьная математика",
 			"date": "2021-2022",
 			"priority": "1",
-			"type": "unpublished",
+			"type": "hidden",
 			"tags": ["UX-дизайн", "UI-дизайн"]
 		},
 		{
