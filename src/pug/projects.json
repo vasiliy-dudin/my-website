@@ -22,7 +22,7 @@
 			"id": "pitera11y",
 			"name": "Pitera11y Meetup",
 			"desc": "Web accessibility meetup",
-			"date": "From 2019",
+			"date": "Since 2019",
 			"priority": "1",
 			"type": "internal",
 			"tags": ["Organizing", "Graphic Design"]
@@ -40,7 +40,7 @@
 			"id": "ux-kb",
 			"name": "UX Knowledge Base",
 			"desc": "Knowledge base about designing digital products and services",
-			"date": "From 2018",
+			"date": "Since 2018",
 			"priority": "1",
 			"type": "external",
 			"targetURL": "https://ux-kb.ru",
