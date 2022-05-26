@@ -2,58 +2,58 @@
 	"projectList" : [
 		{
 			"id": "practicum",
-			"name": "Yandex Practicum",
-			"desc": "EdTech, School Math Product",
+			"name": "Яндекс Практикум",
+			"desc": "EdTech, Школьная математика",
 			"date": "2021-2022",
 			"priority": "1",
-			"type": "internal",
-			"tags": ["UX Design", "UI Design"]
+			"type": "hidden",
+			"tags": ["UX-дизайн", "UI-дизайн"]
 		},
 		{
 			"id": "semrush",
 			"name": "SEMrush",
-			"desc": "SaaS for Internet Marketers",
+			"desc": "SaaS для интернет-маркетологов",
 			"date": "2018-2020",
 			"priority": "1",
 			"type": "internal",
-			"tags": ["UX Design", "Product analytics", "Research"]
+			"tags": ["UX-дизайн", "Продуктовая аналитика", "Исследования"]
 		},
 		{
 			"id": "pitera11y",
 			"name": "Pitera11y Meetup",
-			"desc": "Web accessibility meetup",
-			"date": "Since 2019",
+			"desc": "Митап о веб-доступности",
+			"date": "С 2019",
 			"priority": "1",
 			"type": "internal",
-			"tags": ["Organizing", "Graphic Design"]
+			"tags": ["Организация и переговоры", "Графический дизайн"]
 		},
 		{
 			"id": "accessible-components",
 			"name": "Accessible Components",
-			"desc": "Components for developers",
+			"desc": "Веб-коппоненты для разработчиков",
 			"date": "2019",
 			"priority": "1",
 			"type": "internal",
-			"tags": ["UX Design", "UI Design"]
+			"tags": ["UX-дизайн", "UI-дизайн"]
 		},
 		{
 			"id": "ux-kb",
 			"name": "UX Knowledge Base",
-			"desc": "Knowledge base about designing digital products and services",
-			"date": "Since 2018",
+			"desc": "База знаний о дизайне цифровых продуктов и сервисов",
+			"date": "С 2018",
 			"priority": "1",
 			"type": "external",
 			"targetURL": "https://ux-kb.ru",
-			"tags": ["UX Design", "UI Design", "Development", "Content"]
+			"tags": ["UX-дизайн", "UI-дизайн", "Разработка", "Статьи и контент"]
 		},
 		{
 			"id": "binomo",
 			"name": "Binomo",
-			"desc": "Trading platform (Android and iOS)",
+			"desc": "Платформа для трейдинга (Android и iOS)",
 			"date": "2018",
 			"priority": "1",
 			"type": "unpublished",
-			"tags": ["UX Design", "UI Design", "Usability tests"]
+			"tags": ["UX-дизайн", "UI-дизайн", "Юзабилити-тесты"]
 		},
 		{
 			"id": "carsharing",

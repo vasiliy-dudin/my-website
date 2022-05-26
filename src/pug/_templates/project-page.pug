@@ -60,7 +60,7 @@ mixin video-project()
 		block
 
 //- Ссылка на прототип
-mixin prototype-link($url, $text="Interactive prototype")
+mixin prototype-link($url, $text="Интерактивный прототип")
 	p
 		a(href=$url, target='_blank', rel="nofollow noopener noreferrer").link=$text
 
@@ -70,14 +70,14 @@ mixin prototype-link($url, $text="Interactive prototype")
 
 
 doctype
-html(lang="en")
+html(lang="ru")
 	head
 		include _includes/_head.pug
 	body
 		include _includes/_header.pug
 		main.main
 			.container
-				+breadcrumbs({'Front Page': '/', 'Projects': '/projects/'})
+				+breadcrumbs({'Главная': '/', 'Проекты': '/projects/'})
 				article.article-project
 					header.project-header
 						h1= $h1
@@ -90,7 +90,6 @@ html(lang="en")
 
 						//- Ссылки на соседние проекты
 						.neighbors
-
 							//- Создаём новый массив, где только проекти с типом Internal
 							-
 								const projectListInternal = projectList.filter(function (e) {
@@ -100,10 +99,11 @@ html(lang="en")
 							each project, index in projectListInternal
 								case index+1
 									when ($projectNumber-1)
-										a(href="/projects/"+ project.id + "/", title=project.name, data-ga-label="Previous", aria-label="Previous Project: "+project.name).neighbors__prev.btn
+										a(href="/projects/"+ project.id + "/", title=project.name, data-ga-label="Предыдущий", aria-label="Предыдущий проект: "+project.name).neighbors__prev.btn
 
 									when ($projectNumber+1)
-										a(href="/projects/"+ project.id + "/", title=project.name, data-ga-label="Next", aria-label="Next project: "+project.name).neighbors__next.btn
+										a(href="/projects/"+ project.id + "/", title=project.name, data-ga-label="Следующий проект", aria-label="Следующий проект: "+project.name).neighbors__next.btn
+
 
 					block content
 

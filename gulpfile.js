@@ -276,7 +276,7 @@ function Build(cb) {
 
 	var $imageminSettings = [
 		imagemin.gifsicle({interlaced: true}),
-		imagemin.mozjpeg({progressive: true}),
+		imagemin.jpegtran({progressive: true}),
 		imagemin.optipng({optimizationLevel: 7}),
 		imagemin.svgo({plugins: [{removeViewBox: true}]})
 	];
