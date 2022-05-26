@@ -10,7 +10,7 @@ block head__scripts
 block vars
 	//- Активный пунт меню
 	- var $menu_activeLink = "1"
-	- var $h1 = "About me"
+	- var $h1 = "Обо мне"
 
 
 
@@ -33,32 +33,21 @@ block content
 
 
 				+feature
-					| I’ve tried to work with different methods and artefacts, I've been having fun with this since 2011.
-					//-  (Переписать) Попробовал много разных методов и артефактов, развлекаюсь этим с 2011 года.
+					| Попробовал много разных методов и артефактов, развлекаюсь этим с 2011 года.
 
 				+feature
-					| I’m an accessibility enthusiast and like to make people’s lives better. 
-					//- | Нравится проектировать сложные сервисы и работать в продуктовых компаниях.
+					| Нравится проектировать сложные сервисы и работать в продуктовых компаниях.
 
 				+feature
-					| I’m an accessibility enthusiast and like to make people’s lives better. 
-					//- | Популяризирую accessibility и люблю улучшать жизнь людей.
+					| Популяризирую accessibility и люблю улучшать жизнь людей.
 
 				+feature
-					| I read a lot, want to teach other people and self-improving.
-					//- | Много читаю, хочу учить и развиваться.
+					| Много читаю, хочу учить и развиваться.
 
 			.hero-section__services
 				.col
-					h2 How Can I Help
+					h2 Чем помогаю
 					ul
-						li Design websites, web services, mobile and desktop apps.
-						li Conduct user research.
-						li Write UX texts.
-						li Write guides.
-						li Create design systems and UI-kits.
-						li Create UX strategy.
-					//- ul
 						li Проектирование сайтов, веб-сервисов, мобильных и десктопных приложений;
 						li пользовательские исследования и аналитика;
 						li написание интерфейсных текстов;
@@ -66,12 +55,12 @@ block content
 						li проектирование дизайн-систем и UI-китов;
 						li UX-стратегия.
 				.col
-					h2 My Roles
+					h2 Мои роли
 					ul
-						li UX Designer.
-						li UX/UI Designer.
-						li Product Designer.
-						li Interaction Designer.
+						li UX-дизайнер;
+						li UX/UI-дизайнер;
+						li продуктовый дизайнер;
+						li дизайнер взаимодействия.
 
 	mixin about-me-section($title, $emoji)
 		section.section.about-me-section
@@ -83,7 +72,7 @@ block content
 
 	.about-me-grid
 		.col
-			+about-me-section('Hard Skills', '🧠')
+			+about-me-section('Хард-скиллы', '🧠')
 				mixin scale($name, $value)
 						.scale
 							.scale__name= $name
@@ -91,40 +80,20 @@ block content
 								- for(var $i = 1; $i <= 10; $i++)
 									.scale__segment(class={"--painted": $i <= $value})
 				.scales
-					+scale('UX design', 9)
-					+scale('UI design', 7)
-					+scale('Graphic design', 3)
-					+scale('UX analysis', 6)
+					+scale('UX-дизайн', 9)
+					+scale('UI-дизайн', 7)
+					+scale('Граф. дизайн', 3)
+					+scale('UX-аналитика', 6)
 
-				h3 Design
+				h3 Проектирование
 				ul
-					li Creating of interaction models and processes: User Flow, UML Activity Diagram, BPMN.
-					li Information architecture.
-					li Writing UX texts in English and Russian. I use an informative and succinct text style.
-					li Designing and prototyping in Figma, Axure RP. I have an advanced level, and create complex components based on auto layout or can write a plugin with JavaScript.
-					li Creating design systems and UI kits.
-				//- ul
 					li Моделирование взаимодействия и процессов: User Flow, UML Activity Diagram, BPMN.
 					li Информационная архитектура.
 					li Написание интерфейсных текстов на русском и английском, стараюсь использовать информационный стиль, умею писать «вы» с маленькой буквы.
-					li Дизайн/прототипирование в Figma и Axure RP. Продвинутый уровень: делаю сложные компоненты на auto layout, могу написать плагин на JS.
+					li Прототипирование в Axure RP и Figma.
 					li Проектирование дизайн-систем и UI-китов.
-				h3 User Research and Product Analytics
+				h3 Исследования и UX-аналитика
 				ul
-					li Usability testing. For example, lab testing, hallway testing (guerrilla usability) and remote usability testing.
-					li Customer Journey Map.
-					li Persona method.
-					li Interviews.
-					li Surveys.
-					li Card sorting.
-					li User feedback analysis.
-					li A/B testing.
-					li Capturing project requirements. For example, business, system and users requirements, limitations, information about third-party integrations.
-					li Use Case and UML Use Case Diagram for documentation.
-					li Product, marketing and business metrics.
-					li Hypothesis testing.
-					li BigQuery, SQL, Google Analytics, Amplitude.
-				//- ul
 					li Юзабилити-тестирование: лабораторные, коридорные и удалённые.
 					li Customer Journey Map.
 					li Метод персон.
@@ -139,19 +108,11 @@ block content
 					li Проверка гипотез.
 					li BigQuery, SQL, Google Analytics, Amplitude.
 
-			+about-me-section('Interests and Hobbies', '👾')
-				p Modular synths, frontend development, investments, urbanism, architecture, games, psychology, cycling, running, shawarma.
+			+about-me-section('Увлечения и интересы', '🎹')
+				p Модульные синтезаторы, фронтенд, игры, настолки, кино, психология, урбанизм, гаджеты, велопрогулки, фотография, бег, необычные физические активности, архитектура, шаверма.
 		.col
-			+about-me-section('Soft Skills', '🤝')
+			+about-me-section('Софт-скиллы', '🤝')
 				ul
-					li Critical thinking. I try to make objective conclusions and notice cognitive biases.
-					li Self-dependence.
-					li Organization. I’m a big fan of GTD and other productivity practices.
-					li Height level of empathy.
-					li Facilitation, Scrum and Agile. I’ve had a Agile training.
-					li Communication and work with feedback.
-					li English, Intermediate level.
-				//- ul
 					li Развитое критическое мышление, стремлюсь к максимально объективным выводам, люблю замечать логические ошибки и искажения.
 					li Самостоятельность.
 					li Организованность, я адепт GTD и всяких продуктивных практик.
@@ -161,18 +122,9 @@ block content
 					li Работа по Scrum, прошёл трёхдневный тренинг по Agile.
 					li Отдача и получение фидбека.
 					li Английский язык на уровне Intermediate.
-			+about-me-section('Extra Skills', '📎')
-				p Previously I was a Jack of all trades. Now these skills helps me a lot at current work.
+			+about-me-section('Навыки в смежных областях', '💎')
+				p Раньше был человеком-оркестром, сейчас некоторые из этих навыков помогают в работе.
 				ul
-					li Frontend: JavaScript/TypeScript, HTML, CSS, Stylus, SASS, BEM, screen readers supporting.
-					li Template Engines: Twig, Nunjacks, Pug, 11ty.
-					li Git (basics).
-					li SEO (basics).
-					li Development for Craft CMS, MODX, Drupal.
-					li Adobe Illustrator.
-					li Adobe Photoshop.
-					li Microsoft Excel/Word/Access/PowerPoint (advanced).
-				//- ul
 					li Вёрстка: HTML, CSS, Stylus, Twig, Pug, вёрстка под скринридеры [9/10].
 					li JavaScript [4/10].
 					li jQuery [6/10].
