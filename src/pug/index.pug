@@ -73,18 +73,6 @@ block content
 	.about-me-grid
 		.col
 			+about-me-section('Хард-скиллы', '🧠')
-				mixin scale($name, $value)
-						.scale
-							.scale__name= $name
-							.scale__segments
-								- for(var $i = 1; $i <= 10; $i++)
-									.scale__segment(class={"--painted": $i <= $value})
-				.scales
-					+scale('UX-дизайн', 9)
-					+scale('UI-дизайн', 7)
-					+scale('Граф. дизайн', 3)
-					+scale('UX-аналитика', 6)
-
 				h3 Проектирование
 				ul
 					li Моделирование взаимодействия и процессов: User Flow, UML Activity Diagram, BPMN.
