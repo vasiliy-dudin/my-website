@@ -1,0 +1,31 @@
+{% set menu = [{
+	title: "Skills",
+	anchorLink: "/#skills"
+},{
+	title: "Projects",
+	anchorLink: "/#projects"
+},{
+	title: "Activities",
+	anchorLink: "/#mediaLife"
+},{
+	title: "Contacts",
+	anchorLink: "/#contacts"
+}] %}
+
+<nav class="nav">
+	{% include "logo.njk" %}
+
+	<div class="menu">
+		<button class="menu__button" aria-controls="menu" aria-expanded="false" aria-label="Open menu"></button>
+
+		<ul class="menu__list" id="menu">
+			{% for item in menu %}
+				<li class="menu__list-item">
+					<a class="menu__list-link js-anchor-link" href="{{ item.anchorLink }}">
+						<span class="menu__list-link__text">{{ item.title }}</span>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</nav>

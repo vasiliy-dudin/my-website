@@ -1,0 +1,55 @@
+{% set hardSkills = [
+	"HTML5, Pug, Nunjacks",
+	"CSS3, Sass/SCSS/Stylus",
+	"BEM",
+	"Accessibility",
+	"Git",
+	"Gulp, Parcel",
+	"JavaScript (ES6)",
+	"Basics of TypeScript",
+	"Newcomer in Angular and React",
+	"11ty, Next.js"
+] %}
+
+{% set extraSkills = [
+	"Basics of UX/UI Design and Typography",
+	"Graphics",
+	"Basics of SEO",
+	"English, B2",
+	"Russian, native"
+] %}
+
+{% set instruments = [
+	"WebStorm, VS Code",
+	"GitHub and GitLab",
+	"Jira, Trello, Notion",
+	"Storybook",
+	"Figma, Zeplin, Avocode"
+] %}
+
+<div class="skills-section">
+	<div>
+		<h3>Hard Skills</h3>
+		<ul class="skills">
+			{% for item in hardSkills %}
+				<li class="skills__item">{{ item }}.</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div>
+		<h3>Extra Skills</h3>
+		<ul class="skills">
+			{% for item in extraSkills %}
+				<li class="skills__item">{{ item }}.</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div>
+		<h3>Tools</h3>
+		<ul class="skills">
+			{% for item in instruments %}
+				<li class="skills__item">{{ item }}.</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
