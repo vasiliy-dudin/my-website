@@ -1,20 +1,4 @@
-social:
-  email: fokinatatian@gmail.com
-  telegram: https://t.me/fokina_tatiana
-  twitter: https://twitter.com/ta_fokina
-  github: https://github.com/TatianaFokina
-public:
-  linksRepo: https://github.com/TatianaFokina/my-articles-and-talks
-  pitera11yPlaylist: https://www.youtube.com/playlist?list=PLTdS5E3zupkGg0FoMoWB5FD2tlBrSWUQB
-  podcastFirst: https://web-standards.ru/podcast/180/
-  podcastSecond: https://web-standards.ru/podcast/193/
-  talk: https://youtu.be/s8JwoE91xcA
-  jsunderhood: https://twitter.com/jsunderhood/status/1206172119081607168
-  articleFirst: https://web-standards.ru/articles/a11y-audit-basics/
-  articleSecond: https://web-standards.ru/articles/a11y-and-law/
-  articleThird: https://doka.guide/html/screenreaders/
-  articleTranslate: https://web-standards.ru/articles/tabbed-interfaces/
-copyright:
-  eleventy: https://www.11ty.dev
-  siteRepo: https://github.com/TatianaFokina/my-portfolio-v-3
-  iconfinder: https://www.iconfinder.com
+email: me@vasiliy-dudin.com
+telegram: https://t.me/vasiliy-dudin
+twitter: https://twitter.com/vasiliy_dudin
+eleventy: https://www.11ty.dev

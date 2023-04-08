@@ -1,0 +1,22 @@
+---
+layout: _base.njk
+---
+{% if projectType == "work" %}
+	<a href="/{{ projectType }}-projects/" class="back-link">← Work Projects</a>
+	{% else %}
+		<a href="/pet-projects/" class="back-link">← Pet Projects</a>
+{% endif %}
+<header class="project-header">
+	<h1>{{ title }}</h1>
+	<div class="project-header__description">{{ description }}</div>
+	<div class="project-header__description">{{ years }}</div>
+	<div class="tags">
+		{%- for tag in tags -%}
+			<span class="tag">{{ tag }}</span>
+		{%- endfor -%}
+	</div>
+</header>
+
+<div class="project-desc">
+	{{ content | safe }}
+</div>

@@ -2,16 +2,11 @@
 // Colors
 // ====================
 
-@import "variables__color-sets.styl"
+@import "foundation/variables__color-sets.styl"
 
 $brand-1 = #9C27B0
 $brand-2 = $color_blue-gray--8
 $brand-3 = $color_blue-gray--6
-
-//$brand-2 = #FFC107 // Amber 500
-//$brand-2--2 = #ffecb3 // Amber 100
-//$brand-2--3 = #fff9c2 // светлее (Например, оверлей при наведении на превью работы. Жёлтый немного другой, но хорошо сочетается);
-
 
 
 
@@ -20,18 +15,6 @@ $link-color = #0064d6
 $link-color--hover = desaturate(lighten($link-color, 30%), 50%)
 $link-color--hover-bg = tint($link-color, 90%)
 $link-color--active = alpha(darken($link-color--hover, 50%))
-
-
-
-
-
-// Reassign color vars to semantic color scheme
-$brand-primary = $color_blue
-$brand-success = $color_green
-$brand-info = $color_teal
-$brand-warning = $color_orange
-$brand-danger = $color_red
-$brand-inverse = $color_gray-dark
 
 
 
@@ -45,7 +28,7 @@ $inverse-bg = $color_gray-dark
 $inverse-color = $color_gray-lighter
 
 
-$selection = #E1BEE7;
+
 
 
 
@@ -53,12 +36,8 @@ $selection = #E1BEE7;
 // Type
 // ====================
 
-// Font, line-height, and color for body text, headings, and more.
-$font-family-sans-serif = 'Roboto',sans-serif
-$font-family-serif = Georgia, "Times New Roman", Times, serif
-$font-family-monospace = Consolas, "Liberation Mono", "Courier New", monospace
-$font-family-base = $font-family-sans-serif
-$font-size-root = 18px
+$font-family-base = 'Inter',sans-serif
+$font-size-root = 20px
 $font-size-base = 1rem
 $font-size-lg = 1.25rem
 $font-size-sm = 0.875rem
@@ -88,58 +67,8 @@ $abbr-border-color = $color_gray-light
 
 
 
-
-
-
-
-/*
-// Grid breakpoints
-//
-// Define the minimum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
-$grid-breakpoints = {xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px}
-_assert-ascending($grid-breakpoints, "$grid-breakpoints")
-_assert-starts-at-zero($grid-breakpoints)
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-$container-max-widths = {sm: 540px, md: 720px, lg: 960px, xl: 1140px}
-_assert-ascending($container-max-widths, "$container-max-widths")
-// Grid columns
-//
-// Set the number of columns and specify the width of the gutters.
-$grid-columns = 12
-$grid-gutter-width-base = 30px
-$grid-gutter-widths = {xs: $grid-gutter-width-base, sm: $grid-gutter-width-base, md: $grid-gutter-width-base, lg: $grid-gutter-width-base, xl: $grid-gutter-width-base}
-
-*/
-
-
-
-
-
-
-// Z-index master list
-//
-// Warning: Avoid customizing these values. They're used for a bird's eye view
-// of components dependent on the z-axis and are designed to all work together.
-$zindex-dropdown-backdrop = 990
-$zindex-navbar = 1000
-$zindex-dropdown = 1000
-$zindex-fixed = 1030
-$zindex-sticky = 1030
-$zindex-modal-backdrop = 1040
-$zindex-modal = 1050
-$zindex-popover = 1060
-$zindex-tooltip = 1070
-
-
-
-
-
 // Image thumbnails
 $thumbnail-padding = 0.25rem
-$thumbnail-bg = $body-bg
 $thumbnail-border-width = 1px
 $thumbnail-border-color = #ddd
 $thumbnail-border-radius = 3px
@@ -150,9 +79,6 @@ $thumbnail-transition = all 0.2s ease-in-out
 // Figures
 $figure-caption-font-size = 90%
 $figure-caption-color = $color_gray-light
-
-
-
 
 
 

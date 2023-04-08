@@ -1,11 +1,54 @@
-<a class="skip-link js-anchor-link" href="#main-content">Skip to main content</a>
+{% set menu = [{
+		name: "About Me",
+		href: "/"
+	},
+	{
+		name: "Work Projects",
+		href: "/work-projects/"
+	},
+	{
+		name: "Pet Projects",
+		href: "/pet-projects/"
+	},
+	{
+		name: "Articles",
+		href: "/articles/"
+	}]
+%}
 
 <header class="header">
-	<div class="content">
-		<div class="content__header">
-
-			{% include "menu.njk" %}
-
-		</div>
+	<a class="skip-link" href="#main-content">Skip to main content</a>
+	<div class="container">
+		<nav class="nav">
+			<a class="logo" href="/">
+				{% include "../assets/logo.svg" %}
+				<span class="logo__name">{{ site.title }}</span>
+			</a>
+			<button class="menu__button" aria-controls="menu" aria-expanded="false" aria-label="Open menu"></button>
+			<ul class="menu" id="menu">
+				{% for item in menu %}
+					{% if item.href == page.url %}
+						{% set isCurrent = true %}
+						{% else %}
+							{% set isCurrent = false %}
+					{% endif %}
+					{% if item.href == page.url or (item.href != '/' and page.url.startsWith(item.href))%}
+						{% set isActive = true %}
+						{% else %}
+							{% set isActive = false %}
+					{% endif %}
+					<li class="menu__item">
+						<a class="menu__link{% if isActive %} --active{% endif %}"
+						   href="{{ item.href }}"
+						   {% if isCurrent %}aria-current="page"{% endif %}
+						>
+							{{ item.name }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
 	</div>
+
+
 </header>

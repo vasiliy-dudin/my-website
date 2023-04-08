@@ -1,0 +1,29 @@
+---
+layout: _base.njk
+---
+
+
+<h1>{{ title }}</h1>
+
+<div class="project-list">
+	{{ content | safe }}
+	{% if "work" in permalink %}
+		{% set list = collections.workProjects %}
+	{% endif %}	
+	{% if "pet" in permalink %}
+		{% set list = collections.petProjects %}
+	{% endif %}
+	{%- for project in list -%}
+		<div class="project-card">
+			<a href="{{ project.data.permalink }}">{{ project.data.title }}</a>
+			<div>{{ project.data.description }}</div>
+			<div>{{ project.data.years }}</div>
+			<div class="tags">
+				{%- for tag in project.data.tags -%}
+					<span class="tag">{{ tag }}</span>
+				{%- endfor -%}
+			</div>
+
+		</div>
+	{%- endfor -%}
+</div>

@@ -1,0 +1,26 @@
+html
+	box-sizing: border-box
+
+*
+*::before
+*::after
+	box-sizing: inherit
+
+body
+	height: 100vh
+	margin: 0
+	background $sd-color__palette-neutral-white
+
+.main
+	padding-top 60px
+
+// Прибитый подвал
+body
+	min-height: 100%
+	display: grid
+	grid-template-rows: auto 1fr auto
+
+
+::selection
+	background: $sd-color__palette-blue-100
+	text-shadow: none

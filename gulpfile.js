@@ -21,7 +21,7 @@ const { watch, series, parallel } = require('gulp');
 
 // Styles
 function _styles() {
-	return gulp.src('src/styles/styles.styl')
+	return gulp.src('src/styles/bundle.styl')
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(stylus({'include css': true}))
 		.pipe(postcss([
@@ -91,6 +91,15 @@ function _images(cb) {
 	gulp.src('dist/images/**/*')
 		.pipe(cache(imagemin($imageminOptions)))
 		.pipe(gulp.dest('dist/images'));
+	gulp.src('dist/work-projects/**/*')
+		.pipe(cache(imagemin($imageminOptions)))
+		.pipe(gulp.dest('dist/work-projects'));
+	gulp.src('dist/pet-projects/**/*')
+		.pipe(cache(imagemin($imageminOptions)))
+		.pipe(gulp.dest('dist/pet-projects'));
+	gulp.src('dist/articles/**/*')
+		.pipe(cache(imagemin($imageminOptions)))
+		.pipe(gulp.dest('dist/articles'));
 
 	cb();
 }

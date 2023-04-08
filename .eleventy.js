@@ -9,9 +9,22 @@ module.exports = function(config) {
 	config.addPassthroughCopy( "src/assets/**/*");
 	config.addPassthroughCopy("src/*.txt");
 	config.addPassthroughCopy("src/manifest.json");
+	config.addPassthroughCopy("src/work-projects/**/images/*");
+	config.addPassthroughCopy("src/pet-projects/**/images/*");
+	config.addPassthroughCopy("src/articles/**/images/*");
 	config.addWatchTarget("./src/styles/**/*.styl");
 	config.addNunjucksAsyncShortcode("image", imageShortcode);
 	//config.addPlugin(navigationPlugin);
+
+	config.addCollection('workProjects', (collectionAPI) => {
+		return collectionAPI.getFilteredByGlob('src/work-projects/**/*.md');
+	});
+	config.addCollection('petProjects', (collectionAPI) => {
+		return collectionAPI.getFilteredByGlob('src/pet-projects/**/*.md');
+	});
+	config.addCollection('articles', (collectionAPI) => {
+		return collectionAPI.getFilteredByGlob('src/articles/**/*.md');
+	});
 
 	//////////// Shortcodes
 	config.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
@@ -87,7 +100,7 @@ module.exports = function(config) {
 			input: "src",
 			output: "dist",
 			includes: "_includes",
-			layouts: "_layouts",
+			layouts: "_templates",
 			data: "_data",
 		},
 		dataTemplateEngine: "njk",
