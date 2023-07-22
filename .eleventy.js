@@ -1,9 +1,15 @@
 const Image = require("@11ty/eleventy-img");
 const navigationPlugin = require('@11ty/eleventy-navigation');
 const yaml = require("js-yaml");
+const markdownIt = require("markdown-it");
 
 module.exports = function(config) {
 	config.addDataExtension("yaml", contents => yaml.load(contents));
+	config.setLibrary("md", markdownIt({
+		html: true,
+		breaks: true,
+		linkify: true
+	  }));
 	config.addPassthroughCopy("src/fonts");
 	config.addPassthroughCopy("src/scripts");
 	config.addPassthroughCopy( "src/assets/**/*");
@@ -13,6 +19,8 @@ module.exports = function(config) {
 	config.addPassthroughCopy("src/pet-projects/**/images/*");
 	config.addPassthroughCopy("src/articles/**/images/*");
 	config.addWatchTarget("./src/styles/**/*.styl");
+	config.addWatchTarget("./src/work-projects/**/*.md");
+	config.addWatchTarget("./src/pet-projects/**/*.md");
 	config.addNunjucksAsyncShortcode("image", imageShortcode);
 	//config.addPlugin(navigationPlugin);
 
@@ -21,9 +29,6 @@ module.exports = function(config) {
 	});
 	config.addCollection('petProjects', (collectionAPI) => {
 		return collectionAPI.getFilteredByGlob('src/pet-projects/**/*.md');
-	});
-	config.addCollection('articles', (collectionAPI) => {
-		return collectionAPI.getFilteredByGlob('src/articles/**/*.md');
 	});
 
 	//////////// Shortcodes
