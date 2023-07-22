@@ -1,7 +1,7 @@
 ---
 title: Pitera11y Meetup
 description: Pet project, web accessibility meetup
-tags:
+category:
 - Graphic Design
 - Organizing
 years: Since 2019

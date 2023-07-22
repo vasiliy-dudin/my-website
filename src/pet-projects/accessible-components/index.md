@@ -1,7 +1,7 @@
 ---
 title: Accessible Components
 description: Components for developers  (open source)
-tags:
+category:
 - UX Design
 - UI Design
 years: 2019

@@ -1,7 +1,7 @@
 ---
 title: PiterCSS
 description: Frontend Events (open source)
-tags:
+category:
 - UI Design
 years: 2021
 layout: project.njk

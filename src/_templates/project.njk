@@ -9,9 +9,9 @@ layout: _base.njk
 <header class="project-header">
 	<h1>{{ title }}</h1>
 	<div class="project-header__description">{{ description }}</div>
-	<div class="project-header__description">{{ years }}</div>
+	<div class="project-header__date">{{ years }}</div>
 	<div class="tags">
-		{%- for tag in tags -%}
+		{%- for tag in category -%}
 			<span class="tag">{{ tag }}</span>
 		{%- endfor -%}
 	</div>

@@ -1,7 +1,7 @@
 ---
 title: Yandex Practicum
 description: EdTech, School Math Product
-tags:
+category:
   - UX Design
   - UI Design
 years: 2021-2022

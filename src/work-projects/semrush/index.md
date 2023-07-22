@@ -1,7 +1,7 @@
 ---
 title: Semrush
 description: SaaS for Internet Marketers
-tags:
+category:
   - UX Design
   - UX Research
 years: 2018-2020
@@ -10,11 +10,11 @@ projectType: work
 permalink: "/work-projects/semrush/"
 ---
 
-# About the company
+## About the company
 
 An international company, developing a high-load SaaS for internet marketers.
 
-# **My teams and projects**.
+## My teams and projects
 
 Was part of a department of 17 UX designers and 10 UI designers, working with three development teams.
 
@@ -28,7 +28,7 @@ Was part of a department of 17 UX designers and 10 UI designers, working with th
 
 ---
 
-# Case study from Oppty
+## Case study from Oppty
 
 I'll show you how I found solutions to problems with a small example from a marketing tool called Oppty. It finds potential clients in a certain location and according to certain parameters.
 
@@ -36,7 +36,7 @@ I'll show you how I found solutions to problems with a small example from a mark
 
 ---
 
-# Этапы нахождения решения
+## Этапы нахождения решения
 
 1. [Погружение в проблему, исследования и анализ](https://www.notion.so/Semrush-59d86e894d4340f8a2908f4a2f884a31).
 2. [Поиск идей](https://www.notion.so/Semrush-59d86e894d4340f8a2908f4a2f884a31).
@@ -47,7 +47,7 @@ I'll show you how I found solutions to problems with a small example from a mark
 
 ---
 
-# ****1. Погружение в проблему, исследования и анализ****
+## 1. Погружение в проблему, исследования и анализ
 
 Мало продаж, небольшой средний чек.
 Гипотеза: во многих случаях набор данных получается слишком большим, пользователи не готовы купить такой набор. На скриншоте — список из 468 клиентов из Бостона за $1,638.
@@ -61,7 +61,7 @@ I'll show you how I found solutions to problems with a small example from a mark
 
 ---
 
-# ****2. Поиск идей****
+## 2. Поиск идей
 
 1. Составил список возможных паттернов для решения подобных задач. Источники: другие сервисы Semrush, каталоги UX-паттернов и известные сайты.
 2. Сделал несколько набросков с возможными вариантами взаимодействия.
@@ -71,7 +71,7 @@ I'll show you how I found solutions to problems with a small example from a mark
 
 ---
 
-# ****3. Прототипирование и проверка решений****
+## 3. Прототипирование и проверка решений
 
 ### Первая версия, дешёвая в разработке
 
@@ -96,7 +96,7 @@ I'll show you how I found solutions to problems with a small example from a mark
 
 ---
 
-# ****4. Передача на следующие этапы разработки****
+## 4. Передача на следующие этапы разработки
 
 - Проработал список всех возможных состояний элементов и описал, как они должны работать.
 - На груминге с командой разработки презентовал окончательную версию решения.
@@ -108,14 +108,14 @@ I'll show you how I found solutions to problems with a small example from a mark
 
 ---
 
-# ****5. Сопровождение разработки****
+## 5. Сопровождение разработки
 
 - Консультировал и пояснял непонятные моменты в гайдах.
 - После разработки проверил, всё ли реализовано так, как задумывалось, и соответствует ли это дизайн-системе, составил список правок.
 
 ---
 
-# ****6. Проверка успешности решения****
+## 6. Проверка успешности решения
 
 - После разработки следил за тем, как реальные пользователи используют обновлённый интерфейс. Чтобы отследить использование ключевых интерактивных элементов, использовал Inspectlet и SQL c BigQuery.
 - Потом мы увеличили трафик в инструмент. Через какое-то время проверили метрики монетизации из критериев успешности и подтвердили, что новый дизайн работает хорошо.

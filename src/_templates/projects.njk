@@ -14,16 +14,20 @@ layout: _base.njk
 		{% set list = collections.petProjects %}
 	{% endif %}
 	{%- for project in list -%}
-		<div class="project-card">
-			<a href="{{ project.data.permalink }}">{{ project.data.title }}</a>
-			<div>{{ project.data.description }}</div>
-			<div>{{ project.data.years }}</div>
+		<article class="project-card">
+			<h3 class="project-card__title">
+				<a class="project-card__link" href="{{ project.data.permalink }}">
+					{{ project.data.title }}
+				</a>
+			</h3>			
+			<div class="project-card__desc">{{ project.data.description }}</div>
+			<div class="project-card__date">{{ project.data.years }}</div>
 			<div class="tags">
-				{%- for tag in project.data.tags -%}
+				{%- for tag in project.data.category -%}
 					<span class="tag">{{ tag }}</span>
 				{%- endfor -%}
 			</div>
 
-		</div>
+		</article>
 	{%- endfor -%}
 </div>

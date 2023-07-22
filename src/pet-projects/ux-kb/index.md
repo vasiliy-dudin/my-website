@@ -1,7 +1,7 @@
 ---
 title: UX Knowledge Base
 description: Knowledge base about designing digital products and services 
-tags:
+category:
 - Content
 - Development
 years: Since 2018
