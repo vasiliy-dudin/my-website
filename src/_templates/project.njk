@@ -2,7 +2,10 @@
 layout: _base.njk
 ---
 
-<a href="/{{ projectType }}-projects/" class="back-link">← {{ projectType }} Projects</a>
+
+<a href="/{{ projectType }}-projects/" class="back-link">
+	← {{ projectType.charAt(0).toUpperCase() + projectType.slice(1) }} Projects
+</a>
 
 {# Соседние страницы #}
 {% if projectType == "work" %}
