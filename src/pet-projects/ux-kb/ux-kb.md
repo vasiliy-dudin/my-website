@@ -6,7 +6,7 @@ category:
 - Development
 years: Since 2018
 layout: project.njk
-projectType: work
+projectType: pet
 permalink: "/pet-projects/ux-kb/"
 ---
 
