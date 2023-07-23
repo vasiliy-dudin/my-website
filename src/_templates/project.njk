@@ -1,11 +1,27 @@
 ---
 layout: _base.njk
 ---
+
+<a href="/{{ projectType }}-projects/" class="back-link">← {{ projectType }} Projects</a>
+
+{# Соседние страницы #}
 {% if projectType == "work" %}
-	<a href="/{{ projectType }}-projects/" class="back-link">← Work Projects</a>
-	{% else %}
-		<a href="/pet-projects/" class="back-link">← Pet Projects</a>
+	{% set collection = collections.workProjects %}
+{% endif %}	
+{% if projectType == "pet" %}
+	{% set collection = collections.petProjects %}
 {% endif %}
+
+{% set previousPage = collection | getPreviousCollectionItem %}
+{% set nextPage = collection | getNextCollectionItem %}
+{% if previousPage %}
+	<a href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">← Previous</a>
+{% endif %}
+{% if nextPage %}
+	<a href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">Next →</a>
+{% endif %}
+
+
 <header class="project-header">
 	<h1>{{ title }}</h1>
 	<div class="project-header__description">{{ description }}</div>
