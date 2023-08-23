@@ -21,6 +21,7 @@ module.exports = function(config) {
 	config.addWatchTarget("./src/styles/**/*.styl");
 	config.addWatchTarget("./src/work-projects/**/*.md");
 	config.addWatchTarget("./src/pet-projects/**/*.md");
+	config.addPassthroughCopy("CNAME");
 	config.addNunjucksAsyncShortcode("image", imageShortcode);
 	//config.addPlugin(navigationPlugin);
 
