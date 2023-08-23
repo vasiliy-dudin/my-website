@@ -8,7 +8,8 @@
   "scripts": {
     "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js",
     "watch": "npm run tokens && rimraf dist && concurrently -r \"gulp styles\" \"eleventy --serve\" \"gulp styles_watch\"",
-    "build": "npm run tokens && rimraf dist && eleventy && gulp build"
+    "build": "npm run tokens && rimraf dist && eleventy && gulp build",
+    "github-pages": "gh-pages -d dist"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -19,6 +20,7 @@
     "autoprefixer": "^10.4.14",
     "concurrently": "^7.6.0",
     "del": "6.1.1",
+    "gh-pages": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-cache": "^1.1.3",
