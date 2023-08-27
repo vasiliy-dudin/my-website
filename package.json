@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js",
-    "watch": "npm run tokens && rimraf dist && concurrently -r \"gulp styles\" \"eleventy --serve\" \"gulp styles_watch\"",
+    "watch": "rimraf dist && eleventy --serve",
     "build": "npm run tokens && rimraf dist && eleventy && gulp build",
     "github-pages": "gh-pages -d dist"
   },
@@ -20,6 +20,7 @@
     "autoprefixer": "^10.4.15",
     "concurrently": "^7.6.0",
     "del": "6.1.1",
+    "eleventy-sass": "^2.2.3",
     "gh-pages": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -30,7 +31,6 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
     "gulp-replace": "^1.1.4",
-    "gulp-stylus": "^3.0.1",
     "gulp-terser": "^2.1.0",
     "js-yaml": "^4.1.0",
     "markdown-it": "^13.0.1",
@@ -41,6 +41,7 @@
     "pug": "^3.0.2",
     "rimraf": "^3.0.2",
     "rollup-stream": "^1.24.1",
+    "sass": "^1.66.1",
     "style-dictionary": "^3.8.0",
     "stylus": "^0.59.0",
     "token-transformer": "^0.0.29",
