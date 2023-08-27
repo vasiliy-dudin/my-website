@@ -1,4 +1,3 @@
-const sass = require("eleventy-sass");
 const Image = require("@11ty/eleventy-img");
 const navigationPlugin = require('@11ty/eleventy-navigation');
 const yaml = require("js-yaml");
@@ -24,8 +23,6 @@ module.exports = function(config) {
 	config.addWatchTarget("./src/pet-projects/**/*.md");
 	config.addPassthroughCopy("CNAME");
 	config.addNunjucksAsyncShortcode("image", imageShortcode);
-
-	config.addPlugin(sass);
 	//config.addPlugin(navigationPlugin);
 
 	config.addCollection('workProjects', (collectionAPI) => {

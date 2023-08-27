@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const stylus = require('gulp-stylus');
 const postcss = require("gulp-postcss");
 const autoprefixer = require('autoprefixer');
 const postcssCsso = require('postcss-csso');
@@ -20,6 +21,21 @@ const { watch, series, parallel } = require('gulp');
 
 // Styles
 function _styles() {
+	return gulp.src('src/styles/bundle.styl')
+		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+		.pipe(stylus({'include css': true}))
+		.pipe(postcss([
+			postcss_inline_svg
+		]))
+		//.pipe(replace('/../../fonts', '/fonts'))
+		.pipe(gulp.dest('dist/styles'));
+}
+
+function _styles_watch() {
+	watch('src/styles/**/*.styl', series('styles'));
+}
+
+function _styles_build() {
 	return gulp.src('dist/styles/**/*.css')
 	.pipe(postcss([
 		autoprefixer({
@@ -105,7 +121,10 @@ function _files(cb) {
 }
 
 
+exports.styles = _styles;
+exports.styles_watch = _styles_watch;
+
 exports.build = series(
-	parallel(_scripts, _images, _files),
-	_styles
+	parallel(_scripts, _styles, _images, _files),
+	_styles_build
 );
