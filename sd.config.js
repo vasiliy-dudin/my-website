@@ -12,7 +12,7 @@ module.exports = {
 	platforms: {
 		css: {
 			transformGroup: 'css',
-			buildPath: 'src/styles/',
+			buildPath: 'src/styles/variables/',
 			files: [
 				{
 					destination: 'tokens.styl',
