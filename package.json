@@ -38,7 +38,6 @@
     "postcss": "^8.4.29",
     "postcss-csso": "^6.0.1",
     "postcss-inline-svg": "^5.0.0",
-    "pug": "^3.0.2",
     "rimraf": "^3.0.2",
     "rollup-stream": "^1.24.1",
     "style-dictionary": "^3.8.0",
