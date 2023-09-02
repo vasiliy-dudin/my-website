@@ -24,3 +24,34 @@ body
 ::selection
 	background: $sd-color__palette-blue-100
 	text-shadow: none
+
+
+make-container()
+	position relative
+	margin-right auto
+	margin-left auto
+	padding-left ($grid-gutter-width-base / 2)
+	padding-right ($grid-gutter-width-base / 2)
+	
+make-container-width()
+	for $w1, $w2 in $breakpoints-and-widths
+		@media (min-width: unquote($w1))
+			width: $w2
+			
+			
+// Fixed
+/*.container
+	make-container()
+	max-width 100%
+	width 100%
+	make-container-width()*/
+
+// Fluid
+.container
+	make-container()
+	// Поиск ширины у последнего брейкпоинта
+	for $w1, $w2 in $breakpoints-and-widths
+		$list =  $w2
+	width 100%
+	max-width $list
+	//max-width 100%	
