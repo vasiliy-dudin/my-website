@@ -2,37 +2,45 @@
 layout: _base.njk
 ---
 
+<div class="project-nav">
+	<a href="/{{ projectType }}-projects/" class="project-nav__back">
+		← {{ projectType.charAt(0).toUpperCase() + projectType.slice(1) }} Projects
+	</a>
 
-<a href="/{{ projectType }}-projects/" class="back-link">
-	← {{ projectType.charAt(0).toUpperCase() + projectType.slice(1) }} Projects
-</a>
+	{# Соседние страницы #}
+	{% if projectType == "work" %}
+		{% set collection = collections.workProjects %}
+	{% endif %}	
+	{% if projectType == "pet" %}
+		{% set collection = collections.petProjects %}
+	{% endif %}
 
-{# Соседние страницы #}
-{% if projectType == "work" %}
-	{% set collection = collections.workProjects %}
-{% endif %}	
-{% if projectType == "pet" %}
-	{% set collection = collections.petProjects %}
-{% endif %}
-
-{% set previousPage = collection | getPreviousCollectionItem %}
-{% set nextPage = collection | getNextCollectionItem %}
-{% if previousPage %}
-	<a href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">← Previous</a>
-{% endif %}
-{% if nextPage %}
-	<a href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">Next →</a>
-{% endif %}
+	{% set previousPage = collection | getPreviousCollectionItem %}
+	{% set nextPage = collection | getNextCollectionItem %}
+	{% if previousPage or nextPage %}
+		<div class="project-nav__neighbours">
+			{% if previousPage %}
+				<a class="project-nav__prev" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">Previous</a>
+			{% endif %}
+			{% if nextPage %}
+				<a class="project-nav__next" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">Next</a>
+			{% endif %}
+		</div>
+	{% endif %}
+</div>
 
 
 <header class="project-header">
-	<h1>{{ title }}</h1>
-	<div class="project-header__description">{{ description }}</div>
-	<div class="project-header__date">{{ years }}</div>
-	<div class="tags">
-		{%- for tag in category -%}
-			<span class="tag">{{ tag }}</span>
-		{%- endfor -%}
+	<div class="project-header__img"></div>
+	<div class="project-header__content">
+		<h1 class="project-header__h1">{{ title }}</h1>
+		<div class="project-header__description">{{ description }}</div>
+		<div class="project-header__date">{{ years }}</div>
+		<div class="tags">
+			{%- for tag in category -%}
+				<span class="tag">{{ tag }}</span>
+			{%- endfor -%}
+		</div>
 	</div>
 </header>
 
