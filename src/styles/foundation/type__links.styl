@@ -1,29 +1,7 @@
-// Тонкое подчёркивание
-
-
-$thin-underline-opacity = 30%
-
-thin-underline--default($border-color=$link-color, $opacity=$thin-underline-opacity, $width=2px)
-	border-bottom $width solid alpha($border-color, $opacity)
-
-thin-underline--hover($border-color--hover=$link-color--hover, $opacity=$thin-underline-opacity)
-	border-color alpha($border-color--hover, $opacity)
-	
-	
-thin-underline--active($border-color--hover=$link-color--active, $opacity=$thin-underline-opacity)
-	border-color alpha($border-color--hover, $opacity)
-	
-	
-	
-
-
 a
 	text-decoration: none
-	
-	
 		
 .link
-	thin-underline--default()
 	color $link-color
 	&:hover
 		color $link-color--hover
