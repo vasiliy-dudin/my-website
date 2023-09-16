@@ -24,7 +24,6 @@
 				{% include "../assets/logo.svg" %}
 				<span class="logo__name">{{ site.title }}</span>
 			</a>
-			<button class="menu__button" aria-controls="menu" aria-expanded="false" aria-label="Open menu"></button>
 			<ul class="menu" id="menu">
 				{% for item in menu %}
 					{% if item.href == page.url %}
