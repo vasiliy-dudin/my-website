@@ -31,6 +31,7 @@ $header__color = #333
 	line-height 1
 	font-size 1.2rem
 	font-weight bold
+	white-space nowrap
 
 	
 
@@ -40,21 +41,36 @@ $item__bg--active = #FEE076
 $item__bg--hover = darken($header__bg, 5)
 $link__color = $header__color !important
 
-.menu // ul
-	display: flex
+.menu // ul	
 	gap 12px
 	margin 0
 	padding 0
 	list-style: none
 
+	// Adaptive
+	display: grid
+	grid-template-columns: repeat(2, 1fr);
+	margin-top 1.5rem
+	+media(sm)
+		display: flex
+		width: 100%
+	+media(md)
+		margin-top: 0
+	+media(lg)
+		width: unset
+
 	&__item
 		flex-grow: 1
-		+media(md)
+		justify-content: center
+		+media(lg)
 			flex-grow: 0
 
 	&__link
-		display: flex
+		display: block
 		height: 100%
+		padding 8px 12px
+		white-space: nowrap
+		text-align: center
 		transition background 0.15s
 		color $link__color
 		line-height: 1.5
@@ -63,28 +79,7 @@ $link__color = $header__color !important
 		text-decoration-thickness: 1px
 		text-underline-offset 7px
 
-
 		&:hover
 			background-color $item__bg--hover
 		&.--active
 			background-color $item__bg--active !important
-
-		// Адаптивное
-		padding 8px 12px
-		flex 1 0 100%
-		text-align right
-		+media(md)
-			align-items center
-			flex 0 0 auto
-		+media(lg)
-			&:before
-				top 6px
-
-
-	// Адаптивное
-	flex-wrap wrap
-	margin-top 1.5rem
-	+media(md)
-		flex-direction row
-		flex-wrap nowrap
-		margin-top: 0
