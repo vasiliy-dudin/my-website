@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="{{ description or site.description }}">
-	<title>{{ title or site.title}}</title>
+	<title>{{ title + " / " + site.title or site.title}}</title>
 	<link rel="stylesheet" href="/styles/bundle.css">
 	<link rel="preload" href="/fonts/inter-variable.woff2" crossorigin="" as="font" type="font/woff2">
 	<link rel="preload" href="/fonts/roboto-slab-variable.woff2" crossorigin="" as="font" type="font/woff2">
@@ -15,11 +15,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicons/favicon.png">
 	<link rel="manifest" href="/manifest.json">
 </head>
+
+
+
 <body class="body">
 	{% include "header.njk" %}
 	<div class="container">
 		<div class="content">
-			<main class="main" id="main-content">
+			<main class="main{{ ' main--' + projectType if projectType }}" id="main-content">
 				{{ content | safe }}
 			</main>
 
