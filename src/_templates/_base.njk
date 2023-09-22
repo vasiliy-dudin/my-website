@@ -21,12 +21,9 @@
 <body class="body">
 	{% include "header.njk" %}
 	<div class="container">
-		<div class="content">
-			<main class="main{{ ' main--' + projectType if projectType }}" id="main-content">
-				{{ content | safe }}
-			</main>
-
-		</div>
+		<main class="main{{ ' main--' + projectType if projectType }}" id="main-content">
+			{{ content | safe }}
+		</main>
 	</div>
 
 
