@@ -1,0 +1,13 @@
+links:
+  - name: "About Me"
+    href: "/"
+    enabled: true
+  - name: "Work Projects"
+    href: "/work-projects/"
+    enabled: true
+  - name: "Pet Projects"
+    href: "/pet-projects/"
+    enabled: true
+  - name: "Articles"
+    href: "/articles/"
+    enabled: true

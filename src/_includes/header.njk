@@ -1,21 +1,3 @@
-{% set menu = [{
-		name: "About Me",
-		href: "/"
-	},
-	{
-		name: "Work Projects",
-		href: "/work-projects/"
-	},
-	{
-		name: "Pet Projects",
-		href: "/pet-projects/"
-	},
-	{
-		name: "Articles",
-		href: "/articles/"
-	}]
-%}
-
 <header class="header">
 	<a class="skip-link" href="#main-content">Skip to main content</a>
 	<div class="container">
@@ -25,7 +7,7 @@
 				<span class="logo__name">{{ site.title }}</span>
 			</a>
 			<ul class="menu" id="menu">
-				{% for item in menu %}
+				{% for item in menu.links %}
 					{% if item.href == page.url %}
 						{% set isCurrent = true %}
 						{% else %}
@@ -36,14 +18,18 @@
 						{% else %}
 							{% set isActive = false %}
 					{% endif %}
-					<li class="menu__item">
-						<a class="menu__link{% if isActive %} --active{% endif %}"
-						   href="{{ item.href }}"
-						   {% if isCurrent %}aria-current="page"{% endif %}
-						>
-							{{ item.name }}
-						</a>
-					</li>
+
+					{% if item.enabled %}
+						<li class="menu__item">
+							<a class="menu__link{% if isActive %} --active{% endif %}"
+							href="{{ item.href }}"
+							{% if isCurrent %}aria-current="page"{% endif %}
+							>
+								{{ item.name }}
+							</a>
+						</li>
+					{% endif %}
+
 				{% endfor %}
 			</ul>
 		</nav>
