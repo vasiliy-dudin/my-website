@@ -7,7 +7,7 @@
 				<span class="logo__name">{{ site.title }}</span>
 			</a>
 			<ul class="menu" id="menu">
-				{% for item in menu.links %}
+				{% for item in menu %}
 					{% if item.href == page.url %}
 						{% set isCurrent = true %}
 						{% else %}
