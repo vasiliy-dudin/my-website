@@ -32,8 +32,18 @@ module.exports = function(config) {
 		return collectionAPI.getFilteredByGlob('src/pet-projects/**/*.md');
 	});
 
+
 	//////////// Shortcodes
+	// MD in NJK
+	config.addPairedShortcode("md", (content) => {
+		const md = new markdownIt();
+  		return md.render(content.replace(/^\s+/gm, ''));
+	});
+
+
 	config.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
+
+
 	// Projects
 	config.addPairedShortcode("projectColumn", function(content) {
 		return `
@@ -97,7 +107,7 @@ module.exports = function(config) {
 					alt="${alt}"					
 					decoding="async"
 					loading="lazy">
-	        </picture>
+			</picture>
 		`;
 	}
 
@@ -110,7 +120,7 @@ module.exports = function(config) {
 			data: "_data",
 		},
 		dataTemplateEngine: "njk",
-		markdownTemplateEngine: false,
+		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",
 		passthroughFileCopy: true,
 		templateFormats: [
