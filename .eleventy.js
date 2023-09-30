@@ -12,16 +12,7 @@ module.exports = function(config) {
 		breaks: true,
 		linkify: true
 	  }));
-	config.addPassthroughCopy("src/fonts");
-	config.addPassthroughCopy("src/scripts");
-	config.addPassthroughCopy( "src/assets/**/*");
-	config.addPassthroughCopy("src/*.txt");
-	config.addPassthroughCopy("src/manifest.json");
-	config.addWatchTarget("./src/styles/**/*.styl");
-	config.addWatchTarget("./src/work-projects/**/*.md");
-	config.addWatchTarget("./src/pet-projects/**/*.md");
-	config.addPassthroughCopy("CNAME");
-	config.addNunjucksAsyncShortcode("image", imageShortcode);
+
 	//config.addPlugin(navigationPlugin);
 
 	config.addCollection('workProjects', (collectionAPI) => {
@@ -31,34 +22,19 @@ module.exports = function(config) {
 		return collectionAPI.getFilteredByGlob('src/pages/pet-projects/**/*.md');
 	});
 
-	// Copy content images to /dist
-	config.on('afterBuild', async () => {
-		const srcDir = 'src/pages/';
-		const destDir = 'dist/';
-		const imageExtensions = ['svg', 'png', 'webp', 'jpg'];
-		const pattern = `${srcDir}/**/*.{${imageExtensions.join(',')}}`;
-	  
-		try {
-		  glob.sync(pattern).forEach(async (srcPath) => {
-			const destPath = `${destDir}${srcPath.substring(srcDir.length)}`;
-			await fs.copy(srcPath, destPath);
-		  });
-		  console.log('Image files have been copied');
-		} catch (err) {
-		  console.error(err);
-		}
-	  });
+	
 
 	//////////// Shortcodes
+
 	// MD in NJK
 	config.addPairedShortcode("md", (content) => {
 		const md = new markdownIt();
   		return md.render(content.replace(/^\s+/gm, ''));
 	});
 
+	config.addNunjucksAsyncShortcode("image", imageShortcode);
 
 	config.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
-
 
 	// Projects
 	config.addPairedShortcode("projectColumn", function(content) {
@@ -68,6 +44,7 @@ module.exports = function(config) {
 			</div>
 			`;
 	});
+
 	config.addPairedShortcode("projectDesc", function(content, title) {
 		return `
 			<div>
@@ -76,6 +53,7 @@ module.exports = function(config) {
 			</div>
 			`;
 	});
+
 	// <picture>
 	async function imageShortcode(src, className, alt, width) {
 		if(alt === undefined) {
@@ -126,6 +104,39 @@ module.exports = function(config) {
 			</picture>
 		`;
 	}
+
+
+
+	/////////// Build options
+
+	config.addPassthroughCopy("src/fonts");
+	config.addPassthroughCopy("src/scripts");
+	config.addPassthroughCopy( "src/assets/**/*");
+	config.addPassthroughCopy("src/*.txt");
+	config.addPassthroughCopy("src/manifest.json");
+	config.addWatchTarget("./src/styles/**/*.styl");
+	config.addWatchTarget("./src/work-projects/**/*.md");
+	config.addWatchTarget("./src/pet-projects/**/*.md");
+	config.addPassthroughCopy("CNAME");
+
+	// Copy content images to /dist
+	config.on('afterBuild', async () => {
+		const srcDir = 'src/pages/';
+		const destDir = 'dist/';
+		const imageExtensions = ['svg', 'png', 'webp', 'jpg'];
+		const pattern = `${srcDir}/**/*.{${imageExtensions.join(',')}}`;
+	
+		try {
+			glob.sync(pattern).forEach(async (srcPath) => {
+				const destPath = `${destDir}${srcPath.substring(srcDir.length)}`;
+				await fs.copy(srcPath, destPath);
+			});
+			console.log('Image files have been copied');
+		} catch (err) {
+			console.error(err);
+		}
+	});
+
 
 	return {
 		dir: {
