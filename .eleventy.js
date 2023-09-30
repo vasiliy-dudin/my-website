@@ -15,21 +15,18 @@ module.exports = function(config) {
 	config.addPassthroughCopy( "src/assets/**/*");
 	config.addPassthroughCopy("src/*.txt");
 	config.addPassthroughCopy("src/manifest.json");
-	config.addPassthroughCopy("src/work-projects/**/images/*");
-	config.addPassthroughCopy("src/pet-projects/**/images/*");
-	config.addPassthroughCopy("src/articles/**/images/*");
+	config.addPassthroughCopy("src/pages/**/images/*");
 	config.addWatchTarget("./src/styles/**/*.styl");
-	config.addWatchTarget("./src/work-projects/**/*.md");
-	config.addWatchTarget("./src/pet-projects/**/*.md");
+	config.addWatchTarget("./src/pages/**/*.md");
 	config.addPassthroughCopy("CNAME");
 	config.addNunjucksAsyncShortcode("image", imageShortcode);
 	//config.addPlugin(navigationPlugin);
 
 	config.addCollection('workProjects', (collectionAPI) => {
-		return collectionAPI.getFilteredByGlob('src/work-projects/**/*.md');
+		return collectionAPI.getFilteredByGlob('src/pages/work-projects/**/*.md');
 	});
 	config.addCollection('petProjects', (collectionAPI) => {
-		return collectionAPI.getFilteredByGlob('src/pet-projects/**/*.md');
+		return collectionAPI.getFilteredByGlob('src/pages/pet-projects/**/*.md');
 	});
 
 
