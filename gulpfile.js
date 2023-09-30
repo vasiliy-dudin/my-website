@@ -105,9 +105,9 @@ function _images(cb) {
 }
 
 // Copy and minification
-function _files(cb) {
+function _files() {
 	// html
-	gulp.src('dist/**/*.html')
+	return gulp.src('dist/**/*.html')
 		.pipe(htmlmin({
 			collapseBooleanAttributes: true,
 			collapseWhitespace: true,
@@ -116,8 +116,6 @@ function _files(cb) {
 			removeComments: true,
 		}))
 		.pipe(gulp.dest('dist'));
-
-	cb();
 }
 
 
@@ -125,6 +123,7 @@ exports.styles = _styles;
 exports.styles_watch = _styles_watch;
 
 exports.build = series(
-	parallel(_scripts, _styles, _images, _files),
+	parallel(_scripts, _styles, _images),
+	_files,
 	_styles_build
 );
