@@ -10,11 +10,11 @@ projectType: work
 permalink: "/work-projects/yandex-practicum/"
 ---
 
-# About the company and the team
+## About the company and the team
 
 International training service for IT professions. Includes about 60 courses and many development teams. I used to work at the closed School Math product.
 
-# Design process.
+## Design process
 
 1. Immersion in the problem, requirements gathering, analysis.
    I used product manager's research results, user flow, value stream map, frequency of use cases analysis, web analytics data and session records (Web-viewer from Yandex.Metrika).
@@ -23,7 +23,7 @@ International training service for IT professions. Includes about 60 courses and
    Component assembly, documentation, elaboration of states, work with UX writer, reviews from other designers.
 4. Development support.
 
-# What I did
+## What I did
 
 - Improved the interface, solved some of the user and business issues** in the personal accounts, face to face classes and homework, made the product scalable. Used the results of product manager research, user flow, value stream map, frequency of use cases analysis, web analytics data and session records (WebVisor from Yandex.Metrika).
 - Was responsible for the design system and its development.
@@ -45,7 +45,7 @@ International training service for IT professions. Includes about 60 courses and
 	- Process for working on tasks and design sprints.
 	- Facilitated transfer of layouts to development, hosted feedback sessions from Scrum team.
 
-# Design layouts.
+## Design layouts
 
 [Figma, all layouts](https://www.figma.com/file/koqbtwzgUyo1IAzoFajOwZ/School-Math-v2.1?node-id=0%3A1)
 
@@ -67,7 +67,7 @@ Layout organisation. In the original Figma project, we divided the layouts into 
 
 ![Untitled](images/Untitled.png)
 
-# Examples from the design system
+## Examples from the design system
 
 - Used a modular spacing system and complex nested components on auto layout.
 - Implemented design tokens for consistency of styles and to quickly push changes to the extension. Used GitHub as a single source of truth.
