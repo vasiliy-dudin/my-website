@@ -39,7 +39,7 @@ permalink: "/pet-projects/accessible-components/"
 
 За основу взял диаграмму use cases и показал как 3 группы пользователей будут решать свои задачи, взаимодействуя с интерфейсом.
 
-![Untitled](Accessible%20Components%20c5f26c3946d44ebe840987835c2d02d3/Untitled.png)
+![Untitled](images/Untitled.png)
 
 ---
 
@@ -47,13 +47,13 @@ permalink: "/pet-projects/accessible-components/"
 
 [Интерактивный прототип Axure RP](https://k90cvf.axshare.com)
 
-![Untitled](Accessible%20Components%20c5f26c3946d44ebe840987835c2d02d3/Untitled%201.png)
+![Untitled](images/Untitled%201.png)
 
 На первой вкладке пользователи скринридеров будут тестировать компоненты.
 
 А на следующей пошагово объясняем, как сверстать компонент, как он должен работать и какие ARIA-атрибуты необходимы. Отсюда же разработчик может забрать React-компонент, если не хочет разрабатывать его самостоятельно.
 
-![Untitled](Accessible%20Components%20c5f26c3946d44ebe840987835c2d02d3/Untitled%202.png)
+![Untitled](images/Untitled%202.png)
 
 ---
 
@@ -61,8 +61,8 @@ permalink: "/pet-projects/accessible-components/"
 
 [Figma](https://www.figma.com/file/DiYCUz0N01asW8Y05rbozhJL/Accessible-Components?node-id=0%3A1)
 
-![List.png](Accessible%20Components%20c5f26c3946d44ebe840987835c2d02d3/List.png)
+![List.png](images/List.png)
 
-![Frame 27.jpg](Accessible%20Components%20c5f26c3946d44ebe840987835c2d02d3/Frame_27.jpg)
+![Frame 27.jpg](images/Frame_27.jpg)
 
-![Frame 26.png](Accessible%20Components%20c5f26c3946d44ebe840987835c2d02d3/Frame_26.png)
+![Frame 26.png](images/Frame_26.png)

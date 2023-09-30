@@ -2,6 +2,8 @@ const Image = require("@11ty/eleventy-img");
 const navigationPlugin = require('@11ty/eleventy-navigation');
 const yaml = require("js-yaml");
 const markdownIt = require("markdown-it");
+const fs = require("fs-extra");
+const glob = require('glob');
 
 module.exports = function(config) {
 	config.addDataExtension("yaml", contents => yaml.load(contents));
@@ -15,9 +17,9 @@ module.exports = function(config) {
 	config.addPassthroughCopy( "src/assets/**/*");
 	config.addPassthroughCopy("src/*.txt");
 	config.addPassthroughCopy("src/manifest.json");
-	config.addPassthroughCopy("src/pages/**/images/*");
 	config.addWatchTarget("./src/styles/**/*.styl");
-	config.addWatchTarget("./src/pages/**/*.md");
+	config.addWatchTarget("./src/work-projects/**/*.md");
+	config.addWatchTarget("./src/pet-projects/**/*.md");
 	config.addPassthroughCopy("CNAME");
 	config.addNunjucksAsyncShortcode("image", imageShortcode);
 	//config.addPlugin(navigationPlugin);
@@ -29,6 +31,23 @@ module.exports = function(config) {
 		return collectionAPI.getFilteredByGlob('src/pages/pet-projects/**/*.md');
 	});
 
+	// Copy content images to /dist
+	config.on('afterBuild', async () => {
+		const srcDir = 'src/pages/';
+		const destDir = 'dist/';
+		const imageExtensions = ['svg', 'png', 'webp', 'jpg'];
+		const pattern = `${srcDir}/**/*.{${imageExtensions.join(',')}}`;
+	  
+		try {
+		  glob.sync(pattern).forEach(async (srcPath) => {
+			const destPath = `${destDir}${srcPath.substring(srcDir.length)}`;
+			await fs.copy(srcPath, destPath);
+		  });
+		  console.log('Image files have been copied');
+		} catch (err) {
+		  console.error(err);
+		}
+	  });
 
 	//////////// Shortcodes
 	// MD in NJK
