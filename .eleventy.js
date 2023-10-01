@@ -4,6 +4,7 @@ const yaml = require("js-yaml");
 const markdownIt = require("markdown-it");
 const fs = require("fs-extra");
 const glob = require('glob');
+const htmlmin = require("html-minifier");
 
 module.exports = function(config) {
 	config.addDataExtension("yaml", contents => yaml.load(contents));
@@ -136,6 +137,22 @@ module.exports = function(config) {
 			console.error(err);
 		}
 	});
+
+	// Minify HTML for 'production' environment
+	if (process.env.ELEVENTY_ENV === 'production') {
+		config.addTransform("htmlmin", function(content, outputPath) {
+		if (outputPath.endsWith(".html")) {
+			let minified = htmlmin.minify(content, {
+			useShortDoctype: true,
+			removeComments: true,
+			collapseWhitespace: true
+			});
+			return minified;
+		}
+		return content;
+		});
+	}
+	
 
 
 	return {
