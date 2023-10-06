@@ -7,7 +7,7 @@ category:
 years: 2018-2020
 layout: project.njk
 projectType: work
-permalink: "/work-projects/semrush/"
+permalink: "/case-studies/semrush/"
 ---
 
 ## About the company

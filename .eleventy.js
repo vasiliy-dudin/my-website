@@ -17,7 +17,7 @@ module.exports = function(config) {
 	//config.addPlugin(navigationPlugin);
 
 	config.addCollection('workProjects', (collectionAPI) => {
-		return collectionAPI.getFilteredByGlob('src/pages/work-projects/**/*.md');
+		return collectionAPI.getFilteredByGlob('src/pages/case-studies/**/*.md');
 	});
 	config.addCollection('petProjects', (collectionAPI) => {
 		return collectionAPI.getFilteredByGlob('src/pages/pet-projects/**/*.md');
@@ -116,7 +116,7 @@ module.exports = function(config) {
 	config.addPassthroughCopy("src/*.txt");
 	config.addPassthroughCopy("src/manifest.json");
 	config.addWatchTarget("./src/styles/**/*.styl");
-	config.addWatchTarget("./src/work-projects/**/*.md");
+	config.addWatchTarget("./src/case-studies/**/*.md");
 	config.addWatchTarget("./src/pet-projects/**/*.md");
 	config.addPassthroughCopy("CNAME");
 

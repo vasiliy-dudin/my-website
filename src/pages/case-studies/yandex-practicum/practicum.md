@@ -7,7 +7,7 @@ category:
 years: 2021-2022
 layout: project.njk
 projectType: work
-permalink: "/work-projects/yandex-practicum/"
+permalink: "/case-studies/yandex-practicum/"
 ---
 
 ## About the company and the team

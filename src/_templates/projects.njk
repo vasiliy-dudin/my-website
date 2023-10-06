@@ -7,7 +7,7 @@ layout: _base.njk
 
 <div class="project-list">
 	{{ content | safe }}
-	{% if "work" in permalink %}
+	{% if "case-studies" in permalink %}
 		{% set list = collections.workProjects %}
 	{% endif %}	
 	{% if "pet" in permalink %}

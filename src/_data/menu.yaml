@@ -1,8 +1,8 @@
 - name: "About Me"
   href: "/"
   enabled: true
-- name: "Work Projects"
-  href: "/work-projects/"
+- name: "Case Studies"
+  href: "/case-studies/"
   enabled: true
 - name: "Pet Projects"
   href: "/pet-projects/"
