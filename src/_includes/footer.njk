@@ -6,11 +6,11 @@
 				<li class="contacts__item">
 					{% if link.name == "email" %}
 						<a class="contacts__item-link" href="mailto:{{ link.url }}">
-							<span class="visually-hidden">{{ link.url }}</span>
+							{{ link.url }}
 						</a>
 					{% else %}
 						<a class="contacts__item-link" href="{{ link.url }}" target="_blank" rel="nofollow noopener noreferrer">
-							<span class="visually-hidden">{{ link.name }}</span>
+							{{ link.name }}
 						</a>
 					{% endif %}
 				</li>
