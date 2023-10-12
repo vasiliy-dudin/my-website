@@ -1,17 +1,28 @@
-<footer class="footer">
-	<div class="socials-container">
-		<ul class="socials">
-			<li class="socials__item">
-				<a class="socials__item-link" href="{{ links.twitter }}">
-					<span class="visually-hidden">Twitter</span>
-				</a>
-			</li>
+<footer class="footer container">
+	<h2 class="footer__heading">Contacts</h2>
+	<div class="contacts">
+		<ul class="contacts__links">
+			{% for link in contacts %}
+				<li class="contacts__item">
+					{% if link.name == "email" %}
+						<a class="contacts__item-link" href="mailto:{{ link.url }}">
+							<span class="visually-hidden">{{ link.url }}</span>
+						</a>
+					{% else %}
+						<a class="contacts__item-link" href="{{ link.url }}" target="_blank" rel="nofollow noopener noreferrer">
+							<span class="visually-hidden">{{ link.name }}</span>
+						</a>
+					{% endif %}
+				</li>
+			{% endfor %}
 		</ul>
+
+		<div class="contacts__copyrights">
+			<small class="contacts__item">©2011–{% currentYear %}</small>
+			<small class="contacts__item">Built with <a href="https://www.11ty.dev" target="_blank" rel="nofollow noopener noreferrer">Eleventy</a>
+			</small>
+		</div>
 	</div>
-	<div class="copyrights">
-		<small class="copyrights__item">©2011–{% currentYear %}</small>
-		<small class="copyrights__item">Built with <a href="{{ links.eleventy }}">Eleventy</a>
-		</small>
-	</div>
+	
 
 </footer>

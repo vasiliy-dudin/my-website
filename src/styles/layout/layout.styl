@@ -7,18 +7,15 @@ html
 	box-sizing: inherit
 
 body
-	height: 100vh
 	margin: 0
 	background $sd-color__palette-neutral-white
+	// Sticky Footer
+	min-height: 100vh
+	display: grid
+	grid-template-rows: auto 1fr auto
 
 .main
 	padding-top 60px
-
-// Прибитый подвал
-body
-	min-height: 100%
-	display: grid
-	grid-template-rows: auto 1fr auto
 
 
 ::selection

@@ -1,14 +1,29 @@
-@import 'mixins.styl'
-
-$footer__margin-top = 60px; // Растояние от блока с контентом до футера
-$footer__bg =  #DFDBE5
-//$footer__color = 
-//$footer__links__color = lighten($footer__color, 25)
-
 .footer
-	margin-top 80px
-	padding-bottom 20px
-	font-size  0.8rem
-	text-align center
-	// &, a
-	// 	color $footer__color
+	margin-top: 80px
+	margin-bottom: 40px
+	font-size: 0.8rem
+	&__heading
+		border-top: 1px solid $sd-color__palette-gray-100
+		margin-top: 0
+		padding-top: 24px
+
+.contacts
+	display: flex
+	align-items: center
+	flex-wrap: wrap
+	gap: 16px
+
+.contacts__links // ul
+	display: flex
+	flex-wrap: wrap
+	flex: 1 1 auto;
+	gap: 16px
+	margin 0
+	padding: 0
+
+.contacts__item
+	display: block
+
+.contacts__copyrights
+	display: flex
+	gap: 16px
