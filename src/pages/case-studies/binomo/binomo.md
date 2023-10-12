@@ -7,6 +7,7 @@ category:
 years: 2018
 layout: project.njk
 projectType: work
+order: 3
 permalink: "/case-studies/binomo/"
 ---
 	

@@ -6,6 +6,7 @@ category:
 years: 2021
 layout: project.njk
 projectType: pet
+order: 1
 permalink: "/pet-projects/piter-css/"
 ---
 

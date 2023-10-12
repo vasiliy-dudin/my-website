@@ -16,12 +16,17 @@ module.exports = function(config) {
 
 	//config.addPlugin(navigationPlugin);
 
-	config.addCollection('workProjects', (collectionAPI) => {
-		return collectionAPI.getFilteredByGlob('src/pages/case-studies/**/*.md');
+	config.addCollection('workProjects', (collection) => {
+		return collection.getFilteredByGlob('src/pages/case-studies/**/*.md').sort(function(a, b) {
+			return a.data.order - b.data.order;
+		});
 	});
-	config.addCollection('petProjects', (collectionAPI) => {
-		return collectionAPI.getFilteredByGlob('src/pages/pet-projects/**/*.md');
+	config.addCollection('petProjects', (collection) => {
+		return collection.getFilteredByGlob('src/pages/pet-projects/**/*.md').sort(function(a, b) {
+			return a.data.order - b.data.order;
+		});
 	});
+	
 
 	
 

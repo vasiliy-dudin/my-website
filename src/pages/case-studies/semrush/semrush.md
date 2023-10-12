@@ -7,6 +7,7 @@ category:
 years: 2018-2020
 layout: project.njk
 projectType: work
+order: 2
 permalink: "/case-studies/semrush/"
 ---
 
