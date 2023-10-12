@@ -5,6 +5,4 @@ layout: page.njk
 permalink: "/articles/"
 ---
 
-- Статья 1
-- Статья 2
-- Статья 3
+- [Аудит до­ступ­но­сти: ос­но­вы](https://web-standards.ru/articles/a11y-audit-basics/)
