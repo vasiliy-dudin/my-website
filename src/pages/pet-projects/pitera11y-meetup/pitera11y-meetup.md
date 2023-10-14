@@ -6,7 +6,7 @@ category:
 - Organizing
 years: Since 2019
 layout: project.njk
-projectType: pet
+projectType: pet-projects
 order: 2
 permalink: "/pet-projects/pitera11y-meetup/"
 ---

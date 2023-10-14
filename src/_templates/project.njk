@@ -2,16 +2,20 @@
 layout: _base.njk
 ---
 
+
 <div class="project-nav">
-	<a href="/{{ projectType }}-projects/" class="project-nav__back">
-		← {{ projectType.charAt(0).toUpperCase() + projectType.slice(1) }} Projects
-	</a>
+	{% set firstPartOfUrl = page.url.split('/')[1] %}
+	{% for item in menu %}
+		{% if firstPartOfUrl in item.href%}			
+			<a href="{{ item.href }}" class="project-nav__back">← {{ item.name }}</a>
+		{% endif %}
+	{% endfor %}
 
 	{# Соседние страницы #}
-	{% if projectType == "work" %}
+	{% if projectType == "case-studies" %}
 		{% set collection = collections.workProjects %}
 	{% endif %}	
-	{% if projectType == "pet" %}
+	{% if projectType == "pet-projects" %}
 		{% set collection = collections.petProjects %}
 	{% endif %}
 

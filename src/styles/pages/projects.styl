@@ -23,7 +23,6 @@
 .project-card
 	background: $sd-color__palette-neutral-white
 	position: relative
-	padding: 16px
 	border-radius: $section__radius
 	overflow: hidden
 	box-shadow: 0 5px 15px alpha(#000, 20%)
@@ -47,7 +46,9 @@
 		box-shadow: unset
 		//filter: grayscale(0) */
 
-
+	&__text
+		display block
+		padding: 16px
 	&__title
 		font-size: $font-size-lg
 		margin: 0 0 8px
@@ -69,7 +70,7 @@
 		text-decoration: none
 
 	// Изображение
-	/* &__thumbnail
+	/* &__img
 		position: relative
 
 		&.--external:after
@@ -85,12 +86,12 @@
 			background-size 20px
 			background-color $link-color
 			background-position: center center
-			border-radius: 50%
+			border-radius: 50% */
 
-	img
+	&__img
 		display: block
 		@extend .img-fluid
- 	*/
+ 	
 
 	// Caption
 

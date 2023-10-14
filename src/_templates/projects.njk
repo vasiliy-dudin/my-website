@@ -10,24 +10,26 @@ layout: _base.njk
 	{% if "case-studies" in permalink %}
 		{% set list = collections.workProjects %}
 	{% endif %}	
-	{% if "pet" in permalink %}
+	{% if "pet-projects" in permalink %}
 		{% set list = collections.petProjects %}
 	{% endif %}
 	{%- for project in list -%}
 		<article class="project-card">
-			<h3 class="project-card__title">
-				<a class="project-card__link" href="{{ project.data.permalink }}">
-					{{ project.data.title }}
-				</a>
-			</h3>			
-			<div class="project-card__desc">{{ project.data.description }}</div>
-			<div class="project-card__date">{{ project.data.years }}</div>
-			<div class="tags">
-				{%- for tag in project.data.category -%}
-					<span class="tag">{{ tag }}</span>
-				{%- endfor -%}
+			<img class="project-card__img" src="{{ project.data.permalink }}/cover.png" alt="">
+			<div class="project-card__text">
+				<h3 class="project-card__title">
+					<a class="project-card__link" href="{{ project.data.permalink }}">
+						{{ project.data.title }}
+					</a>
+				</h3>									
+				<div class="project-card__desc">{{ project.data.description }}</div>
+				<div class="project-card__date">{{ project.data.years }}</div>
+				<div class="tags">
+					{%- for tag in project.data.category -%}
+						<span class="tag">{{ tag }}</span>
+					{%- endfor -%}
+				</div>
 			</div>
-
 		</article>
 	{%- endfor -%}
 </div>
