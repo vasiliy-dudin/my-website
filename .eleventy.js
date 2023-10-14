@@ -16,16 +16,19 @@ module.exports = function(config) {
 
 	//config.addPlugin(navigationPlugin);
 
-	config.addCollection('workProjects', (collection) => {
-		return collection.getFilteredByGlob('src/pages/case-studies/**/*.md').sort(function(a, b) {
-			return a.data.order - b.data.order;
-		});
+config.addCollection('workProjects', (collection) => {
+	return collection.getFilteredByGlob('src/pages/case-studies/**/*.md')
+		.filter(item => item.data.published !== false)
+		.sort((a, b) => a.data.order - b.data.order);
 	});
+	
 	config.addCollection('petProjects', (collection) => {
-		return collection.getFilteredByGlob('src/pages/pet-projects/**/*.md').sort(function(a, b) {
-			return a.data.order - b.data.order;
-		});
+	return collection.getFilteredByGlob('src/pages/pet-projects/**/*.md')
+		.filter(item => item.data.published !== false)
+		.sort((a, b) => a.data.order - b.data.order);
 	});
+	  
+
 	
 
 	
