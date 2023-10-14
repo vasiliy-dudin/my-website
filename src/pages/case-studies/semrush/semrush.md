@@ -6,7 +6,6 @@ category:
   - UX Research
 years: 2018-2020
 layout: project.njk
-projectType: case-studies
 order: 2
 permalink: "/case-studies/semrush/"
 ---

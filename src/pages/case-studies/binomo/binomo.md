@@ -6,7 +6,6 @@ category:
   - UI Design
 years: 2018
 layout: project.njk
-projectType: case-studies
 order: 3
 published: false
 permalink: "/case-studies/binomo/"

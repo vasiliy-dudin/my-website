@@ -12,10 +12,10 @@ layout: _base.njk
 	{% endfor %}
 
 	{# Соседние страницы #}
-	{% if projectType == "case-studies" %}
+	{% if "case-studies" in page.url %}
 		{% set collection = collections.workProjects %}
 	{% endif %}	
-	{% if projectType == "pet-projects" %}
+	{% if "pet-projects" in page.url %}
 		{% set collection = collections.petProjects %}
 	{% endif %}
 

@@ -6,7 +6,6 @@ category:
   - UI Design
 years: 2021-2022
 layout: project.njk
-projectType: case-studies
 order: 1
 permalink: "/case-studies/yandex-practicum/"
 ---
