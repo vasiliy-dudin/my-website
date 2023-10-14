@@ -13,7 +13,7 @@
 						{% else %}
 							{% set isCurrent = false %}
 					{% endif %}
-					{% if item.href == page.url or (item.href != '/' and page.url.startsWith(item.href))%}
+					{% if item.href == page.url or (page.url and item.href != '/' and page.url.startsWith(item.href)) %}
 						{% set isActive = true %}
 						{% else %}
 							{% set isActive = false %}

@@ -16,17 +16,15 @@ module.exports = function(config) {
 
 	//config.addPlugin(navigationPlugin);
 
-config.addCollection('workProjects', (collection) => {
-	return collection.getFilteredByGlob('src/pages/case-studies/**/*.md')
-		.filter(item => item.data.published !== false)
-		.sort((a, b) => a.data.order - b.data.order);
-	});
-	
-	config.addCollection('petProjects', (collection) => {
-	return collection.getFilteredByGlob('src/pages/pet-projects/**/*.md')
-		.filter(item => item.data.published !== false)
-		.sort((a, b) => a.data.order - b.data.order);
-	});
+	config.addCollection('workProjects', (collection) => {
+		return collection.getFilteredByGlob('src/pages/case-studies/**/*.md')
+			.sort((a, b) => a.data.order - b.data.order);
+	  });
+	  
+	  config.addCollection('petProjects', (collection) => {
+		return collection.getFilteredByGlob('src/pages/pet-projects/**/*.md')
+			.sort((a, b) => a.data.order - b.data.order);
+	  });
 	  
 
 	
@@ -149,15 +147,15 @@ config.addCollection('workProjects', (collection) => {
 	// Minify HTML for 'production' environment
 	if (process.env.ELEVENTY_ENV === 'production') {
 		config.addTransform("htmlmin", function(content, outputPath) {
-		if (outputPath.endsWith(".html")) {
-			let minified = htmlmin.minify(content, {
-			useShortDoctype: true,
-			removeComments: true,
-			collapseWhitespace: true
-			});
-			return minified;
-		}
-		return content;
+			if (outputPath && outputPath.indexOf('.html') > -1) {
+				return htmlmin.minify(content, {
+				  useShortDoctype: true,
+				  removeComments: true,
+				  collapseWhitespace: true,
+				  minifyCSS: true
+				});
+			  }			
+			  return content;		
 		});
 	}
 	
