@@ -22,7 +22,7 @@
 <body class="body">
 	{% include "header.njk" %}
 	<div class="container">
-		<main class="main{{ ' main--' + projectType if projectType }}" id="main-content">
+		<main class="main" id="main-content">
 			{{ content | safe }}
 		</main>
 	</div>
