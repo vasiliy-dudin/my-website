@@ -39,7 +39,22 @@ module.exports = function(config) {
   		return md.render(content.replace(/^\s+/gm, ''));
 	});
 
-	config.addNunjucksAsyncShortcode("image", imageShortcode);
+	
+	/* config.addNunjucksAsyncShortcode("image", async function(src, alt, options) {
+		if(alt === undefined) {
+		  // You bet we throw an error on missing alt (alt="" works okay)
+		  throw new Error(`Missing \`alt\` on image from: ${src}`);
+		}
+	
+		let stats = await Image(src, options);
+		let lowestSrc = stats.jpeg[0];
+		let webpSrc = stats.webp[0];
+	
+		return `<picture>
+		  <source type="image/webp" srcset="${webpSrc.url}">
+		  <img alt="${alt}" src="${lowestSrc.url}">
+		</picture>`;
+	  }); */
 
 	config.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
 
@@ -62,7 +77,7 @@ module.exports = function(config) {
 	});
 
 	// <picture>
-	async function imageShortcode(src, className, alt, width) {
+	config.addNunjucksAsyncShortcode("image", async function imageShortcode(src, className, alt, width) {
 		if(alt === undefined) {
 			throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
 		}
@@ -87,30 +102,22 @@ module.exports = function(config) {
 		});
 
 		return `
-			<picture>
-				${Object.values(metadataWebp).map(imageFormat => {
+			<img
+				${Object.values(metadataWebp).map(item => {
 					return `
-						<source 
-							type="${imageFormat[0].sourceType}"
-							srcset="${imageFormat[0].url}, ${imageFormat[1].url} 2x">
-					`;
-				})}
-				<img
-					${Object.values(metadataOriginal).map(item => {
-						return `
-							src="${item[0].url}"					
-							srcset="${item[0].url}, ${item[1].url} 2x"
-							width="${item[0].width}"
-							height="${item[0].height}"
-						`;
-					})}
-					class="${className}"
-					alt="${alt}"					
-					decoding="async"
-					loading="lazy">
-			</picture>
+						src="${item[0].url}"					
+						srcset="${item[0].url}, ${item[1].url} 2x"
+						width="${item[0].width}"
+						height="${item[0].height}"
+						class="${className}"
+						alt="${alt}"					
+						decoding="async"
+						loading="auto"
+					`;})}
+			>
 		`;
-	}
+	});
+	
 
 
 

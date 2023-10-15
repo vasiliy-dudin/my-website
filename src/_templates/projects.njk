@@ -15,7 +15,8 @@ layout: _base.njk
 	{% endif %}
 	{%- for project in list -%}
 		<article class="project-card">
-			<img class="project-card__img" src="{{ project.data.permalink }}/cover.png" alt="">
+ 			
+			{% image "./src/pages"+project.url+"cover.png", "project-card__img", "", 555 %}
 			<div class="project-card__text">
 				<h3 class="project-card__title">
 					<a class="project-card__link" href="{{ project.data.permalink }}">
