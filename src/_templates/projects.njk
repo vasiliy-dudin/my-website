@@ -18,11 +18,9 @@ layout: _base.njk
  			
 			{% image "./src/pages"+project.url+"cover.png", "project-card__img", "", 555 %}
 			<div class="project-card__text">
-				<h3 class="project-card__title">
-					<a class="project-card__link" href="{{ project.data.permalink }}">
-						{{ project.data.title }}
-					</a>
-				</h3>									
+				<a class="project-card__link" href="{{ project.data.permalink }}">
+					{{ project.data.title }}
+				</a>									
 				<div class="project-card__desc">{{ project.data.description }}</div>
 				<div class="project-card__date">{{ project.data.years }}</div>
 				<div class="tags">
