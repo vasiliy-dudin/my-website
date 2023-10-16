@@ -81,20 +81,29 @@ module.exports = function(config) {
 		if(alt === undefined) {
 			throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
 		}
-
+		
+		const outputURL = "/images/";
+		const outputFolder = "./dist/images/";
 		let widths = [];
 			widths.push(width, width*2);
-		let metadataOriginal = await Image(src, {
+
+ 		/* let metadataOriginal = await Image(src, {
 			widths: widths,
 			formats: [null],
-			urlPath: "/images/",
-			outputDir: "./dist/images/"
+			urlPath: outputURL,
+			outputDir: outputFolder
+		}); */
+		let metadataAvif = await Image(src, {
+			widths: widths,
+			formats: ["avif"],
+			urlPath: outputURL,
+			outputDir: outputFolder
 		});
 		let metadataWebp = await Image(src, {
 			widths: widths,
 			formats: ["webp"],
-			urlPath: "/images/",
-			outputDir: "./dist/images/",
+			urlPath: outputURL,
+			outputDir: outputFolder,
 			sharpWebpOptions: {
 				quality: 85,
 				smartSubsample: true
@@ -102,8 +111,13 @@ module.exports = function(config) {
 		});
 
 		return `
-			<img
-				${Object.values(metadataWebp).map(item => {
+			<picture>
+				<source ${Object.values(metadataAvif).map(item => {
+					return `					
+						srcset="${item[0].url}, ${item[1].url} 2x" type="image/avif"
+					`;})}
+				>
+				<img ${Object.values(metadataWebp).map(item => {
 					return `
 						src="${item[0].url}"					
 						srcset="${item[0].url}, ${item[1].url} 2x"
@@ -114,7 +128,8 @@ module.exports = function(config) {
 						decoding="async"
 						loading="auto"
 					`;})}
-			>
+				>
+			</picture>
 		`;
 	});
 	
