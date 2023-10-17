@@ -15,41 +15,12 @@ module.exports = function(config) {
 		breaks: true,
 		linkify: true
 	  }));
-	/* config.setLibrary("md", markdownIt({
-		html: true,
-		breaks: true,
-		linkify: true
-	  }).use(markdownItEleventyImg, {
-		resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath),
-		imgOptions: {
-		  widths: [600, 300],
-		  urlPath: "/images/",
-		  outputDir: "./dist/images/",
-		  formats: ["avif", "webp", "jpeg"]
-		},
-		globalAttributes: {
-		  class: "markdown-image",
-		  decoding: "async",
-		  sizes: "100vw"
-		},
-		renderImage(image, attributes) {
-		  const [ Image, options ] = image;
-		  const [ src, attrs ] = attributes;
-	  
-		  Image(src, options);
-	  
-		  const metadata = Image.statsSync(src, options);
-		  const imageMarkup = Image.generateHTML(metadata, attrs, {
-			whitespaceMode: "inline"
-		  });
-	  
-		  return `<figure>${imageMarkup}${attrs.title ? `<figcaption>${attrs.title}</figcaption>` : ""}</figure>`;
-		}
-	  })); */
 
 
-	//config.addPlugin(navigationPlugin);
 
+
+
+	//////////// Collections
 	config.addCollection('workProjects', (collection) => {
 		return collection.getFilteredByGlob('src/pages/case-studies/**/*.md')
 			.sort((a, b) => a.data.order - b.data.order);
@@ -58,8 +29,7 @@ module.exports = function(config) {
 	  config.addCollection('petProjects', (collection) => {
 		return collection.getFilteredByGlob('src/pages/pet-projects/**/*.md')
 			.sort((a, b) => a.data.order - b.data.order);
-	  });
-	  
+	  });	  
 
 	
 
@@ -107,12 +77,6 @@ module.exports = function(config) {
 		let widths = [];
 			widths.push(width, width*1.25, width*1.5, width*2);
 
- 		/* let metadataOriginal = await Image(srcAbsolite, {
-			widths: widths,
-			formats: [null],
-			urlPath: outputURL,
-			outputDir: outputFolder
-		}); */
 		let metadataAvif = await Image(srcAbsolite, {
 			widths: widths,
 			formats: ["avif"],
@@ -165,9 +129,6 @@ module.exports = function(config) {
 	config.addWatchTarget("./src/case-studies/**/*.md");
 	config.addWatchTarget("./src/pet-projects/**/*.md");
 	config.addPassthroughCopy("CNAME");
-
-	// Copy content images to /dist
-	
 
 	// Minify HTML for 'production' environment
 	if (process.env.ELEVENTY_ENV === 'production') {
