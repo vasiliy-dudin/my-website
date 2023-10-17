@@ -87,19 +87,6 @@ function _images(cb) {
 	gulp.src('dist/assets/**/*')
 		.pipe(cache(imagemin($imageminOptions)))
 		.pipe(gulp.dest('dist/assets'));
-	gulp.src('dist/images/**/*')
-		.pipe(cache(imagemin($imageminOptions)))
-		.pipe(gulp.dest('dist/images'));
-	gulp.src('dist/case-studies/**/*')
-		.pipe(cache(imagemin($imageminOptions)))
-		.pipe(gulp.dest('dist/case-studies'));
-	gulp.src('dist/pet-projects/**/*')
-		.pipe(cache(imagemin($imageminOptions)))
-		.pipe(gulp.dest('dist/pet-projects'));
-	gulp.src('dist/articles/**/*')
-		.pipe(cache(imagemin($imageminOptions)))
-		.pipe(gulp.dest('dist/articles'));
-
 	cb();
 }
 
