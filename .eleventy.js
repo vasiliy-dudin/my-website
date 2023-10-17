@@ -5,14 +5,48 @@ const markdownIt = require("markdown-it");
 const fs = require("fs-extra");
 const glob = require('glob');
 const htmlmin = require("html-minifier");
+const path = require("path");
 
 module.exports = function(config) {
 	config.addDataExtension("yaml", contents => yaml.load(contents));
+	
 	config.setLibrary("md", markdownIt({
 		html: true,
 		breaks: true,
 		linkify: true
 	  }));
+	/* config.setLibrary("md", markdownIt({
+		html: true,
+		breaks: true,
+		linkify: true
+	  }).use(markdownItEleventyImg, {
+		resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath),
+		imgOptions: {
+		  widths: [600, 300],
+		  urlPath: "/images/",
+		  outputDir: "./dist/images/",
+		  formats: ["avif", "webp", "jpeg"]
+		},
+		globalAttributes: {
+		  class: "markdown-image",
+		  decoding: "async",
+		  sizes: "100vw"
+		},
+		renderImage(image, attributes) {
+		  const [ Image, options ] = image;
+		  const [ src, attrs ] = attributes;
+	  
+		  Image(src, options);
+	  
+		  const metadata = Image.statsSync(src, options);
+		  const imageMarkup = Image.generateHTML(metadata, attrs, {
+			whitespaceMode: "inline"
+		  });
+	  
+		  return `<figure>${imageMarkup}${attrs.title ? `<figcaption>${attrs.title}</figcaption>` : ""}</figure>`;
+		}
+	  })); */
+
 
 	//config.addPlugin(navigationPlugin);
 
@@ -39,22 +73,6 @@ module.exports = function(config) {
   		return md.render(content.replace(/^\s+/gm, ''));
 	});
 
-	
-	/* config.addNunjucksAsyncShortcode("image", async function(src, alt, options) {
-		if(alt === undefined) {
-		  // You bet we throw an error on missing alt (alt="" works okay)
-		  throw new Error(`Missing \`alt\` on image from: ${src}`);
-		}
-	
-		let stats = await Image(src, options);
-		let lowestSrc = stats.jpeg[0];
-		let webpSrc = stats.webp[0];
-	
-		return `<picture>
-		  <source type="image/webp" srcset="${webpSrc.url}">
-		  <img alt="${alt}" src="${lowestSrc.url}">
-		</picture>`;
-	  }); */
 
 	config.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
 
@@ -76,30 +94,32 @@ module.exports = function(config) {
 			`;
 	});
 
-	// <picture>
-	config.addNunjucksAsyncShortcode("image", async function imageShortcode(src, className, alt, width) {
+	// image
+	config.addAsyncShortcode("image", async function imageShortcode(src, className, alt, width) {
 		if(alt === undefined) {
 			throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
 		}
-		
+
+		const currentDir = this.page.inputPath ? path.dirname(this.page.inputPath) : '';
+		const srcAbsolite = currentDir + '/' + src;
 		const outputURL = "/images/";
 		const outputFolder = "./dist/images/";
 		let widths = [];
 			widths.push(width, width*2);
 
- 		/* let metadataOriginal = await Image(src, {
+ 		/* let metadataOriginal = await Image(srcAbsolite, {
 			widths: widths,
 			formats: [null],
 			urlPath: outputURL,
 			outputDir: outputFolder
 		}); */
-		let metadataAvif = await Image(src, {
+		let metadataAvif = await Image(srcAbsolite, {
 			widths: widths,
 			formats: ["avif"],
 			urlPath: outputURL,
-			outputDir: outputFolder
+			outputDir: outputFolder,
 		});
-		let metadataWebp = await Image(src, {
+		let metadataWebp = await Image(srcAbsolite, {
 			widths: widths,
 			formats: ["webp"],
 			urlPath: outputURL,
@@ -110,27 +130,21 @@ module.exports = function(config) {
 			}
 		});
 
-		return `
-			<picture>
-				<source ${Object.values(metadataAvif).map(item => {
-					return `					
-						srcset="${item[0].url}, ${item[1].url} 2x" type="image/avif"
-					`;})}
-				>
-				<img ${Object.values(metadataWebp).map(item => {
-					return `
-						src="${item[0].url}"					
-						srcset="${item[0].url}, ${item[1].url} 2x"
-						width="${item[0].width}"
-						height="${item[0].height}"
-						class="${className}"
-						alt="${alt}"					
-						decoding="async"
-						loading="auto"
-					`;})}
-				>
-			</picture>
-		`;
+		const avifSrcset = Object.values(metadataAvif)
+			.map(item => `${item[0].url}, ${item[1].url} 2x`)
+			.join(", ");
+
+		const webpSources = Object.values(metadataWebp)
+			.map(item => {
+				const src = item[0].url;
+				const srcset = `${item[0].url}, ${item[1].url} 2x`;
+				const width = item[0].width;
+				const height = item[0].height;
+				return `src="${src}" srcset="${srcset}" width="${width}" height="${height}" class="${className}" alt="${alt}" decoding="async" loading="auto"`;
+			})
+			.join(" ");
+
+		return `<picture><source srcset="${avifSrcset}" type="image/avif"><img ${webpSources}></picture>`;
 	});
 	
 
