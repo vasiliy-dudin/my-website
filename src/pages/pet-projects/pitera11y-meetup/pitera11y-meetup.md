@@ -20,4 +20,5 @@ permalink: "/pet-projects/pitera11y-meetup/"
 
 [Описание на GitHub](https://github.com/pitercss/a11y_docs)
 
-![Untitled](images/Untitled.png)
+{% image "images/1.jpg", "project-card__img", "", 800 %}
+{% image "images/2.jpg", "project-card__img", "", 900 %}

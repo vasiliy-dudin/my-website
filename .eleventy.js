@@ -105,7 +105,7 @@ module.exports = function(config) {
 		const outputURL = "/images/";
 		const outputFolder = "./dist/images/";
 		let widths = [];
-			widths.push(width, width*2);
+			widths.push(width, width*1.25, width*1.5, width*2);
 
  		/* let metadataOriginal = await Image(srcAbsolite, {
 			widths: widths,
@@ -118,6 +118,10 @@ module.exports = function(config) {
 			formats: ["avif"],
 			urlPath: outputURL,
 			outputDir: outputFolder,
+			sharpAvifOptions: {
+				quality: 50,
+				effort: 5
+			}
 		});
 		let metadataWebp = await Image(srcAbsolite, {
 			widths: widths,
@@ -125,19 +129,19 @@ module.exports = function(config) {
 			urlPath: outputURL,
 			outputDir: outputFolder,
 			sharpWebpOptions: {
-				quality: 85,
+				quality: 75,
 				smartSubsample: true
 			}
 		});
 
 		const avifSrcset = Object.values(metadataAvif)
-			.map(item => `${item[0].url}, ${item[1].url} 2x`)
+			.map(item => `${item[0].url}, ${item[1].url} 1.25x, ${item[2].url} 1.5x, ${item[3].url} 2x`)
 			.join(", ");
 
 		const webpSources = Object.values(metadataWebp)
 			.map(item => {
 				const src = item[0].url;
-				const srcset = `${item[0].url}, ${item[1].url} 2x`;
+				const srcset = `${item[0].url}, ${item[1].url} 1.25x, ${item[2].url} 1.5x, ${item[3].url} 2x`;
 				const width = item[0].width;
 				const height = item[0].height;
 				return `src="${src}" srcset="${srcset}" width="${width}" height="${height}" class="${className}" alt="${alt}" decoding="async" loading="auto"`;
@@ -163,22 +167,7 @@ module.exports = function(config) {
 	config.addPassthroughCopy("CNAME");
 
 	// Copy content images to /dist
-	config.on('afterBuild', async () => {
-		const srcDir = 'src/pages/';
-		const destDir = 'dist/';
-		const imageExtensions = ['svg', 'png', 'webp', 'jpg'];
-		const pattern = `${srcDir}/**/*.{${imageExtensions.join(',')}}`;
 	
-		try {
-			glob.sync(pattern).forEach(async (srcPath) => {
-				const destPath = `${destDir}${srcPath.substring(srcDir.length)}`;
-				await fs.copy(srcPath, destPath);
-			});
-			console.log('Image files have been copied');
-		} catch (err) {
-			console.error(err);
-		}
-	});
 
 	// Minify HTML for 'production' environment
 	if (process.env.ELEVENTY_ENV === 'production') {

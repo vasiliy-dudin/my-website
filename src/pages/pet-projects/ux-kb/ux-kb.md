@@ -11,4 +11,4 @@ permalink: "/pet-projects/ux-kb/"
 ---
 
 
-![image 1.jpg](images/image_1.jpg)
+{% image "images/1.png", "project-card__img", "", 800 %}

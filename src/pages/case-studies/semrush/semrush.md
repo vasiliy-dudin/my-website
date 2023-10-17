@@ -23,7 +23,7 @@ Was part of a department of 17 UX designers and 10 UI designers, working with th
 - BeRush - an affiliate network.
 - Agency Partners (concept) - directory of marketing agencies.
 	
-	![Untitled](images/Untitled.png)
+{% image "images/_projects.png", "project-card__img", "", 1130 %}
 	
 
 ---
@@ -52,7 +52,7 @@ I'll show you how I found solutions to problems with a small example from a mark
 Мало продаж, небольшой средний чек.
 Гипотеза: во многих случаях набор данных получается слишком большим, пользователи не готовы купить такой набор. На скриншоте — список из 468 клиентов из Бостона за $1,638.
 
-![Untitled](images/Untitled1.png)
+{% image "images/1.png", "project-card__img", "", 800 %}
 
 1. Отобрал и проанализировал пользовательский фидбек про эту проблему.
 2. Продакт оунер провела серию интервью с европейскими агентствами. Подтвердила гипотезу, узнала как они находят себе клиентов, и как мы можем им помочь. Выяснили также, что у каждого агентства немного разный стиль поиска клиентов.
@@ -67,7 +67,7 @@ I'll show you how I found solutions to problems with a small example from a mark
 2. Сделал несколько набросков с возможными вариантами взаимодействия.
 3. Собрал встречу с командой разработки, чтобы обсудить детали реализации. Какие-то варианты были дорогие, от них отказались.
 
-![Untitled](images/Untitled2.png)
+{% image "images/2.png", "project-card__img", "", 650 %}
 
 ---
 
@@ -81,7 +81,7 @@ I'll show you how I found solutions to problems with a small example from a mark
 
 Вывод: изменения усложнили сервис и повысили порог вхождения, это может снизить конверсию.
 
-![Untitled](images/Untitled3.png)
+{% image "images/3.png", "project-card__img", "", 650 %}
 
 ### Вторая версия, переосмысление компоновки
 
@@ -92,7 +92,7 @@ I'll show you how I found solutions to problems with a small example from a mark
 
 Использовали упрощённую схему редизайна, без отдельной бета-версии. В сервисе мало постоянных пользователей и такие изменения не приведут к негативным последствиям.
 
-![4_prot-2@2x.png](images/4_prot-22x.png)
+{% image "images/4.png", "project-card__img", "", 650 %}
 
 ---
 
@@ -104,7 +104,7 @@ I'll show you how I found solutions to problems with a small example from a mark
 - Добавил ивенты для Google Analytics. Это те клики на интерактивные элементы, которые потом помогут понять, как пользователи взаимодействуют с нашим сервисом и что можно улучшить.
 - В таск-трекере подробно описал задачи для UX-писателя, UI-дизайнера и разработчиков. Отдельно ввёл в курс дела и ответил на все вопросы.
 
-![Untitled](images/Untitled4.png)
+{% image "images/5.png", "project-card__img", "", 650 %}
 
 ---
 
@@ -120,4 +120,4 @@ I'll show you how I found solutions to problems with a small example from a mark
 - После разработки следил за тем, как реальные пользователи используют обновлённый интерфейс. Чтобы отследить использование ключевых интерактивных элементов, использовал Inspectlet и SQL c BigQuery.
 - Потом мы увеличили трафик в инструмент. Через какое-то время проверили метрики монетизации из критериев успешности и подтвердили, что новый дизайн работает хорошо.
 
-![Untitled](images/Untitled5.png)
+{% image "images/6.png", "project-card__img", "", 650 %}

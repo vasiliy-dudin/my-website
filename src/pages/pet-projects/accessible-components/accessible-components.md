@@ -34,27 +34,24 @@ permalink: "/pet-projects/accessible-components/"
 
 За основу взял диаграмму use cases и показал как 3 группы пользователей будут решать свои задачи, взаимодействуя с интерфейсом.
 
-![Untitled](images/Untitled.png)
+{% image "images/1.png", "project-card__img", "", 650 %}
 
 ## 3. Прототипирование
 
 [Интерактивный прототип Axure RP](https://k90cvf.axshare.com)
 
-![Untitled](images/Untitled%201.png)
+{% image "images/2.png", "project-card__img", "", 650 %}
 
 На первой вкладке пользователи скринридеров будут тестировать компоненты.
 
 А на следующей пошагово объясняем, как сверстать компонент, как он должен работать и какие ARIA-атрибуты необходимы. Отсюда же разработчик может забрать React-компонент, если не хочет разрабатывать его самостоятельно.
 
-![Untitled](images/untitled2.png)
+{% image "images/3.png", "project-card__img", "", 650 %}
 
 
 # 4. Дизайн-макет
 
 [Figma](https://www.figma.com/file/DiYCUz0N01asW8Y05rbozhJL/Accessible-Components?node-id=0%3A1)
 
-![List.png](images/List.png)
-
-![Frame 27.jpg](images/Frame_27.jpg)
-
-![Frame 26.png](images/Frame_26.png)
+{% image "images/4.png", "project-card__img", "", 1130 %}
+{% image "images/5.png", "project-card__img", "", 1130 %}

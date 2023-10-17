@@ -51,21 +51,20 @@ International training service for IT professions. Includes about 60 courses and
 
 Student’s dashboard:
 
-![Student.png](images/Student.png)
+{% image "images/1.png", "project-card__img", "", 800 %}
 
 Parent's dashboard:
 
-![Student Page.png](images/Student_Page.png)
-
-![3.png](images/3.png)
+{% image "images/2.png", "project-card__img", "", 800 %}
+{% image "images/3.png", "project-card__img", "", 800 %}
 
 This is how I describe the complex components and their states. I always annotate a non-obvious points.
 
-![4.png](images/4.png)
+{% image "images/4.png", "project-card__img", "", 800 %}
 
 Layout organisation. In the original Figma project, we divided the layouts into separate files.
 
-![Untitled](images/Untitled.png)
+{% image "images/5.png", "project-card__img", "", 800 %}
 
 ## Examples from the design system
 
@@ -73,4 +72,4 @@ Layout organisation. In the original Figma project, we divided the layouts into 
 - Implemented design tokens for consistency of styles and to quickly push changes to the extension. Used GitHub as a single source of truth.
 - Created a palette based on perceived lightness of shades. Based on that, I created other styles, such as those for links.
 
-![DS.png](images/DS.png)
+{% image "images/6.png", "project-card__img", "", 800 %}
