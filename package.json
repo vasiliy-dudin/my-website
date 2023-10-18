@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "watch": "rimraf dist && concurrently -r \"gulp styles\" \"eleventy --serve\" \"gulp styles_watch\"",
-    "build": "rimraf dist && eleventy && gulp build",
+    "build": "rm -rf dist && eleventy && gulp build",
     "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
   },
   "dependencies": {
