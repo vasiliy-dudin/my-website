@@ -7,7 +7,8 @@
   "license": "ISC",
   "scripts": {
     "watch": "rimraf dist && concurrently -r \"gulp styles\" \"eleventy --serve\" \"gulp styles_watch\"",
-    "build": "rm -rf dist && eleventy && gulp build",
+    "build": "cross-env-shell ELEVENTY_ENV=production \"rimraf dist && eleventy && gulp build\"",
+    "deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
     "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
   },
   "dependencies": {
@@ -17,10 +18,11 @@
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "autoprefixer": "^10.4.16",
-    "concurrently": "^8.2.1",
+    "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "del": "6.1.1",
     "fs-extra": "^11.1.1",
+    "gh-pages": "^6.0.0",
     "glob": "^10.3.10",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
