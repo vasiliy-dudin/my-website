@@ -1,120 +1,27 @@
-const Image = require("@11ty/eleventy-img");
-const navigationPlugin = require('@11ty/eleventy-navigation');
+//const navigationPlugin = require('@11ty/eleventy-navigation');
 const yaml = require("js-yaml");
-const markdownIt = require("markdown-it");
-const fs = require("fs-extra");
-const glob = require('glob');
 const htmlmin = require("html-minifier");
-const path = require("path");
+
+const pluginImages = require("./.eleventy.images.js");
+const pluginShortcodes = require("./.eleventy.shortcodes.js");
 
 module.exports = function(config) {
 	config.addDataExtension("yaml", contents => yaml.load(contents));
-	
-	config.setLibrary("md", markdownIt({
-		html: true,
-		breaks: true,
-		linkify: true
-	  }));
-
-
-
-
 
 	//////////// Collections
 	config.addCollection('workProjects', (collection) => {
 		return collection.getFilteredByGlob('src/pages/case-studies/**/*.md')
 			.sort((a, b) => a.data.order - b.data.order);
-	  });
-	  
+	  });	  
 	  config.addCollection('petProjects', (collection) => {
 		return collection.getFilteredByGlob('src/pages/pet-projects/**/*.md')
 			.sort((a, b) => a.data.order - b.data.order);
 	  });	  
 
 	
-
-	
-
-	//////////// Shortcodes
-
-	// MD in NJK
-	config.addPairedShortcode("md", (content) => {
-		const md = new markdownIt();
-  		return md.render(content.replace(/^\s+/gm, ''));
-	});
-
-
-	config.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
-
-	// Projects
-	config.addPairedShortcode("projectColumn", function(content) {
-		return `
-			<div class="project-desc__column">
-				${content}
-			</div>
-			`;
-	});
-
-	config.addPairedShortcode("projectDesc", function(content, title) {
-		return `
-			<div>
-				<h2 class="project-desc__heading">${title}</h2>
-				${content}
-			</div>
-			`;
-	});
-
-	// image
-	config.addAsyncShortcode("image", async function imageShortcode(src, className, alt, width) {
-		if(alt === undefined) {
-			throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
-		}
-
-		const currentDir = this.page.inputPath ? path.dirname(this.page.inputPath) : '';
-		const srcAbsolite = currentDir + '/' + src;
-		const outputURL = "/images/";
-		const outputFolder = "./dist/images/";
-		let widths = [];
-			widths.push(width, width*1.25, width*1.5, width*2);
-
-		let metadataAvif = await Image(srcAbsolite, {
-			widths: widths,
-			formats: ["avif"],
-			urlPath: outputURL,
-			outputDir: outputFolder,
-			sharpAvifOptions: {
-				quality: 50,
-				effort: 5
-			}
-		});
-		let metadataWebp = await Image(srcAbsolite, {
-			widths: widths,
-			formats: ["webp"],
-			urlPath: outputURL,
-			outputDir: outputFolder,
-			sharpWebpOptions: {
-				quality: 75,
-				smartSubsample: true
-			}
-		});
-
-		const avifSrcset = Object.values(metadataAvif)
-			.map(item => `${item[0].url}, ${item[1].url} 1.25x, ${item[2].url} 1.5x, ${item[3].url} 2x`)
-			.join(", ");
-
-		const webpSources = Object.values(metadataWebp)
-			.map(item => {
-				const src = item[0].url;
-				const srcset = `${item[0].url}, ${item[1].url} 1.25x, ${item[2].url} 1.5x, ${item[3].url} 2x`;
-				const width = item[0].width;
-				const height = item[0].height;
-				return `src="${src}" srcset="${srcset}" width="${width}" height="${height}" class="${className}" alt="${alt}" decoding="async" loading="auto"`;
-			})
-			.join(" ");
-
-		return `<picture><source srcset="${avifSrcset}" type="image/avif"><img ${webpSources}></picture>`;
-	});
-	
+	/////////// Custom plugins
+	config.addPlugin(pluginShortcodes);
+	config.addPlugin(pluginImages);
 
 
 
