@@ -16,7 +16,7 @@ module.exports = config => {
 				const fileBuffer = fs.readFileSync(filePath);
 				const hashSum = crypto.createHash("md5");
 				hashSum.update(fileBuffer);
-				assetHashes[url] = hashSum.digest("hex").substring(0, 8);;
+				assetHashes[url] = hashSum.digest("hex").substring(0, 8);
 			}
 	
 			return `${url}?v=${assetHashes[url]}`;
