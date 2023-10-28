@@ -6,7 +6,7 @@
   "author": "Vasiliy Dudin",
   "license": "ISC",
   "scripts": {
-    "watch": "rimraf dist && concurrently -r \"gulp styles\" \"eleventy --serve\" \"gulp styles_watch\"",
+    "watch": "concurrently -r \"gulp styles\" \"eleventy --serve\" \"gulp styles_watch\"",
     "build": "cross-env-shell ELEVENTY_ENV=production \"rimraf dist && eleventy && gulp build\"",
     "deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
     "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
