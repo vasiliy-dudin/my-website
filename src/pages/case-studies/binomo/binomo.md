@@ -15,4 +15,4 @@ As a UX designer I led design of trading apps for Android and iOS, focusing on u
 
 {% image "images/1.png", "project-card__img", "", 667 %}
 
-{% image "images/2.png", "project-card__img", "", 1130 %}
+{% image "images/2.png", "project-card__img", "", 920 %}

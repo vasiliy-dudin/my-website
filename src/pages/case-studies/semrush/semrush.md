@@ -23,7 +23,7 @@ Was part of a department of 17 UX designers and 10 UI designers, working with th
 - BeRush - an affiliate network.
 - Agency Partners (concept) - directory of marketing agencies.
 	
-{% image "images/_projects.png", "project-card__img", "", 1130 %}
+{% image "images/_projects.png", "project-card__img", "", 920 %}
 	
 
 ---
