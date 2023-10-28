@@ -57,7 +57,7 @@ function _styles_build() {
 // Scripts
 function _scripts(cb) {
 	rollup({
-		input: 'dist/scripts/scripts.js',
+		input: 'src/scripts/scripts.js',
 		format: 'iife',
 	})
 	.pipe(source('scripts.js'))
@@ -92,9 +92,7 @@ function _images(cb) {
 
 
 exports.styles = _styles;
+exports.scripts = _scripts;
 exports.styles_watch = _styles_watch;
 
-exports.build = series(
-	parallel(_scripts, _styles, _images),
-	_styles_build
-);
+exports.build = parallel(_styles_build, _images);

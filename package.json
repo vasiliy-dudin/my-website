@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "watch": "gulp styles && concurrently -r \"eleventy --serve\" \"gulp styles_watch\"",
-    "build": "cross-env-shell ELEVENTY_ENV=production \"rimraf dist && eleventy && gulp build\"",
+    "build": "cross-env-shell ELEVENTY_ENV=production \"rimraf dist && gulp styles && gulp scripts && eleventy && gulp build\"",
     "deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
     "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
   },

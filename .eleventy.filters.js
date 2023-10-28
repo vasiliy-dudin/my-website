@@ -7,7 +7,7 @@ module.exports = config => {
 		// filehash
 		const assetHashes = {};
 		config.addFilter("filehash", (url) => {
-			if (process.env.NODE_ENV !== 'production') {
+			if (process.env.ELEVENTY_ENV !== 'production') {
 				return url;
 			}
 	
