@@ -6,14 +6,14 @@
   "author": "Vasiliy Dudin",
   "license": "ISC",
   "scripts": {
-    "watch": "concurrently -r \"gulp styles\" \"eleventy --serve\" \"gulp styles_watch\"",
+    "watch": "gulp styles && concurrently -r \"eleventy --serve\" \"gulp styles_watch\"",
     "build": "cross-env-shell ELEVENTY_ENV=production \"rimraf dist && eleventy && gulp build\"",
     "deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
     "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^3.1.1",
+    "@11ty/eleventy-img": "^3.1.6",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
@@ -44,7 +44,7 @@
     "postcss-inline-svg": "^6.0.0",
     "rimraf": "^3.0.2",
     "rollup-stream": "^1.24.1",
-    "style-dictionary": "^3.8.0",
+    "style-dictionary": "^3.9.0",
     "stylus": "^0.60.0",
     "token-transformer": "^0.0.33",
     "vinyl-buffer": "^1.0.1",

@@ -4,6 +4,7 @@ const htmlmin = require("html-minifier");
 
 const pluginImages = require("./.eleventy.images.js");
 const pluginShortcodes = require("./.eleventy.shortcodes.js");
+const pluginFilters= require("./.eleventy.filters.js");
 
 module.exports = function(config) {
 	config.addDataExtension("yaml", contents => yaml.load(contents));
@@ -19,9 +20,10 @@ module.exports = function(config) {
 	  });	  
 
 	
-	/////////// Custom plugins
+	/////////// Custom plugins or settings
 	config.addPlugin(pluginShortcodes);
 	config.addPlugin(pluginImages);
+	config.addPlugin(pluginFilters);
 
 
 
@@ -51,7 +53,7 @@ module.exports = function(config) {
 			  return content;		
 		});
 	}
-	
+
 
 
 	return {
