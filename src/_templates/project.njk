@@ -8,13 +8,13 @@ layout: _base.njk
 		{% set firstPartOfUrl = page.url.split('/')[1] %}
 		{% for item in menu %}
 			{% if firstPartOfUrl in item.href%}			
-				<a href="{{ item.href }}" class="project-nav__back">← {{ item.name }}</a>
+				<a href="{{ item.href }}" class="project-nav__back">{{ item.name }}</a>
 			{% endif %}
 		{% endfor %}
 	{% endif %}
 
 	{% set collection = "" %}
-	{# Соседние страницы #}
+	{# Neighbours #}
 	{% if page.url and "case-studies" in page.url %}
 		{% set collection = collections.workProjects %}
 	{% endif %}
@@ -27,10 +27,10 @@ layout: _base.njk
 	{% if previousPage or nextPage %}
 		<div class="project-nav__neighbours">
 			{% if previousPage %}
-				<a class="project-nav__prev" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">Previous</a>
+				<a class="project-nav__prev" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">← Previous</a>
 			{% endif %}
 			{% if nextPage %}
-				<a class="project-nav__next" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">Next</a>
+				<a class="project-nav__next" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">Next →</a>
 			{% endif %}
 		</div>
 	{% endif %}
