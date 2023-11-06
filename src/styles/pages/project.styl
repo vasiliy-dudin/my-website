@@ -8,10 +8,10 @@
 	position relative
 	display: flex
 	flex-direction: column
-	gap: 8px
 	margin-bottom: 3rem
 	justify-content: space-between
 	flex-wrap: wrap
+	overflow: hidden
 	background $section-bg
 	border-radius: $section__radius
 
@@ -23,7 +23,9 @@
 	&__h1
 		margin: 0
 	&__img
-		height 200px
+		@extend .img-fluid
+		display block
+    	object-fit: cover
 		background: $sd-color__palette-green-100
 	
 
