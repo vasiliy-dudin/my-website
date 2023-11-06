@@ -37,7 +37,6 @@ module.exports = function(config) {
 	config.addWatchTarget("./src/styles/**/*.styl");
 	config.addWatchTarget("./src/case-studies/**/*.md");
 	config.addWatchTarget("./src/pet-projects/**/*.md");
-	config.addPassthroughCopy("CNAME");
 
 	// Minify HTML for 'production' environment
 	if (process.env.ELEVENTY_ENV === 'production') {
