@@ -1,14 +1,12 @@
 /////////////// Секции
 
-$section-bg = $background-1
-$section__padding-mobile = 32px 16px
-$section__padding-desktop = 32px
-$section__radius = 12px
-
 $g__section
-	padding $section__padding-mobile
-
-	background $section-bg
-	border-radius: $section__radius
+	padding 32px 16px // TODO Унифицировать отступы для подобных блоков?
+	border-radius: $radius--M
 	+media(sm)
-		padding $section__padding-desktop
+		padding 32px 
+
+	$primary
+		background $background-1
+	$secondary
+		background $background-2
