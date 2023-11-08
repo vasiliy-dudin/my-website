@@ -15,11 +15,9 @@ module.exports = config => {
 	});
 
 
-	// 
+	// Wrapper for project sections
 	config.addPairedShortcode("projectSection", function(content, title) {
-	const renderedContent = md.render(content);
-
-
+	const renderedContent = md.render(content.replace(/^\s+/gm, ''));
 	return `<div class="project-section">
 		<h2 class="project-section__heading">${title}</h2>
 		${renderedContent}
