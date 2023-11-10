@@ -10,5 +10,6 @@ order: 4
 permalink: "/pet-projects/ux-kb/"
 ---
 
-
-{% image "images/1.png", "project-card__img", "", 800 %}
+{% projectSection "About the project" %}
+	{% image "images/1.png", "project-card__img", "", 800 %}
+{% endprojectSection %}
