@@ -8,6 +8,7 @@ const pluginFilters= require("./.eleventy.filters.js");
 
 module.exports = function(config) {
 	config.addDataExtension("yaml", contents => yaml.load(contents));
+	config.addGlobalData("env", process.env.ELEVENTY_ENV);
 
 	//////////// Collections
 	config.addCollection('workProjects', (collection) => {
