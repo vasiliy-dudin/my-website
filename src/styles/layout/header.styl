@@ -1,8 +1,7 @@
-$header__bg = #fff
 $header__color = #333
 
 .header
-	background $header__bg
+	margin-top 16px
 
 // Строка с навигацией и названием сайта
 .nav
@@ -13,7 +12,6 @@ $header__color = #333
 	align-items: center // выравнивает navbar-header по вертикали
 	//padding 1rem
 	+media(md)
-		height 70px
 		flex-direction: row
 		justify-content: space-between
 		//padding 0 ($grid-gutter-width-base / 2)
@@ -39,7 +37,7 @@ $header__color = #333
 
 
 //$item__bg--active = #FEE076
-$item__bg--hover = darken($header__bg, 5)
+$item__bg--hover = darken(#fff, 5)
 $link__color = $header__color !important
 
 .menu // ul	
