@@ -3,12 +3,13 @@
 // =====================
 // Шапка проекта
 // =====================
+$spacing = 24px
 
 .project-header
 	position relative
 	display: flex
 	flex-direction: column
-	margin-bottom: 3rem
+	margin-bottom: $spacing
 	justify-content: space-between
 	flex-wrap: wrap
 	overflow: hidden
@@ -41,16 +42,16 @@
 // Разметка контентных блоков
 // =====================
 
-
+.project-body
+	display flex
+	flex-direction: column
+	gap: $spacing
 
 // Секция для группировки описания работы
 .project-section
 	@extend $g__section, $secondary
 	h2
 		margin: 0
-		padding-bottom 0.8rem // перезаписывает @extend
-	&:not(:last-child)
-		margin-bottom 2rem
 
 
 .project-cols
