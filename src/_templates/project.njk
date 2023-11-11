@@ -45,7 +45,7 @@ layout: _base.njk
 		<div class="project-header__date">{{ years }}</div>
 		<div class="tags">
 			{%- for tag in category -%}
-				<span class="tag">{{ tag }}</span>
+				<span class="tag --{{ tag | lower | replace(' ', '-') }}">{{ tag }}</span>
 			{%- endfor -%}
 		</div>
 	</div>
