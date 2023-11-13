@@ -31,7 +31,7 @@ module.exports = function(config) {
 	/////////// Build options
 
 	config.addPassthroughCopy("src/fonts");
-	config.addPassthroughCopy("src/scripts");
+	//config.addPassthroughCopy("src/scripts");
 	config.addPassthroughCopy( "src/assets/**/*");
 	config.addPassthroughCopy("src/*.txt");
 	config.addPassthroughCopy("src/manifest.json");

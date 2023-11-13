@@ -6,11 +6,6 @@ const postcssCsso = require('postcss-csso');
 const postcss_inline_svg = require('postcss-inline-svg');
 const del = require('del');
 const cache = require('gulp-cache');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-const rollup = require('rollup-stream');
-const babel = require('gulp-babel');
-const terser = require('gulp-terser');
 const replace = require('gulp-replace');
 const imagemin = require('gulp-imagemin');
 const notify = require("gulp-notify");
@@ -54,28 +49,6 @@ function _styles_build() {
 }
 
 
-// Scripts
-function _scripts(cb) {
-	rollup({
-		input: 'src/scripts/scripts.js',
-		format: 'iife',
-	})
-	.pipe(source('scripts.js'))
-	.pipe(buffer())
-	.pipe(babel({
-		presets: ['@babel/preset-env'],
-	}))
-	.pipe(terser())
-	.pipe(gulp.dest('dist/scripts'));
-
-	del([
-		'dist/scripts/**/*',
-		'!dist/scripts/scripts.js'
-	]);
-
-	cb();
-}
-
 function _images(cb) {
 	// Assets and Images
 	let $imageminOptions = [
@@ -92,7 +65,6 @@ function _images(cb) {
 
 
 exports.styles = _styles;
-exports.scripts = _scripts;
 exports.styles_watch = _styles_watch;
 
 exports.build = parallel(_styles_build, _images);
