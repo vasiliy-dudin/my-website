@@ -1,6 +1,5 @@
 //const navigationPlugin = require('@11ty/eleventy-navigation');
 const yaml = require("js-yaml");
-const htmlmin = require("html-minifier");
 
 const pluginImages = require("./.eleventy.images.js");
 const pluginShortcodes = require("./.eleventy.shortcodes.js");
@@ -37,21 +36,6 @@ module.exports = function(config) {
 	config.addWatchTarget("./src/styles/**/*.styl");
 	config.addWatchTarget("./src/case-studies/**/*.md");
 	config.addWatchTarget("./src/pet-projects/**/*.md");
-
-	// Minify HTML for 'production' environment
-	if (process.env.ELEVENTY_ENV === 'production') {
-		config.addTransform("htmlmin", function(content, outputPath) {
-			if (outputPath && outputPath.indexOf('.html') > -1) {
-				return htmlmin.minify(content, {
-				  useShortDoctype: true,
-				  removeComments: true,
-				  collapseWhitespace: true,
-				  minifyCSS: true
-				});
-			  }			
-			  return content;		
-		});
-	}
 
 
 
