@@ -1,64 +1,53 @@
 {
-  "name": "vasiliy-dudin-website",
-  "version": "2023.1",
-  "description": "",
-  "main": "index.html",
-  "author": "Vasiliy Dudin",
-  "license": "ISC",
-  "scripts": {
-    "watch": "gulp styles && concurrently -r \"eleventy --serve\" \"pnpm run js\" \"gulp styles_watch\"",
-    "build": "cross-env-shell ELEVENTY_ENV=production \"gulp styles && pnpm run js && eleventy && gulp build\"",
-    "remove-dist": "rimraf dist",
-    "js": "rollup -c",
-    "deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
-    "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
-  },
-  "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^3.1.8",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "autoprefixer": "^10.4.16",
-    "concurrently": "^8.2.2",
-    "cross-env": "^7.0.3",
-    "del": "6.1.1",
-    "fs-extra": "^11.1.1",
-    "gh-pages": "^6.0.0",
-    "glob": "^10.3.10",
-    "gulp": "^4.0.2",
-    "gulp-cache": "^1.1.3",
-    "gulp-imagemin": "7.1.0",
-    "gulp-notify": "^4.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^9.0.1",
-    "gulp-replace": "^1.1.4",
-    "gulp-stylus": "^3.0.1",
-    "html-minifier": "^4.0.0",
-    "js-yaml": "^4.1.0",
-    "markdown-it": "^13.0.2",
-    "nunjucks": "^3.2.4",
-    "path": "^0.12.7",
-    "postcss": "^8.4.31",
-    "postcss-csso": "^6.0.1",
-    "postcss-inline-svg": "^6.0.0",
-    "rimraf": "^3.0.2",
-    "rollup": "^4.4.0",
-    "style-dictionary": "^3.9.0",
-    "stylus": "^0.61.0",
-    "token-transformer": "^0.0.33"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {
-        "overrideBrowserslist": [
-          "last 3 versions",
-          "not dead",
-          "> 5%",
-          "not ie <= 11"
-        ]
-      }
-    }
-  }
+	"name": "vasiliy-dudin-website",
+	"version": "2023.1",
+	"description": "",
+	"author": "Vasiliy Dudin",
+	"license": "ISC",
+	"scripts": {
+		"b": "eleventy",
+		"watch": "vite build && eleventy --serve",
+		"build": "cross-env-shell ELEVENTY_ENV=production \"gulp styles && pnpm run js && eleventy && gulp build\"",
+		"remove-dist": "rimraf dist",
+		"js": "rollup -c",
+		"deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
+		"tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
+	},
+	"dependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-img": "^3.1.8",
+		"@11ty/eleventy-navigation": "^0.3.5",
+		"autoprefixer": "^10.4.16",
+		"concurrently": "^8.2.2",
+		"cross-env": "^7.0.3",
+		"del": "6.1.1",
+		"fs-extra": "^11.1.1",
+		"gh-pages": "^6.0.0",
+		"glob": "^10.3.10",
+		"html-minifier": "^4.0.0",
+		"js-yaml": "^4.1.0",
+		"markdown-it": "^13.0.2",
+		"nunjucks": "^3.2.4",
+		"path": "^0.12.7",
+		"postcss": "^8.4.31",
+		"postcss-csso": "^6.0.1",
+		"postcss-inline-svg": "^6.0.0",
+		"rimraf": "^3.0.2",
+		"style-dictionary": "^3.9.0",
+		"stylus": "^0.61.0",
+		"token-transformer": "^0.0.33",
+		"vite": "^4.5.0"
+	},
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {
+				"overrideBrowserslist": [
+					"last 3 versions",
+					"not dead",
+					"> 5%",
+					"not ie <= 11"
+				]
+			}
+		}
+	}
 }
