@@ -39,7 +39,7 @@ module.exports = function(config) {
 	config.addWatchTarget("./src/pet-projects/**/*.md");
 
 	// Minify HTML for 'production' environment
-	/* if (process.env.ELEVENTY_ENV === 'production') {
+	if (process.env.ELEVENTY_ENV === 'production') {
 		config.addTransform("htmlmin", function(content, outputPath) {
 			if (outputPath && outputPath.indexOf('.html') > -1) {
 				return htmlmin.minify(content, {
@@ -51,7 +51,7 @@ module.exports = function(config) {
 			  }			
 			  return content;		
 		});
-	} */
+	}
 
 
 
