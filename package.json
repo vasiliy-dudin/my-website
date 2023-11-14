@@ -15,8 +15,9 @@
     "build:js": "rollup -c",
     "build:html": "html-minifier --input-dir dist --output-dir dist --file-ext html --collapse-whitespace --remove-comments --minify-css true --minify-js true",
     
-    "remove-dist": "rimraf dist",
+    
     "_deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
+    "remove-dist": "rimraf dist",
     "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
   },
   "dependencies": {
