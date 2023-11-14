@@ -28,14 +28,12 @@ module.exports = function(config) {
 
 
 	/////////// Build options
-
 	config.addPassthroughCopy("src/fonts");
 	config.addPassthroughCopy( "src/assets/**/*");
 	config.addPassthroughCopy("src/*.txt");
 	config.addPassthroughCopy("src/manifest.json");
 	config.addWatchTarget("./src/styles/**/*.styl");
-	config.addWatchTarget("./src/case-studies/**/*.md");
-	config.addWatchTarget("./src/pet-projects/**/*.md");
+	config.addWatchTarget("./src/pages/**/*.md");
 
 
 
