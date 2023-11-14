@@ -4,12 +4,12 @@
   "author": "Vasiliy Dudin",
   "license": "ISC",
   "scripts": {
-    "_watch": "npm-run-all --parallel watch:stylus watch:11ty watch:js",
+    "_watch": "npm-run-all --parallel watch:*",
     "watch:11ty": "eleventy --serve",
     "watch:stylus": "stylus -w src/styles/bundle.styl -o dist/styles/",
     "watch:js": "rollup -c -w",
    
-    "_build": "cross-env-shell ELEVENTY_ENV=production \"npm-run-all build:stylus build:lightningcss build:js && eleventy && pnpm build:html\"",
+    "_build": "cross-env-shell ELEVENTY_ENV=production \"npm-run-all build:* && eleventy && pnpm build:html\"",
     "build:stylus": "stylus src/styles/bundle.styl -o dist/styles/bundle.css",
     "build:lightningcss": "npx lightningcss-cli --minify --bundle dist/styles/bundle.css -d dist/styles",
     "build:js": "rollup -c",
