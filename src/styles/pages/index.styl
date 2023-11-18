@@ -28,13 +28,29 @@ $home-section-gap = 10px
 		// 		margin-bottom 0
 
 	//&__text
+
+
+
+.experience
+	display: flex
+	flex-direction: column
+	gap: 1rem
+	padding-top: 8px
+
+.experience-item
+	display: flex
+	gap: 12px
+
+	&__img
+		width: 48px
+		height: @width
+		border-radius: $radius--S
+		overflow: hidden
+
+
+	&__role
+		margin: 0 0 4px
 		
-
-
-// Блоки с информацией обо мне
-
-// .about-me-grid
-// 	display: grid
-// 	grid-gap: $home-section-gap
-// 	+media(sm)
-// 		grid-template-columns: repeat(auto-fit, minmax(410px, 1fr))
+	&__company
+	&__years
+		color: $color-text-desc

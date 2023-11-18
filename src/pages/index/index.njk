@@ -25,15 +25,28 @@ permalink: /
 		- Frontend development: JavaScript, HTML, CSS/SASS/Stylus, 11ty, accessible UI development, Git.
 	{% endmd %}
 </section>
+{% macro experience_item(company, year, role, icon) %}
+	<div class="experience-item">
+		<div class="experience-item__img">{% include "./images/"+icon+".svg" %}</div>
+		<div class="experience-item__text">
+			<h4 class="experience-item__role">{{ role }}</h4>
+			<div class="experience-item__company">{{ company }}</div>
+			<div class="experience-item__years">{{ year }}</div>
+		</div>
+	</div>
+{% endmacro %}
+
 <section class="front-section">
 	{% md %}
-		## Career journey
-		- Netology, Senior Product Designer [dec 2022 - present]
-		- Practicum, Senior Product Designer [jul 2021 - may 2022]
-		- Semrush, Senior UX Designer [jun 2018 - jan 2020]
-		- Binomo, UX/UI Designer [feb 2018 - jun 2018]
-		- Fleelance, UX Designer [jun 2011 - feb 2017]
+		## Experience
 	{% endmd %}
+	<div class="experience">
+		{{ experience_item('Netology', 'Dec 2022 - Present', 'Senior Product Designer', 'netology') }}
+		{{ experience_item('Practicum', 'Jul 2021 - May 2022', 'Senior Product Designer', 'practicum') }}
+		{{ experience_item('Semrush', 'Jun 2018 - Jan 2020', 'Senior UX Designer', 'semrush') }}
+		{{ experience_item('Binomo', 'Feb 2018 - Jun 2018', 'UX/UI Designer', 'binomo') }}
+		{{ experience_item('Freelance', 'Jun 2011 - Feb 2017', 'UX Designer', 'Freelance') }}
+	</div>
 </section>
 <section class="front-section">
 	{% md %}
