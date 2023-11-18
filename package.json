@@ -17,6 +17,7 @@
     
     
     "_deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
+    "_build+deploy": "npm-run-all _build _deploy",
     "remove-dist": "rimraf dist",
     "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
   },
