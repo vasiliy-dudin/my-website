@@ -32,8 +32,8 @@ module.exports = function(config) {
 	config.addPassthroughCopy( "src/assets/**/*");
 	config.addPassthroughCopy("src/*.txt");
 	config.addPassthroughCopy("src/manifest.json");
-	config.addWatchTarget("./src/styles/**/*.styl");
-	config.addWatchTarget("./src/pages/**/*.md");
+	config.addWatchTarget("./src/styles/**/*");
+	config.addWatchTarget("./src/pages/**/*");
 
 
 
