@@ -5,4 +5,4 @@ layout: page.njk
 permalink: "/articles/"
 ---
 
-- [Accessibility Audit: Basics](https://web-standards.ru/articles/a11y-audit-basics/)
+- <a href="https://web-standards.ru/articles/a11y-audit-basics/" target="_blank" rel="nofollow noopener noreferrer">Accessibility Audit: Basics</a>
