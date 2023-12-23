@@ -8,14 +8,11 @@
     "watch:11ty": "eleventy --serve",
     "watch:stylus": "stylus -w src/styles/bundle.styl -o dist/styles/",
     "watch:js": "rollup -c -w",
-   
     "_build": "cross-env-shell ELEVENTY_ENV=production \"npm-run-all build:* && eleventy && pnpm build:html\"",
     "build:stylus": "stylus src/styles/bundle.styl -o dist/styles/bundle.css",
     "build:lightningcss": "npx lightningcss-cli --minify --bundle dist/styles/bundle.css -d dist/styles",
     "build:js": "rollup -c",
     "build:html": "html-minifier --input-dir dist --output-dir dist --file-ext html --collapse-whitespace --remove-comments --minify-css true --minify-js true",
-    
-    
     "_deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
     "_build+deploy": "npm-run-all _build _deploy",
     "remove-dist": "rimraf dist",
@@ -41,7 +38,7 @@
     "rimraf": "^3.0.2",
     "rollup": "^4.4.1",
     "style-dictionary": "^3.9.0",
-    "stylus": "^0.61.0",
+    "stylus": "^0.62.0",
     "token-transformer": "^0.0.33"
   }
 }
