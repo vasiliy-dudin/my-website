@@ -1,4 +1,4 @@
-//.portfolio
+@import "../variables/_index.styl"
 
 
 .project-list
@@ -29,10 +29,8 @@
 	will-change: transform
 	transform: translate3d(0, 0, 0)
 	transition: transform .1s linear
-	&:hover
-		transform: scale(0.995)
 	&:active
-		transform: scale(0.99)
+		transform: scale(0.995)
 
 	&__tags
 		margin-bottom: 12px
@@ -48,6 +46,9 @@
 		top: 0
 		right: 0
 		bottom: 0
+	&__link:hover:after
+		background: alpha($link-color, 60%)
+		mix-blend-mode: lighten
 
 	// Не опубликован
 	/* &.--unpublished
