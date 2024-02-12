@@ -4,13 +4,13 @@ $home-section-gap = 10px
 ////// Первая секция обо мне
 .hero-section
 	@extend $g__section
-	border: 2px solid $sd-color__palette-yellow-100
+	border: 6px solid $sd-color__palette-yellow-100
 	margin-bottom: $home-section-gap
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	grid-gap: 1.5rem;
+	display: grid
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+	grid-gap: 1.5rem
 	+media(sm)
-		grid-template-columns: minmax(240px, 2fr) 7fr;
+		grid-template-columns: minmax(240px, 2fr) 7fr
 	h2
 		margin-top: 0
 		margin-bottom: 1.5rem
@@ -18,7 +18,7 @@ $home-section-gap = 10px
 	&__img
 		max-width: 30%
 		margin: 0 auto
-		border-radius: 50%
+		border-radius: $radius--S
 		+media(sm)
 			max-width: unset
 		// &__img
