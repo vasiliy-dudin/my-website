@@ -2,9 +2,9 @@
 	<a class="skip-link" href="#main-content">Skip to main content</a>
 	<div class="container">
 		<nav class="nav">
-			<a class="logo" href="/">
+			<a class="logo" href="/" aria-label="{{ site.title }}">
 				{% include "../assets/logo.svg" %}
-				<span class="logo__name">{{ site.title }}</span>
+				{% include "../assets/sitename.svg" %}
 			</a>
 			<ul class="menu" id="menu">
 				{% for item in menu %}
