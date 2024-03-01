@@ -20,7 +20,9 @@ module.exports = config => {
 		 // Replace the tabs at the beginning of each line with an empty line
 		 const cleanedContent = content.replace(/^\t+/gm, '');
 		 const renderedContent = md.render(cleanedContent);
-		return `<div class="project-section"><h2 class="project-section__heading">${title}</h2>${renderedContent}</div>`;
+		 // Create an ID by removing spaces and converting to lowercase
+		 const titleId = title.replace(/\s+/g, '-').toLowerCase();
+		return `<div class="project-section"><h2 class="project-section__heading" id=${titleId}>${title}</h2>${renderedContent}</div>`;
 	});
 
 
