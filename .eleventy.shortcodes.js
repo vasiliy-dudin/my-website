@@ -16,13 +16,22 @@ module.exports = config => {
 
 
 	// Wrapper for project sections
-	config.addPairedShortcode("projectSection", function(content, title) {
+	config.addPairedShortcode("projectSection", function(content, title, id) {
 		 // Replace the tabs at the beginning of each line with an empty line
 		 const cleanedContent = content.replace(/^\t+/gm, '');
 		 const renderedContent = md.render(cleanedContent);
-		 // Create an ID by removing spaces and converting to lowercase
-		 const titleId = title.replace(/\s+/g, '-').toLowerCase();
-		return `<div class="project-section"><h2 class="project-section__heading" id=${titleId}>${title}</h2>${renderedContent}</div>`;
+
+		 let idValue;
+		 if (id) {
+			idValue = id;
+		 }
+		 else {
+			// Create an ID by removing spaces and converting to lowercase
+			idValue = title.replace(/\s+/g, '-').toLowerCase();
+		 }
+		 
+		 
+		return `<div class="project-section"><h2 class="project-section__heading" id=${idValue}>${title}</h2>${renderedContent}</div>`;
 	});
 
 
