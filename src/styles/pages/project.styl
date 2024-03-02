@@ -109,6 +109,18 @@ $spacing = 24px
 // 			max-width 400px
 // 			width 100%
 
+// External links
+.project-body a[href^="https://"]
+.project-body a[href^="http://"]
+	align-items: center
+	gap: 8px
+	&:after
+		content: ''
+		width: 16px
+		height: @width
+		display: block
+		background-image: url("../assets/external-link.svg")
+		    background-size: contain
 
 // Разделение на колонки
 .article-project
