@@ -33,7 +33,9 @@ module.exports = config => {
 		 
 		return `<div class="project-section"><h2 class="project-section__heading" id=${idValue}>${title}</h2>${renderedContent}</div>`;
 	});
-
+	config.addPairedShortcode("highlight", function(content) {
+		return `<b class="project-section__highlights">${content}</b>`;
+	  });
 
 	// currentYear
 	config.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
