@@ -1,4 +1,6 @@
 @import "../variables/_index.styl"
+@import "../variables/tokens"
+@import "../variables/tokens-semantic.styl"
 	
 // =====================
 // Шапка проекта
@@ -108,6 +110,14 @@ $spacing = 24px
 // 		&.--xs
 // 			max-width 400px
 // 			width 100%
+
+.project-section__highlights
+	display: block
+	width: 100%
+	padding: 24px
+	background: $sd-color__palette-blue-100
+	border-radius $radius--M
+	font-weight: normal
 
 // External links
 .project-body a[href^="https://"]
