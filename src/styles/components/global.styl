@@ -1,11 +1,12 @@
 /////////////// Секции
 
 $g__section
-	padding 32px 16px // TODO Унифицировать отступы для подобных блоков?
-	border-radius: $radius--M
-	+media(sm)
-		padding 32px 
-
+	$paddings
+		padding 32px 16px // TODO Унифицировать отступы для подобных блоков?
+		+media(sm)
+			padding 32px
+	$radius
+		border-radius: $radius--M
 	$primary
 		background $background-1
 	$secondary

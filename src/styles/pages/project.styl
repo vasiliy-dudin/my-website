@@ -20,8 +20,9 @@ $spacing = 24px
 	border: 3px solid $sd-color__palette-blue-900
 	outline: 6px solid $sd-color__palette-blue-900
 	outline-offset: 3px
-	&__content
-		padding 32px // TODO Унифицировать отступы для подобных блоков?
+	&__content 
+		@extend $g__section $paddings
+		@extend $g__section $radius
 		display: flex
 		flex-direction: column
 		gap: 8px
@@ -60,7 +61,9 @@ $spacing = 24px
 
 // Section for grouping project description
 .project-section
-	@extend $g__section, $secondary
+	@extend $g__section $secondary
+	@extend $g__section $paddings
+	@extend $g__section $radius
 	h2
 		margin-top: 0
 
