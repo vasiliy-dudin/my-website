@@ -22,12 +22,18 @@ $spacing = 24px
 	outline-offset: 3px
 	&__content
 		padding 32px 16px // TODO Унифицировать отступы для подобных блоков?
-
+		display: flex
+		flex-direction: column
+		gap: 8px
 	&__h1
 		margin: 0
 	&__img
 		@extend .img-fluid
 		display block
+	&__description
+	&__date
+		line-height 1.1
+	
 	
 
 .project-nav
