@@ -21,8 +21,8 @@ module.exports = config => {
 			urlPath: outputURL,
 			outputDir: outputFolder,
 			sharpAvifOptions: {
-				quality: 50,
-				effort: 5
+				quality: 85,
+				effort: 9
 			}
 		});
 		let metadataWebp = await Image(srcAbsolite, {
@@ -31,7 +31,7 @@ module.exports = config => {
 			urlPath: outputURL,
 			outputDir: outputFolder,
 			sharpWebpOptions: {
-				quality: 75,
+				quality: 83,
 				smartSubsample: true
 			}
 		});
