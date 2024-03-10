@@ -14,15 +14,14 @@ $spacing = 24px
 	margin-bottom: $spacing
 	justify-content: space-between
 	flex-wrap: wrap
-	overflow: hidden
-	border-radius: $radius--M
+	overflow: hidden	
 	background $background-2
 	border: 3px solid $sd-color__palette-blue-900
 	outline: 6px solid $sd-color__palette-blue-900
 	outline-offset: 3px
+	@extend $g__section $radius
 	&__content 
-		@extend $g__section $paddings
-		@extend $g__section $radius
+		@extend $g__section $paddings		
 		display: flex
 		flex-direction: column
 		gap: 8px
