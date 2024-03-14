@@ -4,7 +4,7 @@ description: SaaS for Internet Marketers
 category:
   - UX Design
   - UX Research
-years: 2018-2020
+years: Jun 2018 - Jan 2020
 layout: project.njk
 order: 3
 permalink: "/case-studies/semrush/"

@@ -4,7 +4,7 @@ description: EdTech, School Math Product
 category:
   - UX Design
   - UI Design
-years: 2021-2022
+years: Jul 2021 - May 2022
 layout: project.njk
 order: 2
 permalink: "/case-studies/practicum/"
