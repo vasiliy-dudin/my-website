@@ -1,4 +1,6 @@
 const markdownIt = require("markdown-it");
+const fsExtra = require("fs-extra");
+const path = require("path");
 
 module.exports = config => {
 	const md = markdownIt({
@@ -48,6 +50,24 @@ module.exports = config => {
 			</div>
 			`;
 	});
+
+
+	config.addPairedShortcode("skill", async function(content, name, icon) {
+		const iconPath = path.join(__dirname, `/src/pages/index/images/${icon}`);
+		const svgContent = await fsExtra.readFile(iconPath, "utf-8");
+
+		return `
+		<div class="skill">
+			<div class="skill__img">
+				${svgContent}
+			</div>
+			<div class="skill__text">
+				<h4 class="skill__name">${name}</h4>
+				<div class="skill__desc">${content}</div>
+			</div>
+		</div>`;
+	});
+	
 
 	  
 }

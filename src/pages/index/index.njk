@@ -15,25 +15,36 @@ permalink: /
 		{% endmd %}
 	</div>
 </section>
-<section class="front-section --skills">
+
+<section class="front-section">
 	{% md %}
 		## Skills
-		- **UI + UX design**
-		Design of complex products, design systems development, design tokens, guidlines, User Flow, Information Architecture, UML Activity Diagram, BPMN.
-		- **UI tools**
-		Expert-level skills in Figma and Axure RP. I build complex components with auto layout and develop plugins with JavaScript.
-		- **Accessibility and inclusive design**
-		Improve design systems, design and develop processes, audit, write guides.
-		- **System Analytics**
-		CJM, Job Stories, UML Use Case Diaram, Scenario Map, Service Blueprint.
-		- **Research** 
-		Usability testing, interviews, questionnaires, Jobs to be Done, card sorting, A/B testing, metrics, web analytics (Google Analytics and Amplitude).
-		- **Frontend development**
-		JavaScript, HTML, CSS/SASS/Stylus, 11ty, accessible UI development, Git.
-		- **Team**
-		Facilitation, build design process.
 	{% endmd %}
+	<div class="skills-list">
+		{% skill "UI + UX design", "ux-ui-design.svg" %}
+			Design of complex products, design systems development, design tokens, guidlines, User Flow, Information Architecture, UML Activity Diagram, BPMN.
+		{% endskill %}
+		{% skill "UI tools", "ui-tools.svg" %}
+			Expert-level skills in Figma and Axure RP. I build complex components with auto layout and develop plugins with JavaScript.
+		{% endskill %}
+		{% skill "Accessibility and inclusive design", "a11y.svg" %}
+			Improve design systems, design and develop processes, audit, write guides.
+		{% endskill %}
+		{% skill "System Analytics", "system-analytics.svg" %}
+			CJM, Job Stories, UML Use Case Diaram, Scenario Map, Service Blueprint.
+		{% endskill %}
+		{% skill "Research", "research.svg" %}
+			Usability testing, interviews, questionnaires, Jobs to be Done, card sorting, A/B testing, metrics, web analytics (Google Analytics and Amplitude).
+		{% endskill %} 
+		{% skill "Frontend development", "frontend.svg" %}
+			JavaScript, HTML, CSS/SASS/Stylus, 11ty, accessible UI development, Git.
+		{% endskill %}
+		{% skill "Team", "team.svg" %}
+			Facilitation, build design process.
+		{% endskill %}
+	</div>
 </section>
+
 {% macro experience_item(company, year, role, icon) %}
 	<div class="experience-item">
 		<div class="experience-item__img">{% include "./images/"+icon+".svg" %}</div>
@@ -44,7 +55,6 @@ permalink: /
 		</div>
 	</div>
 {% endmacro %}
-
 <section class="front-section">
 	{% md %}
 		## Experience
