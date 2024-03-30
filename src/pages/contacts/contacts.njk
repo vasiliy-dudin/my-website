@@ -1,0 +1,22 @@
+---
+title: Contacts
+description: ____
+layout: page.njk
+permalink: "/contacts/"
+---
+
+<ul class="contacts">
+	{% for link in contacts %}
+		<li class="contacts__item">
+			{% if link.name == "email" %}
+				<a class="contacts__item-link" href="mailto:{{ link.url }}">
+					{{ link.url }}
+				</a>
+			{% else %}
+				<a class="contacts__item-link" href="{{ link.url }}" target="_blank" rel="nofollow noopener noreferrer">
+					{{ link.name }}
+				</a>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

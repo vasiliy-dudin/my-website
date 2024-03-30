@@ -1,28 +1,5 @@
 <footer class="footer container">
-	<h2 class="footer__heading">Contacts</h2>
-	<div class="contacts">
-		<ul class="contacts__links">
-			{% for link in contacts %}
-				<li class="contacts__item">
-					{% if link.name == "email" %}
-						<a class="contacts__item-link" href="mailto:{{ link.url }}">
-							{{ link.url }}
-						</a>
-					{% else %}
-						<a class="contacts__item-link" href="{{ link.url }}" target="_blank" rel="nofollow noopener noreferrer">
-							{{ link.name }}
-						</a>
-					{% endif %}
-				</li>
-			{% endfor %}
-		</ul>
-
-		<div class="contacts__copyrights">
-			<span class="contacts__item">©2011–{% currentYear %}</span>
-			<span class="contacts__item"><a href="https://github.com/vasiliy-dudin/my" target="_blank" rel="nofollow noopener noreferrer">Developed by me</a> with <a href="https://www.11ty.dev" target="_blank" rel="nofollow noopener noreferrer">11ty</a>
-			</span>
-		</div>
-	</div>
-	
-
+	<span class="contacts__item">©2011–{% currentYear %}</span>
+	<span class="contacts__item"><a href="https://github.com/vasiliy-dudin/my" target="_blank" rel="nofollow noopener noreferrer">Developed by me</a> with <a href="https://www.11ty.dev" target="_blank" rel="nofollow noopener noreferrer">11ty</a>
+	</span>
 </footer>

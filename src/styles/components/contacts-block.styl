@@ -1,0 +1,22 @@
+@import "../variables/_index.styl"
+
+.contacts-block	
+	display flex
+	flex-direction column
+	gap	8px
+	margin-top: 64px
+	@extend $g__section $paddings
+	@extend $g__section $radius
+	border: 3px solid $sd-color__palette-blue-900
+
+	&__heading
+		margin: 0
+	&__list
+		margin: 0
+		padding: 0
+		display: flex
+		flex-wrap: wrap
+		column-gap: 24px
+		row-gap: 4px
+	&__item
+		list-style: none

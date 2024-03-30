@@ -7,6 +7,6 @@
 - name: "Pet Projects"
   href: "/pet-projects/"
   enabled: true
-- name: "Articles"
-  href: "/articles/"
+- name: "Contacts"
+  href: "/contacts/"
   enabled: true

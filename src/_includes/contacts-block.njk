@@ -1,0 +1,19 @@
+<section class="contacts-block">
+	<h2 class="contacts-block__heading">Thanks for reading 😊</h2>
+	<p>Feel free to contact me.</p>
+	<ul class="contacts-block__list">
+		{% for link in contacts %}
+			<li class="contacts-block__item">
+				{% if link.name == "email" %}
+					<a class="contacts-block__item-link" href="mailto:{{ link.url }}">
+						{{ link.url }}
+					</a>
+				{% else %}
+					<a class="contacts-block__item-link" href="{{ link.url }}" target="_blank" rel="nofollow noopener noreferrer">
+						{{ link.name }}
+					</a>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+</section>
