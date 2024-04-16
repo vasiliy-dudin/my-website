@@ -32,9 +32,14 @@ module.exports = config => {
 			idValue = title.replace(/\s+/g, '-').toLowerCase();
 		}
 		
-		 
 		return `<div class="project-section"><h2 class="project-section__heading" id=${idValue}>${title}</h2>${renderedContent}</div>`;
 	});
+
+	// emphasize inline values
+	config.addShortcode("highlightValue", function(val, classname) {
+		return `<span class="highlightValue --${classname}">${val}</span>`;
+	});
+
 	config.addPairedShortcode("highlight", function(content) {
 		return `<b class="project-section__highlights">${content}</b>`;
 	  });
