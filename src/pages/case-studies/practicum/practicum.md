@@ -10,112 +10,96 @@ order: 2
 permalink: "/case-studies/practicum/"
 ---
 
-{% projectSection "About the company and the team" %}
-	International training service for IT professions. Includes about 60 courses and many development teams. I used to work at the closed School Math product.
+{% projectSection "Introduction" %}	
+	An international educational platform specialising in IT courses. Offers around 60 different programmes alongside numerous development teams.
+
+	My role was focussed on the "School Math" product. I was a part of an agile team, collaborating closely with another product designer and a UX writer.
 {% endprojectSection %}
 
-{% projectSection "Design process" %}
-	1. Immersion in the problem, requirements gathering, analysis.
-	I used product manager's research results, user flow, value stream map, frequency of use cases analysis, web analytics data and session records (Web-viewer from Yandex.Metrika).
-	2. Solution search.
-	3. UI detailing:
-	Component assembly, documentation, elaboration of states, work with UX writer, reviews from other designers.
-	4. Development support.
+{% projectSection "Problems" %}
+	1. There was a high volume of customer support queries on post-registration stage.
+	2. The product manager identified issues faced by parents:
+	    1. Confusion about next steps after registration.
+	    2. Failure to realise that they accidentally open a student accounts.
+	    3. Unawareness of the existence of student accounts.
+	    4. Lack of understanding that children need login credentials.
+	3. Challenges with visual overload and scalability of the product. Adding new features increases the complexity of the service.
+
+	{% image "images/1.png", "project-card__img", "", 1200 %}
+
+	### Business Impact
+	1. High costs associated with customer support.
+	2. We assumed that these problems had a negative impact on the number of referrals, users' attitudes towards the product and, as a resulting impact on LTV.
 {% endprojectSection %}
 
-{% projectSection "What I did" %}
-	- **Improved the interface, solved some of the user and business issues** in the personal accounts, face to face classes and homework, made the product scalable. Used the results of product manager research, user flow, value stream map, frequency of use cases analysis, web analytics data and session records (WebVisor from Yandex.Metrika).
-	- Was responsible for the design system and its development.
-		- Unified components and styles: redesigned all the components into auto layout, made them reusable, got rid of custom elements to make the product easier to maintain and develop.
-		- I also introduced design tokens. This way I was able to upload design updates faster and make the styles more consistent.
-		- Made a consistent palette with the same perceived lightness of shades (through the OKLCH color model and taking into account the WCAG 3 guide).
-		- Simplified component organization, created documentation.
-	- Simplified and reworked the onboarding process for parents and students.
-	- **Made the interface scalable** to add new features in the future and not rework existing solutions.
-	- **Improved styling**, reduced cognitive load by improving visual hierarchy and reading affordance. Improved the accessibility and readability of texts.
-	- **Communicated closely** with the development team, UX writer, three product designers, and illustrators.
-	- *Assisted other designers on the team:**with designing tutorial mechanics, assembling components, and teaching advanced techniques in Figma.
-	- **Presented design solutions** to the entire product team.
-	- **Actively participated in general activities** of the Workshop: process improvements, reviews, inclusive design movements.
-	- **Supported development** throughout development and testing.
-	- **Prepared a report on the UX maturity model** and human-centered design to improve design quality and reduce disputes in Workshop teams.
-	- *Created a plan for process, design, and component changes.
-	- **Developed team processes:**
-		- Process for working on tasks and design sprints.
-		- Facilitated transfer of layouts to development, hosted feedback sessions from Scrum team.
+{% projectSection "Hypotheses" %}
+	1. Implementing an onboarding process for new users will decrease “onboarding” customer support tickets from 52% to 20% within the first month.
+	2. Simplifying the dashboard will elevate the Net Promoter Score (NPS) to above +55 within the first quarter following implementation.
+	3. Simplifying the dashboard will increase user engagement among parents. 
+	We’ll know this is true when the average number of sessions per parent increase by minimum  15% within 3 months after the dashboard redesign.
+
+	The challenge here was to find proxy metrics that are not affected by other product changes and market volatility.
 {% endprojectSection %}
 
-{% projectSection "Design layouts" %}
-	[Figma, all layouts](https://www.figma.com/file/koqbtwzgUyo1IAzoFajOwZ/School-Math-v2.1?node-id=0%3A1)
-
-	Student’s dashboard:
-	{% image "images/1.png", "project-card__img", "", 800 %}
-
-	Parent's dashboard:
-	{% image "images/2.png", "project-card__img", "", 800 %}
-	{% image "images/3.png", "project-card__img", "", 800 %}
-
-	This is how I describe the complex components and their states. I always annotate a non-obvious points.
-
-	{% image "images/4.png", "project-card__img", "", 800 %}
-
-	Layout organisation. In the original Figma project, we divided the layouts into separate files.
-
-	{% image "images/5.png", "project-card__img", "", 800 %}
+{% projectSection "Design Process" %}
+	Adopted a methodology akin to the Double Diamond approach, encompassing:
+	1. [Discovery](#1)
+	2. [Analysis](#2)
+	3. [Ideation](#3)
+	4. [UI Prototyping and Detailing](#4)
+	5. [Design Review](#5)
 {% endprojectSection %}
 
-{% projectSection "Examples from the design system" %}
-	- Used a modular spacing system and complex nested components on auto layout.
-	- Implemented design tokens for consistency of styles and to quickly push changes to the extension. Used GitHub as a single source of truth.
-	- Created a palette based on perceived lightness of shades. Based on that, I created other styles, such as those for links.
-
-	{% image "images/6.png", "project-card__img", "", 800 %}
+{% projectSection "1. Discovery", "1" %}
+	1. Analysed user feedback. Found only a few messages mentioning the described problems. Without any details.
+	2. Talked with customer support to grasp the specifics and frequency of user confusion.
+	3. Requested data from an analyst. It confirmed that the issues were frequent and that there were a lot of related customer support requests.
+	4. Collaborated with the product manager to formed hypotheses.
 {% endprojectSection %}
 
-
-
-
-
-
-
-
-{% projectSection "About the company" %}
-	[Погразить в контекст. Например, написать, сколько было пользователей.
-Начните с обзора миссии компании, конкретных проблем, с которыми она сталкивается, и причин, по которым был инициирован проект. Это подготовит почву для вашего тематического исследования и поможет читателю понять актуальность вашей работы для более широких целей компании.]
+{% projectSection "2. Analysis", "2" %}
+	- I analysed the issues and needs of both parents and students.
+	- Made and prioritised a list of job stories.
 {% endprojectSection %}
 
-{% projectSection "My role and the team" %}
-	[Уточните свою роль в проекте и то, как вы сотрудничали с командой. Если вы подчеркнете свой вклад наряду с усилиями команды, это продемонстрирует вашу способность работать в среде сотрудничества.]
+{% projectSection "3. Ideation", "3" %}
+	- Researched competitors and services with effective onboarding.
+	- Drawed numerous wireframes, exploring potential solutions.
 {% endprojectSection %}
 
-{% projectSection "Проблема и процесс поиска решения" %}
-[
-	- Проблема,
-	- Какие были сложности
-	- Написать про двойной алмаз
-	- Навигация по кейс стади]
+{% projectSection "4. UI prototyping and detailing", "4" %}
+	- Designed a user flow for a future interactions. Including all potential states.
+	- Chose a direction for the design and step-by-step detailed wireframes into the final UI.
+	- Wrote UI copy in collaboration with the UX writer.
+	- Synced the vision with developers, UX writer and product manager during the design process.
+	- Documented a design solution.
 {% endprojectSection %}
 
-{% projectSection "Research & Insights" %}
-	[Explain how you gathered insights and their impact on your design decisions.]
+{% projectSection "5. Design review", "5" %}
+	Ensured the test server changes aligned with the design solution in collaboration with the QA engineer.
 {% endprojectSection %}
 
-{% projectSection "Ideation" %}
+{% projectSection "Solution" %}
+	As a result, these are the solutions I came up with:
+	- Simple and phased onboarding. Previously, all elements were located on one page.
+	- Hid features that are rarely used, such as "Settings".
+	- Quick switch between parents' and students' accounts without the need for credentials.
+	- An indication that a user is currently in the parent's account.
+	- A dedicated block for sharing student login and password.
+
+	### Extra
+	We decided to update the visual design to make the product competitive in appearance. And to make it more friendly and easier to understand.
 {% endprojectSection %}
 
-{% projectSection "Prototyping" %}
+{% projectSection "Results" %}
+	- {% highlightValue "Customer support tickets: **52%** → **16%**", "good" %} within the first month. 
+	- {% highlightValue "NPS: **+48** → **+58**", "good" %} within the first 3 months.
+	- {% highlightValue "Average number of sessions per parent: **increased by 7%**", "bad" %} within 3 months. 
+	We realised that the goal was too ambitious.
 {% endprojectSection %}
 
-{% projectSection "Tests" %}
-{% endprojectSection %}
-
-{% projectSection "Final Design" %}
-{% endprojectSection %}
-
-{% projectSection "Impact" %}
-	[Include metrics, user feedback, or other indicators of success to demonstrate the effectiveness of your design in addressing the initial challenge.]
-{% endprojectSection %}
-
-{% projectSection "Reflection and Learnings" %}
-	[Conclude with your personal reflections on the project. Mention what you learned, what you might do differently, and how the project contributed to your growth as a designer.]
+{% projectSection "Reflection and learnings" %}
+	- We concluded that the level of parental involvement in the child’s learning process largely depends not only on the simplicity of the interface, but also on some other factors.
+	- Solving many problems at once was a mistake. We must try to break tasks into smaller iterations. Because this time the problems affected most of the service, and too much time was spent on design and development.
+	- Despite limited team resources, it’s still preferable to validate solutions on actual users. Even if  through unmoderated usability testing.
 {% endprojectSection %}
