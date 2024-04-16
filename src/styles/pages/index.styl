@@ -2,14 +2,12 @@
 @import "../variables/tokens"
 @import "../variables/tokens-semantic.styl"
 
-$home-section-gap = 10px
-
 
 ////// Первая секция обо мне
 .hero-section
 	@extend $g__section $paddings
 	@extend $g__section $radius	
-	margin-bottom: $home-section-gap
+	margin-bottom: 48px
 	display: grid
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
 	gap: 1.5rem
@@ -49,6 +47,16 @@ $home-section-gap = 10px
 
 	&__text
 		margin: auto
+
+
+.front-section
+	@extend $g__section $paddings
+	@extend $g__section $radius
+	border: 1px solid $sd-color__palette-gray-100
+	background: $sd-color__palette-neutral-white
+	margin-bottom: 24px
+	h2
+		margin-top: 0
 
 
 
