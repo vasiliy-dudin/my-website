@@ -14,12 +14,20 @@ $spacing = 24px
 	margin-bottom: $spacing
 	justify-content: space-between
 	flex-wrap: wrap
-	overflow: hidden	
 	background $background-2
-	border: 3px solid $sd-color__palette-blue-900
-	outline: 6px solid $sd-color__palette-blue-900
-	outline-offset: 3px
+	border: 1px solid $sd-color__palette-blue-200
+	box-shadow: 8px 12px 0 alpha($sd-color__palette-blue-100, 50%)
 	@extend $g__section $radius
+	&__art svg
+		position: absolute
+		top: -125px
+		left: -80px
+		width: 1070px
+		transform: rotate(-10.7deg)
+		z-index: -999
+		opacity: .3
+
+
 	&__content 
 		@extend $g__section $paddings		
 		display: flex
