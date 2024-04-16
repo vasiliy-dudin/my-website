@@ -8,14 +8,26 @@ $home-section-gap = 10px
 ////// Первая секция обо мне
 .hero-section
 	@extend $g__section $paddings
-	@extend $g__section $radius
-	border: 4px solid $sd-color__palette-yellow-100
-	outline: 1px solid $sd-color__palette-yellow-100
-	outline-offset: 4px
+	@extend $g__section $radius	
 	margin-bottom: $home-section-gap
 	display: grid
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
-	grid-gap: 1.5rem
+	gap: 1.5rem
+	background: $sd-color__palette-neutral-white
+	box-shadow: 8px 12px 0 alpha($sd-color__palette-gray-100, 50%)
+	position relative
+	display: flex
+	justify-content: center
+	&__art
+		position: absolute
+		width: 1047px
+		top: -60px
+		transform: rotate(185deg)
+		z-index: -999
+	&__art svg
+		width: 100%
+		height: 100%
+		
 	+media(sm)
 		grid-template-columns: minmax(240px, 2fr) 7fr
 	h2
