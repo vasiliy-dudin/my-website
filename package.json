@@ -36,7 +36,7 @@
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
     "rimraf": "^5.0.5",
-    "rollup": "^4.13.2",
+    "rollup": "^4.14.3",
     "style-dictionary": "^3.9.2",
     "stylus": "^0.63.0",
     "token-transformer": "^0.0.33"
