@@ -12,7 +12,8 @@
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
 	gap: 1.5rem
 	background: $sd-color__palette-neutral-white
-	box-shadow: 8px 12px 0 alpha($sd-color__palette-gray-100, 50%)
+	box-shadow: 8px 12px 0 $border-color-1
+	border: 2px solid $border-color-1
 	position relative
 	display: flex
 	justify-content: center
@@ -52,7 +53,7 @@
 .front-section
 	@extend $g__section $paddings
 	@extend $g__section $radius
-	border: 1px solid $sd-color__palette-gray-100
+	border: 2px solid $border-color-1
 	background: $sd-color__palette-neutral-white
 	margin-bottom: 24px
 	h2

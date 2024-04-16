@@ -8,7 +8,6 @@
 $spacing = 24px
 
 .project-header
-	$border-color = alpha($sd-color__palette-blue-100, 50%)
 	position relative
 	display: flex
 	flex-direction: column
@@ -16,8 +15,8 @@ $spacing = 24px
 	justify-content: space-between
 	flex-wrap: wrap
 	background $background-2
-	box-shadow: 8px 12px 0 $border-color, 
-		-2px -2px 0 $border-color
+	box-shadow: 8px 12px 0 $border-color-2, 
+		-2px -2px 0 $border-color-2
 	@extend $g__section $radius
 	&__art svg
 		position: absolute
