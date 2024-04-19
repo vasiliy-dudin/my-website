@@ -27,10 +27,16 @@ layout: _base.njk
 	{% if previousPage or nextPage %}
 		<div class="project-nav__neighbours">
 			{% if previousPage %}
-				<a class="project-nav__prev" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">← Previous</a>
+				<a class="project-nav__neighbour-lnk" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">
+					<img class="project-nav__icon --prev" src="/assets/arrow-neighbours.svg" alt="">
+					Previous
+				</a>
 			{% endif %}
 			{% if nextPage %}
-				<a class="project-nav__next" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">Next →</a>
+				<a class="project-nav__neighbour-lnk" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">
+					Next
+					<img class="project-nav__icon --next" src="/assets/arrow-neighbours.svg" alt="">
+				</a>
 			{% endif %}
 		</div>
 	{% endif %}
