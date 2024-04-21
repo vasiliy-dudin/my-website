@@ -198,47 +198,47 @@
     },
     "Green": {
       "50": {
-        "value": "#f0ffef",
+        "value": "#edfff7",
         "type": "color"
       },
       "75": {
-        "value": "#defbe6",
+        "value": "#dafcec",
         "type": "color"
       },
       "100": {
-        "value": "#a7f0ba",
+        "value": "#96f2cc",
         "type": "color"
       },
       "200": {
-        "value": "#6fdc8c",
+        "value": "#3fdfaa",
         "type": "color"
       },
       "300": {
-        "value": "#42be65",
+        "value": "#01be8d",
         "type": "color"
       },
       "400": {
-        "value": "#24a148",
+        "value": "#129f75",
         "type": "color"
       },
       "500": {
-        "value": "#198038",
+        "value": "#0f7e5d",
         "type": "color"
       },
       "600": {
-        "value": "#0e6027",
+        "value": "#075e44",
         "type": "color"
       },
       "700": {
-        "value": "#044317",
+        "value": "#01422e",
         "type": "color"
       },
       "800": {
-        "value": "#022d0d",
+        "value": "#012c1e",
         "type": "color"
       },
       "900": {
-        "value": "#071908",
+        "value": "#021910",
         "type": "color"
       }
     },
@@ -351,7 +351,7 @@
       },
       "lineHeight": {
         "value": "{lineHeights.0}",
-        "type": "lineHeight"
+        "type": "lineHeights"
       },
       "fontSize": {
         "value": "{fontSize.1}",
@@ -389,7 +389,7 @@
       },
       "lineHeight": {
         "value": "{lineHeights.0}",
-        "type": "lineHeight"
+        "type": "lineHeights"
       },
       "fontSize": {
         "value": "{fontSize.0}",
