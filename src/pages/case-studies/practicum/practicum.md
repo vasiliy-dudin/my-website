@@ -67,7 +67,7 @@ permalink: "/case-studies/practicum/"
 	- Drawed numerous wireframes, exploring potential solutions.
 {% endprojectSection %}
 
-{% projectSection "4. UI prototyping and detailing", "4" %}
+{% projectSection "4. UI prototyping and finalization", "4" %}
 	- Designed a user flow for a future interactions. Including all potential states.
 	- Chose a direction for the design and step-by-step detailed wireframes into the final UI.
 	- Wrote UI copy in collaboration with the UX writer.
@@ -95,7 +95,7 @@ permalink: "/case-studies/practicum/"
 	- {% highlightValue "Customer support tickets: **52%** → **16%**", "good" %} within the first month. 
 	- {% highlightValue "NPS: **+48** → **+58**", "good" %} within the first 3 months.
 	- {% highlightValue "Average number of sessions per parent: **increased by 7%**", "bad" %} within 3 months. 
-	We realised that the goal was too ambitious.
+	The goal was too ambitious.
 {% endprojectSection %}
 
 {% projectSection "Reflection and learnings" %}
