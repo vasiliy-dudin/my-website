@@ -92,11 +92,15 @@
 	display: flex
 	gap: 12px
 
-	&__img
-		width: 48px
+	&__img svg
+		width: 24px
 		height: @width
 		border-radius: $radius--S
 		overflow: hidden
+		+media(sm)
+			width: 48px
+			height: @width
+
 
 
 	&__role
