@@ -5,18 +5,17 @@
 
 ////// Первая секция обо мне
 .hero-section
-	@extend $g__section $paddings
-	@extend $g__section $radius	
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
 	margin-bottom: 48px
-	display: grid
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
 	gap: 1.5rem
+	@extend $g__section $paddings
+	@extend $g__section $radius
 	background: $sd-color__palette-neutral-white
 	box-shadow: 8px 12px 0 $border-color-1
 	border: 2px solid $border-color-1
-	position relative
-	display: flex
-	justify-content: center
+	position relative	
 
 	&__art
 		position: absolute
@@ -28,26 +27,23 @@
 		width: 100%
 		height: 100%
 		
-	+media(sm)
-		grid-template-columns: minmax(240px, 2fr) 7fr
+	&__img-col
+		margin: 0 auto
+		flex-basis: 160px
+		+media(sm)
+			flex-basis: 240px
+	&__img
+		display: block
+		width: 100%
+		height: auto
+		border-radius: $radius--L
+
+	&__text
+		flex: 1 1 @css{min(100%, 500px)}
+		margin: auto
 	h2
 		margin-top: 0
 		margin-bottom: 1.5rem
-
-	&__img
-		max-width: 30%
-		margin: 0 auto
-		border-radius: $radius--L
-		+media(sm)
-			max-width: unset
-		// &__img
-		// 	mask-image: url("/imgs/photo-mask.svg")
-		// 	mask-size cover
-		// 	+media(md)
-		// 		margin-bottom 0
-
-	&__text
-		margin: auto
 
 
 .front-section

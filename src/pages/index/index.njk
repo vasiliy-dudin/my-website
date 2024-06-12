@@ -9,7 +9,9 @@ permalink: /
 	<div class="hero-section__art">
 		{% include "../../assets/bg-lines-1.svg" %}
 	</div>
-	{% image "images/me.jpg", "hero-section__img", "", 240 %}
+	<div class="hero-section__img-col">
+		{% image "images/me.jpg", "hero-section__img", "", 240 %}
+	</div>
 	<div class="hero-section__text">
 		{% md %}
 			## Hi, I’m Vasiliy
@@ -63,10 +65,10 @@ permalink: /
 		## Experience
 	{% endmd %}
 	<div class="experience">
-		{{ experience_item('Netology (EdTech)', 'Dec 2022 - Present', 'Senior Product Designer', 'netology') }}
-		{{ experience_item('Practicum (EdTech)', 'Jul 2021 - May 2022', 'Senior Product Designer', 'practicum') }}
-		{{ experience_item('Semrush (SaaS for Internet Marketers)', 'Jun 2018 - Jan 2020', 'Senior UX Designer', 'semrush') }}
-		{{ experience_item('Binomo (Trading Platform, iOS/Android)', 'Feb 2018 - Jun 2018', 'UX/UI Designer', 'binomo') }}
+		{{ experience_item('Netology, EdTech', 'Dec 2022 - Present', 'Senior Product Designer', 'netology') }}
+		{{ experience_item('Practicum, EdTech', 'Jul 2021 - May 2022', 'Senior Product Designer', 'practicum') }}
+		{{ experience_item('Semrush, SaaS for Internet Marketers', 'Jun 2018 - Jan 2020', 'Senior UX Designer', 'semrush') }}
+		{{ experience_item('Binomo, Trading Platform', 'Feb 2018 - Jun 2018', 'UX/UI Designer', 'binomo') }}
 		{{ experience_item('Freelance', 'Jun 2011 - Feb 2017', 'UX Designer', 'Freelance') }}
 	</div>
 </section>
