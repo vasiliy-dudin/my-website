@@ -57,15 +57,9 @@ module.exports = config => {
 	});
 
 
-	config.addPairedShortcode("skill", async function(content, name, icon) {
-		const iconPath = path.join(__dirname, `/src/pages/index/images/${icon}`);
-		const svgContent = await fsExtra.readFile(iconPath, "utf-8");
-
+	config.addPairedShortcode("skill", async function(content, name) {
 		return `
 		<div class="skill">
-			<div class="skill__img">
-				${svgContent}
-			</div>
 			<div class="skill__text">
 				<h4 class="skill__name">${name}</h4>
 				<div class="skill__desc">${content}</div>

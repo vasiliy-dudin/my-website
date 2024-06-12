@@ -68,15 +68,18 @@
 
 .skill
 	display: flex
-	gap: 12px	
+	gap: 12px
 
-	&__img
-		display: flex
-		width: 48px
+	&:before
+		content: ''
+		display: block		
+		width: 16px
 		height: @width
 		flex-shrink: 0
-		svg
-			margin: auto
+		margin-top: 15px
+		border-radius: 50%
+		background: $sd-color__palette-yellow-400
+
 	&__name
 		margin: 12px 0 0
 
