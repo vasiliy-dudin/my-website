@@ -1,12 +1,21 @@
 .footer
-	margin-top: 80px	
+	margin-top: 120px	
 	font-size: $font-size-sm	
+
+	&:before
+		content: ''
+		display: block
+		height: 48px
+		background: url(/assets/wave.svg) no-repeat 50% 50%
+		background-size: contain
+		opacity: 0.4
+		+media(sm)
+			background-size: auto
 
 	&__content
 		display: flex
 		gap: 16px
 		justify-content: center
-		padding: 40px 0
-		border-top: 1px solid $sd-color__palette-gray-100
+		padding: 24px 0
 	&__item
 		display: block
