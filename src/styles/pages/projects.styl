@@ -3,8 +3,10 @@
 
 .project-list
 	display: grid
-	grid-template-columns: 1fr 1fr
-	gap: 1rem		
+	grid-template-columns: 1fr
+	gap: 1rem
+	+media(md)
+		grid-template-columns: 1fr 1fr
 /* 	+media(md)
 		&.--2
 		&.--3
