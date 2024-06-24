@@ -10,14 +10,16 @@ module.exports = function(config) {
 	config.addGlobalData("env", process.env.ELEVENTY_ENV);
 
 	//////////// Collections
-	config.addCollection('workProjects', (collection) => {
-		return collection.getFilteredByGlob('src/pages/case-studies/**/*.md')
+	config.addCollection('caseStudyProjects', (collection) => {
+		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
+			.filter((item) => item.data.type === "case-study")
 			.sort((a, b) => a.data.order - b.data.order);
-	  });	  
-	  config.addCollection('petProjects', (collection) => {
-		return collection.getFilteredByGlob('src/pages/pet-projects/**/*.md')
+	});
+	config.addCollection('petProjects', (collection) => {
+		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
+			.filter((item) => item.data.type === "pet")
 			.sort((a, b) => a.data.order - b.data.order);
-	  });	  
+	});
 
 	
 	/////////// Custom plugins or settings

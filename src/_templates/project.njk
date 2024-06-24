@@ -4,19 +4,12 @@ layout: _base.njk
 
 
 <div class="project-nav">
-	{% if page.url %}
-		{% set firstPartOfUrl = page.url.split('/')[1] %}
-		{% for item in menu %}
-			{% if firstPartOfUrl in item.href%}			
-				<a href="{{ item.href }}" class="project-nav__back">{{ item.name }}</a>
-			{% endif %}
-		{% endfor %}
-	{% endif %}
+	<a href="/projects/" class="project-nav__back">Projects</a>
 
 	{% set collection = "" %}
 	{# Neighbours #}
 	{% if page.url and "case-studies" in page.url %}
-		{% set collection = collections.workProjects %}
+		{% set collection = collections.caseStudyProjects %}
 	{% endif %}
 	{% if page.url and "pet-projects" in page.url %}
 		{% set collection = collections.petProjects %}
