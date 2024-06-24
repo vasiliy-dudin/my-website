@@ -20,6 +20,15 @@ module.exports = function(config) {
 			.filter((item) => item.data.type === "pet")
 			.sort((a, b) => a.data.order - b.data.order);
 	});
+	config.addCollection('allProjects', (collection) => {
+		const caseStudyProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
+			.filter((item) => item.data.type === "case-study")
+			.sort((a, b) => a.data.order - b.data.order);
+		const petProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
+			.filter((item) => item.data.type === "pet")
+			.sort((a, b) => a.data.order - b.data.order);
+		return [...caseStudyProjects, ...petProjects];
+	});
 
 	
 	/////////// Custom plugins or settings

@@ -6,15 +6,8 @@ layout: _base.njk
 <div class="project-nav">
 	<a href="/projects/" class="project-nav__back">Projects</a>
 
-	{% set collection = "" %}
 	{# Neighbours #}
-	{% if page.url and "case-studies" in page.url %}
-		{% set collection = collections.caseStudyProjects %}
-	{% endif %}
-	{% if page.url and "pet-projects" in page.url %}
-		{% set collection = collections.petProjects %}
-	{% endif %}
-
+	{% set collection = collections.allProjects %}
 	{% set previousPage = collection | getPreviousCollectionItem %}
 	{% set nextPage = collection | getNextCollectionItem %}
 	{% if previousPage or nextPage %}
@@ -34,7 +27,6 @@ layout: _base.njk
 		</div>
 	{% endif %}
 </div>
-
 
 <header class="project-header">
 	<div class="project-header__art">
