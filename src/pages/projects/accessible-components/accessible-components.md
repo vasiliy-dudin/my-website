@@ -6,8 +6,9 @@ category:
 - UI Design
 years: 2019
 layout: project.njk
+type: pet
 order: 3
-permalink: "/pet-projects/accessible-components/"
+permalink: "/projects/accessible-components/"
 ---
 
 {% projectSection "About the project" %}

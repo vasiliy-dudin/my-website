@@ -6,8 +6,9 @@ category:
   - UI Design
 years: Jul 2021 - May 2022
 layout: project.njk
+type: case-study
 order: 2
-permalink: "/case-studies/practicum/"
+permalink: "/projects/practicum/"
 ---
 
 {% projectSection "Introduction" %}	

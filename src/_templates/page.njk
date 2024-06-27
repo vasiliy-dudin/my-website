@@ -1,5 +1,7 @@
 ---
 layout: _base.njk
 ---
-<h1{% if permalink == '/' %} class="visually-hidden"{% endif %}>{{ title }}</h1>
-{{ content | safe }}
+<div class="container">
+	<h1{% if permalink == '/' %} class="visually-hidden"{% endif %}>{{ title }}</h1>
+	{{ content | safe }}
+</div>

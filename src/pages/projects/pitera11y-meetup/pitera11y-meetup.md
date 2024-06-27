@@ -6,8 +6,9 @@ category:
 - Organizing
 years: 2019-2021
 layout: project.njk
+type: pet
 order: 2
-permalink: "/pet-projects/pitera11y-meetup/"
+permalink: "/projects/pitera11y-meetup/"
 ---
 {% projectSection "My role" %}
 	Был одним из огранизаторов. Занимался переговорами с площадками и спикерами, делал графику, стикеры, создавал субитры.

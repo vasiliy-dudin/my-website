@@ -7,8 +7,9 @@ category:
   - UX Research
 years: Dec 2022 - now
 layout: project.njk
+type: case-study
 order: 1
-permalink: "/case-studies/netology/"
+permalink: "/projects/netology/"
 ---
 
 {% projectSection "About the company" %}

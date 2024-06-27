@@ -6,8 +6,9 @@ category:
   - UX Research
 years: Jun 2018 - Jan 2020
 layout: project.njk
+type: case-study
 order: 3
-permalink: "/case-studies/semrush/"
+permalink: "/projects/semrush/"
 ---
 
 {% projectSection "About the company" %}

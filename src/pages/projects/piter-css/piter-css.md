@@ -5,8 +5,9 @@ category:
 - UI Design
 years: 2021
 layout: project.njk
+type: pet
 order: 1
-permalink: "/pet-projects/piter-css/"
+permalink: "/projects/piter-css/"
 ---
 
 {% projectSection "About the project" %}

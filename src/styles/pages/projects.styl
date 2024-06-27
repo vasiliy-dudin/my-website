@@ -1,10 +1,25 @@
 @import "../variables/_index.styl"
+@import "../variables/tokens.styl"
+@import "../variables/tokens-semantic.styl"
+
+
+
+.project-list-container
+	padding-top: 40px
+	padding-bottom: 40px
+	h2
+		margin-top: 0
+	&.--1
+		background: $background-2
+
 
 
 .project-list
-	display: flex
-	flex-direction: column
+	display: grid
+	grid-template-columns: 1fr
 	gap: 1rem
+	+media(md)
+		grid-template-columns: 1fr 1fr
 /* 	+media(md)
 		&.--2
 		&.--3
@@ -28,9 +43,6 @@
 	will-change: transform
 	transform: translate3d(0, 0, 0)
 	transition: transform .1s linear
-	+media(md)
-		display: grid
-		grid-template-columns: 1fr 1fr
 		
 	&:active
 		transform: scale(0.995)

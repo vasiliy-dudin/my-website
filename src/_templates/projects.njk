@@ -2,33 +2,42 @@
 layout: _base.njk
 ---
 
+{% for collection in [collections.caseStudyProjects, collections.petProjects] %}
+	<section class="project-list-container --{{ loop.index }}">
+		<div class="container">
+			{% if loop.index == 1 %}
+				<h1>{{ title }}</h1>
+				{{ content | safe }}
+			{% endif %}	
 
-<h1>{{ title }}</h1>
-
-<div class="project-list">
-	{{ content | safe }}
-	{% if "case-studies" in permalink %}
-		{% set list = collections.workProjects %}
-	{% endif %}	
-	{% if "pet-projects" in permalink %}
-		{% set list = collections.petProjects %}
-	{% endif %}
-	{%- for project in list -%}
-		<article class="project-card">
-			{% image project.fileSlug+"/cover.jpg", "project-card__img", "", 450 %}
-			<div class="project-card__text">
-				<div class="project-card__tags tags">
-					{%- for tag in project.data.category -%}
-						<span class="tag --{{ tag | lower | replace(' ', '-') }}">{{ tag }}</span>
-					{%- endfor -%}
-				</div>
-				<a class="project-card__link" href="{{ project.data.permalink }}">
-					{{ project.data.title }}
-				</a>
-				<div class="project-card__desc">{{ project.data.description }}</div>
-				<div class="project-card__date">{{ project.data.years }}</div>
-				
+			<h2>{{ sectionName[loop.index0] }}</h2>
+			{# <p class="project-list-container__desc">
+				{{ sectionDescription[loop.index0] }}
+			</p> #}
+		
+			<div class="project-list">		
+				{% for project in collection %}		
+					<article class="project-card">
+						{% setAsync "imageHtml" %}
+							{% image project.fileSlug + "/cover.jpg", "project-card__img", "", 450 %}
+						{% endsetAsync %}
+						{{ imageHtml | safe }}
+						<div class="project-card__text">
+							<div class="project-card__tags tags">
+								{% for tag in project.data.category %}
+									<span class="tag --{{ tag | lower | replace(' ', '-') }}">{{ tag }}</span>
+								{% endfor %}
+							</div>
+							<a class="project-card__link" href="{{ project.data.permalink }}">
+								{{ project.data.title }}
+							</a>
+							<div class="project-card__desc">{{ project.data.description }}</div>
+							<div class="project-card__date">{{ project.data.years }}</div>
+							
+						</div>
+					</article>
+				{% endfor %}
 			</div>
-		</article>
-	{%- endfor -%}
-</div>
+		</div>
+	</section>
+{% endfor %}

@@ -6,8 +6,9 @@ category:
 - Development
 years: Since 2018
 layout: project.njk
+type: pet
 order: 4
-permalink: "/pet-projects/ux-kb/"
+permalink: "/projects/ux-kb/"
 ---
 
 {% projectSection "About the project" %}
