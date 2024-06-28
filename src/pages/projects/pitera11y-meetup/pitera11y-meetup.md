@@ -1,6 +1,6 @@
 ---
 title: Pitera11y Meetup
-description: Pet project, web accessibility meetup
+description: Web accessibility meetup
 category:
 - Graphic Design
 - Organizing
