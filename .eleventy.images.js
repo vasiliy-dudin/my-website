@@ -31,7 +31,7 @@ module.exports = config => {
 			urlPath: outputURL,
 			outputDir: outputFolder,
 			sharpWebpOptions: {
-				quality: 83,
+				quality: 94,
 				smartSubsample: true
 			}
 		});
