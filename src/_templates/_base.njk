@@ -18,7 +18,7 @@
 
 
 
-<body class="body">
+<body class="body {% if layout == 'project' %}wide-layout{% endif %}">
 	{% include "header.njk" %}
 	<main class="main" id="main-content">
 		{{ content | safe }}
