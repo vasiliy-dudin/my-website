@@ -11,6 +11,7 @@ order: 4
 permalink: "/projects/ux-kb/"
 ---
 
-{% projectSection "About the project" %}
+{% projectSection %}
+	## About the project
 	{% image "images/1.png", "project-card__img", "", 800 %}
 {% endprojectSection %}

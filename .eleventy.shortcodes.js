@@ -18,21 +18,12 @@ module.exports = config => {
 
 
 	// Wrapper for project sections
-	config.addPairedShortcode("projectSection", function(content, title, id) {
+	config.addPairedShortcode("projectSection", function(content) {
 		// Convert tabs to spaces while preserving relative indentation
 		const cleanedContent = content.replace(/^(\t+)/gm, (match, tabs) => '  '.repeat(tabs.length));
 		const renderedContent = md.render(cleanedContent);
-
-		let idValue;
-		if (id) {
-			idValue = id;
-		}
-		else {
-			// Create an ID by removing spaces and converting to lowercase
-			idValue = title.replace(/\s+/g, '-').toLowerCase();
-		}
 		
-		return `<div class="project-section"><h2 class="project-section__heading" id=${idValue}>${title}</h2>${renderedContent}</div>`;
+		return `<div class="project-section">${renderedContent}</div>`;
 	});
 
 	// emphasize inline values
