@@ -42,7 +42,6 @@ module.exports = function(config) {
 	config.addPassthroughCopy("src/fonts");
 	config.addPassthroughCopy( "src/assets/**/*");
 	config.addPassthroughCopy("src/*.txt");
-	config.addPassthroughCopy("src/manifest.json");
 	config.addWatchTarget("./src/styles/**/*");
 	config.addWatchTarget("./src/pages/**/*");
 
