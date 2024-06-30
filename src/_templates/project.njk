@@ -1,54 +1,61 @@
 ---
 layout: _base.njk
 ---
-<div class="project-header-container">
-	<div class="container">
-		<div class="project-nav">
-			<a href="/projects/" class="project-nav__back">Projects</a>
+<div class="container cols">
+	<div class="col1">
+		<div class="project-header-container">
+			<div class="project-nav">
+				<a href="/projects/" class="project-nav__back">Projects</a>
 
-			{# Neighbours #}
-			{% set collection = collections.allProjects %}
-			{% set previousPage = collection | getPreviousCollectionItem %}
-			{% set nextPage = collection | getNextCollectionItem %}
-			{% if previousPage or nextPage %}
-				<div class="project-nav__neighbours">
-					{% if previousPage %}
-						<a class="project-nav__neighbour-lnk" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">
-							<img class="project-nav__icon --prev" src="/assets/arrow-neighbours.svg" alt="">
-							Previous
-						</a>
-					{% endif %}
-					{% if nextPage %}
-						<a class="project-nav__neighbour-lnk" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">
-							Next
-							<img class="project-nav__icon --next" src="/assets/arrow-neighbours.svg" alt="">
-						</a>
-					{% endif %}
+				{# Neighbours #}
+				{% set collection = collections.allProjects %}
+				{% set previousPage = collection | getPreviousCollectionItem %}
+				{% set nextPage = collection | getNextCollectionItem %}
+				{% if previousPage or nextPage %}
+					<div class="project-nav__neighbours">
+						{% if previousPage %}
+							<a class="project-nav__neighbour-lnk" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">
+								<img class="project-nav__icon --prev" src="/assets/arrow-neighbours.svg" alt="">
+								Previous
+							</a>
+						{% endif %}
+						{% if nextPage %}
+							<a class="project-nav__neighbour-lnk" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">
+								Next
+								<img class="project-nav__icon --next" src="/assets/arrow-neighbours.svg" alt="">
+							</a>
+						{% endif %}
+					</div>
+				{% endif %}
+			</div>
+
+			<header class="project-header">
+				<div class="project-header__art">
+					{% include "../assets/bg-lines-2.svg" %}
 				</div>
-			{% endif %}
+				{% image "/cover-wide.jpg", "project-header__img", "", 920 %}
+				<div class="project-header__content">
+					<h1 class="project-header__h1">{{ title }}</h1>
+					<div class="project-header__description">{{ description }}</div>
+					<div class="project-header__date">{{ years }}</div>
+					<div class="tags">
+						{%- for tag in category -%}
+							<span class="tag --{{ tag | lower | replace(' ', '-') }}">{{ tag }}</span>
+						{%- endfor -%}
+					</div>
+				</div>
+			</header>
 		</div>
 
-		<header class="project-header">
-			<div class="project-header__art">
-				{% include "../assets/bg-lines-2.svg" %}
-			</div>
-			{% image "/cover-wide.jpg", "project-header__img", "", 920 %}
-			<div class="project-header__content">
-				<h1 class="project-header__h1">{{ title }}</h1>
-				<div class="project-header__description">{{ description }}</div>
-				<div class="project-header__date">{{ years }}</div>
-				<div class="tags">
-					{%- for tag in category -%}
-						<span class="tag --{{ tag | lower | replace(' ', '-') }}">{{ tag }}</span>
-					{%- endfor -%}
-				</div>
-			</div>
-		</header>
+		<div class="project-body">
+			{{ content | safe }}
+		</div>
+		{% include "contacts-block.njk" %}
 	</div>
-</div>
-<div class="container">
-	<div class="project-body">
-		{{ content | safe }}
+
+	<div class="col2">
+		<div class="stiky">
+			{{ content | toc | safe }}
+		</div>
 	</div>
-	{% include "contacts-block.njk" %}
 </div>
