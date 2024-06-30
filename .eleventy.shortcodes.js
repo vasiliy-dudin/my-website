@@ -1,4 +1,5 @@
 const markdownIt = require("markdown-it");
+const markdownItAnchor = require('markdown-it-anchor');
 const fsExtra = require("fs-extra");
 const path = require("path");
 
@@ -7,7 +8,7 @@ module.exports = config => {
 		html: true,
 		breaks: true,
 		linkify: true
-	});
+	}).use(markdownItAnchor);
 	config.setLibrary("md", md);
 
 

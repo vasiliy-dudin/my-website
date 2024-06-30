@@ -4,6 +4,8 @@ const yaml = require("js-yaml");
 const pluginImages = require("./.eleventy.images.js");
 const pluginShortcodes = require("./.eleventy.shortcodes.js");
 const pluginFilters= require("./.eleventy.filters.js");
+const tableOfContent = require("@uncenter/eleventy-plugin-toc");
+
 
 module.exports = function(config) {
 	config.addDataExtension("yaml", contents => yaml.load(contents));
@@ -30,7 +32,12 @@ module.exports = function(config) {
 		return [...caseStudyProjects, ...petProjects];
 	});
 
-	
+	/////////// Plugins
+	config.addPlugin(tableOfContent, {
+		tags: ["h2"]
+	  });
+
+
 	/////////// Custom plugins or settings
 	config.addPlugin(pluginShortcodes);
 	config.addPlugin(pluginImages);
