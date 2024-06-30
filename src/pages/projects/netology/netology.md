@@ -6,7 +6,7 @@ category:
   - UI Design
   - UX Research
 years: Dec 2022 - now
-layout: project.njk
+layout: project
 type: case-study
 order: 1
 permalink: "/projects/netology/"

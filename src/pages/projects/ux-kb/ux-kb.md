@@ -5,7 +5,7 @@ category:
 - Content
 - Development
 years: Since 2018
-layout: project.njk
+layout: project
 type: pet
 order: 4
 permalink: "/projects/ux-kb/"

@@ -4,7 +4,7 @@ description: Frontend Events (open source)
 category:
 - UI Design
 years: 2021
-layout: project.njk
+layout: project
 type: pet
 order: 1
 permalink: "/projects/piter-css/"

@@ -5,9 +5,9 @@ category:
   - UX Design
   - UI Design
 years: Jul 2021 - May 2022
-layout: project.njk
+layout: project
 type: case-study
-order: 2
+order: 3
 permalink: "/projects/practicum/"
 ---
 

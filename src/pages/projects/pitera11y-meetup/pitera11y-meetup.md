@@ -5,7 +5,7 @@ category:
 - Graphic Design
 - Organizing
 years: 2019-2021
-layout: project.njk
+layout: project
 type: pet
 order: 2
 permalink: "/projects/pitera11y-meetup/"

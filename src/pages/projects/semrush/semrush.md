@@ -5,9 +5,9 @@ category:
   - UX Design
   - UX Research
 years: Jun 2018 - Jan 2020
-layout: project.njk
+layout: project
 type: case-study
-order: 3
+order: 2
 permalink: "/projects/semrush/"
 ---
 
