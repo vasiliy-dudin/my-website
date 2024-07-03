@@ -1,9 +1,37 @@
 ---
 layout: _base.njk
 ---
+
+{% macro neighbours(where) %}
+	{# Neighbours #}
+	{% set collection = collections.allProjects %}
+	{% set previousPage = collection | getPreviousCollectionItem %}
+	{% set nextPage = collection | getNextCollectionItem %}
+	{% if previousPage or nextPage %}
+		<div class="project-neighbours">
+			{% if previousPage %}
+				<a class="project-neighbours__lnk --prev" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">
+					<img class="project-neighbours__icon --prev" src="/assets/arrow-neighbours.svg" alt="">
+					Previous
+				</a>
+			{% endif %}
+			{% if nextPage %}
+				<a class="project-neighbours__lnk --next" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">
+					Next
+					<img class="project-neighbours__icon --next" src="/assets/arrow-neighbours.svg" alt="">
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
+{% endmacro %}
+
+
 <div class="container project-cols">
 	<div class="project-col-2">
-		<div class="toc">{{ content | toc | safe }}</div>
+		
+		<div class="project-nav">
+			{{ neighbours() }}
+			{{ content | toc | safe }}</div>
 	</div>
 	
 	<div class="project-col-1">
@@ -13,27 +41,7 @@ layout: _base.njk
 				<div class="project-header__content">
 					<div class="project-header__h1-row">
 						<h1 class="project-header__h1">{{ title }}</h1>
-
-						{# Neighbours #}
-						{% set collection = collections.allProjects %}
-						{% set previousPage = collection | getPreviousCollectionItem %}
-						{% set nextPage = collection | getNextCollectionItem %}
-						{% if previousPage or nextPage %}
-							<div class="project-neighbours">
-								{% if previousPage %}
-									<a class="project-neighbours__lnk" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">
-										<img class="project-neighbours__icon --prev" src="/assets/arrow-neighbours.svg" alt="">
-										Previous
-									</a>
-								{% endif %}
-								{% if nextPage %}
-									<a class="project-neighbours__lnk" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">
-										Next
-										<img class="project-neighbours__icon --next" src="/assets/arrow-neighbours.svg" alt="">
-									</a>
-								{% endif %}
-							</div>
-						{% endif %}
+						{{ neighbours() }}
 					</div>
 					<div class="project-header__description">{{ description }}</div>
 					<div class="project-header__date">{{ years }}</div>

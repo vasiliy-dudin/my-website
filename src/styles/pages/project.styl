@@ -15,8 +15,10 @@
 		order: 2
 		flex: 0 0 240px
 
-.toc
-	position: sticky;
+.project-nav
+	display: grid
+	position: sticky
+	gap: 12px
 	top 12px
 	padding: 16px
 	border-radius: $radius--XL
@@ -85,6 +87,15 @@ $spacing = 24px
 	&__icon.--prev
 		transform: rotate(180deg)
 
+	// neighbours in header
+	.project-header &
+		// Hides from header on desktops
+		+media(lg)
+			display: none
+
+	.project-nav &
+		display: flex
+		justify-content: space-between
 		
 
 // =====================
