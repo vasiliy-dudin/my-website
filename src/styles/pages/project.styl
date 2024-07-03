@@ -18,7 +18,7 @@
 .project-nav
 	display: grid
 	position: sticky
-	gap: 12px
+	gap: 16px
 	top 12px
 	padding: 16px
 	border-radius: $radius--XL
@@ -81,6 +81,11 @@ $spacing = 24px
 		text-decoration: none
 		color: $sd-color__palette-gray-500
 		border-radius: $radius--M
+	// The next link is always on the right. Even if it's the very first page
+	&__lnk.--next
+		+media(md)
+			margin-left: auto
+
 	&__icon
 		width: 24px
 		height: 24px
