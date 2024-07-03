@@ -34,8 +34,13 @@ module.exports = function(config) {
 
 	/////////// Plugins
 	config.addPlugin(tableOfContent, {
-		tags: ["h2"]
-	  });
+		tags: ["h2"],
+		ul: true, // whether to a use a `ul` or `ol`
+		wrapper: function (toc) {
+			// wrapper around the generated TOC
+			return `${toc}`;
+		}
+	});
 
 
 	/////////// Custom plugins or settings

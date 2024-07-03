@@ -1,24 +1,31 @@
 @import "../variables/_index.styl"
 @import "../variables/tokens"
 @import "../variables/tokens-semantic.styl"
-	
-// Навигация по странице
-.cols
+
+.project-cols
 	display flex
 	gap: 24px
 
-.col2
-	position: relative
-	padding-top: 48px
+// Page navigation
+.project-col-2
+	display: none
+	+media(lg)
+		display: block
+		position: relative
+		order: 2
+		flex: 0 0 240px
 
-.stiky
+.toc
 	position: sticky;
 	top 12px
-	height: 50px
-	width 200px
-	background: #fff
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.33)
-	border-radius: $radius--L
+	padding: 16px
+	border-radius: $radius--XL
+	box-shadow: 0 0 20px #00000027
+	ul
+		margin: 0
+		padding: 0
+		list-style-type: none
+		font-size: $font-size-xs
 
 
 // =====================
@@ -57,25 +64,33 @@ $spacing = 24px
 	&__img
 		@extend .img-fluid
 		display block
+		width: 100%
 		@extend $g__section $radius
 	&__description
 	&__date
 		line-height 1.1
 	
-	
+	&__h1-row
+		display: contents
+		+media(md)
+			display: flex
+			justify-content: space-between
 
-.project-nav
-	display flex
-	margin-bottom 16px
-
-	&__neighbours
-		display flex
-		margin-left: auto
-		gap: 1rem
-
-	&__neighbour-lnk
+.project-neighbours
+	display: inline-flex
+	flex-shrink: 0	
+	&__lnk
+		display: flex
+		align-items: center
+		padding: 4px 8px
 		gap: 4px
-
+		font-size: $font-size-xs
+		text-decoration: none
+		color: $sd-color__palette-gray-500
+		border-radius: $radius--M
+	&__icon
+		width: 24px
+		height: 24px
 	&__icon.--prev
 		transform: rotate(180deg)
 
@@ -97,17 +112,6 @@ $spacing = 24px
 	@extend $g__section $radius
 	h2
 		margin-top: 0
-
-
-.project-cols
-	+media(lg)
-		display: grid
-		gap 32px
-		grid-template-columns: 3fr 5fr
-
-	h3:first-child
-		margin-top: 0
-//.project-col
 
 
 
