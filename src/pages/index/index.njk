@@ -6,15 +6,22 @@ permalink: /
 ---
 
 <section class="hero-section">
-	<div class="hero-section__img-col">
-		{% image "images/me.jpg", "hero-section__img", "", 240 %}
-	</div>
-	<div class="hero-section__text">
-		{% md %}
-			## Hi, I’m Vasiliy
-			- Product and UX designer based in Tbilisi, Georgia.
-			- I'm in love with design, UX research, design systems, DesignOps, accessibility and inclusive design.
-		{% endmd %}
+	{% image "images/photo.jpg", "hero-section__img", "", 320 %}
+	<div class="hero-section__text-col">
+		<h2>Hi there, I’m Vasiliy</h2>
+		<div class="hero-section__subtitle">Sr. Product and UX designer</div>
+		<div class="hero-section__tags-container">
+			I'm in love with
+			<ul class="hero-section__tags">
+				<li class="hero-section__tag">Human-centered Design</li>
+				<li class="hero-section__tag">Accessibility</li>
+				<li class="hero-section__tag">Research</li>
+				<li class="hero-section__tag">Design Thinking</li>
+				<li class="hero-section__tag">UI Design</li>
+				<li class="hero-section__tag">Design Systems</li>
+				<li class="hero-section__tag">Design Strategy</li>
+			</ul>
+		</div>
 	</div>
 </section>
 
