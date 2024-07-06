@@ -43,7 +43,18 @@
 		@media (min-width: 680px)
 			flex: 0 1 calc(100% - 240px)
 
-	h2
+	&__heading-row
+		display: flex
+		gap: 8px
+		// responsive
+		justify-content: center
+		@media (min-width: 680px)
+			justify-content: flex-start
+
+	&__heading-img
+		display: block
+	
+	&__heading
 		margin: 0
 
 	&__subtitle
