@@ -165,17 +165,18 @@ $spacing = 24px
 
 // Highlight inline values
 .highlightValue
-	padding: 4px 8px
-	border: 1px solid transparent
-	border-radius: $radius--S
+	text-decoration: underline
+	text-decoration-thickness: 8px
+	text-decoration-skip-ink: none
+	text-underline-offset: -1px
 	&.--old
 		border-color: $sd-color__palette-gray-300
 	&.--bad
-		background: $sd-color__palette-yellow-100
+		text-decoration-color: alpha($sd-color__palette-yellow-200, 60%)
 	&.--good
-		background: $sd-color__palette-green-100
-		
-		
+		text-decoration-color: alpha($sd-color__palette-green-200, 60%)
+
+
 
 
 .project-section__highlights

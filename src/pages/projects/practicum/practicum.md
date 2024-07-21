@@ -104,9 +104,9 @@ permalink: "/projects/practicum/"
 
 {% projectSection %}
 	## Results
-	- {% highlightValue "Customer support tickets: **52%** → **16%**", "good" %} within the first month. 
-	- {% highlightValue "NPS: **+48** → **+58**", "good" %} within the first 3 months.
-	- {% highlightValue "Average number of sessions per parent: **increased by 7%**", "bad" %} within 3 months. 
+	- {% highlightValue "Customer support tickets: 52% → 16%", "good" %} within the first month. 
+	- {% highlightValue "NPS: +48 → +58", "good" %} within the first 3 months.
+	- {% highlightValue "Average number of sessions per parent: increased by 7%", "bad" %} within 3 months. 
 	The goal was too ambitious.
 {% endprojectSection %}
 
