@@ -13,7 +13,7 @@ module.exports = config => {
 		const outputURL = "/images/";
 		const outputFolder = "./dist/images/";
 		let widths = [];
-		widths.push(width, width*1.25, width*1.5, width*2);
+			widths.push(width, width*1.25, width*1.5, width*2);
 
 		let metadataAvif = await Image(srcAbsolute, {
 			widths: widths,
@@ -25,12 +25,22 @@ module.exports = config => {
 				effort: 9
 			}
 		});
+		let metadataWebp = await Image(srcAbsolute, {
+			widths: widths,
+			formats: ["webp"],
+			urlPath: outputURL,
+			outputDir: outputFolder,
+			sharpWebpOptions: {
+				quality: 94,
+				smartSubsample: true
+			}
+		});
 
 		const avifSrcset = Object.values(metadataAvif)
 			.map(item => `${item[0].url}, ${item[1].url} 1.25x, ${item[2].url} 1.5x, ${item[3].url} 2x`)
 			.join(", ");
 
-		const avifSources = Object.values(metadataAvif)
+		const webpSources = Object.values(metadataWebp)
 			.map(item => {
 				const src = item[0].url;
 				const srcset = `${item[0].url}, ${item[1].url} 1.25x, ${item[2].url} 1.5x, ${item[3].url} 2x`;
@@ -40,6 +50,7 @@ module.exports = config => {
 			})
 			.join(" ");
 
-		return `<picture><source srcset="${avifSrcset}" type="image/avif"><img ${avifSources}></picture>`;
+		return `<picture><source srcset="${avifSrcset}" type="image/avif"><img ${webpSources}></picture>`;
 	});
+	
 }
