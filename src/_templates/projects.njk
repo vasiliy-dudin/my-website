@@ -6,7 +6,9 @@ layout: _base.njk
 	<section class="project-list-container --{{ loop.index }}">
 		<div class="container">
 			{% if loop.index == 1 %}
-				<h1>{{ title }}</h1>
+				<div class="h1-row">
+					<h1 aria-describedby="counter">{{ title }}</h1> <span class="badge h1-row__badge" id="counter">{{ collections.caseStudyProjects.length + collections.petProjects.length }}</span>
+				</div>
 				{{ content | safe }}
 			{% endif %}	
 
