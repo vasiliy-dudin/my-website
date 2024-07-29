@@ -7,16 +7,13 @@ layout: _base.njk
 		<div class="container">
 			{% if loop.index == 1 %}
 				<div class="h1-row">
-					<h1 aria-describedby="counter">{{ title }}</h1> <span class="badge h1-row__badge" id="counter">{{ collections.caseStudyProjects.length + collections.petProjects.length }}</span>
+					<h1 aria-describedby="counter">{{ title }}</h1>
+					<span class="badge h1-row__badge" id="counter">{{ collections.caseStudyProjects.length + collections.petProjects.length }}</span>
 				</div>
 				{{ content | safe }}
 			{% endif %}	
 
-			<h2>{{ sectionName[loop.index0] }}</h2>
-			{# <p class="project-list-container__desc">
-				{{ sectionDescription[loop.index0] }}
-			</p> #}
-		
+			<h2>{{ sectionName[loop.index0] }}</h2>		
 			<div class="project-list">		
 				{% for project in collection %}		
 					<article class="project-card">
