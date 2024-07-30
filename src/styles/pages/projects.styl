@@ -21,10 +21,7 @@
 
 .project-list
 	display: grid
-	grid-template-columns: 1fr
 	gap: 1rem
-	+media(md)
-		grid-template-columns: 1fr 1fr
 /* 	+media(md)
 		&.--2
 		&.--3
@@ -39,7 +36,7 @@
 		.project-card__title
 			filter: grayscale(1) */
 
-.project-card
+.project-card	
 	background: $sd-color__palette-neutral-white
 	position: relative
 	border-radius: $radius--L
@@ -48,6 +45,8 @@
 	will-change: transform
 	transform: translate3d(0, 0, 0)
 	transition: transform .1s linear
+	+media(md)
+		display: flex
 		
 	&:active
 		transform: scale(0.995)
@@ -109,8 +108,12 @@
 
 	&__img
 		display: block
-		@extend .img-fluid
+		height: auto
 		width: 100%
+		+media(md)
+			width: 360px
+		+media(lg)
+			width: 450px		
  	
 
 	// Caption
