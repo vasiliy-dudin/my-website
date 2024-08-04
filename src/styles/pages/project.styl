@@ -44,14 +44,14 @@ $spacing = 24px
 	background $background-3
 	box-shadow: 8px 12px 0 $background-2
 	@extend $g__section $radius
-	+media(md)
+	+media(lg)
 		grid-template-columns: auto 320px
 
 	&__content
 		display: flex
 		flex-direction: column
 		gap: 8px
-		+media-down(md)
+		+media-down(lg)
 			order: -1
 		+media(md)
 			padding-top: 32px
