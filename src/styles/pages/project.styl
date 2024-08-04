@@ -2,6 +2,9 @@
 @import "../variables/tokens"
 @import "../variables/tokens-semantic.styl"
 
+.container.--wide
+	max-width: 1280px
+
 .project-cols
 	display flex
 	gap: 24px
@@ -9,20 +12,17 @@
 // Page navigation
 .project-col-2
 	display: none
-	+media(lg)
+	+media(md)
+		flex: 0 0 200px
 		display: block
 		position: relative
 		order: 2
-		flex: 0 0 240px
 
 .project-nav
 	display: grid
 	position: sticky
-	gap: 16px
+	margin-top: 16px
 	top 12px
-	padding: 16px
-	border-radius: $radius--XL
-	box-shadow: 0 0 20px #00000027
 	ul
 		margin: 0
 		padding: 0
@@ -37,28 +37,32 @@ $spacing = 24px
 
 .project-header
 	position relative
-	display: flex
-	flex-direction: column
+	display: grid
+	gap: 16px
+	padding: 16px
 	margin-bottom: $spacing
-	justify-content: space-between
-	flex-wrap: wrap
-	background $background-2
-	box-shadow: 8px 12px 0 $border-color-2, 
-		-2px -2px 0 $border-color-2
+	background $background-3
+	box-shadow: 8px 12px 0 $background-2
 	@extend $g__section $radius
+	+media(md)
+		grid-template-columns: auto 320px
 
-	&__content 
-		@extend $g__section $paddings		
+	&__content
 		display: flex
 		flex-direction: column
 		gap: 8px
+		+media-down(md)
+			order: -1
+		+media(md)
+			padding-top: 32px
+
 	&__h1
 		margin: 0
 	&__img
 		@extend .img-fluid
 		display block
 		width: 100%
-		@extend $g__section $radius
+		border-radius: $radius--M
 	&__description
 	&__date
 		line-height 1.1
@@ -71,7 +75,9 @@ $spacing = 24px
 
 .project-neighbours
 	display: inline-flex
-	flex-shrink: 0	
+	flex-shrink: 0
+	gap: 8px
+	margin-top: auto
 	&__lnk
 		display: flex
 		align-items: center
@@ -81,26 +87,12 @@ $spacing = 24px
 		text-decoration: none
 		color: $sd-color__palette-gray-500
 		border-radius: $radius--M
-	// The next link is always on the right. Even if it's the very first page
-	&__lnk.--next
-		+media(md)
-			margin-left: auto
 
 	&__icon
-		width: 24px
-		height: 24px
+		width: 16px
+		height: 16px
 	&__icon.--prev
 		transform: rotate(180deg)
-
-	// neighbours in header
-	.project-header &
-		// Hides from header on desktops
-		+media(lg)
-			display: none
-
-	.project-nav &
-		display: flex
-		justify-content: space-between
 		
 
 // =====================
@@ -126,43 +118,30 @@ $spacing = 24px
 // =====================
 // Контент
 // =====================
+.project-body
+	p, li
+		max-width: 63ch
 
-.project-video
-	+media-down(md)
-		position: relative
-		padding-bottom: 56.25% // 16:9
-		height: 0
-	iframe
+	// Изображения
+	img
 		display: block
-		+media-down(md)
-			position: absolute
-			top: 0
-			left: 0
-			width: 100%
-			height: 100%
+		@extend .img-fluid
+		border: 1px solid #fff
+		border-radius: $radius--M
 
-// Изображения
-.project-body img
-	display: block
-	@extend .img-fluid
-	border: 1px solid #fff
-	border-radius: $radius--M
-// .project-img
-// 	&:not(:last-child) // Отступ под картинкой
-// 		margin-bottom: 1rem
-// 	&__src
-// 		height auto
-// 		max-width 100%
-// 		&.--md
-// 			max-width 800px
-// 			width 100%
-// 		&.--s
-// 			max-width 600px
-// 			width 100%
-// 		&.--xs
-// 			max-width 400px
-// 			width 100%
-
+// .project-video
+// 	+media-down(md)
+// 		position: relative
+// 		padding-bottom: 56.25% // 16:9
+// 		height: 0
+// 	iframe
+// 		display: block
+// 		+media-down(md)
+// 			position: absolute
+// 			top: 0
+// 			left: 0
+// 			width: 100%
+// 			height: 100%
 
 // Highlight inline values
 .highlightValue
@@ -200,11 +179,3 @@ $spacing = 24px
 		display: block
 		background-image: url("../assets/external-link.svg")
 		    background-size: contain
-
-// Разделение на колонки
-.article-project
-	.row
-		display grid
-		gap 32px
-		+media(sm)
-			grid-template-columns: repeat(auto-fit, minmax(330px, 1fr))
