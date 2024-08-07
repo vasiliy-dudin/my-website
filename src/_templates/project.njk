@@ -11,14 +11,12 @@ layout: _base.njk
 		<div class="project-neighbours">
 			{% if previousPage %}
 				<a class="project-neighbours__lnk --prev" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">
-					<img class="project-neighbours__icon --prev" src="/assets/arrow-neighbours.svg" alt="">
-					Previous
+					<img class="project-neighbours__icon --prev" src="/assets/arrow-neighbours.svg" alt="Previous">
 				</a>
 			{% endif %}
 			{% if nextPage %}
 				<a class="project-neighbours__lnk --next" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">
-					Next
-					<img class="project-neighbours__icon --next" src="/assets/arrow-neighbours.svg" alt="">
+					<img class="project-neighbours__icon --next" src="/assets/arrow-neighbours.svg" alt="Next">
 				</a>
 			{% endif %}
 		</div>
@@ -26,16 +24,19 @@ layout: _base.njk
 {% endmacro %}
 
 
-<div class="container --wide project-cols">
+<div class="container --project">
 	<div class="project-col-2">
 		
 		<div class="project-nav">
-			{{ content | toc | safe }}</div>
+			<a href="#main">Main</a>
+			{{ content | toc | safe }}
+			{{ neighbours() }}
+		</div>
 	</div>
 	
 	<div class="project-col-1">
 		<div class="project-header-container">
-			<header class="project-header">
+			<header class="project-header" id="main">
 				{% image "/cover-wide.jpg", "project-header__img", "", 920 %}
 				<div class="project-header__content">
 					<div class="project-header__h1-row">

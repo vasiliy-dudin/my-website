@@ -2,32 +2,58 @@
 @import "../variables/tokens"
 @import "../variables/tokens-semantic.styl"
 
-.container.--wide
-	max-width: 1280px
-
-.project-cols
+// =====================
+// Layout
+// =====================
+.container.--project
 	display flex
 	gap: 24px
+	position: unset
 
+
+
+// =====================
 // Page navigation
+// =====================
+
+$nav-breakpoint = 1320px
+
 .project-col-2
 	display: none
+	
 	+media(md)
-		flex: 0 0 200px
 		display: block
+		flex: 1 0 140px
 		position: relative
 		order: 2
+	@media (min-width: $nav-breakpoint)
+		position: absolute
+		right: 16px
+		top: 16px
+		height: 100%
+		max-width: 160px
+
+// For correct positioning. project-col-2
+@media (min-width: $nav-breakpoint)
+	.main
+		position: relative
 
 .project-nav
-	display: grid
 	position: sticky
 	margin-top: 16px
 	top 12px
 	ul
+		display: contents
 		margin: 0
 		padding: 0
-		list-style-type: none
+		list-style-type: none		
+	a
 		font-size: $font-size-xs
+		color: $color-text-desc
+		text-decoration: none
+		font-weight: 600
+		&.--active
+			color: black
 
 
 // =====================
@@ -44,6 +70,7 @@ $spacing = 24px
 	background $background-3
 	box-shadow: 8px 12px 0 $background-2
 	@extend $g__section $radius
+	scroll-margin-top: 40px
 	+media(lg)
 		grid-template-columns: auto 320px
 
@@ -87,13 +114,23 @@ $spacing = 24px
 		text-decoration: none
 		color: $color-text-body
 		border-radius: $radius--M
-
+	// The next link is always on the right. Even if it's the very first page
+	&__lnk.--next
+		+media(md)
+			margin-left: auto
 	&__icon
 		width: 16px
 		height: 16px
 	&__icon.--prev
 		transform: rotate(180deg)
-		
+	
+	// Hide link in header, show it in page nav
+	+media(md)
+		.project-header &
+			display: none
+		.project-nav &
+			display: flex
+			margin-top: 16px
 
 // =====================
 // Разметка контентных блоков
