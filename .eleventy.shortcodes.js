@@ -25,9 +25,7 @@ module.exports = config => {
 		const renderedContent = md.render(cleanedContent);
 		
 		return `<div class="project-section">
-			<div class="container --project">
-				<div class="cntnt">${renderedContent}</div>
-			</div>
+			<div class="container --project">${renderedContent}</div>
 		</div>`;
 	});
 
