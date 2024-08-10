@@ -24,7 +24,11 @@ module.exports = config => {
 		const cleanedContent = content.replace(/^(\t+)/gm, (match, tabs) => '  '.repeat(tabs.length));
 		const renderedContent = md.render(cleanedContent);
 		
-		return `<div class="project-section">${renderedContent}</div>`;
+		return `<div class="project-section">
+			<div class="container --project">
+				<div class="cntnt">${renderedContent}</div>
+			</div>
+		</div>`;
 	});
 
 	// emphasize inline values

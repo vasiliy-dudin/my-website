@@ -5,10 +5,31 @@
 // =====================
 // Layout
 // =====================
-.container.--project
-	display flex
-	gap: 24px
-	position: unset
+
+//For correct positioning. project-col-2
+.main
+	position: relative
+
+.container
+	// Header. Make it wider
+	&.--wide-header
+		+media(lg)
+			max-width: 1180px
+			min-width: last(values($breakpoints-and-widths))
+			width: 60vw
+	
+	// Place for sticky navigation
+	// Where: Header, content
+	&.--project
+		display flex
+		gap: 24px
+		position: unset
+		+media(md)
+			padding-right: calc(320px - 13vw)
+		+media(lg)
+			padding-right: calc(690px - 50vw)
+		@media (min-width: $nav-breakpoint)
+			padding-right: 1rem
 
 
 
@@ -23,50 +44,58 @@ $nav-breakpoint = 1320px
 	
 	+media(md)
 		display: block
-		flex: 1 0 140px
+		//flex: 1 0 140px
+		min-width: 140px
 		position: relative
 		order: 2
-	@media (min-width: $nav-breakpoint)
+		//@media (min-width: $nav-breakpoint)
 		position: absolute
 		right: 16px
-		top: 16px
+		top: 56px
 		height: 100%
 		max-width: 160px
 
-// For correct positioning. project-col-2
-@media (min-width: $nav-breakpoint)
-	.main
-		position: relative
-
+// TODO Contrast fails on small screens
 .project-nav
 	position: sticky
 	margin-top: 16px
-	top 12px
+	right: 12px
+	top: 12px
+	border-radius: $radius--M
 	ul
 		display: contents
 		margin: 0
 		padding: 0
 		list-style-type: none		
 	a
-		font-size: $font-size-xs
-		color: $color-text-desc
+		font-size: $font-size-sm
+		color: $sd-color__palette-blue-700
 		text-decoration: none
-		font-weight: 600
+		font-weight: 500
+		&:hover
+			background: unset
+			text-decoration: underline
 		&.--active
-			color: black
+			text-decoration: underline
 
 
 // =====================
 // Шапка проекта
 // =====================
-$spacing = 24px
+
+.project-header-section
+	@extend $section $paddings
+	@extend $section $tertiary
 
 .project-header
 	position relative
 	display: grid
 	gap: 16px
 	padding: 16px
+	background: #fff
+	box-shadow: 8px 12px 0 $sd-color__palette-blue-75
 	@extend $box $radius
+	scroll-margin-top: 400px
 	+media(lg)
 		grid-template-columns: auto 320px
 
@@ -135,16 +164,15 @@ $spacing = 24px
 .project-body
 	display flex
 	flex-direction: column
-	gap: $spacing
 
 // Section for grouping project description
 .project-section
-	@extend $g__section $secondary
-	@extend $g__section $paddings
-	@extend $g__section $radius
+	@extend $section $paddings
 	h2
 		margin-top: 0
 		scroll-margin-top: 32px
+	&:nth-child(even)
+		@extend $section $primary
 
 
 // =====================

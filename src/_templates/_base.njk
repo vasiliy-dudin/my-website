@@ -20,7 +20,7 @@
 
 <body class="body">
 	{% include "header.njk" %}
-	<main class="main{% if layout in ['project', 'projects'] %} --small-gap{% endif %}" id="main-content">
+	<main class="main{% if layout in ['project', 'projects'] %} --no-gap{% endif %}" id="main-content">
 		{{ content | safe }}
 	</main>
 
