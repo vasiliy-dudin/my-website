@@ -63,7 +63,8 @@
 		margin: 0
 		padding: 0
 		list-style-type: none		
-	a
+	ul a,
+	& > a
 		font-size: $font-size-sm
 		color: $sd-color__palette-blue-700
 		text-decoration: none
@@ -126,32 +127,40 @@
 	flex-shrink: 0
 	gap: 8px
 	margin-top: auto
-	&__lnk
-		display: flex
-		align-items: center
-		padding: 4px 8px
-		gap: 4px
-		font-size: $font-size-sm
-		text-decoration: none
-		color: $color-text-body
-		border-radius: $radius--M
-	// The next link is always on the right. Even if it's the very first page
-	&__lnk.--next
-		+media(md)
-			margin-left: auto
-	&__icon
-		width: 16px
-		height: 16px
-	&__icon.--prev
-		transform: rotate(180deg)
-	
 	// Hide link in header, show it in page nav
 	+media(md)
 		.project-header &
 			display: none
 		.project-nav &
 			display: flex
-			margin-top: 16px
+			margin-top: 8px
+
+	&__lnk
+		display: flex
+		align-items: center
+		padding: 12px 8px
+		gap: 4px
+		font-size: $font-size-sm
+		text-decoration: none
+		color: $color-text-body
+		border-radius: $radius--M
+		border: 1px solid transparent
+		&:hover
+			background: unset
+			border-color: $sd-color__palette-blue-700
+
+	// The next link is always on the right. Even if it's the very first page
+	&__lnk.--next
+		+media(md)
+			margin-left: auto
+
+	&__icon
+		width: 16px
+		height: 16px
+	&__icon.--prev
+		transform: rotate(180deg)
+
+
 
 // =====================
 // Разметка контентных блоков
