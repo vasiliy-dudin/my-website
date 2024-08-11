@@ -1,6 +1,6 @@
-@import "../variables/_index.styl"
-@import "../variables/tokens"
-@import "../variables/tokens-semantic.styl"
+@use "../variables" as *
+@use "../mixins" as *
+@use "../components/global" as *
 
 
 ////// Первая секция обо мне
@@ -10,8 +10,7 @@
 	flex-wrap: wrap
 	margin-bottom: 48px
 	overflow: hidden	
-	@extend $box $paddings
-	@extend $box $radius
+	@extend %box, %box__paddings, %box__radius
 	background: $sd-color__palette-neutral-white
 	box-shadow: 8px 12px 0 $border-color-1
 	border: 2px solid $border-color-1
@@ -72,7 +71,7 @@
 			justify-content: flex-start
 	
 	&__tag
-		display inline-flex
+		display: inline-flex
 		flex: 0 1 auto
 		list-style: none
 		padding: 4px 8px
@@ -83,9 +82,7 @@
 
 
 .front-section
-	@extend $box $paddings
-	@extend $box $radius
-	@extend $box $secondary
+	@extend %box, %box__paddings, %box__radius, %box__secondary
 	margin-bottom: 24px
 	h2
 		margin-top: 0
@@ -106,7 +103,7 @@
 		content: ''
 		display: block		
 		width: 12px
-		height: @width
+		height: 12px
 		flex-shrink: 0
 		margin-top: 16px
 		border-radius: 50%
@@ -129,12 +126,12 @@
 
 	&__img svg
 		width: 24px
-		height: @width
+		height: 24px
 		border-radius: $radius--S
 		overflow: hidden
-		+media(sm)
+		@include media(sm)
 			width: 48px
-			height: @width
+			height: 48px
 
 
 

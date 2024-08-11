@@ -1,12 +1,13 @@
-@import "../variables/_index.styl"
+@use "../variables" as *
+@use "../components/global" as *
 
-.contacts-block	
-	display flex
-	flex-direction column
-	gap	8px
+
+.contacts-block
+	display: flex
+	flex-direction: column
+	gap: 8px
 	margin-top: 64px
-	@extend $box $paddings
-	@extend $box $radius
+	@extend %box, %box__paddings, %box__radius
 	border: 3px solid $sd-color__palette-blue-75
 
 	&__heading

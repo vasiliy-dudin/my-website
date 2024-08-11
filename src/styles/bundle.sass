@@ -1,0 +1,41 @@
+@use 'sass:meta'
+@use "variables" as *
+@use "mixins" as *
+
+// Components
+@use "components/global"
+@use "components/skip-link"
+@use "components/link-block"
+@use "components/images"
+@use "components/tags"
+@use "components/scroll-to-top"
+@use "components/contacts-block"
+@use "components/badge"
+
+// Pages
+@use "pages/index"
+@use "pages/projects"
+@use "pages/contacts"
+
+// Declaring layers
+@layer main, project
+
+@layer main
+	// Foundation
+	@include meta.load-css("foundation/fonts")
+	@include meta.load-css("foundation/type")
+	@include meta.load-css("foundation/type__links")
+	@include meta.load-css("foundation/type__lists")
+	@include meta.load-css("foundation/focus")
+	@include meta.load-css("foundation/a11y")
+	// @include meta.load-css("foundation/type__variants")
+
+	// layout
+	@include meta.load-css("layout/layout")
+	@include meta.load-css("layout/header")
+	@include meta.load-css("layout/footer")
+	@include meta.load-css("layout/row")
+	// @include meta.load-css("basic/header__nav")
+
+@layer project
+	@include meta.load-css("pages/project")

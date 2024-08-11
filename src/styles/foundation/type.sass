@@ -1,8 +1,10 @@
-html
-	// Адаптивное
-	font-size $font-size-root - 2
-	+media(lg)
-		font-size $font-size-root
+@use "../variables" as *
+@use "../mixins" as *
+
+html // Адаптивное
+	font-size: $font-size-root - 2
+	@include media(lg)
+		font-size: $font-size-root
 
 
 body
@@ -35,20 +37,18 @@ h3, .h3
 	font-size: $font-size-h3
 
 h4, .h4
-	margin-top: 1.5rem;
-	margin-bottom: 0.5rem;
+	margin-top: 1.5rem
+	margin-bottom: 0.5rem
 	font-size: $font-size-h4
 
 h5, .h5
 	font-size: $font-size-h5
-	font-weight: bold;
-	margin: 0;
-
+	font-weight: bold
+	margin: 0
 h6, .h6
 	font-size: $font-size-h6
-	font-weight: bold;
-	margin: 0;
-
+	font-weight: bold
+	margin: 0
 p
 	margin-top: 0
 	margin-bottom: 16px
@@ -65,7 +65,3 @@ hr
 	margin-bottom: 1.2rem
 	border: 0
 	border-top: 1px solid rgba($sd-color__palette-gray-800, 0.1)
-
-		
-		
-		

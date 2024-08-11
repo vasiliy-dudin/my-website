@@ -1,6 +1,7 @@
-@import "../variables/_index.styl"
-@import "../variables/tokens.styl"
-@import "../variables/tokens-semantic.styl"
+@use "../variables" as *
+@use "../mixins" as *
+@use "../components/contacts-block" as *
+@use "../components/link-block" as *
 
 
 // h1 container
@@ -20,30 +21,30 @@
 .project-list
 	display: grid
 	gap: 1rem
-/* 	+media(md)
-		&.--2
-		&.--3
-			grid-template-columns: 1fr 1fr 1fr;
-	&.--1
-		margin-bottom: 4rem
-	&.--2
-		margin-bottom: $grid-gutter-width-base
-	// Серим ссылки
-	&.--2
-	&.--3
-		.project-card__title
-			filter: grayscale(1) */
+// /* 	@include media(md)
+// 		&.--2
+// 		&.--3
+// 			grid-template-columns: 1fr 1fr 1fr
+// 	&.--1
+// 		margin-bottom: 4rem
+// 	&.--2
+// 		margin-bottom: $grid-gutter-width-base
+// 	// Серим ссылки
+// 	&.--2
+// 	&.--3
+// 		.project-card__title
+// 			filter: grayscale(1) */
 
 .project-card	
 	background: $sd-color__palette-neutral-white
 	position: relative
 	border-radius: $radius--L
 	overflow: hidden
-	@extend $link-block
+	@extend %link-block
 	will-change: transform
 	transform: translate3d(0, 0, 0)
 	transition: transform .1s linear
-	+media(md)
+	@include media(md)
 		display: flex
 		
 	&:active
@@ -64,17 +65,17 @@
 		right: 0
 		bottom: 0
 	&__link:hover:after
-		background: alpha($sd-color__palette-yellow-300, 20%)
+		background: rgba($sd-color__palette-yellow-300, 0.2)
 		mix-blend-mode: screen
 
 	// Не опубликован
 	/* &.--unpublished
-		//background: alpha($sd-color__palette-neutral-white, 40%)
+		//background: rgba($sd-color__palette-neutral-white, 0.4)
 		box-shadow: unset
 		//filter: grayscale(0) */
 
 	&__text
-		display block
+		display: block
 		padding: 16px
 	&__link
 		line-height: $headings-line-height
@@ -92,15 +93,15 @@
 		&.--external:after
 			content: ''
 			width: 40px
-			height: @width
+			height: 40px
 			display: block
 			position: absolute
 			left: 16px
 			bottom: -8px
 			background-image: url("../imgs/external-link.svg")
 			background-repeat: no-repeat
-			background-size 20px
-			background-color $link-color
+			background-size: 20px
+			background-color: $link-color
 			background-position: center center
 			border-radius: 50% */
 
@@ -108,21 +109,21 @@
 		display: block
 		height: auto
 		width: 100%
-		+media(md)
+		@include media(md)
 			width: 360px
-		+media(lg)
+		@include media(lg)
 			width: 450px		
  	
 
 	// Caption
 
 	/* &__caption
-		display grid
-		gap 4px
+		display: grid
+		gap: 4px
 		line-height: 1.4
-		padding 16px */
+		padding: 16px */
 
 
-	&__desc
+	&__desc,
 	&__date
 		color: $color-text-body

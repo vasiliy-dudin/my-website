@@ -1,6 +1,7 @@
-@import "../variables/_index.styl"
-@import "../variables/tokens"
-@import "../variables/tokens-semantic.styl"
+@use '../variables' as *
+@use "../mixins" as *
+@use "../components/global" as *
+@use "../components/images" as *
 
 // =====================
 // Layout
@@ -13,17 +14,17 @@
 .container
 	// Header. Make it wider
 	&.--wide-header
-		+media(lg)
+		@include media(lg)
 			max-width: 1180px
-			min-width: last(values($breakpoints-and-widths))
+			min-width: nth(map-values($breakpoints-and-widths), length(map-values($breakpoints-and-widths)))
 			width: 60vw
 	
 	// Place for sticky navigation
 	// Where: Header, content
 	&.--project
-		+media(md)
+		@include media(md)
 			padding-right: calc(320px - 13vw)
-		+media(lg)
+		@include media(lg)
 			padding-right: calc(690px - 50vw)
 		@media (min-width: 1320px)
 			padding-right: 1rem
@@ -37,7 +38,7 @@
 .project-col-2
 	display: none
 	
-	+media(md)
+	@include media(md)
 		display: block
 		//flex: 1 0 140px
 		min-width: 140px
@@ -81,19 +82,18 @@
 // =====================
 
 .project-header-section
-	@extend $section $paddings
-	@extend $section $tertiary
+	@extend %section__paddings, %section__tertiary
 
 .project-header
-	position relative
+	position: relative
 	display: grid
 	gap: 16px
 	padding: 16px
 	background: #fff
 	box-shadow: 8px 12px 0 $sd-color__palette-blue-75
-	@extend $box $radius
+	@extend %box, %box__radius
 	scroll-margin-top: 400px
-	+media(lg)
+	@include media(lg)
 		grid-template-columns: auto 320px
 
 	&__content
@@ -102,23 +102,23 @@
 		gap: 8px
 		+media-down(lg)
 			order: -1
-		+media(md)
+		@include media(md)
 			padding-top: 32px
 
 	&__h1
 		margin: 0
 	&__img
 		@extend .img-fluid
-		display block
+		display: block
 		width: 100%
 		border-radius: $radius--M
-	&__description
+	&__description,
 	&__date
-		line-height 1.1
+		line-height: 1.1
 	
 	&__h1-row
 		display: contents
-		+media(md)
+		@include media(md)
 			display: flex
 			justify-content: space-between
 
@@ -128,7 +128,7 @@
 	gap: 8px
 	margin-top: auto
 	// Hide link in header, show it in page nav
-	+media(md)
+	@include media(md)
 		.project-header &
 			display: none
 		.project-nav &
@@ -151,7 +151,7 @@
 
 	// The next link is always on the right. Even if it's the very first page
 	&__lnk.--next
-		+media(md)
+		@include media(md)
 			margin-left: auto
 
 	&__icon
@@ -167,22 +167,22 @@
 // =====================
 
 .project-body
-	display flex
+	display: flex
 	flex-direction: column
 
 // Section for grouping project description
 .project-section
-	@extend $section $paddings
+	@extend %section__paddings
 	h2
 		margin-top: 0
 		scroll-margin-top: 32px
 	&:nth-child(even)
-		@extend $section $primary
+		@extend %section__primary
 
 
 // =====================
 // Контент
-// =====================
+// ====================
 .project-body
 	p, li
 		max-width: 63ch
@@ -217,9 +217,9 @@
 	&.--old
 		border-color: $sd-color__palette-gray-300
 	&.--bad
-		text-decoration-color: alpha($sd-color__palette-yellow-200, 20%)
+		text-decoration-color: rgba($sd-color__palette-yellow-200, 0.2)
 	&.--good
-		text-decoration-color: alpha($sd-color__palette-green-200, 20%)
+		text-decoration-color: rgba($sd-color__palette-green-200, 0.2)
 
 
 
@@ -229,18 +229,18 @@
 	width: 100%
 	padding: 24px
 	background: $sd-color__palette-blue-100
-	border-radius $radius--M
+	border-radius: $radius--M
 	font-weight: normal
 
 // External links
-.project-body a[href^="https://"]
+.project-body a[href^="https://"],
 .project-body a[href^="http://"]
 	align-items: center
 	gap: 8px
 	&:after
 		content: ''
 		width: 16px
-		height: @width
+		height: 16px
 		display: block
 		background-image: url("../assets/external-link.svg")
-		    background-size: contain
+		background-size: contain
