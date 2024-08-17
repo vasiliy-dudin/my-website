@@ -1,0 +1,46 @@
+@use '../variables' as *
+@use "../mixins" as *
+@use "../components/global" as *
+@use "../components/images" as *
+
+
+.project-col-2
+	display: none
+	
+	@include media(md)
+		display: block
+		//flex: 1 0 140px
+		min-width: 140px
+		position: relative
+		order: 2
+		//@media (min-width: $nav-breakpoint)
+		position: absolute
+		right: 16px
+		top: 56px
+		height: 100%
+		max-width: 160px
+		z-index: 3
+
+// TODO Contrast fails on small screens
+.project-nav
+	position: sticky
+	margin-top: 16px
+	right: 12px
+	top: 12px
+	border-radius: $radius--M
+	ul
+		display: contents
+		margin: 0
+		padding: 0
+		list-style-type: none		
+	ul a,
+	& > a
+		font-size: $font-size-sm
+		color: $sd-color__palette-blue-700
+		text-decoration: none
+		font-weight: 500
+		&:hover
+			background: unset
+			text-decoration: underline
+		&.--active
+			text-decoration: underline

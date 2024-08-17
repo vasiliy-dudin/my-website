@@ -1,0 +1,84 @@
+@use '../variables' as *
+@use "../mixins" as *
+@use "../components/global" as *
+@use "../components/images" as *
+
+
+.project-body
+	display: flex
+	flex-direction: column
+
+// Section for grouping project description
+.project-section
+	@extend %section__paddings
+	h2
+		margin-top: 0
+		scroll-margin-top: 32px
+	&:nth-child(even)
+		@extend %section__primary
+
+
+// =====================
+// Контент
+// ====================
+.project-body
+	p, li
+		max-width: 63ch
+
+	// Изображения
+	img
+		display: block
+		@extend .img-fluid
+		border: 1px solid #fff
+		border-radius: $radius--M
+
+// .project-video
+// 	+media-down(md)
+// 		position: relative
+// 		padding-bottom: 56.25% // 16:9
+// 		height: 0
+// 	iframe
+// 		display: block
+// 		+media-down(md)
+// 			position: absolute
+// 			top: 0
+// 			left: 0
+// 			width: 100%
+// 			height: 100%
+
+// Highlight inline values
+.highlightValue
+	text-decoration: underline
+	text-decoration-thickness: 14px
+	text-decoration-skip-ink: none
+	text-underline-offset: -9px
+	&.--old
+		border-color: $sd-color__palette-gray-300
+	&.--bad
+		text-decoration-color: rgba($sd-color__palette-yellow-200, 0.2)
+	&.--good
+		text-decoration-color: rgba($sd-color__palette-green-200, 0.2)
+
+
+
+
+.project-section__highlights
+	display: block
+	width: 100%
+	padding: 24px
+	background: $sd-color__palette-blue-100
+	border-radius: $radius--M
+	font-weight: normal
+
+// External links
+.project-body a[href^="https://"],
+.project-body a[href^="http://"]
+	align-items: center
+	gap: 8px
+	&:after
+		content: ''
+		width: 16px
+		height: 16px
+		display: block
+		background-image: url("../assets/external-link.svg")
+		background-size: contain

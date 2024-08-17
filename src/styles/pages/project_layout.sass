@@ -1,0 +1,27 @@
+@use '../variables' as *
+@use "../mixins" as *
+@use "../components/global" as *
+@use "../components/images" as *
+
+
+//For correct positioning. project-col-2
+.main
+	position: relative
+
+.container
+	// Header. Make it wider
+	&.--wide-header
+		@include media(lg)
+			max-width: 1180px
+			min-width: nth(map-values($breakpoints-and-widths), length(map-values($breakpoints-and-widths)))
+			width: 60vw
+	
+	// Place for sticky navigation
+	// Where: Header, content
+	&.--project
+		@include media(md)
+			padding-right: calc(320px - 13vw)
+		@include media(lg)
+			padding-right: calc(690px - 50vw)
+		@media (min-width: 1320px)
+			padding-right: 1rem
