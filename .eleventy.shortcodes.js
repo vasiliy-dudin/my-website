@@ -29,6 +29,15 @@ module.exports = config => {
 		</div>`;
 	});
 
+	// Emphasize text block
+	config.addPairedShortcode("callout", function(content) {
+		// Convert tabs to spaces while preserving relative indentation
+		const cleanedContent = content.replace(/^(\t+)/gm, (match, tabs) => '  '.repeat(tabs.length));
+		const renderedContent = md.render(cleanedContent);
+
+		return `<div class="callout">${renderedContent}</div>`;
+	});
+
 	// emphasize inline values
 	config.addShortcode("highlightValue", function(val, classname) {
 		return `<span class="highlightValue --${classname}">${val}</span>`;
