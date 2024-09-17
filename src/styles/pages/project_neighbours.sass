@@ -1,0 +1,44 @@
+@use '../variables' as *
+@use "../mixins" as *
+@use "../components/global" as *
+@use "../components/images" as *
+
+
+.project-neighbours
+	display: inline-flex
+	flex-shrink: 0
+	gap: 8px
+	margin-top: auto
+	// Hide link in header, show it in page nav
+	@include media(md)
+		.project-header &
+			display: none
+		.project-nav &
+			display: flex
+			margin-top: 8px
+
+	&__lnk
+		display: flex
+		align-items: center
+		padding: 8px
+		gap: 4px
+		font-size: $font-size-sm
+		text-decoration: none
+		color: $color-text-body
+		border-radius: $radius--M
+		border: 1px solid transparent
+		@include media(md)
+			animation: project-nav__text linear both
+			animation-timeline: --project-header
+			animation-range: exit 50% exit 100%
+		&:hover
+			background: unset
+			border-color: inherit
+
+	// The next link is always on the right. Even if it's the very first page
+	&__lnk.--next
+		@include media(md)
+			margin-left: auto
+
+	&__lnk.--prev
+		transform: rotate(180deg)

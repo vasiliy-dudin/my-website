@@ -11,12 +11,12 @@ layout: _base.njk
 		<div class="project-neighbours">
 			{% if previousPage %}
 				<a class="project-neighbours__lnk --prev" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">
-					<img class="project-neighbours__icon --prev" src="/assets/arrow-neighbours.svg" alt="Previous">
+					{% include "../assets/arrow-neighbours.svg" %}
 				</a>
 			{% endif %}
 			{% if nextPage %}
 				<a class="project-neighbours__lnk --next" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">
-					<img class="project-neighbours__icon --next" src="/assets/arrow-neighbours.svg" alt="Next">
+					{% include "../assets/arrow-neighbours.svg" %}
 				</a>
 			{% endif %}
 		</div>

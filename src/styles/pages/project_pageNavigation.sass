@@ -9,25 +9,30 @@
 	
 	@include media(md)
 		display: block
-		//flex: 1 0 140px
 		min-width: 140px
-		position: relative
 		order: 2
-		//@media (min-width: $nav-breakpoint)
 		position: absolute
 		right: 16px
 		top: 56px
 		height: 100%
-		max-width: 160px
+		max-width: 168px
 		z-index: 3
 
-// TODO Contrast fails on small screens
 .project-nav
 	position: sticky
 	margin-top: 16px
-	right: 12px
+	right: 4px
 	top: 12px
+	padding: 8px 12px
 	border-radius: $radius--M
+	background: $background-3
+
+	// Animation
+	animation: project-nav linear both
+	animation-timeline: --project-header
+	animation-range: exit 50% exit 100%
+	background-color: transparent
+
 	ul
 		display: contents
 		margin: 0
@@ -35,12 +40,36 @@
 		list-style-type: none		
 	ul a,
 	& > a
-		font-size: $font-size-sm
-		color: $sd-color__palette-blue-700
+		font-size: $font-size-xs
 		text-decoration: none
 		font-weight: 500
+
+		// Animation
+		animation: project-nav__text linear both
+		animation-timeline: --project-header
+		animation-range: exit 50% exit 100%
+
 		&:hover
 			background: unset
 			text-decoration: underline
 		&.--active
 			text-decoration: underline
+
+
+// Animation
+body
+	timeline-scope: --project-header
+
+@keyframes project-nav
+	from
+		background-color: transparent
+	to
+		background-color: #ffffff
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.1)
+
+@keyframes project-nav__text
+	from
+		color: $sd-color__palette-blue-bleak-200
+	to
+		color: $sd-color__palette-blue-bleak-500
+
