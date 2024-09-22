@@ -19,7 +19,7 @@
     "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
   },
   "dependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.17",
+    "@11ty/eleventy": "3.0.0-alpha.20",
     "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@rollup/plugin-commonjs": "^26.0.1",
@@ -38,9 +38,9 @@
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
     "rimraf": "^6.0.1",
-    "rollup": "^4.21.3",
-    "sass": "^1.78.0",
-    "style-dictionary": "^4.1.1",
+    "rollup": "^4.22.4",
+    "sass": "^1.79.3",
+    "style-dictionary": "^4.1.2",
     "token-transformer": "^0.0.33"
   }
 }
