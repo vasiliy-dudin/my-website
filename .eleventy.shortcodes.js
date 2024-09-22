@@ -38,6 +38,33 @@ module.exports = config => {
 		return `<div class="callout">${renderedContent}</div>`;
 	});
 
+	// Impact in a case study
+	config.addShortcode("impact", function(name, valueOld, valueNew, goodOrBad, goal) {
+		let goalHTML = ''
+		let nameHTML = ''
+		let valueOldHTML = ''
+
+		if (valueOld) {
+			valueOldHTML = `<span class="impact__oneValue">${valueOld}</span> → `
+		}
+		if (goal) {
+			goalHTML = `<div class="impact__goal">Goal: ${goal}</div>`
+		}
+		if (name) {
+			nameHTML = `<div class="impact__name">${name}</div>`
+		}
+
+		return `<div class="impact --${goodOrBad}">
+				<div class="impact__values">
+					${valueOldHTML}<span class="impact__oneValue">${valueNew}</span>
+				</div>
+				${goalHTML}${nameHTML}
+			</div>`;
+	});
+	config.addPairedShortcode("ImpactRow", function(content) {
+		return `<div class="impactRow">${content}</div>`;
+	});
+
 	// emphasize inline values
 	config.addShortcode("highlightValue", function(val, classname) {
 		return `<span class="highlightValue --${classname}">${val}</span>`;

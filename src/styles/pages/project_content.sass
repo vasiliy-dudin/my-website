@@ -61,6 +61,35 @@
 
 
 
+// Impact blocks for a case study
+.impactRow
+	display: flex
+	gap: 12px
+	margin-bottom: 16px
+
+.impact
+	padding: 24px
+	border-radius: $radius--XL
+	&__values
+		margin-bottom: 8px
+		font-family: $font-family--secondary
+		font-size: $font-size-xl
+		font-weight: 900
+		line-height: $headings-line-height
+
+	&.--good
+		background: $sd-color__palette-green-50
+	&.--good &__values
+		color: $sd-color__palette-green-300
+
+	&.--bad
+		background: $sd-color__palette-yellow-50
+	&.--bad &__values
+		color: $sd-color__palette-yellow-300
+
+	&__goal, &__name
+		font-size: $font-size-sm
+
 
 .project-section__highlights
 	display: block
