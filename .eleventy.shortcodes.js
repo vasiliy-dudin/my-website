@@ -39,24 +39,24 @@ module.exports = config => {
 	});
 
 	// Impact in a case study
-	config.addShortcode("impact", function(name, valueOld, valueNew, goodOrBad, goal) {
+	config.addShortcode("impact", function(args) {
 		let goalHTML = ''
 		let nameHTML = ''
 		let valueOldHTML = ''
 
-		if (valueOld) {
-			valueOldHTML = `<span class="impact__oneValue">${valueOld}</span> → `
+		if (args.valueOld) {
+			valueOldHTML = `<span class="impact__oneValue">${args.valueOld}</span> → `
 		}
-		if (goal) {
-			goalHTML = `<div class="impact__goal">Goal: ${goal}</div>`
+		if (args.goal) {
+			goalHTML = `<div class="impact__goal">Goal: ${args.goal}</div>`
 		}
-		if (name) {
-			nameHTML = `<div class="impact__name">${name}</div>`
+		if (args.name) {
+			nameHTML = `<div class="impact__name">${args.name}</div>`
 		}
 
-		return `<div class="impact --${goodOrBad}">
+		return `<div class="impact --${args.goodOrBad} ${args.mainOrNot ? `--${args.mainOrNot}` : ''}">
 				<div class="impact__values">
-					${valueOldHTML}<span class="impact__oneValue">${valueNew}</span>
+					${valueOldHTML}<span class="impact__oneValue">${args.valueNew}</span>
 				</div>
 				${goalHTML}${nameHTML}
 			</div>`;
