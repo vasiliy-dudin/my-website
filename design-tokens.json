@@ -151,6 +151,52 @@
           "$value": "#001141"
         }
       },
+      "Blue-Bleak": {
+        "50": {
+          "$type": "color",
+          "$value": "#f7faff"
+        },
+        "75": {
+          "$type": "color",
+          "$value": "#edf4fe"
+        },
+        "100": {
+          "$type": "color",
+          "$value": "#d6e2f5"
+        },
+        "200": {
+          "$type": "color",
+          "$value": "#b5c8e5"
+        },
+        "300": {
+          "$type": "color",
+          "$value": "#92abd4"
+        },
+        "400": {
+          "$type": "color",
+          "$value": "#6f8fc5"
+        },
+        "500": {
+          "$type": "color",
+          "$value": "#5072b3"
+        },
+        "600": {
+          "$type": "color",
+          "$value": "#355491"
+        },
+        "700": {
+          "$type": "color",
+          "$value": "#263c6a"
+        },
+        "800": {
+          "$type": "color",
+          "$value": "#172849"
+        },
+        "900": {
+          "$type": "color",
+          "$value": "#091630"
+        }
+      },
       "Teal": {
         "50": {
           "$type": "color",
