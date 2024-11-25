@@ -59,6 +59,52 @@
           "$value": "#221301"
         }
       },
+      "Red": {
+        "50": {
+          "$type": "color",
+          "$value": "#fff6f4"
+        },
+        "75": {
+          "$type": "color",
+          "$value": "#fff2ee"
+        },
+        "100": {
+          "$type": "color",
+          "$value": "#f4dbd3"
+        },
+        "200": {
+          "$type": "color",
+          "$value": "#f7bba7"
+        },
+        "300": {
+          "$type": "color",
+          "$value": "#fc8c68"
+        },
+        "400": {
+          "$type": "color",
+          "$value": "#e6653b"
+        },
+        "500": {
+          "$type": "color",
+          "$value": "#bf4e27"
+        },
+        "600": {
+          "$type": "color",
+          "$value": "#8c3c22"
+        },
+        "700": {
+          "$type": "color",
+          "$value": "#622b1a"
+        },
+        "800": {
+          "$type": "color",
+          "$value": "#431d10"
+        },
+        "900": {
+          "$type": "color",
+          "$value": "#290d04"
+        }
+      },
       "Purple": {
         "50": {
           "$type": "color",
