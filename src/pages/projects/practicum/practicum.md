@@ -1,10 +1,10 @@
 ---
-title: Yandex Practicum
-description: EdTech, School Math Product
+title: Difficult onboarding, product scaling issues
+description: "Yandex Practicum, EdTech"
 category:
   - UX Design
   - UI Design
-years: Jul 2021 - May 2022
+years: Feb 2022, 4 weeks
 layout: project
 type: case-study
 order: 3
@@ -12,85 +12,88 @@ permalink: "/projects/practicum/"
 ---
 
 {% projectSection %}	
-	## Introduction
-	An international educational platform specialising in IT courses. Offers around 60 different programmes alongside numerous development teams.
-
-	My role was focussed on the "School Math" product. I was a part of an agile team, collaborating closely with another product designer and a UX writer.
+	## Product
+	School Math, a web platform with tutors and interactive drills. Where parents can also assess the impact on school grades.
+	
+	This product was part of Yandex Practicum, a large international learning platform specialised in IT education.
 {% endprojectSection %}
 
-{% projectSection%}
-	## Problems
-	1. There was a high volume of customer support queries on post-registration stage.
-	2. The product manager identified issues faced by parents:
-	    1. Confusion about next steps after registration.
-	    2. Failure to realise that they accidentally open a student accounts.
-	    3. Unawareness of the existence of student accounts.
-	    4. Lack of understanding that children need login credentials.
-	3. Challenges with visual overload and scalability of the product. Adding new features increases the complexity of the service.
+{% projectSection %}
+	## My Role
+	As the Senior Product Designer, I was responsible for the entire design process, including web analytics, user feedback analysis, wireframing, prototyping, and creating the final UI. As part of a cross-functional agile team, I collaborated closely with product manager, UX writer, and developers to successfully launch a product that significantly improved user satisfaction and retention.
+{% endprojectSection %}
 
+{% projectSection %}
+	## Problems to Solve
+	{% callout %}
+	### User Problems
+	During onboarding, parents encountered significant issues.
+	1. Uncertainty about next steps.
+		Parents were unsure about what actions to take after registration.
+	2. Confusion over student account access.
+		Parents were logging into the student's account by mistake and were unaware of the need to give their children login credentials.
+	{% endcallout %}
+
+	{% callout %}
+	### Business Problems
+	1. 52% customer support requests from parents on onboarding stage. Leads to high customer support costs.
+	2. Low Funnel Velocity at the onboarding stage. This leads to loss of potential active users, LTV and referrals.
+	{% endcallout %}
+	
+	### Hypotheses (in simple terms)
+	1. Breaking the onboarding stage into steps will reduce “onboarding” customer support tickets.
+	2. Onboarding optimisation will increase Funnel Velocity.
+
+	### Proxy metrics
+	- Time to child's first session.
+	- % of parents who transferred access to their children.
+	- % of children who started the study.
+	{# 
+	2. Оптимизация процесса онбординга увеличит Funnel Velocity на 30% в течение первого месяца после внедрения изменений.
+   	3. Улучшение дизайна и упрощение процесса передачи доступа от родителей детям сократит время до первого занятия ребенка на 40% в течение двух недель после запуска.
+		4. Внедрение четкого указания на необходимость передачи доступа детям увеличит процент родителей, успешно передавших доступ, с текущих X% до Y% в течение первого месяца. (Замените X и Y на реальные числа, если они у вас есть)
+		5. Оптимизация интерфейса и процесса онбординга повысит коэффициент активации (процент детей, начавших заниматься после получения доступа) с текущих A% до B% в течение первых двух недель после внедрения изменений. (Замените A и B на реальные числа, если они у вас есть)
+		6. Упрощение процесса онбординга и улучшение пользовательского опыта приведет к увеличению retention rate на 15% в течение трех месяцев после внедрения изменений.#}
+   {# НАПИСАТЬ. О том, что гипотезы были проверены через A/B тест #}
+	
+{% endprojectSection %}
+
+{% projectSection %}
+	## Before Changes
 	{% image "images/1.png", "project-card__img", "", 1200 %}
-
-	### Business Impact
-	1. High costs associated with customer support.
-	2. We assumed that these problems had a negative impact on the number of referrals, users' attitudes towards the product and, as a resulting impact on LTV.
 {% endprojectSection %}
 
 {% projectSection %}
-	## Hypotheses
-	1. Implementing an onboarding process for new users will decrease “onboarding” customer support tickets from 52% to 20% within the first month.
-	2. Simplifying the dashboard will elevate the Net Promoter Score (NPS) to above +55 within the first quarter following implementation.
-	3. Simplifying the dashboard will increase user engagement among parents. 
-	We’ll know this is true when the average number of sessions per parent increase by minimum  15% within 3 months after the dashboard redesign.
+	## Process
+	Adopted a methodology akin to the Double Diamond approach.
 
-	The challenge here was to find proxy metrics that are not affected by other product changes and market volatility.
-{% endprojectSection %}
+	### 1. Discovery and Analysis
+	1. Analysed user feedback, talked with customer support to grasp the specifics and frequency of user confusion.
+	2. Analysed data from an analyst. It confirmed that the issues were frequent and that there were a lot of related customer support requests.
+	3. Formed hypotheses in co-operation with product manager.
+	4. Made and prioritised a list of job stories.
 
-{% projectSection %}
-	## Design Process
-	Adopted a methodology akin to the Double Diamond approach, encompassing:
-	1. [Discovery](#1)
-	2. [Analysis](#2)
-	3. [Ideation](#3)
-	4. [UI Prototyping and Detailing](#4)
-	5. [Design Review](#5)
-{% endprojectSection %}
+	[image]
 
-{% projectSection %}
-	## 1. Discovery
-	1. Analysed user feedback. Found only a few messages mentioning the described problems. Without any details.
-	2. Talked with customer support to grasp the specifics and frequency of user confusion.
-	3. Requested data from an analyst. It confirmed that the issues were frequent and that there were a lot of related customer support requests.
-	4. Collaborated with the product manager to formed hypotheses.
-{% endprojectSection %}
-
-{% projectSection %}
-	## 2. Analysis
-	- I analysed the issues and needs of both parents and students.
-	- Made and prioritised a list of job stories.
-{% endprojectSection %}
-
-{% projectSection %}
-	## 3. Ideation
+	### 2. Ideation
 	- Researched competitors and services with effective onboarding.
 	- Drawed numerous wireframes, exploring potential solutions.
-{% endprojectSection %}
+	[image]
 
-{% projectSection %}
-	## 4. UI prototyping and finalization
+	### 3. Final Design
 	- Designed a user flow for a future interactions. Including all potential states.
 	- Chose a direction for the design and step-by-step detailed wireframes into the final UI.
 	- Wrote UI copy in collaboration with the UX writer.
 	- Synced the vision with developers, UX writer and product manager during the design process.
 	- Documented a design solution.
-{% endprojectSection %}
 
-{% projectSection %}
-	## 5. Design review
+	### 4. Design Review
 	Ensured the test server changes aligned with the design solution in collaboration with the QA engineer.
 {% endprojectSection %}
 
 {% projectSection %}
 	## Solution
+	[image]
 	As a result, these are the solutions I came up with:
 	- Simple and phased onboarding. Previously, all elements were located on one page.
 	- Hid features that are rarely used, such as "Settings".
@@ -103,16 +106,18 @@ permalink: "/projects/practicum/"
 {% endprojectSection %}
 
 {% projectSection %}
-	## Results
-	- {% highlightValue "Customer support tickets: 52% → 16%", "good" %} within the first month. 
-	- {% highlightValue "NPS: +48 → +58", "good" %} within the first 3 months.
-	- {% highlightValue "Average number of sessions per parent: increased by 7%", "bad" %} within 3 months. 
-	The goal was too ambitious.
+	## Impact & Results
+	{% ImpactRow %}
+		{% impact name="Customer support tickets within the first month", valueOld="52%", valueNew="16%", goodOrBad="good", goal="below 20%", mainOrNot="" %}
+		{% impact name="Average number of sessions per parent within 3 months", valueOld="", valueNew="+7%", goodOrBad="bad", goal="15%", mainOrNot="" %}
+			{# Goal: Simplifying the dashboard will increase user engagement among parents (average number of sessions per parent increase by minimum 15% within 3 months). #}		
+	{% endImpactRow %}
+	The team's conclusion after reviewing web analytics: results are good, but there was a mistake in goal setting, it was too ambitious.
 {% endprojectSection %}
 
 {% projectSection %}
-	## Reflection and learnings
+	## Learnings
 	- We concluded that the level of parental involvement in the child’s learning process largely depends not only on the simplicity of the interface, but also on some other factors.
 	- Solving many problems at once was a mistake. We must try to break tasks into smaller iterations. Because this time the problems affected most of the service, and too much time was spent on design and development.
-	- Despite limited team resources, it’s still preferable to validate solutions on actual users. Even if  through unmoderated usability testing.
+	- Despite limited team resources, it’s still preferable to validate solutions on actual users. Even if through unmoderated usability testing.
 {% endprojectSection %}

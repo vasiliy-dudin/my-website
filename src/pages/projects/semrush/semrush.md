@@ -1,10 +1,10 @@
 ---
-title: Semrush
-description: SaaS for Internet Marketers
+title: Data sample is too large, not enough sales
+description: Semrush, SaaS for Internet Marketers
 category:
   - UX Design
   - UX Research
-years: Jun 2018 - Jan 2020
+years: Jan 2020
 layout: project
 type: case-study
 order: 2
@@ -12,40 +12,36 @@ permalink: "/projects/semrush/"
 ---
 
 {% projectSection %}
-	## About the company
-	An international company, developing a high-load SaaS for internet marketers.
+	## Introduction
+	{% image "images/_projects.png", "project-card__img", "", 920 %}
+	An international high-load SaaS for internet marketers.
+
+	Was part of a department of 17 UX designers and 10 UI designers, worked with 3 development teams.
 
 	[Погразить в контекст. Например, написать, сколько было пользователей.
 Начните с обзора миссии компании, конкретных проблем, с которыми она сталкивается, и причин, по которым был инициирован проект. Это подготовит почву для вашего тематического исследования и поможет читателю понять актуальность вашей работы для более широких целей компании.]
-{% endprojectSection %}
-
-{% projectSection %}
-	## My role and the team
-	Was part of a department of 17 UX designers and 10 UI designers, worked with 3 development teams.
-
-	{% image "images/_projects.png", "project-card__img", "", 920 %}
 
 	[Уточните свою роль в проекте и то, как вы сотрудничали с командой. Если вы подчеркнете свой вклад наряду с усилиями команды, это продемонстрирует вашу способность работать в среде сотрудничества.]
 {% endprojectSection %}
 
+
 {% projectSection %}
-	## About case stydy
-	I'll show you how I found solutions to problems with a small example from a marketing tool called Oppty. It finds potential clients in a certain location and according to certain parameters.
+	## Problems and Hypotheses
+	### Problems
+	- Мало продаж
+	- Небольшой средний чек
+	
+	### Hypotheses
+	во многих случаях набор данных получается слишком большим, пользователи не готовы купить такой набор. На скриншоте — список из 468 клиентов из Бостона за $1,638.
 
-	{% highlight %}
-		Результаты
-	{% endhighlight %}
-
-	### Problem
-	Мало продаж, небольшой средний чек.
-	Гипотеза: во многих случаях набор данных получается слишком большим, пользователи не готовы купить такой набор. На скриншоте — список из 468 клиентов из Бостона за $1,638.
-
+	### About a Product
+	"Oppty" finds potential clients in a certain location and according to certain parameters.
+	Old version:
 	{% image "images/1.png", "project-card__img", "", 800 %}
-
 {% endprojectSection %}
 
 {% projectSection %}
-	## Процесс нахождения решения
+	## Design Process
 	Used a process based on the Double Diamond model.
 
 	1. [Research and analysis](#1)
@@ -57,13 +53,14 @@ permalink: "/projects/semrush/"
 {% endprojectSection %}
 
 {% projectSection %}
-	## 1. Research and analysis
+	## 1. Discovery and analysis
 	[Explain how you gathered insights and their impact on your design decisions.]
 
 	1. Отобрал и проанализировал пользовательский фидбек про эту проблему.
-	2. Продакт оунер провела серию интервью с европейскими агентствами. Подтвердила гипотезу, узнала как они находят себе клиентов, и как мы можем им помочь. Выяснили также, что у каждого агентства немного разный стиль поиска клиентов.
-	3. Составил окончательный список требований.
-	4. Составил и согласовал критерии успешности. Это те метрики, которые отслеживаем после разработки.
+	2. Анализировал поведение пользователей через Inspectlet, SQL, BigQuery.
+	3. Продакт оунер провела серию интервью с европейскими агентствами. Подтвердила гипотезу, узнала как они находят себе клиентов, и как мы можем им помочь. Выяснили также, что у каждого агентства немного разный стиль поиска клиентов.
+	4. Составил окончательный список требований.
+	5. Составил и согласовал критерии успешности. Это те метрики, которые отслеживаем после разработки.
 {% endprojectSection %}
 
 {% projectSection %}
@@ -102,26 +99,20 @@ permalink: "/projects/semrush/"
 {% endprojectSection %}
 
 {% projectSection %}
-	## 4. Передача на следующие этапы разработки
+	## 4. Handoff and support
 	- Проработал список всех возможных состояний элементов и описал, как они должны работать.
-	- На груминге с командой разработки презентовал окончательную версию решения.
 	- Поняли, что все задачи по разработке не вмещаются в спринт, поэтому договорились разбить внедрение функции на этапы: сначала сделаем самое необходимое и будем наблюдать, как пользователи это используют.
 	- Добавил ивенты для Google Analytics. Это те клики на интерактивные элементы, которые потом помогут понять, как пользователи взаимодействуют с нашим сервисом и что можно улучшить.
 	- В таск-трекере подробно описал задачи для UX-писателя, UI-дизайнера и разработчиков. Отдельно ввёл в курс дела и ответил на все вопросы.
+	- Консультировал и пояснял непонятные моменты в гайдах.
+	- После разработки проверил, всё ли реализовано так, как задумывалось, и соответствует ли это дизайн-системе, составил список правок.
 
 	{% image "images/5.png", "project-card__img", "", 650 %}
 {% endprojectSection %}
 
 {% projectSection %}
-	## 5. Сопровождение разработки
-	- Консультировал и пояснял непонятные моменты в гайдах.
-	- После разработки проверил, всё ли реализовано так, как задумывалось, и соответствует ли это дизайн-системе, составил список правок.
-{% endprojectSection %}
-
-{% projectSection %}
-	## 6. Validation by qualitative methods
-	[Include metrics, user feedback, or other indicators of success to demonstrate the effectiveness of your design in addressing the initial challenge.]
-	- После разработки следил за тем, как реальные пользователи используют обновлённый интерфейс. Чтобы отследить использование ключевых интерактивных элементов, использовал Inspectlet и SQL c BigQuery.
+	## Results
+	[ДОБАВИТЬ ЦИФРЫ]
 	- Потом мы увеличили трафик в инструмент. Через какое-то время проверили метрики монетизации из критериев успешности и подтвердили, что новый дизайн работает хорошо.
 
 	{% image "images/6.png", "project-card__img", "", 650 %}
