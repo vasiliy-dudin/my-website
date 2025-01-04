@@ -54,7 +54,7 @@ module.exports = config => {
 			nameHTML = `<div class="impact__name">${args.name}</div>`
 		}
 
-		return `<div class="impact --${args.goodOrBad} ${args.mainOrNot ? `--${args.mainOrNot}` : ''}">
+		return `<div class="impact --${args.goodOrBad}${args.mainOrNot ? ` --${args.mainOrNot}` : ''}">
 				<div class="impact__values">
 					${valueOldHTML}<span class="impact__oneValue">${args.valueNew}</span>
 				</div>
