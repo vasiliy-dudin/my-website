@@ -5,7 +5,8 @@
 
 
 .project-header-section
-	@extend %section__paddings, %section__tertiary
+	padding: 48px 0
+	background: $background-3
 	view-timeline-name: --project-header
 	view-timeline-axis: block
 
@@ -13,22 +14,13 @@
 	position: relative
 	display: grid
 	gap: 16px
-	padding: 16px
-	background: #fff
-	box-shadow: 8px 12px 0 $sd-color__palette-blue-bleak-600
-	@extend %box, %box__radius
 	scroll-margin-top: 400px
-	@include media(lg)
-		grid-template-columns: auto 320px
+	color: $sd-color__palette-blue-bleak-75
 
 	&__content
 		display: flex
 		flex-direction: column
 		gap: 8px
-		+media-down(lg)
-			order: -1
-		@include media(md)
-			padding-top: 32px
 
 	&__h1
 		margin: 0
