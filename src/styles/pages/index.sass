@@ -121,17 +121,23 @@
 .experience-item
 	display: flex
 	gap: 12px
+	&__text
+		display: grid
+		gap: 8px
 
 	&__img svg
-		width: 24px
-		height: 24px
+		width: 32px
+		height: 32px
 		border-radius: $radius--S
 		overflow: hidden
 		@include media(sm)
-			width: 48px
-			height: 48px
+			width: 64px
+			height: 64px
+			border-radius: $radius--M
 
 
 
 	&__heading
-		margin: 0 0 4px
+		margin: 0
+	&__desc
+		line-height: 1
