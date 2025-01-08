@@ -9,17 +9,16 @@ layout: project
 type: pet
 order: 3
 permalink: "/projects/accessible-components/"
+eleventyComputed:
+  LongDescription: |
+    Каталог протестированных UI-компонентов для разработчиков и дизайнеров. Качество компонентов могут протестировать не только люди с ограниченными возможностями, но специалисты, которые заинтересованы в удобных интерфейсах.
+
+    Тут кратко описываю процесс проектирования MVP. Для первой версии выбраны решения, которые дешёвы в разработке.
+
+    [Прототип Axure RP](https://k90cvf.axshare.com)
+    [Figma](https://www.figma.com/file/DiYCUz0N01asW8Y05rbozhJL/Accessible-Components?node-id=0%3A1)
 ---
 
-{% projectSection %}
-	## About the project
-	Каталог протестированных UI-компонентов для разработчиков и дизайнеров. Качество компонентов могут протестировать не только люди с ограниченными возможностями, но специалисты, которые заинтересованы в удобных интерфейсах.
-
-	Тут кратко описываю процесс проектирования MVP. Для первой версии выбраны решения, которые дешёвы в разработке.
-
-	[Прототип Axure RP](https://k90cvf.axshare.com)
-	[Figma](https://www.figma.com/file/DiYCUz0N01asW8Y05rbozhJL/Accessible-Components?node-id=0%3A1)
-{% endprojectSection %}
 
 {% projectSection %}
 	## Решаемые проблемы

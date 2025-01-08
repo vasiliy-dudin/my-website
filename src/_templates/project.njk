@@ -39,7 +39,7 @@ layout: _base.njk
 				<div class="container --project">
 					<header class="project-header" id="main">
 						{% image "/cover-wide.jpg", "project-header__img", "", 920 %}
-						<div class="project-header__content">
+						<div class="project-header__main-description">
 							<div class="project-header__h1-row">
 								<h1 class="project-header__h1">{{ title }}</h1>
 							</div>
@@ -52,6 +52,11 @@ layout: _base.njk
 							</div>
 							{{ neighbours() }}
 						</div>
+						{% if LongDescription %}
+						<div class="project-header__long-description">
+							{{ LongDescription | markdown | safe }}
+						</div>							
+						{% endif %}
 					</header>
 				</div>
 			</div>

@@ -9,21 +9,12 @@ layout: project
 type: case-study
 order: 2
 permalink: "/projects/semrush/"
+eleventyComputed:
+  LongDescription: |
+    An international high-load SaaS for internet marketers. Сколько пользователей. 
+    My role. Was part of a department of 17 UX designers and 10 UI designers, worked with 3 development teams.
+    {% image "images/6.png", "", "", 650 %}
 ---
-
-{% projectSection %}
-	## Introduction
-	{% image "images/_projects.png", "project-card__img", "", 920 %}
-	An international high-load SaaS for internet marketers.
-
-	Was part of a department of 17 UX designers and 10 UI designers, worked with 3 development teams.
-
-	[Погразить в контекст. Например, написать, сколько было пользователей.
-Начните с обзора миссии компании, конкретных проблем, с которыми она сталкивается, и причин, по которым был инициирован проект. Это подготовит почву для вашего тематического исследования и поможет читателю понять актуальность вашей работы для более широких целей компании.]
-
-	[Уточните свою роль в проекте и то, как вы сотрудничали с командой. Если вы подчеркнете свой вклад наряду с усилиями команды, это продемонстрирует вашу способность работать в среде сотрудничества.]
-{% endprojectSection %}
-
 
 {% projectSection %}
 	## Problems and Hypotheses
@@ -37,7 +28,7 @@ permalink: "/projects/semrush/"
 	### About a Product
 	"Oppty" finds potential clients in a certain location and according to certain parameters.
 	Old version:
-	{% image "images/1.png", "project-card__img", "", 800 %}
+	{% image "images/1.png", "", "", 800 %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -69,7 +60,7 @@ permalink: "/projects/semrush/"
 	2. Сделал несколько набросков с возможными вариантами взаимодействия.
 	3. Собрал встречу с командой разработки, чтобы обсудить детали реализации. Какие-то варианты были дорогие, от них отказались.
 
-	{% image "images/2.png", "project-card__img", "", 650 %}
+	{% image "images/2.png", "", "", 650 %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -82,7 +73,7 @@ permalink: "/projects/semrush/"
 
 	Вывод: изменения усложнили сервис и повысили порог вхождения, это может снизить конверсию.
 
-	{% image "images/3.png", "project-card__img", "", 650 %}
+	{% image "images/3.png", "", "", 650 %}
 
 	### Вторая версия, переосмысление компоновки
 
@@ -95,7 +86,7 @@ permalink: "/projects/semrush/"
 
 	Использовали упрощённую схему редизайна, без отдельной бета-версии. В сервисе мало постоянных пользователей и такие изменения не приведут к негативным последствиям.
 
-	{% image "images/4.png", "project-card__img", "", 650 %}
+	{% image "images/4.png", "", "", 650 %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -107,7 +98,7 @@ permalink: "/projects/semrush/"
 	- Консультировал и пояснял непонятные моменты в гайдах.
 	- После разработки проверил, всё ли реализовано так, как задумывалось, и соответствует ли это дизайн-системе, составил список правок.
 
-	{% image "images/5.png", "project-card__img", "", 650 %}
+	{% image "images/5.png", "", "", 650 %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -115,7 +106,7 @@ permalink: "/projects/semrush/"
 	[ДОБАВИТЬ ЦИФРЫ]
 	- Потом мы увеличили трафик в инструмент. Через какое-то время проверили метрики монетизации из критериев успешности и подтвердили, что новый дизайн работает хорошо.
 
-	{% image "images/6.png", "project-card__img", "", 650 %}
+	{% image "images/6.png", "", "", 650 %}
 {% endprojectSection %}
 
 {% projectSection %}

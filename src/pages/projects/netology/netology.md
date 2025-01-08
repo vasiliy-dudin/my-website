@@ -10,17 +10,12 @@ layout: project
 type: case-study
 order: 1
 permalink: "/projects/netology/"
+eleventyComputed:
+  LongDescription: |
+    The 2nd largest EdTech platform in Russia, 3M MAU. It offers a variety of online IT courses from 4 months to 2 years long.
+
+    **My team's focus:** motivation, educational environment, student goals, retention, usability, LMS (Learning Management System), completing homeworks, number of active days, COR, NPS, reducing churn.
 ---
-
-{% projectSection %}
-	## Company and Team
-	Netology is the second largest EdTech platform in Russia, 3M MAU. It offers a variety of online IT courses from 4 months to 2 years long.
-
-	I was part of "Motivation and educational environment" team.   
-
-	### Team focus areas and metrics
-	Student goals, retention, usability, LMS (Learning Management System), completing homeworks, number of active days, COR, NPS, reducing churn.
-{% endprojectSection %}
 
 {% projectSection %}
 	## My role

@@ -17,6 +17,16 @@ module.exports = config => {
 		return md.render(content.replace(/^\s+/gm, ''));
 	});
 
+	// Adds content for project header
+	let headerContent = '';
+	config.addPairedShortcode("LongHeaderDescription", function(content) {
+		headerContent = md.render(content);
+		return '';
+	});
+	config.addShortcode("getLongHeaderDescription", function () {
+		return `<div className="project-header__longDescription">${headerContent}</div>`;
+	});
+
 
 	// Wrapper for project sections
 	config.addPairedShortcode("projectSection", function(content) {

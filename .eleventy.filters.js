@@ -1,6 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const crypto = require("node:crypto");
+const markdownIt = require("markdown-it");
 
 module.exports = config => {		
 
@@ -22,6 +23,19 @@ module.exports = config => {
 			return `${url}?v=${assetHashes[url]}`;
 		});
 
+
+
+	const md = markdownIt({
+		html: true,
+		breaks: true,
+		linkify: true
+	});
+	config.addFilter("markdown", (content) => {
+		if (!content) return '';
+		// Преобразуем в строку, если пришло что-то другое
+		const stringContent = String(content);
+		return md.render(stringContent);
+	});
 
 
 }

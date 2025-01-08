@@ -15,9 +15,9 @@
 	display: grid
 	gap: 16px
 	scroll-margin-top: 400px
-	color: $sd-color__palette-blue-bleak-75
+	color: $sd-color__palette-blue-bleak-900
 
-	&__content
+	&__main-description
 		display: flex
 		flex-direction: column
 		gap: 8px
@@ -38,3 +38,23 @@
 		@include media(md)
 			display: flex
 			justify-content: space-between
+
+	// Long Description
+	&__long-description
+		margin-top: 16px
+		strong
+			font-weight: 900
+
+	@layer dark-bg
+		a
+			$link-color: $sd-color__palette-blue-900
+			$link-color--hover: scale-color($link-color, $lightness: 80%)
+			$link-color--hover-bg: $sd-color__palette-blue-200
+			
+			color: $link-color
+			text-decoration-line: underline
+			text-decoration-thickness: 1px
+			text-decoration-color: rgba($link-color, 0.6)
+			text-underline-offset: 4px
+			&:hover
+				background: $link-color--hover-bg

@@ -9,11 +9,10 @@ layout: project
 type: pet
 order: 2
 permalink: "/projects/pitera11y-meetup/"
+eleventyComputed:
+  LongDescription: |
+    Был одним из огранизаторов. Занимался переговорами с площадками и спикерами, делал графику, стикеры, создавал субитры.
 ---
-{% projectSection %}
-	## My role
-	Был одним из огранизаторов. Занимался переговорами с площадками и спикерами, делал графику, стикеры, создавал субитры.
-{% endprojectSection %}
 
 {% projectSection %}
 	## About the meetup
