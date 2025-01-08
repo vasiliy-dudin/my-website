@@ -13,24 +13,31 @@
 		order: 2
 		position: absolute
 		right: 16px
-		top: 0
+		top: 32px
 		height: 100%
 		max-width: 168px
 		z-index: 3
+	@media (width > 1480px)
+		max-width: 240px
 
 .project-nav
+	display: grid
+	gap: 8px
 	position: sticky
 	margin-top: 16px
 	right: 4px
 	top: 12px
-	padding: 8px 12px
 	border-radius: $radius--M
-	background: $background-3
+	opacity: .5
+	&:not([style*="animation-timeline"]):hover
+		opacity: 1
+		transition: opacity 0.2s
 
 	// Animation
 	animation: project-nav linear both
 	animation-timeline: --project-header !important
 	animation-range: exit 50% exit 100%
+	animation-fill-mode: forwards
 	background-color: transparent
 
 	ul
@@ -40,26 +47,23 @@
 		list-style-type: none		
 	ul a,
 	& > a
-		font-size: $font-size-xs
+		//font-size: $font-size-sm
 		text-decoration: none
 		font-weight: 500
-
-		// Animation
-		animation: project-nav__text linear both
-		animation-timeline: --project-header !important
-		animation-range: exit 50% exit 100%
+		color: $sd-color__palette-blue-bleak-500
 
 		&:hover
 			background: unset
 			text-decoration: underline 1.5px
 			// Animation
-			animation: project-nav__text-underline linear both, project-nav__text linear both
+			animation: project-nav__text-underline linear both
 			animation-timeline: --project-header !important
 			animation-range: exit 50% exit 100%
 
 		&.--active
 			text-decoration: underline 1.5px
 			text-decoration-color: inherit !important
+			
 
 // Animation
 body
@@ -67,20 +71,13 @@ body
 
 @keyframes project-nav
 	from
-		background-color: transparent
+		opacity: .5
 	to
-		background-color: #ffffff
-		box-shadow: 0 0 8px rgba(0, 0, 0, 0.1)
-
-@keyframes project-nav__text
-	from
-		color: $sd-color__palette-blue-bleak-200
-	to
-		color: $sd-color__palette-blue-bleak-500
+		opacity: 1
 
 @keyframes project-nav__text-underline
 	from
-		text-decoration-color: $sd-color__palette-blue-bleak-500
+		text-decoration-color: $sd-color__palette-blue-bleak-300
 	to
 		text-decoration-color: $sd-color__palette-blue-bleak-200
 
