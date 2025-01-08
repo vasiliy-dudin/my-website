@@ -14,7 +14,7 @@ eleventyComputed:
   LongDescription: |
     The 2nd largest EdTech platform in Russia, 3M MAU. It offers a variety of online IT courses from 4 months to 2 years long.
 
-    **My team's focus:** motivation, educational environment, student goals, retention, usability, LMS (Learning Management System), completing homeworks, number of active days, COR, NPS, reducing churn.
+    **My team's focus:** student motivation and goals, retention, usability, LMS (Learning Management System), completing homeworks, number of active days, COR, NPS, reducing churn.
 ---
 
 {% projectSection %}
