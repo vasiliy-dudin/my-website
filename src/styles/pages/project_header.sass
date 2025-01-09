@@ -6,16 +6,20 @@
 
 .project-header-section
 	padding: 48px 0
-	background: $background-3
+	background: url(../assets/noise.png) repeat, radial-gradient(at 1% 37%, #1b2942 0px, transparent 50%), radial-gradient(at 21% 11%, #0c172c 0px, transparent 50%), radial-gradient(at 98.08022322982639% 95.35519019022851%, #334057 0px, transparent 50%), radial-gradient(at 88% 3%, #142d57 0px, transparent 50%), radial-gradient(at 38.64528633902103% 60.33283602669022%, #140074 0px, transparent 50%) #1b2942
+	background-size: 6.5%, auto, auto, auto, auto, auto
 	view-timeline-name: --project-header
 	view-timeline-axis: block
 
 .project-header
-	position: relative
 	display: grid
 	gap: 16px
 	scroll-margin-top: 400px
-	color: $sd-color__palette-blue-bleak-900
+	color: $sd-color__palette-gray-100
+	z-index: 1
+	::selection
+		background: $sd-color__palette-blue-700
+		text-shadow: none
 
 	&__main-description
 		display: flex
@@ -47,9 +51,9 @@
 
 	@layer dark-bg
 		a
-			$link-color: $sd-color__palette-blue-900
+			$link-color: $sd-color__palette-blue-100
 			$link-color--hover: scale-color($link-color, $lightness: 80%)
-			$link-color--hover-bg: $sd-color__palette-blue-200
+			$link-color--hover-bg: $sd-color__palette-blue-600
 			
 			color: $link-color
 			text-decoration-line: underline
