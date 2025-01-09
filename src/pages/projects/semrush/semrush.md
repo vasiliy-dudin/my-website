@@ -13,8 +13,11 @@ eleventyComputed:
   LongDescription: |
     An international high-load SaaS for internet marketers. Сколько пользователей. 
     My role. Was part of a department of 17 UX designers and 10 UI designers, worked with 3 development teams.
-    {% image "images/6.png", "", "", 650 %}
 ---
+
+{% projectSection %}
+	{% image "images/6.png", "", "", 650 %}
+{% endprojectSection %}
 
 {% projectSection %}
 	## Problems and Hypotheses
