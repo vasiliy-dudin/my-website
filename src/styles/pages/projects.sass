@@ -65,8 +65,11 @@
 		right: 0
 		bottom: 0
 	&__link:hover:after
-		background: rgba($sd-color__palette-yellow-300, 0.2)
-		mix-blend-mode: screen
+		mix-blend-mode: multiply
+		background-color: fade-out($sd-color__palette-blue-200, 0.5)
+		background-image: url(../assets/noise.png)
+		background-size: 100px
+		mask-image: radial-gradient(circle at 106% 0%, rgb(0, 0, 0) 10%, rgb(255 255 255 / 0%) 20%)
 
 	// Не опубликован
 	/* &.--unpublished
