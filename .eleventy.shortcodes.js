@@ -101,7 +101,7 @@ module.exports = config => {
 		return `
 		<div class="skill">
 			<div class="skill__text">
-				<h4 class="skill__name">${name}</h4>
+				<h3 class="skill__name">${name}</h3>
 				<div class="skill__desc">${content}</div>
 			</div>
 		</div>`;
