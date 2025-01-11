@@ -12,10 +12,12 @@
 	view-timeline-axis: block
 
 .project-header
+	$color: $sd-color__palette-gray-100
+
 	display: grid
 	gap: 16px
 	scroll-margin-top: 400px
-	color: $sd-color__palette-gray-100
+	color: $color
 	z-index: 1
 	::selection
 		background: $sd-color__palette-blue-700
@@ -28,6 +30,7 @@
 
 	&__h1
 		margin: 0
+		color: $color
 	&__img
 		@extend .img-fluid
 		display: block
