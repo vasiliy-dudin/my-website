@@ -2,8 +2,7 @@
 title: Useful content sharing
 description: Netology, EdTech
 category:
-  - UX Design
-  - UI Design
+  - Product Design
   - UX Research
 years: Aug 2023
 layout: project

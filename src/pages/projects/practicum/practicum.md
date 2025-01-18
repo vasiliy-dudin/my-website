@@ -2,8 +2,7 @@
 title: Difficult onboarding, product scaling issues
 description: "Yandex Practicum, EdTech"
 category:
-  - UX Design
-  - UI Design
+  - Product Design
 years: Feb 2022, 4 weeks
 layout: project
 type: case-study
