@@ -77,14 +77,15 @@
 		white-space: nowrap
 
 	&.--good
-		background: linear-gradient(304deg, #fff 50%, $sd-color__palette-green-50 70%)
+		background: linear-gradient(120deg, $sd-color__palette-green-50 30%, #fff 100%)
+		
 	&.--good &__values
 		color: $sd-color__palette-green-300
 	&.--good.--main // Main metric
 		border: 3px solid $sd-color__palette-green-200
 
 	&.--bad
-		background: linear-gradient(304deg, #fff 50%, $sd-color__palette-red-50 70%)
+		background: linear-gradient(120deg, $sd-color__palette-red-50 30%, #fff 100%)
 	&.--bad &__values
 		color: $sd-color__palette-red-300
 	&.--bad.--main // Main metric
