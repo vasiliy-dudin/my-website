@@ -2,8 +2,8 @@
 title: Pitera11y Meetup
 description: Web accessibility meetup
 category:
+- Organising
 - Graphic Design
-- Organizing
 years: 2019-2021
 layout: project
 type: pet
