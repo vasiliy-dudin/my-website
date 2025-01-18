@@ -8,6 +8,7 @@ years: Since 2018
 layout: project
 type: pet
 order: 4
+enabled: true
 permalink: "/projects/ux-kb/"
 ---
 

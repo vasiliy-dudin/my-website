@@ -8,6 +8,7 @@ years: Jan 2020
 layout: project
 type: case-study
 order: 2
+enabled: true
 permalink: "/projects/semrush/"
 eleventyComputed:
   LongDescription: |

@@ -8,6 +8,7 @@ years: Aug 2023
 layout: project
 type: case-study
 order: 1
+enabled: true
 permalink: "/projects/netology/"
 eleventyComputed:
   LongDescription: |

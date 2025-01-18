@@ -8,6 +8,7 @@ years: 2019
 layout: project
 type: pet
 order: 3
+enabled: true
 permalink: "/projects/accessible-components/"
 eleventyComputed:
   LongDescription: |

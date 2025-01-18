@@ -7,6 +7,7 @@ years: Feb 2022, 4 weeks
 layout: project
 type: case-study
 order: 3
+enabled: false
 permalink: "/projects/practicum/"
 eleventyComputed:
   LongDescription: |

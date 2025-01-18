@@ -7,6 +7,7 @@ years: 2021
 layout: project
 type: pet
 order: 1
+enabled: true
 permalink: "/projects/piter-css/"
 ---
 

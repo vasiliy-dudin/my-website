@@ -8,6 +8,7 @@ years: 2019-2021
 layout: project
 type: pet
 order: 2
+enabled: true
 permalink: "/projects/pitera11y-meetup/"
 eleventyComputed:
   LongDescription: |
