@@ -78,9 +78,9 @@ eleventyComputed:
 	- Drawed numerous wireframes, exploring potential solutions.
 	[image]
 
-	### 3. Final Design
-	- Designed a user flow for a future interactions. Including all potential states.
-	- Chose a direction for the design and step-by-step detailed wireframes into the final UI.
+	### 3. Final Design Solution
+	- Designed a user flow of the interactions. Including all potential states.
+	- Designer wireframes and detailed wireframes the final UI.
 	- Wrote UI copy in collaboration with the UX writer.
 	- Synced the vision with developers, UX writer and product manager during the design process.
 	- Documented a design solution.
