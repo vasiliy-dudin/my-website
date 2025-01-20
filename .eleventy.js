@@ -12,22 +12,41 @@ module.exports = function(config) {
 	config.addGlobalData("env", process.env.ELEVENTY_ENV);
 
 	//////////// Collections
+	const isNotDraft = item => 
+		process.env.ELEVENTY_ENV !== 'production' || !item.data.draft;
+
 	config.addCollection('caseStudyProjects', (collection) => {
 		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) => item.data.type === "case-study" && item.data.enabled)
-			.sort((a, b) => a.data.order - b.data.order);
+		.filter((item) => 
+			item.data.type === "case-study" && 
+			item.data.enabled
+		)
+		.filter(isNotDraft)
+		.sort((a, b) => a.data.order - b.data.order);
 	});
 	config.addCollection('petProjects', (collection) => {
 		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) => item.data.type === "pet" && item.data.enabled)
+			.filter((item) => 
+				item.data.type === "pet" &&
+				item.data.enabled
+			)
+			.filter(isNotDraft)
 			.sort((a, b) => a.data.order - b.data.order);
 	});
 	config.addCollection('allProjects', (collection) => {
 		const caseStudyProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) => item.data.type === "case-study" && item.data.enabled)
+			.filter((item) => 
+				item.data.type === "case-study" &&
+				item.data.enabled
+			)
+			.filter(isNotDraft)
 			.sort((a, b) => a.data.order - b.data.order);
 		const petProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) => item.data.type === "pet" && item.data.enabled)
+			.filter((item) => 
+				item.data.type === "pet" &&
+				item.data.enabled
+			)
+			.filter(isNotDraft)
 			.sort((a, b) => a.data.order - b.data.order);
 		return [...caseStudyProjects, ...petProjects];
 	});
