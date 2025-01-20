@@ -9,6 +9,7 @@ layout: project
 type: case-study
 order: 2
 enabled: true
+draft: true
 permalink: "/projects/semrush/"
 eleventyComputed:
   LongDescription: |
