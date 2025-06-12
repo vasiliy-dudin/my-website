@@ -1,5 +1,5 @@
 ---
-title: Useful content sharing
+title: "[Draft] Useful content sharing"
 description: Netology, EdTech
 category:
   - Product Design
@@ -16,6 +16,10 @@ eleventyComputed:
 
     **My team's focus:** student motivation and goals, retention, usability, LMS (Learning Management System), completing homeworks, number of active days, COR, NPS, reducing churn.
 ---
+
+{% projectSection %}
+	{% image "images/main.png", "", "", 922 %}
+{% endprojectSection %}
 
 {% projectSection %}
 	## My role
@@ -46,7 +50,7 @@ eleventyComputed:
 {% projectSection %}
 	## Process: v1
 	### About the design process
-	{% image "images/design-process-v2.png", "", "", 922 %}
+	{% image "images/design-process.png", "", "", 922 %}
 	My colleague and I have put together our own process based on Double Diamond. It's flexible, non-linear and iterative. I think you'll find it works really well for you too!
 	- Discovery and research.
 	- Conceptual design.
@@ -62,19 +66,23 @@ eleventyComputed:
 	I conducted a survey among students: 57% of respondents are willing to share useful content.
 
 	### Ideation and solution selection
-	Designed several variants of user flow, examined references, made many sketches in Figma.
-	Held a meeting with the dev team to select the best solution for development.
-	[SCREENSHOTS]
+	- Designed several variants of user flow, examined references, made many sketches in Figma.
+	- Analysed these findings and selected the most appropriate solutions to the problems. In order to do this, I consulted with the dev team and the product manager to make sure the solutions were appropriate and not too expensive to develop.
+	{% image "images/ideation-1.png", "", "", 922 %}
 
 	### User testing
-	Created an interactive prototype in Figma.
 	Conducted 12 moderated usability tests (6 of our students and 6 potential users), and after each test I corrected the design flaws. 
 	By doing this I made sure that the solution has good usability and users won't have difficulties.
 	[SCREENSHOTS FROM TESTS]
 
-	### UI Design Finalisation
-	- [Описание решений и причины таких решений]
-	[SCREENSHOTS]
+	### v1 solutions, UI detailing
+	- Allow students to share private lectures. And give them a mini-course of their choice to further motivate them to share.
+	- Place a button under the video player, a click on it opens a sharing modal. This is the most efficient and cheapest way to test hypotheses.
+	- Give friends full access to the video after they fill up email adress. This is a compromise with other teams to protect our courses from being resold.
+	- Time-limit access to the video to motivate colleagues to study the lecture.
+	- On a public video page, we place a link to students' course, and useful blocks such as career guidance, learning process and feedback. Thus offer a relevant course to students' colleagues and information that may encourage them to buy a course.
+	{% image "images/ui-v1-1.png", "", "", 922 %}
+	{% image "images/ui-v1-2.jpg", "", "", 922 %}
 
 	### Challenges
 	- It was difficult to convince top managers that it was okay to share paid content publicly. They were worried that people would pirate the videos and sell them.
@@ -103,29 +111,31 @@ eleventyComputed:
 	I hypothesised that if we make the feature more visible and relevant, more people will share a video. So at this stage I was looking for options to do that.
 	[screenshots of ideas]
 
-	### Design solutions
-	- Add the sharing button at the end of the video over a player, similar to YouTube. So the feature will be noticeable to people who are focused on a video and don't notice anything around it. And this feature will become visible at the most opportune moment, when the user has finished the lecture and wants to share the video.
-	- Extend the experiment to free courses as well. To understand how it affects conversion to purchase of paid courses.
-	- For free courses, remove the limitation on the number of sharing links.
-	
 	### User testing
 	Conducted moderated usability testing with 7 new respondents, made appropriate design fixes.
 
+	### v2 solutions, UI detailing
+	- Add the sharing button at the end of the video over a player, similar to YouTube. So the feature will be noticeable to people who are focused on a video and don't notice anything around it. And this feature will become visible at the most opportune moment, when the user has finished the lecture and wants to share the video.
+	- Extend the experiment to free courses as well. To understand how it affects conversion to purchase of paid courses.
+	- For free courses, remove the limitation on the number of sharing links.
+	[screenshots (before/after)]
 {% endprojectSection %}
 
 {% projectSection %}
 	## Final solutions
-	[SCREENSHOTS]
-	[VIDEO?]
 	- Students click the button below a helpful video lesson to share with colleagues and acquaintances.
 	- Also students see a button at the end of the video over the player.  In this way a user can notice the feature at the most opportune moment and to make it noticeable to those people who are strongly focused on the video player.
 	- The student's colleagues or acquaintances watch a video from a private course. As a result, some of them become aware of the platform and buy a course.
+	[Link to Figma]
+	[SCREENSHOTS]
+	[VIDEO?]
+
 {% endprojectSection %}
 
 
 {% projectSection %}
 	## Impact & results
-	The design changes showed no impact on metrics: we saw zero paid course sign-ups and low video link sharing rates among students. The second design iteration also failed to move the needle.
+	No impact on metrics — zero paid course sign-ups, low video link sharing rates among students. The second design iteration also failed to move the needle.
 
 	### v1
 	{% ImpactRow %}
@@ -137,9 +147,9 @@ eleventyComputed:
 	### v2
 	{% ImpactRow %}
 		{% impact name="Conversion to paid courses", valueOld="", valueNew="0.0%", goodOrBad="bad", goal="", mainOrNot="main" %}
-		{% impact name="Conversion to Free Courses", valueOld="", valueNew="3.7%", goodOrBad="bad", goal="", mainOrNot="" %}
-		{% impact name="Students copied the link", valueOld="0.42%", valueNew="0.5%", goodOrBad="bad", goal="", mainOrNot="" %}
+		{% impact name="Students copied the link", valueOld="0.42%", valueNew="0.51%", goodOrBad="bad", goal="", mainOrNot="" %}
 		{% impact name="Anonymous has visited the page", valueOld="33", valueNew="121", goodOrBad="bad", goal="", mainOrNot="" %}
+		{% impact name="Conversion to Free Courses", valueOld="", valueNew="3.7%", goodOrBad="bad", goal="", mainOrNot="" %}
 	{% endImpactRow %}
 
 	### Consequences
