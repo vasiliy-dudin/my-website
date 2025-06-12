@@ -4,7 +4,7 @@ description: Netology, EdTech
 category:
   - Product Design
   - UX Research
-years: Aug 2023
+years: Aug 2023, 4 weeks, 2 iterations
 layout: project
 type: case-study
 order: 1
@@ -12,7 +12,7 @@ enabled: true
 permalink: "/projects/netology/"
 eleventyComputed:
   LongDescription: |
-    The 2nd largest EdTech platform in Russia, 3M MAU. It offers a variety of online IT courses from 4 months to 2 years long.
+    The 2nd largest EdTech platform in Russia, 2M MAU. It offers a variety of online IT courses from 4 months to 2 years long.
 
     **My team's focus:** student motivation and goals, retention, usability, LMS (Learning Management System), completing homeworks, number of active days, COR, NPS, reducing churn.
 ---
@@ -23,16 +23,17 @@ eleventyComputed:
 
 {% projectSection %}
 	## My role
-	As a senior product designer, I led whole design process:
-	- Ran usability testing, interviews and surveys.
-	- Designed a concept and user flow diagrams with Miro.
-	- Generated lots of ideas and potential solutions.
-	- Made wireframes, interactive prototypes and high-fidelity UI with Figma.
-	- Handled developer handoff as detailed documentation in Notion.
-	- Coordinated with the dev team and other teams.
-	- Did a design review at the release candidate stage.
+	Led end-to-end design process as senior product designer in Scrum team.
 
-	I was part of an Agile team, so I worked closely with the product manager, developers, product analyst and QA engineers to make optimal decisions. This helped to create the best solution in terms of team resources, business and user needs.
+	**Design & research:**
+	- Created wireframes, prototypes, and high-fidelity UI with Figma.
+	- Ran usability testing, interviews, and 2 surveys.
+	- Designed concepts and user flows diagrams with Miro.
+
+	**Collaboration & delivery:**
+	- Collaborated closely with PM, developers, analyst, and QA to balance user needs, business goals, and technical constraints.
+	- Coordinated cross-team alignment and conducted design reviews.
+	- Managed developer handoff with detailed documentation in Notion.
 {% endprojectSection %}
 
 {% projectSection %}
@@ -48,114 +49,73 @@ eleventyComputed:
 {% endprojectSection %}
 
 {% projectSection %}
-	## Process: v1
+	## Process
 	### About the design process
 	{% image "images/design-process.png", "", "", 922 %}
-	My colleague and I have put together our own process based on Double Diamond. It's flexible, non-linear and iterative. I think you'll find it works really well for you too!
-	- Discovery and research.
-	- Conceptual design.
-	- Search for solutions.
-	- Prototyping.
-	- Usability testing.
-	- UI detailing.
-	- Documentation.
-	- Demo with the team.
-	- Design review and development support.
+	My colleague and I have put together our own process based on Double Diamond. It's flexible, non-linear and iterative. I think you'll find it works really well for you too=)
 
-	### Discovery and research
-	I conducted a survey among students: 57% of respondents are willing to share useful content.
+	### Discovery, research and synthesis
+	I conducted a survey among the students to learn more about their behaviour and to verify their interest in a solution concept.
 
-	### Ideation and solution selection
-	- Designed several variants of user flow, examined references, made many sketches in Figma.
-	- Analysed these findings and selected the most appropriate solutions to the problems. In order to do this, I consulted with the dev team and the product manager to make sure the solutions were appropriate and not too expensive to develop.
-	{% image "images/ideation-1.png", "", "", 922 %}
+	{% callout %}
+	Important insight: 57% of respondents are willing to share useful content. 
+	{% endcallout %}
+	### Ideation
+	- Designed several variants of user flow, examined references, made many wireframes in Figma. {% image "images/ideation-1.png", "", "", 922 %}
+	- Selected and validated the most viable solutions by consulting with dev team and PM on cost efficiency.
+
 
 	### User testing
-	Conducted 12 moderated usability tests (6 of our students and 6 potential users), and after each test I corrected the design flaws. 
-	By doing this I made sure that the solution has good usability and users won't have difficulties.
+	I ran 12 usability tests with current and potential users, and made design improvements after each session to get rid of any user difficulties.
 	[SCREENSHOTS FROM TESTS]
 
-	### v1 solutions, UI detailing
-	- Allow students to share private lectures. And give them a mini-course of their choice to further motivate them to share.
-	- Place a button under the video player, a click on it opens a sharing modal. This is the most efficient and cheapest way to test hypotheses.
-	- Give friends full access to the video after they fill up email adress. This is a compromise with other teams to protect our courses from being resold.
-	- Time-limit access to the video to motivate colleagues to study the lecture.
-	- On a public video page, we place a link to students' course, and useful blocks such as career guidance, learning process and feedback. Thus offer a relevant course to students' colleagues and information that may encourage them to buy a course.
+	### UI detailing
+	Refined wireframes into high-fidelity designs, defining visual hierarchy, spacing, interaction states, and components, then created comprehensive documentation for developer handoff.
 	{% image "images/ui-v1-1.png", "", "", 922 %}
 	{% image "images/ui-v1-2.jpg", "", "", 922 %}
-
-	### Challenges
-	- It was difficult to convince top managers that it was okay to share paid content publicly. They were worried that people would pirate the videos and sell them.
-	- During the design process, I learned that there are legal issues with sharing these videos. For example, we pay some teachers for views, and I had to consider that.
-	{% callout %}
-	### Findings
-	Our product analyst took a look at the stats and came to a few conclusions:
-	- Only a small number of students copy the link (47 people, or 0.42% of the total).
-	- Nobody has converted to a paid course.
-
-	We thought it would be a good idea to look into why this is happening and come up with some new ideas in the second iteration.
-	{% endcallout %}
-{% endprojectSection %}
-
-{% projectSection %}
-	## Process: v2
-	The same design process was used here as in v1.
-	
-	### Discovery
-	Conducted interviews with users who clicked the shearing button. Insights:
-	1. The students who clicked the button were mostly not going to share the video and clicked the button out of interest.
-	2. Students are willing to share useful materials.
-	3. They haven't yet found the material useful enough to share with colleagues and acquaintances. 
-
-	### Ideation
-	I hypothesised that if we make the feature more visible and relevant, more people will share a video. So at this stage I was looking for options to do that.
-	[screenshots of ideas]
-
-	### User testing
-	Conducted moderated usability testing with 7 new respondents, made appropriate design fixes.
-
-	### v2 solutions, UI detailing
-	- Add the sharing button at the end of the video over a player, similar to YouTube. So the feature will be noticeable to people who are focused on a video and don't notice anything around it. And this feature will become visible at the most opportune moment, when the user has finished the lecture and wants to share the video.
-	- Extend the experiment to free courses as well. To understand how it affects conversion to purchase of paid courses.
-	- For free courses, remove the limitation on the number of sharing links.
-	[screenshots (before/after)]
 {% endprojectSection %}
 
 {% projectSection %}
 	## Final solutions
-	- Students click the button below a helpful video lesson to share with colleagues and acquaintances.
-	- Also students see a button at the end of the video over the player.  In this way a user can notice the feature at the most opportune moment and to make it noticeable to those people who are strongly focused on the video player.
-	- The student's colleagues or acquaintances watch a video from a private course. As a result, some of them become aware of the platform and buy a course.
-	[Link to Figma]
-	[SCREENSHOTS]
-	[VIDEO?]
+	[Figma]
+	### Student flow
+	Allow students to share private lectures with colleagues. And give them a mini-course of their choice to further motivate them to share.
+	- Students share helpful video lessons with colleagues and peers via click-to-share button.
+	- When a lecture ends, the sharing button appears over the video player, catching viewers' attention when they're most engaged and motivated to share helpful content.
+
+	### Colleagues flow
+	- Colleagues get full video access after email registration — a compromise with top management to prevent course piracy.
+	- Time-limited video access to encourage prompt viewing.
+	- Public lecture page includes course links and conversion blocks (career guidance, learning process, feedback) to drive course purchases.
+	- Shared videos drive the platform discovery and customer conversion.
 
 {% endprojectSection %}
 
 
 {% projectSection %}
 	## Impact & results
-	No impact on metrics — zero paid course sign-ups, low video link sharing rates among students. The second design iteration also failed to move the needle.
-
-	### v1
 	{% ImpactRow %}
 		{% impact name="Conversion to paid courses", valueOld="", valueNew="0.0%", goodOrBad="bad", goal="", mainOrNot="main" %}
-		{% impact name="Students copied the link", valueOld="", valueNew="0.42%", goodOrBad="bad", goal="", mainOrNot="" %}
-		{% impact name="Anonymous has visited the page", valueOld="", valueNew="33", goodOrBad="bad", goal="", mainOrNot="" %}
-	{% endImpactRow %}	
-
-	### v2
-	{% ImpactRow %}
-		{% impact name="Conversion to paid courses", valueOld="", valueNew="0.0%", goodOrBad="bad", goal="", mainOrNot="main" %}
-		{% impact name="Students copied the link", valueOld="0.42%", valueNew="0.51%", goodOrBad="bad", goal="", mainOrNot="" %}
-		{% impact name="Anonymous has visited the page", valueOld="33", valueNew="121", goodOrBad="bad", goal="", mainOrNot="" %}
+		{% impact name="Students copied the link", valueOld="", valueNew="0.51%", goodOrBad="bad", goal="", mainOrNot="" %}
+		{% impact name="Anonymous has visited the page", valueOld="", valueNew="121", goodOrBad="bad", goal="", mainOrNot="" %}
 		{% impact name="Conversion to Free Courses", valueOld="", valueNew="3.7%", goodOrBad="bad", goal="", mainOrNot="" %}
 	{% endImpactRow %}
+
+	No impact on paid course sign-ups (the main metric), low video link sharing rates among students. The second design iteration also failed to move the needle.
+
+	### Research insights
+	1. Students haven't yet found the material useful enough to share with colleagues.
+	2. Students clicked the button out of curiosity rather than genuine sharing intent.
 
 	### Consequences
 	All sharing features in our LMS (Learning Management System) were deemed ineffective by the product manager. So she changed her plans and decided to focus on more promising areas.
 {% endprojectSection %}
 
+{% projectSection %}
+	## Challenges
+	- Design process revealed legal constraints as some teachers receive royalties based on lecture views.
+	- Top management initially resisted public content sharing due to piracy concerns.
+{% endprojectSection %}
 
 {% projectSection %}
 	## Reflection
