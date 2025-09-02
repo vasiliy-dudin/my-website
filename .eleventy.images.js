@@ -25,32 +25,13 @@ module.exports = config => {
 				effort: 9
 			}
 		});
-		let metadataWebp = await Image(srcAbsolute, {
-			widths: widths,
-			formats: ["webp"],
-			urlPath: outputURL,
-			outputDir: outputFolder,
-			sharpWebpOptions: {
-				quality: 94,
-				smartSubsample: true
-			}
-		});
 
 		const avifSrcset = Object.values(metadataAvif)
-			.map(item => `${item[0].url}, ${item[1].url} 1.25x, ${item[2].url} 1.5x, ${item[3].url} 2x`)
+			.map(item => `${item[1].url} 1.25x, ${item[2].url} 1.5x, ${item[3].url} 2x`)
 			.join(", ");
-
-		const webpSources = Object.values(metadataWebp)
-			.map(item => {
-				const src = item[0].url;
-				const srcset = `${item[0].url}, ${item[1].url} 1.25x, ${item[2].url} 1.5x, ${item[3].url} 2x`;
-				const width = item[0].width;
-				const height = item[0].height;
-				return `src="${src}" srcset="${srcset}" width="${width}" height="${height}" class="${className}" alt="${alt}" decoding="async" loading="auto"`;
-			})
-			.join(" ");
-
-		return `<picture><source srcset="${avifSrcset}" type="image/avif"><img ${webpSources}></picture>`;
+		
+		const mainImg = Object.values(metadataAvif)[0][0];
+		return `<img src="${mainImg.url}" srcset="${avifSrcset}" width="${mainImg.width}" height="${mainImg.height}" class="${className}" alt="${alt}" decoding="async" loading="auto">`;
 	});
 	
 }
