@@ -4,7 +4,7 @@
 		<nav class="nav">
 			<a class="logo" href="/" aria-label="{{ site.title }}">
 				{% include "../assets/logo.svg" %}
-				{% include "../assets/sitename.svg" %}
+				<span class="logo__name">{{ site.title }}</span>
 			</a>
 			<ul class="menu" id="menu">
 				{% for item in menu %}
