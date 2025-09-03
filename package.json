@@ -1,7 +1,7 @@
 {
-  "name": "vasiliy-dudin-website",
+  "name": "my-website",
   "description": "",
-  "author": "Vasiliy Dudin",
+  "author": "Vasya Dudin",
   "license": "ISC",
   "scripts": {
     "watch": "npm-run-all --parallel _watch:*",
