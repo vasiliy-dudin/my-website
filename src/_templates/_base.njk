@@ -32,5 +32,9 @@
 	{% endif %}	
 
 	<script type="module" src="{{ "/js/bundle.js" | filehash }}" crossOrigin="anonymous"></script>
+	{% if layout == "project" %}
+		<link rel="stylesheet" href="{{ "/styles/fancybox.css" | filehash }}">
+		<script type="module" src="{{ "/js/fancybox.js" | filehash }}" crossOrigin="anonymous"></script>
+	{% endif %}
 </body>
 </html>
