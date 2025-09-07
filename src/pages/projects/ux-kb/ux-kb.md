@@ -14,5 +14,5 @@ permalink: "/projects/ux-kb/"
 
 {% projectSection %}
 	## About the project
-	{% image "images/1.png", "project-card__img", "", 800 %}
+	{% image src="images/1.png", className="project-card__img", alt="UX Knowledge Base interface", width=800, priority="high" %}
 {% endprojectSection %}

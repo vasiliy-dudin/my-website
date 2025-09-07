@@ -24,6 +24,6 @@ eleventyComputed:
 	[Плейлист митапа на YouTube](https://www.youtube.com/watch?v=LIi-fRukS1Y&list=PLTdS5E3zupkGg0FoMoWB5FD2tlBrSWUQB&index=7)
 	[Описание на GitHub](https://github.com/pitercss/a11y_docs)
 
-	{% image "images/1.jpg", "project-card__img", "", 800 %}
-	{% image "images/2.jpg", "project-card__img", "", 900 %}
+	{% image src="images/1.jpg", className="project-card__img", alt="Pitera11y meetup poster 1", width=800, priority="high" %}
+	{% image src="images/2.jpg", className="project-card__img", alt="Pitera11y meetup poster 2", width=900, priority="high" %}
 {% endprojectSection %}

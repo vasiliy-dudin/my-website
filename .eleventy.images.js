@@ -3,13 +3,16 @@ const path = require("path");
 
 module.exports = config => {
 	// image
-	config.addAsyncShortcode("image", async function imageShortcode(src, className, alt, width, lightbox, bigWidth, caption) {
+	config.addAsyncShortcode("image", async function imageShortcode({src, className = "", alt, width, priority = "high", lightbox, bigWidth, lightboxCaption}) {
 		if(alt === undefined) {
 			throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
 		}
 
 		// Set default bigWidth if not provided  
-		const largeSizeWidth = (bigWidth && bigWidth !== "undefined") ? parseInt(bigWidth, 10) : 600;
+		const largeSizeWidth = (bigWidth && bigWidth !== "undefined") ? parseInt(bigWidth, 10) : 1200;
+		
+		// Set default priority if not provided
+		const imagePriority = (priority && priority !== "undefined") ? priority : "high";
 		
 		// Check if lightbox is enabled (could be boolean true or string "lightbox")
 		const isLightboxEnabled = lightbox && lightbox !== "undefined" && (lightbox === true || lightbox === "lightbox");
@@ -56,14 +59,30 @@ module.exports = config => {
 		
 		const mainImg = Object.values(metadataAvif)[0][0];
 		
+		// Set loading and decoding attributes based on priority
+		let loadingAttrs = "";
+		switch(imagePriority) {
+			case "top":
+				loadingAttrs = `loading="eager" decoding="sync" fetchpriority="high"`;
+				break;
+			case "high":
+				loadingAttrs = `loading="eager" decoding="auto"`;
+				break;
+			case "low":
+				loadingAttrs = `loading="lazy" decoding="async"`;
+				break;
+			default:
+				loadingAttrs = `loading="eager" decoding="auto"`; // fallback to "high"
+		}
+		
 		// Generate img tag
 		const finalClass = isLightboxEnabled ? (className ? `${className} image-zoomable` : 'image-zoomable') : className;
-		const output = `<img src="${mainImg.url}" srcset="${avifSrcset}" width="${mainImg.width}" height="${mainImg.height}" class="${finalClass}" alt="${alt}" decoding="async" loading="auto">`;
+		const output = `<img src="${mainImg.url}" srcset="${avifSrcset}" width="${mainImg.width}" height="${mainImg.height}" class="${finalClass}" alt="${alt}" ${loadingAttrs}>`;
 		
 		// If the lightbox parameter is specified, wrap in a link for the FancyBox
 		if (isLightboxEnabled) {
-			const captionAttr = (caption && caption !== "undefined") ? ` data-caption="${caption}"` : '';
-			return `<a href="${largeImg.url}" data-fancybox="lightbox"${captionAttr}>${output}</a>`;
+			const lightboxCaptionAttr = (lightboxCaption && lightboxCaption !== "undefined") ? ` data-caption="${lightboxCaption}"` : '';
+			return `<a href="${largeImg.url}" data-fancybox="lightbox"${lightboxCaptionAttr}>${output}</a>`;
 		}
 		
 		// Normal image without FancyBox

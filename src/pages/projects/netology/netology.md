@@ -18,7 +18,7 @@ eleventyComputed:
 ---
 
 {% projectSection %}
-	{% image "images/main.png", "", "", 922 %}
+	{% image src="images/main.png", className="", alt="", width=922, priority="high" %}
 {% endprojectSection %}
 
 {% projectSection %}

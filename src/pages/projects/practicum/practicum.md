@@ -58,7 +58,7 @@ eleventyComputed:
 
 {% projectSection %}
 	## Before Changes
-	{% image "images/1.png", "project-card__img", "", 1200 %}
+	{% image src="images/1.png", className="project-card__img", alt="Before changes - original onboarding interface", width=1200, priority="low" %}
 {% endprojectSection %}
 
 {% projectSection %}

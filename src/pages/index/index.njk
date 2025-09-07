@@ -6,11 +6,11 @@ permalink: /
 ---
 
 <section class="hero-section">
-	{% image "images/photo.jpg", "hero-section__img", "", 320 %}
+	{% image src="images/photo.jpg", className="hero-section__img", alt="My photo", width=320, priority="high" %}
 	<div class="hero-section__text-col">
 		<div class="hero-section__heading-row">
 			<h2 class="hero-section__heading">Hi there, I’m Vasya</h2>
-			{% image "images/cat.png", "hero-section__heading-img", "", 32 %}
+			{% image src="images/cat.png", className="hero-section__heading-img", alt="", width=32, priority="high" %}
 		</div>
 		<div class="hero-section__subtitle">Sr. Product and UX designer</div>
 		<div class="hero-section__tags-container">

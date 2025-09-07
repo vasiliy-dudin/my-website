@@ -18,7 +18,7 @@ eleventyComputed:
 ---
 
 {% projectSection %}
-	{% image "images/6.png", "", "", 650 %}
+	{% image src="images/6.png", className="", alt="Semrush project main image", width=650, priority="high" %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -33,7 +33,7 @@ eleventyComputed:
 	### About a Product
 	"Oppty" finds potential clients in a certain location and according to certain parameters.
 	Old version:
-	{% image "images/1.png", "", "", 800 %}
+	{% image src="images/1.png", className="", alt="Old version of Oppty tool", width=800, priority="low" %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -65,7 +65,7 @@ eleventyComputed:
 	2. Сделал несколько набросков с возможными вариантами взаимодействия.
 	3. Собрал встречу с командой разработки, чтобы обсудить детали реализации. Какие-то варианты были дорогие, от них отказались.
 
-	{% image "images/2.png", "", "", 650 %}
+	{% image src="images/2.png", className="", alt="Ideation wireframes and sketches", width=650, priority="low" %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -78,7 +78,7 @@ eleventyComputed:
 
 	Вывод: изменения усложнили сервис и повысили порог вхождения, это может снизить конверсию.
 
-	{% image "images/3.png", "", "", 650 %}
+	{% image src="images/3.png", className="", alt="First version prototype", width=650, priority="low" %}
 
 	### Вторая версия, переосмысление компоновки
 
@@ -91,7 +91,7 @@ eleventyComputed:
 
 	Использовали упрощённую схему редизайна, без отдельной бета-версии. В сервисе мало постоянных пользователей и такие изменения не приведут к негативным последствиям.
 
-	{% image "images/4.png", "", "", 650 %}
+	{% image src="images/4.png", className="", alt="Second version with improved layout", width=650, priority="low" %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -103,7 +103,7 @@ eleventyComputed:
 	- Консультировал и пояснял непонятные моменты в гайдах.
 	- После разработки проверил, всё ли реализовано так, как задумывалось, и соответствует ли это дизайн-системе, составил список правок.
 
-	{% image "images/5.png", "", "", 650 %}
+	{% image src="images/5.png", className="", alt="Handoff documentation and specifications", width=650, priority="low" %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -111,7 +111,7 @@ eleventyComputed:
 	[ДОБАВИТЬ ЦИФРЫ]
 	- Потом мы увеличили трафик в инструмент. Через какое-то время проверили метрики монетизации из критериев успешности и подтвердили, что новый дизайн работает хорошо.
 
-	{% image "images/6.png", "", "", 650 %}
+	{% image src="images/6.png", className="", alt="Final results and implementation", width=650, priority="low" %}
 {% endprojectSection %}
 
 {% projectSection %}

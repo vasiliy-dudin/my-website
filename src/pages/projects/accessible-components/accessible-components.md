@@ -36,26 +36,26 @@ eleventyComputed:
 	## 2. Моделирование процессов
 	За основу взял диаграмму use cases и показал как 3 группы пользователей будут решать свои задачи, взаимодействуя с интерфейсом.
 
-	{% image "images/1.png", "project-card__img", "", 650 %}
+	{% image src="images/1.png", className="project-card__img", alt="Use case diagram for accessible components", width=650, priority="low" %}
 {% endprojectSection %}
 
 {% projectSection %}
 	## 3. Прототипирование
 	[Интерактивный прототип Axure RP](https://k90cvf.axshare.com)
 
-	{% image "images/2.png", "project-card__img", "", 650 %}
+	{% image src="images/2.png", className="project-card__img", alt="Interactive prototype screen", width=650, priority="low" %}
 
 	На первой вкладке пользователи скринридеров будут тестировать компоненты.
 
 	А на следующей пошагово объясняем, как сверстать компонент, как он должен работать и какие ARIA-атрибуты необходимы. Отсюда же разработчик может забрать React-компонент, если не хочет разрабатывать его самостоятельно.
 
-	{% image "images/3.png", "project-card__img", "", 650 %}
+	{% image src="images/3.png", className="project-card__img", alt="Component documentation example", width=650, priority="low" %}
 {% endprojectSection %}
 
 {% projectSection %}
 	## 4. Дизайн-макет
 	[Figma](https://www.figma.com/file/DiYCUz0N01asW8Y05rbozhJL/Accessible-Components?node-id=0%3A1)
 
-	{% image "images/4.png", "project-card__img", "", 920 %}
-	{% image "images/5.png", "project-card__img", "", 920 %}
+	{% image src="images/4.png", className="project-card__img", alt="Figma design mockup 1", width=920, priority="low" %}
+	{% image src="images/5.png", className="project-card__img", alt="Figma design mockup 2", width=920, priority="low" %}
 {% endprojectSection %}

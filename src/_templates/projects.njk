@@ -18,7 +18,7 @@ layout: _base.njk
 				{% for project in collection %}		
 					<article class="project-card">
 						{% setAsync "imageHtml" %}
-							{% image project.fileSlug + "/cover.jpg", "project-card__img", "", 450 %}
+							{% image src=project.fileSlug + "/cover.jpg", className="project-card__img", alt="", width=450, priority="high" %}
 						{% endsetAsync %}
 						{{ imageHtml | safe }}
 						<div class="project-card__text">
