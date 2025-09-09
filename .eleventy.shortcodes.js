@@ -106,6 +106,43 @@ module.exports = config => {
 			</div>
 		</div>`;
 	});
+
+	// My Role block with team members icons and descriptions
+	config.addPairedShortcode("myRole", function(content, args) {		
+		// Parse team members from arguments
+		let teamMembersHTML = '';
+		if (args.team) {
+			const teamMembers = Array.isArray(args.team) ? args.team : [args.team];
+			teamMembersHTML = teamMembers.map(member => {
+				const icon = member.icon || 'person';
+				const role = member.role || '';
+				const count = member.count || 1;
+				const displayCount = count > 1 ? ` ×${count}` : '';
+				
+				// Read SVG file content and inline it
+				const svgPath = path.join(__dirname, 'src', 'assets', `my-role-${icon}.svg`);
+				let svgContent = fsExtra.readFileSync(svgPath, 'utf8');
+				// Clean up the SVG content for inline use
+				svgContent = svgContent.replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
+				
+				return `<div class="my-role__team-member">
+					<div class="my-role__icon my-role__icon--${icon}">${svgContent}</div>
+					<div class="my-role__label">${role}${displayCount}</div>
+				</div>`;
+			}).join('');
+			
+			teamMembersHTML = `<div class="my-role__team">${teamMembersHTML}</div>`;
+		}
+		
+		// Convert tabs to spaces while preserving relative indentation
+		const cleanedContent = content.replace(/^(\t+)/gm, (match, tabs) => '  '.repeat(tabs.length));
+		const renderedContent = md.render(cleanedContent);
+		
+		return `<div class="my-role">
+			${teamMembersHTML}
+			<div class="my-role__content">${renderedContent}</div>
+		</div>`;
+	});
 	
 
 	  

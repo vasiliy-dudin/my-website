@@ -1,0 +1,41 @@
+// My Role shortcode
+
+@use "../variables" as *
+
+.my-role
+	&__team
+		display: flex
+		justify-content: center
+		align-items: start
+		flex-wrap: wrap
+		gap: 16px
+		padding: 16px 0
+		
+	&__team-member
+		display: grid
+		flex: 0 1 140px
+		gap: 8px
+		place-items: center
+		text-align: center
+		
+	&__icon
+		width: 64px
+		height: 64px
+		display: flex
+		align-items: center
+		justify-content: center
+		color: $sd-color__palette-gray-400
+		background: url(../assets/noise.png) repeat
+		background-size: 110px
+		border-radius: $radius--M
+
+		svg
+			width: 40px
+			height: 40px
+
+		&--me
+			color: $sd-color__palette-blue-800
+
+	&__label
+		font-size: $font-size-sm
+		line-height: 1.2
