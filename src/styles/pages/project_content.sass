@@ -69,6 +69,7 @@
 	gap: 8px
 	padding: 24px
 	border-radius: $radius--M
+	outline-offset: -3px
 	&__values
 		font-family: $font-family--secondary
 		font-size: $font-size-xl
@@ -77,19 +78,22 @@
 		white-space: nowrap
 
 	&.--good
-		background: linear-gradient(120deg, $sd-color__palette-green-50 30%, #fff 100%)
+		background: url(../assets/noise-2.png) 0 0 / 50px, $sd-color__palette-green-75
+		box-shadow: inset 8px 0 rgba($sd-color__palette-green-200, 0.4)
 		
 	&.--good &__values
 		color: $sd-color__palette-green-300
 	&.--good.--main // Main metric
-		border: 3px solid $sd-color__palette-green-200
+		outline: 3px solid $sd-color__palette-green-200
 
 	&.--bad
-		background: linear-gradient(120deg, $sd-color__palette-red-50 30%, #fff 100%)
+		background: url(../assets/noise-2.png) 0 0 / 50px, $sd-color__palette-yellow-75
+		box-shadow: inset 8px 0 rgba($sd-color__palette-yellow-200, 0.4)
+
 	&.--bad &__values
-		color: $sd-color__palette-red-300
+		color: $sd-color__palette-yellow-300
 	&.--bad.--main // Main metric
-		border: 3px solid $sd-color__palette-red-200
+		outline: 3px solid $sd-color__palette-yellow-200
 
 	&__goal, &__name
 		font-size: $font-size-sm
