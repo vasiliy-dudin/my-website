@@ -23,17 +23,23 @@ eleventyComputed:
 
 {% projectSection %}
 	## My role
-	Led end-to-end design process as senior product designer in Scrum team.
+	{% myRole team=[
+			{role: "Senior product designer", icon: "me"},
+			{role: "Product manager", icon: "product-manager", count: 1},
+			{role: "Product analyst", icon: "product-analyst", count: 1},
+			{role: "Front-end developers", icon: "dev", count: 2},
+			{role: "Back-end developers", icon: "dev", count: 2},
+			{role: "QAs", icon: "qa", count: 2}
+		] %}
 
-	**Design & research:**
-	- Created wireframes, prototypes, and high-fidelity UI with Figma.
+	- Led end-to-end design process in a Scrum team. Collaborated closely with the team to balance user needs, business goals, and technical constraints.
 	- Ran usability testing, interviews, and 2 surveys.
 	- Designed concepts and user flows diagrams with Miro.
-
-	**Collaboration & delivery:**
-	- Collaborated closely with PM, developers, analyst, and QA to balance user needs, business goals, and technical constraints.
+	- Created wireframes, prototypes, and high-fidelity UI with Figma.
 	- Coordinated cross-team alignment and conducted design reviews.
-	- Managed developer handoff with detailed documentation in Notion.
+	- Managed developer handoff with detailed documentation in Notion
+
+	{% endmyRole %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -50,29 +56,29 @@ eleventyComputed:
 
 {% projectSection %}
 	## Process
-	### About the design process
-	{% image "images/design-process.png", "", "", 922 %}
-	My colleague and I have put together our own process based on Double Diamond. It's flexible, non-linear and iterative. I think you'll find it works really well for you too=)
+	Research and synthesis → Ideation →  User testing → UI detailing → Handoff, documentation
 
-	### Discovery, research and synthesis
-	I conducted a survey among the students to learn more about their behaviour and to verify their interest in a solution concept.
+	{% image src="images/ideation-1.png", className="", alt="Wireframes and user flow variants", width=300, priority="low", lightbox="lightbox", bigWidth=1200 %}
+
+	### Key points
 
 	{% callout %}
-	Important insight: 57% of respondents are willing to share useful content. 
+	#### Discovery research insights
+	I carried out a survey and interviews that had a big impact on my design decisions and main hypothesis.
+
+	- 1,083-response survey validated the direction: 57% would be happy to share learning content.
+	- Student interviews revealed they:
+		- prefer sharing with colleagues and professional communities,
+		- would only share if offered something of value in return (e.g. a discount).
+	- Non-student interviews confirmed genuine interest in educational materials sourced from peers.
 	{% endcallout %}
-	### Ideation
-	- Designed several variants of user flow, examined references, made many wireframes in Figma. {% image "images/ideation-1.png", "", "", 922 %}
-	- Selected and validated the most viable solutions by consulting with dev team and PM on cost efficiency.
 
+	{% callout %}
+	#### Usability testing
+	Participants struggled with unclear headings and missed important elements because of visual noise.
 
-	### User testing
-	I ran 12 usability tests with current and potential users, and made design improvements after each session to get rid of any user difficulties.
-	[SCREENSHOTS FROM TESTS]
-
-	### UI detailing
-	Refined wireframes into high-fidelity designs, defining visual hierarchy, spacing, interaction states, and components, then created comprehensive documentation for developer handoff.
-	{% image "images/ui-v1-1.png", "", "", 922 %}
-	{% image "images/ui-v1-2.jpg", "", "", 922 %}
+	I rewrote confusing copy, simplified the design, and enhanced visual hierarchy. Follow-up tests showed that everyone could complete the tasks easily.
+	{% endcallout %}
 {% endprojectSection %}
 
 {% projectSection %}
@@ -103,7 +109,7 @@ eleventyComputed:
 
 	No impact on paid course sign-ups (the main metric), low video link sharing rates among students. The second design iteration also failed to move the needle.
 
-	### Research insights
+	### Post-launch investigation
 	1. Students haven't yet found the material useful enough to share with colleagues.
 	2. Students clicked the button out of curiosity rather than genuine sharing intent.
 
