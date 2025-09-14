@@ -2,6 +2,7 @@
 @use "../mixins" as *
 @use "../components/global" as *
 @use "../components/images" as *
+@use "../components/callout" as *
 
 
 .project-body
@@ -121,13 +122,3 @@
 		background-image: url("../assets/external-link.svg")
 		background-size: contain
 
-
-.callout
-	padding: 24px
-	background: url(../assets/noise-2.png) repeat, linear-gradient(314deg, #ffffff00 90%, $sd-color__palette-blue-100 100%)
-	background-size: 50px, auto
-	border-radius: $radius--L	
-	h3
-		margin-top: 0
-	& + &
-		margin-top: 16px
