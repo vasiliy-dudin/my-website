@@ -76,11 +76,11 @@
 		font-size: $font-size-xl
 		font-weight: 900
 		line-height: 1.1
+		
 		white-space: nowrap
 
 	&.--good
-		background: url(../assets/noise-2.png) 0 0 / 50px, $sd-color__palette-green-75
-		box-shadow: 2px 2px rgba($sd-color__palette-green-300, 0.3)
+		background: url(../assets/noise-2.png) repeat 0 0 / 50px, linear-gradient(314deg, rgba(255, 255, 255, 0) 90%, $sd-color__palette-green-100 100%);
 		
 	&.--good &__values
 		color: $sd-color__palette-green-300
@@ -88,8 +88,7 @@
 		outline: 3px solid $sd-color__palette-green-200
 
 	&.--bad
-		background: url(../assets/noise-2.png) 0 0 / 50px, $sd-color__palette-yellow-75
-		box-shadow: 2px 2px rgba($sd-color__palette-yellow-300, 0.3)
+		background: url(../assets/noise-2.png) repeat 0 0 / 50px, linear-gradient(314deg, rgba(255, 255, 255, 0) 90%, $sd-color__palette-yellow-100 100%);
 
 	&.--bad &__values
 		color: $sd-color__palette-yellow-300
