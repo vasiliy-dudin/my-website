@@ -56,7 +56,13 @@ eleventyComputed:
 
 {% projectSection %}
 	## Process
-	Research and synthesis → Ideation →  User testing → UI detailing → Handoff, documentation
+	{% designProcess steps=[
+		{title: "Research and synthesis", icon: "research", substeps: ["User interviews", "Survey analysis", "Data synthesis"]},
+		{title: "Ideation", icon: "ideation", substeps: ["Concept development", "Wireframe sketching", "Flow mapping"]},
+		{title: "User testing", icon: "user-testing", substeps: ["Prototype testing", "Feedback collection", "Iteration"]},
+		{title: "UI detailing", icon: "ui", substeps: ["Visual design", "Component library", "Interaction design"]},
+		{title: "Development", icon: "handoff", substeps: ["Design specifications", "Developer handoff", "Documentation"]}
+	] %}
 
 	{% image src="images/ideation-1.png", className="", alt="Wireframes and user flow variants", width=300, priority="low", lightbox="lightbox", bigWidth=1200 %}
 

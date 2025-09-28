@@ -1,0 +1,32 @@
+// Design Process shortcode
+
+@use "../variables" as *
+@use "../mixins" as *
+
+.design-process
+	margin: 32px 0
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	gap: 8px
+	counter-reset: process-step
+		
+	@media (max-width: 768px)
+		grid-template-columns: 1fr
+		gap: 8px
+
+.process
+	&__step
+		position: relative
+		background: url(../assets/noise-2.png) repeat 0 0 / 50px
+		border-radius: $radius--M
+		padding: 12px
+		counter-increment: process-step
+
+	&__step-header
+		display: flex
+		flex-direction: column
+		gap: 8px
+		margin-bottom: 12px
+
+	&__step-title::before
+		content: counter(process-step) ". "

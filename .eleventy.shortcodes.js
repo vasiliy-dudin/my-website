@@ -143,7 +143,38 @@ module.exports = config => {
 			<div class="my-role__content">${renderedContent}</div>
 		</div>`;
 	});
-	
 
+	// Design Process for case studies
+	config.addShortcode("designProcess", function(args) {
+		// Parse timeline steps from arguments
+		let timelineHTML = '';
+		if (args.steps) {
+			const steps = Array.isArray(args.steps) ? args.steps : [args.steps];
+			timelineHTML = steps.map((step, index) => {
+				const icon = step.icon || 'default';
+				const title = step.title || '';
+				const substeps = step.substeps || [];
+				
+				// No icons needed
+				
+				// Generate substeps HTML
+				let substepsHTML = '';
+				if (substeps.length > 0) {
+					const substepsList = substeps.map(substep => `<li class="process__substep">${substep}</li>`).join('');
+					substepsHTML = `<ul class="process__substeps">${substepsList}</ul>`;
+				}
+				
+				return `<div class="process__step">
+					<div class="process__step-header">
+						<h5 class="process__step-title">${title}</h5>
+					</div>
+					${substepsHTML}
+				</div>`;
+			}).join('');
+		}
+		
+		return `<div class="design-process">${timelineHTML}</div>`;
+	});
+	
 	  
 }
