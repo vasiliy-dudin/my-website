@@ -104,7 +104,7 @@ eleventyComputed:
 		{% impact name="Conversion to paid courses", valueOld="", valueNew="0.0%", goodOrBad="bad", goal="", mainOrNot="main" %}
 		{% impact name="Students copied the link", valueOld="", valueNew="0.51%", goodOrBad="bad", goal="", mainOrNot="" %}
 		{% impact name="Anonymous has visited the page", valueOld="", valueNew="121", goodOrBad="bad", goal="", mainOrNot="" %}
-		{% impact name="Conversion to Free Courses", valueOld="", valueNew="3.7%", goodOrBad="bad", goal="", mainOrNot="" %}
+		{% impact name="Conversion to free courses", valueOld="", valueNew="3.7%", goodOrBad="bad", goal="", mainOrNot="" %}
 	{% endImpactRow %}
 
 	No impact on paid course sign-ups (the main metric), low video link sharing rates among students. The second design iteration also failed to move the needle.
