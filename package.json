@@ -22,7 +22,7 @@
     "@11ty/eleventy": "3.1.2",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-navigation": "^1.0.4",
-    "@fancyapps/ui": "^6.1.2",
+    "@fancyapps/ui": "^6.1.4",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
@@ -40,7 +40,7 @@
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
     "rimraf": "^6.1.0",
-    "rollup": "^4.52.5",
+    "rollup": "^4.53.0",
     "sass": "^1.93.3",
     "style-dictionary": "^5.1.1",
     "token-transformer": "^0.0.33"
