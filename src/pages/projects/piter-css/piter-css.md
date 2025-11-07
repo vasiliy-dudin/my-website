@@ -1,6 +1,6 @@
 ---
 title: PiterCSS
-description: Frontend Events (open source)
+description: Frontend events website, open source
 category:
 - UI Design
 years: 2021
