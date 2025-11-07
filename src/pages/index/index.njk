@@ -6,7 +6,6 @@ permalink: /
 ---
 
 <section class="hero-section">
-	{% image src="images/photo.jpg", className="hero-section__img", alt="My photo", width=320, priority="high" %}
 	<div class="hero-section__text-col">
 		<div class="hero-section__heading-row">
 			<h2 class="hero-section__heading">Hi there, I’m Vasya</h2>
@@ -26,6 +25,7 @@ permalink: /
 			</ul>
 		</div>
 	</div>
+	{% image src="images/photo.jpg", className="hero-section__img", alt="My photo", width=200, priority="high" %}
 </section>
 
 {% macro experience_item(company, year, role, icon) %}
