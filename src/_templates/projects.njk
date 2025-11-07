@@ -22,11 +22,6 @@ layout: _base.njk
 						{% endsetAsync %}
 						{{ imageHtml | safe }}
 						<div class="project-card__text">
-							<div class="project-card__tags tags">
-								{% for tag in project.data.category %}
-									<span class="tag --{{ tag | lower | replace(' ', '-') }}">{{ tag }}</span>
-								{% endfor %}
-							</div>
 							<a class="project-card__link" href="{{ project.data.permalink }}">
 								{{ project.data.title }}
 							</a>
