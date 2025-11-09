@@ -63,8 +63,14 @@
 		bottom: 0
 	&__link:hover:after
 		mix-blend-mode: multiply
-		background: url(../assets/noise.png) 0 0 / 100px
+		background: url(../assets/noise.png) 0 0
 		mask-image: radial-gradient(circle at 106% 0%, rgb(0, 0, 0) 10%, rgb(255 255 255 / 0%) 20%)
+		animation: noise-animation 0.5s step-end infinite
+		@keyframes noise-animation
+			0%
+				background-size: 150px
+			50%
+				background-size: 160px
 
 	// Не опубликован
 	/* &.--unpublished
