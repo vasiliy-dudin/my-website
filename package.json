@@ -15,8 +15,7 @@
     "_build:lightningcss": "npx lightningcss-cli --minify --bundle dist/styles/bundle.css -d dist/styles && npx lightningcss-cli --minify --bundle dist/styles/fancybox.css -d dist/styles",
     "_build:js": "rollup -c",
     "_build:html": "npx html-minifier-terser --input-dir dist --output-dir dist --file-ext html --collapse-whitespace --remove-comments --minify-css --minify-js",
-    "_remove-dist": "rimraf dist",
-    "tokens": "npx token-transformer src/design-tokens/figma-tokens.json src/design-tokens/sd-tokens.json --expandTypography --resolveReferences false && npx style-dictionary build --config sd.config.js"
+    "_remove-dist": "rimraf dist"
   },
   "dependencies": {
     "@11ty/eleventy": "3.1.2",
@@ -41,8 +40,6 @@
     "path": "^0.12.7",
     "rimraf": "^6.1.0",
     "rollup": "^4.53.1",
-    "sass": "^1.93.3",
-    "style-dictionary": "^5.1.1",
-    "token-transformer": "^0.0.33"
+    "sass": "^1.93.3"
   }
 }
