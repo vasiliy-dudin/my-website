@@ -1,4 +1,6 @@
 @use "../variables" as *
+@use 'sass:map'
+@use 'sass:list'
 
 html, body
 	overflow-x: clip
@@ -45,4 +47,4 @@ body
 .container
 	@include make-container
 	width: 100%
-	max-width: map-get($breakpoints-and-widths, nth(map-keys($breakpoints-and-widths), -1))
+	max-width: map.get($breakpoints-and-widths, list.nth(map.keys($breakpoints-and-widths), -1))

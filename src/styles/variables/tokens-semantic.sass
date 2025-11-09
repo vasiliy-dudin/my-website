@@ -1,4 +1,5 @@
 @use "tokens" as *
+@use 'sass:color'
 
 
 // Colors
@@ -13,8 +14,8 @@ $background-2: $sd-color__palette-beige-75
 $background-3: $sd-color__palette-beige-800
 
 $link-color: $sd-color__palette-blue-600
-$link-color--hover: scale-color($link-color, $lightness: 30%)
-$link-color--hover-bg: mix(white, $link-color, 90%)
+$link-color--hover: color.scale($link-color, $lightness: 30%)
+$link-color--hover-bg: color.mix(white, $link-color, 90%)
 // $link-color--active: rgba(darken($link-color--hover, 0.5)) // TODO тут не указан второй аргумент
 
 

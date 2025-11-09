@@ -1,5 +1,6 @@
 @use '../variables' as *
 @use "../mixins" as *
+@use 'sass:color'
 @use "../components/global" as *
 @use "../components/images" as *
 
@@ -53,7 +54,7 @@
 	@layer dark-bg
 		a
 			$link-color: $sd-color__palette-blue-100
-			$link-color--hover: scale-color($link-color, $lightness: 80%)
+			$link-color--hover: color.scale($link-color, $lightness: 80%)
 			$link-color--hover-bg: $sd-color__palette-blue-600
 			
 			color: $link-color

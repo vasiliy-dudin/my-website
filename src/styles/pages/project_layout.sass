@@ -1,5 +1,7 @@
 @use '../variables' as *
 @use "../mixins" as *
+@use 'sass:map'
+@use 'sass:list'
 @use "../components/global" as *
 @use "../components/images" as *
 
@@ -13,7 +15,7 @@
 	&.--wide-header
 		@include media(lg)
 			max-width: 1180px
-			min-width: nth(map-values($breakpoints-and-widths), length(map-values($breakpoints-and-widths)))
+			min-width: list.nth(map.values($breakpoints-and-widths), list.length(map.values($breakpoints-and-widths)))
 			width: 60vw
 	
 	// Place for sticky navigation
