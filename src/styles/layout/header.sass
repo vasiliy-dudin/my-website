@@ -29,9 +29,17 @@ $header__color: #333
 	color: $header__color
 	text-decoration: none
 	
+	&__text
+		display: flex
+		flex-direction: column
+		line-height: 1
+		gap: 4px
+	
 	&__name
-		font-size: 28px
-		letter-spacing: -1px
+		font-size: $font-size-lg
+	
+	&__title
+		font-size: $font-size-sm
 
 
 
