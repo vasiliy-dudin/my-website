@@ -1,9 +1,8 @@
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
-module.exports = config => {
-	// image
-	config.addAsyncShortcode("image", async function imageShortcode({src, className = "", alt, width, priority = "high", lightbox, bigWidth, lightboxCaption}) {
+// Export the image shortcode function so it can be used by other shortcodes
+const imageShortcode = async function({src, className = "", alt, width, priority = "high", lightbox, bigWidth, lightboxCaption}) {
 		if(alt === undefined) {
 			throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
 		}
@@ -17,8 +16,21 @@ module.exports = config => {
 		// Check if lightbox is enabled (could be boolean true or string "lightbox")
 		const isLightboxEnabled = lightbox && lightbox !== "undefined" && (lightbox === true || lightbox === "lightbox");
 
-		const currentDir = this.page.inputPath ? path.dirname(this.page.inputPath) : '';
-		const srcAbsolute = currentDir + '/' + src;
+		// If path starts with /, resolve from src root (like web paths)
+		// Otherwise resolve relative to current page directory
+		let srcAbsolute;
+		if (src.startsWith('/')) {
+			// Path like /pages/index/images/photo.jpg -> src/pages/index/images/photo.jpg
+			srcAbsolute = path.join('src', src);
+		} else if (/^[a-zA-Z]:/.test(src)) {
+			// Absolute Windows path like C:\... -> use as is
+			srcAbsolute = src;
+		} else {
+			// Relative path -> resolve from current page directory
+			const currentDir = this.page.inputPath ? path.dirname(this.page.inputPath) : '';
+			srcAbsolute = path.join(currentDir, src);
+		}
+
 		const outputURL = "/images/";
 		const outputFolder = "./dist/images/";
 		let widths = [];
@@ -87,6 +99,11 @@ module.exports = config => {
 		
 		// Normal image without FancyBox
 		return output;
-	});
-	
-}
+};
+
+module.exports = config => {
+	// image
+	config.addAsyncShortcode("image", imageShortcode);
+};
+
+module.exports.imageShortcode = imageShortcode;
