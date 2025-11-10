@@ -26,15 +26,42 @@
 		justify-content: center
 		color: $sd-color__palette-gray-400
 		background: url(../assets/noise-2.png) repeat 0 0 / 50px
-		border-radius: $radius--M
+		border-radius: 50%
+		box-shadow: 2px 2px $sd-color__palette-beige-100
+		overflow: hidden
 
 		svg
 			width: 32px
 			height: 32px
 
 		&--me
-			color: $sd-color__palette-yellow-500
-			background: url(../assets/noise-2.png) repeat 0 0 / 50px, linear-gradient(310deg, rgba(255, 255, 255, 0) 40%, $sd-color__palette-yellow-100 100%) 
+			padding: 0
+			position: relative
+			background: none
+
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				display: block
+				border: 0
+				border-radius: 0
+
+			// Жёлтый градиент поверх фотографии
+			&::before
+				content: ''
+				position: absolute
+				inset: 0
+				background: linear-gradient(310deg, rgba(255, 255, 255, 0) 60%, $sd-color__palette-yellow-100 100%)
+				z-index: 1
+
+			// Шум поверх фотографии и градиента
+			&::after
+				content: ''
+				position: absolute
+				inset: 0
+				background: url(../assets/noise-2.png) repeat 0 0 / 50px
+				mix-blend-mode: plus-lighter
 
 	&__label
 		font-size: $font-size-sm

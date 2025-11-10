@@ -2,6 +2,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require('markdown-it-anchor');
 const fsExtra = require("fs-extra");
 const path = require("path");
+const { imageShortcode } = require("./.eleventy.images.js");
 
 module.exports = config => {
 	const md = markdownIt({
@@ -108,28 +109,42 @@ module.exports = config => {
 	});
 
 	// My Role block with team members icons and descriptions
-	config.addPairedShortcode("myRole", function(content, args) {		
+	config.addPairedShortcode("myRole", async function(content, args) {		
 		// Parse team members from arguments
 		let teamMembersHTML = '';
 		if (args.team) {
 			const teamMembers = Array.isArray(args.team) ? args.team : [args.team];
-			teamMembersHTML = teamMembers.map(member => {
+			const teamMembersPromises = teamMembers.map(async member => {
 				const icon = member.icon || 'person';
 				const role = member.role || '';
 				const count = member.count || 1;
 				const displayCount = count > 1 ? ` ×${count}` : '';
 				
-				// Read SVG file content and inline it
-				const svgPath = path.join(__dirname, 'src', 'assets', `my-role-${icon}.svg`);
-				let svgContent = fsExtra.readFileSync(svgPath, 'utf8');
-				// Clean up the SVG content for inline use
-				svgContent = svgContent.replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
+				let iconContent = '';
+				if (icon === 'me') {
+					// Use image shortcode for photo (path from src root)
+					iconContent = await imageShortcode.call(this, {
+						src: '/pages/index/images/photo.jpg',
+						className: '',
+						alt: 'Vasily Dudin',
+						width: 64,
+						priority: 'low'
+					});
+				} else {
+					// Read SVG file content and inline it
+					const svgPath = path.join(__dirname, 'src', 'assets', `my-role-${icon}.svg`);
+					let svgContent = fsExtra.readFileSync(svgPath, 'utf8');
+					// Clean up the SVG content for inline use
+					svgContent = svgContent.replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
+					iconContent = svgContent;
+				}
 				
 				return `<div class="my-role__team-member">
-					<div class="my-role__icon my-role__icon--${icon}">${svgContent}</div>
+					<div class="my-role__icon my-role__icon--${icon}">${iconContent}</div>
 					<div class="my-role__label">${role}${displayCount}</div>
 				</div>`;
-			}).join('');
+			});
+			teamMembersHTML = (await Promise.all(teamMembersPromises)).join('');
 			
 			teamMembersHTML = `<div class="my-role__team">${teamMembersHTML}</div>`;
 		}
