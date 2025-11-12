@@ -12,12 +12,21 @@
 	margin-bottom: 48px
 	overflow: hidden	
 	@extend %box, %box__paddings, %box__radius
-	background: url(../assets/noise-2.png) repeat 0 0 / 50px, radial-gradient(at 1.193317883% 12.3105010444%, hsl(39.2, 89.4736842105%, 96.2745098039%) 0%, hsla(39.2, 89.4736842105%, 96.2745098039%, 0) 100%), radial-gradient(at 48.0755092295% 94.7735303352%, $sd-color__palette-beige-200 0%, hsla(245.6, 74.2574257426%, 19.8039215686%, 0) 100%), radial-gradient(at 22.7276543751% 71.8799724113%, hsl(39.2, 89.4736842105%, 96.2745098039%) 0%, hsla(39.2, 89.4736842105%, 96.2745098039%, 0) 100%), radial-gradient(at 81.1627751159% 96.4973304012%, hsl(39.2, 89.4736842105%, 96.2745098039%) 0%, hsla(39.2, 89.4736842105%, 96.2745098039%, 0) 100%)
+	position: relative
 	box-shadow: 8px 12px 0 $border-color-2
 	// responsive
 	justify-content: center
 	text-align: center
 	align-items: start
+	
+	&__bg
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+		z-index: -1
 	@media (min-width: 680px)
 		justify-content: flex-start
 		text-align: left
