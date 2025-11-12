@@ -1,6 +1,7 @@
 @use "../variables" as *
 @use "../mixins" as *
 @use "../components/global" as *
+@use "../foundation/type" as *
 
 
 ////// Первая секция обо мне
@@ -16,16 +17,27 @@
 	// responsive
 	justify-content: center
 	text-align: center
+	align-items: start
 	@media (min-width: 680px)
 		justify-content: flex-start
 		text-align: left
-
+		
+	@include media(lg)
+		align-items: center
 
 	// Photo
 	&__img
 		display: block
-		width: 200px
+		width: 160px
+		height: auto
 		border-radius: 50%
+		order: -1
+		
+		@include media(md)
+			order: 0
+
+		@include media(lg)
+			width: 200px
 
 	// Text block
 	&__text-col
@@ -43,32 +55,28 @@
 	&__heading-img
 		display: block
 	
-	&__heading
-		margin: 0
-
+	&__greeting
+		@extend h2
+		margin-top: 0
+	
 	&__subtitle
 		margin-bottom: 16px
 		font-weight: 600
 
-	&__tags
-		display: flex
-		flex-wrap: wrap
-		gap: 8px
-		margin-top: 4px
-		padding: 0
-		// responsive
-		justify-content: center
-		@media (min-width: 680px)
-			justify-content: flex-start
-	
-	&__tag
-		display: inline-flex
-		flex: 0 1 auto
-		list-style: none
-		padding: 2px 8px
-		font-size: $font-size-sm
-		border-radius: 16px
-		background: $sd-color__palette-yellow-100
+
+	&__list
+		margin: 0
+		padding-left: 20px
+		text-align: left
+		
+		@include media(md)
+			column-count: 2
+			column-gap: 40px
+		
+		li
+			margin-bottom: 4px
+			break-inside: avoid
+			padding-left: 4px
 
 
 
