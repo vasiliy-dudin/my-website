@@ -98,15 +98,6 @@ module.exports = config => {
 	});
 
 
-	config.addPairedShortcode("skill", async function(content, name) {
-		return `
-		<div class="skill">
-			<div class="skill__text">
-				<h3 class="skill__name">${name}</h3>
-				<div class="skill__desc">${content}</div>
-			</div>
-		</div>`;
-	});
 
 	// My Role block with team members icons and descriptions
 	config.addPairedShortcode("myRole", async function(content, args) {		

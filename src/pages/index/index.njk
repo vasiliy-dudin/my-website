@@ -28,55 +28,23 @@ permalink: /
 	{% image src="images/photo.jpg", className="hero-section__img", alt="My photo", width=200, priority="high" %}
 </section>
 
-{% macro experience_item(company, year, role, icon) %}
-	<div class="experience-item">
-		<div class="experience-item__img">{% include "./images/"+icon+".svg" %}</div>
-		<div class="experience-item__text">
-			<h3 class="experience-item__heading">{{ company }}</h3>
-			<div class="experience-item__desc">{{ role }}</div>
-			<div class="experience-item__desc">{{ year }}</div>
+<section class="front-section">
+	{% md %}
+		## Highlights
+	{% endmd %}
+	<div class="work-highlights">
+		<div class="work-highlights__item">
+			13+ years designing B2B and B2C products across SaaS, EdTech, and E-commerce
 		</div>
-	</div>
-{% endmacro %}
-<section class="front-section">
-	{% md %}
-		## Experience
-	{% endmd %}
-	<div class="experience">
-		{{ experience_item('Netology (EdTech)', 'Dec 2022 – Mar 2025', 'Senior Product Designer', 'netology') }}
-		{{ experience_item('Yandex Practicum (EdTech)', 'Jul 2021 – May 2022', 'Senior Product Designer', 'practicum') }}
-		{{ experience_item('Semrush (SaaS for Internet Marketers)', 'Jun 2018 – Jan 2020', 'Senior UX Designer', 'semrush') }}
-		{{ experience_item('Binomo (Trading Platform)', 'Feb 2018 – Jun 2018', 'UX/UI Designer', 'binomo') }}
-		{{ experience_item('Freelance', 'Jun 2011 – Feb 2017', 'UX Designer', 'Freelance') }}
-	</div>
-</section>
-
-<section class="front-section">
-	{% md %}
-		## Skills
-	{% endmd %}
-	<div class="skills-list">
-		{% skill "Basics" %}
-			Design of complex products, human-centered design, business needs, usability heuristics, data-informed and data-driven design, system and strategic vision.
-		{% endskill %}
-		{% skill "UI and Text" %}
-			Expert in Figma and Axure RP (build complex components with auto layout, develop plugins with JavaScript), UX writing, design systems, design tokens, creating guidelines, perception-based colour palettes.
-		{% endskill %}
-		{% skill "Mapping and Workflow Design" %}
-			User Flow, Customer Journey Mapping (CJM), Information Architecture, Job Stories, UML Use Case Diagram, UML Activity Diagram, BPMN, Scenario Map, Service Blueprint.
-		{% endskill %}
-		{% skill "Accessibility and Inclusive Design" %}
-			Improve design systems, design and development processes, conduct accessibility audits, write guides.
-		{% endskill %}
-		{% skill "Research and Product Analytics" %}
-			Usability testing, user interviews, questionnaires, Jobs to be Done (JTBD), card sorting, A/B testing, metrics analysis, web analytics (Google Analytics and Amplitude).
-		{% endskill %} 
-		{% skill "Frontend Development" %}
-			JavaScript, HTML, CSS, SASS, Stylus, 11ty, accessible UI development, Git.
-		{% endskill %}
-		{% skill "Team Collaboration" %}
-			Facilitation, mentoring, build design processes, presentations, cross-functional team collaboration.
-		{% endskill %}
+		<div class="work-highlights__item">
+			Deep expertise in design, research, and accessibility
+		</div>
+		<div class="work-highlights__item">
+			Ex Semrush and Yandex Practicum
+		</div>
+		<div class="work-highlights__item">
+			Familiar with JS, HTML, CSS, React, Vue
+		</div>
 	</div>
 </section>
 
