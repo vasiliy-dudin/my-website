@@ -1,7 +1,6 @@
 @use "../variables" as *
 @use "../mixins" as *
 @use "../components/global" as *
-@use "../foundation/type" as *
 
 
 ////// Первая секция обо мне
@@ -65,8 +64,10 @@
 		display: block
 	
 	&__greeting
-		@extend h2
 		margin-top: 0
+		font-size: $font-size-h2
+		font-weight: $font-weight--xxl
+		color: $color-text-body-2
 	
 	&__subtitle
 		margin-bottom: 16px
