@@ -2,7 +2,7 @@
 layout: _base.njk
 ---
 
-{% for collection in [collections.caseStudyProjects, collections.petProjects] %}
+{% for collection in [collections.caseStudyProjects, collections.screenshotsProjects, collections.petProjects] %}
 	<section class="project-list-container --{{ loop.index }}">
 		<div class="container">
 			{% if loop.index == 1 %}
@@ -14,11 +14,12 @@ layout: _base.njk
 				<h2 aria-describedby="counter-{{ loop.index }}">{{ sectionName[loop.index0] }}</h2>
 				<span class="badge heading-row__badge" id="counter-{{ loop.index }}">{{ collection.length }}</span>	
 			</div>				
-			<div class="project-list">		
-				{% for project in collection %}		
-					<article class="project-card">
+			<div class="project-list{% if loop.index == 2 %} --compact{% endif %}">		
+				{% for project in collection %}
+					{% set imageClass = "project-card__img " + ("--compact" if project.data.type == "screenshots" else "--default") %}
+					<article class="project-card {% if project.data.type == 'screenshots' %}--compact{% else %}--default{% endif %}">
 						{% setAsync "imageHtml" %}
-							{% image src=project.fileSlug + "/cover.jpg", className="project-card__img", alt="", width=450, priority="high" %}
+							{% image src=project.fileSlug + "/cover.jpg", className=imageClass, alt="", width=450, priority="high" %}
 						{% endsetAsync %}
 						{{ imageHtml | safe }}
 						<div class="project-card__text">

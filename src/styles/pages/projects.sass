@@ -14,13 +14,16 @@
 	padding: 40px 0
 	h2
 		margin-top: 0
-	&.--1
+	&:nth-child(odd)
 		background: $background-2
 
 
 .project-list
 	display: grid
 	gap: 1rem
+	&.--compact
+		@include media(md)
+			grid-template-columns: 1fr 1fr
 // /* 	@include media(md)
 // 		&.--2
 // 		&.--3
@@ -44,8 +47,16 @@
 	will-change: transform
 	transform: translate3d(0, 0, 0)
 	transition: transform .1s linear
-	@include media(md)
-		display: flex
+	
+	// Default card layout
+	&.--default
+		@include media(md)
+			display: flex
+	
+	// Compact card layout
+	&.--compact
+		@include media(md)
+			display: block
 		
 	&:active
 		transform: scale(0.995)
@@ -113,11 +124,16 @@
 	&__img
 		display: block
 		height: auto
-		width: 100%
-		@include media(md)
-			width: 360px
-		@include media(lg)
-			width: 450px		
+		// Default card layout
+		&.--default
+			width: 100%
+			@include media(md)
+				width: 360px
+			@include media(lg)
+				width: 450px
+		// Compact card layout
+		&.--compact
+			width: 100%
  	
 
 	// Caption

@@ -33,6 +33,15 @@ module.exports = function(config) {
 			.filter(isNotDraft)
 			.sort((a, b) => a.data.order - b.data.order);
 	});
+	config.addCollection('screenshotsProjects', (collection) => {
+		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
+			.filter((item) => 
+				item.data.type === "screenshots" &&
+				item.data.enabled
+			)
+			.filter(isNotDraft)
+			.sort((a, b) => a.data.order - b.data.order);
+	});
 	config.addCollection('allProjects', (collection) => {
 		const caseStudyProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
 			.filter((item) => 
@@ -48,7 +57,14 @@ module.exports = function(config) {
 			)
 			.filter(isNotDraft)
 			.sort((a, b) => a.data.order - b.data.order);
-		return [...caseStudyProjects, ...petProjects];
+		const screenshotsProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
+			.filter((item) => 
+				item.data.type === "screenshots" &&
+				item.data.enabled
+			)
+			.filter(isNotDraft)
+			.sort((a, b) => a.data.order - b.data.order);
+		return [...caseStudyProjects, ...screenshotsProjects, ...petProjects];
 	});
 
 	/////////// Plugins
