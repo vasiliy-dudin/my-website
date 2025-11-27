@@ -29,6 +29,14 @@
 		@extend .img-fluid
 		border-radius: $radius--XL
 		border: 12px solid rgba($sd-color__palette-beige-100, 50%)
+	
+	// Отступы между соседними картинками
+	img + img,
+	a + img,
+	img + a,
+	img + p,
+	a + a
+		margin-top: 24px
 
 // .project-video
 // 	+media-down(md)
