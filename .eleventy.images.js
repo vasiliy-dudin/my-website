@@ -7,8 +7,8 @@ const IMAGE_CONFIG = {
 	outputFolder: "./dist/images/",
 	defaultLightboxWidth: 1200,
 	defaultPriority: "high",
-	avifQuality: 85,
-	avifEffort: 1
+	avifQuality: 77,
+	avifEffort: 6
 };
 
 const LOADING_ATTRIBUTES = {
@@ -41,6 +41,10 @@ async function generateImages(srcAbsolute, widths) {
 		formats: ["avif"],
 		urlPath: IMAGE_CONFIG.outputURL,
 		outputDir: IMAGE_CONFIG.outputFolder,
+		cacheOptions: {
+			duration: "1y",
+			directory: ".cache"
+		},
 		sharpAvifOptions: {
 			quality: IMAGE_CONFIG.avifQuality,
 			effort: IMAGE_CONFIG.avifEffort
@@ -60,21 +64,20 @@ function getLoadingAttributes(priority) {
 }
 
 // Helper: Validate parameters
-function validateParams({src, alt, width, priority, bigWidth, lightbox}) {
+function validateParams({src, alt, width, priority, lightboxWidth, lightbox}) {
 	if (alt === undefined) {
 		throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
 	}
 	
-	const largeSizeWidth = (bigWidth && bigWidth !== "undefined") 
-		? parseInt(bigWidth, 10) 
+	const largeSizeWidth = (lightboxWidth && lightboxWidth !== "undefined") 
+		? parseInt(lightboxWidth, 10) 
 		: IMAGE_CONFIG.defaultLightboxWidth;
 	
 	const imagePriority = (priority && priority !== "undefined") 
 		? priority 
 		: IMAGE_CONFIG.defaultPriority;
 	
-	const isLightboxEnabled = lightbox && lightbox !== "undefined" 
-		&& (lightbox === true || lightbox === "lightbox");
+	const isLightboxEnabled = lightbox === true;
 	
 	return { largeSizeWidth, imagePriority, isLightboxEnabled };
 }
@@ -82,10 +85,10 @@ function validateParams({src, alt, width, priority, bigWidth, lightbox}) {
 
 
 // Main shortcode function
-const imageShortcode = async function({src, className = "", alt, width, priority = "high", lightbox, bigWidth, lightboxCaption}) {
+const imageShortcode = async function({src, className = "", alt, width, priority = "high", lightbox, lightboxWidth, lightboxCaption}) {
 	// Validate and extract parameters
 	const { largeSizeWidth, imagePriority, isLightboxEnabled } = validateParams({
-		src, alt, width, priority, bigWidth, lightbox
+		src, alt, width, priority, lightboxWidth, lightbox
 	});
 
 	// Resolve image path
@@ -94,14 +97,12 @@ const imageShortcode = async function({src, className = "", alt, width, priority
 	// Generate responsive images
 	const widths = generateImageWidths(width);
 	const metadata = await generateImages(srcAbsolute, widths);
-	console.log(`Generated ${Object.values(metadata)[0].length} images for ${src}`);
 	
 	// Generate lightbox image if needed
 	let largeImg = null;
 	if (isLightboxEnabled) {
 		const lightboxMetadata = await generateImages(srcAbsolute, [largeSizeWidth]);
 		largeImg = Object.values(lightboxMetadata)[0][0];
-		console.log(`Generated ${Object.values(largeImg)[0].length} lightbox images for ${src}`);
 	}
 	
 	// Build image attributes
