@@ -27,6 +27,13 @@ layout: _base.njk
 								{{ project.data.title }}
 							</a>
 							<div class="project-card__desc">{{ project.data.description }}</div>
+					{% if project.data.highlights %}
+					<ul class="project-card__highlights">
+						{%- for item in project.data.highlights -%}
+						<li>{{ item }}</li>
+						{%- endfor -%}
+					</ul>
+					{% endif %}
 
 						</div>
 					</article>
