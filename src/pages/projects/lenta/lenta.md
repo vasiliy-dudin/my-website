@@ -1,9 +1,9 @@
 ---
-title: Lenta
-description: Retail, 12M MAU
+title: Lenta, retail, 12M MAU
+description: 
 highlights:
   - Admin panel
-  - Colour and JSON generator
+  - Colours generator
   - Design systems
 category:
   - Product Design

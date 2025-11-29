@@ -1,6 +1,6 @@
 ---
-title: Yandex Practicum
-description: EdTech
+title: Yandex Practicum, EdTech
+description: 
 highlights:
   - Lesson annotations and drawing, learning journey
   - Dashboards
@@ -11,7 +11,7 @@ category:
 years: 2021-2022
 layout: project
 type: screenshots
-order: 42
+order: 2
 enabled: true
 permalink: "/projects/yandex-practicum-math/"
 eleventyComputed:

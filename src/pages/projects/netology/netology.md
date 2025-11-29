@@ -1,6 +1,6 @@
 ---
 title: "[Draft] Useful content sharing"
-description: Netology, EdTech
+description: Netology, EdTech (B2C, B2B)
 category:
   - Product Design
   - UX Research
@@ -12,13 +12,15 @@ enabled: true
 permalink: "/projects/netology/"
 eleventyComputed:
   LongDescription: |
-    The 2nd largest EdTech platform in Russia, 2M MAU. It offers a variety of online IT courses from 4 months to 2 years long.
+    The 2nd largest EdTech platform in Russia, 2M MAU.
 
     **My team's focus:** student motivation and goals, retention, usability, LMS (Learning Management System), completing homeworks, number of active days, COR, NPS, reducing churn.
 ---
 
 {% projectSection %}
-	{% image src="images/main.png", className="", alt="", width=922, priority="high" %}
+	{% image src="images/all.jpg", className="", alt="", width=922, priority="high" %}
+	
+	[Final design in Figma](https://www.figma.com/design/PRRKLkvSCGa70cACuEOPGR/Netology--Useful-content-sharing?node-id=658-16327&p=f&t=xtCRNw9KjjQXQNwJ-11)
 {% endprojectSection %}
 
 {% projectSection %}
@@ -27,8 +29,8 @@ eleventyComputed:
 			{role: "Senior product designer", icon: "me"},
 			{role: "Product manager", icon: "product-manager", count: 1},
 			{role: "Product analyst", icon: "product-analyst", count: 1},
-			{role: "Front-end developers", icon: "dev", count: 2},
-			{role: "Back-end developers", icon: "dev", count: 2},
+			{role: "Front-end devs", icon: "dev", count: 2},
+			{role: "Back-end devs", icon: "dev", count: 2},
 			{role: "QAs", icon: "qa", count: 2}
 		] %}
 
@@ -64,7 +66,7 @@ eleventyComputed:
 		{title: "Next steps", substeps: ["Track metrics with product analyst", "Go to 2nd iteration"]}
 	] %} 
 
-	{% image src="images/ideation-1.png", className="", alt="Wireframes and user flow variants", width=300, priority="low", lightbox="lightbox", bigWidth=1200 %}
+	{% image src="images/ideation-1.png", className="", alt="Wireframes and user flow variants", width=300, priority="low", lightbox=true, lightboxWidth=1200 %}
 
 	### Key points
 
@@ -89,17 +91,23 @@ eleventyComputed:
 
 {% projectSection %}
 	## Final solutions
-	[Figma]
+	[Figma](https://www.figma.com/design/PRRKLkvSCGa70cACuEOPGR/Netology--Useful-content-sharing?node-id=658-16327&p=f&t=xtCRNw9KjjQXQNwJ-11)
 	### Student flow
 	Allow students to share private lectures with colleagues. And give them a mini-course of their choice to further motivate them to share.
 	- Students share helpful video lessons with colleagues and peers via click-to-share button.
 	- When a lecture ends, the sharing button appears over the video player, catching viewers' attention when they're most engaged and motivated to share helpful content.
+
+	{% image src="images/solutions-1.jpg", className="", alt="", width=922, priority="low" %}
 
 	### Colleagues flow
 	- Colleagues get full video access after email registration — a compromise with top management to prevent course piracy.
 	- Time-limited video access to encourage prompt viewing.
 	- Public lecture page includes course links and conversion blocks (career guidance, learning process, feedback) to drive course purchases.
 	- Shared videos drive the platform discovery and customer conversion.
+
+	{% image src="images/solutions-2.jpg", className="", alt="", width=922, priority="low" %}
+
+	
 
 {% endprojectSection %}
 
