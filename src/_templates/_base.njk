@@ -29,6 +29,22 @@
 	<a class="scroll-to-top" href="#" aria-label="Scroll up"></a>
 	{% if env === "production" %}
 		<script defer data-domain="dudin.design" src="https://analytics.dudin.design/js/script.js"></script>
+
+		<script>
+			window.plausible = window.plausible || function() { 
+				(window.plausible.q = window.plausible.q || []).push(arguments) 
+			};
+			window.addEventListener('load', function() {
+				plausible('pageview', {
+				props: {
+					screen_width: window.innerWidth,
+					screen_height: window.innerHeight,
+					screen_resolution: `${window.innerWidth}x${window.innerHeight}`,
+					device_pixel_ratio: window.devicePixelRatio
+				}
+				});
+			});
+			</script>
 	{% endif %}	
 
 	<script type="module" src="{{ "/js/bundle.js" | filehash }}" crossOrigin="anonymous"></script>
