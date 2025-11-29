@@ -2,10 +2,9 @@
 title: Yandex Practicum
 description: EdTech
 highlights:
-  - Lesson annotations (drawing, highlighting, etc.)
-  - Student and parent dashboards
+  - Lesson annotations and drawing, learning journey
+  - Dashboards
   - Design system
-  - Learning journey
 category:
   - Product Design
   - Design System
