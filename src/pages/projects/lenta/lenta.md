@@ -2,9 +2,9 @@
 title: Lenta
 description: Retail, 12M MAU
 highlights:
-  - Admin panel for all brands and channels
-  - Admin design system, colour and JSON generator
-  - Lenta design system
+  - Admin panel
+  - Colour and JSON generator
+  - Design systems
 category:
   - Product Design
   - Design System
