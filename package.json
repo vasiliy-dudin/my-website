@@ -6,8 +6,8 @@
   "scripts": {
     "watch": "npm-run-all --parallel _watch:*",
     "build": "cross-env-shell ELEVENTY_ENV=production \"npm-run-all _build:sass _build:lightningcss _build:js && eleventy && pnpm _build:html\"",
-    "deploy": "gh-pages --dist dist --dotfiles --nojekyll",
-    "build+deploy": "npm-run-all build deploy",
+    "deploy": "vercel deploy ./dist --prod",
+    "build+deploy": "pnpm run build && pnpm run deploy",
     "_watch:11ty": "eleventy --serve",
     "_watch:sass": "sass --watch --style=expanded src/styles/bundle.sass:dist/styles/bundle.css src/styles/fancybox.sass:dist/styles/fancybox.css",
     "_watch:js": "rollup -c -w",
@@ -21,15 +21,14 @@
     "@11ty/eleventy": "3.1.2",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-navigation": "^1.0.4",
-    "@fancyapps/ui": "^6.1.5",
+    "@fancyapps/ui": "^6.1.6",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@uncenter/eleventy-plugin-toc": "^1.0.3",
     "cross-env": "^10.1.0",
     "fs-extra": "^11.3.2",
-    "gh-pages": "^6.3.0",
-    "glob": "^11.0.3",
+    "glob": "^13.0.0",
     "html-minifier-terser": "^7.2.0",
     "js-yaml": "^4.1.1",
     "lightningcss-cli": "^1.30.2",
@@ -38,8 +37,11 @@
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
-    "rimraf": "^6.1.0",
-    "rollup": "^4.53.2",
-    "sass": "^1.94.0"
+    "rimraf": "^6.1.2",
+    "rollup": "^4.53.3",
+    "sass": "^1.94.2"
+  },
+  "devDependencies": {
+    "vercel": "^48.12.0"
   }
 }
