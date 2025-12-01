@@ -1,5 +1,5 @@
 export function copyEmail() {
-  const copyButtons = document.querySelectorAll('[data-copy-email]');
+  const copyButtons = document.querySelectorAll('.email-copy');
   
   copyButtons.forEach(button => {
     let isProcessing = false;
@@ -8,7 +8,7 @@ export function copyEmail() {
       if (isProcessing) return;
       isProcessing = true;
       
-      const email = button.dataset.copyEmail;
+      const email = button.querySelector('.email-copy__text').textContent.trim();
       
       const showSuccess = () => {
         button.classList.add('--copied');
