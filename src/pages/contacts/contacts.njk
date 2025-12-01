@@ -5,15 +5,14 @@ layout: page.njk
 permalink: "/contacts/"
 ---
 
-<ul class="contacts">
+<ul class="contacts-page">
 	{% for link in contacts %}
-		<li class="contacts__item">
+		<li class="contacts-page__item">
 			{% if link.name == "email" %}
-				<a class="contacts__item-link" href="mailto:{{ link.url }}">
-					{{ link.url }}
-				</a>
+				{% set email = link.url %}
+				{% include "email-copy-button.njk" %}
 			{% else %}
-				<a class="contacts__item-link" href="{{ link.url }}" target="_blank" rel="nofollow noopener noreferrer">
+				<a class="contacts-page__item-link" href="{{ link.url }}" target="_blank" rel="nofollow noopener noreferrer">
 					{{ link.name }}
 				</a>
 			{% endif %}

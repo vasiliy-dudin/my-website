@@ -5,9 +5,8 @@
 		{% for link in contacts %}
 			<li class="contacts-block__item">
 				{% if link.name == "email" %}
-					<a class="contacts-block__item-link" href="mailto:{{ link.url }}">
-						{{ link.url }}
-					</a>
+					{% set email = link.url %}
+					{% include "email-copy-button.njk" %}
 				{% else %}
 					<a class="contacts-block__item-link" href="{{ link.url }}" target="_blank" rel="nofollow noopener noreferrer">
 						{{ link.name }}
