@@ -72,17 +72,23 @@
 		top: 0
 		right: 0
 		bottom: 0
+	// Общие свойства hover-эффекта
 	&__link:hover:after
 		mix-blend-mode: multiply
 		background: url(../assets/noise.png) 0 0
 		opacity: 0.6
-		mask-image: radial-gradient(circle at 106% 0%, rgb(0, 0, 0) 10%, rgb(255 255 255 / 0%) 20%)
 		animation: noise-animation 0.5s step-end infinite
 		@keyframes noise-animation
 			0%
 				background-size: 150px
 			50%
 				background-size: 160px
+		// Позиция для обычных карточек (case studies)
+		.--default &
+			mask-image: radial-gradient(circle at 106% 0%, rgb(0, 0, 0) 10%, rgb(255 255 255 / 0%) 20%)
+		// Позиция для компактных карточек (screenshots only)
+		.--compact &
+			mask-image: radial-gradient(circle at 106% 100%, rgb(0, 0, 0) 15%, rgb(255 255 255 / 0%) 30%)
 
 	// Не опубликован
 	/* &.--unpublished
