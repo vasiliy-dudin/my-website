@@ -49,13 +49,13 @@ $color-success: $sd-color__palette-green-500
 		
 	&__tooltip
 		position: absolute
-		top: 100%
+		bottom: 100%
 		left: 50%
-		transform: translateX(-50%) translateY(-4px)
+		transform: translateX(-50%) translateY(4px)
 		display: flex
 		align-items: center
 		gap: 4px
-		margin-top: 8px
+		margin-bottom: 8px
 		padding: 4px 8px
 		background: $color-success
 		color: white
@@ -66,11 +66,11 @@ $color-success: $sd-color__palette-green-500
 		transition: opacity 0.2s ease, transform 0.2s ease
 		pointer-events: none
 		
-		&::before
+		&::after
 			content: ""
 			position: absolute
-			bottom: 100%
+			top: 100%
 			left: 50%
 			transform: translateX(-50%)
 			border: 5px solid transparent
-			border-bottom-color: $color-success
+			border-top-color: $color-success
