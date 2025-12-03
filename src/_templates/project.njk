@@ -10,12 +10,12 @@ layout: _base.njk
 	{% if previousPage or nextPage %}
 		<div class="project-neighbours">
 			{% if previousPage %}
-				<a class="project-neighbours__lnk --prev" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}">
+				<a class="project-neighbours__lnk --prev" href="{{ previousPage.url }}" title="{{ previousPage.data.title }}" onclick="plausible('Project neighbours', { props: { page: window.location.pathname, direction: 'prev' }})">
 					{% include "../assets/arrow-neighbours.svg" %}
 				</a>
 			{% endif %}
 			{% if nextPage %}
-				<a class="project-neighbours__lnk --next" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}">
+				<a class="project-neighbours__lnk --next" href="{{ nextPage.url }}" title="{{ nextPage.data.title }}" onclick="plausible('Project neighbours', { props: { page: window.location.pathname, direction: 'next' }})">
 					{% include "../assets/arrow-neighbours.svg" %}
 				</a>
 			{% endif %}
@@ -28,7 +28,7 @@ layout: _base.njk
 		<div class="project-col-2">
 			
 			<div class="project-nav">
-				<a href="#main">Main info</a>
+				<a href="#main" onclick="plausible('Project navigation', { props: { page: window.location.pathname, target: 'main' } })">Main info</a>
 				{{ content | toc | safe }}
 				{{ neighbours() }}
 			</div>

@@ -121,7 +121,7 @@ const imageShortcode = async function({src, className = "", alt, width, priority
 		const caption = (lightboxCaption && lightboxCaption !== "undefined") 
 			? ` data-caption="${lightboxCaption}"` 
 			: '';
-		return `<a href="${largeImg.url}" data-fancybox="lightbox"${caption}>${imgTag}</a>`;
+		return `<a href="${largeImg.url}" data-fancybox="lightbox"${caption} onclick="plausible('Lightbox open', { props: { page: window.location.pathname }})">${imgTag}</a>`;
 	}
 	
 	return imgTag;

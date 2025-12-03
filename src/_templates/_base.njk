@@ -26,7 +26,7 @@
 
 
 	{% include "footer.njk" %}
-	<a class="scroll-to-top" href="#" aria-label="Scroll up"></a>
+	<a class="scroll-to-top" href="#" aria-label="Scroll up" onclick="plausible('Scroll to top', { props: { page: window.location.pathname } })"></a>
 	{% if env === "production" %}
 		<script defer data-domain="dudin.design" src="https://analytics.dudin.design/js/script.js"></script>
 
