@@ -25,9 +25,13 @@
 					{% if item.enabled %}
 						<li class="menu__item">
 							<a class="menu__link{% if isActive %} --active{% endif %}"
-							href="{{ item.href }}"
-							{% if isCurrent %}aria-current="page"{% endif %}
+								href="{{ item.href }}"
+								{% if isCurrent %}aria-current="page"{% endif %}
+								{% if item.external %}target="_blank" rel="noopener"{% endif %}
 							>
+								{% if item.icon %}
+									<span class="menu__link-icon">{% include "../assets/" + item.icon + ".svg" %}</span>
+								{% endif %}
 								{{ item.name }}
 							</a>
 						</li>

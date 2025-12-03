@@ -69,6 +69,8 @@ $link__color: $header__color !important
 			flex-grow: 0
 
 	&__link
+		display: flex
+		align-items: center
 		justify-content: center
 		width: 100%
 		height: 100%
@@ -88,3 +90,10 @@ $link__color: $header__color !important
 		&.--active
 			background-color: $item__bg--hover
 			text-decoration-color: $sd-color__palette-beige-300
+		
+	&__link-icon
+		display: inline-flex
+		align-items: center
+		margin-right: 4px
+		width: 24px
+		height: 24px

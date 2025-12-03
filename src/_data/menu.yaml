@@ -1,9 +1,17 @@
 - name: "About Me"
   href: "/"
   enabled: true
+  icon: ""
 - name: "Projects"
   href: "/projects/"
   enabled: true
+  icon: ""
 - name: "Contacts"
   href: "/contacts/"
   enabled: true
+  icon: ""
+- name: "CV"
+  href: "https://cv-tau-lac.vercel.app/Vasya_Dudin_CV_ProductDesigner.pdf"
+  enabled: true
+  external: true
+  icon: "pdf-icon"
