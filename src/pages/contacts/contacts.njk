@@ -12,7 +12,7 @@ permalink: "/contacts/"
 				{% set email = link.url %}
 				{% include "email-copy-button.njk" %}
 			{% else %}
-				<a class="contacts-page__item-link" href="{{ link.url }}" target="_blank" rel="nofollow noopener noreferrer">
+				<a class="contacts-page__item-link" href="{{ link.url }}" target="_blank" rel="nofollow noopener noreferrer" onclick="plausible('Contact link', { props: { page: window.location.pathname, destination: '{{ link.name | lower }}' } })">
 					{{ link.name }}
 				</a>
 			{% endif %}
