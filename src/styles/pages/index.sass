@@ -12,7 +12,7 @@
 	overflow: hidden	
 	@extend %box, %box__paddings, %box__radius
 	position: relative
-	box-shadow: 8px 12px 0 $border-color-1
+	box-shadow: 8px 12px 0 $sd-color__palette-beige-75
 	// responsive
 	justify-content: center
 	text-align: center
@@ -26,6 +26,7 @@
 		height: 100%
 		object-fit: cover
 		z-index: -1
+		filter: sepia(0.1)
 	@media (min-width: 680px)
 		justify-content: flex-start
 		text-align: left
