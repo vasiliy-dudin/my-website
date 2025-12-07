@@ -13,7 +13,7 @@ permalink: "/projects/piter-css/"
 
 {% projectSection %}
 	## About the project
-	Сообщество проводит встречи про фронтенд и разработку.
+	The community organises meetings on frontend and development.
 {% endprojectSection %}
 
 {% projectSection %}

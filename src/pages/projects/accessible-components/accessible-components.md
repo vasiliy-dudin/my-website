@@ -12,48 +12,48 @@ enabled: true
 permalink: "/projects/accessible-components/"
 eleventyComputed:
   LongDescription: |
-    Каталог протестированных UI-компонентов для разработчиков и дизайнеров. Качество компонентов могут протестировать не только люди с ограниченными возможностями, но специалисты, которые заинтересованы в удобных интерфейсах.
+    A catalogue of tested UI components for developers and designers. The quality of components can be tested not only by people with disabilities but also by specialists who are interested in user-friendly interfaces.
 
-    Тут кратко описываю процесс проектирования MVP. Для первой версии выбраны решения, которые дешёвы в разработке.
+    Here I briefly describe the MVP design process. For the first version, solutions were chosen that are cost-effective to develop.
 
-    [Прототип Axure RP](https://k90cvf.axshare.com)
+    [Axure RP Prototype](https://k90cvf.axshare.com)
     [Figma](https://www.figma.com/file/DiYCUz0N01asW8Y05rbozhJL/Accessible-Components?node-id=0%3A1)
 ---
 
 
 {% projectSection %}
-	## Решаемые проблемы
-	1. Фронтендеры и дизайнеры хотят разработать интерфейс для людей с ограниченными возможностями. Такие интерфейсы должны быть удобными и соответствовать стандартам. Примеры из интернета сложны, а готовые библиотеки компонентов часто недоступны.
-	2. Люди с ограниченными возможностями испытывают проблемы на сайтах и сервисах. Некоторыми ресурсами и вовсе не получается воспользоваться.
+	## Problems to solve
+	1. Frontend developers and designers want to develop interfaces for people with disabilities. Such interfaces should be user-friendly and comply with standards. Examples from the internet are complex, and ready-made component libraries are often unavailable.
+	2. People with disabilities experience problems on websites and services. Some resources cannot be used at all.
 {% endprojectSection %}
 
 {% projectSection %}
-	## 1. Погружение и разработка требований
-	Составил job stories, технические ограничения со списком внешних интеграций, use case diagram и изучил рефы.
+	## 1. Research and requirements development
+	I created job stories, technical constraints with a list of external integrations, a use case diagram and studied references.
 {% endprojectSection %}
 
 {% projectSection %}
-	## 2. Моделирование процессов
-	За основу взял диаграмму use cases и показал как 3 группы пользователей будут решать свои задачи, взаимодействуя с интерфейсом.
+	## 2. Process modelling
+	I used the use case diagram as a basis and showed how 3 user groups would solve their tasks by interacting with the interface.
 
 	{% image src="images/1.png", className="project-card__img", alt="Use case diagram for accessible components", width=650, priority="low" %}
 {% endprojectSection %}
 
 {% projectSection %}
-	## 3. Прототипирование
-	[Интерактивный прототип Axure RP](https://k90cvf.axshare.com)
+	## 3. Prototyping
+	[Interactive Axure RP prototype](https://k90cvf.axshare.com)
 
 	{% image src="images/2.png", className="project-card__img", alt="Interactive prototype screen", width=650, priority="low" %}
 
-	На первой вкладке пользователи скринридеров будут тестировать компоненты.
+	On the first tab, screen reader users will test components.
 
-	А на следующей пошагово объясняем, как сверстать компонент, как он должен работать и какие ARIA-атрибуты необходимы. Отсюда же разработчик может забрать React-компонент, если не хочет разрабатывать его самостоятельно.
+	On the next tab, we step-by-step explain how to code the component, how it should work and which ARIA attributes are necessary. From here, a developer can also take a React component if they don't want to develop it themselves.
 
 	{% image src="images/3.png", className="project-card__img", alt="Component documentation example", width=650, priority="low" %}
 {% endprojectSection %}
 
 {% projectSection %}
-	## 4. Дизайн-макет
+	## 4. Design mockup
 	[Figma](https://www.figma.com/file/DiYCUz0N01asW8Y05rbozhJL/Accessible-Components?node-id=0%3A1)
 
 	{% image src="images/4.png", className="project-card__img", alt="Figma design mockup 1", width=920, priority="low" %}
