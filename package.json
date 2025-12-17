@@ -21,7 +21,7 @@
     "@11ty/eleventy": "3.1.2",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-navigation": "^1.0.5",
-    "@fancyapps/ui": "^6.1.6",
+    "@fancyapps/ui": "^6.1.7",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
@@ -38,8 +38,8 @@
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
     "rimraf": "^6.1.2",
-    "rollup": "^4.53.3",
-    "sass": "^1.94.2",
-    "vercel": "^49.1.1"
+    "rollup": "^4.53.5",
+    "sass": "^1.97.0",
+    "vercel": "^50.1.0"
   }
 }
