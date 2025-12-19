@@ -29,8 +29,8 @@ eleventyComputed:
 			{role: "Senior product designer", icon: "me"},
 			{role: "Product manager", icon: "product-manager", count: 1},
 			{role: "Product analyst", icon: "product-analyst", count: 1},
-			{role: "Front-end devs", icon: "dev", count: 2},
-			{role: "Back-end devs", icon: "dev", count: 2},
+			{role: "Frontend devs", icon: "dev", count: 2},
+			{role: "Backend devs", icon: "dev", count: 2},
 			{role: "QAs", icon: "qa", count: 2}
 		] %}
 
