@@ -6,9 +6,11 @@
 	display: flex
 	flex-direction: column
 	gap: 8px
-	margin-top: 64px
 	@extend %box, %box__paddings, %box__radius
 	border: 3px solid $surface-secondary
+
+	.--project &
+		margin-top: 64px
 
 	&__heading
 		margin: 0
