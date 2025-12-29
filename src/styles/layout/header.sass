@@ -84,13 +84,15 @@ $link__color: $header__color !important
 		border-radius: $radius--S
 		text-decoration: underline
 		text-decoration-thickness: 1.2px
-		text-decoration-color: $sd-color__palette-gray-200
+		text-decoration-color: $sd-color__palette-gray-500
 		text-underline-offset: 5px
+
+		&.--external
+			text-decoration: none
 
 		&:hover,
 		&.--active
 			background-color: $item__bg--hover
-			text-decoration-color: $surface-primary--dark-3
 		
 	&__link-icon
 		display: inline-flex
