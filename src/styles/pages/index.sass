@@ -8,12 +8,12 @@
 	display: flex
 	flex-wrap: wrap
 	gap: 24px
-	margin-bottom: 32px
+	margin-bottom: 24px
 	padding: 16px 32px
 	overflow: hidden	
 	@extend %box, %box__paddings, %box__radius
 	position: relative
-	box-shadow: 8px 12px 0 $surface-primary
+	box-shadow: 5px 7px 0 rgba($sd-color__palette-blue-100, 0.5)
 	// responsive
 	justify-content: center
 	text-align: center
@@ -90,7 +90,7 @@
 
 
 .front-section
-	@extend %box, %box__paddings, %box__radius, %box__secondary
+	@extend %box, %box__paddings, %box__radius, %box__primary
 	margin-bottom: 16px
 	h2
 		margin-top: 0
