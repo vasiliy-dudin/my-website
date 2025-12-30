@@ -1,7 +1,7 @@
 @use "../variables" as *
 
-#main-content a,
-.footer a
+#main-content a:not([data-fancybox]),
+.footer a:not([data-fancybox])
 	color: $link-color
 	text-decoration-line: underline
 	text-decoration-thickness: 1px
