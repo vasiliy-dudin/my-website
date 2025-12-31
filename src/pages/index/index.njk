@@ -14,7 +14,10 @@ permalink: /
 		<p class="hero-section__subtitle">Senior Product Designer,</p>
 		<p class="hero-section__subtitle">14 years of experience, based in London</p>
 	</div>
-	{% image src="images/photo.jpg", className="hero-section__img", alt="My photo", width=200, priority="high" %}
+	<div class="hero-section__photo-container">
+		{% image src="images/photo.png", className="hero-section__img", alt="My photo", width=160, priority="high" %}
+		<svg class="hero-section__polygon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 250 270"><path fill="#c3d3f4" fill-rule="evenodd" d="m169.081 91.004 77.466 21.528L250 193.203l-93.854-11.475L102.703 270 0 248.928l77.424-115.536L28.49 69.899 72.062 0l81.25 11.533z" clip-rule="evenodd" style="mix-blend-mode:multiply"/></svg>
+	</div>
 	{% image src="images/bg.jpg", className="hero-section__bg", alt="", width=922, priority="high" %}
 </section>
 

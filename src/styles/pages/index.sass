@@ -32,19 +32,50 @@
 		justify-content: flex-start
 		text-align: left
 
+	// Photo container
+	&__photo-container
+		position: relative
+		display: inline-block
+		order: 0
+
+		// img bg
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			border-radius: 50%
+			//background: rgba($sd-color__palette-blue-100, 0.54)
+			background: rgba(#85A2E7, 0.54)
+			mix-blend-mode: multiply
+
 	// Photo
 	&__img
 		display: block
-		width: 160px
+		width: 140px
 		height: auto
+		position: relative
 		border-radius: 50%
-		order: -1
-		
-		@include media(md)
-			order: 0
-
+		z-index: 1
 		@include media(lg)
-			width: 200px
+			width: 160px
+
+	// Polygon SVG
+	&__polygon
+		position: absolute
+		top: -24px
+		left: -70px
+		height: 230px
+		width: 250px
+		z-index: 0
+		opacity: 0.8
+		mix-blend-mode: multiply
+		@media (min-width: 680px)
+			top: -34px
+			left: -75px
+			height: 270px
 
 	// Text block
 	&__text-col
