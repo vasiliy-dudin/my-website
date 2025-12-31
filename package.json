@@ -27,7 +27,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@uncenter/eleventy-plugin-toc": "^1.0.3",
     "cross-env": "^10.1.0",
-    "fs-extra": "^11.3.2",
+    "fs-extra": "^11.3.3",
     "glob": "^13.0.0",
     "html-minifier-terser": "^7.2.0",
     "js-yaml": "^4.1.1",
@@ -38,8 +38,8 @@
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
     "rimraf": "^6.1.2",
-    "rollup": "^4.53.5",
-    "sass": "^1.97.0",
-    "vercel": "^50.1.0"
+    "rollup": "^4.54.0",
+    "sass": "^1.97.1",
+    "vercel": "^50.1.3"
   }
 }
