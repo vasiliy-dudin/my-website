@@ -484,16 +484,24 @@
     }
   },
   "Semantic": {
-    "Text": {
+    "fg": {
       "body-primary": {
         "$type": "color",
         "$value": "#343a3f"
       }
     },
-    "Background": {
-      "50": {
+    "bg": {
+      "primary": {
         "$type": "color",
         "$value": "{Palette.Gray.50}"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{Palette.Green Bright.100}"
+      },
+      "accent-darker": {
+        "$type": "color",
+        "$value": "{Palette.Green Bright.200}"
       }
     },
     "Heading": {
