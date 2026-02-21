@@ -7,13 +7,13 @@
 
 .project-header-section
 	padding: 48px 0 56px
-	background: url(../assets/noise-2.png) repeat 0 0 / 150px, $sd-color__palette-gray-900
+	background: url(../assets/noise-2.png) repeat 0 0 / 150px, $color__gray-900
 	background-blend-mode: color-dodge
 	view-timeline-name: --project-header
 	view-timeline-axis: block
 
 .project-header
-	$color: $sd-color__palette-gray-200
+	$color: $color__gray-200
 
 	display: grid
 	gap: 16px
@@ -21,7 +21,7 @@
 	color: $color
 	z-index: 1
 	::selection
-		background: $sd-color__palette-blue-700
+		background: $color__blue-700
 		text-shadow: none
 
 	&__main-description
@@ -51,9 +51,9 @@
 
 	@layer dark-bg
 		a
-			$link-color: $sd-color__palette-blue-100
+			$link-color: $color__blue-100
 			$link-color--hover: color.scale($link-color, $lightness: 80%)
-			$link-color--hover-bg: $sd-color__palette-blue-600
+			$link-color--hover-bg: $color__blue-600
 			
 			color: $link-color
 			text-decoration-line: underline

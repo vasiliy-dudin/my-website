@@ -40,7 +40,7 @@
 	a[data-fancybox]>img
 		transition: all 0.3s
 	a[data-fancybox]:hover>img
-		border: 12px solid rgba($sd-color__palette-yellow-100, 60%)
+		border: 12px solid rgba($color__yellow-100, 60%)
 
 // .project-video
 // 	+media-down(md)
@@ -65,9 +65,9 @@
 	&.--old
 		border-color: $surface-primary--dark-3
 	&.--bad
-		text-decoration-color: rgba($sd-color__palette-yellow-200, 0.2)
+		text-decoration-color: rgba($color__yellow-200, 0.2)
 	&.--good
-		text-decoration-color: rgba($sd-color__palette-green-200, 0.2)
+		text-decoration-color: rgba($color__green-200, 0.2)
 
 
 
@@ -92,20 +92,20 @@
 		white-space: nowrap
 
 	&.--good
-		background: url(../assets/noise-2.png) repeat 0 0 / 50px, linear-gradient(314deg, rgba(255, 255, 255, 0) 90%, $sd-color__palette-green-100 100%);
+		background: url(../assets/noise-2.png) repeat 0 0 / 50px, linear-gradient(314deg, rgba(255, 255, 255, 0) 90%, $color__green-100 100%);
 		
 	&.--good &__values
-		color: $sd-color__palette-green-300
+		color: $color__green-300
 	&.--good.--main // Main metric
-		outline: 3px solid $sd-color__palette-green-200
+		outline: 3px solid $color__green-200
 
 	&.--bad
-		background: url(../assets/noise-2.png) repeat 0 0 / 50px, linear-gradient(314deg, rgba(255, 255, 255, 0) 90%, $sd-color__palette-yellow-100 100%);
+		background: url(../assets/noise-2.png) repeat 0 0 / 50px, linear-gradient(314deg, rgba(255, 255, 255, 0) 90%, $color__yellow-100 100%);
 
 	&.--bad &__values
-		color: $sd-color__palette-yellow-300
+		color: $color__yellow-300
 	&.--bad.--main // Main metric
-		outline: 3px solid $sd-color__palette-yellow-200
+		outline: 3px solid $color__yellow-200
 
 	&__goal, &__name
 		font-size: $font-size-sm
@@ -116,7 +116,7 @@
 	display: block
 	width: 100%
 	padding: 24px
-	background: $sd-color__palette-blue-100
+	background: $color__blue-100
 	border-radius: $radius--M
 	font-weight: normal
 
