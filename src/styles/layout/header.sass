@@ -45,7 +45,7 @@ $header__color: #333
 
 
 
-//$item__bg--active: #FEE076
+$item__bg--active: $accent-primary
 $item__bg--hover: $surface-primary
 $link__color: $header__color !important
 
@@ -91,9 +91,10 @@ $link__color: $header__color !important
 		&.--external
 			text-decoration: none
 
-		&:hover,
-		&.--active
+		&:hover
 			background-color: $item__bg--hover
+		&.--active
+			background-color: $item__bg--active
 		
 	&__link-icon
 		display: inline-flex
