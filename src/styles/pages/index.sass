@@ -13,7 +13,7 @@
 	overflow: hidden	
 	@extend %box, %box__paddings, %box__radius
 	position: relative
-	box-shadow: 5px 7px 0 rgba($color__blue-100, 0.5)
+	box-shadow: 5px 7px 0 $color__gray-100
 	// responsive
 	justify-content: center
 	text-align: center
@@ -48,7 +48,7 @@
 			height: 100%
 			border-radius: 50%
 			//background: rgba($color__blue-100, 0.54)
-			background: rgba(#85A2E7, 0.54)
+			background: rgba($accent-primary, 0.54)
 			mix-blend-mode: multiply
 
 	// Photo
@@ -69,6 +69,7 @@
 		left: -70px
 		height: 230px
 		width: 250px
+		fill: $accent-primary
 		z-index: 0
 		opacity: 0.8
 		mix-blend-mode: multiply
@@ -155,7 +156,7 @@
 			height: 24px
 			flex-shrink: 0
 			border-radius: 50%
-			background: linear-gradient(270deg, #ffc022 0%, transparent 100%), url(../assets/noise-2.png) 0 0 / 50px
+			background: linear-gradient(270deg, $accent-primary 0%, transparent 100%), url(../assets/noise-2.png) 0 0 / 50px
 			background-blend-mode: color-burn
 		
 	&__title
