@@ -113,14 +113,14 @@ module.exports = config => {
 				
 				let iconContent = '';
 				if (icon === 'me') {
-					// Use image shortcode for photo (path from src root)
-					iconContent = await imageShortcode.call(this, {
-						src: '/pages/index/images/photo.jpg',
-						className: '',
-						alt: 'Vasily Dudin',
-						width: 64,
-						priority: 'low'
-					});
+				// Use image shortcode for photo (path from src root)
+				iconContent = await imageShortcode.call(this, {
+					src: '/pages/index/images/photo.png',
+					className: '',
+					alt: '',
+					width: 64,
+					priority: 'low'
+				});
 				} else {
 					// Read SVG file content and inline it
 					const svgPath = path.join(__dirname, 'src', 'assets', `my-role-${icon}.svg`);
