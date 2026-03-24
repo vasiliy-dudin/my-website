@@ -4,7 +4,7 @@ const yaml = require("js-yaml");
 const pluginImages = require("./.eleventy.images.js");
 const pluginShortcodes = require("./.eleventy.shortcodes.js");
 const pluginFilters= require("./.eleventy.filters.js");
-const tableOfContent = require("@uncenter/eleventy-plugin-toc");
+const tableOfContent = require("@uncenter/eleventy-plugin-toc").default;
 
 
 module.exports = function(config) {
