@@ -3,7 +3,6 @@
 @use "../components/global" as *
 @use "../components/images" as *
 
-
 .project-col-2
 	display: none
 	
@@ -36,19 +35,18 @@
 		list-style-type: none		
 	ul a,
 	& > a
+		padding: 4px 8px
 		font-size: 16px
 		text-decoration: none
 		font-weight: 500
 		color: $color__gray-100
+		border-radius: $radius--S
 		&:hover
-			background: unset
-			text-decoration: underline 1.5px
-			text-decoration-color: $color__gray-500
+			background: rgba($color__gray-200, 0.2)
 		&.--active
 			text-decoration: underline 1.5px
 			text-decoration-color: inherit !important
+			background: rgba($color__green-bright-200, 0.2)
 	// For light sections
 	.--light
 		color: $color__gray-700
-		&:hover
-			text-decoration-color: $color__gray-200
