@@ -1,24 +1,21 @@
-//const navigationPlugin = require('@11ty/eleventy-navigation');
-const yaml = require("js-yaml");
+import yaml from "js-yaml";
+import pluginImages from "./eleventy.images.js";
+import pluginShortcodes from "./eleventy.shortcodes.js";
+import pluginFilters from "./eleventy.filters.js";
+import tableOfContent from "@uncenter/eleventy-plugin-toc";
 
-const pluginImages = require("./.eleventy.images.js");
-const pluginShortcodes = require("./.eleventy.shortcodes.js");
-const pluginFilters= require("./.eleventy.filters.js");
-const tableOfContent = require("@uncenter/eleventy-plugin-toc").default;
-
-
-module.exports = function(config) {
+export default function(config) {
 	config.addDataExtension("yaml", contents => yaml.load(contents));
 	config.addGlobalData("env", process.env.ELEVENTY_ENV);
 
 	//////////// Collections
-	const isNotDraft = item => 
+	const isNotDraft = item =>
 		process.env.ELEVENTY_ENV !== 'production' || !item.data.draft;
 
 	config.addCollection('caseStudyProjects', (collection) => {
 		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
-		.filter((item) => 
-			item.data.type === "case-study" && 
+		.filter((item) =>
+			item.data.type === "case-study" &&
 			item.data.enabled
 		)
 		.filter(isNotDraft)
@@ -26,7 +23,7 @@ module.exports = function(config) {
 	});
 	config.addCollection('petProjects', (collection) => {
 		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) => 
+			.filter((item) =>
 				item.data.type === "pet" &&
 				item.data.enabled
 			)
@@ -35,7 +32,7 @@ module.exports = function(config) {
 	});
 	config.addCollection('screenshotsProjects', (collection) => {
 		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) => 
+			.filter((item) =>
 				item.data.type === "screenshots" &&
 				item.data.enabled
 			)
@@ -44,21 +41,21 @@ module.exports = function(config) {
 	});
 	config.addCollection('allProjects', (collection) => {
 		const caseStudyProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) => 
+			.filter((item) =>
 				item.data.type === "case-study" &&
 				item.data.enabled
 			)
 			.filter(isNotDraft)
 			.sort((a, b) => a.data.order - b.data.order);
 		const petProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) => 
+			.filter((item) =>
 				item.data.type === "pet" &&
 				item.data.enabled
 			)
 			.filter(isNotDraft)
 			.sort((a, b) => a.data.order - b.data.order);
 		const screenshotsProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) => 
+			.filter((item) =>
 				item.data.type === "screenshots" &&
 				item.data.enabled
 			)
@@ -70,29 +67,23 @@ module.exports = function(config) {
 	/////////// Plugins
 	config.addPlugin(tableOfContent, {
 		tags: ["h2"],
-		ul: true, // whether to a use a `ul` or `ol`
+		ul: true,
 		wrapper: function (toc) {
-			// wrapper around the generated TOC
 			return `${toc}`;
 		}
 	});
-
 
 	/////////// Custom plugins or settings
 	config.addPlugin(pluginShortcodes);
 	config.addPlugin(pluginImages);
 	config.addPlugin(pluginFilters);
 
-
-
 	/////////// Build options
 	config.addPassthroughCopy("src/fonts");
-	config.addPassthroughCopy( "src/assets/**/*");
+	config.addPassthroughCopy("src/assets/**/*");
 	config.addPassthroughCopy("src/*.txt");
 	config.addWatchTarget("./src/styles/**/*");
 	config.addWatchTarget("./src/pages/**/*");
-
-
 
 	return {
 		dir: {
@@ -111,4 +102,4 @@ module.exports = function(config) {
 			"njk",
 		],
 	};
-};
+}

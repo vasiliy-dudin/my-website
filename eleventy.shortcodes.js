@@ -1,10 +1,14 @@
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require('markdown-it-anchor');
-const fsExtra = require("fs-extra");
-const path = require("path");
-const { imageShortcode } = require("./.eleventy.images.js");
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import fsExtra from "fs-extra";
+import path from "path";
+import { imageShortcode } from "./eleventy.images.js";
 
-module.exports = config => {
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default config => {
 	const md = markdownIt({
 		html: true,
 		breaks: true,
@@ -34,7 +38,7 @@ module.exports = config => {
 		// Convert tabs to spaces while preserving relative indentation
 		const cleanedContent = content.replace(/^(\t+)/gm, (match, tabs) => '  '.repeat(tabs.length));
 		const renderedContent = md.render(cleanedContent);
-		
+
 		return `<div class="project-section">
 			<div class="container --project">${renderedContent}</div>
 		</div>`;
@@ -83,7 +87,7 @@ module.exports = config => {
 
 	config.addPairedShortcode("highlight", function(content) {
 		return `<b class="project-section__highlights">${content}</b>`;
-	  });
+	});
 
 	// currentYear
 	config.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
@@ -98,9 +102,8 @@ module.exports = config => {
 	});
 
 
-
 	// My Role block with team members icons and descriptions
-	config.addPairedShortcode("myRole", async function(content, args) {		
+	config.addPairedShortcode("myRole", async function(content, args) {
 		// Parse team members from arguments
 		let teamMembersHTML = '';
 		if (args.team) {
@@ -110,7 +113,7 @@ module.exports = config => {
 				const role = member.role || '';
 				const count = member.count || 1;
 				const displayCount = count > 1 ? ` ×${count}` : '';
-				
+
 				let iconContent = '';
 				if (icon === 'me') {
 				// Use image shortcode for photo (path from src root)
@@ -129,21 +132,21 @@ module.exports = config => {
 					svgContent = svgContent.replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
 					iconContent = svgContent;
 				}
-				
+
 				return `<div class="my-role__team-member">
 					<div class="my-role__icon my-role__icon--${icon}">${iconContent}</div>
 					<div class="my-role__label">${role}${displayCount}</div>
 				</div>`;
 			});
 			teamMembersHTML = (await Promise.all(teamMembersPromises)).join('');
-			
+
 			teamMembersHTML = `<div class="my-role__team">${teamMembersHTML}</div>`;
 		}
-		
+
 		// Convert tabs to spaces while preserving relative indentation
 		const cleanedContent = content.replace(/^(\t+)/gm, (match, tabs) => '  '.repeat(tabs.length));
 		const renderedContent = md.render(cleanedContent);
-		
+
 		return `<div class="my-role">
 			${teamMembersHTML}
 			<div class="my-role__content">${renderedContent}</div>
@@ -160,16 +163,14 @@ module.exports = config => {
 				const icon = step.icon || 'default';
 				const title = step.title || '';
 				const substeps = step.substeps || [];
-				
-				// No icons needed
-				
+
 				// Generate substeps HTML
 				let substepsHTML = '';
 				if (substeps.length > 0) {
 					const substepsList = substeps.map(substep => `<li class="process__substep">${substep}</li>`).join('');
 					substepsHTML = `<ul class="process__substeps">${substepsList}</ul>`;
 				}
-				
+
 				return `<div class="process__step">
 					<div class="process__step-header">
 						<h5 class="process__step-title">${title}</h5>
@@ -178,9 +179,7 @@ module.exports = config => {
 				</div>`;
 			}).join('');
 		}
-		
+
 		return `<div class="design-process">${timelineHTML}</div>`;
 	});
-	
-	  
 }

@@ -3,6 +3,7 @@
   "description": "",
   "author": "Vasya Dudin",
   "license": "ISC",
+  "type": "module",
   "scripts": {
     "watch": "npm-run-all --parallel _watch:*",
     "build": "cross-env-shell ELEVENTY_ENV=production \"npm-run-all _build:sass _build:lightningcss _build:js && eleventy && pnpm _build:html\"",

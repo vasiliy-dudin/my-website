@@ -1,5 +1,5 @@
-const Image = require("@11ty/eleventy-img");
-const path = require("path");
+import Image from "@11ty/eleventy-img";
+import path from "path";
 
 // Constants
 const IMAGE_CONFIG = {
@@ -68,24 +68,22 @@ function validateParams({src, alt, width, priority, lightboxWidth, lightbox}) {
 	if (alt === undefined) {
 		throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
 	}
-	
-	const largeSizeWidth = (lightboxWidth && lightboxWidth !== "undefined") 
-		? parseInt(lightboxWidth, 10) 
+
+	const largeSizeWidth = (lightboxWidth && lightboxWidth !== "undefined")
+		? parseInt(lightboxWidth, 10)
 		: IMAGE_CONFIG.defaultLightboxWidth;
-	
-	const imagePriority = (priority && priority !== "undefined") 
-		? priority 
+
+	const imagePriority = (priority && priority !== "undefined")
+		? priority
 		: IMAGE_CONFIG.defaultPriority;
-	
+
 	const isLightboxEnabled = lightbox === true;
-	
+
 	return { largeSizeWidth, imagePriority, isLightboxEnabled };
 }
 
-
-
 // Main shortcode function
-const imageShortcode = async function({src, className = "", alt, width, priority = "high", lightbox, lightboxWidth, lightboxCaption}) {
+export const imageShortcode = async function({src, className = "", alt, width, priority = "high", lightbox, lightboxWidth, lightboxCaption}) {
 	// Validate and extract parameters
 	const { largeSizeWidth, imagePriority, isLightboxEnabled } = validateParams({
 		src, alt, width, priority, lightboxWidth, lightbox
@@ -93,42 +91,40 @@ const imageShortcode = async function({src, className = "", alt, width, priority
 
 	// Resolve image path
 	const srcAbsolute = resolveImagePath(src, this.page.inputPath);
-	
+
 	// Generate responsive images
 	const widths = generateImageWidths(width);
 	const metadata = await generateImages(srcAbsolute, widths);
-	
+
 	// Generate lightbox image if needed
 	let largeImg = null;
 	if (isLightboxEnabled) {
 		const lightboxMetadata = await generateImages(srcAbsolute, [largeSizeWidth]);
 		largeImg = Object.values(lightboxMetadata)[0][0];
 	}
-	
+
 	// Build image attributes
 	const mainImg = Object.values(metadata)[0][0];
 	const srcset = buildSrcset(metadata);
 	const loadingAttrs = getLoadingAttributes(imagePriority);
-	const finalClass = isLightboxEnabled 
-		? (className ? `${className} image-zoomable` : 'image-zoomable') 
+	const finalClass = isLightboxEnabled
+		? (className ? `${className} image-zoomable` : 'image-zoomable')
 		: className;
-	
+
 	// Build img tag
 	const imgTag = `<img src="${mainImg.url}" srcset="${srcset}" width="${mainImg.width}" height="${mainImg.height}" class="${finalClass}" alt="${alt}" ${loadingAttrs}>`;
-	
+
 	// Wrap in lightbox link if enabled
 	if (isLightboxEnabled) {
-		const caption = (lightboxCaption && lightboxCaption !== "undefined") 
-			? ` data-caption="${lightboxCaption}"` 
+		const caption = (lightboxCaption && lightboxCaption !== "undefined")
+			? ` data-caption="${lightboxCaption}"`
 			: '';
 		return `<a href="${largeImg.url}" data-fancybox="lightbox"${caption} onclick="plausible('Lightbox open', { props: { page: window.location.pathname }})">${imgTag}</a>`;
 	}
-	
+
 	return imgTag;
 };
 
-module.exports = config => {
+export default config => {
 	config.addAsyncShortcode("image", imageShortcode);
 };
-
-module.exports.imageShortcode = imageShortcode;
