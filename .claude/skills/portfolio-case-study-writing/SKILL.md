@@ -106,17 +106,21 @@ The writing should sound like a product designer talking to a peer — direct, i
 - Does **not** contain the problem, metrics, or outcome summary — those belong in their own sections.
 
 ### Problem
+The Problem section can range from a single short paragraph to multiple paragraphs with H3 subheadings. Use subheadings when there are genuinely distinct problem dimensions worth separating. Common subheadings (not exhaustive): Business problem, User's problem, Goal, Hypotheses.
+
 - States the business problem and why it mattered — before any solution appears.
 - Includes one or two sentences on how the problem was identified (analytics, PM, support data).
 - States a concrete goal or hypothesis with numbers if they existed.
 
 ### My Role
-- Names the team composition and size in one line.
+- Names the team composition and size in one line. If the case study involved working with a development team, **always include the 11ty team shortcode** instead of listing team members in prose — it renders a visual block of team members on the site.
 - Separates the designer's specific contribution from what the team did collectively.
 - Uses "I" for individual decisions, "we" for team decisions — consistently, not interchangeably.
 - Every bullet passes the specificity test (see below).
 
-### Research
+### Discovery research
+This section covers research conducted before the solution phase — user interviews, competitive analysis, stakeholder discovery, analytics review. It is distinct from usability testing done during solution iteration, which belongs in the Solution section.
+
 - Include only if the designer personally conducted research.
 - States method, participant count, and the key insights that changed direction.
 - Ends with one sentence connecting the finding to the design decision it informed.
@@ -128,7 +132,8 @@ The writing should sound like a product designer talking to a peer — direct, i
 - Usability testing belongs here, tied to the specific iteration it produced.
 - Constraints (legal, technical, organisational) are woven into the decision narrative — not listed separately.
 
-### Outcome
+### Impact & results
+- Use the **11ty ImpactRow shortcode** to display key metrics visually — do not list numbers in prose when the shortcode is available.
 - Reports all metrics honestly — including negative or flat results.
 - If results were negative: explains the likely cause and what the team decided next.
 - If metrics are unavailable: describes what changed in observable terms (user behaviour, team direction, product decision).
