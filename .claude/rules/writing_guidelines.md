@@ -23,7 +23,8 @@ Guidelines for the text quality and style of product design case studies — foc
 ## Text length and paragraph structure
 
 - One paragraph, one idea. If a paragraph can be split without losing meaning — split it.
-- Maximum 3–4 sentences per paragraph. Long paragraphs get skipped.
+- Readability depends on paragraph weight, not sentence count. Three sentences with multiple subordinate clauses can be harder to scan than five short ones. Ask: does this paragraph create a wall of text on screen? Would a scanning reader skip it?
+- If a paragraph is too heavy: first shorten and simplify individual sentences. If that isn't enough, remove sentences that restate what came before. Only split into a new paragraph (with a subheading) if the paragraph genuinely covers more than one idea.
 - Short, dense paragraphs signal substance. Long paragraphs signal filler.
 - Use bullet lists for genuinely enumerable items, but do not overuse them. If points are logically connected, one tight sentence beats three weak bullets.
 - Keep any single bullet list to a maximum of 5–6 items.
@@ -32,10 +33,11 @@ Guidelines for the text quality and style of product design case studies — foc
 
 ## Headings and subheadings
 
-- A heading should communicate something about the content, not just label a stage.
-  - Stronger: *Why the onboarding flow was losing users at step 3*
-  - Weaker: *Research*
-- Headings should work as a standalone sequence: when scanned top to bottom, they should tell a coherent story.
+- **H2 headings** are short and standard: "Research", "Solution", "Outcome". They appear in page navigation — readers use them to jump to a section. Do not make H2 headings long or descriptive.
+- **H3 and H4 headings** should be descriptive. Their job is to let each sub-point stand as its own focused paragraph rather than forcing everything into one long block.
+  - Stronger H3: *Why we gated access behind email registration*
+  - Weaker H3: *Decision*
+- H2 headings read top to bottom should tell the structure of the case study. H3/H4 headings read top to bottom should tell the story inside their section.
 - Do not use question-form headings as a stylistic device — they create a long-read feel and add no information.
 
 ---
