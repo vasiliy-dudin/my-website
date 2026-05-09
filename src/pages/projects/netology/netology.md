@@ -1,5 +1,5 @@
 ---
-title: "[Draft] Useful content sharing"
+title: "Useful content sharing"
 description: Netology, EdTech (B2C, B2B)
 category:
   - Product Design
@@ -14,7 +14,7 @@ eleventyComputed:
   LongDescription: |
     The 2nd largest EdTech platform in Russia, 2M MAU.
 
-    **My team's focus:** student motivation and goals, retention, usability, LMS (Learning Management System), completing homeworks, number of active days, COR, NPS, reducing churn.
+    I was on the LMS (Learning Management System) team — designing a content-sharing feature to reduce student acquisition costs through referrals.
 ---
 
 {% projectSection %}
@@ -34,112 +34,95 @@ eleventyComputed:
 			{role: "QAs", icon: "qa", count: 2}
 		] %}
 
-	- Led end-to-end design process in a Scrum team. Collaborated closely with the team to balance user needs, business goals, and technical constraints.
-	- Ran usability testing, interviews, and 2 surveys.
-	- Designed concepts and user flows diagrams with Miro.
-	- Created wireframes, prototypes, and high-fidelity UI with Figma.
-	- Coordinated cross-team alignment and conducted design reviews.
-	- Managed developer handoff with detailed documentation in Notion
+	- Owned design end-to-end over 4 weeks and 2 iterations on a 9-person Scrum team.
+	- Ran 12 usability testing sessions across 2 scenarios using the RITE method, 1:1 interviews with students and non-students, and a 1,083-response validation survey.
+	- Mapped user flows in Miro and produced wireframe variants for 2 scenarios: the student sharing flow and the colleague landing flow.
+	- Designed wireframes, interactive prototypes, and high-fidelity UI in Figma, including the in-video share trigger and the public lecture landing page.
+	- Negotiated the email-gated sharing model with top management and legal — balancing piracy concerns, royalty constraints, and the referral funnel.
 
 	{% endmyRole %}
 {% endprojectSection %}
 
 {% projectSection %}
-	## Problems to solve
-	### Business problem
-	High marketing costs to acquire new students (CAC).
+	## Problem
 
-	### Goal
-	Increase the percentage of users coming from referrals to reduce marketing costs. 
+	Paid channels dominated student acquisition, and customer acquisition cost (CAC) was high. The product manager identified this from marketing spend analysis.
 
-	### Hypotheses
-	If we let students share interesting course content, we can boost referral-based paid sign-ups: from 16% to 25% in six months.
+	We set a concrete target: grow referral-based paid sign-ups from 16% to 25% within six months. The hypothesis: if students could share course content with colleagues, the platform could generate qualified leads at lower cost.
 {% endprojectSection %}
 
 {% projectSection %}
-	## Process
-	{% designProcess steps=[
-		{title: "Research and synthesis", substeps: ["User interviews (2 scenarios)", "Survey"]},
-		{title: "Ideation", substeps: ["User flow mapping", "Wireframe sketching", "Alignment with devs"]},
-		{title: "Usability testing", substeps: ["12 test sessions, 2 scenarios, RITE Iterations", "Findings analysis"]},
-		{title: "Handoff", substeps: ["UI detailing", "Design documentation", "Design review"]},
-		{title: "Next steps", substeps: ["Track metrics with product analyst", "Go to 2nd iteration"]}
-	] %} 
+	## Discovery Research
 
-	{% image src="images/ideation-1.png", className="", alt="Wireframes and user flow variants", width=300, priority="low", lightbox=true, lightboxWidth=1200 %}
+	I ran a survey and interviews with two user segments — students and non-students — to validate direction before moving to design.
 
-	### Key points
+	- **Survey (1,083 responses):** 57% of students would share learning content — enough to justify building.
+	- **Student interviews:** they'd only share in exchange for something of value (a discount or free mini-course), and preferred professional communities over general social networks.
+	- **Non-student interviews:** genuine interest in peer-shared materials, seen as more credible than advertising.
 
-	{% callout %}
-	#### Discovery research insights
-	I carried out a survey and interviews that had a big impact on my design decisions and main hypothesis.
-
-	- 1,083-response survey validated the direction: 57% would be happy to share learning content.
-	- Student interviews revealed they:
-		- prefer sharing with colleagues and professional communities,
-		- would only share if offered something of value in return (e.g. a discount).
-	- Non-student interviews confirmed genuine interest in educational materials sourced from peers.
-	{% endcallout %}
-
-	{% callout %}
-	#### Usability testing
-	Participants struggled with unclear headings and missed important elements because of visual noise.
-
-	I rewrote confusing copy, simplified the design, and enhanced visual hierarchy. Follow-up tests showed that everyone could complete the tasks easily.
-	{% endcallout %}
+	This informed two design decisions: a mini-course as a sharing incentive, and a focus on professional rather than social sharing.
 {% endprojectSection %}
 
 {% projectSection %}
-	## Final solutions
+	## Solution
+
 	[Figma](https://www.figma.com/design/PRRKLkvSCGa70cACuEOPGR/Netology--Useful-content-sharing?node-id=658-16327&p=f&t=xtCRNw9KjjQXQNwJ-11)
-	### Student flow
-	Allow students to share private lectures with colleagues. And give them a mini-course of their choice to further motivate them to share.
-	- Students share helpful video lessons with colleagues and peers via click-to-share button.
-	- When a lecture ends, the sharing button appears over the video player, catching viewers' attention when they're most engaged and motivated to share helpful content.
 
-	{% image src="images/solutions-1.jpg", className="", alt="", width=922, priority="low" %}
+	### Student sharing flow
 
-	### Colleagues flow
-	- Colleagues get full video access after email registration — a compromise with top management to prevent course piracy.
-	- Time-limited video access to encourage prompt viewing.
-	- Public lecture page includes course links and conversion blocks (career guidance, learning process, feedback) to drive course purchases.
-	- Shared videos drive the platform discovery and customer conversion.
+	Students can share individual video lectures with colleagues and peers via a share button that appears at the end of each video — when engagement is highest. As a sharing incentive, they receive a mini-course of their choice.
 
-	{% image src="images/solutions-2.jpg", className="", alt="", width=922, priority="low" %}
+	{% image src="images/solutions-1.jpg", className="", alt="Share button appearing after a video lecture ends, with mini-course incentive overlay", width=922, priority="low" %}
 
-	
+	### Usability testing
+
+	In the first iteration, participants struggled with unclear headings and missed the share button because of visual noise. I rewrote the copy and simplified the layout to improve hierarchy. In follow-up sessions, all 12 participants completed the sharing task without assistance.
+
+	{% image src="images/ideation-1.png", className="", alt="Wireframe variants for the student sharing flow", width=300, priority="low", lightbox=true, lightboxWidth=1200 %}
+
+	### Why we gated access behind email registration
+
+	Top management resisted public sharing over piracy risk. A separate constraint: some teachers receive royalties based on lecture view counts, so unrestricted sharing would have cut into their income.
+
+	We considered three options: fully public lecture pages, public teasers with paywalled content, and email-gated full access.
+
+	We chose email-gated full access — the only option legal and management would accept. It preserved the referral funnel and gave the business attribution data on shared-link arrivals.
+
+	The trade-off: registration friction that would likely reduce conversion. We accepted it — the alternative was no feature at all.
+
+	### Colleague landing flow
+
+	Colleagues who receive a shared link get full video access after email registration. Access is time-limited to encourage prompt viewing. The landing page includes course links and conversion blocks (career guidance, social proof, learning process) to drive purchases from first-time visitors.
+
+	{% image src="images/solutions-2.jpg", className="", alt="Colleague landing page showing time-limited video access and course conversion blocks", width=922, priority="low" %}
 
 {% endprojectSection %}
-
 
 {% projectSection %}
 	## Impact & results
+
+	The feature shipped on schedule. Both design iterations failed to move the primary metric. Over the [X weeks/months] following launch, we tracked four metrics with the product analyst.
+
 	{% ImpactRow %}
 		{% impact name="Conversion to paid courses", valueOld="", valueNew="0.0%", goodOrBad="bad", goal="", mainOrNot="main" %}
-		{% impact name="Students copied the link", valueOld="", valueNew="0.51%", goodOrBad="bad", goal="", mainOrNot="" %}
-		{% impact name="Anonymous has visited the page", valueOld="", valueNew="121", goodOrBad="bad", goal="", mainOrNot="" %}
+		{% impact name="Students who copied the link", valueOld="", valueNew="0.51%", goodOrBad="bad", goal="", mainOrNot="" %}
+		{% impact name="Anonymous visitors to shared page", valueOld="", valueNew="121", goodOrBad="bad", goal="", mainOrNot="" %}
 		{% impact name="Conversion to free courses", valueOld="", valueNew="3.7%", goodOrBad="bad", goal="", mainOrNot="" %}
 	{% endImpactRow %}
 
-	No impact on paid course sign-ups (the main metric), low video link sharing rates among students. The second design iteration also failed to move the needle.
+	The hypothesis — that sharing would drive referral-based sign-ups — did not hold.
 
-	### Post-launch investigation
-	1. Students haven't yet found the material useful enough to share with colleagues.
-	2. Students clicked the button out of curiosity rather than genuine sharing intent.
+	Post-launch investigation identified two causes:
+	- The lecture content wasn't differentiated enough from freely available material — outside the design team's control.
+	- Students clicked the share button out of curiosity, not genuine intent to share.
 
-	### Consequences
-	All sharing features in our LMS (Learning Management System) were deemed ineffective by the product manager. So she changed her plans and decided to focus on more promising areas.
-{% endprojectSection %}
-
-{% projectSection %}
-	## Challenges
-	- Design process revealed legal constraints as some teachers receive royalties based on lecture views.
-	- Top management initially resisted public content sharing due to piracy concerns.
+	Based on this, the product manager deprioritised all Learning Management System (LMS) sharing features and redirected the team to areas with stronger signal. I treat this as the project's most useful output: a clear answer to a real business question, delivered on time.
 {% endprojectSection %}
 
 {% projectSection %}
 	## Reflection
-	- The conversion heavily depends on video lectures value — they need to be unique and far better than free YouTube content. This is beyond our control.
-	- The entire funnel requires optimisation. However, given its length and complexity, such work isn not cost-effective for the team.
-	- Discovered technical pitfalls too late in the process. I had to refine the design after the task was closed. The key learning: for legacy code-related tasks, it's better to assign preliminary research to developers upfront.
+
+	- Assign technical discovery to developers at the start of legacy-code tasks, not after design is complete. In this project, discovering constraints mid-implementation forced redesign after the task was formally closed.
+	- Conversion depended heavily on the lecture content being more valuable than freely available material. This was outside the design team's control — and not something we could validate before building.
+	- The full referral funnel required optimisation at every step. Given its length and complexity, the team's decision to redirect effort rather than continue iterating was the right call.
 {% endprojectSection %}
