@@ -6,20 +6,20 @@ layout: _base.njk
 	<section class="project-list-container --{{ loop.index }}">
 		<div class="container">
 			{% if loop.index == 1 %}
-				<h1>{{ title }}</h1>				
+				<h1>{{ title }}</h1>
 				{{ content | safe }}
-			{% endif %}	
+			{% endif %}
 
 			<div class="heading-row">
 				<h2 aria-describedby="counter-{{ loop.index }}">{{ sectionName[loop.index0] }}</h2>
-				<span class="badge heading-row__badge" id="counter-{{ loop.index }}">{{ collection.length }}</span>	
-			</div>				
-			<div class="project-list{% if loop.index == 2 %} --compact{% endif %}">		
+				<span class="badge heading-row__badge" id="counter-{{ loop.index }}">{{ collection.length }}</span>
+			</div>
+			{% set layout = "default" if loop.index == 1 else "compact" %}
+			<div class="project-list --{{ layout }}">
 				{% for project in collection %}
-					{% set imageClass = "project-card__img " + ("--compact" if project.data.type == "screenshots" else "--default") %}
-					<article class="project-card {% if project.data.type == 'screenshots' %}--compact{% else %}--default{% endif %}">
+					<article class="project-card --{{ layout }}">
 						{% setAsync "imageHtml" %}
-							{% image src=project.fileSlug + "/cover.jpg", className=imageClass, alt="", width=450, priority="high" %}
+							{% image src=project.fileSlug + "/cover.jpg", className="project-card__img --" + layout, alt="", width=450, priority="high" %}
 						{% endsetAsync %}
 						{{ imageHtml | safe }}
 						<div class="project-card__text">
