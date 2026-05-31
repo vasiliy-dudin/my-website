@@ -73,14 +73,15 @@
 
 // Impact blocks for a case study
 .impactRow
-	display: flex
-	flex-wrap: wrap
+	display: grid
+	grid-template-columns: 1fr
 	gap: 8px
 	margin-bottom: 16px
+	+media(md)
+		grid-template-columns: 1fr 1fr
 
 .impact
 	display: grid
-	flex: 1 0 320px
 	gap: 8px
 	padding: 24px
 	border-radius: $radius--M
