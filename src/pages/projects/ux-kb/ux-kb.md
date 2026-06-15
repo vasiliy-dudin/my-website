@@ -10,6 +10,9 @@ type: pet
 order: 4
 enabled: false
 permalink: "/projects/ux-kb/"
+headerInfo:
+  - title: "Tools"
+    text: "Figma, Axure RP, draw-io"
 ---
 
 {% projectSection %}

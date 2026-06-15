@@ -18,6 +18,8 @@ headerInfo:
   - title: "About company"
     text: |
       Russia's largest hypermarket chain, 12M MAU, 5,800 shops.
+  - title: "Tools"
+    text: "Figma, Miro"
 ---
 
 {% projectSection %}

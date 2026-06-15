@@ -22,6 +22,8 @@ headerInfo:
       I worked on the School Maths product in a scrum team. Closely collaborated with product manager, product analyst, UX writer, and other designers.
       
       [Figma](https://www.figma.com/design/koqbtwzgUyo1IAzoFajOwZ/School-Math-v2.1?node-id=19114-147038&p=f&t=NVCyQ4MhaiTzUhMc-11)
+  - title: "Tools"
+    text: "Figma, Miro"
 ---
 
 {% projectSection %}

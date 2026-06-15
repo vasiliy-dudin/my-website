@@ -15,6 +15,8 @@ headerInfo:
     text: "An international high-load SaaS for internet marketers. 1.2+ million active users in 2024."
   - title: "My role"
     text: "I was part of a department of 17 UX designers and 10 UI designers, worked with 3 development teams."
+  - title: "Tools"
+    text: "Axure RP, draw-io"
 ---
 
 {% projectSection %}

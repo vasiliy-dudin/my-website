@@ -16,6 +16,8 @@ headerInfo:
     text: "The 2nd largest EdTech platform in Russia, 2M MAU. It offers a variety of online IT courses from 4 months to 2 years long."
   - title: "My team's focus"
     text: "Learning Management System (LMS): retention, motivation and goals, usability, completing homeworks, number of active days, COR, NPS, reducing churn."
+  - title: "Tools"
+    text: "Miro, Figma"
 ---
 
 {% projectSection %}

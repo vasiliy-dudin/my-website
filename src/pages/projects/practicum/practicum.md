@@ -12,7 +12,9 @@ permalink: "/projects/practicum/"
 headerInfo:
   - title: "About product"
     text: "School Math, a web platform with tutors and interactive drills. Where parents can also assess the impact on school grades.
-	This product was part of Yandex Practicum, a large international learning platform specialised in IT education.	"
+	This product was part of Yandex Practicum, a large international learning platform specialised in IT education."
+  - title: "Tools"
+    text: "Figma, Miro"
 ---
 
 {% projectSection %}

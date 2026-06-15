@@ -13,6 +13,8 @@ permalink: "/projects/pitera11y-meetup/"
 headerInfo:
   - title: "My role"
     text: "I was one of the organisers, handled negotiations with venues and speakers, created graphics, stickers, and wrote subtitles."
+  - title: "Tools"
+    text: "Adobe Illustrator"
 ---
 
 {% projectSection %}
