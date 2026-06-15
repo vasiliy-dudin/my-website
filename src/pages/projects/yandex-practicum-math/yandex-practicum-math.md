@@ -14,13 +14,14 @@ type: screenshots
 order: 2
 enabled: true
 permalink: "/projects/yandex-practicum-math/"
-eleventyComputed:
-  LongDescription: |
-    International IT education platform. Around 60 courses and multiple development teams.
-    
-    I worked on the School Maths product in a scrum team. Closely collaborated with product manager, product analyst, UX writer, and other designers.
-    
-    [Figma](https://www.figma.com/design/koqbtwzgUyo1IAzoFajOwZ/School-Math-v2.1?node-id=19114-147038&p=f&t=NVCyQ4MhaiTzUhMc-11)
+headerInfo:
+  - title: "About company"
+    text: "International IT education platform. Around 60 courses and multiple development teams."
+  - title: "My role"
+    text: |
+      I worked on the School Maths product in a scrum team. Closely collaborated with product manager, product analyst, UX writer, and other designers.
+      
+      [Figma](https://www.figma.com/design/koqbtwzgUyo1IAzoFajOwZ/School-Math-v2.1?node-id=19114-147038&p=f&t=NVCyQ4MhaiTzUhMc-11)
 ---
 
 {% projectSection %}

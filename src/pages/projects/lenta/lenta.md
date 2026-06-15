@@ -14,11 +14,10 @@ type: screenshots
 order: 1
 enabled: true
 permalink: "/projects/lenta/"
-eleventyComputed:
-  LongDescription: |
-    Russia's largest hypermarket chain, 12M MAU, 5,800 shops.
-    
-    Manages other brands: OBI, Ulybka Radugi, Utkonos, Monetka, and others.
+headerInfo:
+  - title: "About company"
+    text: |
+      Russia's largest hypermarket chain, 12M MAU, 5,800 shops.
 ---
 
 {% projectSection %}

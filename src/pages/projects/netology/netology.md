@@ -1,6 +1,7 @@
 ---
-title: "Useful content sharing"
-description: Netology, EdTech (B2C, B2B)
+title: "High student acquisition costs"
+feature: "Useful content sharing"
+description: Netology (EdTech, B2C, B2B)
 category:
   - Product Design
   - UX Research
@@ -10,11 +11,11 @@ type: case-study
 order: 1
 enabled: true
 permalink: "/projects/netology/"
-eleventyComputed:
-  LongDescription: |
-    The 2nd largest EdTech platform in Russia, 2M MAU.
-
-    I was on the LMS (Learning Management System) team — designing a content-sharing feature to reduce student acquisition costs through referrals.
+headerInfo:
+  - title: "About company"
+    text: "The 2nd largest EdTech platform in Russia, 2M MAU. It offers a variety of online IT courses from 4 months to 2 years long."
+  - title: "My team's focus"
+    text: "Learning Management System (LMS): retention, motivation and goals, usability, completing homeworks, number of active days, COR, NPS, reducing churn."
 ---
 
 {% projectSection %}

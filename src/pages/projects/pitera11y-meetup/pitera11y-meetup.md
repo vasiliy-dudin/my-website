@@ -10,9 +10,9 @@ type: pet
 order: 2
 enabled: true
 permalink: "/projects/pitera11y-meetup/"
-eleventyComputed:
-  LongDescription: |
-    I was one of the organisers, handled negotiations with venues and speakers, created graphics, stickers, and wrote subtitles.
+headerInfo:
+  - title: "My role"
+    text: "I was one of the organisers, handled negotiations with venues and speakers, created graphics, stickers, and wrote subtitles."
 ---
 
 {% projectSection %}

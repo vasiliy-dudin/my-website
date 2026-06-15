@@ -9,12 +9,10 @@ type: pet
 order: 1
 enabled: true
 permalink: "/projects/piter-css/"
+headerInfo:
+  - title: "About project"
+    text: "The community organises meetings on frontend and development."
 ---
-
-{% projectSection %}
-	## About the project
-	The community organises meetings on frontend and development.
-{% endprojectSection %}
 
 {% projectSection %}
 	## UI

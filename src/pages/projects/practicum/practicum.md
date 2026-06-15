@@ -9,11 +9,10 @@ type: case-study
 order: 3
 enabled: false
 permalink: "/projects/practicum/"
-eleventyComputed:
-  LongDescription: |
-    School Math, a web platform with tutors and interactive drills. Where parents can also assess the impact on school grades.
-
-    This product was part of Yandex Practicum, a large international learning platform specialised in IT education.
+headerInfo:
+  - title: "About product"
+    text: "School Math, a web platform with tutors and interactive drills. Where parents can also assess the impact on school grades.
+	This product was part of Yandex Practicum, a large international learning platform specialised in IT education.	"
 ---
 
 {% projectSection %}

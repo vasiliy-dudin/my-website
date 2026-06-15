@@ -1,6 +1,6 @@
 ---
-title: Data sample is too large, not enough sales
-description: Semrush, SaaS for Internet Marketers
+title: "[Draft] Data sample is too large, not enough sales"
+description: Semrush by Adobe (SaaS for Internet Marketers, B2B)
 category:
   - UX Design
   - UX Research
@@ -9,12 +9,12 @@ layout: project
 type: case-study
 order: 2
 enabled: true
-draft: true
 permalink: "/projects/semrush/"
-eleventyComputed:
-  LongDescription: |
-    An international high-load SaaS for internet marketers. Сколько пользователей. 
-    My role. Was part of a department of 17 UX designers and 10 UI designers, worked with 3 development teams.
+headerInfo:
+  - title: "About company"
+    text: "An international high-load SaaS for internet marketers. 1.2+ million active users in 2024."
+  - title: "My role"
+    text: "I was part of a department of 17 UX designers and 10 UI designers, worked with 3 development teams."
 ---
 
 {% projectSection %}
@@ -50,7 +50,6 @@ eleventyComputed:
 
 {% projectSection %}
 	## 1. Discovery and analysis
-	[Explain how you gathered insights and their impact on your design decisions.]
 
 	1. Отобрал и проанализировал пользовательский фидбек про эту проблему.
 	2. Анализировал поведение пользователей через Inspectlet, SQL, BigQuery.
@@ -114,10 +113,10 @@ eleventyComputed:
 	{% image src="images/6.png", className="", alt="Final results and implementation", width=650, priority="low" %}
 {% endprojectSection %}
 
-{% projectSection %}
+{# {% projectSection %}
 	## Reflection and Learnings
 	[Conclude with your personal reflections on the project. Mention what you learned, what you might do differently, and how the project contributed to your growth as a designer.]
 
 	- Надо было чуть раньше поговорить с разработчиками. Чтобы не прототипировать сложные варианты и пораньше придумать что-то попроще.
 	- 
-{% endprojectSection %}
+{% endprojectSection %} #}

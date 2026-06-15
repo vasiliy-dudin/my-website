@@ -2,6 +2,13 @@
 layout: _base.njk
 ---
 
+{% macro headerInfoBlock(blockTitle, blockText) %}
+	<div class="project-header__info{{ ' --wide' if blockText | length > 60 }}">
+		<h3 class="project-header__info__title">{{ blockTitle }}</h3>
+		<div class="project-header__info-text">{{ blockText | markdown | safe }}</div>
+	</div>
+{% endmacro %}
+
 {% macro neighbours(where) %}
 	{# Neighbours #}
 	{% set collection = collections.allProjects %}
@@ -44,19 +51,19 @@ layout: _base.njk
 								<h1 class="project-header__h1">{{ title }}</h1>
 							</div>
 							<div class="project-header__description">{{ description }}</div>
-							<div class="project-header__date">{{ years }}</div>
-							<div class="tags">
-								{%- for tag in category -%}
-									<span class="tag --{{ tag | lower | replace(' ', '-') }}">{{ tag }}</span>
-								{%- endfor -%}
+							<div class="project-header__info-grid">
+								{% if category %}
+									{{ headerInfoBlock("Discipline", category | join(', ')) }}
+								{% endif %}
+								{% if years %}
+									{{ headerInfoBlock("Timeline", years) }}
+								{% endif %}
+								{% for item in headerInfo | default([]) %}
+									{{ headerInfoBlock(item.title, item.text) }}
+								{% endfor %}
 							</div>
 							{{ neighbours() }}
 						</div>
-						{% if LongDescription %}
-						<div class="project-header__long-description">
-							{{ LongDescription | markdown | safe }}
-						</div>							
-						{% endif %}
 					</header>
 				</div>
 			</div>

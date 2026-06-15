@@ -1,5 +1,5 @@
 ---
-title: Accessible Components
+title: Accessible Components MVP
 description: Components for developers  (open source)
 category:
 - UX Design
@@ -10,14 +10,10 @@ type: pet
 order: 3
 enabled: true
 permalink: "/projects/accessible-components/"
-eleventyComputed:
-  LongDescription: |
-    A catalogue of tested UI components for developers and designers. The quality of components can be tested not only by people with disabilities but also by specialists who are interested in user-friendly interfaces.
-
-    Here I briefly describe the MVP design process. For the first version, solutions were chosen that are cost-effective to develop.
-
-    [Axure RP Prototype](https://k90cvf.axshare.com)
-    [Figma](https://www.figma.com/file/DiYCUz0N01asW8Y05rbozhJL/Accessible-Components?node-id=0%3A1)
+headerInfo:
+  - title: "About project"
+    text: |
+      A catalogue of tested UI components for developers and designers. The quality of components can be tested not only by people with disabilities but also by specialists who are interested in user-friendly interfaces.
 ---
 
 
@@ -42,6 +38,8 @@ eleventyComputed:
 {% projectSection %}
 	## 3. Prototyping
 	[Interactive Axure RP prototype](https://k90cvf.axshare.com)
+
+	For the first version, solutions were chosen that are cost-effective to develop.
 
 	{% image src="images/2.png", className="project-card__img", alt="Interactive prototype screen", width=650, priority="low" %}
 
