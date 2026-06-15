@@ -12,7 +12,7 @@ enabled: false
 permalink: "/projects/ux-kb/"
 headerInfo:
   - title: "Tools"
-    text: "Figma, Axure RP, draw-io"
+    text: "Figma, Axure RP, draw․io"
 ---
 
 {% projectSection %}

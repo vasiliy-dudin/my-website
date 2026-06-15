@@ -15,7 +15,7 @@ headerInfo:
     text: |
       A catalogue of tested UI components for developers and designers. The quality of components can be tested not only by people with disabilities but also by specialists who are interested in user-friendly interfaces.
   - title: "Tools"
-    text: "Figma, Axure RP, draw-io"
+    text: "Figma, Axure RP, draw․io"
 ---
 
 

@@ -13,7 +13,7 @@ headerInfo:
   - title: "About project"
     text: "The community organises meetings on frontend and development."
   - title: "Tools"
-    text: "Figma, Axure RP, draw-io"
+    text: "Figma, Axure RP, draw․io"
 ---
 
 {% projectSection %}

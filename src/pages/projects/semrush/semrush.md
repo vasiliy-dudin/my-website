@@ -16,7 +16,7 @@ headerInfo:
   - title: "My role"
     text: "I was part of a department of 17 UX designers and 10 UI designers, worked with 3 development teams."
   - title: "Tools"
-    text: "Axure RP, draw-io"
+    text: "Axure RP, draw․io"
 ---
 
 {% projectSection %}
