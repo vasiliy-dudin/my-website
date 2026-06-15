@@ -35,7 +35,7 @@ layout: _base.njk
 		<div class="project-col-2">
 			
 			<div class="project-nav">
-				<a href="#main" onclick="plausible('Project navigation', { props: { page: window.location.pathname, target: 'main' } })">Main info</a>
+				<a href="#overview " onclick="plausible('Project navigation', { props: { page: window.location.pathname, target: 'main' } })">Overview</a>
 				{{ content | toc | safe }}
 				{{ neighbours() }}
 			</div>
@@ -44,7 +44,7 @@ layout: _base.njk
 		<div class="project-col-1">
 			<div class="project-header-section">
 				<div class="container --project">
-					<header class="project-header" id="main">
+					<header class="project-header" id="overview">
 						{% image src="cover-wide.jpg", className="project-header__img", alt="", width=920, priority="high" %}
 						<div class="project-header__main-description">
 							<div class="project-header__h1-row">
