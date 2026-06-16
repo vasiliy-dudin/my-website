@@ -12,7 +12,6 @@ layout: _base.njk
 
 			<div class="heading-row">
 				<h2 aria-describedby="counter-{{ loop.index }}">{{ sectionName[loop.index0] }}</h2>
-				<span class="badge heading-row__badge" id="counter-{{ loop.index }}">{{ collection.length }}</span>
 			</div>
 			{% set layout = "default" if loop.index == 1 else "compact" %}
 			<div class="project-list --{{ layout }}">
