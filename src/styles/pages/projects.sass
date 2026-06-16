@@ -48,15 +48,9 @@
 	transform: translate3d(0, 0, 0)
 	transition: transform .1s linear
 	
-	// Default card layout
-	&.--default
-		@include media(md)
-			display: flex
-	
-	// Compact card layout
-	&.--compact
-		@include media(md)
-			display: block
+	@include media(md)
+		display: flex
+
 		
 	&:active
 		transform: scale(0.995)
@@ -116,19 +110,11 @@
 	&__img
 		display: block
 		height: auto
-		// Default card layout
-		&.--default
-			width: 100%
-			@include media(md)
-				width: 360px
-			@include media(lg)
-				width: 450px
-		// Compact card layout
-		&.--compact
-			width: 100%
-			height: 160px
-			object-fit: cover
-			filter: grayscale(1)
+		width: 100%
+		@include media(md)
+			width: 360px
+		@include media(lg)
+			width: 450px
  	
 
 	// Highlights list

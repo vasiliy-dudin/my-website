@@ -18,10 +18,12 @@ layout: _base.njk
 			<div class="project-list --{{ layout }}">
 				{% for project in collection %}
 					<article class="project-card --{{ layout }}">
-						{% setAsync "imageHtml" %}
-							{% image src=project.fileSlug + "/cover.jpg", className="project-card__img --" + layout, alt="", width=450, priority="high" %}
-						{% endsetAsync %}
-						{{ imageHtml | safe }}
+						{%if layout == "default" %}
+							{% setAsync "imageHtml" %}
+								{% image src=project.fileSlug + "/cover.jpg", className="project-card__img --" + layout, alt="", width=450, priority="high" %}
+							{% endsetAsync %}
+							{{ imageHtml | safe }}
+						{% endif %}
 						<div class="project-card__text">
 							<a class="project-card__link" href="{{ project.data.permalink }}">
 								{{ project.data.title }}
