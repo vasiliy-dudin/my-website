@@ -1,11 +1,11 @@
-import * as yaml from "js-yaml";
+import { load } from "js-yaml";
 import pluginImages from "./eleventy.images.js";
 import pluginShortcodes from "./eleventy.shortcodes.js";
 import pluginFilters from "./eleventy.filters.js";
 import tableOfContent from "@uncenter/eleventy-plugin-toc";
 
 export default function(config) {
-	config.addDataExtension("yaml", contents => yaml.load(contents));
+	config.addDataExtension("yaml", contents => load(contents));
 	config.addGlobalData("env", process.env.ELEVENTY_ENV);
 
 	//////////// Collections
