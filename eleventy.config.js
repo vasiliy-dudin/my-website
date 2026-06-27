@@ -1,4 +1,4 @@
-import yaml from "js-yaml";
+import * as yaml from "js-yaml";
 import pluginImages from "./eleventy.images.js";
 import pluginShortcodes from "./eleventy.shortcodes.js";
 import pluginFilters from "./eleventy.filters.js";
