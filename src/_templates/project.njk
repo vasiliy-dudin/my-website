@@ -35,8 +35,7 @@ layout: _base.njk
 		<div class="project-col-2">
 			
 			<div class="project-nav">
-				<a href="#overview" onclick="plausible('Project navigation', { props: { page: window.location.pathname, target: 'main' } })">Overview</a>
-				{{ content | toc | safe }}
+				{{ content | toc | addOverviewLink | safe }}
 				{{ neighbours() }}
 			</div>
 		</div>

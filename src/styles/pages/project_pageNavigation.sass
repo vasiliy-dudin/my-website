@@ -32,9 +32,8 @@
 		display: contents
 		margin: 0
 		padding: 0
-		list-style-type: none		
-	ul a,
-	& > a
+		list-style-type: none
+	a
 		display: block
 		padding: 4px 8px
 		font-size: 16px
@@ -42,14 +41,17 @@
 		font-weight: 500
 		color: $color__gray-100
 		border-radius: $radius--S
+		// For light sections
+		&.--light
+			color: $color__gray-700
+
 		&:hover
 			background: rgba($color__gray-200, 0.2)
-		&.--active
-			text-decoration: underline 1.5px
-			text-decoration-color: inherit !important
-			background: rgba($accent-primary, 0.2)
-	// For light sections
-	.--light
-		color: $color__gray-700
-		&.--active
+
+	li.--active a
+		text-decoration: underline 1.5px
+		text-decoration-color: inherit !important
+		background: rgba($accent-primary, 0.2)
+		// For light sections
+		&.--light
 			background: rgba($accent-primary, 0.4)
