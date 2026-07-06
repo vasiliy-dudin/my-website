@@ -28,23 +28,25 @@
 	top: 12px
 	border-radius: $radius--M
 
+	a
+		color: $color__gray-100
+		// For light sections
+		&.--light
+			color: $color__gray-700
+	
+
 	ul
 		display: contents
 		margin: 0
 		padding: 0
 		list-style-type: none
-	a
+	ul a
 		display: block
 		padding: 4px 8px
 		font-size: 16px
 		text-decoration: none
 		font-weight: 500
-		color: $color__gray-100
 		border-radius: $radius--S
-		// For light sections
-		&.--light
-			color: $color__gray-700
-
 		&:hover
 			background: rgba($color__gray-200, 0.2)
 
