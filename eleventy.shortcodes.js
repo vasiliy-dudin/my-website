@@ -45,26 +45,18 @@ export default config => {
 
 	// Impact in a case study
 	config.addShortcode("impact", function(args) {
-		let goalHTML = ''
-		let nameHTML = ''
-		let valueOldHTML = ''
+		const impactHTML = [
+			`<div class="impact --${args.goodOrBad}${args.mainOrNot ? ` --${args.mainOrNot}` : ''}">`,
+				`<div class="impact__values">
+					${args.valueOld ? `<span class="impact__oneValue">${args.valueOld}</span> → ` : ''}<span class="impact__oneValue">${args.valueNew}</span>
+				</div>`,
+				args.goal ? `<div class="impact__goal">Goal: ${args.goal}</div>` : '',
+				args.name ? `<div class="impact__name">${args.name}</div>` : '',
+				args.mainOrNot === 'main' ? `<div class="impact__mainLabel">Main metric</div>` : '',
+			`</div>`
+		].filter(Boolean).join('');
 
-		if (args.valueOld) {
-			valueOldHTML = `<span class="impact__oneValue">${args.valueOld}</span> → `
-		}
-		if (args.goal) {
-			goalHTML = `<div class="impact__goal">Goal: ${args.goal}</div>`
-		}
-		if (args.name) {
-			nameHTML = `<div class="impact__name">${args.name}</div>`
-		}
-
-		return `<div class="impact --${args.goodOrBad}${args.mainOrNot ? ` --${args.mainOrNot}` : ''}">
-				<div class="impact__values">
-					${valueOldHTML}<span class="impact__oneValue">${args.valueNew}</span>
-				</div>
-				${goalHTML}${nameHTML}
-			</div>`;
+		return impactHTML;
 	});
 	config.addPairedShortcode("ImpactRow", function(content) {
 		return `<div class="impactRow">${content}</div>`;

@@ -81,7 +81,8 @@
 		grid-template-columns: 1fr 1fr
 
 .impact
-	display: grid
+	display: flex
+	flex-direction: column
 	gap: 8px
 	padding: 24px
 	border-radius: $radius--M
@@ -114,6 +115,10 @@
 		font-size: $font-size-sm
 		line-height: 1.1
 
+	&__mainLabel
+		font-size: $font-size-sm
+		line-height: 1.1
+		color: $color__green-bright-500
 
 .project-section__highlights
 	display: block
