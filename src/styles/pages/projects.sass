@@ -1,5 +1,6 @@
 @use "../variables" as *
 @use "../mixins" as *
+@use "../components/global" as *
 @use "../components/contacts-block" as *
 @use "../components/link-block" as *
 
@@ -38,11 +39,10 @@
 // 		.project-card__title
 // 			filter: grayscale(1) */
 
-.project-card	
-	background: $surface-secondary
+.project-card
 	position: relative
-	border-radius: $radius--XL
 	overflow: hidden
+	@extend %box__primary, %box__radius
 	@extend %link-block
 	will-change: transform
 	transform: translate3d(0, 0, 0)
