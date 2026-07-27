@@ -3,66 +3,104 @@ title: About me
 description: ____
 layout: page.njk
 permalink: /
+fullWidth: true
 ---
 
-<section class="hero-section">
-	<div class="hero-section__text-col">
-		<div class="hero-section__heading-row">
-			<p class="hero-section__greeting">Hi there, I'm Vasya</p>
-			{% image src="images/cat.png", className="hero-section__heading-img", alt="", width=32, priority="high" %}
+<div class="container">
+	<section class="hero-section">
+		<div class="hero-section__text-col">
+			<div class="hero-section__heading-row">
+				<p class="hero-section__greeting">Hi there, I'm Vasya</p>
+				{% image src="images/cat.png", className="hero-section__heading-img", alt="", width=32, priority="high" %}
+			</div>
+			<p class="hero-section__subtitle">Senior Product Designer,</p>
+			<p class="hero-section__subtitle">14 years of experience, based in London</p>
 		</div>
-		<p class="hero-section__subtitle">Senior Product Designer,</p>
-		<p class="hero-section__subtitle">14 years of experience, based in London</p>
+		<div class="hero-section__photo-container">
+			{% image src="images/photo.png", className="hero-section__img", alt="My photo", width=160, priority="high" %}
+			{% include "../../pages/index/images/hero-polygon.svg" %}
+		</div>
+		{% image src="images/bg.jpg", className="hero-section__bg", alt="", width=922, priority="high" %}
+	</section>
+</div>
+
+<section class="front-section">
+	<div class="container">
+		{% md %}
+			## Specialisation
+		{% endmd %}
+		<ul class="specialisation-cards">
+			<li class="specialisation-cards__item">
+				<div class="specialisation-cards__img" aria-hidden="true"></div>
+				<div class="specialisation-cards__text">
+					<span class="specialisation-cards__title">Product Design / UX Design</span>
+					<span class="specialisation-cards__description">Complex B2B and B2C products across SaaS, EdTech, and E-commerce</span>
+				</div>
+			</li>
+			<li class="specialisation-cards__item">
+				<div class="specialisation-cards__img" aria-hidden="true"></div>
+				<div class="specialisation-cards__text">
+					<span class="specialisation-cards__title">Design systems</span>
+					<span class="specialisation-cards__description">Tokens, component libraries, and governance that scale design across teams</span>
+				</div>
+			</li>
+			<li class="specialisation-cards__item">
+				<div class="specialisation-cards__img" aria-hidden="true"></div>
+				<div class="specialisation-cards__text">
+					<span class="specialisation-cards__title">Accessibility compliance</span>
+					<span class="specialisation-cards__description">European Accessibility Act and WCAG standards, color contrast, OKLCH colors, keyboard navigation, and screen reader testing</span>
+				</div>
+			</li>
+			<li class="specialisation-cards__item">
+				<div class="specialisation-cards__img" aria-hidden="true"></div>
+				<div class="specialisation-cards__text">
+					<span class="specialisation-cards__title">Mentoring</span>
+					<span class="specialisation-cards__description">Raising UX maturity through critique, workshops, and pairing with other designers</span>
+				</div>
+			</li>
+		</ul>
 	</div>
-	<div class="hero-section__photo-container">
-		{% image src="images/photo.png", className="hero-section__img", alt="My photo", width=160, priority="high" %}
-		{% include "../../pages/index/images/hero-polygon.svg" %}
+</section>
+
+<section class="front-section">
+	<div class="container">
+		{% md %}
+			## My Superpowers
+		{% endmd %}
+		<ul class="work-highlights">
+			<li class="work-highlights__item">
+				<div class="work-highlights__img" aria-hidden="true"></div>
+				<span class="work-highlights__title">Deep expertise in design</span>
+				<span class="work-highlights__description">Including UX research, accessibility and design tools like Figma or Axure RP</span>
+			</li>
+			<li class="work-highlights__item">
+				<div class="work-highlights__img" aria-hidden="true"></div>
+				<span class="work-highlights__title">Systems thinking and data</span>
+				<span class="work-highlights__description">I see the bigger picture and advocate for data-driven and data-informed approaches</span>
+			</li>
+			<li class="work-highlights__item">
+				<div class="work-highlights__img" aria-hidden="true"></div>
+				<span class="work-highlights__title">Technical fluency</span>
+				<span class="work-highlights__description">Knowledge of JS, React, Vue, HTML, CSS and Figma API helps me talk to developers</span>
+			</li>
+			<li class="work-highlights__item">
+				<div class="work-highlights__img" aria-hidden="true"></div>
+				<span class="work-highlights__title">Elevating teams and raising UX maturity</span>
+				<span class="work-highlights__description">Mentoring, workshops, and optimising agile workflows</span>
+			</li>
+		</ul>
 	</div>
-	{% image src="images/bg.jpg", className="hero-section__bg", alt="", width=922, priority="high" %}
 </section>
 
 <section class="front-section">
-	{% md %}
-		## Specialisation
-		Specialising in complex B2B and B2C products across SaaS, EdTech, and E-commerce.
-	{% endmd %}
-	<ul class="hero-section__list">
-		<li>Product design, UX Design</li>
-		<li>Design systems</li>
-		<li>Accessibility</li>
-		<li>Mentoring</li>
-	</ul>
+	<div class="container">
+		{% md %}
+			## Hobbies and interests
+			Frontend, photography, modular synthesizers, video games, urbanism, architecture, gadgets, running, shawarma.
+		{% endmd %}
+	</div>
 </section>
 
-<section class="front-section">
-	{% md %}
-		## My Superpowers
-	{% endmd %}
-	<ul class="work-highlights">
-		<li class="work-highlights__item">
-			<span class="work-highlights__title">Deep expertise in design</span>
-			<span class="work-highlights__description">Including UX research, accessibility and design tools like Figma or Axure RP</span>
-		</li>
-		<li class="work-highlights__item">
-			<span class="work-highlights__title">Systems thinking and data</span>
-			<span class="work-highlights__description">I see the bigger picture and advocate for data-driven and data-informed approaches</span>
-		</li>
-		<li class="work-highlights__item">
-			<span class="work-highlights__title">Technical fluency</span>
-			<span class="work-highlights__description">Knowledge of JS, React, Vue, HTML, CSS and Figma API helps me talk to developers</span>
-		</li>
-		<li class="work-highlights__item">
-			<span class="work-highlights__title">Elevating teams and raising UX maturity</span>
-			<span class="work-highlights__description">Mentoring, workshops, and optimising agile workflows</span>
-		</li>
-	</ul>
-</section>
-
-<section class="front-section">
-	{% md %}
-		## Hobbies and interests
-		Modular synthesizers, photography, frontend, video games, investments, urbanism, architecture, gadgets, running, shawarma.
-	{% endmd %}
-</section>
-
-{% include "contacts-block.njk" %}
+<div class="container">
+	{% include "contacts-block.njk" %}
+</div>
