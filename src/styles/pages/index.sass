@@ -179,12 +179,13 @@
 		@extend %box, %box__paddings, %box__radius, %box__secondary
 
 	&__img
-		width: 24px
-		height: 24px
+		width: 32px
+		height: 14px
 		margin-bottom: 12px
-		border-radius: 50%
-		background: linear-gradient(270deg, $accent-primary 0%, transparent 100%), url(../assets/noise-2.png) 0 0 / 50px
-		background-blend-mode: color-burn
+		clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%)
+		transform: rotate(30deg)
+		background: linear-gradient(270deg, $accent-primary 0%), url(../assets/noise.png) 0 0 / 50px
+		background-blend-mode: darken
 
 	&__title
 		display: block
