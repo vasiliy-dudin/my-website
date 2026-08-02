@@ -10,12 +10,13 @@
 	gap: 24px
 	padding: 16px 32px
 	overflow: hidden	
-	@extend %box, %box__radius
+	@extend %box, %box__radius, %box__primary
 	padding: 32px 16px
 	@include media(sm)
 		padding: 40px
 	position: relative
-	box-shadow: 5px 7px 0 $color__gray-100
+	z-index: 0
+	border: 8px solid $surface-secondary
 	// responsive
 	justify-content: center
 	text-align: center
@@ -27,9 +28,13 @@
 		left: 0
 		width: 100%
 		height: 100%
-		object-fit: cover
+		object-fit: none
 		object-position: top
 		z-index: -1
+		mask-image: url(../assets/hero-bg-mask.svg)
+		mask-repeat: no-repeat
+		mask-position: right
+		mask-size: auto 100%
 	@media (min-width: 680px)
 		justify-content: flex-start
 		text-align: left
@@ -49,8 +54,7 @@
 			width: 100%
 			height: 100%
 			border-radius: 50%
-			//background: rgba($color__blue-100, 0.54)
-			background: rgba($accent-primary, 0.54)
+			background: $accent-secondary
 			mix-blend-mode: multiply
 
 	// Photo
