@@ -4,6 +4,8 @@ Last updated: August 2026. Re-verify time-sensitive claims before relying on the
 
 Scope: **product companies** — established tech companies and later-stage scale-ups. Not agencies, consultancies, or freelance work, where portfolio and interview norms differ and are routinely mis-applied to product design.
 
+This file describes market facts and their evidence quality. Action defaults derived from these facts (what to do, by default) live in `decisions_cv.md`, `decisions_portfolio.md` and `decisions_job_search.md` — do not duplicate verdicts here.
+
 ---
 
 ## How to read anything about this market
@@ -11,7 +13,7 @@ Scope: **product companies** — established tech companies and later-stage scal
 Most published advice about design hiring, CVs, portfolios and ATS systems is false, outdated, or commercially motivated. Apply these tests to any claim, including the ones below.
 
 1. **Who profits from the claim being true?** Résumé-optimisation vendors sell a fix for a problem they describe. ATS vendors describe their own products. Design-tool companies benefit from "design is thriving" narratives. A vendor describing its own product is a *statement*, not evidence — regardless of whether it supports or undermines a conclusion.
-2. **Is there an original study?** "Recruiters spend 6 seconds on a CV" traces to a \~30-person study run by a job site in 2012. "Portfolios are judged in 30 seconds" traces to nothing. Untraceable statistics are convention, not fact.
+2. **Is there an original study?** "Recruiters spend 6 seconds on a CV" traces to a ~30-person study run by a job site in 2012. "Portfolios are judged in 30 seconds" traces to nothing. Untraceable statistics are convention, not fact.
 3. **Which industry, which year?** Agency and freelance norms differ. Advice describing 2021–22 conditions is actively misleading now.
 4. **Is the proxy measuring the thing?** Economy-wide vacancy data, scraped job-board counts and self-reported salary aggregators all get used as proxies for design hiring. Each distorts.
 
@@ -26,6 +28,8 @@ The senior weighting is the useful signal. Figma's *State of Design 2026* (Febru
 Two commonly-cited proxies are unreliable and should not be used: **ONS vacancy data** is economy-wide, and tech and design hiring fell considerably harder than the whole-economy figure implies; **scraped job-board counts** include duplicates, stale listings and ghost jobs.
 
 The claim that AI collapsed junior demand is plausible but confounded — the 2022–23 layoffs preceded widespread AI adoption in design workflows and are better explained by interest rates and the end of the pandemic growth cycle.
+
+**Funnel reference points (US-weighted platform data, directional for UK/EU only).** Cold application-to-interview conversion sits in the low single digits for senior roles; referred candidates convert several times better — reported ratios range roughly 3–13×, depending on dataset and definition. Tech roles average on the order of 190 applicants per hire. UK median time-to-hire is roughly 40 days, and stretches well beyond that at senior level. Roughly a quarter of UK workers report believing they have applied to a ghost job. Every figure in this paragraph comes from a platform or vendor with a commercial interest in the number (Ashby, CareerPlug, SmartRecruiters, Employment Hero) — treat as planning anchors for calibrating expectations, not as facts to cite.
 
 ---
 
@@ -71,7 +75,7 @@ Debunking the score does not mean applications get read. Rejection within hours 
 * Iterations and trade-offs, not only finished screens
 * Outcomes. Portfolios with no outcome information read as junior.
 
-**The same case study has to work as a live presentation.** The loop typically includes a hiring-manager portfolio review (\~45–60 min) and a panel presentation (\~45 min, or two projects at \~20 min each), plus a take-home brief, whiteboard challenge or app critique at senior level. Case studies that only work as a page to read are half-built.
+**The same case study has to work as a live presentation.** The loop typically includes a hiring-manager portfolio review (~45–60 min) and a panel presentation (~45 min, or two projects at ~20 min each), plus a take-home brief, whiteboard challenge or app critique at senior level. Case studies that only work as a page to read are half-built.
 
 **Sourcing.** Referrals and recruiter outreach convert far better than cold inbound at senior level. The circulating ratios come from HR-software marketing and are directional only; the pattern itself is not in dispute.
 
@@ -89,7 +93,7 @@ The European Accessibility Act began enforcement on 28 June 2025, covering e-com
 
 **Hiring effect:** accessibility appears explicitly in job descriptions more often than before 2025, particularly in enterprise B2B, FinTech, public-sector-adjacent products and EU-facing services. Whether employers *test* it in interviews is domain-dependent and only anecdotally evidenced.
 
-**On automated tooling:** Deque reports automated testing catches \~57% of issues by volume; measured against WCAG success criteria the conventional figure is 30–40%. Both originate with Deque, which makes axe. An independent 2021 test found axe-core caught 27% of 142 known issues and Pa11y 20%. Defensible claim: automated tools catch a minority of issues and manual testing is required — usable in an interview without leaning on a precise number.
+**On automated tooling:** Deque reports automated testing catches ~57% of issues by volume; measured against WCAG success criteria the conventional figure is 30–40%. Both originate with Deque, which makes axe. An independent 2021 test found axe-core caught 27% of 142 known issues and Pa11y 20%. Defensible claim: automated tools catch a minority of issues and manual testing is required — usable in an interview without leaning on a precise number.
 
 ---
 
@@ -101,14 +105,13 @@ Working knowledge of HTML/CSS/React and of how designs survive implementation re
 
 ## Reference vocabulary for findability
 
-Keywords work through recruiter search and criteria-based AI review (see screening section), so the specific job description always wins — mirror its exact terms first. This list is fallback vocabulary for body text when a JD is vague, and a checklist for what a CV should be findable by. Spelling follows the ATS exception rule in quality\_criteria document.
+Keywords work through recruiter search and criteria-based AI review (see screening section), so the specific job description always wins — mirror its exact terms first. This list is fallback vocabulary for body text when a JD is vague, and a checklist for what a CV should be findable by. Spelling follows the ATS exception rule in `quality_criteria.md`.
 
 * **Core product design:** User Research, Usability Testing, Information Architecture, Wireframing, Prototyping, User-Centered Design, Jobs-to-be-Done, Service Design
 * **Design systems:** Design Tokens, Component Libraries, Design Governance, Design Ops, Storybook, Figma Variables, Multi-brand Theming
 * **Accessibility:** WCAG 2.1, WCAG 2.2, Inclusive Design, Screen Reader Compatibility, Keyboard Navigation, ARIA, axe DevTools, European Accessibility Act
 * **Tools:** Figma, FigJam, Miro, Maze, Notion, Linear, Jira, Storybook, HTML, CSS, React, JavaScript
 * **Collaboration:** Cross-functional collaboration, Agile, Design Critique, Stakeholder Management, Developer Handoff
-
 
 ## Design systems as a hiring signal
 
@@ -134,7 +137,7 @@ What is screened for is evidence that AI is integrated into how you work and how
 
 Unresolved, and relevant to how confidently anything here should be applied:
 
-* **Base rates.** No reliable application-to-screen conversion figure for senior designers in the UK/EU. Without it, personal rejection statistics cannot be interpreted.
+* **Base rates.** Approximated only by US-weighted vendor data (see "Funnel reference points" above); no independent UK/EU-specific figure exists. Personal funnel tracking, per `decisions_job_search.md`, is more reliable than any published number.
 * **Design-specific hiring volume.** No trustworthy dataset separating product design vacancies from economy-wide or scraped counts.
 * **Independent verification of ATS behaviour.** Almost everything documented about screening comes from vendors describing their own products.
-* **Ghost job prevalence in the UK/EU** — widely reported, poorly quantified.
+* **Ghost job prevalence in the UK/EU** — directionally documented (see "Funnel reference points" above) but not precisely quantified; the ~24% figure is a single 2026 survey, not a census.
