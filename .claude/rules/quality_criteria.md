@@ -215,7 +215,7 @@ Mid-level signals (avoid over-emphasising):
 * Language that could describe any designer at any company
 * Over-claiming contribution (see the attribution table above)
 * Under-claiming: not owning work that was genuinely mine
-* Buzzwords and clichés — see the banned/flagged word lists in the project instructions. That list is the single source of truth; do not maintain a second copy here.
+* Buzzwords and clichés — see the banned/flagged word lists (the portfolio-case-study-writing skill's quality-flags.md). That list is the single source of truth; do not maintain a second copy here.
 * Every case study ending happily, with no constraints, failures, or learnings
 * Numbers whose origin I can't state (see metric provenance above)
 * Tier 2 work sitting at the same visual weight as featured work

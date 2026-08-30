@@ -15,7 +15,7 @@ Guidelines for the text quality and style of product design case studies — foc
 ## How case studies are actually read
 
 - Readers scan first: they read headings, subheadings, the first sentence of each paragraph, and any highlighted content. Full reading only happens if scanning caught their interest.
-- The decision to keep reading is made in the first 30–60 seconds — based on whether the product, problem, and outcome are immediately clear.
+- Reviewers skim before deciding to read deeply. No evidence supports a specific seconds figure — but the product, problem, and role must be clear from a quick scan regardless.
 - Hiring managers and design managers review many case studies in parallel. They will not work to extract meaning from dense or ambiguous writing.
 
 ---
@@ -88,6 +88,7 @@ The writing should sound like a product designer talking to a peer — direct, i
 - Prefer the simpler word when it carries the same meaning.
 - Do not use trend vocabulary as a substitute for description. Words like "holistic", "user-centric", "data-driven", "impactful", or "seamless" mean nothing without the specific content they should be describing.
 - If you find yourself writing a buzzword, ask: what exactly does this mean in this context? Write that instead.
+- Word tiers and the flagging process live in the portfolio-case-study-writing skill's quality-flags.md.
 
 ---
 
@@ -124,19 +125,19 @@ These patterns make writing sound assembled rather than authored. Avoid them.
 - **Generic conclusions:** "the future looks bright", "exciting times ahead" — end on a specific observation or fact
 - **Consecutive bullets with the same opening word or structure**
 - **Bolding phrases inside body text without reason**
+- **The "not X, but Y" pivot:** "This isn't just a feature — it's a
+  philosophy." State the point directly.
+- **Hedging stacks:** "arguably", "in many ways", "to some extent"
+  clustered in one passage — commit or cut.
+- **Summary sentences restating the paragraph they close.**
+- **Inflation vocabulary:** "delve", "crucial", "landscape", "realm",
+  "journey" (as metaphor for a project).
 
 ---
 
 ## The specificity test
 
-Before publishing, check every achievement or outcome statement against this test:
-
-> Does it contain at least **two** of the following three elements?
-> 1. A number or metric
-> 2. A named tool, method, or framework
-> 3. A named context — product, team, user segment, or constraint
-
-- Fails: *Improved team efficiency*
-- Passes: *Reduced component creation time from 3 days to 4 hours across 8 product teams by establishing a tokenised design system in Figma*
-
-AI tools cannot supply these details. Only the author can.
+Apply the specificity test from `quality_criteria.md` to every achievement
+or outcome claim: at least two of (1) a number, (2) a named tool, method,
+or framework, (3) a named context. See that file for the test's scope —
+it filters claims, not connective prose.

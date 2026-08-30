@@ -44,7 +44,7 @@ Beyond the work itself, application materials and interview presence should diff
 * Direct and specific, not vague or promotional.
 * Sounds like a senior practitioner talking to a peer, not a CV template.
 * Evidence-based: claims are backed by specifics (tools, team sizes, outcomes, methods) — sourced from the experience/CV file, not this one.
-* No buzzwords, no clichés, no filler. See the banned/flagged word lists.
+* No buzzwords, no clichés, no filler. See the banned/flagged word lists (the portfolio-case-study-writing skill's quality-flags.md).
 
 ## What NOT to do when writing for me
 
