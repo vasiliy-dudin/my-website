@@ -2,51 +2,54 @@
 
 ## Who I am
 
-Senior Product Designer with 14+ years of experience at international SaaS, EdTech, E-Commerce, and FinTech companies. I specialise in complex B2B and B2C products, design systems, user research, accessibility, and inclusive design. I have working knowledge of frontend development (React, HTML, CSS, JavaScript), which enables close collaboration between design and engineering.
+Senior Product Designer with 14+ years of experience, based in London. I work across international SaaS, EdTech, E-Commerce and FinTech products, on complex B2B and B2C platforms. I have working knowledge of frontend development (React, HTML, CSS, JavaScript), which enables close collaboration between design and engineering.
 
-I am currently based in London. I am looking for product design roles in the UK or Europe — remote or in-office.
+Across my design systems work I've built and matured systems from the ground up: design tokens, unified style foundations, and complex components designed to be reusable and flexible across products — grounded in staying current with modern design systems practice, not just executing an existing one.
 
----
+## Right to work
 
-## Specialisations (in order of depth)
+Eligible to work in the UK and the EU, no visa sponsorship needed.
 
-- Design systems: tokens, component libraries, governance, documentation, cross-team adoption
-- Accessibility and inclusive design: WCAG 2.1/2.2, ARIA, screen reader compatibility, keyboard navigation, axe DevTools
-- Complex B2B product design: enterprise workflows, data-dense interfaces, multi-user systems, SaaS platforms
-- User research: discovery, usability testing, synthesis
-- Frontend collaboration: React, HTML, CSS, JavaScript — enough to prototype in code, review PRs, and work without handoff friction
+## Specialisations
 
----
+**Broad:** Product design — end-to-end, from problem framing to shipped UI, across B2B and B2C.
+
+**Areas of depth** (each should be demonstrable through case studies — not just claimed here):
+
+* Design systems: tokens, component architecture, reusable and flexible components, style unification
+* Accessibility compliance and inclusive design: accessible colour palettes for accessible contrast, OKLCH colours, annotations for ARIA, WCAG 2.1/2.2, the European Accessibility Act, EN 301 549, screen reader compatibility, axe DevTools
+* User research: discovery, usability testing, synthesis
 
 ## Target roles
 
-Primary: Senior Product Designer at a product-led company (Series B–D startup or established tech company).
+**Level:** Senior Product Designer. Not Staff, Lead, or Principal — this is a deliberate target, not a default.
 
-Relevant domains: SaaS, FinTech, EdTech, developer tools, infrastructure tools, enterprise B2B.
+**Company type:** Product-led company (Series B–D startup or established tech company).
 
-Geographic preference: UK or Europe. Remote or hybrid. Not open to fully on-site unless exceptional circumstance.
+**Domains:** SaaS, FinTech, EdTech, developer tools, infrastructure tools, enterprise B2B.
 
----
+**Geography:** Remote, hybrid or on-site in the UK, remote only in Europe. 
 
 ## Design philosophy
 
-Systematic, inclusive design that bridges design and engineering. I believe good design is grounded in clear problem understanding, scales through systems, and is accessible by default rather than as an afterthought.
+Systematic, inclusive design that bridges design and engineering. Good design is grounded in clear problem understanding, scales through systems, and is accessible by default rather than as an afterthought.
 
----
+## What makes me stand out
+
+Beyond the work itself, application materials and interview presence should differentiate me from other senior candidates: a distinctive tone of voice in writing, a portfolio with an intentional design point of view rather than a template, and active, engaged behaviour in interviews rather than passive Q&A. I also run internal accessibility advocacy — workshops and conversations aimed at developers and managers, not just designers. This is a standing goal — factor it into advice on writing style, portfolio visual direction, and interview prep, not just when I raise it explicitly.
+
 
 ## Voice and tone (for all written materials)
 
-- Direct and specific, not vague or promotional.
-- Sounds like a senior practitioner talking to a peer, not a CV template.
-- Evidence-based: claims are backed by specifics (tools, team sizes, outcomes, methods).
-- No buzzwords. No clichés. No filler.
-
----
+* Direct and specific, not vague or promotional.
+* Sounds like a senior practitioner talking to a peer, not a CV template.
+* Evidence-based: claims are backed by specifics (tools, team sizes, outcomes, methods) — sourced from the experience/CV file, not this one.
+* No buzzwords, no clichés, no filler. See the banned/flagged word lists.
 
 ## What NOT to do when writing for me
 
-- Do not write anything that sounds like a LinkedIn influencer post.
-- Do not describe me as "passionate about design" or any equivalent cliché.
-- Do not write bullet points that could apply to any product designer — every point should be specific to my experience.
-- Do not invent metrics or project details that are not in my provided materials.
-- Do not use any of the banned words listed in the Project Instructions.
+* Do not write anything that sounds like a LinkedIn influencer post.
+* Do not use Tier 1 banned words to describe me (e.g. "passionate about design").
+* Do not write bullet points that could apply to any product designer — every point should be specific to my experience.
+* Do not invent metrics or project details that are not in my provided materials.
+* This file is not a source of CV facts. Companies, dates, and metrics belong in the experience/CV file once it exists — pull from there, not from this file.

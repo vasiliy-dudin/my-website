@@ -1,100 +1,140 @@
-# Market Context: Product Design Hiring in 2025–2026
+# Market Context: Product Design Hiring, UK & Europe
+
+Last updated: August 2026. Re-verify time-sensitive claims before relying on them.
+
+Scope: **product companies** — established tech companies and later-stage scale-ups. Not agencies, consultancies, or freelance work, where portfolio and interview norms differ and are routinely mis-applied to product design.
+
+---
+
+## How to read anything about this market
+
+Most published advice about design hiring, CVs, portfolios and ATS systems is false, outdated, or commercially motivated. Apply these tests to any claim, including the ones below.
+
+1. **Who profits from the claim being true?** Résumé-optimisation vendors sell a fix for a problem they describe. ATS vendors describe their own products. Design-tool companies benefit from "design is thriving" narratives. A vendor describing its own product is a *statement*, not evidence — regardless of whether it supports or undermines a conclusion.
+2. **Is there an original study?** "Recruiters spend 6 seconds on a CV" traces to a \~30-person study run by a job site in 2012. "Portfolios are judged in 30 seconds" traces to nothing. Untraceable statistics are convention, not fact.
+3. **Which industry, which year?** Agency and freelance norms differ. Advice describing 2021–22 conditions is actively misleading now.
+4. **Is the proxy measuring the thing?** Economy-wide vacancy data, scraped job-board counts and self-reported salary aggregators all get used as proxies for design hiring. Each distorts.
+
+---
 
 ## State of the market
 
-The product design job market in 2025–2026 is significantly more competitive than 2021–2022. There are fewer open roles at mid-to-large tech companies, more experienced designers competing for each position, and a higher bar for demonstrated impact. Companies that are hiring tend to want designers who can operate across more of the product development cycle — not specialists who only produce high-fidelity mocks.
+Subdued and selective, weighted toward senior. The 2021–22 conditions have not returned: competition per role is high, processes are slower, employers are more specific about what they want.
+
+The senior weighting is the useful signal. Figma's *State of Design 2026* (February 2026) reports 56% of hiring managers seeing increasing demand for senior hires versus 25% hiring junior; the direction is corroborated across industry accounts. But the survey samples Figma's own users — currently employed people at companies still doing design work — so it excludes the unemployed and the companies that stopped hiring. Direction sound, numbers indicative.
+
+Two commonly-cited proxies are unreliable and should not be used: **ONS vacancy data** is economy-wide, and tech and design hiring fell considerably harder than the whole-economy figure implies; **scraped job-board counts** include duplicates, stale listings and ghost jobs.
+
+The claim that AI collapsed junior demand is plausible but confounded — the 2022–23 layoffs preceded widespread AI adoption in design workflows and are better explained by interest rates and the end of the pandemic growth cycle.
 
 ---
 
-## What product companies actually care about
+## How screening actually works
 
-Based on consistent signals from hiring managers and design leaders at product-led companies, the priority order is:
+Two things are true at once, and most advice gets one of them wrong.
 
-**1. Product thinking and problem framing**
-Hiring managers want to see that you understand the problem before the solution. The ability to frame a problem, identify the right users, articulate constraints, and question assumptions is more valuable than visual craft alone. Designers who jump straight to solutions — or whose portfolio only shows the output — signal shallow thinking.
+### The keyword-score myth
 
-**2. Demonstrated impact**
-Portfolios and CVs that show outcomes — not just deliverables — stand out. This means metrics where available, but also clear descriptions of what changed for users or the business: reduced friction, enabled a new workflow, cut support volume, increased adoption. Vague claims like "improved the experience" without any evidence of impact are ignored.
+No evidence that Greenhouse, Lever, Workday or Ashby automatically rank or reject by an overall keyword-match percentage. The "75–80% match, below 60% risks filtering" thresholds trace to résumé-optimisation vendors, whose "ATS score" is a local text-overlap calculation that never queries a real ATS. Jobscan itself concedes Greenhouse does not score résumés.
 
-**3. Clear articulation of role and contribution**
-Hiring managers are sceptical of designers who describe team accomplishments as personal achievements. The distinction between "I designed X" and "the team shipped X" matters. Candidates who can clearly articulate exactly what they contributed — and where others contributed — are trusted more.
+**What keywords actually do:** they make you findable when a recruiter searches or filters the candidate database, and give criteria-based AI review something citable. The mechanism is *retrieval*, not *scoring* — which is still a real reason to mirror a job description's tools, methods and titles in body text.
 
-**4. Collaboration and cross-functional fluency**
-Product design is done in teams. Evidence that you can work effectively with PMs, engineers, researchers, and data analysts — and that you understand their constraints — is a strong positive signal. Frontend knowledge is a genuine differentiator, especially in engineering-led organisations.
+### Why fast rejections still happen
 
-**5. Visual craft and execution quality**
-Important, but less differentiating at senior level than product thinking. Strong visual execution is assumed; weak execution is disqualifying. Having working knowledge of code means you're more likely to ship designs that actually look right.
+Debunking the score does not mean applications get read. Rejection within hours is normal and has several real mechanisms:
 
-**6. Systems thinking**
-For senior roles at companies with scale, the ability to think in systems — not just screens — is increasingly important. Design systems experience, especially with tokens, component governance, and cross-team adoption, is a hard-skill differentiator in 2025–2026.
+* **Knockout questions.** Location, work authorisation, years of experience, salary expectation, notice period — these can trigger genuinely automatic rejection in seconds. The most under-discussed source of instant rejections.
+* **Bulk disposition.** A recruiter filters several hundred applications, selects most and rejects in one action. Formally human, effectively instantaneous. "Human in the loop" does not mean "read".
+* **Criteria-based AI review.** Ashby's AI parses each CV against recruiter-defined criteria, marks Meets / Does not Meet with citations, and lets recruiters filter by fit level. Ashby states the AI never ranks and a human always decides — that is the vendor describing its own compliance posture under the EU AI Act, not independent verification. The practical effect is a filter followed by a bulk reject.
+* **Requisitions that are not real.** Internal candidate already chosen, pipeline full, compliance postings, ghost jobs. Explains both instant rejections and total silence.
 
----
+**The honest summary:** a human usually decides, but at a speed indistinguishable from automation, with genuinely automatic gates in front of that decision. No keyword scoring does not mean the application was read.
 
-## Accessibility as a hard filter in 2026
+### What this implies for the CV
 
-Accessibility knowledge (WCAG 2.1/2.2, inclusive design) has moved from "nice to have" to a hard filter for enterprise roles and public sector–adjacent products. This is especially true in the UK and EU where regulatory pressure on digital accessibility has increased. Designers who can cite specific WCAG criteria, tools (axe, WAVE, Lighthouse), and real examples of accessibility work are more competitive for these roles.
-
----
-
-## How applications are screened
-
-Most tech companies at Series B and above use Greenhouse, Lever, or Workday as their ATS. These systems:
-- Parse CV content line by line, left to right, top to bottom
-- Cannot read text inside tables, text boxes, images, icons, or headers/footers
-- Match keywords from the job description to the CV text
-- Rank candidates partly by keyword match rate
-
-A well-designed CV in Figma that renders poorly in Workday is functionally invisible.
-
-Modern AI-assisted screening (used by larger companies) also looks for:
-- Specificity: does the CV describe real, concrete work or generic responsibilities?
-- Signal density: are bullet points meaningful or padded?
-- Skill match: do the skills listed map to the job description's terminology?
-
-Target keyword match rate: 75–80% against any specific job description. Below 60% risks filtering out. Above 90% looks like stuffing.
+* Check knockout questions before applying — they reject more applications than formatting ever will.
+* Mirror the job description's core skills, tools and domain terms in body text, for findability.
+* Single column, real text, standard headings, contact details in the body. Modern parsers beat the "ATS can't read tables" folklore, but multi-column layouts still scramble reading order in some systems, header/footer content is often skipped, and text inside images is genuinely invisible. Conservative formatting costs nothing.
+* Assume seconds on the first pass. The "6 seconds" figure is weak evidence, but scannability is cheap insurance either way.
 
 ---
 
-## ATS keyword categories for product design roles
+## How hiring managers evaluate senior candidates
 
-**Core UX and product design:**
-User Research, Usability Testing, Information Architecture, Wireframing, Prototyping, Design Thinking, User-Centered Design, Jobs-to-be-Done, Service Design
+**The portfolio is the primary artefact; the CV is a gate.** The CV gets you past recruiter screening into a database; the portfolio and the walkthrough decide the outcome.
 
-**Design systems:**
-Design Tokens, Component Libraries, Atomic Design, Design Governance, Design Ops, Storybook, Scalable Design Systems, Design Language
+**What design managers say separates strong from weak walkthroughs:**
 
-**Accessibility:**
-WCAG 2.1, WCAG 2.2, Inclusive Design, Accessible Design, Screen Reader Compatibility, Keyboard Navigation, ARIA, axe DevTools
+* Business context and the strategic bet, stated before the solution
+* Your specific role, clearly distinguished from the team's
+* How the problem was defined — research, data, stakeholder pressure
+* Iterations and trade-offs, not only finished screens
+* Outcomes. Portfolios with no outcome information read as junior.
 
-**Tools (name specifically, not generically):**
-Figma, FigJam, Miro, Maze, Notion, Linear, Jira, Confluence, Storybook, HTML, CSS, React, JavaScript
+**The same case study has to work as a live presentation.** The loop typically includes a hiring-manager portfolio review (\~45–60 min) and a panel presentation (\~45 min, or two projects at \~20 min each), plus a take-home brief, whiteboard challenge or app critique at senior level. Case studies that only work as a page to read are half-built.
 
-**Collaboration and process:**
-Cross-functional collaboration, Agile, Sprint Planning, Design Critique, Design Reviews, Stakeholder Management
+**Sourcing.** Referrals and recruiter outreach convert far better than cold inbound at senior level. The circulating ratios come from HR-software marketing and are directional only; the pattern itself is not in dispute.
 
----
+**Portfolio logistics.** A live URL is the default expectation; PDFs are still requested for panel circulation or under confidentiality. Password-protected and NDA-constrained work is common and accepted — what matters is talking credibly through it, with redacted visuals if needed.
 
-## What hiring managers at product companies say about portfolios
+**Depth over breadth is credible expert guidance, not measured fact.** NN/g's portfolio guidance (2019 survey, n=204) recommends 3–5 detailed case studies and notes managers rarely read a portfolio in full. Pre-pandemic, pre-AI — the principle holds across current practitioner accounts, the numbers have no 2026 evidence behind them.
 
-The following signals appear consistently in accounts from design leaders who review portfolios:
-
-- A portfolio with 2–3 excellent, deeply explained case studies outperforms one with 8 shallow ones.
-- The first 30–60 seconds of portfolio review is about: who you are, what you've worked on, and whether the work is at the right level. If this is unclear, most reviewers move on.
-- "Dribbble-style" portfolios — beautiful screenshots with no context — are seen as junior signals, not senior ones.
-- The best portfolios show how the designer thinks under real constraints: with limited time, unclear requirements, technical debt, stakeholder disagreements.
-- Metrics are highly valued but not required. A clear description of what changed — even qualitatively — is far better than no outcome information at all.
-- Hiring managers actively look for red flags: over-claiming contribution, polished work with no explanation of decisions, lack of evidence of any research or validation.
+**"The first 30–60 seconds decide" is unsourced.** No study establishes a seconds-per-portfolio figure; circulating numbers are extrapolated from the résumé statistic. Defensible version: managers skim before deciding to read deeply, so lead with impact and make the page scannable — without pretending to know the number.
 
 ---
 
-## Common red flags hiring managers cite
+## Accessibility as a hiring signal
 
-- CV or portfolio that could belong to any designer (no specificity)
-- No outcomes — only outputs described
-- Over-claiming: "Led the redesign of..." when the designer was one of five people
-- Under-claiming: not owning work that was genuinely theirs
-- Generic language that sounds AI-generated
-- A Figma-designed CV that is visually impressive but ATS-invisible
-- Portfolio case studies that skip from brief to final design with no process shown
-- Process-heavy case studies that never get to outcomes
-- No mention of collaboration, handoff, or implementation reality
+The European Accessibility Act began enforcement on 28 June 2025, covering e-commerce, banking, e-books, transport and consumer computing services sold in the EU, with requirements aligned to WCAG principles. First cases filed in France, November 2025. The UK sits outside the EAA, but UK businesses selling into the EU are in scope; domestically the Public Sector Bodies Accessibility Regulations 2018 require WCAG 2.2 AA for public-sector services, with the Equality Act 2010 underpinning private-sector obligations.
+
+**Hiring effect:** accessibility appears explicitly in job descriptions more often than before 2025, particularly in enterprise B2B, FinTech, public-sector-adjacent products and EU-facing services. Whether employers *test* it in interviews is domain-dependent and only anecdotally evidenced.
+
+**On automated tooling:** Deque reports automated testing catches \~57% of issues by volume; measured against WCAG success criteria the conventional figure is 30–40%. Both originate with Deque, which makes axe. An independent 2021 test found axe-core caught 27% of 142 known issues and Pa11y 20%. Defensible claim: automated tools catch a minority of issues and manual testing is required — usable in an interview without leaning on a precise number.
+
+---
+
+## Frontend fluency is a differentiator, not a requirement
+
+Working knowledge of HTML/CSS/React and of how designs survive implementation reads as a strong positive signal, particularly in engineering-led organisations and design-systems work (code-connected tokens, Dev Mode). Evidence is practitioner-level, not survey data — but it is consistent across 2026 accounts and aligns with the design-engineering convergence visible in tooling.
+
+---
+
+## Reference vocabulary for findability
+
+Keywords work through recruiter search and criteria-based AI review (see screening section), so the specific job description always wins — mirror its exact terms first. This list is fallback vocabulary for body text when a JD is vague, and a checklist for what a CV should be findable by. Spelling follows the ATS exception rule in quality\_criteria document.
+
+* **Core product design:** User Research, Usability Testing, Information Architecture, Wireframing, Prototyping, User-Centered Design, Jobs-to-be-Done, Service Design
+* **Design systems:** Design Tokens, Component Libraries, Design Governance, Design Ops, Storybook, Figma Variables, Multi-brand Theming
+* **Accessibility:** WCAG 2.1, WCAG 2.2, Inclusive Design, Screen Reader Compatibility, Keyboard Navigation, ARIA, axe DevTools, European Accessibility Act
+* **Tools:** Figma, FigJam, Miro, Maze, Notion, Linear, Jira, Storybook, HTML, CSS, React, JavaScript
+* **Collaboration:** Cross-functional collaboration, Agile, Design Critique, Stakeholder Management, Developer Handoff
+
+
+## Design systems as a hiring signal
+
+Demand is up and the bar has risen. The W3C Design Tokens Community Group published its first stable specification in October 2025, backed by Adobe, Google, Meta, Microsoft, Salesforce and Figma. Figma variables now support multi-brand theming and mode-based light/dark within single components.
+
+**What employers ask for:** token taxonomy (primitive → semantic → component), governance and adoption across teams, multi-brand and mode-based theming, Figma variables, and increasingly code-connected systems (Dev Mode, tokens driving CSS and platform styles).
+
+**Framing matters.** Design-systems capability is increasingly absorbed into senior generalist product roles rather than a separate title, except at organisations large enough to run dedicated teams. Depth reads as a strong spike only when framed as product and business impact, not component-library maintenance.
+
+Circulating token-adoption statistics (e.g. "84% of teams") come from small self-selecting surveys measuring "using tokens in some form". Do not cite them.
+
+---
+
+## AI and the product design role
+
+AI fluency has moved from differentiator toward expectation. Figma (February 2026) reports 73% of hiring managers seeing increasing need for AI-tool proficiency and 79% for designing AI products — same sampling caveat as above.
+
+What is screened for is evidence that AI is integrated into how you work and how you reason about it: what it suits, where it fails, what the interaction model has to account for. "I designed an AI feature" is not itself the signal.
+
+---
+
+## Known gaps
+
+Unresolved, and relevant to how confidently anything here should be applied:
+
+* **Base rates.** No reliable application-to-screen conversion figure for senior designers in the UK/EU. Without it, personal rejection statistics cannot be interpreted.
+* **Design-specific hiring volume.** No trustworthy dataset separating product design vacancies from economy-wide or scraped counts.
+* **Independent verification of ATS behaviour.** Almost everything documented about screening comes from vendors describing their own products.
+* **Ghost job prevalence in the UK/EU** — widely reported, poorly quantified.
