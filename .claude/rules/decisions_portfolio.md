@@ -22,7 +22,6 @@ cost decides.
 
 | Recommendation | Verdict | Basis |
 |---|---|---|
-| Decisions and trade-offs over framework diagrams; never structure a case as a named framework | Don't (frameworks) | [reported] named red flag in 2026 accounts; established project principle |
 | Show negative metrics honestly with the four required elements | Do | see `quality_criteria.md` |
 | Invented, unverifiable or retrofitted details (including AI use in projects where it wasn't used) | Don't | provenance rules in `quality_criteria.md`; indefensible in a live walkthrough |
 | Show AI fluency through a tier 2 AI project, the site itself, or About — not by editing history | Do | [reported] absence of AI signals now reads as avoidance; honesty preserved |
