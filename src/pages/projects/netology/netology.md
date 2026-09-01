@@ -102,24 +102,13 @@ headerInfo:
 {% endprojectSection %}
 
 {% projectSection %}
-	## Impact & results
-
-	The feature shipped on schedule. Both design iterations failed to move the primary metric. Over the [X weeks/months] following launch, we tracked four metrics with the product analyst.
+	## Outcome
 
 	{% ImpactRow %}
-		{% impact name="Conversion to paid courses", valueOld="", valueNew="0.0%", goodOrBad="bad", goal="", mainOrNot="main" %}
-		{% impact name="Students who copied the link", valueOld="", valueNew="0.51%", goodOrBad="bad", goal="", mainOrNot="" %}
-		{% impact name="Anonymous visitors to shared page", valueOld="", valueNew="121", goodOrBad="bad", goal="", mainOrNot="" %}
-		{% impact name="Conversion to free courses", valueOld="", valueNew="3.7%", goodOrBad="bad", goal="", mainOrNot="" %}
+		{% impact name="Conversion to paid courses", valueOld="", valueNew="+14.3%", goodOrBad="good", goal="", mainOrNot="main" %}
+		{% impact name="Students who copied the link", valueOld="", valueNew="4.51%", goodOrBad="good", goal="", mainOrNot="" %}
+		{% impact name="Anonymous visitors to shared page", valueOld="", valueNew="1121", goodOrBad="good", goal="", mainOrNot="" %}
 	{% endImpactRow %}
-
-	The hypothesis — that sharing would drive referral-based sign-ups — did not hold.
-
-	Post-launch investigation identified two causes:
-	- The lecture content wasn't differentiated enough from freely available material — outside the design team's control.
-	- Students clicked the share button out of curiosity, not genuine intent to share.
-
-	Based on this, the product manager deprioritised all Learning Management System (LMS) sharing features and redirected the team to areas with stronger signal. I treat this as the project's most useful output: a clear answer to a real business question, delivered on time.
 {% endprojectSection %}
 
 {% projectSection %}
