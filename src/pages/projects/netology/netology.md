@@ -1,5 +1,5 @@
 ---
-title: "High student acquisition costs"
+title: "[Draft] High student acquisition costs"
 feature: "Useful content sharing"
 description: Netology (EdTech, B2C, B2B)
 category:
@@ -65,6 +65,29 @@ headerInfo:
 
 	This informed two design decisions: a mini-course as a sharing incentive, and a focus on professional rather than social sharing.
 {% endprojectSection %}
+
+{% projectSection %}
+	## Process
+	{% image src="images/ideation-1.png", className="", alt="Miro ideation board with sticky-note clusters headed 'How to motivate to share?', 'How to engage colleagues' and 'Restrictions', above three draft user flow diagrams", width=922, priority="low", lightbox=true, lightboxWidth=2400 %}
+	*Ideation in Miro. The starred notes are the ideas that went into the design.*
+
+	- Ran ideation in Miro on the three questions research left open: how to motivate sharing, how to engage colleagues, and what limits the business needed.
+	- Two user flows, student sharing and colleague landing. The 3 colleague variants differ only in when registration happens.
+	- Checked the shortlist with the developers and the product manager before wireframing.
+	- Share modal wireframes in Figma, varying what a student sees first: the reward, the generated link, or the conditions attached to it.
+	- 12 RITE sessions across both scenarios. Findings and the iterations they caused are in Solution.
+{% endprojectSection %}
+{# {% projectSection %}
+	## Process
+	- Верхнеуровневые идеи, их плюмы и минусы
+	- Схемы. User flow диаграммы из Miro для обоих сценариев — рядом с подписью «Student sharing flow» / «Colleague landing flow», без разбора шагов
+	- Ideation
+		- Черновики, наброски, идеация
+		- Несколько вариантов user flow, референсы, скетчи в Figma
+		- Сверка с dev team и PM на предмет реализуемости
+	- Одна строка про синхронизацию с dev-командой и PM на предмет реализуемости
+	- Usability testing. Ran 12 test sessions across both scenarios [возможно, стоит написать про продолжительность и кол-во вопросов].  Использовал подход RITE - если на тесте выявлял проблему, то корректировал дизайн и снова проверял решение на других респондентах. После второй итерации дизайна провёл ещё 6 сессий.
+{% endprojectSection %} #}
 
 {% projectSection %}
 	## Solution
