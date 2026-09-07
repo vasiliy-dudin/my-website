@@ -1,8 +1,6 @@
 import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 import { imageCarousel } from "./_imageCarousel.js";
 
-imageCarousel();
-
 // Every group, not just "lightbox": each carousel binds its own group so its
 // slides open as a gallery of that carousel alone.
 Fancybox.bind('[data-fancybox]', {
@@ -41,4 +39,8 @@ Fancybox.bind('[data-fancybox]', {
 	showClass: "f-slide-in",
 	hideClass: "f-slide-out",
 });
+
+// After the binding above, so a failure here cannot leave the page with no
+// working lightbox. Fancybox resolves the carousel at click time, not bind time.
+imageCarousel();
 

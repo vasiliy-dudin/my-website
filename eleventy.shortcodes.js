@@ -11,6 +11,19 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // Rendered width of a carousel switcher thumbnail
 const CAROUSEL_THUMB_WIDTH = 180;
 
+/**
+ * Escapes a front-matter string for use in an HTML attribute or text node.
+ * Returns the escaped string.
+ */
+function escapeHtml(value) {
+	return String(value)
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;')
+		.replace(/'/g, '&#39;');
+}
+
 export default config => {
 	const md = markdownIt({
 		html: true,
@@ -173,15 +186,25 @@ export default config => {
 		if (!args.id) {
 			throw new Error("Missing `id` on carousel shortcode");
 		}
+		if (!args.slides) {
+			throw new Error(`Missing \`slides\` on carousel shortcode: ${args.id}`);
+		}
+		if (!args.width) {
+			throw new Error(`Missing \`width\` on carousel shortcode: ${args.id}`);
+		}
 
 		const carouselId = args.id;
 		const lightboxGroup = `carousel-${carouselId}`;
 		const slides = Array.isArray(args.slides) ? args.slides : [args.slides];
 
+		if (!slides.length) {
+			throw new Error(`Empty \`slides\` on carousel shortcode: ${args.id}`);
+		}
+
 		const slidesHTML = await Promise.all(slides.map(async (slide, index) => {
 			const panelId = `carousel-${carouselId}-panel-${index}`;
 			const chipId = `carousel-${carouselId}-chip-${index}`;
-			const caption = slide.caption || '';
+			const caption = escapeHtml(slide.caption || '');
 
 			const imgHTML = await imageShortcode.call(this, {
 				src: slide.src,
@@ -201,7 +224,7 @@ export default config => {
 		const chipsHTML = await Promise.all(slides.map(async (slide, index) => {
 			const panelId = `carousel-${carouselId}-panel-${index}`;
 			const chipId = `carousel-${carouselId}-chip-${index}`;
-			const label = slide.label || `Slide ${index + 1}`;
+			const label = escapeHtml(slide.label || `Slide ${index + 1}`);
 			const isSelected = index === 0;
 
 			// The thumbnail is decorative: `label` names the button instead
@@ -216,7 +239,8 @@ export default config => {
 			return `<button type="button" class="carousel__chip" role="tab" id="${chipId}" aria-controls="${panelId}" aria-selected="${isSelected}" aria-label="${label}" tabindex="${isSelected ? 0 : -1}">${thumbHTML}</button>`;
 		}));
 
-		const firstCaption = slides[0].caption || '';
+		const firstCaption = escapeHtml(slides[0].caption || '');
+		const chipsLabel = escapeHtml(args.chipsLabel || 'Choose slide');
 
 		// A fixed height is emitted as a ratio so the frame keeps its
 		// proportions as the page narrows instead of leaving a tall gap
@@ -231,7 +255,7 @@ export default config => {
 					${slidesHTML.join('')}
 				</div>
 			</div>
-			<div class="carousel__chips" role="tablist" aria-label="${args.chipsLabel || 'Choose slide'}">
+			<div class="carousel__chips" role="tablist" aria-label="${chipsLabel}">
 				${chipsHTML.join('')}
 			</div>
 			<figcaption class="carousel__caption" aria-live="polite">${firstCaption}</figcaption>

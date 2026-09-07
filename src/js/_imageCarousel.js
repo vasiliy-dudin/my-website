@@ -31,14 +31,26 @@ function ignoreClickAfterDrag(viewport) {
 		pointerStart = { x: event.clientX, y: event.clientY };
 	});
 
+	// A cancelled pan (scroll takeover, lost pointer capture) never reaches the
+	// click handler, so clear the start here rather than leaving it behind
+	viewport.addEventListener('pointercancel', () => {
+		pointerStart = null;
+	});
+
 	viewport.addEventListener('click', event => {
-		if (!pointerStart) return;
+		const start = pointerStart;
+		pointerStart = null;
+
+		// Keyboard activation reports no click count and no coordinates. It can
+		// never be a swipe, and comparing it against a stale start would block
+		// the lightbox for keyboard users.
+		if (event.detail === 0) return;
+		if (!start) return;
 
 		const travelled = Math.max(
-			Math.abs(event.clientX - pointerStart.x),
-			Math.abs(event.clientY - pointerStart.y)
+			Math.abs(event.clientX - start.x),
+			Math.abs(event.clientY - start.y)
 		);
-		pointerStart = null;
 
 		if (travelled > DRAG_CLICK_THRESHOLD_PX) event.preventDefault();
 	});
