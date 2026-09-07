@@ -83,7 +83,7 @@ function validateParams({src, alt, width, priority, lightboxWidth, lightbox}) {
 }
 
 // Main shortcode function
-export const imageShortcode = async function({src, className = "", alt, width, priority = "high", lightbox, lightboxWidth, lightboxCaption}) {
+export const imageShortcode = async function({src, className = "", alt, width, priority = "high", lightbox, lightboxWidth, lightboxCaption, lightboxGroup = "lightbox"}) {
 	// Validate and extract parameters
 	const { largeSizeWidth, imagePriority, isLightboxEnabled } = validateParams({
 		src, alt, width, priority, lightboxWidth, lightbox
@@ -119,7 +119,7 @@ export const imageShortcode = async function({src, className = "", alt, width, p
 		const caption = (lightboxCaption && lightboxCaption !== "undefined")
 			? ` data-caption="${lightboxCaption}"`
 			: '';
-		return `<a href="${largeImg.url}" data-fancybox="lightbox"${caption} onclick="plausible('Lightbox open', { props: { page: window.location.pathname }})">${imgTag}</a>`;
+		return `<a href="${largeImg.url}" data-fancybox="${lightboxGroup}"${caption} onclick="plausible('Lightbox open', { props: { page: window.location.pathname }})">${imgTag}</a>`;
 	}
 
 	return imgTag;

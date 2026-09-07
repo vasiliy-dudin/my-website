@@ -1,0 +1,88 @@
+// Image carousel with thumbnail switchers
+
+@use "../variables" as *
+@use "../mixins" as *
+
+$thumb-width: 180px
+$thumb-height: 130px
+
+.carousel
+	margin: 0
+
+	.f-carousel
+		border-radius: $radius--XL
+		overflow: hidden
+
+	// Frame lives on the viewport, not on individual slide images
+	img
+		border: none
+		border-radius: 0
+
+	// Arrows, themed through the vendor's custom properties
+	.f-button.is-arrow
+		--f-arrow-width: 44px
+		--f-arrow-height: 44px
+		--f-arrow-pos: 8px
+		--f-arrow-border-radius: 50%
+		--f-arrow-color: #{$color__gray-800}
+		--f-arrow-bg: #{rgba($color__neutral-white, 0.85)}
+		--f-arrow-shadow: 0 2px 8px #{rgba($color__gray-900, 0.2)}
+
+		&[aria-disabled]
+			opacity: 0.35
+
+	// A ratio rather than a pixel height, so the frame scales with the page
+	&[data-fixed-height] .f-carousel__viewport
+		aspect-ratio: var(--carousel-ratio)
+		background: $surface-secondary
+
+	&[data-fixed-height] .f-carousel__slide > a
+		display: block
+		height: 100%
+
+	// Whole image inside the frame, never cropped
+	&[data-fixed-height] .f-carousel__slide img
+		width: 100%
+		height: 100%
+		object-fit: contain
+
+	&__chips
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		gap: 8px
+		margin-top: 12px
+
+	&__chip
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		width: $thumb-width
+		height: $thumb-height
+		padding: 2px
+		background: $surface-secondary
+		border: 1px solid $color__gray-300
+		border-radius: $radius--S
+		cursor: pointer
+		opacity: 0.55
+		transition: opacity 0.15s, border-color 0.15s
+
+		&:hover
+			opacity: 1
+
+		// Selected state carries an opacity change as well as colour
+		&[aria-selected="true"]
+			opacity: 1
+			border: 3px solid $accent-primary
+
+	&__thumb
+		width: 100%
+		height: 100%
+		object-fit: contain
+
+	&__caption
+		margin-top: 8px
+		text-align: center
+		font-size: $font-size-sm
+		font-style: italic
+		color: $color-text-desc

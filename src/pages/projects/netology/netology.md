@@ -75,6 +75,12 @@ headerInfo:
 	- Reviewed each round to the developers, the product manager, the design team, course instructors, CPO and legal.
 	- Ran 12 usability tests of 30–40 minutes across both flows, and wrote up each one. Then 6 more after the second version.
 	- Annotated the final designs and wrote the handoff documentation, then stayed with the developers through the build.
+
+	{% carousel id="process", width=922, height=460, lightboxWidth=2400, chipsLabel="Process artefacts", slides=[
+			{src: "images/ideation-1.png", label: "Ideas", alt: "Miro ideation board with sticky-note clusters headed 'How to motivate to share?', 'How to engage colleagues' and 'Restrictions', above three draft user flow diagrams", caption: "The starred notes are the ones that made it into the design."},
+			{src: "images/ideation-4.png", label: "User flows", alt: "Two user flow diagrams: a student sharing a video lecture, and a friend opening the shared link, with a highlighted group of three variant paths to reach the content", caption: "Three variant paths for the colleague flow. Gating access before the video is the one that survived the legal and royalty constraints."},
+			{src: "images/ideation-2.png", label: "Share modal", alt: "Six wireframe variants of the share modal, differing in how the reward is worded and how the link limits are shown", caption: "Variants of the share modal. The reward wording came out of the student interviews; the link limits came from the piracy and royalty constraints."}
+		] %}
 {% endprojectSection %}
 {# {% projectSection %}
 	## Process

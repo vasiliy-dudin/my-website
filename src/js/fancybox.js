@@ -1,6 +1,11 @@
 import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
+import { imageCarousel } from "./_imageCarousel.js";
 
-Fancybox.bind('[data-fancybox="lightbox"]', {
+imageCarousel();
+
+// Every group, not just "lightbox": each carousel binds its own group so its
+// slides open as a gallery of that carousel alone.
+Fancybox.bind('[data-fancybox]', {
 	mainStyle: {
 		"--f-toolbar-padding": "8px",
 		"--f-toolbar-gap": "8px",

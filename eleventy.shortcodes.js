@@ -8,6 +8,9 @@ import { imageShortcode } from "./eleventy.images.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+// Rendered width of a carousel switcher thumbnail
+const CAROUSEL_THUMB_WIDTH = 180;
+
 export default config => {
 	const md = markdownIt({
 		html: true,
@@ -163,5 +166,75 @@ export default config => {
 		}
 
 		return `<div class="design-process">${timelineHTML}</div>`;
+	});
+
+	// Image carousel with chip switchers and a per-slide caption
+	config.addShortcode("carousel", async function(args) {
+		if (!args.id) {
+			throw new Error("Missing `id` on carousel shortcode");
+		}
+
+		const carouselId = args.id;
+		const lightboxGroup = `carousel-${carouselId}`;
+		const slides = Array.isArray(args.slides) ? args.slides : [args.slides];
+
+		const slidesHTML = await Promise.all(slides.map(async (slide, index) => {
+			const panelId = `carousel-${carouselId}-panel-${index}`;
+			const chipId = `carousel-${carouselId}-chip-${index}`;
+			const caption = slide.caption || '';
+
+			const imgHTML = await imageShortcode.call(this, {
+				src: slide.src,
+				className: '',
+				alt: slide.alt,
+				width: args.width,
+				priority: args.priority || 'low',
+				lightbox: true,
+				lightboxWidth: args.lightboxWidth,
+				lightboxCaption: caption,
+				lightboxGroup
+			});
+
+			return `<div class="f-carousel__slide" role="tabpanel" id="${panelId}" aria-labelledby="${chipId}" data-caption="${caption}">${imgHTML}</div>`;
+		}));
+
+		const chipsHTML = await Promise.all(slides.map(async (slide, index) => {
+			const panelId = `carousel-${carouselId}-panel-${index}`;
+			const chipId = `carousel-${carouselId}-chip-${index}`;
+			const label = slide.label || `Slide ${index + 1}`;
+			const isSelected = index === 0;
+
+			// The thumbnail is decorative: `label` names the button instead
+			const thumbHTML = await imageShortcode.call(this, {
+				src: slide.src,
+				className: 'carousel__thumb',
+				alt: '',
+				width: CAROUSEL_THUMB_WIDTH,
+				priority: 'low'
+			});
+
+			return `<button type="button" class="carousel__chip" role="tab" id="${chipId}" aria-controls="${panelId}" aria-selected="${isSelected}" aria-label="${label}" tabindex="${isSelected ? 0 : -1}">${thumbHTML}</button>`;
+		}));
+
+		const firstCaption = slides[0].caption || '';
+
+		// A fixed height is emitted as a ratio so the frame keeps its
+		// proportions as the page narrows instead of leaving a tall gap
+		const frameStyle = args.height
+			? ` style="--carousel-ratio: ${args.width} / ${args.height}"`
+			: '';
+		const fixedHeightAttr = args.height ? ' data-fixed-height' : '';
+
+		return `<figure class="carousel" id="carousel-${carouselId}"${fixedHeightAttr}${frameStyle}>
+			<div class="f-carousel" data-carousel>
+				<div class="f-carousel__viewport">
+					${slidesHTML.join('')}
+				</div>
+			</div>
+			<div class="carousel__chips" role="tablist" aria-label="${args.chipsLabel || 'Choose slide'}">
+				${chipsHTML.join('')}
+			</div>
+			<figcaption class="carousel__caption" aria-live="polite">${firstCaption}</figcaption>
+		</figure>`;
 	});
 }
