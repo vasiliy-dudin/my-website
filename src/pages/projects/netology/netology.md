@@ -68,14 +68,13 @@ headerInfo:
 
 {% projectSection %}
 	## Process
-	{% image src="images/ideation-1.png", className="", alt="Miro ideation board with sticky-note clusters headed 'How to motivate to share?', 'How to engage colleagues' and 'Restrictions', above three draft user flow diagrams", width=922, priority="low", lightbox=true, lightboxWidth=2400 %}
-	*Ideation in Miro. The starred notes are the ideas that went into the design.*
-
-	- Ran ideation in Miro on the three questions research left open: how to motivate sharing, how to engage colleagues, and what limits the business needed.
-	- Two user flows, student sharing and colleague landing. The 3 colleague variants differ only in when registration happens.
-	- Checked the shortlist with the developers and the product manager before wireframing.
-	- Share modal wireframes in Figma, varying what a student sees first: the reward, the generated link, or the conditions attached to it.
-	- 12 RITE sessions across both scenarios. Findings and the iterations they caused are in Solution.
+	- Collected ideas on a Miro board, with pros and cons for each. Worked through questions like what would motivate students to share, and when to prompt sharing.
+	- Looked at how competitors handle sharing, and at products well outside EdTech.
+	- Mapped two user flows: the student sharing a lecture, and the colleague who opens the link and might sign up for a course.
+	- Three rounds of wireframes in Figma: the video player, the share modal, the public video page, the emails and the page states.
+	- Reviewed each round to the developers, the product manager, the design team, course instructors, CPO and legal.
+	- Ran 12 usability tests of 30–40 minutes across both flows, and wrote up each one. Then 6 more after the second version.
+	- Annotated the final designs and wrote the handoff documentation, then stayed with the developers through the build.
 {% endprojectSection %}
 {# {% projectSection %}
 	## Process
