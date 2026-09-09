@@ -68,6 +68,7 @@ headerInfo:
 
 {% projectSection %}
 	## Process
+	- Started with discovery research to check whether students would share paid course content at all.
 	- Collected ideas on a Miro board, with pros and cons for each. Worked through questions like what would motivate students to share, and when to prompt sharing.
 	- Looked at how competitors handle sharing, and at products well outside EdTech.
 	- Mapped two user flows: the student sharing a lecture, and the colleague who opens the link and might sign up for a course.
@@ -82,17 +83,6 @@ headerInfo:
 			{src: "images/ideation-2.png", label: "Share modal", alt: "Six wireframe variants of the share modal, differing in how the reward is worded and how the link limits are shown", caption: "Variants of the share modal. The reward wording came out of the student interviews; the link limits came from the piracy and royalty constraints."}
 		] %}
 {% endprojectSection %}
-{# {% projectSection %}
-	## Process
-	- Верхнеуровневые идеи, их плюмы и минусы
-	- Схемы. User flow диаграммы из Miro для обоих сценариев — рядом с подписью «Student sharing flow» / «Colleague landing flow», без разбора шагов
-	- Ideation
-		- Черновики, наброски, идеация
-		- Несколько вариантов user flow, референсы, скетчи в Figma
-		- Сверка с dev team и PM на предмет реализуемости
-	- Одна строка про синхронизацию с dev-командой и PM на предмет реализуемости
-	- Usability testing. Ran 12 test sessions across both scenarios [возможно, стоит написать про продолжительность и кол-во вопросов].  Использовал подход RITE - если на тесте выявлял проблему, то корректировал дизайн и снова проверял решение на других респондентах. После второй итерации дизайна провёл ещё 6 сессий.
-{% endprojectSection %} #}
 
 {% projectSection %}
 	## Solution
