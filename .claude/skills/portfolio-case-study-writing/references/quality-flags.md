@@ -2,7 +2,7 @@
 
 Load this file when auditing word choice or before delivering a final
 draft. Anti-patterns and AI-text patterns live in
-`rules/writing_guidelines.md` — this file covers only word quality.
+`.claude/docs/writing_guidelines.md` — this file covers only word quality.
 This is the single source of truth for word tiers in this repository.
 
 The test is not whether a word appears on a list — it is whether the

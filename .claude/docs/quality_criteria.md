@@ -151,7 +151,7 @@ The homepage answers "who is this, what have they worked on, is this the right l
 Visual craft is assumed at senior level; the differentiator is whether each image is doing a job.
 
 * Every image in a featured case illustrates a specific decision or finding. An image that only shows that work happened should be cut. (Tier 2 is the place for work that is legitimately just screens.)
-* Every image in a featured case has a caption saying what to look at and why it matters — not a label describing what it is. "Final dashboard" is a label. "The share trigger moved inline after 8 of 12 participants missed it in the toolbar" is a caption.
+* Every image in a featured case has a caption saying what to look at and why it matters — not a label describing what it is. "Final dashboard" is a label. A caption follows the pattern *what changed or what to look at* + *why, with evidence*. Take the evidence from the case's facts file, never from an example.
 * Screens containing UI text are in English. Untranslated interface copy makes the work unreadable to the audience it's aimed at.
 * **Alt text** on every meaningful image: describes the content and its purpose in context, not "screenshot" or "design". Decorative images are marked as decorative rather than given filler descriptions.
 * The site itself meets WCAG 2.1 AA. Given that accessibility is a claimed specialisation, the portfolio is itself evidence — a site failing contrast or keyboard navigation contradicts the claim more loudly than any case study supports it.
@@ -215,11 +215,11 @@ Mid-level signals (avoid over-emphasising):
 * Language that could describe any designer at any company
 * Over-claiming contribution (see the attribution table above)
 * Under-claiming: not owning work that was genuinely mine
-* Buzzwords and clichés — see the banned/flagged word lists (the portfolio-case-study-writing skill's quality-flags.md). That list is the single source of truth; do not maintain a second copy here.
+* Buzzwords and clichés — see the banned/flagged word lists (`.claude/skills/portfolio-case-study-writing/references/quality-flags.md`). That list is the single source of truth; do not maintain a second copy here.
 * Every case study ending happily, with no constraints, failures, or learnings
 * Numbers whose origin I can't state (see metric provenance above)
 * Tier 2 work sitting at the same visual weight as featured work
-* A specialisation claimed in user\_profile document with no featured case behind it
+* A specialisation claimed in `my_profile.md` with no featured case behind it
 * Process-heavy case studies that never arrive at an outcome
 * No mention of engineering handoff or implementation reality anywhere in a  featured case
 

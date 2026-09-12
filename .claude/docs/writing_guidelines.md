@@ -22,7 +22,8 @@ Guidelines for the text quality and style of product design case studies — foc
 
 ## Text length and paragraph structure
 
-- One paragraph, one idea. If a paragraph can be split without losing meaning — split it.
+- One paragraph, one idea.
+- Length problems are usually selection problems. When a draft is too long, remove the least important point first; tighten sentences second; split paragraphs last.
 - Readability depends on paragraph weight, not sentence count. Three sentences with multiple subordinate clauses can be harder to scan than five short ones. Ask: does this paragraph create a wall of text on screen? Would a scanning reader skip it?
 - If a paragraph is too heavy: first shorten and simplify individual sentences. If that isn't enough, remove sentences that restate what came before. Only split into a new paragraph (with a subheading) if the paragraph genuinely covers more than one idea.
 - Short, dense paragraphs signal substance. Long paragraphs signal filler.
@@ -88,7 +89,7 @@ The writing should sound like a product designer talking to a peer — direct, i
 - Prefer the simpler word when it carries the same meaning.
 - Do not use trend vocabulary as a substitute for description. Words like "holistic", "user-centric", "data-driven", "impactful", or "seamless" mean nothing without the specific content they should be describing.
 - If you find yourself writing a buzzword, ask: what exactly does this mean in this context? Write that instead.
-- Word tiers and the flagging process live in the portfolio-case-study-writing skill's quality-flags.md.
+- Word tiers and the flagging process live in `.claude/skills/portfolio-case-study-writing/references/quality-flags.md`.
 
 ---
 
