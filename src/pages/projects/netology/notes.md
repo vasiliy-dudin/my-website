@@ -225,8 +225,27 @@ incentive for the colleague. It read as secondary to the content.
 
 #### Research inventory — what was and was not run
 
-Clarified in session. There were **no pre-design interviews**.
+Clarified in session, then corrected later in the same session — the
+designer first said there had been no pre-design interviews, then recalled
+that there were.
 
+- **Pre-design interviews with students: 7.** Very little detail survives.
+  What does:
+  - They prefer sharing with colleagues and in professional communities,
+    rather than on general social networks.
+  - They need some form of value exchange to be motivated to share. Which
+    form was not established here — the mini-course and the 15% discount
+    came later, out of the designer's own ideation.
+- **Non-students (friends of students) were deliberately not interviewed.**
+  The designer and the product manager decided together that it made no
+  sense: people recruited as "a student's friend" cannot represent the real
+  audience, so their answers could not be treated as truth. A decision
+  about respondent validity taken before the research, not an omission.
+- Sequencing: run in parallel, to get data as fast as possible. The
+  survey launched first; the 7 interviews followed shortly after and
+  finished first, since 7 interviews are quicker to run than 1,083 survey
+  responses are to collect. So the interview findings likely arrived
+  before the survey number did, even though the survey started first.
 - Before this project, on tasks about sharing student **achievements**:
   interviews in which students said, unprompted, that they would like to
   share some of the materials from their paid courses. This is where the
@@ -245,10 +264,17 @@ Clarified in session. There were **no pre-design interviews**.
   iteration 1, 6 in iteration 2.
 - After the first release: 10 interviews (see above).
 
-The old page draft invented a Discovery Research section built on student
-and non-student interviews that never took place, including findings about
-sharing in exchange for value and preferring professional communities.
-Do not reuse any of it.
+What the old page draft got wrong in Discovery Research, after this
+correction:
+
+- It reports findings from **non-student interviews** that were
+  deliberately never run. Invented.
+- It says the students named "a discount or free mini-course" as the value
+  they wanted. Only "some form of value exchange" survives; the two
+  specific rewards were designed later.
+- It says the research covered "two user segments". One segment.
+
+The student interviews themselves, and their two findings, are real.
 
 ### Implementation — legacy-code constraints (clarified in session)
 

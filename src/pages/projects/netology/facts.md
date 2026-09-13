@@ -41,6 +41,7 @@ yet checked by the designer).
 | Method | Participants / n | Findings, with numbers | Decision it informed | Status |
 |---|---|---|---|---|
 | Earlier interviews on tasks about sharing student achievements — **run by another designer, not me** | Unknown; no count of how many respondents said it | Unprompted: students said they would like to share some of the materials from their paid courses | Raised the question this project set out to answer, and prompted my survey | confirmed in session |
+| Pre-design interviews with students | 7 | Two findings survive: they prefer sharing with colleagues and in professional communities, rather than on general social networks; and they need some form of value exchange to be motivated to share. | Professional rather than social sharing; the existence of a reward | confirmed in session — little detail remains beyond these two findings |
 | Pre-design survey, in Google Forms | 1,083 responses | 57% of students would share learning content | Justified building the feature at all | verified — number and figure confirmed in session |
 | Competitor and cross-industry analysis | — | [GAP: what did it change?] | — | from my notes |
 | Post-launch interviews | 10 | **Not recorded.** No notes survive and the designer does not recall what was said. The page must not state any finding from them. | Version 2: prompt moved into the player | n and purpose confirmed in session; findings unavailable |
@@ -73,22 +74,40 @@ Rules for using this on the page:
   research and sizing it with a survey of my own before anyone committed
   to building.
 
-**Corrected — no pre-design interviews took place for this project.** The
-qualitative signal above came from earlier, separate work; it is not the
-same thing as the interviews the draft describes. The page draft's
-Discovery Research section reports "Student interviews" and "Non-student
-interviews" with findings: that students would share only in exchange for
-something of value and preferred professional communities over social
-networks, and that non-students found peer-shared material more credible
-than advertising. None of that research happened. The only pre-design
-research was the survey. All interviews in this project were either part
-of the usability sessions (12 in iteration 1, 6 in iteration 2) or the 10
-post-launch ones. `page draft — fabricated, do not reuse`
+**We deliberately did not interview non-students.** The product manager
+and I decided there was no point: people recruited as "a student's friend"
+cannot represent the real audience, so their answers could not be treated
+as evidence. This was a judgement about who counts as a valid respondent,
+made before the research, not a corner cut. `confirmed in session`
 
-Knock-on effect: the draft says the interviews "informed two design
-decisions: a mini-course as a sharing incentive, and a focus on
-professional rather than social sharing". Both now have no stated basis.
-See D4.
+**Correction, superseding an earlier note in this file.** In the interview
+I first said there had been no pre-design interviews; the designer then
+recalled that there were — 7 with students. That is now the record above.
+What remains wrong in the page draft's Discovery Research section is
+narrower but still disqualifying:
+
+- **"Non-student interviews: genuine interest in peer-shared materials,
+  seen as more credible than advertising."** Invented. Those interviews
+  were deliberately not run, so the draft reports findings from research
+  the team decided against. `page draft — fabricated, do not reuse`
+- **"a discount or free mini-course"** as the specific value students
+  named. What survives is only "some form of value exchange". The two
+  named rewards came later, from my own ideation. `page draft —
+  over-specific, do not reuse`
+- **"I ran a survey and interviews with two user segments — students and
+  non-students"** — one segment, not two.
+
+What the draft got right: student interviews took place, and their two
+findings did inform the design — professional rather than social sharing,
+and the need for a reward at all. See D4.
+
+**Sequencing, confirmed in session:** run in parallel, to get data as fast
+as possible. The survey launched first; the 7 interviews followed shortly
+after; survey results came back some time later, since 1,083 responses
+take longer to collect than 7 interviews to run. So the interview findings
+were likely known before the survey number was — not "signal, then sizing"
+in strict order, but close to simultaneous, with the interviews landing
+first.
 
 ## Decisions
 
@@ -164,12 +183,14 @@ of Product and the teacher curators. `page draft — wrong, do not reuse`
 
 ### D4. Rewards: a mini-course for the student, a 15% discount for the colleague
 
-- Why: the rewards came out of my own ideation, not from research. I
-  generated the options — informed by competitors, other education
-  platforms and products outside EdTech solving a similar problem — then
-  went through them with the product manager, arguing each one down until
-  the strongest were left. Motivation was treated as a question for the
-  whole task, not just for the share modal. `confirmed in session`
+- Why: the 7 pre-design interviews established that students need some
+  form of value exchange to share at all — but not which one. The specific
+  rewards came out of my own ideation. I generated the options — informed
+  by competitors, other education platforms and products outside EdTech
+  solving a similar problem — then went through them with the product
+  manager, arguing each one down until the strongest were left. Motivation
+  was treated as a question for the whole task, not just for the share
+  modal. `confirmed in session`
   [GAP: what specifically made the mini-course the winner over the other
   incentives below?]
 - Alternatives considered, all rejected: `confirmed in session`
@@ -371,10 +392,10 @@ stated.
 ## Open questions
 
 Settled in the interview of 13 September 2026: the split of the 12
-sessions, the survey figures and who ran it, the absence of pre-design
-interviews, round 2 findings, the implementation constraints, the origin
-of the incentives, the wireframing tool, session length, legal's actual
-role, the timeline, and how the project ended.
+sessions, the survey figures and who ran it, what the pre-design research
+actually consisted of, round 2 findings, the implementation constraints,
+the origin of the incentives, the wireframing tool, session length,
+legal's actual role, the timeline, and how the project ended.
 
 ### On hold by the designer's decision
 
@@ -409,6 +430,9 @@ those notes are genuinely gone.
    or the team's.
 9. Alternatives and trade-off for D1, the move of the share prompt into
    the player.
+12. ~~Whether the 7 pre-design interviews ran before or after the
+    survey.~~ Settled: run in parallel, survey launched first, interviews
+    likely landed first. See Research I ran.
 
 ### Decisions the designer needs to make about the page
 
