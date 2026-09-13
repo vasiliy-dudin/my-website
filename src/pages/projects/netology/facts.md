@@ -384,6 +384,12 @@ role, the timeline, and how the project ended.
 
 ### Still open
 
+**Recoverable, if they turn out to be worth the time.** The designer still
+holds the raw usability results — every session was documented in detail
+at the time. Questions 4 and part of the round 1 record below are not lost
+facts, only unretrieved ones. The post-launch interviews are the exception:
+those notes are genuinely gone.
+
 2. Where the target for referral-based sign-ups came from, and who set
    it. Part of the metrics batch.
 3. What the competitor and cross-industry analysis actually changed in

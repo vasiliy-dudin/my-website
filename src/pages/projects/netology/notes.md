@@ -78,9 +78,14 @@ marketing and at least one other party.
 Всего было 3 итерации wireframing с регулярными встречами с разработкой, продакт менеджером, командой дизайна и другими заинтересованными лицами вроде кураторов преподавателей, CPO и юристами.
 
 Clarified in session: the wireframes themselves were made in Figma (Miro
-held the ideation and the user flows). Legal were **not** participants in
-these reviews — they were consulted separately, point by point, on
-specific questions.
+held the ideation and the user flows).
+
+Legal were **not** participants in these reviews — they were consulted
+separately, point by point, on specific questions. They had no part in the
+email decision either, and did not need one: the platform already
+collected email addresses in other places, so those legal questions had
+been settled long before this project. The objection to free sharing was a
+business one, about theft of paid video, not a legal one.
 
 ### Timeline (clarified in session)
 
@@ -116,10 +121,25 @@ Stated reasoning:
 - 6 respondents on the colleague ("friend of the student") flow
 
 They were not one group of 12, so no "all 12 completed the task"
-statement is possible. Each group carried many specific hypotheses, one
-or more per step of the flow. Some hypotheses were confirmed by every
-respondent in the group; others failed and the design was reworked.
-Results are therefore per step and per hypothesis.
+statement is possible.
+
+Why no single summary of the round exists, in the designer's own framing:
+each round carried many hypotheses, not one. Some were confirmed by every
+respondent in the group; others were not, and the design had to be
+reworked. Each user flow ran through several stages, with several
+different actions and elements at which a respondent could get stuck. So
+results exist per stage, per element and per hypothesis — not as one
+verdict on the round.
+
+Session length: 30–40 minutes each. Every session was documented in
+detail at the time, and the results were analysed once all the sessions
+were done.
+
+**The raw results still exist.** The designer has them, but they are too
+multi-layered to summarise from memory. Anything still marked as a gap in
+the usability findings — which piece of copy confused people in round 2,
+what exactly was changed in the modal after each RITE fix — is
+recoverable from that raw material if it turns out to be worth the time.
 
 RITE in practice: after any session that surfaced a problem, the design
 or the copy was changed, then the change was checked with the following
@@ -217,8 +237,10 @@ Clarified in session. There were **no pre-design interviews**.
 - Pre-design, for this project: one survey, 1,083 responses, 57% of
   students said they would share learning content. Run entirely by the
   designer — wrote the questions, recruited respondents, built the Google
-  Form, analysed the results. Its purpose was to put a number on the
-  signal the earlier interviews had produced.
+  Form, analysed the results. Putting a number on the signal from those
+  earlier interviews was **one of** its purposes, not the only one; the
+  questionnaire covered other ground as well (what else it measured is not
+  recorded here).
 - During design: interviews as part of the usability sessions — 12 in
   iteration 1, 6 in iteration 2.
 - After the first release: 10 interviews (see above).
@@ -248,4 +270,16 @@ closed.
 Гипотезы вкратце:
 - Респонденты (студенты и друзья студента) понимают функцию без затруднений достигают цели (очень обобщённая гипотеза, там было много точечных гипотез)
 - Респонденты (друзья студента) не испытывают негативные эмоции, когда им предлагают заполнять форму вместо чтения контента - 
+
+### Visuals — what we have (clarified in session)
+
+Everything currently in the case folder is a **Figma design**, not a
+production screenshot: `all.jpg`, `ui-v1-1.png`, `ui-v1-2.jpg`,
+`solutions-1.jpg`, `solutions-2.jpg`, plus the Miro artefacts
+`ideation-1.png`, `ideation-2.png`, `ideation-4.png`.
+
+The designer may later add material from production, possibly including a
+screencast. Until then, captions describe designs. This matters most for
+the in-player share button: the shipped version looks somewhat different
+from `solutions-1.jpg`, because the player could not be modified.
 
