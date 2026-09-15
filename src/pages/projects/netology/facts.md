@@ -19,7 +19,7 @@ yet checked by the designer).
 |---|---|---|
 | Company, market position, scale | Netology. 2nd largest EdTech platform in Russia, 2M MAU. Online IT courses, 4 months to 2 years | from draft — unconfirmed |
 | Industry, B2B / B2C | EdTech, B2C and B2B | from draft — unconfirmed |
-| Dates, duration, iterations | From Aug 2023. 4 weeks of design work in total, covering both iterations — not 4 weeks each. The second iteration came several months after the first: the team had to wait for the first release's results, because the effect of a resharing feature is not visible immediately | confirmed in session |
+| Dates, duration, iterations | From September 2024. 4 weeks of design work in total, covering both iterations — not 4 weeks each. The second iteration came several months after the first: the team had to wait for the first release's results, because the effect of a resharing feature is not visible immediately | confirmed in session |
 | Gap between the two releases | About four months. The designer does not recall precisely and treats this as approximate, consistent with a long referral funnel whose effect is slow to appear | from my notes — approximate |
 | Team (roles and counts) | 9-person Scrum team: me (senior product designer), 1 product manager, 1 product analyst, 2 frontend, 2 backend, 2 QA | from draft — unconfirmed |
 | My role and scope | Owned design end-to-end: research, ideation, wireframes, UI, prototypes, annotations, handoff documentation, dev support | from draft — unconfirmed |
@@ -100,6 +100,11 @@ students said. `confirmed in session`
 - **The hypothesis that followed:** while watching a lecture a student's
   attention is narrow and sits on the player, so a more noticeable button
   inside the player would raise clicks. `confirmed in session`
+- **What version 2 changed, precisely:** the Share button under the video
+  stayed where it was. Version 2 added a second entry point, a block with
+  a share button shown on top of the video, appearing at the end of the
+  lecture. Version 2 therefore has two share buttons, not one moved one.
+  `confirmed in session`
 - Alternatives considered: other ways of lifting the share rate, weighed
   with the product manager and rejected on two grounds — some were not
   viable (the unit economics could not support more expensive rewards),
@@ -107,7 +112,10 @@ students said. `confirmed in session`
   because analytics showed those stages were healthy. `confirmed in
   session` [GAP, non-blocking: which specific placements or triggers were
   on the board?]
-- Trade-off accepted: [GAP]
+- Trade-off accepted: **none, and this is settled.** The block appears a
+  few seconds before the lecture ends, by which point there is nothing
+  useful left on screen, so it costs the student no content. The page
+  states the timing and omits any trade-off. `confirmed in session`
 - Evidence: the post-launch share-link rate `[DEFERRED-METRIC]`, then 6
   further usability sessions in which every respondent noticed the
   in-player button. The 10 post-launch interviews happened but produced
@@ -158,14 +166,21 @@ scope call, and roughly what share of lectures it excluded?]
 
 ### D3. Limits on shared links
 
-- Why: contain the piracy risk. `from draft — unconfirmed`
-- The limits: 5 share links per course, 7 days per link, public page with
-  an expiry date. `from draft — unconfirmed` — **these numbers cannot ship
-  until the designer confirms them.**
-- Alternatives considered: [GAP]
-- Trade-off accepted: [GAP]
-- Evidence: [GAP — was the limit number tested or negotiated?]
-- Who decided: [GAP: the CPO's group / the PM / me?]
+- The limits, **confirmed in session and cleared to ship**: 5 share links
+  per course, 7 days per link, and an expiry date on the public page.
+  After expiry the public page shows an "Access to the content has
+  expired" state inviting the visitor to the course.
+- Why, two reasons, both `confirmed in session`:
+  1. To stop whole courses being downloaded in bulk.
+  2. To make the offer feel limited, for the student and for the
+     colleague receiving the link.
+- Alternatives considered: not recorded.
+- Trade-off accepted: not recorded.
+- Evidence: **none, deliberately.** The numbers were never tested, and
+  the designer's position is that numbers of this kind do not need
+  testing. `confirmed in session`
+- Who decided: the product manager and I agreed the values between us.
+  `confirmed in session`
 - Constraint involved: business
 - Visual: share modal in `images/ui-v1-1.png`, `images/ideation-2.png`
 
@@ -215,6 +230,12 @@ scope call, and roughly what share of lectures it excluded?]
 - Evidence: the reward wording was iterated in the share modal during
   round 1, where 2 of 6 respondents misread it. That is evidence about the
   wording, not about the choice of reward. `confirmed in session`
+- **The colleague's discount was 15%, in both the first and the second
+  release.** `confirmed in session` Some images in the case folder show
+  10% (`ui-v1-1.png` in its second modal, `ui-v1-2.jpg` throughout).
+  Those are earlier design drafts, not what shipped. [GAP, non-blocking:
+  worth replacing or relabelling those images so the page and the
+  pictures agree.]
 - Who decided: the ideas were mine, filtered with the product manager. The
   15% figure was not a design decision — the product manager worked out
   the economics, picked 15% as the optimal value and cleared it with
@@ -225,18 +246,32 @@ scope call, and roughly what share of lectures it excluded?]
 - Visual: `images/ideation-1.png` (the "How to motivate to share?"
   cluster), `images/ideation-2.png`, `images/solutions-1.jpg`
 
-### D5. The public lecture page pushes toward a purchase
+### D5. The public lecture page is a reused page with a new top section
 
-- Why: [GAP]
-- What it contains: the student's discount, links to related courses, and
-  conversion blocks — career guidance, social proof, how learning works.
-  `from draft — unconfirmed`
-- Alternatives considered: [GAP]
+**This is a reuse decision, not a design-from-scratch one, and the page
+must say so.** `confirmed in session`
+
+- What was reused: the sections of an earlier public page built for a
+  different task, sharing student **achievements**. Most sections came
+  across unchanged.
+- Why: that page had already performed well in the achievements task.
+  `confirmed in session` — the designer's own assessment, no figure
+  attached.
+- What I changed: the first (top) section only, replacing it with the
+  shared video and the student's discount. `confirmed in session`
+- What the page contains: the student's discount, links to related
+  courses, and conversion blocks — career guidance, social proof, how
+  learning works. `from draft — unconfirmed`
 - Trade-off accepted: avoiding banner blindness in the shared social
   graphics and on the page was a named difficulty. `from my notes`
-- Evidence: [GAP]
-- Who decided: [GAP]
-- Visual: `images/solutions-2.jpg`
+- Evidence: a metric on the achievements task improved; which one is not
+  recorded and the designer treats it as unimportant. The page states the
+  reuse as his own assessment and attaches no figure. `confirmed in
+  session`
+- Who decided: the reuse and the replacement of the top section were
+  mine. `confirmed in session`
+- Visual: `images/solutions-2.jpg`. The expired state of the same page
+  was shown in session as a screenshot but is **not** in the case folder.
 
 ## Usability testing
 
@@ -315,7 +350,10 @@ session`
 
 What shipped differently from the design: the in-player share button is
 presented differently from the handed-over design, and the archived state
-was added late. Users were not affected — the changes were small. The cost
+was added late. **How exactly the production button differs is not
+recorded, and the designer does not consider it worth retrieving.** The
+page says only that the button was presented another way. `confirmed in
+session` Users were not affected — the changes were small. The cost
 was my time: rethinking the solution and several extra alignment rounds
 with the developers after the task had been closed. `confirmed in session`
 
@@ -376,8 +414,10 @@ From the page draft, all `from draft — unconfirmed`:
 
 Every image on the page is currently a Figma design, not a production
 screenshot: `all.jpg`, `ui-v1-1.png`, `ui-v1-2.jpg`, `solutions-1.jpg`,
-`solutions-2.jpg`, and the Miro artefacts `ideation-1.png`,
+`solutions-2.jpg`, `main.png`, and the Miro artefacts `ideation-1.png`,
 `ideation-2.png`, `ideation-4.png`. `confirmed in session`
+`main.png` is the share modal design used on the page under the rewards
+decision.
 
 Consequences for captions:
 
@@ -389,9 +429,16 @@ Consequences for captions:
   single image renders as italic body text. The `carousel` shortcode does
   take captions per slide.
 
-The designer may later add production screenshots or a screencast. If that
-happens, captions need revisiting and the design / production distinction
-stated.
+**Every image now in the folder is a draft.** The designer intends to
+replace them, and the set may grow. Two consequences, both `confirmed in
+session`:
+
+- The 10% discount visible in `ui-v1-1.png` and `ui-v1-2.jpg` is a
+  leftover from an earlier draft. 15% shipped in both releases. The
+  images will be replaced rather than the page reworded.
+- When images are replaced or added, captions, alt text and the design /
+  production distinction all need revisiting. The same applies if
+  production screenshots or a screencast arrive.
 
 ## Never write this on the page
 
@@ -421,6 +468,68 @@ follows each one.
   the share modal during testing are a separate and real thing.
 
 
+## Page decisions
+
+Settled by the designer on 15 September 2026, when the Solution section
+was rewritten from scratch. These choices hold until the designer changes
+them.
+
+**Solution structure: three decision cards, in this order.** Chosen over a
+two-card alternative that would have dropped the rewards card.
+
+1. `### Colleagues enter an email before the lecture plays` — D2, written
+   as a choice card.
+2. `### A Share button inside the player, added after launch` — D1,
+   written as a rejected-iteration card. Three earlier headings were
+   rejected by the designer: "Why version 2 added a prompt inside the
+   player" read as a justification, "A second share prompt, inside the
+   player" was unclear, and any heading using "share prompt" was too
+   vague for a non-designer.
+
+**The page says "Share button", never "share prompt".** "Prompt" now
+reads as an instruction to an AI model for most non-designers, and the
+page is read by hiring managers who are not all designers. The plain
+noun is used in the intro, the card heading, the carousel label, the
+captions and the alt text. The ideation bullet in Process says "when to
+ask for a share" rather than "when to prompt sharing" for the same
+reason.
+
+**The page says "first release" and "second release", never "version 1"
+and "version 2".** Version numbering read as design variants rather than
+as two things that shipped months apart. This applies to body text,
+carousel labels, captions and alt text.
+3. `### A mini-course for the student, 15% off for the colleague` — D4,
+   written as a choice card.
+
+Around the cards:
+
+- A descriptive intro of 3 bullets before the cards, one per step of the
+  journey. It carries the link limits (5 per course, 7 days each).
+- The reuse of the public lecture page (D5) as two sentences after the
+  intro, not as a card.
+- Implementation reality as two sentences at the end of the section:
+  archived lecture pages, and the player the developers could not modify.
+
+**Not cards, by the ranking in the section model:** the link limits (D3),
+which have a why but no alternatives, trade-off or evidence; and the
+public lecture page (D5), which is a reuse decision.
+
+**Carousel order in card 2:** the shipped version 2 design is slide 1 and
+version 1 is slide 2, against chronological order, because the visuals
+rules forbid putting the shipped solution behind another slide. The chips
+are labelled "Version 2" and "Version 1".
+
+**Page length is over budget and the designer accepts it for now.** With
+the Solution section in place the page runs about 1,060 words of body
+text against the 700–900 target in the section model; Solution itself is
+about 460. The next content task on this page should cut Discovery
+research or Process, not Solution.
+
+**The `callout` paired shortcode does exist** on the site, styled in
+`src/styles/components/callout.sass` and used on the Practicum page,
+contrary to the note in `references/visuals.md`. Nothing on this page
+uses it yet.
+
 ## Open questions
 
 ### On hold by the designer's decision
@@ -429,36 +538,38 @@ follows each one.
    until the designer supplies the real figures. Raise it again at the
    first task that touches Outcome or any number on the page.
 
-### Ask before any of this reaches the page
-
-2. Are the link limits — 5 share links per course, 7 days per link, an
-   expiry date on the public page — correct? Where did they come from:
-   negotiated with the CPO's group, set by the PM, or my own proposal?
-   Were the numbers tested?
-
 ### Still open
 
-3. Where the target for referral-based sign-ups came from, and who set it.
+2. Where the target for referral-based sign-ups came from, and who set it.
    Part of the metrics batch.
-4. What the competitor and cross-industry analysis actually changed in the
+3. What the competitor and cross-industry analysis actually changed in the
    design. It is currently a line in Process with no consequence attached.
-5. Which piece of copy 2 respondents misunderstood in the early sessions
+4. Which piece of copy 2 respondents misunderstood in the early sessions
    of round 2.
-6. Who signed off the mini-course as the student's reward.
-7. D1: which specific placements or triggers were on the board besides the
-   in-player prompt, and what moving the prompt cost — no trade-off is
-   recorded.
-8. D4: what was given up by choosing the mini-course.
-9. D5: why the public page is ordered as it is — the student's discount
-   first, then related courses, then the conversion blocks.
-10. Whether ending the sharing experiments was the PM's call, the CPO's,
-    or the team's.
-11. Who the 6 colleague-flow respondents were, given that non-students
-    were deliberately not recruited for the research.
-12. How the shipped in-player button differs from the design.
-13. Whether the 57% had a threshold to pass, and who set it.
-14. Who made the royalties scope call, and roughly what share of lectures
+5. Who signed off the mini-course as the student's reward.
+6. D1: which specific placements or triggers were on the board besides the
+   in-player prompt.
+7. D4: what was given up by choosing the mini-course.
+8. Whether ending the sharing experiments was the PM's call, the CPO's,
+   or the team's.
+9. Who the 6 colleague-flow respondents were, given that non-students
+   were deliberately not recruited for the research.
+10. Whether the 57% had a threshold to pass, and who set it.
+11. Who made the royalties scope call, and roughly what share of lectures
     it excluded.
-15. The Context table: company scale, B2C/B2B, team counts, role scope and
+12. The Context table: company scale, B2C/B2B, team counts, role scope and
     team focus are still `from draft — unconfirmed`. Confirm or correct in
     one pass.
+
+### Closed, do not ask again
+
+- The link limits (5 per course, 7 days, expiry on the public page):
+  confirmed, agreed with the product manager, never tested and not to be
+  tested. See D3.
+- D1's trade-off: there is none. See D1.
+- How the shipped in-player button differs from the design: not recorded,
+  and not worth retrieving. See Implementation.
+- What the achievements page's "performed well" rests on: an unrecorded
+  metric the designer treats as unimportant. See D5.
+- The 10% on the current images: a draft leftover, to be fixed by
+  replacing the images. See Provenance of visuals.
