@@ -314,6 +314,13 @@ Hypotheses tested (from `notes.md`, summarised by the designer):
 
 Wireframing: three rounds, built in Figma, reviewed with the developers,
 the product manager, the design team, the teacher curators and the CPO.
+Scope of the wireframes, `from my notes`: the video page and player, the
+share modal, graphics and copy for social media posts, the public video
+page, the emails, and element and page states.
+
+Ideation, `from my notes`: sticky notes in Miro with pros and cons per
+idea, worked through questions including what content should be
+shareable, when to prompt sharing, and how to motivate it.
 **Legal were not part of these reviews** — they were consulted separately
 on specific points. Session length of 30–40 minutes is correct.
 `confirmed in session`
@@ -421,8 +428,15 @@ designer's confirmation):
   gate, shape A), D4 (rewards, shape A), D1 (prompt moved into the player,
   shape B, rejected iteration). D3 and D5 are not cards: a clause inside
   D2 at most, or cut.
-- D1 states the failure of version 1 qualitatively (more Share clicks, no
-  rise in links created) — no number until the metrics batch is resolved.
+- D1 states the failure of version 1 qualitatively as "few students
+  created a link" (`from my notes`) — not the funnel gap, which pointed at
+  the modal rather than the button and would undercut the card's own
+  reasoning. No number until the metrics batch is resolved.
+- Captions under standalone images are italic lines, because the `image`
+  shortcode has no caption parameter. The version pair for D1 uses a
+  carousel, which does support captions.
+- Reflection bullets 2 and 3 are proposals marked `[GAP]`; they ship only
+  if the designer confirms them as their own view.
 - The 10 post-launch interviews are not mentioned on the page.
 - The negative finding about the discount is included in D4.
 - Implementation reality: the unmodifiable player lives inside the D1
@@ -477,6 +491,20 @@ those notes are genuinely gone.
 12. ~~Whether the 7 pre-design interviews ran before or after the
     survey.~~ Settled: run in parallel, survey launched first, interviews
     likely landed first. See Research I ran.
+
+### Raised by the reviews of 14 September 2026
+
+13. Who the 6 colleague-flow respondents were, given that non-students
+    were deliberately not recruited for the research.
+14. What pointed at button visibility as the problem after launch, rather
+    than the reward or the modal.
+15. How the shipped in-player button differs from the design.
+16. Why the discount stayed after the round 1 finding that it read as an
+    afterthought.
+17. Whether the 57% had a threshold to pass, and who set it.
+18. The Context table: company scale, B2C/B2B, team counts, role scope
+    and team focus are still `from draft — unconfirmed`. Confirm or
+    correct in one pass.
 
 ### Decisions the designer needs to make about the page
 
