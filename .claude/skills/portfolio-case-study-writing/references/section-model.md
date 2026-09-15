@@ -6,8 +6,8 @@ they are working estimates, not measured figures. The designer can
 override them per case — record overrides in `facts.md` under Page
 decisions.
 
-Target for the whole page: roughly 800–1,000 words of body text,
-excluding captions and alt text.
+Target for the whole page: 700–900 words of body text, excluding
+captions and alt text. Treat it as a ceiling, not a quota to fill.
 
 ## Page-level rules
 
@@ -19,6 +19,12 @@ excluding captions and alt text.
   a clause; it doesn't explain it again. Reasoning for a decision lives
   in Solution, even when an artefact in Process relates to it.
 - **Paragraphs: three sentences at most.**
+- **Sentences: 25 words at most.** A sentence carrying two or three
+  facts joined by semicolons or dashes is over budget even when it is
+  grammatical. Split it, or drop a fact.
+- **A list is a list.** Three or more parallel items become bullets, one
+  line each — never a semicolon chain inside a sentence. Bullets are
+  what makes a decision scannable.
 - **Anything one section promises, another keeps.** If Research says a
   finding shaped a decision, that decision appears in Solution.
 
@@ -66,15 +72,21 @@ Only if the designer ran it personally.
 
 - One-sentence intro naming the scope (flows, surfaces).
 - 2–3 decision cards, ordered by the ranking below.
-- Implementation reality appears somewhere: inside a card, or one short
-  paragraph (three sentences at most) at the end. It gets its own card
-  only if it changed a decision.
+- Implementation reality: two sentences at the end of the section, or
+  its own card if — and only if — it changed a decision. Never appended
+  to a card about something else.
 
 ### Decision card
 
-A card takes one of two shapes. Both run roughly 100–200 words — the
-per-decision length observed across strong external cases (see
-`examples.md`); the eight-sentence limit below encodes it.
+A card takes one of two shapes. Hard ceiling for either: **120 words,
+three short paragraphs (or two plus a bullet list), seven sentences**,
+excluding the caption. The external sample runs 100–200 words per
+decision, but the long end of that range comes from long-form articles;
+a portfolio page read by a skimming reviewer sits at the short end.
+
+A card carries **one piece of evidence and at most one quote**. When
+`facts.md` offers several, pick the strongest and leave the rest
+unused — a card is a selection from the facts, not a summary of them.
 
 **Shape A — choice.** Options existed; one was chosen.
 
@@ -83,20 +95,21 @@ per-decision length observed across strong external cases (see
 | H3 | 10 words or fewer; states the decision or its reason | Always |
 | The decision | 1 sentence, directly under the H3 | Always |
 | Constraint or context | 1–2 sentences | When it shaped the decision |
-| Options considered | 1 sentence, or up to 3 one-line bullets | Always on the first card; on others when they existed |
-| Why this option | 1–2 sentences | Always |
+| Options considered | Up to 3 bullets, one line each, each with its verdict | Always on the first card; on others when they existed |
+| Why this option | 1 sentence | Always |
 | Trade-off | 1 sentence: what was given up, why that was acceptable | When one existed |
 | Evidence | 1–2 sentences: test result, metric, observed behaviour | When it exists; otherwise `[GAP]` or omit |
 | Visual and caption | Caption of 20 words at most | Always |
 
-A card is eight sentences at most, not counting the caption.
+If everything true about the decision won't fit, that is the normal
+case, not a signal to stretch the card.
 
 **Shape B — rejected iteration.** Something was built or designed, then
 replaced. Slots: what iteration 1 was (1 sentence) → the specific way it
 failed, with evidence (1–2) → what replaced it and why (1–2) → what the
-fix cost, if anything (1) → visual pair labelled with versions. Same
-eight-sentence ceiling. When the evidence of failure is post-launch
-data, name the measurement period.
+fix cost, if anything (1) → visual pair labelled with versions. Same ceiling. When the evidence of failure is post-launch data, name
+the measurement period. A shape B card never also carries
+implementation reality — that has its own place below.
 
 When a decision was made by a stated method — a threshold, a filter, a
 selection rule — name the method in one sentence; it convinces more
@@ -143,16 +156,10 @@ cut it.
 - 2–4 bullets, two sentences at most each: what I would do differently,
   at which stage, and why.
 
-## Captions and alt text
+## Visuals
 
-Criteria in `quality_criteria.md`. In a featured case, an image that
-only shows that work happened is cut, not captioned.
-
-For a dense UI screenshot, prefer 3–5 numbered annotations — each
-naming an element and why it is that way — over paragraphs describing
-the interface. Annotations replace prose; never both. Label paired
-images with their versions ("first iteration" / "shipped") so the pair
-carries the story.
+Rules for images, carousels and callouts are in `visuals.md`. Every
+decision card has one visual; the rest of the page earns its images.
 
 ## Anti-patterns (page level)
 

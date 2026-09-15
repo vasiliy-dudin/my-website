@@ -25,7 +25,8 @@ Report, briefly, in this order:
 1. **The story in five lines or fewer**, from pass 1 only. If a link is
    missing, say where the story breaks.
 2. **Where you'd stop reading**, and why: length, repetition, an unclear
-   point.
+   point. Name every paragraph you skipped or skimmed rather than read,
+   and every sentence you had to read twice.
 3. **Claims you don't believe or can't evaluate**, and what would
    convince you.
 4. **Repetition** across sections.

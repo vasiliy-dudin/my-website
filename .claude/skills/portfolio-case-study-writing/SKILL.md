@@ -21,6 +21,7 @@ writer's context.
 | `notes.md` next to the case page | The designer's raw material, any language, any structure | Facts mode; and to resolve a `[GAP]`, never as a direct source for text |
 | `references/section-model.md` | Slots, limits and ordering rules per section | Before planning or drafting |
 | `references/examples.md` | Per-section patterns and anti-patterns from strong external cases, plus one annotated bad example | Before drafting any section |
+| `references/visuals.md` | Image budget, carousel rules, callout rules, available shortcodes | Before adding or changing any image, carousel or callout |
 | `.claude/docs/writing_guidelines.md` | Voice, paragraphs, headings, AI patterns | Before drafting |
 | `.claude/docs/quality_criteria.md` | Specificity test, attribution, provenance, negative results, captions | Before drafting; when judging a claim |
 | `references/quality-flags.md` | Word tiers and how to flag | When reviewing word choice |
@@ -115,8 +116,11 @@ Record the answers and choices in `facts.md` under Page decisions.
   limits. Limits are counted in sentences and bullets, not words, so they
   can be checked by eye.
 - If the material doesn't fit, drop whole points, least important first.
-  Don't squeeze everything into denser sentences. Record what you drop in
-  the cut log.
+  Don't squeeze everything into denser sentences: a longer sentence is
+  not a shorter card. Record what you drop in the cut log.
+- Selection is the job. `facts.md` will hold more than the page can
+  carry, and a fact being true, interesting and confirmed is not a
+  reason to include it. Expect to leave most of the file unused.
 - Mark missing facts `[GAP: …]`. Before asking the designer, search
   `notes.md` for the answer; if found, propose it and record it in
   `facts.md` once confirmed.

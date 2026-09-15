@@ -23,6 +23,7 @@ Guidelines for the text quality and style of product design case studies — foc
 ## Text length and paragraph structure
 
 - One paragraph, one idea.
+- Long sentences are the commonest way a length limit gets defeated. Counting sentences without counting their length just produces longer sentences.
 - Length problems are usually selection problems. When a draft is too long, remove the least important point first; tighten sentences second; split paragraphs last.
 - Readability depends on paragraph weight, not sentence count. Three sentences with multiple subordinate clauses can be harder to scan than five short ones. Ask: does this paragraph create a wall of text on screen? Would a scanning reader skip it?
 - If a paragraph is too heavy: first shorten and simplify individual sentences. If that isn't enough, remove sentences that restate what came before. Only split into a new paragraph (with a subheading) if the paragraph genuinely covers more than one idea.
