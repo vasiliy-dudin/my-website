@@ -32,6 +32,10 @@ and alt text. Criteria in `quality_criteria.md`.
 Annotations replace prose about the interface; never write both. Keep
 each to a short phrase naming an element and why it is that way.
 
+An annotated image may carry one lead-in sentence, and only for what an
+annotation can't hold: what was reused from elsewhere, and what the
+designer's own scope was. Never a summary of what the image shows.
+
 Note on the `image` shortcode: it has no caption parameter, so a caption
 under a single image renders as italic body text. Where the caption is
 essential to the argument, a one-slide carousel is the more reliable

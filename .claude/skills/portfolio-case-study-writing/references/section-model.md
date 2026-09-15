@@ -70,7 +70,13 @@ Only if the designer ran it personally.
 
 ## Solution
 
-- One-sentence intro naming the scope (flows, surfaces).
+- Intro: what shipped, in user-journey order, purely descriptive — no
+  reasons, no benefits language. Form: one sentence (25 words at most)
+  when the flow is simple; otherwise 2–3 bullets, one line each, one
+  step of the journey per bullet. Never a paragraph. Its job is to
+  answer "what is this feature" so the cards can spend their words on
+  "why". A skimmer who reads only the intro and the H3s should be able
+  to retell how the feature works.
 - 2–3 decision cards, ordered by the ranking below.
 - Implementation reality: two sentences at the end of the section, or
   its own card if — and only if — it changed a decision. Never appended
@@ -126,9 +132,32 @@ Rank candidates by how many of these they meet:
 4. The designer owned or drove it.
 
 Chronology doesn't decide order. A post-launch iteration is a card like
-any other and opens the section only if it ranks highest. A decision
-that meets none of the criteria isn't a card: mention it in a clause or
-cut it.
+any other and opens the section only if it ranks highest. When two
+cards rank equally, order them by the user journey, so the H3s read as
+the feature's story. A decision that meets none of the criteria isn't a
+card: mention it in a clause or cut it.
+
+**Coverage check, after ranking.** List the shipped feature's
+load-bearing surfaces — the parts a reviewer would expect to see
+explained. Every one of them must appear somewhere: the intro, a card,
+or an annotated image. Card selection weighs coverage, not only how
+well a decision argues:
+
+- A funnel-critical surface with a real "why" behind it competes for
+  the last card slot even when its alternatives, trade-off or evidence
+  slots are empty — importance to the product can outweigh a fuller but
+  narrower decision.
+- A surface with no decision behind it at all never becomes a card
+  (that is the feature tour); it gets an annotated image — 3–5 numbered
+  callouts, each naming an element and why it is that way — or a line
+  in the intro.
+- A surface that reuses an existing pattern, page or component is a
+  decision, but a one-sentence one. Say what was reused and why, name
+  what the designer changed within it, and leave it at that — reuse
+  never inflates into a card. Silence here reads as claiming someone
+  else's work; `quality_criteria.md` treats that as disqualifying.
+- Before treating a surface as having no decision, ask the designer
+  whether one was made.
 
 ## Outcome
 
