@@ -5,10 +5,11 @@ eleventyExcludeFromCollections: true
 
 # Additional context for this case study
 
-Raw material for the Netology "Useful content sharing" case, gathered from
-the designer's original notes and clarified across a facts interview on
-2026-09-13. Reorganised into one order on 2026-09-13; no content removed
-in the reorganisation, only reordered and translated to English.
+Raw material for the Netology "Useful content sharing" case: the
+designer's original notes, translated to English and grouped by topic,
+plus everything clarified in the facts interviews since. Checked facts
+live in `facts.md`; this file keeps the detail behind them, including the
+Russian originals of respondent quotes.
 
 ## Timeline
 
@@ -158,6 +159,25 @@ Options considered for motivating students to share, all rejected:
   through a course can advise a peer on material they have covered.
   Sharing venues: professional communities, or friends and family.
 
+Why those options lost: mostly not economics. Economics ruled out only the
+more expensive rewards. The rest were judged less effective or less
+promising for this particular task — getting students to publish in
+professional communities, for example, is far harder to motivate than
+getting them to send a link.
+
+Why the mini-course won, two reasons:
+
+1. The platform already had a mechanic for gifting mini-courses — a
+   catalogue and every function needed to receive one — so the reward cost
+   almost nothing to build.
+2. The team had earlier researched what students want as a reward, and a
+   course as a gift came top. Money, full courses and merchandise also
+   came up, and the business could not afford any of them. The method,
+   sample size and owner of that earlier research are not recorded.
+
+Reason 1 is the easier of the two to defend, because reason 2 rests on
+research whose method, sample size and owner nobody recorded.
+
 What shipped: a mini-course for the student, a 15% discount for the
 colleague. The 15% was not a design decision — the product manager
 calculated the unit economics, chose 15% as optimal, and agreed it with
@@ -188,7 +208,7 @@ Covering both flows. This also included:
 
 Three iterations of wireframing in total, with regular meetings involving
 development, the product manager, the design team, and other stakeholders
-such as the teacher curators, the CPO and lawyers.
+such as the teacher curators and the CPO.
 
 Clarified in session: the wireframes themselves were made in Figma (Miro
 held the ideation and the user flows).
@@ -295,8 +315,10 @@ form instead of reading the content" — was **considered confirmed**.
   not immediately understand that the video would not play — that state
   was reworked.
 
-Negative finding worth carrying onto the page: the discount failed as an
-incentive for the colleague. It read as secondary to the content.
+How to read that last quote: it is one respondent's reaction, not a
+finding. The team did not conclude that the discount was secondary or
+that it failed as an incentive, and did not change it because of the
+remark. Nothing on the page may say the discount did not work.
 
 ### Hypotheses tested, in brief (designer's summary)
 
@@ -320,13 +342,33 @@ incentive for the colleague. It read as secondary to the content.
 
 ### Post-launch interviews (10 respondents)
 
-- Purpose: find out why people who had pressed **Share** then did not
-  create a link. Analytics had shown the gap — in one month more people
-  clicked Share, but the number of links created did not rise with it.
+- Purpose: find out why so few students shared after the first release.
 - **No findings survive.** The designer has no notes from these sessions
   and does not recall what was said. Nothing from them can go on the page.
-- The documented trigger for version 2 is therefore the funnel gap in the
-  metrics, not an interview insight.
+- The documented trigger for version 2 is therefore the post-launch share
+  rate, not an interview insight.
+
+## Where version 1 actually failed
+
+The weak point was the **first** part of the funnel: students clicked the
+Share button under the video poorly. It was not a drop between pressing
+Share and creating a link — web analytics showed the later stages of the
+flow were healthy, and that is what ruled out the share modal and
+everything after it.
+
+The hypothesis that followed: while watching a lecture a student's
+attention is narrow and sits on the player, so a button made more
+noticeable inside the player should raise clicks.
+
+Other ways of lifting the share rate were weighed with the product manager
+and rejected on two grounds — some were not viable, for instance the unit
+economics could not support more expensive rewards; for others we doubted
+the problem lay in that part of the interface at all, because analytics
+showed those stages were fine.
+
+Gap between the first and second releases: the designer does not recall
+precisely and estimates about four months, which fits a long referral
+funnel whose effect appears slowly. Treat as approximate.
 
 ## Implementation — legacy-code constraints
 

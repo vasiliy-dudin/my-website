@@ -19,7 +19,8 @@ yet checked by the designer).
 |---|---|---|
 | Company, market position, scale | Netology. 2nd largest EdTech platform in Russia, 2M MAU. Online IT courses, 4 months to 2 years | from draft — unconfirmed |
 | Industry, B2B / B2C | EdTech, B2C and B2B | from draft — unconfirmed |
-| Dates, duration, iterations | From Aug 2023. 4 weeks of design work in total, covering both iterations — not 4 weeks each. The second iteration came several months after the first: we had to wait for the first release's results, because the effect of a resharing feature is not visible immediately. | confirmed in session |
+| Dates, duration, iterations | From Aug 2023. 4 weeks of design work in total, covering both iterations — not 4 weeks each. The second iteration came several months after the first: the team had to wait for the first release's results, because the effect of a resharing feature is not visible immediately | confirmed in session |
+| Gap between the two releases | About four months. The designer does not recall precisely and treats this as approximate, consistent with a long referral funnel whose effect is slow to appear | from my notes — approximate |
 | Team (roles and counts) | 9-person Scrum team: me (senior product designer), 1 product manager, 1 product analyst, 2 frontend, 2 backend, 2 QA | from draft — unconfirmed |
 | My role and scope | Owned design end-to-end: research, ideation, wireframes, UI, prototypes, annotations, handoff documentation, dev support | from draft — unconfirmed |
 | Tools | Miro for ideation and user flows; Figma for wireframes, UI and prototypes; Google Forms for the survey | confirmed in session |
@@ -41,20 +42,15 @@ yet checked by the designer).
 | Method | Participants / n | Findings, with numbers | Decision it informed | Status |
 |---|---|---|---|---|
 | Earlier interviews on tasks about sharing student achievements — **run by another designer, not me** | Unknown; no count of how many respondents said it | Unprompted: students said they would like to share some of the materials from their paid courses | Raised the question this project set out to answer, and prompted my survey | confirmed in session |
-| Pre-design interviews with students | 7 | Two findings survive: they prefer sharing with colleagues and in professional communities, rather than on general social networks; and they need some form of value exchange to be motivated to share. | Professional rather than social sharing; the existence of a reward | confirmed in session — little detail remains beyond these two findings |
+| Pre-design interviews with students | 7 | Two findings survive: they prefer sharing with colleagues and in professional communities, rather than on general social networks; and they need some form of value exchange to be motivated to share | Professional rather than social sharing; the existence of a reward | confirmed in session — little detail remains beyond these two findings |
 | Pre-design survey, in Google Forms | 1,083 responses | 57% of students would share learning content | Justified building the feature at all | verified — number and figure confirmed in session |
 | Competitor and cross-industry analysis | — | [GAP: what did it change?] | — | from my notes |
-| Post-launch interviews | 10 | **Not recorded.** No notes survive and the designer does not recall what was said. The page must not state any finding from them. | Version 2: prompt moved into the player | n and purpose confirmed in session; findings unavailable |
+| Post-launch interviews | 10 | **Not recorded.** No notes survive and the designer does not recall what was said. The page must not state any finding from them | Version 2: prompt moved into the player | n and purpose confirmed in session; findings unavailable |
 
 The survey was mine end to end: I wrote the questions, recruited the
 respondents, built the form in Google Forms and analysed the results.
-`confirmed in session`
-
-The 10 post-launch interviews had a sharper purpose than the draft
-suggests. The analytics showed a gap inside the funnel: in one month more
-people clicked **Share**, but the number of links actually created did not
-rise with it. The interviews set out to find why people who pressed Share
-then did not create a link. `confirmed in session`
+Putting a number on the signal from the earlier interviews was one of the
+survey's purposes, not the only one. `confirmed in session`
 
 Where the survey came from, and why it was quantitative: on earlier tasks
 about sharing student **achievements**, another designer ran interviews in
@@ -80,62 +76,45 @@ cannot represent the real audience, so their answers could not be treated
 as evidence. This was a judgement about who counts as a valid respondent,
 made before the research, not a corner cut. `confirmed in session`
 
-**Correction, superseding an earlier note in this file.** In the interview
-I first said there had been no pre-design interviews; the designer then
-recalled that there were — 7 with students. That is now the record above.
-What remains wrong in the page draft's Discovery Research section is
-narrower but still disqualifying:
+**Sequencing:** the interviews and the survey ran in parallel, to get data
+as fast as possible. The survey launched first; the 7 interviews followed
+shortly after and finished first, since 7 interviews are quicker to run
+than 1,083 responses are to collect. So the interview findings likely
+arrived before the survey number did. `confirmed in session`
 
-- **"Non-student interviews: genuine interest in peer-shared materials,
-  seen as more credible than advertising."** Invented. Those interviews
-  were deliberately not run, so the draft reports findings from research
-  the team decided against. `page draft — fabricated, do not reuse`
-- **"a discount or free mini-course"** as the specific value students
-  named. What survives is only "some form of value exchange". The two
-  named rewards came later, from my own ideation. `page draft —
-  over-specific, do not reuse`
-- **"I ran a survey and interviews with two user segments — students and
-  non-students"** — one segment, not two.
-
-What the draft got right: student interviews took place, and their two
-findings did inform the design — professional rather than social sharing,
-and the need for a reward at all. See D4.
-
-**Sequencing, confirmed in session:** run in parallel, to get data as fast
-as possible. The survey launched first; the 7 interviews followed shortly
-after; survey results came back some time later, since 1,083 responses
-take longer to collect than 7 interviews to run. So the interview findings
-were likely known before the survey number was — not "signal, then sizing"
-in strict order, but close to simultaneous, with the interviews landing
-first.
+**The 10 post-launch interviews** set out to understand why so few
+students shared after the first release. No findings survive, so the
+documented basis for version 2 is the post-launch share rate, not anything
+students said. `confirmed in session`
 
 ## Decisions
 
 ### D1. The share prompt sits inside the video player, appearing as the lecture ends (version 2)
 
-- Why: after launch, few students generated a share link; version 1 put
-  the button under the video. `from my notes`
-- Alternatives considered: several ways of making the share button more
-  noticeable while a student is watching the video; the in-player prompt
-  at the end of the lecture won. `confirmed in session` [GAP, non-blocking:
-  which other placements or triggers were on the board?]
+- Why: after the first release few students generated a share link.
+  Version 1 put the Share button under the video. `from my notes`
+- **Where in the funnel it failed:** in the first part of it. Students
+  clicked the Share button under the video poorly. Web analytics showed no
+  problem at the later stages, which is what ruled out the share modal and
+  the steps after it. `confirmed in session`
+- **The hypothesis that followed:** while watching a lecture a student's
+  attention is narrow and sits on the player, so a more noticeable button
+  inside the player would raise clicks. `confirmed in session`
+- Alternatives considered: other ways of lifting the share rate, weighed
+  with the product manager and rejected on two grounds — some were not
+  viable (the unit economics could not support more expensive rewards),
+  and for others we doubted the problem lay in that part of the interface,
+  because analytics showed those stages were healthy. `confirmed in
+  session` [GAP, non-blocking: which specific placements or triggers were
+  on the board?]
 - Trade-off accepted: [GAP]
-- Evidence (test, metric, observed behaviour): the post-launch share-link
-  rate `[DEFERRED-METRIC]`, 10 interviews with students who watched
-  lectures but did not share — **findings not recorded** — then 6 further
-  usability sessions. `from my notes`
-- **Risk to flag:** the only documented basis for moving the prompt is the
-  weak metric. The interviews happened, but nothing from them survives, so
-  the page cannot say what students told me. Writing "I interviewed
-  students, then moved the prompt" invites the obvious follow-up question
-  in a walkthrough, which I could not answer. Decide on the page whether
-  to name the interviews at all. **Page decision (14 Sept 2026): the
-  interviews are not mentioned on the page.** The failure of version 1 is
-  shown through the funnel gap; version 2 is confirmed by the 6 round-2
-  sessions. Can be revisited if the card reads as missing a step.
+- Evidence: the post-launch share-link rate `[DEFERRED-METRIC]`, then 6
+  further usability sessions in which every respondent noticed the
+  in-player button. The 10 post-launch interviews happened but produced
+  nothing usable. `from my notes`
 - Who decided: me. I also chose how the in-player block behaves, the text
-  shown above the player, and the moment the block appears.
-  `confirmed in session`
+  shown above the player, and the moment the block appears. `confirmed in
+  session`
 - Constraint involved: engineering — the player could not be modified, so
   the shipped button differs from the design (see Implementation).
 - Visual: `images/ui-v1-1.png` (v1), `images/solutions-1.jpg` (v2)
@@ -151,12 +130,6 @@ first.
   the task continuing at all. `confirmed in session`
 - Why (their reason): piracy risk — free sharing of paid-course video.
   `confirmed in session`
-- **Royalties are not part of this decision.** The draft tied teacher
-  royalties to the email gate; that is wrong. Royalties were handled as a
-  separate scope decision: the sharing feature was simply not enabled for
-  videos whose teachers are paid per view. `confirmed in session`
-  [GAP, non-blocking: who made that scope call, and roughly what share of
-  lectures it excluded?]
 - Alternatives considered: fully public lecture pages (my preference);
   a public teaser with the full lecture behind the email form — considered
   during ideation, dropped because of implementation complexity; full
@@ -171,51 +144,53 @@ first.
   `confirmed in session`
 - Who decided: the CPO, the Head of Product and the teacher curators
   imposed it; the PM and I complied under protest. **Legal were not
-  involved in this decision** — the platform already collected emails
-  elsewhere, so the legal questions around it had been settled long
-  before. `confirmed in session`
+  involved** — the platform already collected emails elsewhere, so the
+  legal questions around it had been settled long before. The objection
+  was commercial, about theft of paid video, not legal. `confirmed in
+  session`
 - Constraint involved: business (piracy of paid content)
 - Visual: `images/solutions-2.jpg`, `images/ideation-4.png`
 
-**Corrected:** the page draft's My role bullet says I "negotiated the
-email-gated sharing model with top management and legal". That reverses
-what happened. The form was imposed on the team over my objection. It
-also names "top management and legal"; the people were the CPO, the Head
-of Product and the teacher curators. `page draft — wrong, do not reuse`
+**Teacher royalties are a separate scope decision, not part of this one.**
+The sharing feature was simply not enabled for videos whose teachers are
+paid per view. `confirmed in session` [GAP, non-blocking: who made that
+scope call, and roughly what share of lectures it excluded?]
 
 ### D3. Limits on shared links
 
-- Why: contain the piracy risk. `from draft — unconfirmed` (the draft also
-  named royalties; see D2 — royalties were handled by excluding those
-  videos, not by limits)
+- Why: contain the piracy risk. `from draft — unconfirmed`
 - The limits: 5 share links per course, 7 days per link, public page with
-  an expiry date. `from draft — unconfirmed`
+  an expiry date. `from draft — unconfirmed` — **these numbers cannot ship
+  until the designer confirms them.**
 - Alternatives considered: [GAP]
 - Trade-off accepted: [GAP]
 - Evidence: [GAP — was the limit number tested or negotiated?]
-- Who decided: [GAP: legal / me / PM?]
-- Constraint involved: legal, business
+- Who decided: [GAP: the CPO's group / the PM / me?]
+- Constraint involved: business
 - Visual: share modal in `images/ui-v1-1.png`, `images/ideation-2.png`
 
 ### D4. Rewards: a mini-course for the student, a 15% discount for the colleague
 
-- Why: the 7 pre-design interviews established that students need some
-  form of value exchange to share at all — but not which one. The specific
-  rewards came out of my own ideation. I generated the options — informed
-  by competitors, other education platforms and products outside EdTech
-  solving a similar problem — then went through them with the product
-  manager, arguing each one down until the strongest were left. Motivation
-  was treated as a question for the whole task, not just for the share
-  modal. `confirmed in session`
-- Why the mini-course won, two reasons: `confirmed in session`
+- Why a reward at all: the 7 pre-design interviews established that
+  students need some form of value exchange to share — but not which one.
+  The specific rewards came out of my own ideation. I generated the
+  options, informed by competitors, other education platforms and products
+  outside EdTech solving a similar problem, then went through them with
+  the product manager, arguing each one down until the strongest were
+  left. Motivation was treated as a question for the whole task, not just
+  for the share modal. `confirmed in session`
+- **Why the mini-course won, two reasons:** `confirmed in session`
   1. The platform already had a mechanic for gifting mini-courses — a
      catalogue of them and every function needed to receive one — so the
      reward cost almost nothing to build.
-  2. The team had earlier researched what students want as a reward.
-     Courses as a gift were at the top of that list. Money, full-length
+  2. The team had earlier researched what students want as a reward, and
+     a course as a gift was at the top of that list. Money, full-length
      courses and merchandise also came up, and the business could not
      afford those. [GAP, non-blocking: method and n of that earlier
      reward research, and who ran it]
+
+  Reason 1 is the easier of the two to defend: reason 2 rests on research
+  whose method, sample size and owner are not recorded.
 - Alternatives considered, all rejected: `confirmed in session`
   - Point the student at their own communities — social network groups,
     blogs, colleagues at work — and ask them to share the material and
@@ -231,13 +206,12 @@ of Product and the teacher curators. `page draft — wrong, do not reuse`
     through a course can advise a peer on material they have covered.
     Sharing venues would be professional communities, or friends and
     family.
+- **Why those options lost:** mostly not economics. Economics ruled out
+  only the more expensive rewards. The rest were judged less effective or
+  less promising for this particular task — getting students to publish in
+  professional communities, for instance, is far harder to motivate than
+  getting them to send a link. `confirmed in session`
 - Trade-off accepted: [GAP]
-- **Counter-evidence:** in round 1 the discount failed as an incentive for
-  the colleague — one respondent called it side information, "as though
-  access to the material is the main thing and the discount was thrown in
-  as change". The reward stayed as designed. `confirmed in session`
-  **Page decision (14 Sept 2026): this negative finding goes into the D4
-  card as one sentence of counter-evidence.**
 - Evidence: the reward wording was iterated in the share modal during
   round 1, where 2 of 6 respondents misread it. That is evidence about the
   wording, not about the choice of reward. `confirmed in session`
@@ -268,40 +242,41 @@ of Product and the teacher curators. `page draft — wrong, do not reuse`
 
 | Round | Sessions | What was tested | What failed | What changed | Status |
 |---|---|---|---|---|---|
-| 1 (before first release) | 12 total: 6 on the student sharing flow, 6 on the colleague flow. RITE method — a problem found in a session was fixed and the fix checked with the next respondents, until no difficulty was observed. [GAP: 30–40 min each?] | Both flows, each a multi-step journey with many specific hypotheses per step | Share button: all 6 student-flow respondents found and clicked it unassisted. Share modal: 1 of 6 did not notice the text about the limit on available links; 2 of 6 struggled to understand the text about the reward. | Reworked the modal copy and layout after each session that surfaced a problem, then checked the change with the following respondents. [GAP: the specific design changes are not recorded — designer does not recall them] | confirmed in session |
-| 1 — colleague flow (part of the same 12) | 6 | The public lecture page where the video is covered by the email form block; reaction to being asked for an email instead of going straight to the content | 5 of 6 reacted calmly; several said they had expected to be asked for an email. 1 of 6 said they would close the page, not knowing whether they would get anything of value. 1 respondent did not immediately realise the video would not play. | The form page itself was not changed on the strength of this — the hypothesis was considered confirmed. The unclear "video does not play" state was reworked. | confirmed in session |
-| 2 (after the version 2 design) | 6 | The student sharing flow only — it was the only flow that changed. The colleague flow was not retested. | Nothing substantial. Every respondent noticed the share button inside the player at the end of the lecture, and none had difficulty with it. In the earliest sessions of this round, 2 respondents did not understand a piece of copy. [GAP: which copy — the button label, the reward wording, something in the modal?] | Minor adjustments only; the round otherwise confirmed the design. | confirmed in session |
+| 1 (before first release) | 12 total: 6 on the student sharing flow, 6 on the colleague flow, 30–40 minutes each. RITE method — a problem found in a session was fixed and the fix checked with the next respondents, until no difficulty was observed | Both flows, each a multi-step journey with many specific hypotheses per step | Share button: all 6 student-flow respondents found and clicked it unassisted. Share modal: 1 of 6 did not notice the text about the limit on available links; 2 of 6 struggled to understand the text about the reward | Reworked the modal copy and layout after each session that surfaced a problem, then checked the change with the following respondents. [GAP: the specific design changes are not recorded — designer does not recall them] | confirmed in session |
+| 1 — colleague flow (part of the same 12) | 6 | The public lecture page where the video is covered by the email form block; reaction to being asked for an email instead of going straight to the content | 5 of 6 reacted calmly; several said they had expected to be asked for an email. 1 of 6 said they would close the page, not knowing whether they would get anything of value. 1 respondent did not immediately realise the video would not play | The form page itself was not changed on the strength of this — the hypothesis was considered confirmed. The unclear "video does not play" state was reworked | confirmed in session |
+| 2 (after the version 2 design) | 6 | The student sharing flow only — it was the only flow that changed. The colleague flow was not retested | Nothing substantial. Every respondent noticed the share button inside the player at the end of the lecture, and none had difficulty with it. In the earliest sessions of this round, 2 respondents did not understand a piece of copy. [GAP: which copy — the button label, the reward wording, something in the modal?] | Minor adjustments only; the round otherwise confirmed the design | confirmed in session |
 
-Structure of round 1, confirmed in session: each round carried many
-specific hypotheses, not one. Some were confirmed by every respondent in
-the group; others failed and the design was reworked. So results are per
-step and per hypothesis, and no single "all N passed" sentence describes
-the round.
+The 12 were two separate groups of 6, not one group of 12. Each round
+carried many specific hypotheses rather than one: some were confirmed by
+every respondent in a group, others failed and the design was reworked. So
+results exist per step and per hypothesis, and no single "all N passed"
+sentence describes a round. `confirmed in session`
 
-**Corrected:** the page draft says participants "missed the share button
-in the visual noise" and that "all 12 completed the task without help".
-Neither is supported. All 6 student-flow respondents found the button.
-The 12 were two separate groups of 6, so "all 12 completed" was never a
-measurement. `page draft — wrong, do not reuse`
+**The raw results still exist.** Every session was documented in detail at
+the time. The gaps above — which copy confused people in round 2, what
+exactly changed in the modal after each RITE fix — are unretrieved rather
+than lost, and recoverable if they turn out to be worth the time. The
+post-launch interviews are the exception: those notes are gone.
 
 Respondent quotes, colleague flow, round 1 (translated from Russian;
 originals in `notes.md`). `confirmed in session`
 
-- The one respondent who would have left: "The discount does not push me
-  to leave my email. It feels like side information — as though access to
-  the material is the main thing and the discount was thrown in as
-  change." They added that the promise of being sent the material by
-  email did not motivate them either.
 - On being asked for an email: "Everyone expects that they won't get it
   for free."
 - Another: said first that they would enter their email; hadn't read the
   page but understood they could not get to the content without an email.
   "I'm used to this."
+- The one respondent who would have left: "The discount does not push me
+  to leave my email. It feels like side information — as though access to
+  the material is the main thing and the discount was thrown in as
+  change." They added that the promise of being sent the material by
+  email did not motivate them either.
 
-**Negative finding worth keeping on the page:** the student's discount
-did not work as an incentive for the colleague to hand over an email. It
-read as secondary to the content itself. This bears on D5, where the
-discount is placed first after registration.
+**How to treat that third quote.** It is one respondent's reaction, not a
+finding. The team did not conclude that the discount was secondary or
+ineffective, and did not change it on the strength of the remark. The page
+must not state that the discount failed as an incentive. `confirmed in
+session`
 
 Hypotheses tested (from `notes.md`, summarised by the designer):
 
@@ -316,14 +291,13 @@ Wireframing: three rounds, built in Figma, reviewed with the developers,
 the product manager, the design team, the teacher curators and the CPO.
 Scope of the wireframes, `from my notes`: the video page and player, the
 share modal, graphics and copy for social media posts, the public video
-page, the emails, and element and page states.
+page, the emails, and element and page states. **Legal were not part of
+these reviews** — they were consulted separately on specific points.
+`confirmed in session`
 
 Ideation, `from my notes`: sticky notes in Miro with pros and cons per
 idea, worked through questions including what content should be
 shareable, when to prompt sharing, and how to motivate it.
-**Legal were not part of these reviews** — they were consulted separately
-on specific points. Session length of 30–40 minutes is correct.
-`confirmed in session`
 
 ## Implementation
 
@@ -388,8 +362,7 @@ v2 number.
 
 ## Reflection notes
 
-From the commented-out Reflection section, all `from draft —
-unconfirmed`:
+From the page draft, all `from draft — unconfirmed`:
 
 - Assign technical discovery to developers at the start of legacy-code
   tasks, not after design is complete.
@@ -411,47 +384,44 @@ Consequences for captions:
 - Captions must describe the design, not what a user saw in production.
 - `solutions-1.jpg` shows the designed in-player share button. What
   shipped looks somewhat different, because the player could not be
-  modified. The page should not imply the screenshot is the live product.
+  modified. The page should not imply the image is the live product.
+- The `image` shortcode has no caption parameter, so a caption under a
+  single image renders as italic body text. The `carousel` shortcode does
+  take captions per slide.
 
 The designer may later add production screenshots or a screencast. If that
 happens, captions need revisiting and the design / production distinction
 stated.
 
-## Page decisions
+## Never write this on the page
 
-Phase 1 plan, 14 September 2026 (Solution structure awaiting the
-designer's confirmation):
+Claims from earlier drafts that are false as written. The true version
+follows each one.
 
-- Scope of the work: the whole page, not one section — the draft
-  contradicts this file in every section.
-- Solution: three decision cards, ranked, not chronological — D2 (email
-  gate, shape A), D4 (rewards, shape A), D1 (prompt moved into the player,
-  shape B, rejected iteration). D3 and D5 are not cards: a clause inside
-  D2 at most, or cut.
-- D1 states the failure of version 1 qualitatively as "few students
-  created a link" (`from my notes`) — not the funnel gap, which pointed at
-  the modal rather than the button and would undercut the card's own
-  reasoning. No number until the metrics batch is resolved.
-- Captions under standalone images are italic lines, because the `image`
-  shortcode has no caption parameter. The version pair for D1 uses a
-  carousel, which does support captions.
-- Reflection bullets 2 and 3 are proposals marked `[GAP]`; they ship only
-  if the designer confirms them as their own view.
-- The 10 post-launch interviews are not mentioned on the page.
-- The negative finding about the discount is included in D4.
-- Implementation reality: the unmodifiable player lives inside the D1
-  card as its cost; the archived-page state goes in a short paragraph at
-  the end of Solution.
-- Royalties leave the email-gate story everywhere on the page (My role,
-  Solution, captions) and appear, if at all, as one clause about scope.
+- **"Interviews with non-students found…"** — no pre-design research with
+  friends of students was ever run; the team decided against it. The 6
+  colleague-flow respondents in usability round 1 are a different thing
+  and their findings are usable.
+- **"The research covered two segments, students and non-students."** —
+  the pre-design research covered one: students.
+- **"All 12 completed the task without help."** — the 12 were two groups
+  of 6 on different flows. No statement spans all 12.
+- **"Participants missed the share button in the visual noise."** — in
+  round 1 all 6 student-flow respondents found it unassisted. Separately
+  and also true: in production few students clicked it, and that is what
+  triggered version 2. Both hold; do not merge them into one claim.
+- **"I negotiated the email gate with top management and legal."** — it
+  was imposed by the CPO, the Head of Product and the teacher curators,
+  over my objection. Legal had no part in it. "Pushed back on it" is
+  accurate.
+- **"Royalties are why the email form exists."** — royalties were handled
+  by excluding those videos from the feature entirely.
+- **"Students clicked Share but did not create a link."** — the drop was
+  earlier, at the click on the button under the video. Problems found in
+  the share modal during testing are a separate and real thing.
+
 
 ## Open questions
-
-Settled in the interview of 13 September 2026: the split of the 12
-sessions, the survey figures and who ran it, what the pre-design research
-actually consisted of, round 2 findings, the implementation constraints,
-the origin of the incentives, the wireframing tool, session length,
-legal's actual role, the timeline, and how the project ended.
 
 ### On hold by the designer's decision
 
@@ -459,57 +429,36 @@ legal's actual role, the timeline, and how the project ended.
    until the designer supplies the real figures. Raise it again at the
    first task that touches Outcome or any number on the page.
 
+### Ask before any of this reaches the page
+
+2. Are the link limits — 5 share links per course, 7 days per link, an
+   expiry date on the public page — correct? Where did they come from:
+   negotiated with the CPO's group, set by the PM, or my own proposal?
+   Were the numbers tested?
+
 ### Still open
 
-**Recoverable, if they turn out to be worth the time.** The designer still
-holds the raw usability results — every session was documented in detail
-at the time. Questions 4 and part of the round 1 record below are not lost
-facts, only unretrieved ones. The post-launch interviews are the exception:
-those notes are genuinely gone.
-
-2. Where the target for referral-based sign-ups came from, and who set
-   it. Part of the metrics batch.
-3. What the competitor and cross-industry analysis actually changed in
-   the design. It is currently a line in Process with no consequence
-   attached.
-4. Which piece of copy 2 respondents misunderstood in the early sessions
+3. Where the target for referral-based sign-ups came from, and who set it.
+   Part of the metrics batch.
+4. What the competitor and cross-industry analysis actually changed in the
+   design. It is currently a line in Process with no consequence attached.
+5. Which piece of copy 2 respondents misunderstood in the early sessions
    of round 2.
-5. ~~What made the mini-course the winning incentive over the other
-   options on the Miro board~~ — settled, see D4. Still open: who signed
-   the mini-course off.
-6. Where the link limits came from — 5 links per course, 7 days per link,
-   an expiry date on the public page. Negotiated with the CPO's group,
-   set by the PM, or my own proposal? Were the numbers tested?
-7. D5: why the public page is ordered as it is — the student's discount
-   first, then related courses, then the conversion blocks. Especially
-   given the round 1 finding that the discount read as an afterthought.
-8. Whether ending the sharing experiments was the PM's call, the CPO's,
-   or the team's.
-9. ~~Alternatives and owner for D1~~ — settled, see D1: my decision,
-   chosen among several ways of raising the button's visibility. Still
-   open: the specific alternatives and the trade-off.
-12. ~~Whether the 7 pre-design interviews ran before or after the
-    survey.~~ Settled: run in parallel, survey launched first, interviews
-    likely landed first. See Research I ran.
-
-### Raised by the reviews of 14 September 2026
-
-13. Who the 6 colleague-flow respondents were, given that non-students
+6. Who signed off the mini-course as the student's reward.
+7. D1: which specific placements or triggers were on the board besides the
+   in-player prompt, and what moving the prompt cost — no trade-off is
+   recorded.
+8. D4: what was given up by choosing the mini-course.
+9. D5: why the public page is ordered as it is — the student's discount
+   first, then related courses, then the conversion blocks.
+10. Whether ending the sharing experiments was the PM's call, the CPO's,
+    or the team's.
+11. Who the 6 colleague-flow respondents were, given that non-students
     were deliberately not recruited for the research.
-14. What pointed at button visibility as the problem after launch, rather
-    than the reward or the modal.
-15. How the shipped in-player button differs from the design.
-16. Why the discount stayed after the round 1 finding that it read as an
-    afterthought.
-17. Whether the 57% had a threshold to pass, and who set it.
-18. The Context table: company scale, B2C/B2B, team counts, role scope
-    and team focus are still `from draft — unconfirmed`. Confirm or
-    correct in one pass.
-
-### Decisions the designer needs to make about the page
-
-10. ~~Whether to mention the 10 post-launch interviews at all~~ — settled
-    14 Sept 2026: not mentioned. See D1 and Page decisions.
-11. ~~How much of the incentive story to tell~~ — settled 14 Sept 2026:
-    the negative result about the discount goes into the D4 card. See D4
-    and Page decisions.
+12. How the shipped in-player button differs from the design.
+13. Whether the 57% had a threshold to pass, and who set it.
+14. Who made the royalties scope call, and roughly what share of lectures
+    it excluded.
+15. The Context table: company scale, B2C/B2B, team counts, role scope and
+    team focus are still `from draft — unconfirmed`. Confirm or correct in
+    one pass.
