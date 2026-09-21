@@ -48,12 +48,14 @@
 		font-weight: 500
 		border-radius: $radius--S
 		&:hover
+			background: rgba($color__gray-200, 0.1)
+		&.--light:hover
 			background: rgba($color__gray-200, 0.2)
 
 	li.--active a
 		text-decoration: underline 1.5px
 		text-decoration-color: inherit !important
-		background: rgba($accent-primary, 0.2)
+		background: rgba($color__gray-200, 0.2)
 		// For light sections
 		&.--light
 			background: rgba($accent-primary, 0.4)
