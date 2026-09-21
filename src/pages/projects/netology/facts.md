@@ -17,14 +17,14 @@ yet checked by the designer).
 
 | Field | Value | Status |
 |---|---|---|
-| Company, market position, scale | Netology. 2nd largest EdTech platform in Russia, 2M MAU. Online IT courses, 4 months to 2 years | from draft — unconfirmed |
-| Industry, B2B / B2C | EdTech, B2C and B2B | from draft — unconfirmed |
-| Dates, duration, iterations | From September 2024. 4 weeks of design work in total, covering both iterations — not 4 weeks each. The second iteration came several months after the first: the team had to wait for the first release's results, because the effect of a resharing feature is not visible immediately | confirmed in session |
-| Gap between the two releases | About four months. The designer does not recall precisely and treats this as approximate, consistent with a long referral funnel whose effect is slow to appear | from my notes — approximate |
-| Team (roles and counts) | 9-person Scrum team: me (senior product designer), 1 product manager, 1 product analyst, 2 frontend, 2 backend, 2 QA | from draft — unconfirmed |
-| My role and scope | Owned design end-to-end: research, ideation, wireframes, UI, prototypes, annotations, handoff documentation, dev support | from draft — unconfirmed |
+| Company, market position, scale | Netology. 2nd largest EdTech platform in Russia, **500k MAU**. Online IT courses, 4 months to 2 years | confirmed in session |
+| Industry, B2B / B2C | EdTech, B2C and B2B | confirmed in session |
+| Dates, duration, iterations | From September 2024. 4 weeks of design work in total, covering both iterations — not 4 weeks each. The second iteration followed the first release once analytics showed the share rate was too low | confirmed in session |
+| Gap between the two releases | **Not recorded**, and the designer has no figure. It cannot be inferred from the measurement either: the trigger for the second iteration was visible four weeks after the first release | confirmed in session |
+| Team (roles and counts) | 9-person Scrum team: me (senior product designer), 1 product manager, 1 product analyst, 2 frontend, 2 backend, 2 QA | confirmed in session |
+| My role and scope | Owned design end-to-end: research, ideation, wireframes, UI, prototypes, annotations, handoff documentation, dev support | confirmed in session |
 | Tools | Miro for ideation and user flows; Figma for wireframes, UI and prototypes; Google Forms for the survey | confirmed in session |
-| Team's focus area | LMS: retention, motivation and goals, usability, homework completion, active days, COR, NPS, churn | from draft — unconfirmed |
+| Team's focus area | LMS: retention, motivation and goals, usability, homework completion, active days, COR, NPS, churn | confirmed in session — COR still needs spelling out for the page |
 
 ## Problem
 
@@ -32,17 +32,37 @@ yet checked by the designer).
   acquisition cost was high. `from draft — unconfirmed`
 - How it was identified, by whom: the product manager, from marketing
   spend analysis. `from draft — unconfirmed`
-- Goal or hypothesis, with numbers: grow referral-based paid sign-ups
-  from 16% to 25% within six months. Hypothesis: if students could share
-  course content with colleagues, the platform would generate qualified
-  leads at lower cost. `from draft — unconfirmed`
+- Hypothesis: if students could share course content with colleagues, the
+  platform would generate qualified leads at lower cost. `from draft —
+  unconfirmed`
+
+### Two levels of goal, and the page must keep them apart
+
+**Business goal: referral share of new paying customers**, also phrased as
+the referral share of paid sign-ups. From 16% to 25%. `confirmed in
+session — the designer decided to keep these figures on the page as they
+stand` **No deadline goes on the page.** `confirmed in session`
+
+The business goal was never this project's to hit alone. Three tasks were
+aimed at it and designed in parallel: `confirmed in session`
+
+1. Sharing lecture material — this case.
+2. Optimising the funnel for sharing student achievements.
+3. Optimising the funnel for sharing course completion certificates.
+
+Results for tasks 2 and 3 arrived before this one's, so the business goal
+was measured last, after this feature's numbers were in. `confirmed in
+session`
+
+**My target for this case: 50 paid course purchases attributed to shared
+lecture links.** `confirmed in session`
 
 ## Research I ran
 
 | Method | Participants / n | Findings, with numbers | Decision it informed | Status |
 |---|---|---|---|---|
 | Earlier interviews on tasks about sharing student achievements — **run by another designer, not me** | Unknown; no count of how many respondents said it | Unprompted: students said they would like to share some of the materials from their paid courses | Raised the question this project set out to answer, and prompted my survey | confirmed in session |
-| Pre-design interviews with students | 7 | Two findings survive: they prefer sharing with colleagues and in professional communities, rather than on general social networks; and they need some form of value exchange to be motivated to share | Professional rather than social sharing; the existence of a reward | confirmed in session — little detail remains beyond these two findings |
+| Pre-design interviews with students | 7 | **One finding survives:** students need some form of value exchange to be motivated to share. Which form was not established here | The existence of a reward | confirmed in session — little detail remains beyond this finding |
 | Pre-design survey, in Google Forms | 1,083 responses | 57% of students would share learning content | Justified building the feature at all | verified — number and figure confirmed in session |
 | Competitor and cross-industry analysis | — | [GAP: what did it change?] | — | from my notes |
 | Post-launch interviews | 10 | **Not recorded.** No notes survive and the designer does not recall what was said. The page must not state any finding from them | Version 2: prompt moved into the player | n and purpose confirmed in session; findings unavailable |
@@ -97,6 +117,11 @@ students said. `confirmed in session`
   clicked the Share button under the video poorly. Web analytics showed no
   problem at the later stages, which is what ruled out the share modal and
   the steps after it. `confirmed in session`
+- **When it was seen: four weeks after the first release.** Results were
+  read regularly, not at one fixed checkpoint, and the low click rate on
+  the Share button is the first funnel step, so it showed up quickly. **No
+  figure is attached to it**, so the page states the observation without
+  a number. `confirmed in session`
 - **The hypothesis that followed:** while watching a lecture a student's
   attention is narrow and sits on the player, so a more noticeable button
   inside the player would raise clicks. `confirmed in session`
@@ -116,10 +141,10 @@ students said. `confirmed in session`
   few seconds before the lecture ends, by which point there is nothing
   useful left on screen, so it costs the student no content. The page
   states the timing and omits any trade-off. `confirmed in session`
-- Evidence: the post-launch share-link rate `[DEFERRED-METRIC]`, then 6
-  further usability sessions in which every respondent noticed the
-  in-player button. The 10 post-launch interviews happened but produced
-  nothing usable. `from my notes`
+- Evidence: the low click rate on the Share button, seen four weeks after
+  the first release, then 6 further usability sessions in which every
+  respondent noticed the in-player button. The 10 post-launch interviews
+  happened but produced nothing usable. `confirmed in session`
 - Who decided: me. I also chose how the in-player block behaves, the text
   shown above the player, and the moment the block appears. `confirmed in
   session`
@@ -313,6 +338,23 @@ ineffective, and did not change it on the strength of the remark. The page
 must not state that the discount failed as an incentive. `confirmed in
 session`
 
+**The designer's position on why that is not a problem, and the lesson it
+supports.** `confirmed in session` A usability test answers two different
+kinds of question, and only one of them well:
+
+- **Comprehension and difficulty** — if a respondent stumbles or misreads
+  something, that is a real finding, it gets fixed, and the fix is checked
+  with the next respondents. That is what happened with the reward copy.
+- **Whether a motivator actually motivates** — a test cannot settle this.
+  One person disliking an incentive is normal; not every incentive suits
+  everyone. Real interest only becomes knowable from quantitative data
+  after release.
+
+So the Reflection bullet must not read as "the discount failed and we
+shipped it anyway". It reads as: the test told us the incentive was
+understood, the release numbers told us it worked. Keep it short — the
+designer's instruction is not to labour the point.
+
 Hypotheses tested (from `notes.md`, summarised by the designer):
 
 - Respondents (students and their colleagues) understand the feature and
@@ -363,40 +405,87 @@ with the developers at the start, not after design is complete.
 
 ## Metrics
 
-**`[DEFERRED-METRIC]` — all numbers in this section are on hold.** The
-designer will dig out the real figures later. Until then: no metric ships
-on the page, and every metric slot stays a visible placeholder. **Ask
-about this section again** as soon as any task touches the Outcome
-section, the post-launch share-link rate, or any numeric claim anywhere on
-the page.
+All figures below are cleared to ship.
 
-| Metric | Value | Baseline / goal | Version | Period | Source | Status |
-|---|---|---|---|---|---|---|
-| Conversion to paid courses | +14.3% in the draft | against what? | v1 or v2? | ? | ? | DEFERRED-METRIC |
-| Students who copied the share link | 4.51% in the draft | goal? | v1 or v2? | ? | ? | DEFERRED-METRIC |
-| Anonymous visitors to the shared page | 1,121 in the draft | — | ? | ? | ? | DEFERRED-METRIC |
-| Referral share of paid sign-ups | target 25%, from 16% | — | — | six months | ? | DEFERRED-METRIC |
-| Share-link rate after the first release | draft has `[X]%` | — | v1 | ? | ? | DEFERRED-METRIC |
+**Measurement window: the fifth month after the second release,
+cumulative.** Results were read regularly rather than at one checkpoint,
+but the numbers recorded here are the month-five snapshot. Five months is
+how long the whole funnel needs to run: a colleague may register for a
+free course first and buy a paid one only later, or buy after a delay for
+other reasons. `confirmed in session`
 
-Still unresolved inside that batch, to raise when metrics come up: whether
-the draft's 4.51% "copied the link" is the same measurement as the
-disappointing post-launch rate that triggered version 2, or a separate
-v2 number.
+### Main metric
+
+| Metric | Goal | Result | Status |
+|---|---|---|---|
+| Paid course purchases attributed to shared lecture links | 50 | 57 | confirmed in session |
+
+**How purchases were attributed.** A full tracking system existed for this,
+built so that a purchase counted even when the colleague did not buy
+straight away. `confirmed in session`
+
+- The student's colleagues arrive on the public lecture page through a URL
+  carrying a **protected referral code**.
+- When such a visitor registers, they are marked with a flag in the admin
+  panel.
+- The flag is what lets a later purchase be tied back to the shared link,
+  months after the visit.
+
+This is why the month-five measurement window is the honest one: the
+tracking supports delayed purchases, so reading the funnel earlier would
+have undercounted.
+
+Short name for the page and the `impact` tile, chosen by the designer:
+**"Paid purchases from shared lectures"**. `confirmed in session`
+
+### Proxy metrics
+
+**No targets were set for any of these** — results only. Do not present
+them as met or missed. `confirmed in session`
+
+| Metric | Result | Detail |
+|---|---|---|
+| Shares | 4,618 | A share counts when the student copied the link or used one of the social-network buttons |
+| Views of the public lecture page | 7,243 | From 5,586 unique new external visitors |
+| Applications for free products | 113 | Some of these users were already registered on the platform |
+| Registrations | 158 | 35 paid, 106 free, 17 registered without taking a product. Part of the free 106 converted to paid later |
+
+The 158 and the 57 are consistent: 35 paid at sign-up, and later
+conversions out of the free cohort account for the rest. `confirmed in
+session`
+
+### Business goal — not reached
+
+Referral share of new paying customers did not reach 25%, even with all
+three tasks contributing. This case made a large contribution but it was
+not enough. `confirmed in session` The miss is one reason the product
+manager stopped investing in sharing — see Outcome and team decision.
 
 ## Outcome and team decision
 
-- Result: the feature did deliver some benefit `[DEFERRED-METRIC]`.
-- What the team decided, and why: stop experimenting with sharing
-  variations — certificates, materials, achievements — and move the effort
-  to more promising directions. The reasoning, in the team's words:
-  `confirmed in session`
-  - The effect of a sharing feature is neither fast nor always visible,
-    and its ceiling is limited.
-  - Development was too expensive to keep running experiments against,
-    partly because of the legacy code.
-  - The referral funnel is long. We could have kept optimising each stage,
-    but that is a large amount of effort for a still-unknown result.
-- [GAP: was this the PM's call, the CPO's, or a team decision?]
+Two results at two levels, and the page must not blur them. `confirmed in
+session`
+
+- **This feature succeeded.** 57 paid purchases against a target of 50,
+  and it stayed in the product. The page should say plainly that this
+  solution worked well enough. `confirmed in session`
+- **The business goal was missed.** Referral share of new paying
+  customers did not reach 25%. It was measured last, after this feature's
+  results were in, and the three tasks together were not enough. This
+  case contributed a lot; it still fell short. `confirmed in session`
+- **Then, the product manager's decision:** no further investment. No
+  more work on the funnel stages, and no new sharing experiments —
+  certificates, materials, achievements. The effort went to more promising
+  directions. `confirmed in session` The reasons:
+  - Sharing has a low ceiling — three tasks at the goal did not close it.
+  - Its effect is slow to read: the second release needed five months for
+    the whole funnel to run.
+  - Every change meant working around legacy code.
+  - The referral funnel is long, so optimising it stage by stage was
+    costly for an uncertain return.
+
+**The stop was a response to the business goal being missed, not to this
+feature failing.** `confirmed in session`
 
 ## Reflection notes
 
@@ -451,6 +540,12 @@ follows each one.
   and their findings are usable.
 - **"The research covered two segments, students and non-students."** —
   the pre-design research covered one: students.
+- **"Students preferred sharing with colleagues and in professional
+  communities, not on general social networks."** — nobody said this in the
+  interviews or the survey. What the research does support: a signal that
+  students felt a need to share useful content (another designer's
+  interviews, and the 57%). The ideation options about professional
+  communities in D4 are the designer's own ideas, not findings, and stay.
 - **"All 12 completed the task without help."** — the 12 were two groups
   of 6 on different flows. No statement spans all 12.
 - **"Participants missed the share button in the visual noise."** — in
@@ -466,6 +561,17 @@ follows each one.
 - **"Students clicked Share but did not create a link."** — the drop was
   earlier, at the click on the button under the video. Problems found in
   the share modal during testing are a separate and real thing.
+- **"The second release reached the referral target."** — it reached
+  *this case's* target, 57 purchases against 50. The business goal of 25%
+  referral share was missed. Never let the case target stand in for the
+  business goal.
+- **"The team stopped because the goal was met."** — the opposite. The
+  stop followed the business goal being missed by all three tasks.
+- **"The first release took about four months to read."** — the weak
+  share rate was visible at four weeks. Five months is the second
+  release's window, not the first's.
+- **"+14.3% conversion", "4.51% copied the link", "1,121 visitors"** —
+  invented in an earlier draft, deleted for good. See Metrics.
 
 
 ## Page decisions
@@ -525,6 +631,25 @@ text against the 700–900 target in the section model; Solution itself is
 about 460. The next content task on this page should cut Discovery
 research or Process, not Solution.
 
+**Outcome structure, settled 20 September 2026.** Four `impact` tiles: the
+main metric with its goal, then shares, new visitors and registrations, so
+the reader sees the funnel that makes 57 credible. Chosen over a one-tile
+alternative that put the whole funnel in bullets, which buried the scale.
+
+- **The three proxy tiles use `goodOrBad="neutral"`, not `"good"`.** Green
+  is the site's "target met" state, used that way on the Practicum page,
+  and these metrics have no target. A `.impact.--neutral` variant was
+  added to `src/styles/pages/project_content.sass` for this.
+- **Views (7,243) stay off the page.** The skim reviewer had to reconcile
+  four denominators in three sentences. The page carries shares →
+  applications → registrations → purchases; views live here only.
+- **The prose names the missing 22 conversions outright** rather than
+  leaving 57 − 35 for the reader to compute.
+
+**Problem carries both levels of goal.** The business goal names the three
+parallel tasks in one clause; this case's own target of 50 purchases sits
+under it. Without that split, Outcome reads as a contradiction.
+
 **The `callout` paired shortcode does exist** on the site, styled in
 `src/styles/components/callout.sass` and used on the Practicum page,
 contrary to the note in `references/visuals.md`. Nothing on this page
@@ -532,16 +657,11 @@ uses it yet.
 
 ## Open questions
 
-### On hold by the designer's decision
-
-1. **All metrics.** Marked `[DEFERRED-METRIC]`. Nothing numeric ships
-   until the designer supplies the real figures. Raise it again at the
-   first task that touches Outcome or any number on the page.
-
 ### Still open
 
-2. Where the target for referral-based sign-ups came from, and who set it.
-   Part of the metrics batch.
+2. Where the 16% baseline and the 25% target for referral share came from,
+   and who set them. Both are still `from draft — unconfirmed`; the
+   designer chose to keep them on the page as they stand.
 3. What the competitor and cross-industry analysis actually changed in the
    design. It is currently a line in Process with no consequence attached.
 4. Which piece of copy 2 respondents misunderstood in the early sessions
@@ -550,16 +670,12 @@ uses it yet.
 6. D1: which specific placements or triggers were on the board besides the
    in-player prompt.
 7. D4: what was given up by choosing the mini-course.
-8. Whether ending the sharing experiments was the PM's call, the CPO's,
-   or the team's.
 9. Who the 6 colleague-flow respondents were, given that non-students
    were deliberately not recruited for the research.
 10. Whether the 57% had a threshold to pass, and who set it.
 11. Who made the royalties scope call, and roughly what share of lectures
     it excluded.
-12. The Context table: company scale, B2C/B2B, team counts, role scope and
-    team focus are still `from draft — unconfirmed`. Confirm or correct in
-    one pass.
+12. What COR stands for. It shows on the page as `COR [GAP: spell out]`.
 
 ### Closed, do not ask again
 
@@ -573,3 +689,9 @@ uses it yet.
   metric the designer treats as unimportant. See D5.
 - The 10% on the current images: a draft leftover, to be fixed by
   replacing the images. See Provenance of visuals.
+- Who ended the sharing experiments: the product manager, after the
+  business goal was missed despite all three tasks. See Outcome and team
+  decision.
+- The gap between the two releases: not recorded. See Context.
+- How purchases were attributed to shared links: a protected referral
+  code and a registration flag. See Metrics.

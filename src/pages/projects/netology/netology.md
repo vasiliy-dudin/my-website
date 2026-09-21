@@ -13,11 +13,11 @@ enabled: true
 permalink: "/projects/netology/"
 headerInfo:
   - title: "About company"
-    text: "The 2nd largest EdTech platform in Russia, 2M MAU. It offers a variety of online IT courses from 4 months to 2 years long."
+    text: "The 2nd largest EdTech platform in Russia, 500k MAU. It offers a variety of online IT courses from 4 months to 2 years long."
   - title: "My team's focus"
     text: "Learning Management System (LMS): retention, motivation and goals, usability, homework completion, active days, COR [GAP: spell out], NPS, churn."
   - title: "Tools"
-    text: "Miro, Figma, Google Forms"
+    text: "Figma, Miro, Google Forms"
 ---
 
 {% projectSection %}
@@ -48,9 +48,13 @@ headerInfo:
 {% projectSection %}
 	## Problem
 
-	Paid channels brought in most new students, and each acquisition cost too much. The product manager found this in the marketing spend analysis.
+	Paid channels brought in most new students, and each acquisition cost too much.
 
-	The target was to raise the share of paid sign-ups that come through referrals [DEFERRED-METRIC: from X% to Y% within six months]. The hypothesis: if students could share course content with colleagues, the platform would get qualified leads at a lower cost.
+	**Business goal:** raise the referral share of new paying customers from 16% to 25%, through three tasks designed in parallel. Mine was sharing lecture material, alongside tasks on sharing achievements and certificates.
+
+	**My target:** 50 paid course purchases from shared lectures.
+
+	**Hypothesis:** if students could share course content with colleagues, the platform would get qualified leads at a lower cost.
 {% endprojectSection %}
 
 {% projectSection %}
@@ -59,11 +63,10 @@ headerInfo:
 	Another designer's interviews on an earlier task had turned up students saying, unprompted, that they would like to share their course material, so I sized that signal with a 1,083-response survey in Google Forms and 7 interviews with students, run in parallel.
 
 	- **57% of students said they would share learning content.** Enough to justify building.
-	- Students preferred sharing with colleagues and in professional communities, not on general social networks.
 	- They needed something in return to share at all.
 	- We deliberately did not interview non-students: someone recruited as "a student's friend" cannot stand in for the real audience.
 
-	The reward in the design exists because of the third finding. [GAP: what in the design, if anything, came from the professional-circles finding?]
+	The reward in the design exists because of the second finding.
 {% endprojectSection %}
 
 {% projectSection %}
@@ -107,11 +110,11 @@ headerInfo:
 
 	The first release put a Share button under the video.
 
-	After launch, few students clicked it [DEFERRED-METRIC: share-link rate, release and period]. Analytics showed the steps after the click were healthy, which ruled out the modal and everything after it.
+	Four weeks in, analytics showed few students clicking it. The steps after the click were healthy, which ruled out the modal and everything after it.
 
 	My hypothesis: during a lecture a student's attention sits on the player. So the second release added a share button on top of the video for the last few seconds, where nothing useful is left on screen.
 
-	In 6 sessions on the new flow every respondent noticed the button. The rethink cost a second design round, and about four months of waiting for the first release's numbers.
+	In 6 sessions on the new flow every respondent noticed the button. The rethink cost a second design round on a task that had already shipped.
 
 	{% carousel id="share-prompt", width=922, lightboxWidth=2400, chipsLabel="Share button, both releases", slides=[
 			{src: "images/solutions-1.jpg", label: "Second release", alt: "Design for the second release: a Share the video button on top of the player, with both rewards named beside it, the original Share button still under the video, and the share modal", caption: "Second release: the share button on top of the video, with both rewards beside it. The button underneath stayed."},
@@ -138,22 +141,32 @@ headerInfo:
 {% projectSection %}
 	## Outcome
 
-	{# [DEFERRED-METRIC] The ImpactRow is on hold until the designer retrieves the figures: conversion to paid courses, share-link rate, visitors to the shared page, the referral target from Problem, with baseline, version and period for each.
 	{% ImpactRow %}
-		{% impact name="Conversion to paid courses", valueOld="", valueNew="", goodOrBad="", goal="", mainOrNot="main" %}
-		{% impact name="Students who copied the link", valueOld="", valueNew="", goodOrBad="", goal="", mainOrNot="" %}
-		{% impact name="Anonymous visitors to shared page", valueOld="", valueNew="", goodOrBad="", goal="", mainOrNot="" %}
-	{% endImpactRow %} #}
+		{% impact name="Paid purchases via shared lectures", valueOld="", valueNew="57", goodOrBad="good", goal="50", mainOrNot="main" %}
+		{% impact name="Shares by students", valueOld="", valueNew="4,618", goodOrBad="neutral", goal="", mainOrNot="" %}
+		{% impact name="New visitors to the shared page", valueOld="", valueNew="5,586", goodOrBad="neutral", goal="", mainOrNot="" %}
+		{% impact name="Registrations", valueOld="", valueNew="158", goodOrBad="neutral", goal="", mainOrNot="" %}
+	{% endImpactRow %}
 
-	[DEFERRED-METRIC: conversion to paid courses, share-link rate, visitors to the shared page, and whether the referral target was met, each with baseline and period.]
+	- Measured at month five, the time the whole funnel needed to run. A protected referral code in each shared link flagged the visitor at registration, so a purchase counted even months later.
+	- The 4,618 shares brought 113 applications for free products and 158 registrations. 
+	- 35 paid registrations at once and 22 more converted out of the free cohort later.
 
-	The feature delivered some benefit [DEFERRED-METRIC], and the team then stopped experimenting with sharing altogether, certificates, materials and achievements included. Three reasons: the effect of sharing is slow, not always visible and limited in size; development against the legacy code was too expensive to keep experimenting; and the referral funnel is long, so optimising each stage would have cost a lot for a still unknown result. [GAP: whose call was it to stop: the product manager's, the CPO's or the team's?]
+	### Consequences
+	The feature beat its target and stayed in the product. The business goal, measured after these numbers came in, fell short of 25% even with the two sibling tasks. The product manager stopped investing in sharing:
+
+	- Sharing has a limited ceiling.
+	- Its effect is slow to read.
+	- Every change meant working around legacy code.
+	- The referral funnel is long, and optimising it stage by stage was costly.
+
+	The effort went to more promising directions.
 {% endprojectSection %}
 
 {% projectSection %}
 	## Reflection
 
 	- Start legacy-code tasks with technical discovery by the developers, before design is finished. Both constraints here surfaced after handoff, and each cost a rethink on a closed task.
-	- Test each incentive on its own before it goes into the design. Round 1 showed the colleague's discount reading as an afterthought, and it shipped unchanged. [GAP: confirm this is your view]
-	- Redirecting effort away from sharing was the right call: the funnel is long and the effect slow. [GAP: confirm this is your view]
+	- A usability test shows whether an incentive is understood, not whether it works. One respondent found the colleague's discount beside the point, and only the release numbers settled that.
+	- Stopping was the right call even though the feature worked. Sharing could not close the business gap, and each further stage meant legacy-code work for an uncertain return.
 {% endprojectSection %}

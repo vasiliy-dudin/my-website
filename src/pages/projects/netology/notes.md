@@ -13,10 +13,14 @@ Russian originals of respondent quotes.
 
 ## Timeline
 
-From August 2023. The 4 weeks of design work cover both iterations
-together, not each. The second iteration came several months after the
-first, because the team had to wait for the first release's results — the
-effect of a resharing feature is not visible straight away.
+From September 2024. The 4 weeks of design work cover both iterations
+together, not each.
+
+The gap between the two releases is **not recorded**. An earlier estimate
+of "about four months" is withdrawn — the designer has no figure. Nor can
+the gap be inferred from the measurement: the signal that triggered the
+second iteration, a low click rate on the Share button, was already
+visible four weeks after the first release.
 
 ## Overall order of work
 
@@ -59,14 +63,16 @@ number.
 
 ### Pre-design interviews with students (7)
 
-Very little detail survives beyond two findings:
+Very little detail survives beyond one finding:
 
-- They prefer sharing with colleagues and in professional communities,
-  rather than on general social networks.
 - They need some form of value exchange to be motivated to share. Which
   specific form was not established by these interviews — the mini-course
   and the 15% discount came later, out of the designer's own ideation (see
   Ideation below).
+
+What the research as a whole does show: a signal that students felt a need
+to share useful content. It comes from the other designer's interviews on
+the achievements task and from the 57% in the survey.
 
 ### The decision not to interview non-students
 
@@ -116,10 +122,12 @@ did, even though the survey started first.
   designer.
 - It says the research covered "two user segments". It was one segment
   (students).
+- It says students preferred sharing with colleagues and in professional
+  communities rather than on general social networks. **Nobody said this**
+  in the interviews or the survey.
 
-The student interviews themselves, and their two findings, are real, and
-they did inform two decisions: professional rather than social sharing,
-and the inclusion of a reward at all (see Ideation).
+The student interviews themselves are real, and their one surviving
+finding informed one decision: including a reward at all (see Ideation).
 
 ## Ideation
 
@@ -366,9 +374,11 @@ economics could not support more expensive rewards; for others we doubted
 the problem lay in that part of the interface at all, because analytics
 showed those stages were fine.
 
-Gap between the first and second releases: the designer does not recall
-precisely and estimates about four months, which fits a long referral
-funnel whose effect appears slowly. Treat as approximate.
+When this was seen: **four weeks after the first release.** Results were
+read regularly rather than at one fixed checkpoint, and the click rate on
+the Share button is the very first step of the funnel, so it surfaced
+quickly. No figure survives for that rate — the draft's 4.51% was invented
+and has been deleted.
 
 ## Implementation — legacy-code constraints
 
@@ -387,14 +397,87 @@ was the designer's time: rethinking the solution and several separate
 alignment rounds with the developers, on a task that had formally been
 closed.
 
+## Metrics
+
+Supplied by the designer on 20 September 2026. The checked versions live
+in `facts.md`; this section keeps the raw detail and the caveats.
+
+### How results were read
+
+Not one measurement at the end. Results were read **regularly** through
+the life of the feature.
+
+- **First release:** four weeks in, it was already clear that students
+  rarely pressed the share button — the first step of the funnel.
+- **Second release:** results were fixed at the **fifth month** after
+  release. The whole funnel needs that long to run. A student's colleague
+  might register for a free course first and buy a paid one months later,
+  and there are other reasons a colleague buys with a delay rather than
+  straight away. Reading the funnel earlier would have undercounted.
+
+### Business goal
+
+Referral share of new paying customers (also phrased as referral share of
+paid sign-ups), from 16% to 25%. No deadline goes on the page.
+
+Three tasks were aimed at this goal and designed in parallel:
+
+1. Sharing lecture material — this case.
+2. Optimising the funnel for sharing student achievements.
+3. Optimising the funnel for sharing course completion certificates.
+
+Results for tasks 2 and 3 came in before this one's, so the business goal
+was measured last, once this feature's numbers were in.
+
+**It was not reached.** All three tasks together were not enough. This
+case contributed a great deal, and it still fell short. That miss is part
+of why the team decided not to develop sharing further or keep optimising
+the funnels.
+
+### Main metric for this case
+
+Paid course purchases attributed to shared lecture links. **Goal 50,
+result 57.**
+
+How those purchases were tracked: a complete, many-sided tracking system,
+built specifically so that a purchase could be traced even when the
+colleague did not buy immediately. The student's friends land on the
+public page through a URL carrying a protected referral code. On
+registration, those users get a flag in the admin panel, and that flag is
+what ties a later purchase back to the shared link.
+
+### Proxy metrics
+
+No target was set for any of these — results only.
+
+- **Shares: 4,618.** Counted when a student copied the link or used one
+  of the social-network buttons for a faster share.
+- **Views of the public lecture page: 7,243**, from **5,586 unique new
+  external visitors.**
+- **Applications for free products: 113.** Some of these users were
+  already registered on the platform.
+- **Registrations: 158** — 35 paid, 106 free, 17 who registered without
+  taking a product. Part of the free 106 converted to paid later, which is
+  how 35 paid sign-ups sit under 57 paid purchases.
+
+### Deleted as invented
+
+Three figures from an earlier page draft turned out to have no basis and
+are gone for good: conversion to paid courses +14.3%, students who copied
+the share link 4.51%, anonymous visitors to the shared page 1,121.
+
 ## How the project ended
 
-The feature delivered some benefit (figures to be added later). The team
-then decided to stop experimenting with sharing variations — certificates,
-materials, achievements — and redirect effort to more promising areas.
-Stated reasoning:
+The feature itself worked: 57 paid purchases against a target of 50, and
+it stayed in the product. The business goal was a wider matter, measured
+last, and it was missed.
+
+The team then decided to stop experimenting with sharing variations —
+certificates, materials, achievements — and redirect effort to more
+promising areas. Stated reasoning:
 
 - The effect is not always fast, not always visible, and limited in size.
+  Three tasks aimed at the referral goal did not close the gap.
 - Development was too expensive to keep running experiments against,
   partly because of the legacy code.
 - The referral funnel is long. Continuing to optimise each stage would
