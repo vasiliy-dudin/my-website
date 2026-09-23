@@ -38,9 +38,9 @@ headerInfo:
 		] %}
 
 	- Owned design end to end across 2 iterations on a 9-person Scrum team: research, wireframes, UI, prototypes and handoff.
-	- Sized a signal from another designer's interviews with a 1,083-response survey and 7 student interviews before anything was built.
+	- Ran a survey (1,083 responses) and 7 student interviews to test demand before design started.
 	- Ran 18 usability sessions across the student and colleague flows, over two rounds.
-	- Pushed back on the email form in front of shared lectures, then designed and tested it once the business made it a condition.
+	- Designed a second Share button inside the player after launch analytics showed few students clicking the first.
 
 	{% endmyRole %}
 {% endprojectSection %}
@@ -50,23 +50,19 @@ headerInfo:
 
 	Paid channels brought in most new students, and each acquisition cost too much.
 
-	**Business goal:** raise the referral share of new paying customers from 16% to 25%, through three tasks designed in parallel. Mine was sharing lecture material, alongside tasks on sharing achievements and certificates.
+	**Business goal:** raise the referral share of new paying customers from 16% to 25%. It was split into three parallel tasks: sharing lecture material, and improving how students share achievements and certificates.
 
-	**My target:** 50 paid course purchases from shared lectures.
-
-	**Hypothesis:** if students could share course content with colleagues, the platform would get qualified leads at a lower cost.
+	**Hypothesis:** if students can share lectures with colleagues, some colleagues will buy a course, and new students will come from referrals instead of paid channels. The target: 50 paid purchases from shared lectures.
 {% endprojectSection %}
 
 {% projectSection %}
 	## Discovery research
 
-	Another designer's interviews on an earlier task had turned up students saying, unprompted, that they would like to share their course material, so I sized that signal with a 1,083-response survey in Google Forms and 7 interviews with students, run in parallel.
+	In interviews on an earlier task, some students said they would like to share material from their courses. To check how many agreed and what would make them share, I ran a Google Forms survey (1,083 responses) and 7 student interviews.
 
-	- **57% of students said they would share learning content.** Enough to justify building.
-	- They needed something in return to share at all.
+	- **57% of students said they would share learning content.** Enough to justify building it.
+	- Students wanted something in return for sharing, so the design gives them a reward.
 	- We deliberately did not interview non-students: someone recruited as "a student's friend" cannot stand in for the real audience.
-
-	The reward in the design exists because of the second finding.
 {% endprojectSection %}
 
 {% projectSection %}
