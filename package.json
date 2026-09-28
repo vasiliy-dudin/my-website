@@ -9,7 +9,7 @@
     "build": "cross-env-shell ELEVENTY_ENV=production \"npm-run-all _build:sass _build:lightningcss _build:js && eleventy && pnpm _build:html\"",
     "deploy": "vercel deploy ./dist --prod",
     "build+deploy": "pnpm run build && pnpm run deploy",
-    "_watch:11ty": "eleventy --serve",
+    "_watch:11ty": "eleventy --serve --port=3000",
     "_watch:sass": "sass --watch --style=expanded src/styles/bundle.sass:dist/styles/bundle.css src/styles/fancybox.sass:dist/styles/fancybox.css",
     "_watch:js": "rollup -c -w",
     "_build:sass": "sass --no-source-map src/styles/bundle.sass:dist/styles/bundle.css src/styles/fancybox.sass:dist/styles/fancybox.css",
