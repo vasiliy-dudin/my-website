@@ -13,9 +13,9 @@ enabled: true
 permalink: "/projects/netology/"
 headerInfo:
   - title: "About company"
-    text: "The 2nd largest EdTech platform in Russia, 500k MAU. It offers a variety of online IT courses from 4 months to 2 years long."
-  - title: "My team's focus"
-    text: "Learning Management System (LMS): retention, motivation and goals, usability, homework completion, active days, COR [GAP: spell out], NPS, churn."
+    text: "The 2nd largest EdTech platform in Russia, 500k MAU."
+  - title: "Team's focus"
+    text: "LMS, student motivation and goals, retention, usability, homework completion, active days, COR, NPS, churn."
   - title: "Tools"
     text: "Figma, Miro, Google Forms"
 ---
@@ -37,31 +37,30 @@ headerInfo:
 			{role: "QAs", icon: "qa", count: 2}
 		] %}
 
-	- Owned design end to end across 2 iterations on a 9-person Scrum team: research, wireframes, UI, prototypes and handoff.
+	- Owned design end to end across 2 iterations on a 9-person Scrum team: user research, wireframes, UI, prototypes and handoff.
 	- Ran a survey (1,083 responses) and 7 student interviews to test demand before design started.
-	- Ran 18 usability sessions across the student and colleague flows, over two rounds.
-	- Designed a second Share button inside the player after launch analytics showed few students clicking the first.
-
+	- Ran 18 usability sessions across the student and colleague flows, over two rounds.	
 	{% endmyRole %}
 {% endprojectSection %}
 
 {% projectSection %}
 	## Problem
 
-	Paid channels brought in most new students, and each acquisition cost too much.
+	Most new students came through paid marketing, and each one cost too much to acquire.
 
 	**Business goal:** raise the referral share of new paying customers from 16% to 25%. It was split into three parallel tasks: sharing lecture material, and improving how students share achievements and certificates.
 
-	**Hypothesis:** if students can share lectures with colleagues, some colleagues will buy a course, and new students will come from referrals instead of paid channels. The target: 50 paid purchases from shared lectures.
+	**Hypothesis:** if students can share lectures with colleagues, some colleagues will buy a course, and new students will come from referrals instead of paid marketing.
+	The target: 50 paid purchases from shared lectures.
 {% endprojectSection %}
 
 {% projectSection %}
 	## Discovery research
 
-	In interviews on an earlier task, some students said they would like to share material from their courses. To check how many agreed and what would make them share, I ran a Google Forms survey (1,083 responses) and 7 student interviews.
+	I ran a Google Forms survey (1,083 responses) and 7 student interviews to find out how many students would share material from their courses, and what would make them do it. The question came from interviews on an earlier task, where some students raised it unprompted.
 
 	- **57% of students said they would share learning content.** Enough to justify building it.
-	- Students wanted something in return for sharing, so the design gives them a reward.
+	- Students wanted something in return for sharing, which is why the final design includes a reward.
 	- We deliberately did not interview non-students: someone recruited as "a student's friend" cannot stand in for the real audience.
 {% endprojectSection %}
 
