@@ -23,6 +23,7 @@
     "@11ty/eleventy-img": "^7.0.0",
     "@11ty/eleventy-navigation": "^1.0.5",
     "@fancyapps/ui": "^6.1.15",
+    "@mdit/plugin-inline-rule": "^2.2.2",
     "@rollup/plugin-commonjs": "^29.0.3",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^1.0.0",

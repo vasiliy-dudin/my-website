@@ -44,6 +44,36 @@ Guidelines for the text quality and style of product design case studies — foc
 
 ---
 
+## Emphasis: bold and highlights
+
+Three tools on the site, each with one job. They exist so a reader who won't read the whole text still gets the point.
+
+| Markup | Renders as | Job | Budget |
+|---|---|---|---|
+| `==text==` | Grey highlight | Scanning aid for long or complex text: marks the skeleton a skimmer follows | As many as the skeleton needs, in parallel places only |
+| `!!text!!` | Green accent highlight | The one thing in a section the reader must not miss | One per section at most, and not in every section |
+| `**text**` | Bold | A key claim inside a paragraph | One per paragraph at most |
+
+**Grey highlight (`==`)**
+
+- Use it where text is long or dense enough that a reader would skip it otherwise. Short sections don't need it.
+- Highlight the same kind of fragment across parallel items: the opening words of each bullet, naming the activity or finding. Example from Netology Process: `==Three rounds of wireframes== in Figma covering…`
+- Keep each fragment short (a few words) and at the start of the item. Read in sequence, the highlights alone should tell what the section did.
+
+**Accent highlight (`!!`)**
+
+- A short phrase, not a sentence: a decisive number, a key finding, the reason a decision went one way.
+- Use it rarely. If a page has an accent in every section, the accents stop working.
+
+**All three**
+
+- Don't stack two kinds on one fragment (`!!**text**!!`), and don't highlight what a callout already says.
+- Body text only. Not in headings, and not in captions or alt text: those are rendered as plain text, so the markers would show literally.
+- No spaces just inside the markers: `==text==`, not `== text ==`.
+- The text must make sense without the highlight. Screen readers usually don't announce it.
+
+---
+
 ## Voice and person
 
 - Write in first person, active voice: "I ran", "We decided" — not "analysis was conducted", "a decision was made."
@@ -126,7 +156,7 @@ These patterns make writing sound assembled rather than authored. Avoid them.
 - **Announcing instead of doing:** "Let's explore...", "Here's what you need to know" — just write the content
 - **Generic conclusions:** "the future looks bright", "exciting times ahead" — end on a specific observation or fact
 - **Consecutive bullets with the same opening word or structure**
-- **Bolding phrases inside body text without reason**
+- **Bolding or highlighting phrases inside body text without reason** (rules in "Emphasis: bold and highlights" above)
 - **The "not X, but Y" pivot:** "This isn't just a feature — it's a
   philosophy." State the point directly.
 - **Hedging stacks:** "arguably", "in many ways", "to some extent"

@@ -5,6 +5,7 @@ import markdownItAnchor from "markdown-it-anchor";
 import fsExtra from "fs-extra";
 import path from "path";
 import { imageShortcode } from "./eleventy.images.js";
+import { addMarkPlugins } from "./eleventy.markdownMarks.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -30,6 +31,7 @@ export default config => {
 		breaks: true,
 		linkify: true
 	}).use(markdownItAnchor);
+	addMarkPlugins(md);
 	config.setLibrary("md", md);
 
 

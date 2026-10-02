@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import markdownIt from "markdown-it";
+import { addMarkPlugins } from "./eleventy.markdownMarks.js";
 
 export default config => {
 
@@ -28,6 +29,7 @@ export default config => {
 		breaks: true,
 		linkify: true
 	});
+	addMarkPlugins(md);
 	config.addFilter("markdown", (content) => {
 		if (!content) return '';
 		const stringContent = String(content);

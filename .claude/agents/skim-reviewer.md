@@ -15,8 +15,15 @@ matter keys, `{% %}` shortcodes), but read the text inside it — captions,
 alt text, team roles, metric names and values. Skip anything inside
 `{# #}` comments; it isn't published.
 
-Pass 1 — skim: H2s, H3s, the first sentence of each paragraph, captions,
-metrics.
+Highlighted text is what a real skimmer's eye lands on. In the raw file
+it looks like this:
+
+- `==text==` is a grey highlight;
+- `!!text!!` is a accent highlight, the most prominent;
+- `**text**` is bold.
+
+Pass 1 — skim: H2s, H3s, the first sentence of each paragraph, bold and
+highlighted text, captions, metrics.
 Pass 2 — read the parts pass 1 made you want to read, and notice where
 you would have stopped.
 
@@ -26,7 +33,9 @@ Report, briefly, in this order:
    missing, say where the story breaks.
 2. **Where you'd stop reading**, and why: length, repetition, an unclear
    point. Name every paragraph you skipped or skimmed rather than read,
-   and every sentence you had to read twice.
+   and every sentence you had to read twice. Say where the highlights
+   pulled you somewhere unimportant, and where a long passage gave you
+   nothing to hold on to.
 3. **Claims you don't believe or can't evaluate**, and what would
    convince you.
 4. **Repetition** across sections.

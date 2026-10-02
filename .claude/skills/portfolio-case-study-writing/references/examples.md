@@ -137,6 +137,12 @@ does not. This is the basis for the decision-card limit in
 
 - **Anti-pattern: bold in every sentence.** When everything is salient,
   nothing is. Bold at most one phrase per paragraph, and only claims.
+  Highlights follow the same logic; their rules are in
+  `writing_guidelines.md`.
+- **Pattern: grey highlight on the opening words of parallel bullets.**
+  In a long list (Netology Process), `==Three rounds of wireframes==` at
+  the start of each item lets a skimmer read the list's skeleton and stop
+  only where it interests them.
 - **Anti-pattern: flat portfolio with every project at equal weight** —
   the tier rules in `quality_criteria.md` exist for this reason.
 - **NDA note done right:** one closing line stating that names and

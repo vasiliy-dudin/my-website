@@ -22,7 +22,7 @@ writer's context.
 | `references/section-model.md` | Slots, limits and ordering rules per section | Before planning or drafting |
 | `references/examples.md` | Per-section patterns and anti-patterns from strong external cases, plus one annotated bad example | Before drafting any section |
 | `references/visuals.md` | Image budget, carousel rules, callout rules, available shortcodes | Before adding or changing any image, carousel or callout |
-| `.claude/docs/writing_guidelines.md` | Voice, paragraphs, headings, AI patterns | Before drafting |
+| `.claude/docs/writing_guidelines.md` | Voice, paragraphs, headings, emphasis (bold, `==` and `!!` highlights), AI patterns | Before drafting |
 | `.claude/docs/quality_criteria.md` | Specificity test, attribution, provenance, negative results, captions | Before drafting; when judging a claim |
 | `references/quality-flags.md` | Word tiers and how to flag | When reviewing word choice |
 | `.claude/docs/decisions_portfolio.md`, `decisions_rules.md` | Pre-made verdicts, verdict scale | When a "should we…" question comes up |
@@ -121,6 +121,14 @@ Record the answers and choices in `facts.md` under Page decisions.
 - Selection is the job. `facts.md` will hold more than the page can
   carry, and a fact being true, interesting and confirmed is not a
   reason to include it. Expect to leave most of the file unused.
+- Add emphasis last, once the text is final. Use the rules in
+  "Emphasis: bold and highlights" in `writing_guidelines.md`:
+  - `==grey==` marks the skeleton of a long or dense section;
+  - `!!accent!!` marks the one thing a section must not lose;
+  - bold marks one claim per paragraph.
+
+  Emphasis helps a skimmer through text that has to be long. It doesn't
+  excuse text that could be shorter.
 - Mark missing facts `[GAP: …]`. Before asking the designer, search
   `notes.md` for the answer; if found, propose it and record it in
   `facts.md` once confirmed.

@@ -25,6 +25,10 @@ captions and alt text. Treat it as a ceiling, not a quota to fill.
 - **A list is a list.** Three or more parallel items become bullets, one
   line each — never a semicolon chain inside a sentence. Bullets are
   what makes a decision scannable.
+- **Emphasis follows `writing_guidelines.md`** ("Emphasis: bold and
+  highlights"): `==grey==` for the scanning skeleton of long text,
+  `!!accent!!` for at most one must-see phrase per section, bold for at
+  most one claim per paragraph.
 - **Anything one section promises, another keeps.** If Research says a
   finding shaped a decision, that decision appears in Solution.
 
@@ -199,6 +203,8 @@ in `examples.md`:
 - Framework tutorial: explaining Double Diamond, agile cadence, or a
   canvas instead of showing decisions.
 - Volume-of-work numbers presented as impact.
-- Bold in every sentence — bold at most one claim per paragraph.
+- Bold in every sentence — bold at most one claim per paragraph. The
+  same failure with highlights: an accent in every section, or grey
+  highlights scattered with no parallel structure.
 - "I" in the title, "we" everywhere in the body: attribution per
   `quality_criteria.md`, checked by the fact-checker.

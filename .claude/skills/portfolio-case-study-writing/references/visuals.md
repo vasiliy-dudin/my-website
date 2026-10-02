@@ -98,7 +98,7 @@ Permitted types, and nothing else:
 Never a callout for: the decision itself (that is the H3), the
 trade-off (that is a sentence in the card), a metric (that is the
 `ImpactRow`), a summary of the section, or anything already emphasised
-in bold.
+in bold or a highlight.
 
 Budget: at most one per section and three per page, never two in a row.
 Two callouts near each other cancel out — the reason bold in every
