@@ -47,20 +47,22 @@
 
 	// Header info blocks
 	&__info-grid
-		display: grid
-		grid-template-columns: 1fr
+		display: flex
+		flex-wrap: wrap
 		gap: 8px
-		@include media(md)
-			grid-template-columns: repeat(2, 1fr)
 
 	&__info
+		flex: 1 1 100%
 		padding: 16px
 		border-radius: $radius--M
 		background: $color__gray-800
 
+		@include media(md)
+			flex: 1 1 calc(50% - 4px)
+
 		&.--wide
 			@include media(md)
-				grid-column: 1 / -1
+				flex-basis: 100%
 
 	&__info__title
 		margin: 0 0 4px
