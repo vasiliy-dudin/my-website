@@ -7,3 +7,6 @@
 package-lock.json
 pnpm-lock.yaml
 .vercel
+.index-bg-src
+/_*
+.notes.md
