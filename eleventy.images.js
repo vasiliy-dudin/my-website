@@ -11,6 +11,11 @@ const IMAGE_CONFIG = {
 	avifEffort: 6
 };
 
+const SHARP_AVIF_OPTIONS = {
+	quality: IMAGE_CONFIG.avifQuality,
+	effort: IMAGE_CONFIG.avifEffort
+};
+
 const LOADING_ATTRIBUTES = {
 	top: 'loading="eager" decoding="sync" fetchpriority="high"',
 	high: 'loading="eager" decoding="auto"',
@@ -31,7 +36,17 @@ function resolveImagePath(src, currentPagePath) {
 
 // Helper: Generate multiple image sizes
 function generateImageWidths(baseWidth) {
-	return [baseWidth, baseWidth * 1.25, baseWidth * 1.5, baseWidth * 2];
+	// floor matches the file names Eleventy Image produced for fractional widths before
+	return [1, 1.25, 1.5, 2].map(density => Math.floor(baseWidth * density));
+}
+
+// Helper: Escape a value for use inside a double-quoted HTML attribute
+function escapeAttribute(value) {
+	return String(value)
+		.replace(/&/g, "&amp;")
+		.replace(/"/g, "&quot;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;");
 }
 
 // Helper: Generate images with Eleventy Image
@@ -45,17 +60,17 @@ async function generateImages(srcAbsolute, widths) {
 			duration: "1y",
 			directory: ".cache"
 		},
-		sharpAvifOptions: {
-			quality: IMAGE_CONFIG.avifQuality,
-			effort: IMAGE_CONFIG.avifEffort
-		}
+		sharpAvifOptions: SHARP_AVIF_OPTIONS
 	});
 }
 
-// Helper: Build srcset attribute
+// Helper: Build srcset attribute from the sizes actually generated.
+// Eleventy Image skips widths larger than the source, so there may be fewer than 4.
 function buildSrcset(metadata) {
-	const images = Object.values(metadata)[0];
-	return `${images[1].url} 1.25x, ${images[2].url} 1.5x, ${images[3].url} 2x`;
+	const [base, ...larger] = Object.values(metadata)[0];
+	return larger
+		.map(image => `${image.url} ${+(image.width / base.width).toFixed(2)}x`)
+		.join(", ");
 }
 
 // Helper: Get loading attributes based on priority
@@ -112,12 +127,13 @@ export const imageShortcode = async function({src, className = "", alt, width, p
 		: className;
 
 	// Build img tag
-	const imgTag = `<img src="${mainImg.url}" srcset="${srcset}" width="${mainImg.width}" height="${mainImg.height}" class="${finalClass}" alt="${alt}" ${loadingAttrs}>`;
+	const srcsetAttr = srcset ? ` srcset="${srcset}"` : '';
+	const imgTag = `<img src="${mainImg.url}"${srcsetAttr} width="${mainImg.width}" height="${mainImg.height}" class="${finalClass}" alt="${escapeAttribute(alt)}" ${loadingAttrs}>`;
 
 	// Wrap in lightbox link if enabled
 	if (isLightboxEnabled) {
 		const caption = (lightboxCaption && lightboxCaption !== "undefined")
-			? ` data-caption="${lightboxCaption}"`
+			? ` data-caption="${escapeAttribute(lightboxCaption)}"`
 			: '';
 		return `<a href="${largeImg.url}" data-fancybox="${lightboxGroup}"${caption} onclick="plausible('Lightbox open', { props: { page: window.location.pathname }})">${imgTag}</a>`;
 	}
