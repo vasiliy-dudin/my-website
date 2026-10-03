@@ -141,9 +141,15 @@
 	gap: 8px
 	&:after
 		content: ''
+		flex-shrink: 0
 		width: 16px
 		height: 16px
 		display: block
-		background-image: url("../assets/external-link.svg")
-		background-size: contain
+		// Mask + currentColor so the icon follows the link colour, like the email-copy icon
+		background-color: currentColor
+		mask: url("../assets/external-link.svg") center / contain no-repeat
+		// No transition: the link colour changes instantly on hover, so the icon must too
+		opacity: 0.6
+	&:hover:after
+		opacity: 1
 
