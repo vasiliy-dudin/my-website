@@ -81,8 +81,9 @@ else's research and ran the survey to find out how widely it held.
 
 Rules for using this on the page:
 
-- Attribute it. "Another designer's interviews" or "interviews on an
-  earlier project" — never phrasing that reads as though I ran them.
+- Neutral attribution: "interviews on an earlier task". Do not mention
+  the other designer, and never use phrasing that reads as though I ran
+  them. `designer's decision in session`
 - No number. The original sessions were documented, but the designer is
   not going to retrieve them, so how many respondents said it is unknown
   and unknowable for this page.
@@ -489,6 +490,49 @@ feature failing.** `confirmed in session`
 
 ## Reflection notes
 
+From the designer, 4 October 2026, `confirmed in session`:
+
+- **Stopping was the right call.** The designer's own view: the referral
+  funnels were too long and slow, the result too unpredictable, and the
+  build was hard. Lesson the designer draws: be more critical, before
+  committing, of tasks that combine a long funnel with an expensive build.
+- **Round 1 usability sessions asked respondents how motivating the
+  reward was.** The designer does not treat those answers as
+  representative: motivation questions in a usability test are not.
+- **Test conditions vs real use.** The designer designed the round 1
+  tests carefully, yet in production few students clicked the Share
+  button that all 6 respondents had found. The designer's view: test
+  conditions, even with real users of the service, could not reproduce
+  real use. Keep this separate from the round 1 result itself (see
+  "Never write this on the page").
+
+Added 4 October 2026, `confirmed in session`:
+
+- Round 1 sessions asked respondents whether they noticed the Share
+  button. The designer does not see a mistake in the test design; the
+  lesson is a wish to try bringing tests closer to real use, not a
+  correction of an error.
+- The designer was in regular contact with the developers throughout.
+  The missing piece was a dedicated technical research task, which is the
+  product manager's and dev lead's call to schedule; the designer can only
+  propose it.
+- Why the two legacy-code issues were missed: nobody on the team realised
+  in time that extra states were needed, because of the legacy code and
+  because those states occur relatively rarely. The player is different:
+  a technical limitation nobody knew about in advance, not a missed
+  state. The page calls both "issues", not "constraints".
+- **Scope of the technical-research lesson:** only for large tasks that
+  span many pages and features on legacy code, not for every task that
+  touches legacy code.
+- **There were more than these two issues**; the designer does not want
+  to list them all. The point of the lesson is not that every state must
+  be foreseen — that is neither possible nor necessary — but that on
+  legacy code some of them were serious enough to need extra work from
+  the designer, the developers and sometimes other teams.
+- The long-funnel lesson: discuss the risks of high-risk or long-funnel
+  hypotheses with the product manager earlier and in more detail, which
+  might have shortened the time to test the hypothesis.
+
 From the page draft, all `from draft — unconfirmed`:
 
 - Assign technical discovery to developers at the start of legacy-code
@@ -647,8 +691,90 @@ alternative that put the whole funnel in bullets, which buried the scale.
   leaving 57 − 35 for the reader to compute.
 
 **Problem carries both levels of goal.** The business goal names the three
-parallel tasks in one clause; this case's own target of 50 purchases sits
-under it. Without that split, Outcome reads as a contradiction.
+parallel tasks without saying who owned which; this case's own target of
+50 purchases closes the hypothesis, as its success criterion. Without that
+split, Outcome reads as a contradiction.
+
+**Problem, hypothesis wording.** It echoes the business problem (referrals
+instead of paid marketing), not marketing language ("qualified leads").
+
+**"Paid marketing", not "paid channels"** (2 October 2026). The designer
+found "paid channels" unclear; it means paid customer acquisition. The
+hypothesis keeps "can … will" as a forward-looking statement.
+
+**The person who opens a shared link is a "friend", not a "colleague"**
+(3 October 2026). Students shared to friends, colleagues and social
+followers alike (`notes.md`), and the share modal itself says "For a
+friend". The hypothesis introduces them as "friends and colleagues"; from
+then on the page says "friend". The alt text quoting the Miro heading "How
+to engage colleagues" stays verbatim. Card headings are now `### Friends
+enter an email before the lecture plays`, `### A Share button over the
+video as it ends, added after launch` and `### A mini-course for the
+student, 15% off for the friend`.
+
+**The second-release entry point is described as a block over the video**
+in the last seconds of the lecture, holding a Share button and both
+rewards (3 October 2026), not just "a button in the player".
+
+**The Figma link sits at the top of Solution** as its own line, moved from
+under the hero (3 October 2026). Two placeholder tiles for short looping
+screencasts (student flow, friend flow) follow the intro bullets, in a
+`.mediaRow` block styled in `src/styles/pages/project_content.sass`.
+
+**The email-form card is not told as a dispute** (3 October 2026). The
+designer rejected "I argued against it": the page states the designer's
+concern (an extra step that could cost conversion) and the business
+condition (protecting paid content), without framing it as a fight lost.
+The opening paragraph must say plainly that the email form was the
+stakeholders' condition, so it never reads as the designer's idea.
+Heading now `### An email form, required to protect paid video`. The
+three-option list (public page / teaser / email) became one sentence about
+the teaser, since the other two options were already in the opening
+paragraph.
+
+**Card 2 heading is `### A second Share button, over the video as it
+ends`** (3 October 2026). "Added after launch" read as a fix for the
+designer's own miss; the second release was a normal iteration on
+post-launch analytics, so the heading names no release.
+Cards 2 and 3 were cut to two short paragraphs each. Removed from card 2:
+"The steps after the click … ruled out the modal and everything after it"
+(kept as "every step after the click was healthy"), and "The rethink cost a
+second design round on a task that had already shipped". Removed from card
+3: the alternatives list (points, cashback, mentor sessions, badges; the
+framing option), and the round 1 finding that 2 of 6 students struggled
+with the reward text.
+
+**Outcome cut to three bullets and one paragraph** (4 October 2026).
+Removed from the page, restorable from here: the 113 applications for
+free products; "The referral funnel is long, and optimising it stage by
+stage was costly"; "The effort went to more promising directions". The
+four stop reasons became one clause with three. The email-form card now
+names the stakeholders' reason (piracy of paid-course video).
+
+**Outcome H3 is `### The feature hit its target, the business goal did
+not`** (4 October 2026), replacing "Consequences". The legacy-code
+sentence moved from the rewards card to the end of Solution, after all
+cards, because it concerns archived pages and the in-player button.
+
+**Reflection, settled 4 October 2026: three "do differently" bullets.**
+(1) test results vs real use, framed as a method limit and a wish to try
+closer-to-real sessions, never as a mistake; (2) ask the product manager
+and dev lead for a technical research task on legacy-code tasks, making
+clear the designer did talk to developers; (3) discuss risks of high-risk,
+long-funnel hypotheses with the product manager earlier.
+Removed: the incentive bullet ("a usability test shows whether an
+incentive is understood…") — motivation questions were asked in the test
+and are not representative; and "Stopping was the right call…", which
+repeated Consequences.
+
+**My role: no stakeholder-negotiation bullet — recommended, awaiting the
+designer** (2 October 2026). The only negotiation on record is the email
+form, which was imposed over the designer's objection; see D2 and "Never
+write this on the page".
+
+**My role does not mention the email form.** The designer found the
+"pushed back, then designed it" bullet out of place there; the story
+lives in the Solution card.
 
 **The `callout` paired shortcode does exist** on the site, styled in
 `src/styles/components/callout.sass` and used on the Practicum page,
