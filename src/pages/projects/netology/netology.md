@@ -106,8 +106,6 @@ headerInfo:
 
 	*Both rewards named in the modal: a mini-course for the student, 15% off for the friend.*
 
-	Two legacy-code constraints turned up after handoff: archived lecture pages, and a player the developers could not modify. I designed the missing state and presented the in-player button another way.
-
 	### An email form, required to protect paid video
 
 	My design had no form. The Head of Product and the CPO worried that open links would let paid-course video be pirated, so they made an email form their condition for the task going ahead.
@@ -128,6 +126,8 @@ headerInfo:
 			{src: "images/solutions-1.jpg", label: "Second release", alt: "Design for the second release: a Share the video button on top of the player, with both rewards named beside it, the original Share button still under the video, and the share modal", caption: "Second release: the block over the video, a Share button with both rewards beside it. The button underneath stayed."},
 			{src: "images/ui-v1-1.png", label: "First release", alt: "Design for the first release: the player with a Share button underneath it, and the share modal with a Create a link button and the link limit", caption: "First release: the Share button sat under the player, away from where attention is during a lecture."}
 		] %}
+
+	Two legacy-code constraints turned up after handoff: archived lecture pages, and a player the developers could not modify. I designed the missing state and presented the in-player button another way.
 {% endprojectSection %}
 
 {% projectSection %}
@@ -146,7 +146,7 @@ headerInfo:
 
 	### Consequences
 	- !!The feature beat its target!! and stayed in the product.
-	- !!The business goal of a 25% referral share was still missed!!, even with the two sibling tasks.
+	- !!The business goal!! of a 25% referral share was still !!missed!!, even with the two sibling tasks.
 	- !!The product manager stopped investing in sharing features!!: its ceiling was low, its effect took months to read, and every change meant working around legacy code.
 {% endprojectSection %}
 
