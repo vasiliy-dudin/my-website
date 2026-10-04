@@ -110,7 +110,7 @@ headerInfo:
 
 	### An email form, required to protect paid video
 
-	My design had no form. The Head of Product and the CPO refused to let paid-course video be shared freely, and made an email form their condition for the task going ahead.
+	My design had no form. The Head of Product and the CPO worried that open links would let paid-course video be pirated, so they made an email form their condition for the task going ahead.
 
 	I saw the form as an extra step that could cost conversion, so I tested how friends reacted to it. 5 of 6 respondents took it calmly, and several had expected to be asked for an email. One said they would close the page.
 
@@ -140,19 +140,14 @@ headerInfo:
 		{% impact name="Registrations", valueOld="", valueNew="158", goodOrBad="neutral", goal="", mainOrNot="" %}
 	{% endImpactRow %}
 
-	- Measured at month five, the time the whole funnel needed to run. A protected referral code in each shared link flagged the visitor at registration, so a purchase counted even months later.
-	- The 4,618 shares brought 113 applications for free products and 158 registrations. 
-	- 35 paid registrations at once and 22 more converted out of the free cohort later.
+	- Measured five months after the second release, the time the whole funnel needed to run.
+	- Each shared link carried a referral code, so a friend who bought months later still counted.
+	- 35 of the 158 who registered paid straight away; 22 more bought later after starting with a free product.
 
 	### Consequences
-	The feature beat its target and stayed in the product. The business goal, measured after these numbers came in, fell short of 25% even with the two sibling tasks. The product manager stopped investing in sharing:
-
-	- Sharing has a limited ceiling.
-	- Its effect is slow to read.
-	- Every change meant working around legacy code.
-	- The referral funnel is long, and optimising it stage by stage was costly.
-
-	The effort went to more promising directions.
+	- !!The feature beat its target!! and stayed in the product.
+	- !!The business goal of a 25% referral share was still missed!!, even with the two sibling tasks.
+	- !!The product manager stopped investing in sharing features!!: its ceiling was low, its effect took months to read, and every change meant working around legacy code.
 {% endprojectSection %}
 
 {% projectSection %}
