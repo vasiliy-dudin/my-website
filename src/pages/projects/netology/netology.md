@@ -153,7 +153,7 @@ headerInfo:
 {% projectSection %}
 	## Reflection
 
-	- All 6 test respondents found the Share button, yet in real use few students clicked it. Next time I'd try to bring sessions closer to real viewing, though a usability test may never fully match it.
-	- On legacy-code tasks, I'd ask the product manager and dev lead for a technical research task before design is finished. Not every edge case can be foreseen, but here several needed extra work from me, the developers and other teams.
-	- On high-risk hypotheses with a long funnel, I'd discuss the risks with the product manager earlier and in more detail. Here a purchase could take five months to show up, and an earlier talk might have shortened the test.
+	- ==I'd try to bring usability test scenarios even closer to real usage==, though no test can fully match it. All 6 respondents found the Share button, yet in real use few students clicked it.
+	- ==I'd ask the product manager and dev lead for technical research before design is finished== when a task spans many pages and features built on legacy code. Not every edge case can be foreseen, but here several needed extra work from me, the developers and other teams.
+	- ==I'd discuss the risks with the product manager earlier and in more detail== when a hypothesis is high-risk or has a long funnel. Here a purchase could take five months to show up, and an earlier talk might have shortened the test.
 {% endprojectSection %}
