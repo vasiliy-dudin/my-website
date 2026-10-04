@@ -127,7 +127,7 @@ headerInfo:
 			{src: "images/ui-v1-1.png", label: "First release", alt: "Design for the first release: the player with a Share button underneath it, and the share modal with a Create a link button and the link limit", caption: "First release: the Share button sat under the player, away from where attention is during a lecture."}
 		] %}
 
-	Two legacy-code constraints turned up after handoff: archived lecture pages, and a player the developers could not modify. I designed the missing state and presented the in-player button another way.
+	Legacy code brought issues nobody on the team had foreseen, among them archived lecture pages and a player the developers could not modify. I designed the missing state and presented the in-player button another way.
 {% endprojectSection %}
 
 {% projectSection %}
@@ -153,7 +153,7 @@ headerInfo:
 {% projectSection %}
 	## Reflection
 
-	- Start legacy-code tasks with technical discovery by the developers, before design is finished. Both constraints here only came up after handoff, and each cost a rethink on a closed task.
-	- A usability test shows whether an incentive is understood, not whether it works. One respondent found the friend's discount beside the point, and only the release numbers settled that.
-	- Stopping was the right call even though the feature worked. Sharing could not close the business gap, and each further stage meant legacy-code work for an uncertain return.
+	- All 6 test respondents found the Share button, yet in real use few students clicked it. Next time I'd try to bring sessions closer to real viewing, though a usability test may never fully match it.
+	- On legacy-code tasks, I'd ask the product manager and dev lead for a technical research task before design is finished. Not every edge case can be foreseen, but here several needed extra work from me, the developers and other teams.
+	- On high-risk hypotheses with a long funnel, I'd discuss the risks with the product manager earlier and in more detail. Here a purchase could take five months to show up, and an earlier talk might have shortened the test.
 {% endprojectSection %}
