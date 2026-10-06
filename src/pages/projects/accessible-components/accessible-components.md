@@ -1,6 +1,8 @@
 ---
 title: Accessible Components MVP
 description: Components for developers  (open source)
+headerSeed: 23
+headerHues: [273, 68, 100]
 category:
 - UX Design
 - UI Design

@@ -1,6 +1,8 @@
 ---
 title: "[Draft] Data sample is too large, not enough sales"
 description: Semrush by Adobe (SaaS for Internet Marketers, B2B)
+headerSeed: 7
+headerHues: [294, 38]
 category:
   - UX Design
   - UX Research

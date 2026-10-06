@@ -1,0 +1,131 @@
+{#
+	Header background: a dark gradient with soft clouds of color on top, drawn as one SVG.
+
+	HOW IT WORKS
+	1. Base: a dark linear gradient from the first hue to the last one.
+	2. Clouds: one kind of clouds per hue. Each is a solid color cut out by noise,
+	   so the noise sets only the shape of the clouds, never their color.
+	   Every hue uses its own noise channel, so clouds of different hues lie in different places.
+	All colors get the same lightness and saturation from `look` below, only hues differ.
+
+	SETTINGS (front matter of each project)
+		headerHues: [256, 196, 163]   # 1–3 hues (0–360) from the cover, e.g. taken from oklch()
+		headerSeed: 2                 # any number, changes the shape of the clouds
+
+	An exception for one color is possible: a full color instead of a number,
+	e.g. headerHues: [256, "oklch(0.3 0.05 196)", 163]. It is used as is.
+
+	HOW TO CONTROL (in `look`, applies to all projects)
+	- Darker or lighter: baseLightness (gradient) and cloudLightness (clouds).
+	- Calmer or brighter colors: baseChroma and cloudChroma. Above ~0.1 dark yellows turn muddy.
+	- Subtler clouds: cloudOpacity.
+	- Size of clouds: cloudThreshold. Higher gives fewer and smaller clouds.
+	- Sharpness of cloud edges: cloudEdge. Smaller is sharper.
+	- Fewer random details: detail 1 (smooth shapes), 2 adds small ripples.
+	- Gradient direction: rotate() in gradientTransform.
+#}
+
+{% macro headerBackground(hues, seed) %}
+	{% set look = {
+		baseFrequency: "0.005 0.008",
+		baseLightness: 0.15,
+		baseChroma: 0.07,
+		cloudLightness: 0.30,
+		cloudChroma: 0.05,
+		cloudOpacity: 0.4,
+		cloudThreshold: 0.5,
+		cloudEdge: 0.1,
+		softness: "1 30",
+		detail: 2
+	} %}
+	{% set hues = (hues if hues and hues.length else [315, 227]) | batch(3) | first %}
+
+	{# Hue → color with the shared lightness and chroma; a full color string is kept as is #}
+	{% macro color(hue, lightness, chroma) %}{{ hue if hue is string else "oklch(" + lightness + " " + chroma + " " + hue + ")" }}{% endmacro %}
+
+	{# Cloud mask: alpha from one noise channel, 0 below cloudThreshold, 1 at cloudThreshold + cloudEdge #}
+	{% set slope = (1 / look.cloudEdge) | round(3) %}
+	{% set intercept = (-look.cloudThreshold / look.cloudEdge) | round(3) %}
+	{% set maskAlpha = [
+		slope + " 0 0 0 " + intercept,
+		"0 " + slope + " 0 0 " + intercept,
+		"0 0 " + slope + " 0 " + intercept
+	] %}
+
+	<svg
+		class="project-header-section__mesh"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 700 700"
+		width="700"
+		height="700"
+		preserveAspectRatio="xMidYMid slice"
+		aria-hidden="true"
+		focusable="false">
+		<defs>
+			<linearGradient
+				id="header-bg-gradient"
+				gradientTransform="rotate(124, 0.5, 0.5)"
+				x1="50%" y1="0%"
+				x2="50%" y2="100%">
+				<stop offset="0%" stop-color="{{ color(hues | first, look.baseLightness, look.baseChroma) }}"></stop>
+				<stop offset="100%" stop-color="{{ color(hues | last, look.baseLightness, look.baseChroma) }}"></stop>
+			</linearGradient>
+
+			{# sRGB on purpose: in linearRGB dark colors lose precision and clouds get dark outlines #}
+			<filter
+				id="header-bg-filter"
+				x="-20%" y="-20%"
+				width="140%" height="140%"
+				filterUnits="objectBoundingBox"
+				primitiveUnits="userSpaceOnUse"
+				color-interpolation-filters="sRGB">
+
+				<feTurbulence
+					result="noise"
+					type="fractalNoise"
+					baseFrequency= {{ look.baseFrequency }}
+					numOctaves="{{ look.detail }}"
+					seed="{{ seed | default(2) }}"
+					stitchTiles="stitch"
+					x="0%" y="0%" width="100%" height="100%"></feTurbulence>
+
+				<feGaussianBlur
+					in="noise" result="softNoise"
+					stdDeviation="{{ look.softness }}"
+					edgeMode="duplicate"
+					x="0%" y="0%" width="100%" height="100%"></feGaussianBlur>
+
+				{% for hue in hues %}
+					{# Cloud {{ loop.index }}: solid color, cut out by the noise mask #}
+					<feColorMatrix
+						in="softNoise" result="mask{{ loop.index }}"
+						type="matrix"
+						values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  {{ maskAlpha[loop.index0] }}"
+						x="0%" y="0%" width="100%" height="100%"></feColorMatrix>
+					<feFlood
+						result="flood{{ loop.index }}"
+						flood-color="{{ color(hue, look.cloudLightness, look.cloudChroma) }}"
+						flood-opacity="{{ look.cloudOpacity }}"
+						x="0%" y="0%" width="100%" height="100%"></feFlood>
+					<feComposite
+						in="flood{{ loop.index }}" in2="mask{{ loop.index }}" result="cloud{{ loop.index }}"
+						operator="in"
+						x="0%" y="0%" width="100%" height="100%"></feComposite>
+				{% endfor %}
+
+				{# Gradient at the bottom, clouds on top in the order of headerHues #}
+				<feMerge x="0%" y="0%" width="100%" height="100%">
+					<feMergeNode in="SourceGraphic"></feMergeNode>
+					{% for hue in hues %}
+						<feMergeNode in="cloud{{ loop.index }}"></feMergeNode>
+					{% endfor %}
+				</feMerge>
+			</filter>
+		</defs>
+
+		<rect
+			width="700" height="700"
+			fill="url(#header-bg-gradient)"
+			filter="url(#header-bg-filter)"></rect>
+	</svg>
+{% endmacro %}

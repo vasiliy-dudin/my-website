@@ -1,6 +1,8 @@
 ---
 title: Lenta, retail, 12M MAU
 description: 
+headerSeed: 1
+headerHues: [269]
 highlights:
   - Admin panel
   - Colours generator

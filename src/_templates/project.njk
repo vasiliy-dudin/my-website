@@ -3,11 +3,13 @@ layout: _base.njk
 ---
 
 {% macro headerInfoBlock(blockTitle, blockText) %}
-	<div class="project-header__info{{ ' --wide' if blockText | length > 60 }}">
+	<div class="project-header__info">
 		<h3 class="project-header__info__title">{{ blockTitle }}</h3>
 		<div class="project-header__info-text">{{ blockText | markdown | safe }}</div>
 	</div>
 {% endmacro %}
+
+{% from "header-background.njk" import headerBackground %}
 
 {% macro neighbours(where) %}
 	{# Neighbours #}
@@ -42,14 +44,16 @@ layout: _base.njk
 		
 		<div class="project-col-1">
 			<div class="project-header-section">
+				{{ headerBackground(headerHues, headerSeed) }}
 				<div class="container --project">
 					<header class="project-header" id="overview">
-						{% image src="cover-wide.jpg", className="project-header__img", alt="", width=920, priority="high" %}
 						<div class="project-header__main-description">
+							{% if description %}
+								<div class="project-header__description">{{ description }}</div>
+							{% endif %}
 							<div class="project-header__h1-row">
 								<h1 class="project-header__h1">{{ title }}</h1>
 							</div>
-							<div class="project-header__description">{{ description }}</div>
 							<div class="project-header__info-grid">
 								{% if category %}
 									{{ headerInfoBlock("Discipline", category | join(', ')) }}
@@ -63,6 +67,7 @@ layout: _base.njk
 							</div>
 							{{ neighbours() }}
 						</div>
+						{% image src="cover-wide.jpg", className="project-header__img", alt="", width=920, priority="high" %}
 					</header>
 				</div>
 			</div>

@@ -2,6 +2,8 @@
 title: "[Draft] High student acquisition costs"
 feature: "Useful content sharing"
 description: Netology (EdTech, B2C, B2B)
+headerSeed: 2
+headerHues: [163, 256]
 category:
   - Product Design
   - UX Research

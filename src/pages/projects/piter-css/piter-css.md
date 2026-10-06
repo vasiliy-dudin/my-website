@@ -1,6 +1,8 @@
 ---
 title: PiterCSS
 description: Frontend events website, open source
+headerSeed: 31
+headerHues: [311, 22, 93]
 category:
 - UI Design
 years: 2021

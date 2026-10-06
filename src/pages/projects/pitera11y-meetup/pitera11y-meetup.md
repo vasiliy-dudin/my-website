@@ -1,6 +1,8 @@
 ---
 title: Pitera11y Meetup
 description: Web accessibility meetup
+headerSeed: 42
+headerHues: [243, 177, 98]
 category:
 - Organising
 - Graphic Design

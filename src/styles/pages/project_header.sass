@@ -6,17 +6,50 @@
 
 
 .project-header-section
-	padding: 48px 0 56px
-	background: url(../assets/noise-2.png) repeat 0 0 / 150px, $color__gray-900
-	background-blend-mode: color-dodge
+	position: relative
+	isolation: isolate
+	overflow: hidden
+	padding: 48px 0 0
 	view-timeline-name: --project-header
 	view-timeline-axis: block
+
+	// Layers from bottom to top: mesh (SVG background), noise texture
+	&__bg
+		position: absolute
+		inset: 0
+		z-index: -3
+		width: 100%
+		height: 100%
+		object-fit: cover
+		filter: blur(40px)
+		transform: scale(1.3)
+
+	&::after,
+	&__mesh
+		content: ''
+		position: absolute
+		inset: 0
+		z-index: -1
+
+	// SVG background, see src/_includes/header-background.njk.
+	// Hues and seed are set per project in `headerHues` and `headerSeed` front matter.
+	&__mesh
+		width: 100%
+		height: 100%
+		//filter: grayscale(1) contrast(1.0) brightness(1.0)
+		//filter: contrast(0.5) brightness(0.4)
+
+	&::after
+		background: url(../assets/noise-2.png) repeat 0 0 / 50px
+		mix-blend-mode: hard-light
 
 .project-header
 	$color: $color__gray-200
 
 	display: grid
-	gap: 16px
+	gap: 32px
+	@include media(md)
+		gap: 40px
 	scroll-margin-top: 400px
 	color: $color
 	z-index: 1
@@ -30,6 +63,12 @@
 		gap: 8px
 		line-height: 1.4
 
+	&__description
+		color: $color__green-bright-100
+		font-size: $font-size-sm
+		font-weight: 600
+		letter-spacing: 0.06em
+
 	&__h1
 		margin: 0
 		color: $color
@@ -37,7 +76,8 @@
 		@extend .img-fluid
 		display: block
 		width: 100%
-		border-radius: $radius--XL
+		// Sits flush with the bottom edge of the section
+		border-radius: $radius--XL $radius--XL 0 0
 	
 	&__h1-row
 		display: contents
@@ -45,34 +85,33 @@
 			display: flex
 			justify-content: space-between
 
-	// Header info blocks
+	// Header info rows: title on the left, text on the right
 	&__info-grid
-		display: flex
-		flex-wrap: wrap
-		gap: 8px
+		margin-top: 16px
+		border-bottom: 1px solid rgba(#ffffff, 0.12)
 
 	&__info
-		flex: 1 1 100%
-		padding: 16px
-		border-radius: $radius--M
-		background: $color__gray-800
+		display: grid
+		gap: 4px
+		padding: 12px 0
+		border-top: 1px solid rgba(#ffffff, 0.12)
 
 		@include media(md)
-			flex: 1 1 calc(50% - 4px)
-
-		&.--wide
-			@include media(md)
-				flex-basis: 100%
+			grid-template-columns: 200px 1fr
+			gap: 24px
 
 	&__info__title
-		margin: 0 0 4px
-		font-size: $font-size-h4
-		color: $color
+		margin: 0
+		padding-top: 0.2em
+		font-size: $font-size-xs
+		font-weight: 600
+		letter-spacing: 0.08em
+		text-transform: uppercase
+		color: $color__gray-400
 
-	&__info__text
-		font-size: $font-size-sm
-		line-height: 1.4
-		color: $color__gray-300
+	&__info-text
+		line-height: 1.5
+		color: $color
 
 		p
 			margin: 0

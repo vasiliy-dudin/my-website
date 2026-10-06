@@ -1,6 +1,8 @@
 ---
 title: Difficult onboarding, product scaling issues
 description: "Yandex Practicum, EdTech"
+headerSeed: 11
+headerHues: [98]
 category:
   - Product Design
 years: Feb 2022, 4 weeks

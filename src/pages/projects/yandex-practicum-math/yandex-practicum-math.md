@@ -1,6 +1,8 @@
 ---
 title: Yandex Practicum, EdTech
 description: 
+headerSeed: 56
+headerHues: [98]
 highlights:
   - Lesson annotations and drawing, learning journey
   - Dashboards

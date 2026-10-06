@@ -1,6 +1,8 @@
 ---
 title: UX Knowledge Base
 description: Knowledge base about designing digital products and services 
+headerSeed: 15
+headerHues: [286, 288, 25]
 category:
 - Content
 - Development
