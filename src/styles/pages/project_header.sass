@@ -1,5 +1,6 @@
 @use '../variables' as *
 @use "../mixins" as *
+@use "../noise" as *
 @use 'sass:color'
 @use "../components/global" as *
 @use "../components/images" as *
@@ -40,7 +41,7 @@
 		//filter: contrast(0.5) brightness(0.4)
 
 	&::after
-		background: url(../assets/noise-2.png) repeat 0 0 / 50px
+		background: noise(dark) repeat
 		mix-blend-mode: hard-light
 
 .project-header

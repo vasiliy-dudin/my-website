@@ -1,5 +1,6 @@
 @use "../variables" as *
 @use "../mixins" as *
+@use "../noise" as *
 @use "../components/global" as *
 
 
@@ -183,7 +184,7 @@
 		margin-bottom: 12px
 		clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%)
 		transform: rotate(30deg)
-		background: linear-gradient(270deg, $accent-primary 0%), url(../assets/noise.png) 0 0 / 50px
+		background: linear-gradient(270deg, $accent-primary 0%), noise(accent) repeat
 		background-blend-mode: darken
 
 	&__title

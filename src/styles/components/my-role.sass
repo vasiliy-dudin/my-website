@@ -1,6 +1,7 @@
 // My Role shortcode
 
 @use "../variables" as *
+@use "../noise" as *
 
 .my-role
 	&__team
@@ -25,7 +26,7 @@
 		align-items: center
 		justify-content: center
 		color: $surface-primary--dark-4
-		background: url(../assets/noise-2.png) repeat 0 0 / 50px
+		background: noise(light) repeat
 		border-radius: 50%
 		box-shadow: 2px 2px $surface-primary--dark-1
 		overflow: hidden
@@ -60,7 +61,7 @@
 				content: ''
 				position: absolute
 				inset: 0
-				background: url(../assets/noise-2.png) repeat 0 0 / 50px
+				background: noise(dark) repeat
 				mix-blend-mode: plus-lighter
 
 	&__label

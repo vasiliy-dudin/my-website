@@ -1,0 +1,62 @@
+@use 'sass:map'
+@use 'sass:string'
+
+// Grain like on photo film, generated as an SVG and used as a background image: `background: noise(light) repeat`.
+// The grain is separate points, lighter or darker than mid gray. On its own it tints the surface gray;
+// with `mix-blend-mode: hard-light` or `overlay` it lightens and darkens what lies under it.
+//   baseFrequency: grain size, higher is finer. From about 1.3 every pixel is its own point
+//   numOctaves: level of detail
+//   contrast: how far the points go from mid gray. 1 is soft, 3 is harsh
+//   seed: any number, changes the pattern
+//   opacity: strength of the grain
+$noise-presets: (
+	light: (
+		baseFrequency: 2.3,
+		numOctaves: 2,
+		contrast: 1.5,
+		seed: 15,
+		opacity: 0.09
+	),
+	dark: (
+		baseFrequency: 1.3,
+		numOctaves: 2,
+		contrast: 2.0,
+		seed: 15,
+		opacity: 0.07
+	),
+	accent: (
+		baseFrequency: 1.3,
+		numOctaves: 2,
+		contrast: 2.3,
+		seed: 15,
+		opacity: 0.18
+	)
+)
+
+// Side of the square tile in px. The tile repeats without seams.
+$noise-tile-size: 200
+$noise-mid-gray: 0.5
+
+@function -replace-all($string, $search, $replacement)
+	$index: string.index($string, $search)
+	@if not $index
+		@return $string
+	$rest: string.slice($string, $index + string.length($search))
+	@return string.slice($string, 1, $index - 1) + $replacement + -replace-all($rest, $search, $replacement)
+
+/// Returns a `url()` with the SVG noise of the given preset from `$noise-presets`.
+@function noise($preset)
+	$settings: map.get($noise-presets, $preset)
+	@if not $settings
+		@error "Unknown noise preset `#{$preset}`. Available: #{map.keys($noise-presets)}"
+	$size: $noise-tile-size
+	$contrast: map.get($settings, contrast)
+	$turbulence: "<feTurbulence type='fractalNoise' baseFrequency='#{map.get($settings, baseFrequency)}' numOctaves='#{map.get($settings, numOctaves)}' seed='#{map.get($settings, seed)}' stitchTiles='stitch'/>"
+	// One channel of the matrix: noise stretched by `contrast` around mid gray
+	$channel: "#{$contrast} 0 0 0 #{(1 - $contrast) * $noise-mid-gray}"
+	$gray: "<feColorMatrix type='matrix' values='#{$channel} #{$channel} #{$channel} 0 0 0 0 1'/>"
+	// sRGB on purpose: in linearRGB mid gray comes out light and the grain only lightens
+	$filter: "<filter id='noise' filterUnits='userSpaceOnUse' x='0' y='0' width='#{$size}' height='#{$size}' color-interpolation-filters='sRGB'>#{$turbulence}#{$gray}</filter>"
+	$svg: "<svg xmlns='http://www.w3.org/2000/svg' width='#{$size}' height='#{$size}'>#{$filter}<rect width='#{$size}' height='#{$size}' filter='url(#noise)' opacity='#{map.get($settings, opacity)}'/></svg>"
+	// `#` would start a URL fragment and cut the SVG off
+	@return url("data:image/svg+xml,#{-replace-all($svg, '#', '%23')}")
