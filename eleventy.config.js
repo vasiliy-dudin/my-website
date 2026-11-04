@@ -3,66 +3,48 @@ import pluginImages from "./eleventy.images.js";
 import pluginShortcodes from "./eleventy.shortcodes.js";
 import pluginFilters from "./eleventy.filters.js";
 import tableOfContent from "@uncenter/eleventy-plugin-toc";
+import { md } from "./eleventy.markdown.js";
+
+const PROJECTS_GLOB = "src/pages/projects/**/*.md";
+const PROJECT_TYPES = {
+	caseStudy: "case-study",
+	pet: "pet",
+	screenshots: "screenshots",
+};
+
+/** Returns true unless the item is a draft in a production build. */
+function isNotDraft(item) {
+	return process.env.ELEVENTY_ENV !== "production" || !item.data.draft;
+}
+
+/** Returns enabled, non-draft projects of the given type, sorted by `order`. */
+function getProjectsByType(collection, type) {
+	return collection.getFilteredByGlob(PROJECTS_GLOB)
+		.filter((item) => item.data.type === type && item.data.enabled)
+		.filter(isNotDraft)
+		.sort((a, b) => a.data.order - b.data.order);
+}
 
 export default function(config) {
 	config.addDataExtension("yaml", contents => load(contents));
 	config.addGlobalData("env", process.env.ELEVENTY_ENV);
+	config.setLibrary("md", md);
 
 	//////////// Collections
-	const isNotDraft = item =>
-		process.env.ELEVENTY_ENV !== 'production' || !item.data.draft;
-
-	config.addCollection('caseStudyProjects', (collection) => {
-		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
-		.filter((item) =>
-			item.data.type === "case-study" &&
-			item.data.enabled
-		)
-		.filter(isNotDraft)
-		.sort((a, b) => a.data.order - b.data.order);
-	});
-	config.addCollection('petProjects', (collection) => {
-		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) =>
-				item.data.type === "pet" &&
-				item.data.enabled
-			)
-			.filter(isNotDraft)
-			.sort((a, b) => a.data.order - b.data.order);
-	});
-	config.addCollection('screenshotsProjects', (collection) => {
-		return collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) =>
-				item.data.type === "screenshots" &&
-				item.data.enabled
-			)
-			.filter(isNotDraft)
-			.sort((a, b) => a.data.order - b.data.order);
-	});
-	config.addCollection('allProjects', (collection) => {
-		const caseStudyProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) =>
-				item.data.type === "case-study" &&
-				item.data.enabled
-			)
-			.filter(isNotDraft)
-			.sort((a, b) => a.data.order - b.data.order);
-		const petProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) =>
-				item.data.type === "pet" &&
-				item.data.enabled
-			)
-			.filter(isNotDraft)
-			.sort((a, b) => a.data.order - b.data.order);
-		const screenshotsProjects = collection.getFilteredByGlob('src/pages/projects/**/*.md')
-			.filter((item) =>
-				item.data.type === "screenshots" &&
-				item.data.enabled
-			)
-			.filter(isNotDraft)
-			.sort((a, b) => a.data.order - b.data.order);
-		return [...caseStudyProjects, ...screenshotsProjects, ...petProjects];
-	});
+	config.addCollection('caseStudyProjects', (collection) =>
+		getProjectsByType(collection, PROJECT_TYPES.caseStudy)
+	);
+	config.addCollection('petProjects', (collection) =>
+		getProjectsByType(collection, PROJECT_TYPES.pet)
+	);
+	config.addCollection('screenshotsProjects', (collection) =>
+		getProjectsByType(collection, PROJECT_TYPES.screenshots)
+	);
+	config.addCollection('allProjects', (collection) => [
+		...getProjectsByType(collection, PROJECT_TYPES.caseStudy),
+		...getProjectsByType(collection, PROJECT_TYPES.screenshots),
+		...getProjectsByType(collection, PROJECT_TYPES.pet),
+	]);
 
 	/////////// Plugins
 	config.addPlugin(tableOfContent, {
@@ -82,8 +64,11 @@ export default function(config) {
 	config.addPassthroughCopy("src/fonts");
 	config.addPassthroughCopy("src/assets/**/*");
 	config.addPassthroughCopy("src/*.txt");
-	config.addWatchTarget("./src/styles/**/*");
-	config.addWatchTarget("./src/pages/**/*");
+	// Sass and Rollup write straight to dist, so reload the browser on their
+	// output instead of rebuilding Eleventy while they may still be writing
+	config.setServerOptions({
+		watch: ["dist/styles/**/*.css", "dist/js/**/*.js"],
+	});
 
 	return {
 		dir: {
@@ -93,10 +78,7 @@ export default function(config) {
 			layouts: "_templates",
 			data: "_data",
 		},
-		dataTemplateEngine: "njk",
 		markdownTemplateEngine: "njk",
-		htmlTemplateEngine: "njk",
-		passthroughFileCopy: true,
 		templateFormats: [
 			"md",
 			"njk",

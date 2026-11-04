@@ -1,13 +1,10 @@
 import { fileURLToPath } from 'node:url';
-import { dirname } from 'node:path';
-import markdownIt from "markdown-it";
-import markdownItAnchor from "markdown-it-anchor";
-import fsExtra from "fs-extra";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import { imageShortcode } from "./eleventy.images.js";
-import { addMarkPlugins } from "./eleventy.markdownMarks.js";
+import { md } from "./eleventy.markdown.js";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Rendered width of a carousel switcher thumbnail
 const CAROUSEL_THUMB_WIDTH = 180;
@@ -26,15 +23,6 @@ function escapeHtml(value) {
 }
 
 export default config => {
-	const md = markdownIt({
-		html: true,
-		breaks: true,
-		linkify: true
-	}).use(markdownItAnchor);
-	addMarkPlugins(md);
-	config.setLibrary("md", md);
-
-
 	// MD in NJK
 	config.addPairedShortcode("md", (content) => {
 		return md.render(content.replace(/^\s+/gm, ''));
@@ -127,7 +115,7 @@ export default config => {
 				} else {
 					// Read SVG file content and inline it
 					const svgPath = path.join(__dirname, 'src', 'assets', `my-role-${icon}.svg`);
-					let svgContent = fsExtra.readFileSync(svgPath, 'utf8');
+					let svgContent = fs.readFileSync(svgPath, 'utf8');
 					// Clean up the SVG content for inline use
 					svgContent = svgContent.replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
 					iconContent = svgContent;

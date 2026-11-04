@@ -1,8 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
-import markdownIt from "markdown-it";
-import { addMarkPlugins } from "./eleventy.markdownMarks.js";
+import { md } from "./eleventy.markdown.js";
 
 export default config => {
 
@@ -13,7 +12,7 @@ export default config => {
 			return url;
 		}
 
-		const filePath = path.join(config.dir.output, url);
+		const filePath = path.join(config.directories.output, url);
 		if (!assetHashes[url]) {
 			const fileBuffer = fs.readFileSync(filePath);
 			const hashSum = crypto.createHash("md5");
@@ -24,12 +23,6 @@ export default config => {
 		return `${url}?v=${assetHashes[url]}`;
 	});
 
-	const md = markdownIt({
-		html: true,
-		breaks: true,
-		linkify: true
-	});
-	addMarkPlugins(md);
 	config.addFilter("markdown", (content) => {
 		if (!content) return '';
 		const stringContent = String(content);
