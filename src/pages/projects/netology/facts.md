@@ -436,6 +436,28 @@ This is why the month-five measurement window is the honest one: the
 tracking supports delayed purchases, so reading the funnel earlier would
 have undercounted.
 
+**Who made the 57 purchases.** 35 were new users who paid as they
+enrolled, registering in the course of buying: 1 in 4 of the 141 who
+enrolled. The other 22 bought later, after enrolling on a free course.
+`confirmed in session` The designer raised in passing that some buyers
+could in theory be long-registered users, then stated that the 22 came
+from free enrolments; the page follows that.
+
+**What "registrations" means.** New users who joined the platform after
+arriving through a shared link. Registering is a separate action from
+leaving an email on the public lecture page; how many visitors left an
+email is not given. The page must not let "registrations" read as "passed
+the email form". `confirmed in session`
+
+**What was bought.** Not only full courses of 4 months to 2 years: some
+purchases were shorter paid products, though none as short as a two-day
+course. The page must not say every purchase was a 4-month-plus course.
+`confirmed in session`
+
+**Where the target of 50 came from: not recorded.** The designer does not
+remember who set it or on what basis. The page cannot argue the target's
+size. `confirmed in session`
+
 Short name for the page and the `impact` tile, chosen by the designer:
 **"Paid purchases from shared lectures"**. `confirmed in session`
 
@@ -449,11 +471,11 @@ them as met or missed. `confirmed in session`
 | Shares | 4,618 | A share counts when the student copied the link or used one of the social-network buttons |
 | Views of the public lecture page | 7,243 | From 5,586 unique new external visitors |
 | Applications for free products | 113 | Some of these users were already registered on the platform |
-| Registrations | 158 | 35 paid, 106 free, 17 registered without taking a product. Part of the free 106 converted to paid later |
+| Registrations | 158 | New users who joined via a shared link: 35 paid, 106 free, 17 registered without taking a product (the 17 confirmed in session) |
+| Enrolments, free and paid | 141 | 35 paid + 106 free, out of the 158. This is the figure the page shows, not the 158: "registrations" read as "left an email" |
 
-The 158 and the 57 are consistent: 35 paid at sign-up, and later
-conversions out of the free cohort account for the rest. `confirmed in
-session`
+How the 158 relate to the 57: 35 paid at sign-up, and 22 of the free
+enrolments bought later. See "Who made the 57 purchases".
 
 ### Business goal — not reached
 
@@ -751,8 +773,20 @@ stage was costly"; "The effort went to more promising directions". The
 four stop reasons became one clause with three. The email-form card now
 names the stakeholders' reason (piracy of paid-course video).
 
-**Outcome H3 is `### The feature hit its target, the business goal did
-not`** (4 October 2026), replacing "Consequences". The legacy-code
+**Outcome H3 is `### The feature beat its target, sharing as a whole fell
+short`** (4 November 2026), replacing "Consequences". It contrasts two
+subjects, this feature and sharing as a whole, so the stop never reads as
+a verdict on this feature. Under it, two bullets: the feature stayed but
+all three sharing tasks together left referral share below 25%; so the
+product manager stopped investing in sharing, with the reasons (results
+slow to read, legacy code). "Its ceiling was low" is gone: it read as a
+judgement on the feature. The one `!!accent!!` in Outcome sits on "1 in 4
+friends who enrolled paid straight away" (35 of 141), the only on-page
+answer to a low-bar reading of the 50 target; the same bullet keeps the
+22 who bought later after a free course. "1 in 4", not "25%", so it never
+collides with the 25% referral goal. The fourth tile shows 141 "Free and
+paid enrolments", not 158 "Registrations", which read as "left an email".
+The legacy-code
 sentence moved from the rewards card to the end of Solution, after all
 cards, because it concerns archived pages and the in-player button.
 
@@ -821,3 +855,6 @@ uses it yet.
 - The gap between the two releases: not recorded. See Context.
 - How purchases were attributed to shared links: a protected referral
   code and a registration flag. See Metrics.
+- Where the target of 50 purchases came from: not recorded. See Metrics.
+- Where the 57 purchases came from: 35 paid on enrolment, 22 bought
+  later after a free course. See Metrics.

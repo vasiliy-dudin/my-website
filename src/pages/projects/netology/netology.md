@@ -137,19 +137,18 @@ headerInfo:
 
 	{% ImpactRow %}
 		{% impact name="Paid purchases via shared lectures", valueOld="", valueNew="57", goodOrBad="good", goal="50", mainOrNot="main" %}
+		{% impact name="Free and paid enrolments", valueOld="", valueNew="141", goodOrBad="neutral", goal="", mainOrNot="" %}
 		{% impact name="Shares by students", valueOld="", valueNew="4,618", goodOrBad="neutral", goal="", mainOrNot="" %}
 		{% impact name="New visitors to the shared page", valueOld="", valueNew="5,586", goodOrBad="neutral", goal="", mainOrNot="" %}
-		{% impact name="Registrations", valueOld="", valueNew="158", goodOrBad="neutral", goal="", mainOrNot="" %}
 	{% endImpactRow %}
 
+	- !!35 friends paid as they enrolled!!, and 22 more bought later, after starting with a free course.
 	- Measured five months after the second release, the time the whole funnel needed to run.
 	- Each shared link carried a referral code, so a friend who bought months later still counted.
-	- 35 of the 158 who registered paid straight away; 22 more bought later after starting with a free product.
 
-	### Consequences
-	- !!The feature beat its target!! and stayed in the product.
-	- !!The business goal!! of a 25% referral share was still !!missed!!, even with the two sibling tasks.
-	- !!The product manager stopped investing in sharing features!!: its ceiling was low, its effect took months to read, and every change meant working around legacy code.
+	### The feature beat its target, sharing as a whole fell short
+	- The feature stayed in the product, but all three sharing tasks together still left referral share below 25%.
+	- So the product manager stopped investing in sharing: results took months to read, and every change meant working around legacy code.
 {% endprojectSection %}
 
 {% projectSection %}
