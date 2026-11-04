@@ -87,7 +87,13 @@
 	gap: 8px
 	padding: 24px
 	border-radius: $radius--XL
-	outline-offset: -3px
+	outline-offset: -2px
+	// Wraps so the label drops below a long value on narrow tiles instead of squeezing it
+	&__header
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		gap: 12px
 	&__values
 		font-size: $font-size-xl
 		font-weight: 900
@@ -101,7 +107,8 @@
 	&.--good &__values
 		color: $color__green-bright-300
 	&.--good.--main // Main metric
-		outline: 3px solid $color__green-bright-200
+		outline: 2px solid $color__green-bright-200
+		box-shadow: 0 0 24px rgba($color__green-bright-200, 0.5)
 
 	&.--bad
 		background: noise(light) repeat, linear-gradient(314deg, rgba(255, 255, 255, 0) 65%, $color__yellow-100 100%) top left / 70px 70px no-repeat;
@@ -109,7 +116,8 @@
 	&.--bad &__values
 		color: $color__yellow-300
 	&.--bad.--main // Main metric
-		outline: 3px solid $color__yellow-200
+		outline: 2px solid $color__yellow-200
+		box-shadow: 0 0 24px rgba($color__yellow-300, 0.5)
 
 	// Results with no target set: never coloured as met or missed
 	&.--neutral
@@ -123,9 +131,20 @@
 		line-height: 1.1
 
 	&__mainLabel
+		padding: 4px 10px
+		border: 1px solid
+		border-radius: $radius--S
 		font-size: $font-size-sm
 		line-height: 1.1
+		white-space: nowrap
+
+	&.--good &__mainLabel
+		border-color: $color__green-bright-300
 		color: $color__green-bright-500
+
+	&.--bad &__mainLabel
+		border-color: $color__yellow-300
+		color: $color__yellow-500
 
 .project-section__highlights
 	display: block

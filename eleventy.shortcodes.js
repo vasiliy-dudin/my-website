@@ -53,12 +53,14 @@ export default config => {
 	config.addShortcode("impact", function(args) {
 		const impactHTML = [
 			`<div class="impact --${args.goodOrBad}${args.mainOrNot ? ` --${args.mainOrNot}` : ''}">`,
-				`<div class="impact__values">
-					${args.valueOld ? `<span class="impact__oneValue">${args.valueOld}</span> → ` : ''}<span class="impact__oneValue">${args.valueNew}</span>
-				</div>`,
-				args.goal ? `<div class="impact__goal">Goal: ${args.goal}</div>` : '',
+				`<div class="impact__header">`,
+					`<div class="impact__values">
+						${args.valueOld ? `<span class="impact__oneValue">${args.valueOld}</span> → ` : ''}<span class="impact__oneValue">${args.valueNew}</span>
+					</div>`,
+					args.mainOrNot === 'main' ? `<div class="impact__mainLabel">Main metric</div>` : '',
+				`</div>`,
 				args.name ? `<div class="impact__name">${args.name}</div>` : '',
-				args.mainOrNot === 'main' ? `<div class="impact__mainLabel">Main metric</div>` : '',
+				args.goal ? `<div class="impact__goal">Goal: ${args.goal}</div>` : '',
 			`</div>`
 		].filter(Boolean).join('');
 
