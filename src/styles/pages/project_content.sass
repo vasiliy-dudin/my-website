@@ -43,6 +43,18 @@
 	a[data-fancybox]:hover>img
 		border: 12px solid rgba($accent-primary, 60%)
 
+	// Small gap to the caption, large gap to the next block: the caption reads as part of its image
+	.figure
+		margin: 0 0 40px
+		a
+			display: block
+	.figure__caption
+		margin-top: 8px
+		text-align: center
+		font-size: $font-size-sm
+		font-style: italic
+		color: $color-text-desc
+
 // .project-video
 // 	+media-down(md)
 // 		position: relative

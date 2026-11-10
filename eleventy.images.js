@@ -97,8 +97,22 @@ function validateParams({src, alt, width, priority, lightboxWidth, lightbox}) {
 	return { largeSizeWidth, imagePriority, isLightboxEnabled };
 }
 
+/** Wraps an image in a Fancybox link; returns the link HTML. */
+function wrapInLightboxLink(imgTag, largeImageUrl, lightboxCaption, lightboxGroup) {
+	const captionAttr = (lightboxCaption && lightboxCaption !== "undefined")
+		? ` data-caption="${escapeAttribute(lightboxCaption)}"`
+		: '';
+	return `<a href="${largeImageUrl}" data-fancybox="${lightboxGroup}"${captionAttr} onclick="plausible('Lightbox open', { props: { page: window.location.pathname }})">${imgTag}</a>`;
+}
+
+/** Wraps image HTML in a figure with a visible caption; returns the figure HTML. */
+function wrapInFigure(imageHTML, caption) {
+	// Kept on one line: markdown-it ends an HTML block at the first blank line
+	return `<figure class="figure">${imageHTML}<figcaption class="figure__caption">${escapeAttribute(caption)}</figcaption></figure>`;
+}
+
 // Main shortcode function
-export const imageShortcode = async function({src, className = "", alt, width, priority = "high", lightbox, lightboxWidth, lightboxCaption, lightboxGroup = "lightbox"}) {
+export const imageShortcode = async function({src, className = "", alt, width, priority = "high", lightbox, lightboxWidth, lightboxCaption, lightboxGroup = "lightbox", caption}) {
 	// Validate and extract parameters
 	const { largeSizeWidth, imagePriority, isLightboxEnabled } = validateParams({
 		src, alt, width, priority, lightboxWidth, lightbox
@@ -130,15 +144,11 @@ export const imageShortcode = async function({src, className = "", alt, width, p
 	const srcsetAttr = srcset ? ` srcset="${srcset}"` : '';
 	const imgTag = `<img src="${mainImg.url}"${srcsetAttr} width="${mainImg.width}" height="${mainImg.height}" class="${finalClass}" alt="${escapeAttribute(alt)}" ${loadingAttrs}>`;
 
-	// Wrap in lightbox link if enabled
-	if (isLightboxEnabled) {
-		const caption = (lightboxCaption && lightboxCaption !== "undefined")
-			? ` data-caption="${escapeAttribute(lightboxCaption)}"`
-			: '';
-		return `<a href="${largeImg.url}" data-fancybox="${lightboxGroup}"${caption} onclick="plausible('Lightbox open', { props: { page: window.location.pathname }})">${imgTag}</a>`;
-	}
+	const imageHTML = isLightboxEnabled
+		? wrapInLightboxLink(imgTag, largeImg.url, lightboxCaption || caption, lightboxGroup)
+		: imgTag;
 
-	return imgTag;
+	return caption ? wrapInFigure(imageHTML, caption) : imageHTML;
 };
 
 export default config => {
