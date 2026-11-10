@@ -28,15 +28,15 @@
 {% macro headerBackground(hues, seed) %}
 	{% set look = {
 		baseFrequency: "0.005 0.008",
-		baseLightness: 0.15,
-		baseChroma: 0.15,
+		baseLightness: 0.10,
+		baseChroma: 0.1,
 		cloudLightness: 0.30,
-		cloudChroma: 0.05,
-		cloudOpacity: 0.4,
+		cloudChroma: 0.4,
+		cloudOpacity: 0.5,
 		cloudThreshold: 0.5,
-		cloudEdge: 0.1,
-		softness: "1 30",
-		detail: 2
+		cloudEdge: 0.2,
+		softness: "150 50",
+		detail: 5
 	} %}
 	{% set hues = (hues if hues and hues.length else [315, 227]) | batch(3) | first %}
 
