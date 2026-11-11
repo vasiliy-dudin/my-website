@@ -56,7 +56,7 @@ headerInfo:
 {% projectSection %}
 	## Discovery research
 
-	==I ran a Google Forms survey (1,083 responses)== and ==7 student interviews== to find out how many students would share material from their courses, and what would make them do it. The question came from interviews on an earlier task, where some students raised it unprompted.
+	I ran a Google Forms survey (1,083 responses) and 7 student interviews to find out how many students would share material from their courses, and what would make them do it. The question came from interviews on an earlier task, where some students raised it unprompted.
 
 	- !!57% of students said they would share learning content.!! Enough to justify building it.
 	- Students wanted something in return for sharing, which is why the final design includes a reward.
@@ -136,7 +136,7 @@ headerInfo:
 		{% impact name="New visitors to the shared page", valueOld="", valueNew="5,586", goodOrBad="neutral", goal="", mainOrNot="" %}
 	{% endImpactRow %}
 
-	- !!35 friends paid as they enrolled!!, and 22 more bought later, after starting with a free course.
+	- 35 friends paid as they enrolled, and 22 more bought later, after starting with a free course.
 	- Measured five months after the second release, the time the whole funnel needed to run.
 	- Each shared link carried a referral code, so a friend who bought months later still counted.
 
