@@ -1,6 +1,8 @@
 ---
 title: Difficult onboarding, product scaling issues
 description: "Yandex Practicum, EdTech"
+company: Yandex Practicum
+labels: [EdTech]
 headerSeed: 11
 headerHues: [98]
 category:

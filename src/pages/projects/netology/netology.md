@@ -2,6 +2,9 @@
 title: "[Draft] High student acquisition costs"
 feature: "Useful content sharing"
 description: Netology (EdTech, B2C, B2B)
+company: Netology
+labels: [EdTech, B2C, B2B]
+result: "57 purchases from shared lectures, 5,586 visitors"
 headerSeed: 2
 headerHues: [163, 256]
 category:

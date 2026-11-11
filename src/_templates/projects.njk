@@ -24,10 +24,24 @@ layout: _base.njk
 							{{ imageHtml | safe }}
 						{% endif %}
 						<div class="project-card__text">
+							{% if project.data.company %}
+								<div class="project-card__company">{{ project.data.company }}</div>
+							{% endif %}
 							<a class="project-card__link" href="{{ project.data.permalink }}">
 								{{ project.data.title }}
 							</a>
-							<div class="project-card__desc">{{ project.data.description }}</div>
+							{% if project.data.result %}
+								<div class="project-card__result">Outcome: {{ project.data.result }}</div>
+							{% endif %}
+							{% if project.data.labels %}
+								<ul class="tags project-card__labels" aria-label="Industry and audience">
+									{%- for label in project.data.labels -%}
+									<li class="tag">{{ label }}</li>
+									{%- endfor -%}
+								</ul>
+							{% elif project.data.description %}
+								<div class="project-card__desc">{{ project.data.description }}</div>
+							{% endif %}
 					{% if project.data.highlights %}
 					<ul class="project-card__highlights">
 						{%- for item in project.data.highlights -%}
