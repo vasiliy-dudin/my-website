@@ -83,7 +83,7 @@ headerInfo:
 {% projectSection %}
 	## Solution
 
-	[Final design in Figma](https://www.figma.com/design/PRRKLkvSCGa70cACuEOPGR/Netology--Useful-content-sharing?node-id=658-16327&p=f&t=xtCRNw9KjjQXQNwJ-11)
+	[Final design in Figma](https://www.figma.com/design/aWAk0AxAoUtzMxjsRZKevR/Netology--Useful-content-sharing)
 
 	- A student clicks Share under the video, or on the block that appears over the video as the lecture ends, and creates a link: 5 per course, 7 days each.
 	- They send the link to a friend or post it on social media.
