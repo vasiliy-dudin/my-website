@@ -151,7 +151,8 @@ students said. `confirmed in session`
   session`
 - Constraint involved: engineering — the player could not be modified, so
   the shipped button differs from the design (see Implementation).
-- Visual: `images/ui-v1-1.png` (v1), `images/solutions-1.jpg` (v2)
+- Visual: `images/video-page-before-after.png` (both releases, numbered),
+  `images/share-block-closeup.png` (second release)
 
 ### D2. Colleagues enter an email before watching a shared lecture
 
@@ -183,7 +184,8 @@ students said. `confirmed in session`
   was commercial, about theft of paid video, not legal. `confirmed in
   session`
 - Constraint involved: business (piracy of paid content)
-- Visual: `images/solutions-2.jpg`, `images/ideation-4.png`
+- Visual: `images/email-form-locked.png`, `images/wireframes-email-form.png`,
+  `images/user-flows.png`
 
 **Teacher royalties are a separate scope decision, not part of this one.**
 The sharing feature was simply not enabled for videos whose teachers are
@@ -208,7 +210,8 @@ scope call, and roughly what share of lectures it excluded?]
 - Who decided: the product manager and I agreed the values between us.
   `confirmed in session`
 - Constraint involved: business
-- Visual: share modal in `images/ui-v1-1.png`, `images/ideation-2.png`
+- Visual: share modal in `images/hero-share-modal.png` ("5 links left,
+  each works 7 days")
 
 ### D4. Rewards: a mini-course for the student, a 15% discount for the colleague
 
@@ -257,11 +260,8 @@ scope call, and roughly what share of lectures it excluded?]
   round 1, where 2 of 6 respondents misread it. That is evidence about the
   wording, not about the choice of reward. `confirmed in session`
 - **The colleague's discount was 15%, in both the first and the second
-  release.** `confirmed in session` Some images in the case folder show
-  10% (`ui-v1-1.png` in its second modal, `ui-v1-2.jpg` throughout).
-  Those are earlier design drafts, not what shipped. [GAP, non-blocking:
-  worth replacing or relabelling those images so the page and the
-  pictures agree.]
+  release.** `confirmed in session` The real drafts in the Process
+  carousel show 10%; that was the draft value, not what shipped.
 - Who decided: the ideas were mine, filtered with the product manager. The
   15% figure was not a design decision — the product manager worked out
   the economics, picked 15% as the optimal value and cleared it with
@@ -269,8 +269,8 @@ scope call, and roughly what share of lectures it excluded?]
   [GAP: who signed off the mini-course itself?]
 - Constraint involved: unit economics of the course, owned by the product
   manager.
-- Visual: `images/ideation-1.png` (the "How to motivate to share?"
-  cluster), `images/ideation-2.png`, `images/solutions-1.jpg`
+- Visual: `images/miro-motivation.png` (the "How to motivate to share?"
+  cluster)
 
 ### D5. The public lecture page is a reused page with a new top section
 
@@ -296,8 +296,8 @@ must say so.** `confirmed in session`
   session`
 - Who decided: the reuse and the replacement of the top section were
   mine. `confirmed in session`
-- Visual: `images/solutions-2.jpg`. The expired state of the same page
-  was shown in session as a screenshot but is **not** in the case folder.
+- Visual: `images/friend-page-new-vs-reused.png`. No design of the
+  earlier achievements page is available, so there is no before/after.
 
 ## Usability testing
 
@@ -567,33 +567,45 @@ From the page draft, all `from draft — unconfirmed`:
 
 ## Provenance of visuals
 
-Every image on the page is currently a Figma design, not a production
-screenshot: `all.jpg`, `ui-v1-1.png`, `ui-v1-2.jpg`, `solutions-1.jpg`,
-`solutions-2.jpg`, `main.png`, and the Miro artefacts `ideation-1.png`,
-`ideation-2.png`, `ideation-4.png`. `confirmed in session`
-`main.png` is the share modal design used on the page under the rewards
-decision.
+Every image on the page is a Figma design or a project artefact, not a
+production screenshot. Set in place on 6 November 2026, all composed on
+the "Portfolio exports" page of the Figma file:
+
+| File | Where on the page | Source |
+|---|---|---|
+| `cover-wide.jpg` (project folder) | Page header cover | Friend's public page: the new top section and the reused sections beside it. Frame `cover-wide`, PNG 2× saved as JPG |
+| `hero-share-modal.png` | Rewards card carousel, slide 1 | Share modal frame |
+| `user-flows.png` | Process carousel, slide 1 | User flows of the student and the friend, as activity diagrams with error states |
+| `wireframes-share-placement.png` | Process carousel, slide 2 | Real round-1 drafts, the first wireframes of the Share placement, with the designer's yellow notes; main labels in English |
+| `miro-ideas.png` | Process carousel, slide 3 | Ideation board, sticky-note clusters |
+| `wireframes-email-form.png` | Process carousel, slide 4 | Real email-form drafts, the first wireframes of the form; main labels in English |
+| `video-page-before-after.png` | Solution intro | Video page without and with both Share entry points, outlined |
+| `friend-page-new-vs-reused.png` | Solution intro, after the reuse sentence | Public lecture page: new top section vs reused sections |
+| `miro-motivation.png` | Rewards card carousel, slide 2 | "How to motivate to share?" cluster from the ideation board |
+| `email-form-locked.png` | Email form card | Public page with the form over the video |
+| `share-block-closeup.png` | Share button card | Player states from the design spec: the block collapsed 5 seconds before the end, opened on hover with both rewards, and open after the video ends; plus the block component. Raster, exported at 1× |
 
 Consequences for captions:
 
 - Captions must describe the design, not what a user saw in production.
-- `solutions-1.jpg` shows the designed in-player share button. What
+- `share-block-closeup.png` shows the designed in-player block. What
   shipped looks somewhat different, because the player could not be
   modified. The page should not imply the image is the live product.
 - The `image` shortcode has no caption parameter, so a caption under a
   single image renders as italic body text. The `carousel` shortcode does
   take captions per slide.
+- The real drafts show a 10% discount; that is the draft value and stays.
+  15% shipped in both releases.
+- Both draft slides are the first wireframes, not every option considered.
+  Their captions must say so in the first words ("First wireframes"). `confirmed in session`
+- If production screenshots or a screencast arrive, captions, alt text
+  and the design / production distinction need revisiting.
 
-**Every image now in the folder is a draft.** The designer intends to
-replace them, and the set may grow. Two consequences, both `confirmed in
-session`:
-
-- The 10% discount visible in `ui-v1-1.png` and `ui-v1-2.jpg` is a
-  leftover from an earlier draft. 15% shipped in both releases. The
-  images will be replaced rather than the page reworded.
-- When images are replaced or added, captions, alt text and the design /
-  production distinction all need revisiting. The same applies if
-  production screenshots or a screencast arrive.
+Images for the page are built from Figma file `GFjPtOgQx7DXjmFCYc7OCC`.
+The project's real drafts and wireframes, in Russian with the old surrounding
+components, are on page `358:87332` of the same file; the designer
+cleared them for use as they are, 10% draft discount included, and will
+swap components or redraw them in a later iteration.
 
 ## Never write this on the page
 
@@ -686,10 +698,10 @@ Around the cards:
 which have a why but no alternatives, trade-off or evidence; and the
 public lecture page (D5), which is a reuse decision.
 
-**Carousel order in card 2:** the shipped version 2 design is slide 1 and
-version 1 is slide 2, against chronological order, because the visuals
-rules forbid putting the shipped solution behind another slide. The chips
-are labelled "Version 2" and "Version 1".
+**Share button card visual (6 November 2026):** a single close-up of the
+block over the video, not a release carousel. Both releases are shown
+once, numbered, in the before/after image in the Solution intro, so the
+same page is not repeated three times.
 
 **Page length is over budget and the designer accepts it for now.** With
 the Solution section in place the page runs about 1,060 words of body
@@ -739,9 +751,9 @@ in the last seconds of the lecture, holding a Share button and both
 rewards (3 October 2026), not just "a button in the player".
 
 **The Figma link sits at the top of Solution** as its own line, moved from
-under the hero (3 October 2026). Two placeholder tiles for short looping
-screencasts (student flow, friend flow) follow the intro bullets, in a
-`.mediaRow` block styled in `src/styles/pages/project_content.sass`.
+under the hero (3 October 2026). The placeholder tiles for screencasts
+were replaced on 6 November 2026 by the before/after of the video page
+and the friend's page image; the `.mediaRow` style was removed.
 
 **The email-form card is not told as a dispute** (3 October 2026). The
 designer rejected "I argued against it": the page states the designer's
@@ -801,6 +813,24 @@ incentive is understood…") — motivation questions were asked in the test
 and are not representative; and "Stopping was the right call…", which
 repeated Consequences.
 
+**Images, settled 6 November 2026 (plan in progress).** All current
+images are replaced by images composed in a new "Portfolio exports" page
+of the Figma file (copies only; the designer allowed it). Hero: the page
+header cover (`cover-wide.jpg`) shows the friend's public page, from the
+designer's `cover-wide` frame (10 November 2026); the separate hero
+section with the share modal and the first Figma link is removed, and the
+Figma link in Solution stays. Never a collage of several unrelated
+frames. The share modal is slide 1 of a two-slide carousel in the
+rewards card, with the ideation stickies as slide 2, so the card leads
+with the shipped reward rather than the ideas behind it. Process carousel:
+real drafts and wireframes from page `358:87332`. A before/after of the
+student's video page goes in the Solution intro; no before/after for the
+friend's page, because no design of the earlier achievements page is
+available. The old image files
+are deleted once replaced. The Figma link on the page stays as it is
+until the designer changes it; ask before adding any link. Exact slot
+list still awaits the designer's approval.
+
 **My role: no stakeholder-negotiation bullet — recommended, awaiting the
 designer** (2 October 2026). The only negotiation on record is the email
 form, which was imposed over the designer's objection; see D2 and "Never
@@ -836,6 +866,11 @@ uses it yet.
 11. Who made the royalties scope call, and roughly what share of lectures
     it excluded.
 12. What COR stands for. It shows on the page as `COR [GAP: spell out]`.
+13. What the student sees when all 5 links in a course are used up.
+14. Which event gives the student the mini-course: the friend's sign-up,
+    enrolment or paid purchase.
+15. For an opened link, which check comes first: link expired (7 days) or
+    lecture archived. The activity diagram in FigJam assumes expiry first.
 
 ### Closed, do not ask again
 

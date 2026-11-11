@@ -23,12 +23,6 @@ headerInfo:
 ---
 
 {% projectSection %}
-	{% image src="images/all.jpg", className="", alt="Overview of the Figma file: the video page with the share flow, the social media post, and the public video page, zoomed in on the email form in front of the video", width=922, priority="high" %}
-	
-	[Final design in Figma](https://www.figma.com/design/PRRKLkvSCGa70cACuEOPGR/Netology--Useful-content-sharing?node-id=658-16327&p=f&t=xtCRNw9KjjQXQNwJ-11)
-{% endprojectSection %}
-
-{% projectSection %}
 	## My role
 	{% myRole team=[
 			{role: "Senior product designer", icon: "me"},
@@ -75,9 +69,11 @@ headerInfo:
 	- ==12 usability sessions== of 30–40 minutes before the first release, 6 per flow, using RITE: I fixed problems between sessions and checked the fixes with the next respondents. 6 more before the second release.
 	- Annotated the designs, wrote the handoff documentation and stayed with the developers through both builds.
 
-	{% carousel id="process", width=922, height=460, lightboxWidth=2400, chipsLabel="Process artefacts", slides=[
-			{src: "images/ideation-1.png", label: "Ideas", alt: "Miro ideation board with sticky-note clusters headed 'How to motivate to share?', 'How to engage colleagues' and 'Restrictions', above three draft user flow diagrams", caption: "Ideas clustered by question. The motivation cluster fed the reward decision in Solution."},
-			{src: "images/ideation-4.png", label: "User flows", alt: "Two user flow diagrams: a student sharing a video lecture, and a friend opening the shared link, with a highlighted group of three variant paths to reach the content", caption: "Three ways for the friend to reach the video. The email-form path shipped; why is in Solution."}
+	{% carousel id="process", width=922, height=524, lightboxWidth=2400, chipsLabel="Process artefacts", slides=[
+			{src: "images/user-flows.png", label: "User flows", alt: "Two activity diagrams with swimlanes. Student and system: the routes to Share, a check for links left, then copying the link or picking a network. Friend and system: opening the link, checks for an expired link or an archived lecture, and the email form with its error messages", caption: "Two flows: the student shares, the friend opens the link. Most error cases sit on the friend's side."},
+			{src: "images/wireframes-share-placement.png", label: "Placement wireframes", alt: "First wireframes of the Share entry point, in four groups: a button by the lecture title, a block above the video, a block below the video, and four layouts beside the lesson navigation. Yellow sticky notes hold my comments on the options", caption: "First wireframes of the Share entry point: by the title, beside the lesson navigation, above or below the video."},
+			{src: "images/miro-ideas.png", label: "Ideas", alt: "Sticky-note board grouped under pink headings: 'What can be shared?', 'How to motivate to share?', 'How to interest friends', 'Restrictions', 'When do we ask to share?', 'What does the friend see?', 'Questions', 'References' and 'Vision', with reference screenshots alongside", caption: "Ideas clustered by question. The motivation cluster fed the reward decision in Solution."},
+			{src: "images/wireframes-email-form.png", label: "Email form wireframes", alt: "First wireframes of the email form for the friend: a form in place of the video, a modal over a blurred page, a modal with a casual headline, and a modal naming the student who shared", caption: "First wireframes of the friend's email form: in place of the video, or in a modal over the page."}
 		] %}
 {% endprojectSection %}
 
@@ -91,10 +87,9 @@ headerInfo:
 	- The friend opens the public lecture page, leaves an email and watches the lecture.
 	This page reuses the sections of an earlier page for sharing student achievements, which had performed well there. I replaced the top section, with the video and the discount.
 
-	<div class="mediaRow">
-		<img src="https://placehold.co/600x375?text=Student+shares+a+lecture" width="600" height="375" alt="Placeholder for a short screencast of a student sharing a lecture">
-		<img src="https://placehold.co/600x375?text=Friend+opens+the+link" width="600" height="375" alt="Placeholder for a short screencast of a friend opening the shared link">
-	</div>
+	{% image src="images/video-page-before-after.png", className="", alt="The lecture page before the task and after both releases. After, both outlined: a Share button with a bonus label next to the lecture title, from the first release, and a Share the video button in the corner of the video, from the second", width=922, lightbox=true, lightboxWidth=2400, caption="Before the task and after both releases: the Share button by the title (first) and over the video (second)." %}
+
+	{% image src="images/friend-page-new-vs-reused.png", className="", alt="The friend's public lecture page. Left, the new top section: lecture title, a note that it comes from the Product Manager course, the video, and a block with the student's 15% gift and promo code. Right, the sections below it, reused from the achievements page: course catalogue, graduate stories, a callback form, how studying works, and questions and answers", width=922, lightbox=true, lightboxWidth=2400, caption="The friend's page: a new top section with the lecture and the discount, above reused sections." %}
 
 	### A mini-course for the student, 15% off for the friend
 
@@ -104,9 +99,10 @@ headerInfo:
 
 	I found reward options from competitors and products outside EdTech, then filtered them with the product manager. Pricier rewards failed the unit economics, and asking students to post in professional communities was far harder than asking them to send a link.
 
-	{% image src="images/main.png", className="", alt="The share modal design: For you, mini-course as a gift. For a friend, 15% discount on your first purchase. Below them the generated link and buttons for social networks", width=922, lightbox=true, lightboxWidth=2400 %}
-
-	*Both rewards named in the modal: a mini-course for the student, 15% off for the friend.*
+	{% carousel id="rewards", width=922, height=380, lightboxWidth=2400, chipsLabel="Rewards", slides=[
+			{src: "images/hero-share-modal.png", label: "Share modal", alt: "Share modal over a lecture page: Share interesting lecture, a free mini-course for you, 15% off the first purchase for your friend, a lecture preview, a Copy Link button with social network buttons, and the note 5 links left, each works 7 days", caption: "The share modal leads with both rewards: a mini-course for the student, 15% off for the friend."},
+			{src: "images/miro-motivation.png", label: "Reward ideas", alt: "Sticky notes under the heading 'How to motivate to share?': points towards a free course, a discount, cashback or mentor sessions; a gift for the student with a discount for the friend; expert status; challenges; a leaderboard; a count of people who shared; and asking to discuss in communities", caption: "Reward ideas from ideation: points, cashback, mentor sessions, challenges, posts in communities."}
+		] %}
 
 	### An email form, required to protect paid video
 
@@ -114,9 +110,7 @@ headerInfo:
 
 	I saw the form as an extra step that could cost conversion, so I tested how friends reacted to it. 5 of 6 respondents took it calmly, and several had expected to be asked for an email. One said they would close the page.
 
-	{% image src="images/solutions-2.jpg", className="", alt="Three designs: a social media post carrying the lecture, the public lecture page with an email form covering the video, and the same page after access, showing a 15% discount from the student and a course catalogue", width=922, lightbox=true, lightboxWidth=2400 %}
-
-	*The form covers the video; the friend's discount sits below it.*
+	{% image src="images/email-form-locked.png", className="", alt="The public lecture page before the friend leaves an email: the video is dimmed and covered by a card reading Usually for enrolled students, Watch the lecture for free, You'll also get 15% off your first purchase, with an email field and a Watch lecture button", width=922, lightbox=true, lightboxWidth=2400, caption="The form covers the video and names what the friend gets: the lecture, and 15% off." %}
 
 	### A second Share button, over the video as it ends
 
@@ -124,10 +118,7 @@ headerInfo:
 
 	My hypothesis was that during a lecture attention sits on the player. So the second release added a block over the video in its last few seconds, with a Share button and both rewards. In 6 usability sessions every respondent noticed it.
 
-	{% carousel id="share-prompt", width=922, lightboxWidth=2400, chipsLabel="Share button, both releases", slides=[
-			{src: "images/solutions-1.jpg", label: "Second release", alt: "Design for the second release: a Share the video button on top of the player, with both rewards named beside it, the original Share button still under the video, and the share modal", caption: "Second release: the block over the video, a Share button with both rewards beside it. The button underneath stayed."},
-			{src: "images/ui-v1-1.png", label: "First release", alt: "Design for the first release: the player with a Share button underneath it, and the share modal with a Create a link button and the link limit", caption: "First release: the Share button sat under the player, away from where attention is during a lecture."}
-		] %}
+	{% image src="images/share-block-closeup.png", className="", alt="Design spec for the sharing block in the player. 5 seconds before the end, a Share the video button appears in the top-right corner and opens on hover: For you – mini-course, For a friend – 15% discount. After the video ends, the block stays open over the Next video screen. Below, the block component, default and opened", width=922, lightbox=true, lightboxWidth=2400, caption="Second release: near the end, a Share the video button appears over the player and shows both rewards on hover." %}
 
 	Legacy code brought issues nobody on the team had foreseen, among them archived lecture pages and a player the developers could not modify. I designed the missing state and presented the in-player button another way.
 {% endprojectSection %}
