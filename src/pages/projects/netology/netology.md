@@ -1,5 +1,5 @@
 ---
-title: "[Draft] High student acquisition costs"
+title: "High student acquisition costs"
 feature: "Useful content sharing"
 description: Netology (EdTech, B2C, B2B)
 company: Netology
