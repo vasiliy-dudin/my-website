@@ -1,6 +1,10 @@
 @use '../variables' as *
 @use '../mixins' as *
-	
+
+$inset-glow-blur: 80px
+$inset-glow-spread: 23px
+$inset-glow-color-default: $color__neutral-white
+
 // Box with rounded corners
 %box
 	&__paddings
@@ -13,6 +17,9 @@
 		background: $surface-secondary
 	&__secondary
 		background: $surface-primary
+	// White inner glow over a tinted fill, in place of a border; recolour it via --inset-glow-color
+	&__inset-glow
+		box-shadow: inset 0 0 $inset-glow-blur $inset-glow-spread var(--inset-glow-color, #{$inset-glow-color-default})
 
 // Full width section
 %section

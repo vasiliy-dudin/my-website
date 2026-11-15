@@ -57,7 +57,7 @@ export default config => {
 					`<div class="impact__values">
 						${args.valueOld ? `<span class="impact__oneValue">${args.valueOld}</span> → ` : ''}<span class="impact__oneValue">${args.valueNew}</span>
 					</div>`,
-					args.mainOrNot === 'main' ? `<div class="impact__mainLabel">Main metric</div>` : '',
+					args.mainOrNot === 'main' ? `<div class="impact__mainLabel">Main</div>` : '',
 				`</div>`,
 				args.name ? `<div class="impact__name">${args.name}</div>` : '',
 				args.goal ? `<div class="impact__goal">Goal: ${args.goal}</div>` : '',
