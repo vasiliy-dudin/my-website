@@ -28,8 +28,10 @@
 	img
 		display: block
 		@extend .img-fluid
-		border-radius: $radius--XL
-		border: 12px solid rgba($surface-primary--dark-1, 50%)
+		border-radius: $radius--L
+		box-shadow: $shadow-static-primary
+		outline: $image-edge
+		outline-offset: $image-edge-offset
 	// Отступы между соседними картинками
 	img + img,
 	a + img,
@@ -39,9 +41,10 @@
 		margin-top: 24px
 
 	a[data-fancybox]>img
-		transition: all 0.3s
+		box-shadow: $shadow-clickable
+		transition: box-shadow 0.3s
 	a[data-fancybox]:hover>img
-		border: 12px solid rgba($accent-primary, 60%)
+		box-shadow: $shadow-clickable--hover
 
 	// Small gap to the caption, large gap to the next block: the caption reads as part of its image
 	.figure

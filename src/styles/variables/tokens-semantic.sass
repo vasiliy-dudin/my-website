@@ -39,6 +39,10 @@ $radius--XL: 24px
 // Static: thin shadows for non-interactive blocks. Gray blocks get a denser one, because on gray the light one is lost
 $shadow-static-primary: 0 0 2px rgba($color__blue-900, 0.08)
 $shadow-static-secondary: inset 0 0 2px rgba($color__blue-900, 0.08)
+// Edge drawn over the image's own border via outline: box-shadow can't paint on top of an image,
+// and a translucent line darkens any edge colour, so gray images don't dissolve into gray backgrounds
+$image-edge: 1px solid rgba($color__blue-900, 0.1)
+$image-edge-offset: -1px
 $shadow-clickable: 0 2px 11px rgba($color__gray-300, 0.4)
 $shadow-clickable--hover: 4px 3px 11px 2px $accent-primary
 

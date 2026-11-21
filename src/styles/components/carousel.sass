@@ -10,13 +10,23 @@ $thumb-height: 130px
 	margin: 0
 
 	.f-carousel
-		border-radius: $radius--XL
+		border-radius: $radius--L
 		overflow: hidden
+		// Slides open the lightbox, so the frame carries the clickable shadow the clipped images can't show
+		box-shadow: $shadow-clickable
+		outline: $image-edge
+		outline-offset: $image-edge-offset
+		transition: box-shadow 0.3s
+
+		&:has(.f-carousel__slide a:hover)
+			box-shadow: $shadow-clickable--hover
 
 	// Frame lives on the viewport, not on individual slide images
 	img
 		border: none
 		border-radius: 0
+		box-shadow: none
+		outline: none
 
 	// Arrows, themed through the vendor's custom properties
 	.f-button.is-arrow
@@ -40,6 +50,7 @@ $thumb-height: 130px
 	// a press here also starts a swipe, so the frame doesn't take it over either
 	.f-carousel__slide > a:active
 		transform: none
+
 	&[data-fixed-height] .f-carousel__slide > a
 		display: block
 		height: 100%
@@ -63,21 +74,26 @@ $thumb-height: 130px
 		justify-content: center
 		width: $thumb-width
 		height: $thumb-height
-		padding: 2px
+		padding: 0
+		overflow: hidden
 		background: $surface-secondary
-		border: 1px solid $color__gray-300
+		// Same edge as the main image; a border rather than an outline, so the focus ring stays free
+		border: $image-edge
 		border-radius: $radius--S
+		box-shadow: $shadow-clickable
 		cursor: pointer
 		opacity: 0.55
-		transition: opacity 0.15s, border-color 0.15s
+		transition: opacity 0.15s, border-color 0.15s, box-shadow 0.15s
 
 		&:hover
 			opacity: 1
 
-		// Selected state carries an opacity change as well as colour
+		// Selected state carries an opacity change as well as colour.
+		// The ring is a shadow, so the thumbnail keeps its size when selected
 		&[aria-selected="true"]
 			opacity: 1
-			border: 3px solid $accent-primary
+			border-color: $accent-primary
+			box-shadow: 0 0 0 2px $accent-primary
 
 	&__thumb
 		width: 100%
