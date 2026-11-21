@@ -35,6 +35,13 @@ $radius--M: 12px
 $radius--L: 16px
 $radius--XL: 24px
 
+// Shadows
+// Static: thin shadows for non-interactive blocks. Gray blocks get a denser one, because on gray the light one is lost
+$shadow-static-primary: 0 0 2px rgba($color__blue-900, 0.08)
+$shadow-static-secondary: inset 0 0 2px rgba($color__blue-900, 0.08)
+$shadow-clickable: 0 2px 11px rgba($color__gray-300, 0.4)
+$shadow-clickable--hover: 4px 3px 11px 2px $accent-primary
+
 // Border Colors
 $border-color-1: rgba($color__gray-100, 0.5)
 $border-color-2: rgba($color__gray-100, 0.5)

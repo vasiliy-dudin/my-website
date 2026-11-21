@@ -15,8 +15,10 @@ $inset-glow-color-default: $color__neutral-white
 		border-radius: $radius--XL
 	&__primary
 		background: $surface-secondary
+		box-shadow: $shadow-static-primary
 	&__secondary
 		background: $surface-primary
+		box-shadow: $shadow-static-secondary
 	// White inner glow over a tinted fill, in place of a border; recolour it via --inset-glow-color
 	&__inset-glow
 		box-shadow: inset 0 0 $inset-glow-blur $inset-glow-spread var(--inset-glow-color, #{$inset-glow-color-default})
