@@ -36,6 +36,10 @@ $thumb-height: 130px
 		aspect-ratio: var(--carousel-ratio)
 		background: $surface-secondary
 
+	// The global press scale would shrink the image inside a frame that stays put;
+	// a press here also starts a swipe, so the frame doesn't take it over either
+	.f-carousel__slide > a:active
+		transform: none
 	&[data-fixed-height] .f-carousel__slide > a
 		display: block
 		height: 100%
